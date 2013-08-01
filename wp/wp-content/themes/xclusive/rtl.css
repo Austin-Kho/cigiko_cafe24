@@ -1,0 +1,245 @@
+/*
+Theme Name: Twenty Thirteen
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+It's easy, just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+See http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+/**
+ * 1.0 Reset
+ * ----------------------------------------------------------------------------
+ */
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/* =Regions
+-------------------------------------------------------------- */
+#primary {
+	float:right;
+}
+#secondary {
+	float:left;
+}
+#site-credits {
+	text-align:left;
+}
+.hgroup {
+	float:right;
+}
+
+/* =Menus 
+-------------------------------------------------------------- */
+#top-nav ul li,
+#main-nav ul li,
+#social-nav ul li {
+	float:right;
+}
+#main-nav ul ul {
+	right:0;
+}
+#main-nav ul ul li {
+	text-align:right;
+}
+#main-nav ul ul ul {
+	right: 100%;
+}
+#social-nav {
+	float:right;
+	margin-right:1.5%;
+}
+#top-nav {
+	float:left;
+	margin-left:2%;
+}
+#footer-nav {
+	float:right;
+}
+.nav-next {
+	float:left;
+}
+.nav-previous {
+	float:right;
+}
+
+/* =Menus actions
+-------------------------------------------------------------- */
+#main-nav ul li.submenu li.submenu > a:focus {
+	background-position: 8% -77px;
+}
+
+/* =Action links
+-------------------------------------------------------------- */
+.collapse-sidebar {
+	padding-left:0;
+	padding-right:23px;
+	background-position: 100% -58px;
+	left:30px;
+	right:inherit;
+}
+.sidebar .collapse-sidebar {
+	padding-left:23px;
+	background-position: 0 -86px;
+	left:30px;
+	right:inherit;
+}
+
+
+/* =Margins & Paddings
+-------------------------------------------------------------- */
+menu,ol,ul {
+	margin: 10px 0;
+	padding: 0 30px 0 0;
+}
+
+/* =Content
+-------------------------------------------------------------- */
+.entry-meta > a,
+.entry-meta .author,
+.entry-meta .date,
+.entry-meta .edit-link {
+	display:inline-block;
+}
+.entry-meta .author{
+	padding-left:1px;
+}
+.entry-meta > a,
+.entry-meta .date {
+	padding-left:3px;
+}
+
+/* =Post formats
+-------------------------------------------------------------- */
+.format-audio .entry-content {
+	background-image: url(_img/audio-rl.png) ;
+	background-position:95% 50%;
+}
+.format-link .entry-content {
+	background-position: 98% 50%;
+	padding: 30px 65px 10px 30px;
+}
+.format-quote .entry-content {
+	background-image: url(_img/quote-bg-rl.png) ;
+	background-position:100% 100%;
+}
+.format-status .entry-content {
+	background-image: url(_img/status-rl.png);
+	background-position: 95% 50%;
+	padding: 35px 65px 10px 30px;
+}
+.format-audio .entry-content .audio-border {
+	margin-left: 0;
+	margin-right: 90px;
+	padding-left: 0;
+	padding-right: 30px;
+	border-left:none;
+	border-right:solid 1px #ddd;
+}
+.format-quote blockquote {
+	background-image: url(_img/quote-rl.png);
+	background-position: 100% 20%;
+	padding: 25px 70px 15px 25px;
+}
+
+/* =Page links
+-------------------------------------------------------------- */
+.page-links {
+	clear:both;
+}
+.page-links a {
+	display:inline-block;
+	margin:0 2px;
+	padding:2px 8px;
+}
+.paging-navigation {
+	clear:both;
+}
+
+/* =Comments
+-------------------------------------------------------------- */
+.comment-author {
+	float:right;
+}
+.reply, 
+.comment-content, 
+.comment-metadata {
+	float: left;
+}
+.depth-2 {
+	padding-left:0;
+	padding-right:6%;
+}
+.depth-3 {
+	padding-left: 0;
+	padding-right:9%;
+}
+.depth-4 {
+	padding-left: 0;
+	padding-right:12%;
+}
+
+/* =Table
+-------------------------------------------------------------- */ 
+th, td {
+	text-align:right;
+}
+
+
+/* =Slideshow
+-------------------------------------------------------------- */
+#headimg .show-prev {
+	left:inherit;
+	right:1%;
+	background-position: 100% -71px;
+}
+#headimg .show-next{
+	left:1%;
+	right:inherit;
+	background-position:0 0;
+}
+
+/* =Screen resolution less than 650px
+-------------------------------------------------------------- */
+@media (max-width:650px) {
+	
+	/* =Layout
+	-------------------------------------------------------------- */
+	
+	.hgroup {
+		float:none;
+		margin:0 auto;
+		text-align:center;
+	}
+	
+	/* =Menus 
+	-------------------------------------------------------------- */
+	#main-nav ul li {
+		float:none;
+		text-align:right;
+	}
+	#main-nav ul li a {
+		padding-right:25px;
+	}
+	#main-nav ul ul li a {
+		padding-left:0;
+		padding-right:50px;
+	}
+	#main-nav ul ul ul li a {
+		padding-left:0;
+		padding-right:75px;
+	}
+	#main-nav ul li a:focus,
+	#main-nav ul li a:hover {
+		background-position: 5% -75px; 
+	}
+	.menu-toggle {
+		background-position: 5% 18px; 
+	}
+	#main-nav.show-menu .menu-toggle{
+		background-position: 5% -13px; 
+	}
+}

@@ -1,0 +1,20 @@
+# a comment - this is ignored
+sftp-config.json
+
+#db info
+auth.php
+config.php
+util.php
+config_set.php
+
+
+#CodeIgniter 
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+
+#wp 
+wp-config.php
+
