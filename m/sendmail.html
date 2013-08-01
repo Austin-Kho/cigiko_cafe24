@@ -1,0 +1,79 @@
+<?php
+$mailheaders = "Return-Path: songtm@me.com\r\n";
+$mailheaders = "Reply-to: songtm@me.com\r\n";
+$mailheaders .= "From: wapduo homepage<songtm@me.com>\r\n";
+$mailheaders .= "Cc: jeno22@gmail.com <jeno22@gmail.com>, songtm@naver.com <songtm@naver.com>\r\n";
+$mailheaders .= "Bcc: obst2580@naver.com <obst2580@naver.com>\r\n";
+$mailheaders .= "Content-Type: text/plain; charset=euc-kr\r\n";
+$mailheaders .= "X-Sender: PHP/" . phpversion();
+
+$msg = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=euc-kr' />
+<title>Untitled Document</title>
+</head>
+<body>
+<table width='500' height='100%' border='1' cellspacing='1' cellpadding='1'>
+  <tr>
+    <td width='96'>name</td>
+    <td width='391'>" . $_POST['name'] . "</td>
+  </tr>
+  <tr>
+    <td>이메일</td>
+    <td>" . $_POST['email'] . "</td>
+  </tr>
+  <tr>
+    <td>주소</td>
+    <td>" . $_POST['addr'] . "</td>
+  </tr>
+  <tr>
+    <td>전화번호</td>
+    <td>" . $_POST['phone'] ."</td>
+  </tr>
+  <tr>
+    <td>갯수</td>
+    <td>" . $_POST['quantity'] ."</td>
+  </tr>
+  <tr>
+    <td>코멘트</td>
+    <td>" . $_POST['comment'] ."</td>
+  </tr>
+  <tr>
+    <td>입금자명</td>
+    <td>" . $_POST['uname'] ."</td>
+  </tr>
+  <tr>
+    <td>입금예정일</td>
+    <td>" . $_POST['dday'] . "</td>
+  </tr>
+</table>
+</body>
+</html>";
+/*
+$msg = "name : " . $_POST['name'] . "\n";
+$msg .= "mail : " . $_POST['email'] . "\n";
+$msg .= "addr : " . $_POST['addr'] . "\n";
+$msg .= "tel : " . $_POST['phone'] . "\n";
+$msg .= "quantity : " . $_POST['quantity'] . "\n";
+$msg .= "comment : " . $_POST['comment'] . "\n";
+$msg .= "b name : " . $_POST['uname'] . "\n";
+$msg .= "d day : " . $_POST['dday'] . "\n";
+*/
+if(mail("songtm@me.com", "" . $_POST['name'] . "wapduo Reservation mail!!", $msg, $mailheaders)) {
+	$alert = "왑듀오 1st 싱글앨범 주문되었습니다. 감사합니다.";
+} else {
+		$alert = "주문에 실패했습니다.\n관리자에게 확인해주세요.";
+}
+?>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="euc-kr">
+<title>WAPDUO</title>
+<script>
+	alert("<?=$alert?>");
+	location.href="http://wapduo.net";
+</script>
+</head>
+</html>
