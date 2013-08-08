@@ -9,7 +9,7 @@
 		/* todo 목록 가져오기 */
 		function get_list()
 		{
-			$sql = "SELECT * FROM items";
+			$sql = "SELECT * FROM ci_items";
 			$query = $this->db->query($sql);
 			$result = $query->result();
 			return $result;
@@ -18,7 +18,7 @@
 		/* todo 조회 */
 		function get_view($id)
 		{
-			$sql = "SELECT * FROM items WHERE id='".$id."'";
+			$sql = "SELECT * FROM ci_items WHERE id='".$id."'";
 			$query = $this->db->query($sql);
 			$result = $query->row();
 
@@ -28,15 +28,15 @@
 
 		/* todo 입력 */
 		function insert_todo($content, $created_on, $due_date){
-			$sql = "INSERT INTO items (content, created_on, due_date) VALUES ('".$content."', '".$created_on."', '".$due_date."')";
+			$sql = "INSERT INTO ci_items (content, created_on, due_date) VALUES ('".$content."', '".$created_on."', '".$due_date."')";
 			$query = $this->db->query($sql);
 		}
 		/**
 		 * todo 삭제
 		 */
 		function delete_todo($id){
-			$sql = "DELETE FROM items WHERE id='".$id."'";
-			$query = $this->db->query($sql);			
+			$sql = "DELETE FROM ci_items WHERE id='".$id."'";
+			$query = $this->db->query($sql);
 		}
 	}
 

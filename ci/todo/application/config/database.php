@@ -49,10 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
+$db['default']['username'] = 'cigiko';
 $db['default']['password'] = 'sc1965112';
-//$db['default']['database'] = 'todo';
-$db['default']['database'] = 'todo';
+$db['default']['database'] = 'cigiko';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 // pconnect 기본 값은 true 인데 기본 값을 사용할 경우 웹호스팅 환경에서는 실행 안됨.
@@ -66,24 +65,6 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
-/*$db2['default']['hostname'] = 'localhost';
-$db2['default']['username'] = 'root';
-$db2['default']['password'] = 'sc1965112';
-$db2['default']['database'] = 'ci_book';
-$db2['default']['dbdriver'] = 'mysql';
-$db2['default']['dbprefix'] = '';
-// pconnect 기본 값은 true 인데 기본 값을 사용할 경우 웹호스팅 환경에서는 실행 안됨.
-$db2['default']['pconnect'] = FALSE;
-//////////////////////////////////////////////////////
-$db2['default']['db_debug'] = TRUE;
-$db2['default']['cache_on'] = FALSE;
-$db2['default']['cachedir'] = '';
-$db2['default']['char_set'] = 'utf8';
-$db2['default']['dbcollat'] = 'utf8_general_ci';
-$db2['default']['swap_pre'] = '';
-$db2['default']['autoinit'] = TRUE;
-$db2['default']['stricton'] = FALSE;*/
 
 
 /* End of file database.php */
