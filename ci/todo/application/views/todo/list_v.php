@@ -8,7 +8,7 @@
 	<!-- [if lt IE 9]>
 	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>	<![endif] -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<link rel="stylesheet" href="/todo/include/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="/ci/todo/include/css/bootstrap.css">
 </head>
 <body>
 	<div id="main">
@@ -21,7 +21,7 @@
 
 		<nav id="gnb"><!-- gnb Start -->
 			<ul>
-				<li><a href="/todo/index.php/main/lists/" rel="external">todo 애플리케이션 프로그램</a></li>
+				<li><a href="/ci/todo/index.php/main/lists/" rel="external">todo 애플리케이션 프로그램</a></li>
 			</ul>
 		</nav><!-- gnb End -->
 		<article id="board_area">
@@ -41,7 +41,7 @@
 					<?php foreach ($list as $lt){ ?>
 					<tr>
 						<th scope="row"><?php echo $lt->id; ?></th>
-						<td><a rel="external" href="/todo/index.php/main/view/<?=$lt->id?>"><?=$lt->content?></a></td>
+						<td><a rel="external" href="/ci/todo/index.php/main/view/<?=$lt->id?>"><?=$lt->content?></a></td>
 						<td><time datetime="<?=mdate('%Y-%M-%j', human_to_unix($lt->created_on))?>"><?=$lt->created_on?></time></td>
 						<td><time datetime="<?=mdate('%Y-%M-%j', human_to_unix($lt->due_date))?>"><?=$lt->due_date?></time></td>
 					</tr>
@@ -49,7 +49,7 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<th colspan="4"><a href="/todo/index.php/main/write/" class="btn btn-success">쓰기</a></th>
+						<th colspan="4"><a href="/ci/todo/index.php/main/write/" class="btn btn-success">쓰기</a></th>
 					</tr>
 				</tfoot>
 			</table>

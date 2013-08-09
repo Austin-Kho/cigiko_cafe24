@@ -21,7 +21,7 @@
 					<?php echo $lt->board_id;?>
 				</th>
 				<td>
-					<a rel="external" href="/bbs/<?php echo $this->uri->segment(1)?>/view/<?php echo $this->uri->segment(3)?>/<?php echo $lt->board_id?>">
+					<a rel="external" href="/ci/bbs/<?php echo $this->uri->segment(1)?>/view/<?php echo $this->uri->segment(3)?>/<?php echo $lt->board_id?>">
 						<?php echo $lt->subject?>
 					</a>
 				</td>

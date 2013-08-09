@@ -20,7 +20,8 @@ class Board_m extends CI_Model
 			// 페이징이 있을 경우의 처리
 			$limit_query = ' LIMIT '.$offset.', '.$limit;
 		}
-
+		
+		if( ! $table) $table = "ci_board";
 		$sql = "SELECT * FROM ".$table." ORDER BY board_id DESC ".$limit_query;
 		$query = $this->db->query($sql);
 		if( $type == 'count' )

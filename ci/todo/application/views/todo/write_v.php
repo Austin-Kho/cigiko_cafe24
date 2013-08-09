@@ -9,7 +9,7 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<link rel="stylesheet" href="/todo/include/css/bootstrap.css">
+	<link rel="stylesheet" href="/ci/todo/include/css/bootstrap.css">
 </head>
 <body>
 	<div id="main">
@@ -22,7 +22,7 @@
 
 		<nav id="gnb"><!-- gnb Start -->
 			<ul>
-				<li><a href="/todo/index.php/main/lists/" rel="external">todo 애플리케이션 프로그램</a></li>
+				<li><a href="/ci/todo/index.php/main/lists/" rel="external">todo 애플리케이션 프로그램</a></li>
 			</ul>
 		</nav><!-- gnb End -->
 
