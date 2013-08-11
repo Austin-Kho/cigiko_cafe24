@@ -3,18 +3,18 @@
 * Board
 * 게시판 메인 컨트롤러
 * @uses     CI_Controller
-*
 * @category Controller
 * @package  Package
 * @author    <cigiko>
 * @license  
-* @link     
+* @link
 */
 class Board extends CI_Controller {
 	function __construct()
 	{
 		patent::__construct();
 		$this->load->database();
+		$this->load->helper('date');
 		$this->load->model('board_m');
 	}
 
@@ -22,7 +22,6 @@ class Board extends CI_Controller {
      * index
      *  주소에서 메서드가 생략되었을 때 실행되는 기본 메서드
      * @access public
-     *
      * @return mixed Value.
      */
 	public function index()
@@ -34,9 +33,7 @@ class Board extends CI_Controller {
      * _remap
      *  사이트 헤더, 푸터가 자동으로 추가된다.
      * @param mixed $method Description.
-     *
      * @access public
-     *
      * @return mixed Value.
      */
 	public function _remap($method)
@@ -55,7 +52,6 @@ class Board extends CI_Controller {
      * lists
      * 목록 불러오기
      * @access public
-     *
      * @return mixed Value.
      */
 	public function lists()
