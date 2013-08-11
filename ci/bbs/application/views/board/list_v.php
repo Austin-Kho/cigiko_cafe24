@@ -19,7 +19,7 @@
 				<td><a href="/ci/bbs/<?=$this->uri->segment(1)?>/view/<?=$this->uri->segment(3); ?>/<?=$lt->board_id; ?>" rel="external"><?=$lt->subject; ?></a></td>
 				<td><?=$lt->user_name; ?></td>
 				<td><?=$lt->hits; ?></td>
-				<td><time datetime="<?=mdate("%Y-%M-%j", $lt->reg_date);?>"><?=mdate("%M, %j,%Y", human_to_unix($lt->reg_date));?></time></td>
+				<td><time datetime='<?=mdate("%Y-%M-%j", $lt->reg_date);?>'><?=mdate("%M, %j,%Y", human_to_unix($lt->reg_date));?></time></td>
 			</tr>
 <? endforeach; ?>	
 		</tbody>
