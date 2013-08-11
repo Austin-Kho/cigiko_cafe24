@@ -8,7 +8,7 @@
 	<!-- [if lt IE 9]>
 	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>	<![endif] -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<link rel="stylesheet" href="../bbs/include/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="/ci/bbs/include/css/bootstrap.css" type="text/css">
 </head>
 <body>
 	<div id="main">

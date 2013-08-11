@@ -54,7 +54,9 @@ $db['default']['password'] = 'sc1965112';
 $db['default']['database'] = 'cigiko';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
+// pconnect 기본 값은 true 인데 기본 값을 사용할 경우 웹호스팅 환경에서는 실행 안됨.
 $db['default']['pconnect'] = FALSE;
+//////////////////////////////////////////////////////
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;
 $db['default']['cachedir'] = '';

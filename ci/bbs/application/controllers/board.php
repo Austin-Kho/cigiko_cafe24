@@ -12,7 +12,7 @@
 class Board extends CI_Controller {
 	function __construct()
 	{
-		patent::__construct();
+		parent::__construct();
 		$this->load->database();
 		$this->load->helper('date');
 		$this->load->model('board_m');
@@ -26,7 +26,7 @@ class Board extends CI_Controller {
      */
 	public function index()
 	{
-		$this->lists();
+		$this->lists();		
 	}
 
      /**
