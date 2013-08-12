@@ -2,7 +2,7 @@
 	<header>
 		<h1></h1>
 	</header>
-	<table cellspacing="0" cellpadding="0">
+	<table cellspacing="0" cellpadding="0" class="table table-striped">
 		<thead>
 			<tr>
 				<th scope="col">번호</th>
