@@ -1,17 +1,26 @@
 <?php
 /**
- * Omega functions and definitions
+ * The functions file is utilized to initialize every little thing in the theme.  It controls how the theme is loaded and 
+ * sets up the supported features, default actions, and default filters.  If making customizations, users 
+ * should must make a child theme and make modifications to its functions.php file (not this one).
+ *
+ * Child themes should do their setup on the 'after_setup_theme' hook with a priority of 11 if they want to
+ * override parent theme features.  Use a priority of 9 or lower if wanting to run before the parent theme.
  *
  * @package Omega
+ * @subpackage Functions
+ * @author ThemeHall <hello@themehall.com>
+ * @copyright Copyright (c) 2013, themehall.com
+ * @link http://themehall.com/omega
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-
 
 /* Load the core theme framework. */
 require ( trailingslashit( get_template_directory() ) . 'lib/hybrid.php' );
 new Hybrid();
 
 /* Load omega functions */
-require get_template_directory() . '/lib/omega.php';
+require get_template_directory() . '/inc/omega.php';
 
 if ( ! function_exists( 'omega_theme_setup' ) ) :
 /**
@@ -26,12 +35,8 @@ function omega_theme_setup() {
 	/* Get the theme prefix. */
 	$prefix = hybrid_get_prefix();
 
-	/**
-	 * Enable support for Post Thumbnails on posts and pages
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	add_theme_support( 'post-thumbnails' );
+	/* The best thumbnail/image script ever. */
+	add_theme_support( 'get-the-image' );
 	
 	/* Register menus. */
 	add_theme_support( 
@@ -54,6 +59,11 @@ function omega_theme_setup() {
 	/* Load shortcodes. */
 	add_theme_support( 'hybrid-core-shortcodes' );
 	
+	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
+	
+	if ( is_admin() )
+		require_once( trailingslashit( get_template_directory() ) . 'inc/meta-box-theme-options.php' );
+
 	/* Enable custom template hierarchy. */
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 	
@@ -64,7 +74,9 @@ function omega_theme_setup() {
 		array( '1c', '2c-l', '2c-r' ), 
 		array( 'default' => '2c-l', 'customizer' => true ) 
 	);
-	 
+	
+	/* Add default theme settings */
+	add_filter( "{$prefix}_default_theme_settings", 'omega_default_theme_settings');
 	
 	/* implement editor styling, so as to make the editor content match the resulting post output in the theme. */
 	add_editor_style();
@@ -79,16 +91,19 @@ function omega_theme_setup() {
 	/* Add default posts and comments RSS feed links to <head>.  */
 	add_theme_support( 'automatic-feed-links' );
 
+	/* Turn on footer widgets if Omega Parent theme is active
+	if ( ! is_child_theme() ) {
+		add_theme_support( 'omega-footer-widgets', 4 );
+	}
+	*/
+
 	/* Handle content width for embeds and images. */
 	hybrid_set_content_width( 640 );
 
-	/* custom excerpt */
-	add_filter( 'excerpt_length', 'omega_excerpt_length', 999 );
-	add_filter('excerpt_more', 'omega_excerpt_more');
-
 	add_action( 'wp_enqueue_scripts', 'omega_scripts' );
-	add_action( 'widgets_init', 'omega_widgets_init' );
 	add_action( 'wp_head', 'omega_styles' );
+	add_action( 'wp_head', 'omega_header_scripts' );
+	add_action( 'wp_footer', 'omega_footer_scripts' );
 
 	/* Header actions. */
 	add_action( "{$prefix}_header", 'omega_site_title' );
@@ -100,14 +115,78 @@ function omega_theme_setup() {
 	/* Load the primary menu. */
 	add_action( "{$prefix}_before_header", 'omega_get_primary_menu' );
 
+	/* Add the title, byline, and entry meta before and after the entry.*/
+	add_action( "{$prefix}_entry_header", 'omega_entry_header' );
+	add_action( "{$prefix}_entry_header", 'omega_byline' );
+	add_action( "{$prefix}_entry", 'omega_entry' );
+	add_action( "{$prefix}_singular_entry", 'omega_singular_entry' );
+	add_action( "{$prefix}_after_entry", 'omega_entry_meta' );
+	add_action( "{$prefix}_singular-page_after_entry", 'omega_page_entry_meta' );
+
+	/* Add the primary sidebars after the main content. */
+	add_action( "{$prefix}_after_main", 'omega_after_main' );
+
 	/* Filter the sidebar widgets. */
 	add_filter( 'sidebars_widgets', 'omega_disable_sidebars' );
 	add_action( 'template_redirect', 'omega_one_column' );
+
+	/* Allow developers to filter the default sidebar arguments. */
+	add_filter( "{$prefix}_sidebar_defaults", 'omega_sidebar_defaults' );
 }
 endif; // omega_theme_setup
 
 add_action( 'after_setup_theme', 'omega_theme_setup' );
 
+
+function omega_sidebar_defaults($defaults) {
+	/* Set up some default sidebar arguments. */
+	$defaults = array(
+		'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
+	);
+
+	return $defaults;
+}
+
+/**
+ * Adds custom default theme settings.
+ *
+ * @since 0.3.0
+ * @access public
+ * @param array $settings The default theme settings.
+ * @return array $settings
+ */
+
+function omega_default_theme_settings( $settings ) {
+
+	$settings = array(
+		'comments_pages'            => 0,
+		'comments_posts'            => 1,
+		'trackbacks_pages'          => 0,
+		'trackbacks_posts'          => 1,
+		'content_archive'           => 'full',
+		'content_archive_limit'		=> 700,
+		'content_archive_thumbnail' => 1,
+		'image_size'                => 'thumbnail',
+		'posts_nav'                 => 'prev-next',
+		'header_scripts'            => '',
+		'footer_scripts'            => '',
+		'footer_insert'				=> '',
+	);
+
+	/* If there is a child theme active, add the [child-link] shortcode to the $footer_insert. */
+	if ( is_child_theme() )
+		$settings['footer_insert'] = '<p class="copyright">' . __( 'Copyright &#169; [the-year] [site-link].', 'hybrid-core' ) . '</p>' . "\n\n" . '<p class="credit">' . __( 'Powered by [wp-link], [theme-link], and [child-link].', 'hybrid-core' ) . '</p>';
+
+	/* If no child theme is active, leave out the [child-link] shortcode. */
+	else
+		$settings['footer_insert'] = '<p class="copyright">' . __( 'Copyright &#169; [the-year] [site-link].', 'hybrid-core' ) . '</p>' . "\n\n" . '<p class="credit">' . __( 'Powered by [wp-link] and [theme-link].', 'hybrid-core' ) . '</p>';
+
+	return $settings;
+
+}
 
 /**
  * Dynamic element to wrap the site title in.  If it is the front page, wrap it in an <h1> element.  One other 
@@ -139,7 +218,7 @@ function omega_site_description() {
 
 
 function omega_footer_insert() {
-	echo do_shortcode( '<p class="copyright">' . __( 'Copyright &copy; [the-year] [site-link].', 'omega' ) . '</p>' . '<p class="credit">' . __( 'Powered by [wp-link] and [theme-link].', 'omega' ) . '</p>' ); 
+	hybrid_footer_content();	
 }
 
 /**
@@ -149,18 +228,108 @@ function omega_get_primary_menu() {
 	get_template_part( 'menu', 'primary' );
 }
 
+
 /**
- * Register widgetized area and update sidebar with default widgets
+ * Display the default page edit link
  */
-function omega_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'omega' ),
-		'id'            => 'sidebar',
-		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
-		'after_widget'  => '</div></section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
+function omega_page_entry_meta() {
+
+	echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">[entry-edit-link]</div>' );
+}
+
+/**
+ * Display sidebar
+ */
+function omega_after_main() {
+	get_sidebar();
+}
+
+
+/**
+ * Display the default entry header.
+ */
+function omega_entry_header() {
+
+	if ( is_home() || is_archive() || is_search() ) {
+	?>
+		<h1 class="entry-title" itemprop="headline"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+	<?php		
+	} else {
+	?>
+		<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
+	<?php
+	}
+}
+
+/**
+ * Display the default page edit link
+ */
+function omega_byline() {
+
+	if ( 'post' == get_post_type() ) : ?>
+		<div class="entry-meta">
+			<?php 
+			if (is_multi_author()) {
+				echo apply_atomic_shortcode( 'entry_byline', __( 'Posted by [entry-author] ', 'omega' ) ); 
+			} else {
+				echo apply_atomic_shortcode( 'entry_byline', __( 'Posted ', 'omega' ) ); 
+			}?>
+			<?php
+				echo apply_atomic_shortcode( 'entry_byline', __( 'on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'omega' ) ); 
+			
+			?>
+		</div><!-- .entry-meta -->
+	<?php endif; 
+}
+
+/**
+ * Display the default entry metadata.
+ */
+function omega_entry() {
+
+	if ( is_home() || is_archive() || is_search() ) {
+		if(hybrid_get_setting( 'content_archive_thumbnail' )) {
+			get_the_image( array( 'meta_key' => 'Thumbnail', 'default_size' => hybrid_get_setting( 'image_size' ) ) ); 
+		}
+	
+
+		if ( 'excerpts' === hybrid_get_setting( 'content_archive' ) ) {
+			the_excerpt();
+		}
+		else {
+			if ( hybrid_get_setting( 'content_archive_limit' ) )
+				the_content_limit( (int) hybrid_get_setting( 'content_archive_limit' ), __( '[Read more...]', 'omega' ) );
+			else
+				the_content( __( '[Read more...]', 'omega' ) );
+		}
+	} 
+
+}
+
+/**
+ * Display the default singular entry metadata.
+ */
+function omega_singular_entry() {
+
+	the_content();
+
+	wp_link_pages( array( 'before' => '<p class="page-links">' . '<span class="before">' . __( 'Pages:', 'omega' ) . '</span>', 'after' => '</p>' ) );
+
+}
+
+
+/**
+ * Display the default entry metadata.
+ */
+function omega_entry_meta() {
+
+	$meta = '';
+
+	if ( 'post' == get_post_type() ) {
+		$meta = '<footer class="entry-footer"><div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in: "] [entry-terms before="| Tagged: "]', 'omega' ) . '</div><!-- .entry-meta --></footer>';
+	}
+
+	echo apply_atomic_shortcode( 'entry_meta', $meta );
 }
 
 /**
@@ -181,31 +350,38 @@ function omega_styles() {
 <?php 
 }
 
+
 /**
- * Sets the post excerpt length to 100 words.
+ * Echo header scripts in to wp_head().
  */
-function omega_excerpt_length( $length ) {
-	return 100;
+function omega_header_scripts() {
+
+	echo hybrid_get_setting( 'header_scripts' );
+
 }
 
 /**
- * Replaces the excerpt "more" text by a link
+ * Echo the footer scripts, defined in Theme Settings.
  */
-function omega_excerpt_more($more) {
-    global $post;
-	return ' ... <a class="more-link" href="'. get_permalink($post->ID) . '">'.__( '[Read more ...]', 'omega' ).'</a>';
-}
+function omega_footer_scripts() {
 
+	echo hybrid_get_setting( 'footer_scripts' );
+
+}
 
 /**
  * Function for deciding which pages should have a one-column layout.
  */
 function omega_one_column() {
 
-	if ( is_attachment() && wp_attachment_is_image() && 'default' == get_post_layout( get_queried_object_id() ) )
+	if ( !is_active_sidebar( 'primary' ) )
+		add_filter( 'theme_mod_theme_layout', 'omega_theme_layout_one_column' );
+
+	elseif ( is_attachment() && wp_attachment_is_image() && 'default' == get_post_layout( get_queried_object_id() ) )
 		add_filter( 'theme_mod_theme_layout', 'omega_theme_layout_one_column' );
 
 }
+
 
 /**
  * Filters 'get_theme_layout' by returning 'layout-1c'.

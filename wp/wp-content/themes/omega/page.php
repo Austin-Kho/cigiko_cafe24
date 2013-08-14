@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-	<main class="content" role="main">
+	<main  class="<?php echo apply_atomic( 'omega_main_class', 'content' );?>" role="main" itemprop="mainContentOfPage">
 
 			<?php do_atomic( 'before_content' ); // omega_before_content ?>
 
@@ -27,7 +27,5 @@ get_header(); ?>
 			<?php do_atomic( 'after_content' ); // omega_after_content ?>
 
 	</main><!-- .content -->
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

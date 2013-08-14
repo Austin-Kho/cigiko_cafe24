@@ -7,7 +7,9 @@
 
 get_header(); ?>
 
-	<main class="content" role="main"  itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/SearchResultsPage">
+	<main class="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/SearchResultsPage">
+
+		<?php do_atomic( 'before_content' ); // omega_before_content ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -30,7 +32,8 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-	</main><!-- .content -->
+		<?php do_atomic( 'after_content' ); // omega_after_content ?>
 
-<?php get_sidebar(); ?>
+	</main><!-- .content -->
+	
 <?php get_footer(); ?>

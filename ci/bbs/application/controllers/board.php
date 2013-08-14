@@ -1,7 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit ('No direct script access allowed');
 /**
-* Board
-* 게시판 메인 컨트롤러
+* Board - 게시판 메인 컨트롤러
 * @uses     CI_Controller
 * @category Controller
 * @package  Package
@@ -19,8 +18,7 @@ class Board extends CI_Controller {
 	}
 
     /**
-     * index
-     *  주소에서 메서드가 생략되었을 때 실행되는 기본 메서드
+     * index - 주소에서 메서드가 생략되었을 때 실행되는 기본 메서드
      * @access public
      * @return mixed Value.
      */
@@ -30,8 +28,7 @@ class Board extends CI_Controller {
 	}
 
      /**
-     * _remap
-     *  사이트 헤더, 푸터가 자동으로 추가된다.
+     * _remap -  사이트 헤더, 푸터가 자동으로 추가된다.
      * @param mixed $method Description.
      * @access public
      * @return mixed Value.
@@ -49,8 +46,7 @@ class Board extends CI_Controller {
 	}
 
     /**
-     * lists
-     * 목록 불러오기
+     * lists -  목록 불러오기
      * @access public
      * @return mixed Value.
      */
@@ -62,7 +58,7 @@ class Board extends CI_Controller {
 		// 페이지네이션 설정
 		$config['baseurl'] = '/ci/bbs/board/lists/ci_board'.$page_url.'/page/'; // 페이징 주소
 		$config['total_rows'] = $this->board_m->get_list($this->uri->segment(3), 'count', '', '', $search_word); // 게시물의 전체 개수
-		$config['per_page'] = 5; // 한 페이지에 표시할 게시물 수
+		$config['per_page'] = 5; 	// 한 페이지에 표시할 게시물 수
 		$config['uri_segment'] = $uri_segment; // 페이지 번호가 위치한 세그먼트
 
 		// 페이지네이션 초기화

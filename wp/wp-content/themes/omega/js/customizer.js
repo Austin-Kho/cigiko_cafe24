@@ -15,5 +15,5 @@
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
 		} );
-	} );
+	} );	
 } )( jQuery );

@@ -1,6 +1,6 @@
 <?php get_header(); // Loads the header.php template. ?>
 
-	<main class="content" role="main">
+	<main class="content" role="main" itemprop="mainContentOfPage">
 
 		<?php if ( have_posts() ) { ?>
 
@@ -8,7 +8,7 @@
 
 				<?php the_post(); // Loads the post data. ?>
 
-				<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+				<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
 
 					<header class="entry-header">
 						<h1 class="entry-title"><?php single_post_title(); ?></h1>

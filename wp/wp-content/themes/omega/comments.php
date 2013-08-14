@@ -19,6 +19,12 @@
 /* If a post password is required or no comments are given and comments/pings are closed, return. */
 if ( post_password_required() || ( !have_comments() && !comments_open() && !pings_open() ) )
 	return;
+
+if ( is_singular( 'post' ) && ( !hybrid_get_setting( 'trackbacks_posts' ) && !hybrid_get_setting( 'comments_posts' ) ) )
+	return;
+elseif ( is_singular( 'page' ) && ( !hybrid_get_setting( 'trackbacks_pages' ) && !hybrid_get_setting( 'comments_pages' ) ) )
+	return;
+
 ?>
 
 	<div id="comments" class="entry-comments">

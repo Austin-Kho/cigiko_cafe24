@@ -21,10 +21,14 @@
 	<header class="site-header row" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 		<div class="wrap">
 
+			<?php do_atomic( 'header_left' ); // omega_header_left ?>
+
 			<div class="title-area">
 				<?php do_atomic( 'header' ); // omega_header ?>
 			</div>
 					
+			<?php do_atomic( 'header_right' ); // omega_header_right ?>
+
 		</div><!-- .wrap -->
 	</header><!-- .site-header -->
 

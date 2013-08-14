@@ -4,41 +4,26 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">	
-	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">	
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php 
-			if (is_multi_author()) {
-				echo apply_atomic_shortcode( 'entry_byline', __( 'Posted by [entry-author] ', 'omega' ) ); 
-			} else {
-				echo apply_atomic_shortcode( 'entry_byline', __( 'Posted ', 'omega' ) ); 
-			}?>
-			<?php
-			if (get_the_title()!='') {
-				echo apply_atomic_shortcode( 'entry_byline', __( 'on [entry-published] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'omega' ) ); 
-			} else {
-				echo apply_atomic_shortcode( 'entry_byline', sprintf( __( 'on <a href="%s">[entry-published]</a> [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'omega' ), get_permalink()) ); 
-			}
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+	<div class="entry-wrap">
+		
+		<header class="entry-header">
+			
+			<?php do_atomic( 'entry_header' ); // omega_entry_header ?>
+			
+		</header><!-- .entry-header -->
 
-	<div class="entry-content">		
-		<?php 
-		if ( has_post_thumbnail() ) {
-		?>
-			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail();?></a>
-		<?php
-		}
-		?>
-		<?php the_content(); ?>
-	</div><!-- .entry-content -->
+		<?php do_atomic( 'before_entry' ); // omega_before_entry ?>
 
-	<footer class="entry-footer">
-		<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in: "] [entry-terms before="| Tagged: "]', 'celebrate' ) . '</div>' ); ?>
-	</footer><!-- .entry-meta -->
+		<div class="entry-content">		
+
+			<?php do_atomic( 'entry' ); // omega_entry ?>
+			
+		</div><!-- .entry-content -->
+
+		<?php do_atomic( 'after_entry' ); // omega_after_entry ?>
+
+	</div><!-- .entry-wrap -->
+	
 </article><!-- #post-## -->

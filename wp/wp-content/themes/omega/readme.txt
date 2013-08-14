@@ -30,7 +30,7 @@ Copyright: 2012-2013 Automattic, Inc, automattic.com
 
 Genesis Framework - http://genesisframework.com
 License: Distributed under the GNU General Public License, version 2 or later (GPL).
-Copyright: Copyblogger Media LLC, studiopress.com
+Copyright: Copyblogger Media LLC, copyblogger.com
 
 HTML5 Shiv v3.6 stable
 License: Dual licensed under the MIT or GPL Version 2 licenses
@@ -39,16 +39,39 @@ Copyright: @afarkas @jdalton @jon_neal @rem
 
 Changelog
 ---------
-0.3.0
+0.3.5	2013-08-14
+- add widget-wrap and entry-wrap
+- update languages files
+- fixed featured image setting
+
+0.3.4	2013-08-12
+- simplified CSS
+- add footer widgets
+- fixed featured image
+
+0.3.3	2013-08-10
+- add custom css
+- fixed theme layout customizer
+
+
+0.3.2	2013-08-10
+- disabled hybrid_meta_template
+- add archive theme setting
+
+0.3.1	2013-08-08
+- add more actions and filters
+- fixed Meta Title
+
+0.3.0	2013-08-03
 - add sample omega child theme
 - cleaned up files and functions
-- add sitemap.org markup
+- add schema.org markup
 - Introduced omega actions
 
-0.2.4
+0.2.4	2013-07-31
 - moved array argument inside wp_nav_menu() - header.php
 - moved font include to style.css
 - add sidebar / page layout options
 
-0.1.0 - 0.2.3
+0.1.0 - 0.2.3	2013-07-28
 - concept changes
