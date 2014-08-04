@@ -8,14 +8,14 @@
 									?>
 									<form method="post" action="">
 									<div style="float:left; width:80px; height:28px; background-color:#f4f4f4; padding-top:10px; color:black; text-align:center;">상담일자</div>
-									<div style="float:left; width:420px; height:28px; padding:9px 0px 0 5px;">
+									<div style="float:left; width:425px; height:28px; padding:9px 0px 0 5px;">
 										<div style="float:left;">
 											<input type="text" name="s_date" id="s_date" value="<?=$s_date?>" size="11" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
 											<a href="javascript:" onclick="cal_add(document.getElementById('s_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~
 										</div>
 										<div style="float:left; padding-left:5px; margin-right:5px;">
 											<input type="text" name="e_date" id="e_date" value="<?=$e_date?>" size="11" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
-											<a href="javascript:" onclick="cal_add(document.getElementById('e_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a>
+											<a href="javascript:" onclick="cal_add(document.getElementById('e_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" alt="" /></a>
 										</div>
 										<a href="javascript:" onclick="term_put('s_date', 'e_date', 'd');" title="오늘"><img src="../images/to_today.jpg" border="0" alt=""></a>
 										<a href="javascript:" onclick="term_put('s_date', 'e_date', 'w');" title="1주일"><img src="../images/to_week.jpg" border="0" alt=""></a>

@@ -1,5 +1,5 @@
 					<!-- ===== subject table end ===== -->
-					
+
 
 					<!-- ===== subject table end ===== -->
 					<?
@@ -172,7 +172,7 @@
 							<? } ?>
 
 							<div style="height:32px; border-width:1px 0 1px 0;border-color:#cccccc; border-style:solid; margin-top:5px; background-color:#F0F0E8;">
-							
+
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
 									타입 (Type) 등록
 								</div>
@@ -194,12 +194,12 @@
 								<div style="float:left; height:27px; width:170px; padding-top:5px; text-align:center;">
 									수수료(세대당 / VAT 별도)
 								</div>
-							</div>							
+							</div>
 
 							<!-- =============================================== line batch start ================================================ -->
 							<div style="height:32px; border-width:0 0 1px 0;border-color:#cccccc; border-style:solid;">
-								
-								
+
+
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
 									<select name="type_batch" style="width:60px;">
 										<option value="" selected> 선택
@@ -210,7 +210,7 @@
 										<option value="<?=$type[$i]?>"> <?=$type[$i]?>
 										<? }} ?>
 									</select>  TYPE
-								</div>		
+								</div>
 								<div style="float:left; height:27px; width:100px; padding:5px 0 0 0px; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid; text-align:center;">
 									<select name="sort_batch" style="width:60px;">
 										<option value="" selected> 선택
@@ -364,7 +364,7 @@
 									<input type="checkbox" name="except_2">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_2" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_2" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
 									<input type="text" name="pay_2" class="inputstyle2" size="12"> 천원
@@ -614,7 +614,7 @@
 						?>
 						<!-- 등록 마감 된 기 등록 데이터 수정일 때는 안보임 끝 -->
 						</form>
-						<!------------------------------------동호수 별 입력 종료--------------------------------------------->				
+						<!------------------------------------동호수 별 입력 종료--------------------------------------------->
 						<?
 							if($p_row[data_cr]==1){
 						?>
@@ -649,7 +649,7 @@
 								<b>표시 개수</b> <b>( </b>30개 <input type="radio" value="1" name="limit" <?if(!$limit||$limit==1) echo "checked";?>> 전체 <input type="radio" value="2" name="limit" <?if($limit==2) echo "checked";?>><b> )</b>
 							</div>
 
-							
+
 							<div style="float:right; padding-right:110px;">
 								<select name="type_data_" style="width:120px;" onchange="submit();">
 									<option value="" <?if(!$type_data_) echo "selected";?>> 선 택
@@ -678,7 +678,7 @@
 							</div>
 							<div style="float:left; height:24px; width:105px; text-align:center; padding-top:2px;">
 								타 입 (TYPE)
-							</div>							
+							</div>
 							<div style="float:left; height:24px; width:115px; text-align:center; padding-top:2px;">
 								구 분
 							</div>
@@ -698,7 +698,7 @@
 						</form>
 						<?
 							$where = " WHERE pj_seq ='$pj_seq' ";
-							if($type_data_) $where.= " AND type_ho = '$type_data_' ";							
+							if($type_data_) $where.= " AND type_ho = '$type_data_' ";
 
 							if(!$con_no_ad) $priority = " ORDER BY con_no DESC ";
 							if($con_no_ad==2){
@@ -726,7 +726,7 @@
 							</div>
 							<div style="float:left; height:24px; width:105px; text-align:center; padding-top:2px;">
 								<?=$rows[type_ho]." TYPE"?>
-							</div>							
+							</div>
 							<div style="float:left; height:24px; width:115px; text-align:center; padding-top:2px;">
 								<?=$except_str?>
 							</div>
