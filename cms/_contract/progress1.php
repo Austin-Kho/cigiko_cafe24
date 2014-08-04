@@ -145,7 +145,7 @@
 						<input type="hidden" name="data_cr" value="<?=$p_row[data_cr]?>">
 
 
-						<!------------------------------------계약관리번호 별 입력 시작--------------------------------------------->
+						<!------------------------------------계약관리번호 별 입력 시작-------------------------------------------//-->
 							<div style="height:22px; padding:8px 0 0 8px;">
 								<font color="#cc0000">*</font> 계약관리번호 별 정보 등록
 							</div>
@@ -231,7 +231,7 @@
 									<input type="text" name="price_batch" class="inputstyle2" size="12"> 천원
 								</div>
 								<div style="float:left; height:27px; width:170px; padding-top:5px; text-align:center;">
-									<input type="text" name="pay_batch" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_batch" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line batch end ================================================ -->
@@ -333,10 +333,10 @@
 									<input type="checkbox" name="except_1">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_1" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_1" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_1" value="" class="inputstyle2" size="12"> 천원 <input type="checkbox" name="batch_pay1" onclick="pay_reg_bc(this);"> 수수료 일괄등록
+									<input type="text" name="pay_1" value="" class="inputstyle2" size="10"> 천원 <input type="checkbox" name="batch_pay1" onclick="pay_reg_bc(this);"> 수수료 일괄등록
 								</div>
 							</div>
 							<!-- =============================================== line 1 end ================================================ -->
@@ -367,7 +367,7 @@
 									<input type="text" name="price_2" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_2" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_2" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line 2 end ================================================ -->
@@ -395,10 +395,10 @@
 									<input type="checkbox" name="except_3">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_3" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_3" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_3" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_3" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line 3 end ================================================ -->
@@ -426,10 +426,10 @@
 									<input type="checkbox" name="except_4">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_4" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_4" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_4" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_4" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line 4 end ================================================ -->
@@ -457,10 +457,10 @@
 									<input type="checkbox" name="except_5">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_5" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_5" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_5" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_5" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line 5 end ================================================ -->
@@ -488,10 +488,10 @@
 									<input type="checkbox" name="except_6">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_6" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_6" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_6" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_6" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line 6 end ================================================ -->
@@ -519,10 +519,10 @@
 									<input type="checkbox" name="except_7">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_7" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_7" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_7" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_7" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line 7 end ================================================ -->
@@ -550,10 +550,10 @@
 									<input type="checkbox" name="except_8">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_87" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_87" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_8" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_8" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line 8 end ================================================ -->
@@ -585,10 +585,10 @@
 									<input type="checkbox" name="except_batch">
 								</div>
 								<div style="float:left; height:27px; width:150px; padding-top:5px; text-align:center; border-width:0 1px 0 0;border-color:#cccccc; border-style:solid;">
-									<input type="text" name="price_batch" class="inputstyle2" size="15"> 천원
+									<input type="text" name="price_batch" class="inputstyle2" size="13"> 천원
 								</div>
 								<div style="float:left; height:27px; width:240px; padding:5px 0 0 13px;">
-									<input type="text" name="pay_batch" class="inputstyle2" size="12"> 천원
+									<input type="text" name="pay_batch" class="inputstyle2" size="10"> 천원
 								</div>
 							</div>
 							<!-- =============================================== line batch end ================================================ -->

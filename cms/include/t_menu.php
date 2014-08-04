@@ -35,9 +35,9 @@
 	}
 //-->
 </script>
-<div style="height:95px;">	 
+<div style="height:95px;">
 	<div style="float:left; width:180px; height:70px; padding:25px 0 0 10px;"><!-- 첫째 줄 -->
-		  <a href="<?=$cms_url?>cms.php"><img src="<?=$cms_url?>images/cms_main_logo_.png" border="0" alt="" onmouseover="this.src='<?=$cms_url?>images/cms_main_logo.png' " onmouseout="this.src='<?=$cms_url?>images/cms_main_logo_.png' "></a></div><!-- 로고부분 -->
+		  <a href="<?=$cms_url?>cms.php"><img src="<?=$cms_url?>images/cms_main_logo_.png" alt="" onmouseover="this.src='<?=$cms_url?>images/cms_main_logo.png' " onmouseout="this.src='<?=$cms_url?>images/cms_main_logo_.png' "></a></div><!-- 로고부분 -->
 	<div style="float:left; width:890px; text-align:right;"><!-- 둘째 줄 -->
 		<div style="font-size:11px; height:15px; padding-top:5px;">
 			<?
@@ -65,7 +65,7 @@
 				    $color_msg="#0088ff";
 			   }
 			?>
-			<a href="javascript:message_win('<?=$cms_url?>member/message_1.php');"><img src="<?=$cms_url?><?=$bt_msg?>" width="13" border="0" alt=""></a>
+			<a href="javascript:message_win('<?=$cms_url?>member/message_1.php');"><img src="<?=$cms_url?><?=$bt_msg?>" width="13" alt=""></a>
 			<a href="javascript:message_win('<?=$cms_url?>member/message_1.php');"><b style="font-size:11px;"> 새 쪽지</b></a><span   style="font-size:11px;"> : </span>
 			<b><a href="javascript:message_win('<?=$cms_url?>member/message_1.php');"><span style="font-size: 11px; color:<?=$color_msg?>;"><?=number_format($t_rows4[cnt_1])?></span></a> 개</b>
 
@@ -98,6 +98,6 @@
 				if($a==$url_4) {$a4="_"; $b=4;}else{$a4="";}
 				if($a==$url_5) {$a5="_"; $b=5;}else{$a5="";}
 			?>
-			<a href="<?=$cms_url?>_sales/sales_main.php"><img src="<?=$cms_url?>images/t_menu_1<?=$a1?>.png" border="0" name="tm_img0" onmouseover="img_over(0)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_project/project_main.php"><img src="<?=$cms_url?>images/t_menu_2<?=$a2?>.png" border="0" name="tm_img1" onmouseover="img_over(1)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_capital/capital_main.php"><img src="<?=$cms_url?>images/t_menu_3<?=$a3?>.png" border="0" name="tm_img2" onmouseover="img_over(2)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_contract/contract_main.php"><img src="<?=$cms_url?>images/t_menu_4<?=$a4?>.png" border="0" name="tm_img3" onmouseover="img_over(3)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_config/config_main.php"><img src="<?=$cms_url?>images/t_menu_5<?=$a5?>.png" border="0" name="tm_img4" onmouseover="img_over(4)" onmouseout="img_out(<?=$b?>)" alt=""></a></div>
+			<a href="<?=$cms_url?>_sales/sales_main.php"><img src="<?=$cms_url?>images/t_menu_1<?=$a1?>.png" id="tm_img0" onmouseover="img_over(0)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_project/project_main.php"><img src="<?=$cms_url?>images/t_menu_2<?=$a2?>.png" id="tm_img1" onmouseover="img_over(1)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_capital/capital_main.php"><img src="<?=$cms_url?>images/t_menu_3<?=$a3?>.png" id="tm_img2" onmouseover="img_over(2)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_contract/contract_main.php"><img src="<?=$cms_url?>images/t_menu_4<?=$a4?>.png" id="tm_img3" onmouseover="img_over(3)" onmouseout="img_out(<?=$b?>)" alt=""></a><a href="<?=$cms_url?>_config/config_main.php"><img src="<?=$cms_url?>images/t_menu_5<?=$a5?>.png" id="tm_img4" onmouseover="img_over(4)" onmouseout="img_out(<?=$b?>)" alt=""></a></div>
 	</div>
 </div>

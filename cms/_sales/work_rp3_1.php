@@ -11,11 +11,11 @@
 									<div style="float:left; width:80px; height:28px; background-color:#f4f4f4; padding-top:10px; color:black; text-align:center;">작성일자</div>
 									<div style="float:left; width:420px; height:28px; padding:9px 0px 0 5px;">
 										<div style="float:left;">
-											<input type="text" name="s_date" id="s_date" value="<?=$s_date?>" size="11" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
+											<input type="text" name="s_date" id="s_date" value="<?=$s_date?>" size="12" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
 											<a href="javascript:" onclick="cal_add(document.getElementById('s_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~
 										</div>
 										<div style="float:left; padding-left:5px; margin-right:5px;">
-											<input type="text" name="e_date" id="e_date" value="<?=$e_date?>" size="11" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
+											<input type="text" name="e_date" id="e_date" value="<?=$e_date?>" size="12" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
 											<a href="javascript:" onclick="cal_add(document.getElementById('e_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a>
 										</div>
 										<a href="javascript:" onclick="term_put('s_date', 'e_date', 'd');" title="오늘"><img src="../images/to_today.jpg" border="0" alt=""></a>
@@ -40,7 +40,7 @@
 										<input type="button" value=" 검 색 " onclick="submit();" class="inputstyle11" style="height:24px;">
 									</div>
 									</form>
-								</div><!-- //-->
+								</div> <!-- //-->
 								<!-- ================================= 거래처 contents S ================================= -->
 								<!-- <div style="height:336px;">
 									<div style="float:left; width:25px; height:26px; padding-top:5px; border-width:1px 1px 1px 0; border-style:solid; border-color:#dddddd; background-color:#E2F0FC; text-align:center; color:#003366;"><input type="checkbox" name="mnum_cont" disabled></div>

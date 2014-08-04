@@ -21,6 +21,7 @@
 	#sideinfo { width:200px; height:100px; float:right; background-color:#DCDAD9; }
 /************************ 레이 아웃 div CSS ************************/
 
+
 /* General Font CSS */
 	table,td, div, span, input, textarea, select{ font-family:맑은 고딕;  font-size: 12px; color: #48494F; }
 
@@ -78,8 +79,8 @@
 
 /* FORM CSS */
 	.inputstyle {border-width: 1px 1px 1px 1px; border-color:#91D752; border-style: solid; background:#F0FAE6; font-size:12px}
-	.searchline { border-width:1px 1px 1px 1px; border-color:#DBDBDB; border-style: solid; BACKGROUND-COLOR:#F8F8F7}
-	.bt_form { border-width: 1px 0 1px 1px; border-color:#cccccc; border-style: solid; }
+	.searchline { border-width:1px 1px 1px 1px; border-color:#DBDBDB; border-style: solid; BACKGROUND-COLOR:#F8F8F7;}
+	.bt_form { border-width: 1px 0 1px 1px; border-color:#cccccc; border-style: solid; cursor:pointer; }
 	.Inputcheck {border:#cccccc 0px solid;}
 	.inputstyle1 {font-family:맑은 고딕; color:#7A7A7A; border: #cccccc 1px solid; font-size: 9px; height:15px;}
 	.inputstyle11 {font-family:맑은 고딕; color:#7A7A7A; border: #cccccc 1px solid; font-size: 12px; background-color:#e0ecfe;}
@@ -87,11 +88,11 @@
 	.inputstyle2  { border-width:1px 1px 1px 1px; border-color: #cccccc; border-style: solid; font-size: 12px; height:18px;}
 	.inputstyle22 { border-width:1px 1px 1px 1px; border-color: #cccccc; border-style: solid; font-size: 12px; height:18px; background-color:#f4f3e8;}
 	.inputstyle_bt  { border:1px solid #eee; outline:1px solid #ccc; font-size: 11px; height:20px; padding-bottom:2px; background-color:#ECE9DD;}
-	.submit_bt  {font-family:맑은 고딕; border:1px solid #fff; outline:1px solid #ccc; font-size: 12px; background-color:#A4B0BD; color:white; padding-bottom:3px; }
-	.submit_bt2 {font-family:맑은 고딕; border:1px solid #eee; outline:1px solid #ccc; font-size: 12px; width:90px; height:28px; background-color:#838da5; color:white; padding-bottom:3px; }
+	.submit_bt  {font-family:맑은 고딕; border:1px solid #fff; outline:1px solid #ccc; font-size: 12px; background-color:#A4B0BD; color:white; padding-bottom:3px; cursor:pointer; cursor:pointer; }
+	.submit_bt2 {font-family:맑은 고딕; border:1px solid #eee; outline:1px solid #ccc; font-size: 12px; width:90px; height:28px; background-color:#838da5; color:white; padding-bottom:3px; cursor:pointer;}
 
     .input { font-size:9pt; color:black; border:1x solid black; }
 	.button {font-family:맑은 고딕; border: #cccccc 1px solid; font-size: 12px; background-color:#99ccff;}
-	.sub_bt1{border-width:1px 1px 1px 1px; border-color: #707070; border-style: solid; background-color:#DEDEDE; line-height:170%;}
-	.sub_bt2{border-width:1px 1px 1px 1px; border-color: #4A96B0; border-style: solid; background-color:#A6F4FF; line-height:170%;}
-	.sub_bt3{border-width:1px 1px 1px 1px; border-color: #0089B4; border-style: solid; background-color:#34B4E3; line-height:170%;}
+	.sub_bt1{border-width:1px 1px 1px 1px; border-color: #707070; border-style: solid; background-color:#DEDEDE; line-height:170%; cursor:pointer;}
+	.sub_bt2{border-width:1px 1px 1px 1px; border-color: #4A96B0; border-style: solid; background-color:#A6F4FF; line-height:170%;} cursor:pointer;
+	.sub_bt3{border-width:1px 1px 1px 1px; border-color: #0089B4; border-style: solid; background-color:#34B4E3; line-height:170%; cursor:pointer;}

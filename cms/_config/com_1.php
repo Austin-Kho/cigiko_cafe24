@@ -232,8 +232,8 @@
 							<input type="button" value="우편번호 검색" onclick="javascript:ZipWindow('../member/zip_search.php',2)" class="inputstyle_bt">
 							<input type="text" name="zipcode1" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2)" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> -
 							<input type="text" name="zipcode2" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2)" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
-							<input type="text" name="address1" size="50" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
-							<input type="text" name="address2" size="38" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> <font color="#788be2">나머지 주소</font>
+							<input type="text" name="address1" size="46" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
+							<input type="text" name="address2" size="32" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> <font color="#788be2">나머지 주소</font>
 						</td>
 					</tr>
 					<tr>
@@ -247,7 +247,7 @@
 					<tr>
 						<td class="form1" bgcolor="#F8F8F8" style="border:0px;" height="45">회사 영문주소</td>
 						<td style="color:#4B4B4B; padding:0 0 0 10px;" colspan="3">
-							<input type="text" name="en_address" size="126" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"><font color="#788be2"> <br>번지(number), 거리(street), 시(city), 도(state), 우편번호(postal code), 국가(country) 순으로 기재 </font>
+							<input type="text" name="en_address" size="120" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"><font color="#788be2"> <br>번지(number), 거리(street), 시(city), 도(state), 우편번호(postal code), 국가(country) 순으로 기재 </font>
 						</td>
 					</tr>
 					<tr>
@@ -500,8 +500,8 @@
 							<input type="button" value="우편번호 검색" onclick="javascript:ZipWindow('../member/zip_search.php',2)" class="inputstyle_bt">
 							<input type="text" name="zipcode1" value="<?=substr($rows[zipcode],0,3)?>" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2);" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> -
 							<input type="text" name="zipcode2" value="<?=substr($rows[zipcode],4,3)?>" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2);" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
-							<input type="text" name="address1" value="<?=$rows[address1]?>" size="50" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
-							<input type="text" name="address2" value="<?=$rows[address2]?>" size="38" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> <font color="#788be2">나머지 주소</font>
+							<input type="text" name="address1" value="<?=$rows[address1]?>" size="46" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
+							<input type="text" name="address2" value="<?=$rows[address2]?>" size="32" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> <font color="#788be2">나머지 주소</font>
 						</td>
 					</tr>
 					<tr>
@@ -514,7 +514,7 @@
 					<tr>
 						<td class="form1" bgcolor="#F8F8F8" style="border:0px;" height="45">회사 영문주소</td>
 						<td style="color:#4B4B4B; padding:0 0 0 10px;" colspan="3">
-							<input type="text" name="en_address" value="<?=$rows[en_address]?>" size="126" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
+							<input type="text" name="en_address" value="<?=$rows[en_address]?>" size="120" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
 							<font color="#788be2"> <br>번지(number), 거리(street), 시(city), 도(state), 우편번호(postal code), 국가(country) 순으로 기재 </font>
 						</td>
 					</tr>

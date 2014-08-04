@@ -50,7 +50,7 @@
 							</td>
 							<td width="15%" class="form1" style="border-width:1px 0 1px 0; border-style:solid;" bgcolor="#F8F8F8"> 프로젝트 종류 <font color="red">*</font></td>
 							<td width="35%" class="form2" style="border-width:1px 0 1px 0; border-style:solid;">
-								<select name="sort" class="inputstyle2" style="height:20px; width:100px;">
+								<select name="sort" class="inputstyle2" style="height:20px; width:90px;">
 									<option value="" selected> 선 택
 									<option value="1"> 아파트(일반분양)
 									<option value="2"> 아파트(조합)
@@ -365,7 +365,7 @@
 							<td  class="form2">
 								<div style="float:left;">
 									<input type="text" name="start_date" id="start_date" value="" size="15" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
-									<a href="javascript:" onclick="cal_add(document.getElementById('start_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~ 
+									<a href="javascript:" onclick="cal_add(document.getElementById('start_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~
 								</div>
 								<div style="float:left; padding-left:5px; margin-right:5px;">
 									<input type="text" name="expiry_date" id="expiry_date" value="" size="15" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">

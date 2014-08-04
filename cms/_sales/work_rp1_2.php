@@ -2,7 +2,7 @@
 								<!-- ================================= 거래처 contents S ================================= -->
 								<div style="height:447px;">
 									<div style="height:18px; background-color:#e8e8e8; margin-bottom:2px;"></div>
-									<div style="float:left; width:15px; height:24px; padding-top:10px;"><img src="../images/list_bt.jpg" border="0" alt=""></div>
+									<div style="float:left; width:15px; height:24px; padding-top:10px;"><img src="../images/list_bt.jpg" alt=""></div>
 									<div style="height:28px; padding-top:8px; color:#000000;"><b><?if($mode=='reg'){?>고객상담일지 신규등록<?}else if($mode=='modify'){?>고객상담내용 추가 등록<?} ?></b></div>
 									<?
 										if($mode=='modify'){
@@ -28,8 +28,8 @@
 									<div style="float:left; width:240px; height:26px; padding:5px 0 0 10px; border-width:1px 0 1px 0; border-style:solid; border-color:#dddddd; ">
 										<div style="float:left;">
 											<input type="text" name="coun_date" id="coun_date" value="<?=$row[coun_date]?>" size="30" class="inputstyle2" style="height:17px; width:140px;" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
-											<a href="javascript:" onclick="cal_add(document.getElementById('coun_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a>
-											<!-- <a href="javascript:" onclick=" to_del('coun_date');" title="지우기"><img src="../images/del.jpg" border="0" alt=""></a> -->
+											<a href="javascript:" onclick="cal_add(document.getElementById('coun_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" alt="" /></a>
+											<!-- <a href="javascript:" onclick=" to_del('coun_date');" title="지우기"><img src="../images/del.jpg" alt=""></a> -->
 										</div>
 									</div>
 

@@ -81,15 +81,15 @@
 											if($rows[acc_cla]==1) $acc_cla = "매출 거래처";
 											if($rows[acc_cla]==2) $acc_cla = "매입 거래처";
 											if($rows[acc_cla]==3) $acc_cla = "매출매입 거래처";
-											$a = explode("/", $rows[tax_addr]);											
+											$a = explode("/", $rows[tax_addr]);
 											$tax_addr = str_replace("/"," ",substr($rows[tax_addr],7));
 									?>
 									<div style="clear:left; float:left; width:25px; height:24px; padding-top:4px; border-width:0 1px 1px 0; text-align:center;" class="bor_ddd"><input type="checkbox" name="seq[]" value="<?$rows[seq]?>"></div>
-									<div style="float:left; width:135px; height:24px; padding-top:4px; border-width:0 0 1px 0; text-align:center;" class="bor_ddd"><a href="<?$cms_url?>?m_di=1&amp;s_di=3&amp;ss_di=2&amp;mode=modify&amp;seq=<?=$rows[seq]?>" class="no_auth"><?=$rows[si_name]?></a></div>
+									<div style="float:left; width:135px; height:24px; padding-top:4px; border-width:0 0 1px 0; text-align:center;" class="bor_ddd"><a href="<?$cms_url?>?m_di=1&amp;s_di=3&amp;ss_di=2&amp;mode=modify&amp;seq=<?=$rows[seq]?>" class="no_auth" title="<?=$rows[si_name]?>"><?=rg_cut_string($rows[si_name],8,"..")?></a></div>
 									<div style="float:left; width:90px; height:24px; padding-top:4px; border-width:0 0 1px 1px; text-align:center;" class="bor_ddd"><?=$acc_cla?></div>
 									<div style="float:left; width:100px; height:24px; padding-top:4px; border-width:0 0 1px 1px; text-align:center;" class="bor_ddd"><?=$rows[main_tel]?></div>
 									<div style="float:left; width:343px; height:24px; padding:4px 0 0 10px; border-width:0 0 1px 1px;" class="bor_ddd"><?=rg_cut_string($tax_addr, 50, "..")?></div>
-									<div style="float:left; width:107px; height:24px; padding:4px 0 0 10px; border-width:0 0 1px 1px;" class="bor_ddd"><?=rg_cut_string($rows[note], 16, "..")?></div>
+									<div style="float:left; width:107px; height:24px; padding:4px 0 0 10px; border-width:0 0 1px 1px; cursor:pointer;" class="bor_ddd" title="<?=$rows[note]?>"><?=rg_cut_string($rows[note], 8, "..")?></div>
 									<?
 											}
 										}

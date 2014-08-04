@@ -12,18 +12,18 @@
 	$ms = $_REQUEST['ms'];
 	$mn = $_REQUEST['mn'];
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> -->
   <title><?=$doc_title?></title>
 	<link rel="shortcut icon" href="<?=$cms_url?>images/cms.ico">
 	<link rel="stylesheet" href="<?=$cms_url?>common/cms.css" type="text/css">
-	<script language="JavaScript" src="../common/global.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../common/config.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../common/member.js" type="text/javascript"></script>
-	<script language="JavaScript" src="../include/calendar/calendar.js" type="text/javascript"></script>
+	<script src="../common/global.js"></script>
+	<script src="../common/config.js"></script>
+	<script src="../common/member.js"></script>
+	<script src="../include/calendar/calendar.js"></script>
 	<script type="text/javascript">
 		<!--
 		//////////////////////// 직원 퇴사 처리 함수
@@ -43,7 +43,7 @@
 			}else{
 				return;
 			}
-		}		
+		}
 		//-->
 	</script>
  </head>
@@ -59,8 +59,8 @@
 		?>
 		<div style="width:1080px; height:650px; text-align:center; display: table-cell; vertical-align: middle;">
 			<p>로그인 정보가 없습니다. 다시 로그인하여 주십시요!</p>
-			<input type="button" value="로그인" onclick="location.href='<?=$cms_url?>member/login_form.php';">
-			<input type="button" value=" 닫 기 " onclick="window.self.close()">
+			<input type="button" value="로그인" class="sub_bt1" onclick="location.href='<?=$cms_url?>member/login_form.php';">
+			<input type="button" value=" 닫 기 " class="sub_bt1" onclick="window.self.close()">
 		</div>
 		<? }else{?>
 		<div>

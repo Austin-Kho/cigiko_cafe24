@@ -100,7 +100,7 @@
 								$row = mysql_fetch_array($result);
 							?>
 							</div>
-							<div style="float:left; width:260px; height:26px; padding:9px 0px 0 0px; text-align:center;"><? echo "<font color='#cc0000'>*</font> <b>".$row[pj_name]."</b>";?></div>	
+							<div style="float:left; width:260px; height:26px; padding:9px 0px 0 0px; text-align:center;"><? echo "<font color='#cc0000'>*</font> <b>".$row[pj_name]."</b>";?></div>
 							<div style="float:left; width:120px; height:26px; padding-top:9px; color:black; text-align:center; background-color:#F4F4F4;">소 속</div>
 							<?
 								$w_rlt = mysql_query("SELECT headq, team FROM cms_resource_headq, cms_resource_team WHERE cms_resource_headq.seq='$headq' AND cms_resource_team.seq='$team' ", $connect);
@@ -114,10 +114,10 @@
 						</div>
 						<?
 							if(!$pj_list){ $pj_list=$member_row[pj_seq];} // 프로젝트 리스트의 값 [현장 seq 넘버] 가 없으면, 즉 현장 관계자일 때는 담당 현장 프로젝트 seq 넘버 설정
-							$pos_con_= $_REQUEST['pos_con_'];							
+							$pos_con_= $_REQUEST['pos_con_'];
 							$type_data_ =  $_REQUEST['type_data_'];
 							$dong_data_ =  $_REQUEST['dong_data_'];
-							$diff_data_ =  $_REQUEST['diff_data_'];							
+							$diff_data_ =  $_REQUEST['diff_data_'];
 							$list_limit = $_REQUEST['list_limit'];
 							$s_date = $_REQUEST['s_date'];
 							$e_date = $_REQUEST['e_date'];
@@ -161,20 +161,20 @@
 								$color[$type_info[$i]]=$type_color[$i];
 							}
 							///////////////////////////////////////////////////////////////////////
-						?>	
+						?>
 						<table width="100%" border="0" cellpadding="0" cellspacing="0">
 						<tr>
 							<td style="border-width:0 1px 1px 0;" class="form3"><div style="float:left; width:199px; height:24px; padding-top:4px;text-align:center;"><?=$row[pj_name]?></div></td>
 							<td>
 								<div style="float:left;">
-								
+
 								<?
 									$query = "SELECT type_ho FROM cms_project_data WHERE pj_seq = '$pj_list' GROUP BY type_ho ORDER BY type_ho";
 									$result = mysql_query($query, $connect);
 									while($rows = mysql_fetch_array($result)){
 								?>
 								<table width="100%" border="0" cellpadding="0" cellspacing="0">
-								<tr>									
+								<tr>
 									<td style="border-width:0 1px 1px 0;" class="form3"><div style="float:left; width:61px; height:24px; padding:4px 0 0 38px; text-align:left;"><span style="padding:0 5px 0 5px;  background-color:<?=$color[$rows[type_ho]]?>; margin-right:10px;">&nbsp;</span><?=$rows[type_ho]?></div></td>
 									<td>
 								<?
@@ -185,13 +185,13 @@
 											if($sort_rows[sa_sort]==1) $sort = "<font color='0000ff'>일반</font>";
 								?>
 									<table width="100%" border="0" cellpadding="0" cellspacing="0">
-									<tr>									
+									<tr>
 										<td style="border-width:0 1px 1px 0;" class="form3"><div style="float:left; width:74px; height:24px; padding-top:4px; text-align:center;"><?=$sort?></div></td>
 										<td>
 								<?
 											$diff_qry = "SELECT diff_no FROM cms_project_data WHERE pj_seq = '$pj_list' AND sa_sort = '$sort_rows[sa_sort]' GROUP BY diff_no ORDER BY diff_no";
 											$diff_rlt = mysql_query($diff_qry, $connect);
-											
+
 											while($diff_rows = mysql_fetch_array($diff_rlt)){
 												$sub_qry = "SELECT COUNT(*) AS sedae, SUM(is_except) AS is_except, SUM(is_pro_cont) AS pro_cont, SUM(is_contract) AS contract
 														FROM cms_project_data
@@ -207,8 +207,8 @@
 													$rate_con = $sub_row[contract]/$sale_num*100; // 타입별 계약율
 													$rete_plus = ($sub_row[pro_cont]+$sub_row[contract])/$sale_num*100; //타입별 분양율
 												}
-								?>										
-										<div style="height:28px; text-align:right;">										
+								?>
+										<div style="height:28px; text-align:right;">
 											<div style="float:left; width:74px; height:24px; padding-top:4px; text-align:center;" class="form3"><?=$diff_rows[diff_no]."차"?></div>
 											<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0;" class="form3"><?=number_format($sub_row[sedae])."세대"?></div>
 											<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0; background-color:#ecf2ff; color:#003366;" class="form3"><?=number_format($sale_num)."세대"?></div>
@@ -216,7 +216,7 @@
 											<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0;" class="form3"><?=number_format($sub_row[contract])."건"?></div>
 											<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0;" class="form3"><?=number_format($rate_con, 2)."%"?></div>
 											<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0; border-width:0 0 1px 0;" class="form3"><?=number_format($rete_plus, 2)."%"?></div>
-										</div>										
+										</div>
 								<?	 }?></td><tr></table><?}?></td></tr></table><?}?>
 								</div>
 							</td>
@@ -235,7 +235,7 @@
 							<div style="float:left; width:199px; height:24px; padding-top:4px; border-width:0 1px 0 0; text-align:center;" class="form3">합 계</div>
 							<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0; border-width:0 1px 0 0; color:#003366;" class="form3"></div>
 							<div style="float:left; width:54px; height:24px; padding:4px 20px 0 0;" class="form3"></div>
-							<div style="float:left; width:54px; height:24px; padding:4px 20px 0 0;" class="form3"></div>							
+							<div style="float:left; width:54px; height:24px; padding:4px 20px 0 0;" class="form3"></div>
 							<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0; border-width:0 1px 0 0; color:#003366;" class="form3"><?=$tot_row[sedae]."세대"?></div>
 							<div style="float:left; width:79px; height:24px; padding:4px 20px 0 0; border-width:0 1px 0 0; color:#003366;" class="form3"><?=$tot_sale_num."세대"?></div>
 							<div style="float:left; width:74px; height:24px; padding:4px 20px 0 0; border-width:0 1px 0 0; color:#003366;" class="form3"><?=$tot_row[pro_con]."건"?></div>
@@ -253,7 +253,7 @@
 								if($type_data_) $where.= " AND type_ho = '$type_data_' ";
 								if($dong_data_) $where.= " AND pj_dong = '$dong_data_' ";
 								if($diff_data_) $where.= " AND diff_no = '$diff_data_' ";
-								
+
 								if($pos_con_==1) $where.=" AND (is_pro_cont = '0' AND is_contract ='0') "; // 미계약인 경우
 								if(!$pos_con_||$pos_con_==2) { // 청약+계약인 경우
 									$where.=" AND (is_pro_cont = '1' OR is_contract = '1') ";
@@ -314,14 +314,14 @@
 								<input type="button" value=" 검 색 " onclick="submit();" class="inputstyle_bt">
 							</div>
 							<div style="float:right; padding-right:10px;">
-								
-								<input type="text" name="e_date" id="e_date" value="<?=$e_date?>" size="12" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
+
+								<input type="text" name="e_date" id="e_date" value="<?=$e_date?>" size="10" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
 								<a href="javascript:" onclick="cal_add(document.getElementById('e_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a>
 								<a href="javascript:" onclick=" to_del('s_date', 'e_date');" title="지우기"><img src="../images/del.jpg" border="0" alt=""></a>
 							</div>
 							<div style="float:right; padding-right:5px;">
-								<input type="text" name="s_date" id="s_date" value="<?=$s_date?>" size="12" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
-								<a href="javascript:" onclick="cal_add(document.getElementById('s_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~ 
+								<input type="text" name="s_date" id="s_date" value="<?=$s_date?>" size="10" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
+								<a href="javascript:" onclick="cal_add(document.getElementById('s_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~
 							</div>
 							<div style="float:right; padding-right:10px;">
 								<select name="pos_con_" style="width:70px;">
@@ -352,7 +352,7 @@
 									<option value="<?=$rows[pj_dong]?>" <?if($dong_data_==$rows[pj_dong]) echo "selected";?>> <?=$rows[pj_dong]?>
 									<? } ?>
 								</select>
-							</div>							
+							</div>
 							<div style="float:right; padding:0 10px; 0 15px;">
 								<b>동 별</b> :
 							</div>
@@ -376,7 +376,7 @@
 							</div>
 							<div style="float:right; padding:0 10px; 0 15px;">
 								<b>차수별</b> :
-							</div>							
+							</div>
 							<?}?>
 							<div style="float:right;">
 								<select name="type_data_" style="width:70px;" onchange="submit();">
@@ -390,7 +390,7 @@
 									<? } ?>
 								</select>
 							</div>
-							
+
 							<div style="float:right; padding-right:10px;">
 								<b>타입별</b> :
 							</div>
@@ -406,11 +406,11 @@
 								<b>표시</b> :
 							</div>
 						</div>
-						<!-------디브 스크롤 스타트------->
+						<!-------디브 스크롤 스타트-----//-->
 						<div style="overflow-x:auto; width:1048px;">
-							<div style="text-align:center; padding-top:8px; height:25px; background-color:#f4f4f4; border-width:1px 0 1px 0;  border-color:#ccc; border-style:solid; width:12930px;">
+							<div style="text-align:center; padding-top:8px; height:25px; background-color:#f4f4f4; border-width:1px 0 1px 0;  border-color:#ccc; border-style:solid; <?if($data_cr==0) echo "width:1048px;"; else echo "width:12930px;";?>">
 							<?
-								if($data_cr==0){ // 동호수 관리프로젝트
+								if($data_cr==0){ // 동호수 관리프로젝트///
 							?>
 								<div style="float:left; width:41px;">동</div>
 								<div style="float:left; width:46px;">호수</div>
@@ -441,7 +441,7 @@
 																   SUM(m_pay_7th_1) AS mp_71, SUM(m_pay_7th_2) AS mp_72, SUM(m_pay_7th_3) AS mp_73,
 																   SUM(last_pay_1) AS lp_1, SUM(last_pay_2) AS lp_2, SUM(last_pay_3) AS lp_3
 																   FROM cms_project_data WHERE pj_seq = '$pj_list' ";
-																   
+
 								$cash_rlt = mysql_query($cash_qry, $connect);
 								$cash_row = mysql_fetch_array($cash_rlt);
 
@@ -451,7 +451,7 @@
 								<div style="float:left; width:81px;">계약관리번호</div>
 								<div style="float:left; width:46px;">타입</div>
 								<div style="float:left; width:41px;">구분</div>
-								<div style="float:left; width:41px;">차수</div>								
+								<div style="float:left; width:41px;">차수</div>
 								<div style="float:left; width:41px;">동</div>
 								<div style="float:left; width:46px;">호수</div>
 								<div style="float:left; width:150px;">비 고 [특이사항]</div>
@@ -462,7 +462,7 @@
 								<div style="float:left; width:81px;">청약(해지)일</div>
 								<div style="float:left; width:56px;">청약자</div>
 								<div style="float:left; width:91px;">연락처1</div>
-								<div style="float:left; width:91px;">연락처2</div>								
+								<div style="float:left; width:91px;">연락처2</div>
 								<div style="float:left; width:81px;">청약금</div>
 								<div style="float:left; width:81px;">계약 예정일</div>
 								<div style="float:left; width:55px;">해지</div>
@@ -484,7 +484,7 @@
 								<div style="float:left; width:38px;">막도</div>
 								<div style="float:left; width:38px;">신분</div>
 								<div style="float:left; width:38px;">배주</div>
-								
+
 								<div style="float:left; width:86px;">업무대행비1</div>
 								<div style="float:left; width:81px;">입금일1</div>
 								<div style="float:left; width:56px;">입금자1</div>
@@ -706,7 +706,7 @@
 
 										$id_ad = explode(":", $rows1[cont_id_addr]);
 										$dm_ad = explode(":", $rows1[cont_dm_addr]);
-										
+
 										$id_addr = $id_ad[0]."-".$id_ad[1]."&nbsp;&nbsp;&nbsp;".$id_ad[2]." ".$id_ad[3];
 										$dm_addr = $dm_ad[0]."-".$dm_ad[1]."&nbsp;&nbsp;&nbsp;".$dm_ad[2]." ".$dm_ad[3];
 
@@ -728,7 +728,7 @@
 										$last_pay = $rows1[last_pay_1]+$rows1[last_pay_2]+$rows1[last_pay_3]; // 잔금 합계
 										$total_pay = number_format($deposit_1st+$deposit_2nd+$deposit_3rd+$deposit_4th+$m_pay_1st+$m_pay_2nd+$m_pay_3rd+$m_pay_4th+$m_pay_5th+$m_pay_6th+$m_pay_7th+$last_pay); // 분담금 총 합계
 							?>
-							<div style="clear:left; height:24px; width:12930px; text-align:center; <?=$bgcolor?>">								
+							<div style="clear:left; height:24px; width:12930px; text-align:center; <?=$bgcolor?>">
 								<div style="clear:left; float:left; width:80px; height:22px; padding-top:2px; background-color:<?=$color[$rows1[type_ho]]?>;" class="form3">
 									<?if($w_auth>0) { //관리(쓰기)권한이 있는 경우에만 수정 가능 ?>
 									<a href="sales_main.php?m_di=2&amp;s_di=2&amp;pj_list=<?=$pj_list?>&amp;type=<?=$rows1[type_ho]?>&amp;con_no=<?=$rows1[con_no]?>&amp;mode=modi&amp;cont_sort2=<?=$cont_sort2?>" title="<?=$rows1[con_no].'번 수정등록'?>">
@@ -768,7 +768,7 @@
 								<div style="float:left; width:37px; height:22px; padding-top:2px; <?if($rows1[doc_6]==1) echo 'color:red;'?>" class="form3"><?if($rows1[is_contract]==1){if($rows1[doc_6]==0) {echo "완료";}else{echo "미비";}}?><!--막도 --></div>
 								<div style="float:left; width:37px; height:22px; padding-top:2px; <?if($rows1[doc_7]==1) echo 'color:red;'?>" class="form3"><?if($rows1[is_contract]==1){if($rows1[doc_7]==0) {echo "완료";}else{echo "미비";}}?><!-- 신분 --></div>
 								<div style="float:left; width:37px; height:22px; padding-top:2px; <?if($rows1[doc_8]==1) echo 'color:red;'?>" class="form3"><?if($rows1[is_contract]==1){if($rows1[doc_8]==0) {echo "완료";}else{echo "미비";}}?><!--배주 --></div>
-								
+
 								<div style="float:left; width:75px; height:22px; padding:2px 10px 0 0; text-align:right;" class="form3"><?if($rows1[charge_1]>0) echo number_format($rows1[charge_1]);?><!--업무대행비 1 --></div>
 								<div style="float:left; width:80px; height:22px; padding-top:2px;" class="form3"><?if($rows1[charge_1_date]>0) echo $rows1[charge_1_date];?><!-- 입금일 1 --></div>
 								<div style="float:left; width:55px; height:22px; padding-top:2px;" class="form3"><?=$rows1[charge_1_who]?><!-- 입금자 1 --></div>
@@ -918,14 +918,14 @@
 								<div style="float:left; width:75px; height:22px; padding:2px 10px 0 0; text-align:right;" class="form3"><?if($rows1[last_pay_3]>0) echo number_format($rows1[last_pay_3]);?><!--잔금 3 --></div>
 								<div style="float:left; width:80px; height:22px; padding-top:2px;" class="form3"><?if($rows1[last_pay_3_date]>0) echo $rows1[last_pay_3_date];?><!-- 입금일 3 --></div>
 								<div style="float:left; width:55px; height:22px; padding-top:2px;" class="form3"><?=$rows1[last_pay_3_who]?><!-- 입금자 3 --></div>
-								<div style="float:left; width:55px; height:22px; padding-top:2px;" class="form3"><?=$rows1[updater]?><!-- 등록직원 --></div>	
-								<div style="float:left; width:100px; height:22px; padding-top:2px; border-width:0 0 1px 0; border-style=solid;" class="form3"><?if($rows1[updater]) echo substr($rows1[reg_time], 2, 14)?><!-- 등록직원 --></div>	
+								<div style="float:left; width:55px; height:22px; padding-top:2px;" class="form3"><?=$rows1[updater]?><!-- 등록직원 --></div>
+								<div style="float:left; width:100px; height:22px; padding-top:2px; border-width:0 0 1px 0; border-style=solid;" class="form3"><?if($rows1[updater]) echo substr($rows1[reg_time], 2, 14)?><!-- 등록직원 --></div>
 							</div>
-							<?								
+							<?
 									}
 								}
 								mysql_free_result($result1);
-							?>	
+							?>
 						</div>
 						<!-------디브 스크롤 엔드------->
 						</form>

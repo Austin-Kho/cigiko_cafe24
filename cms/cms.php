@@ -10,8 +10,8 @@
 <!DOCTYPE HTML>
 <html lang="ko">
  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">//-->
 	<title> <?=$doc_title?> </title>
 	<link rel="shortcut icon" href="<?=$cms_url?>images/cms.ico">
 	<link type="text/css" rel="stylesheet" href="<?=$cms_url?>common/cms.css">
@@ -28,14 +28,16 @@
 	?>
 	<div style="width:1080px; height:650px; text-align:center; display: table-cell; vertical-align: middle;">
 		<p>로그인 정보가 없습니다. 다시 로그인하여 주십시요!</p>
-		<input type="button" value="로그인" onclick="location.href='<?=$cms_url?>member/login_form.php';">
-		<input type="button" value=" 닫 기 " onclick="window.self.close()">
+		<input type="button" value="로그인" class="sub_bt1" onclick="location.href='<?=$cms_url?>member/login_form.php';">
+		<input type="button" value=" 닫 기 " class="sub_bt1" onclick="window.self.close()">
 	</div>
 	<? }else{?>
 	<div style="height:700px;">
 		<div style="float:left; width:730px; height:485px; padding-right:10px;">
 			<div style="height:230px;"><!-- 메인 배너 div -->
-				<div style="float:left; width:242px;"><a href="#/"><img src="images/img/3.jpg" width="235" height="220" title="월드메르디앙 펠라티움55" alt="" /></a></div>
+				<div style="float:left; width:242px;"><a href="#/"><img src="images/img/3.jpg" width="235" height="220" title="월드메르디앙 가야" alt="" /></a></div>
+				<div style="float:left; width:242px;"><a href="http://dymaru.co.kr/" target="_blank"><img src="images/img/2.jpg" width="235" height="220" title="월드메르디앙 대연마루" alt="" /></a></div>
+				<div style="float:left; width:242px;"><a href="#/"><img src="images/img/1.jpg" width="235" height="220" title="월드메르디앙 펠라티움55" alt="" /></a></div>
 			</div>
 			<div style="height:28px; text-align:center; padding-top:8px;"><a href="#;"><img src="images/vit_bt.jpg" title="1" alt="" /></a></div>
 			<div style="clear:left; width:730px;"><!-- 공지 사항 div -->
