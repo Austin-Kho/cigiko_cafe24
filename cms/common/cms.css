@@ -21,7 +21,6 @@
 	#sideinfo { width:200px; height:100px; float:right; background-color:#DCDAD9; }
 /************************ 레이 아웃 div CSS ************************/
 
-
 /* General Font CSS */
 	table,td, div, span, input, textarea, select{ font-family:맑은 고딕;  font-size: 12px; color: #48494F; }
 
@@ -29,7 +28,7 @@
 	.small_text{ font-family:맑은 고딕;  font-size: 11px; color: #7A7A7A; } /* head & foot */
 
 /* 기타 CSS */
-	img,input {vertical-align:middle;}
+	img,input { border:0; vertical-align:middle;}
 	a, input {outline:none; select-dummy: expression(this.hideFocus=true);}
 
 

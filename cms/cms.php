@@ -7,7 +7,7 @@
 	// MySQL 연결
 	$connect=dbconn();
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html lang="ko">
  <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,11 +35,9 @@
 	<div style="height:700px;">
 		<div style="float:left; width:730px; height:485px; padding-right:10px;">
 			<div style="height:230px;"><!-- 메인 배너 div -->
-				<div style="float:left; width:242px;"><a href="#/"><img src="images/img/3.jpg" width="235" height="220" border="0" title="월드메르디앙 가야" alt="" /></a></div>
-				<div style="float:left; width:242px;"><a href="http://dymaru.co.kr/" target="_blank"><img src="images/img/2.jpg" width="235" height="220" border="0" title="월드메르디앙 대연마루" alt="" /></a></div>
-				<div style="float:left; width:242px;"><a href="#/"><img src="images/img/1.jpg" width="235" height="220" border="0" title="월드메르디앙 펠라티움55" alt="" /></a></div>
+				<div style="float:left; width:242px;"><a href="#/"><img src="images/img/3.jpg" width="235" height="220" title="월드메르디앙 펠라티움55" alt="" /></a></div>
 			</div>
-			<div style="height:28px; text-align:center; padding-top:8px;"><a href="#;"><img src="images/vit_bt.jpg" border="0" title="1" alt="" /></a></div>
+			<div style="height:28px; text-align:center; padding-top:8px;"><a href="#;"><img src="images/vit_bt.jpg" title="1" alt="" /></a></div>
 			<div style="clear:left; width:730px;"><!-- 공지 사항 div -->
 				<div style="width:706px; height:19px; border:1px solid #CBCDD9; padding:5px 0 0 10px;  color:#000000; background:url('../images/headcell_bg.jpg')"><b>공지사항</b></div>
 				<div style="width:700px; height:156px; padding:5px 8px 5px 8px; border-width:0 1px 1px 1px; border-style:solid; border-color:#CBCDD9;">
