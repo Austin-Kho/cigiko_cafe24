@@ -4,7 +4,6 @@ sftp-config.json
 #db info
 auth.php
 config.php
-util.php
 config_set.php
 
 
