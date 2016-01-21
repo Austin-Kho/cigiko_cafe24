@@ -156,10 +156,10 @@
 								</select>
 							</td>
 							<td width="60" class="form2" bgcolor="#e4f1d8" style="color:black;">거래기간 </td>
-							<td class="form2" colspan="2">
+							<td class="form2" colspan="2">							
 							<div style="float:left;">
 								<input type="text" name="s_date" id="s_date" value="<?=$s_date?>" size="10" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
-								<a href="javascript:" onclick="cal_add(document.getElementById('s_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~
+								<a href="javascript:" onclick="cal_add(document.getElementById('s_date'),this); event.cancelBubble=true"> <img src="http://cigiko.cafe24.com/cms/images/calendar.jpg" border="0" alt="" /></a> ~ 
 							</div>
 							<div style="float:left; padding-left:5px; margin-right:5px;">
 								<input type="text" name="e_date" id="e_date" value="<?=$e_date?>" size="10" class="inputstyle2" onclick="cal_add(this); event.cancelBubble=true"  readonly  onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')">
@@ -168,7 +168,7 @@
 							<a href="javascript:" onclick="term_put('s_date', 'e_date', 'd');" title="오늘"><img src="../images/to_today.jpg" border="0" alt=""></a>
 							<a href="javascript:" onclick="term_put('s_date', 'e_date', 'w');" title="1주일"><img src="../images/to_week.jpg" border="0" alt=""></a>
 							<a href="javascript:" onclick="term_put('s_date', 'e_date', 'm');" title="한달"><img src="../images/to_month.jpg" border="0" alt=""></a>
-							<a href="javascript:" onclick="term_put('s_date', 'e_date', '3m');" title="3개월"><img src="../images/to_3month.jpg" border="0" alt=""></a>
+							<a href="javascript:" onclick="term_put('s_date', 'e_date', '3m');" title="3개월"><img src="../images/to_3month.jpg" border="0" alt=""></a>	
 							<a href="javascript:" onclick=" to_del('s_date', 'e_date');" title="지우기"><img src="../images/del.jpg" border="0" alt=""></a>
 							</td>
 							<td class="form2">
@@ -180,7 +180,7 @@
 									<option value="5" <?if($sh_con==5) echo "selected";?>> 증빙서류
 								</select>
 							</td>
-							<td class="form2"><input type="text" name="sh_text" value="<?=$sh_text?>" size="16" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')" onClick="this.value='' "></td>
+							<td class="form2"><input type="text" name="sh_text" value="<?=$sh_text?>" size="18" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2')" onClick="this.value='' "></td>
 							<td class="form2"><input type="button" value=" 검 색 " onclick="submit();" class="inputstyle11" style="height='23'; width='60';"></td>
 						</tr>
 						</table>
@@ -194,9 +194,9 @@
 								<td width="80" bgcolor="#EAEAEA" class="tb1"> 구 분</td>
 								<td width="110" bgcolor="#EAEAEA" class="tb1"> 계정과목 <a href="javascript:" onclick="popUp_size('<?=$cms_url?>_capital/account.php','account',700,800)" title="계정과목 관리"><img src="../images/set.png" height="10" border="0" alt="설정"></a></td>
 								<td width="190" bgcolor="#EAEAEA" class="tb1">적 요</td>
-								<td width="100" bgcolor="#EAEAEA" class="tb1">거 래 처</td>
+								<td width="100" bgcolor="#EAEAEA" class="tb1">거 래 처</td>								
 								<td width="50" bgcolor="#EAEAEA" class="tb1">입금처</td>
-								<td width="90" bgcolor="#EAEAEA" class="tb1">입금 금액</td>
+								<td width="90" bgcolor="#EAEAEA" class="tb1">입금 금액</td>								
 								<td width="50" bgcolor="#EAEAEA" class="tb1">출금처</td>
 								<td width="90" bgcolor="#EAEAEA" class="tb1">출금 금액</td>
 								<td width="90" bgcolor="#EAEAEA" class="tb1">증빙 서류</td>
@@ -290,9 +290,9 @@
 								<td align="left" height="30" class="tb2"><?=rg_cut_string($rows1[cont],20,"..");?></td>
 								<td align="left" height="30" class="tb2"><?=rg_cut_string($acc,8,"..")?></td>
 								<td align="center" height="30" bgcolor="#ececff" class="tb2"><?=$in_acc?></td>
-								<td align="right" height="30" class="tb2" bgcolor="#ececff" style="padding-right:10px;"><?=$inc?></td>
+								<td align="right" height="30" class="tb2" bgcolor="#ececff" style="padding-right:10px;"><?=$inc?></td>								
 								<td align="center" height="30" bgcolor="#fff0f0" class="tb2"><?=$out_acc?></td>
-								<td align="right" height="30" class="tb2" bgcolor="#fff0f0" style="padding-right:10px;"><?=$exp?></td>
+								<td align="right" height="30" class="tb2" bgcolor="#fff0f0" style="padding-right:10px;"><?=$exp?></td>								
 								<td align="center" height="30" class="tb2"><?=$evi?></td>
 								<!-- <td align="center" height="30" class="tb2"></td> -->
 								<?if($w_auth>0){ //쓰기 권한 있는 직원에게만 출력 ?>

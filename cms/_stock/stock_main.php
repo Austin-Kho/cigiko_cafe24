@@ -21,17 +21,17 @@
 	if($s_di=='5') $s_dis5 = "display:inline"; else	$s_dis5 = "display:none";
 	if($s_di=='6') $s_dis6 = "display:inline"; else	$s_dis6 = "display:none";
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title><?=$doc_title?></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><?=$doc_title?></title>
 	<link rel="shortcut icon" href="<?=$cms_url?>images/cms.ico">
 	<link rel="stylesheet" href="<?=$cms_url?>common/cms.css" type="text/css">
-	<script src="../common/global.js"></script>
-	<script src="../common/config.js"></script>
-	<script src="../include/calendar/calendar.js"></script>
+	<script language="JavaScript" src="../common/global.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../common/config.js" type="text/javascript"></script>
+	<script language="JavaScript" src="../include/calendar/calendar.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		<!--
 		var checkflag="false";

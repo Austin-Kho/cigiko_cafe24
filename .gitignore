@@ -1,16 +1,10 @@
 # a comment - this is ignored
 sftp-config.json
 
-#image file
-cms.ico
-cms_box_logo.png
-cms_box_logo_.png
-cms_main_logo.png
-cms_main_logo_.png
-
 #db info
 auth.php
 config.php
+util.php
 config_set.php
 
 
