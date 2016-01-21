@@ -6,22 +6,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <?
 
-	$mode = $_REQUEST['mode'];	
+	$mode = $_REQUEST['mode'];
 
 	$is_company=$_POST['is_company'];
 	$div_seq=$_POST['div_seq'];
 	$pj_seq=$_POST['pj_seq'];
 	$headq=$_POST['headq'];
 	$team=$_POST['team'];
-	$posi=$_POST['posi'];	
-	
+	$posi=$_POST['posi'];
+
 	$user_id=$_POST['user_id'];
 	if($admin_id==$user_id) $is_admin=1; // 콘피그 아이디와 같은 아이디 일경우 is_admin = 1 로 처리
 	$passwd=md5($_POST['passwd']);
 	$passwd2=md5($_POST['passwd2']);
 	$name=$_POST['name'];
-	$jumin1=$_POST['jumin1'];
-	$jumin2=$_POST['jumin2'];
+	//$jumin1=$_POST['jumin1'];
+	//$jumin2=$_POST['jumin2'];
 	$email1=$_POST['email1'];
 	$email2=$_POST['email2'];
 	$rcv_mail=$_POST['rcv_mail'];
@@ -35,7 +35,7 @@
 	$hphone1=$_POST['hphone1'];
 	$hphone2=$_POST['hphone2'];
 	$hphone3=$_POST['hphone3'];
-	
+
 	$email=$email1."@".$email2;    // 이메일 주소
 	if($rcv_mail=="on"){
 		$rcv_mail=1;
@@ -44,7 +44,7 @@
 	}
 
 	####### DB 입력 정보 가공 ########
-	$jnumber=$jumin1."-".$jumin2;     // 주민등록번호
+	// $jnumber=$jumin1."-".$jumin2;     // 주민등록번호
 	$user_id=addslashes($user_id);  // 폼에서 넘어온 값을 데이터베이스에 저장할 수 있는 형식으로 변환
 	$email=addslashes($email);                               //////<--------------회원 정보를 MySQL 데이터베이스에
 	$address1=addslashes($address1);                       //                    넣을 수 있도록 변경한다.
@@ -52,27 +52,27 @@
 	$phone=$phone1."-".$phone2."-".$phone3;              //
 	$hphone=$hphone1."-".$hphone2."-".$hphone3;       //
 	$zipcode=$zipcode1."-".$zipcode2;                       /////
-	
-	$pj_where = $headq."-".$team;	
+
+	$pj_where = $headq."-".$team;
 
 
-	
+
 	if($mode=="join"){  // 신규 회원 가입일 경우
 		####### 같은 정보 존재 여부 확인 #########
-		$query="SELECT user_id FROM cms_member_table WHERE user_id='$user_id' OR id_number='$jnumber'";
+		$query="SELECT user_id FROM cms_member_table WHERE user_id='$user_id'";
 		$result=mysql_query($query, $connect);
 		$total_num=mysql_num_rows($result);
 
 		if($total_num){            // 같은 정보가 있을 때 이전 페이지로 옮김
 			echo ("<script>
-					window.alert('아이디, 주민등록번호 중 중복된 값이 있습니다!');
-					history.go(-1)
+					window.alert('동일한 아이디를 가진 회원이 있습니다.');
 				 </script>");
+			echo "<meta http-equiv='Refresh' content='0; URL=member_join.php'>";
 			exit;
-		}else{		
+		}else{
 			############# 회원 정보 테이블에 입력 값을 등록한다. #############
-			$query="INSERT INTO cms_member_table (is_admin, user_id, passwd, name, id_number, email, rcv_mail, zipcode, address1, address2, phone, mobile, request, is_company, div_seq, pj_seq, pj_where, pj_posi, reg_date)
-							VALUES ('$is_admin', '$user_id', '$passwd', '$name', '$jnumber', '$email', '$rcv_mail', '$zipcode', '$address1', '$address2', '$phone', '$hphone', '2', '$is_company', '$div_seq', '$pj_seq', '$pj_where', '$posi', now())";
+			$query="INSERT INTO cms_member_table (is_admin, user_id, passwd, name, email, rcv_mail, zipcode, address1, address2, phone, mobile, request, is_company, div_seq, pj_seq, pj_where, pj_posi, reg_date)
+							VALUES ('$is_admin', '$user_id', '$passwd', '$name', '$email', '$rcv_mail', '$zipcode', '$address1', '$address2', '$phone', '$hphone', '2', '$is_company', '$div_seq', '$pj_seq', '$pj_where', '$posi', now())";
 			$result=mysql_query($query, $connect);
 
 			// 관리자에게 신규 가입 메세지 전송
@@ -94,8 +94,8 @@
 
 	}else if($mode=="modify"){  // 회원정보 변경인 경우
 
-		
-		$query="SELECT passwd FROM cms_member_table WHERE user_id='$user_id' OR id_number='$jnumber'";
+
+		$query="SELECT passwd FROM cms_member_table WHERE user_id='$user_id'";
 		$result=mysql_query($query, $connect);
 		$row=mysql_fetch_array($result);
 
@@ -103,7 +103,7 @@
 			err_msg('패스워드가 일치하지 않습니다!');
 		}else{
 
-			$no = $_REQUEST['no'];			
+			$no = $_REQUEST['no'];
 			$new_passwd=md5($_REQUEST['new_passwd']);
 			if($new_passwd) $passwd=$new_passwd;
 
@@ -119,7 +119,7 @@
 																mobile = '$hphone'
 									WHERE no = '$no' ";
 			$result = mysql_query($query, $connect);
-			
+
 
 			// 저장 과정에서 오류가 생기면
 			if(!$result){

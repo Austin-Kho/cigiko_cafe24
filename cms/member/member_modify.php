@@ -61,7 +61,7 @@
 			$mobile= explode("-", $rows[mobile]);
 			$no = $rows[no];
 			$pj_w = explode("-", $rows[pj_where]);
-		?>		
+		?>
 		<div style="float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:1px 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">등록코드 구분</div>
 		<?
 			$is_company=$_REQUEST['is_company'];
@@ -101,7 +101,7 @@
 		<div id="pj_select"  <?=$pj_dis?>>
 			<div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">현장 (담당 프로젝트) 선택</div>
 
-			
+
 			<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 				<select name="pj_seq" style="width:150px; height:23px;" class="inputstyle2" disabled>
 					<option value=""> 현장선택
@@ -112,7 +112,7 @@
 					?>
 					<option value="<?=$rows1[seq]?>" <?if($rows1[seq]==$rows[pj_seq]) echo "selected";?>> <?=$rows1[pj_name]?>
 					<? } ?>
-				</select>		
+				</select>
 				<select name="headq" style="width:80px; height:23px;" class="inputstyle2" disabled>
 					<option value="">본부선택
 					<?
@@ -139,10 +139,10 @@
 					<option value="2" <?if($rows[pj_posi]==2) echo "selected";?>>팀 장
 					<option value="3" <?if($rows[pj_posi]==3) echo "selected";?>>팀 원
 				</select>
-			</div>			
+			</div>
 		</div>
 		<? } ?>
-		</form>	
+		</form>
 		<form name="form1" method="post" action="member_post.php">
 		<input type="hidden" name="mode" value="modify">
 		<input type="hidden" name="no" value="<?=$no?>">
@@ -189,12 +189,14 @@
 		<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			<input type="text" name="name" value="<?=$rows[name]?>" size="35" class="inputstyle2" maxlength="12" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
 		</div>
-		<div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">주민등록 번호</div>
+
+		<!-- <div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">주민등록 번호</div>
 		<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			<input type="text" name="jumin1" value="<?=$pass[0]?>" size="15" class="inputstyle2" maxlength="6" onkeyup="focus_move(this,6,jumin2);" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');" readonly>
 			-
 			<input type="password" name="jumin2" value="<?=$pass[1]?>" size="16" maxlength="7" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');" readonly>
-		</div>
+		</div> -->
+
 		<div style="clear:left; float:left; width:180px; height:46px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">전자메일 (Email) <span style="color:#cc0000">*</span></div>
 		<div style="float:left; width:512px; height:46px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			<div style="float:left;">

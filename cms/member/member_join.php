@@ -13,6 +13,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?=$doc_title?></title>
+  <link rel="shortcut icon" href="<?=$cms_url?>images/cms.ico">
   <link type="text/css" rel="stylesheet" href="../common/cms.css">
   <script type="text/javascript" src="../common/global.js"></script>
   <script type="text/javascript" src="../common/member.js"></script>
@@ -37,10 +38,10 @@
 			<b>CMS 솔루션을 사용하기 위한 <span style="color:#6D6363">직원 계정을 등록</span>해 주시기 바랍니다.<br>
 			계정 등록은 <span style="color:#6D6363"><?=$com_title?></span> 임직원에 한해서만 해 주시기 바라며, 등록 뒤 관리자의<br>
 			승인을 얻은 후 사용이 가능합니다.<span style="font-size:12px; color:#6D6363;"> (당사 임직원 또는 관계자인 경우에만 승인됩니다.)</span></b>
-		</div>		
+		</div>
 
-			
-		
+
+
 		<div style="float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:1px 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			등록코드 구분 <span style="color:#cc0000">*</span>
 		</div>
@@ -79,7 +80,7 @@
 		<div id="pj_select"  <?if(!$is_company||$is_company==1) echo "style='display:none;'";?>>
 			<div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 				현장 (담당 프로젝트) 선택 <span style="color:#cc0000">*</span>
-			</div>			
+			</div>
 			<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 				<select name="pj_seq" style="width:150px; height:23px;" class="inputstyle2" onchange="submit();">
 					<option value="" <?if(!$pj_seq) echo "selected";?>> 현장선택
@@ -90,7 +91,7 @@
 					?>
 					<option value="<?=$rows1[seq]?>" <?if($rows1[seq]==$pj_seq) echo "selected";?>> <?=$rows1[pj_name]?>
 					<? } ?>
-				</select>		
+				</select>
 				<select name="headq" style="width:80px; height:23px;" class="inputstyle2" onchange="submit();">
 					<option value="" <?if(!$headq) echo "selected";?>>본부선택
 					<?
@@ -117,9 +118,9 @@
 					<option value="2" <?if($posi==2) echo "selected";?>>팀 장
 					<option value="3" <?if($posi==3) echo "selected";?>>팀 원
 				</select>
-			</div>			
+			</div>
 		</div>
-		</form>	
+		</form>
 		<form name="form1" method="post" action="member_post.php">
 		<input type="hidden" name="mode" value="join">
 		<input type="hidden" name="is_company" value="<?=$is_company?>">
@@ -164,14 +165,16 @@
 		<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			<input type="text" name="name" size="35" class="inputstyle2" maxlength="12" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
 		</div>
-		<div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
+
+		<!-- <div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			주민등록 번호
 		</div>
 		<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			<input type="text" name="jumin1" size="15" class="inputstyle2" maxlength="6" onkeyup="focus_move(this,6,jumin2);" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
 			-
 			<input type="password" name="jumin2" size="16" maxlength="7" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
-		</div>
+		</div> -->
+
 		<div style="clear:left; float:left; width:180px; height:46px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			전자메일 (Email) <span style="color:#cc0000">*</span>
 		</div>
@@ -198,7 +201,7 @@
 			</div>
 		</div>
 		<div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
-			우편번호 
+			우편번호
 		</div>
 		<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			<input type="text" name="zipcode1" size="6" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
@@ -210,11 +213,11 @@
 			주 소
 		</div>
 		<div style="float:left; width:512px; height:22px; padding:5px 0 0 20px;">
-			<input type="text" name="address1" size="45" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> (동까지 입력)			
+			<input type="text" name="address1" size="45" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> (동까지 입력)
 		</div>
 		<div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;"></div>
 		<div style="float:left; width:512px; height:28px; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
-			<input type="text" name="address2" size="45" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> (나머지 입력)                              
+			<input type="text" name="address2" size="45" class="inputstyle2" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> (나머지 입력)
 		</div>
 		<div style="clear:left; float:left; width:180px; height:28px; background-color:#F8F8F7; border-width:0 0 1px 0; border-color:#E1E1E1; border-style:solid; padding:5px 0 0 20px;">
 			전화번호

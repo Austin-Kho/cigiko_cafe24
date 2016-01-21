@@ -15,7 +15,7 @@ function checkInput(val){
 		form.pj_seq.focus();
 		return;
 	}
-	
+
 	if(!form.user_id.value) {
 		alert("아이디(ID)를 입력하세요!");
 		form.user_id.focus();
@@ -47,7 +47,7 @@ function checkInput(val){
 			return;
 		}
 	}
-	
+
 	if(val=='modify'){
 		if(form.new_passwd.value){
 			if(!form.new_passwd2.value||(form.new_passwd.value != form.new_passwd2.value)){
@@ -56,7 +56,7 @@ function checkInput(val){
 				return;
 			}
 		}
-		
+
 	}
 	if(!form.name.value) {
 		alert("이름을 입력하세요!");
@@ -69,7 +69,7 @@ function checkInput(val){
 		form.jumin1.focus();
 		return;
 	}
-	*/
+
 	if(form.jumin1.value) {
 		if(!IsNumber(form.jumin1.name)){
 			alert("주민등록번호는 숫자이어야 합니다!");
@@ -77,13 +77,13 @@ function checkInput(val){
 			return;
 		}
 	}
-	/*
+
 	if(!form.jumin2.value) {
 		alert("주민등록번호를 입력하세요!");
 		form.jumin2.focus();
 		return;
 	}
-	*/
+
 
 	if(form.jumin2.value) {
 		if(!IsNumber(form.jumin2.name)){
@@ -92,41 +92,42 @@ function checkInput(val){
 			return;
 		}
 	}
-	var chk =0 
-	var yy = form.jumin1.value.substring(0,2) 
-	var mm = form.jumin1.value.substring(2,4) 
-	var dd = form.jumin1.value.substring(4,6) 
-	var sex = form.jumin2.value.substring(0,1) 
+	var chk =0
+	var yy = form.jumin1.value.substring(0,2)
+	var mm = form.jumin1.value.substring(2,4)
+	var dd = form.jumin1.value.substring(4,6)
+	var sex = form.jumin2.value.substring(0,1)
 
-	if ((form.jumin1.value.length!=6)||(yy <0||mm <1||mm>12||dd<1)){ 
-		alert ("주민등록번호를 바로 입력하여 주십시오."); 
-		form.jumin1.focus(); 
-		return ; 
+	if ((form.jumin1.value.length!=6)||(yy <0||mm <1||mm>12||dd<1)){
+		alert ("주민등록번호를 바로 입력하여 주십시오.");
+		form.jumin1.focus();
+		return ;
 	}
 
-	if ((sex != 1 && sex !=2 && sex !=3 && sex !=4)||(form.jumin2.value.length != 7)){ 
-		alert ("주민등록번호를 바로 입력하여 주십시오."); 
-		form.jumin2.focus(); 
-		return; 
-	} 
+	if ((sex != 1 && sex !=2 && sex !=3 && sex !=4)||(form.jumin2.value.length != 7)){
+		alert ("주민등록번호를 바로 입력하여 주십시오.");
+		form.jumin2.focus();
+		return;
+	}
 
-	// 주민등록번호 체크 
-	for (var i=0; i<=5 ; i++){ 
+	// 주민등록번호 체크
+	for (var i=0; i<=5 ; i++){
 		chk = chk + ((i%8+2) * parseInt(form.jumin1.value.substring(i,i+1)))
-	} 
+	}
 
 	for (var i = 6; i <=11 ; i++){
 		chk = chk + ((i%8+2) * parseInt(form.jumin2.value.substring(i-6,i-5)))
 	}
 
-	chk = 11 - (chk %11) 
-	chk = chk % 10 
+	chk = 11 - (chk %11)
+	chk = chk % 10
 
 	if (chk != form.jumin2.value.substring(6,7)) {
-		alert ("유효하지 않은 주민등록번호입니다."); 
-		form.jumin1.focus(); 
-		return; 
+		alert ("유효하지 않은 주민등록번호입니다.");
+		form.jumin1.focus();
+		return;
 	}
+	*/
 
 	if(!form.email1.value) {
 		alert("이메일을 입력하세요!");
@@ -193,7 +194,7 @@ function checkInput(val){
 
 function checkEdit(){
    var form = document.form1;
-  
+
   if(!form.passwd.value) {
      alert("비밀번호를 입력하세요!");
 	 form.passwd.focus();
@@ -205,7 +206,7 @@ function checkEdit(){
 	 form.passwd.select();
 	 return;
   }
- 
+
   if(form.passwd.value != form.passwd2.value) {
      alert("입력하신 비밀번호가 일치하지 않습니다.\n다시 확인하시고 넣어주십시오!");
 	 form.passwd2.focus();
@@ -219,7 +220,7 @@ function checkEdit(){
      form.phone1.focus();
 	 return;
   }
-  
+
   if(!form.phone2.value) {
      alert("전화번호를 입력하세요!");
      form.phone2.focus();
@@ -238,7 +239,7 @@ function checkEdit(){
 	     return;
 	  }
    }
- 
+
   if(form.phone2.value) {
      if(!IsNumber(form.phone2.name)){
          alert("전화번호는 숫자이어야 합니다!");
@@ -265,23 +266,23 @@ function checkEdit(){
    if (form.email.value.indexOf("@") < 0){
     alert('이메일 주소 형식이 틀립니다.');
     form.email.focus();
-	return; 
+	return;
    }
 
    if (form.email.value.indexOf("/") >= 0){
      alert('이메일 주소 형식이 틀립니다.');
      form.email.focus();
-     return; 
+     return;
     }
 
   form.submit();
- 
+
  }
 
 
 function lost_checkInput1(){
    var form = document.form1;
-     
+
   if(!form.name.value) {
      alert("이름을 입력하세요!");
 	 form.name.focus();
@@ -313,43 +314,43 @@ function lost_checkInput1(){
 	     return;
 	  }
   }
-	var chk =0 
-	var yy = form.jumin1.value.substring(0,2) 
-	var mm = form.jumin1.value.substring(2,4) 
-	var dd = form.jumin1.value.substring(4,6) 
-	var sex = form.jumin2.value.substring(0,1) 
+	var chk =0
+	var yy = form.jumin1.value.substring(0,2)
+	var mm = form.jumin1.value.substring(2,4)
+	var dd = form.jumin1.value.substring(4,6)
+	var sex = form.jumin2.value.substring(0,1)
 
-	if ((form.jumin1.value.length!=6)||(yy <0||mm <1||mm>12||dd<1)){ 
-	alert ("주민등록번호를 바로 입력하여 주십시오."); 
-	form.jumin1.focus(); 
-	return ; 
-	} 
+	if ((form.jumin1.value.length!=6)||(yy <0||mm <1||mm>12||dd<1)){
+	alert ("주민등록번호를 바로 입력하여 주십시오.");
+	form.jumin1.focus();
+	return ;
+	}
 
-	if ((sex != 1 && sex !=2 && sex !=3 && sex !=4)||(form.jumin2.value.length != 7 )){ 
-	alert ("주민등록번호를 바로 입력하여 주십시오."); 
-	form.jumin2.focus(); 
-	return; 
-	} 
+	if ((sex != 1 && sex !=2 && sex !=3 && sex !=4)||(form.jumin2.value.length != 7 )){
+	alert ("주민등록번호를 바로 입력하여 주십시오.");
+	form.jumin2.focus();
+	return;
+	}
 
-	// 주민등록번호 체크 
+	// 주민등록번호 체크
 
-	for (var i = 0; i <=5 ; i++){ 
-	chk = chk + ((i%8+2) * parseInt(form.jumin1.value.substring(i,i+1))) 
-	} 
+	for (var i = 0; i <=5 ; i++){
+	chk = chk + ((i%8+2) * parseInt(form.jumin1.value.substring(i,i+1)))
+	}
 
-	for (var i = 6; i <=11 ; i++){ 
-	chk = chk + ((i%8+2) * parseInt(form.jumin2.value.substring(i-6,i-5))) 
-	} 
+	for (var i = 6; i <=11 ; i++){
+	chk = chk + ((i%8+2) * parseInt(form.jumin2.value.substring(i-6,i-5)))
+	}
 
-	chk = 11 - (chk %11) 
-	chk = chk % 10 
+	chk = 11 - (chk %11)
+	chk = chk % 10
 
-	if (chk != form.jumin2.value.substring(6,7)) 
-	{ 
-	alert ("유효하지 않은 주민등록번호입니다."); 
-	form.jumin1.focus(); 
-	return; 
-	} 
+	if (chk != form.jumin2.value.substring(6,7))
+	{
+	alert ("유효하지 않은 주민등록번호입니다.");
+	form.jumin1.focus();
+	return;
+	}
 
 	   form.submit();
 	  }
@@ -358,7 +359,7 @@ function lost_checkInput1(){
 
 	function lost_checkInput2(){
 	   var form = document.form2;
-	   
+
 	  if(!form.id.value) {
 		 alert("ID를 입력하세요!");
 		 form.id.focus();
@@ -384,42 +385,42 @@ function lost_checkInput1(){
 		 return;
 	  }
 
-	var chk =0 
-	var yy = form.jumin1.value.substring(0,2) 
-	var mm = form.jumin1.value.substring(2,4) 
-	var dd = form.jumin1.value.substring(4,6) 
-	var sex = form.jumin2.value.substring(0,1) 
+	var chk =0
+	var yy = form.jumin1.value.substring(0,2)
+	var mm = form.jumin1.value.substring(2,4)
+	var dd = form.jumin1.value.substring(4,6)
+	var sex = form.jumin2.value.substring(0,1)
 
-	if ((form.jumin1.value.length!=6)||(yy <25||mm <1||mm>12||dd<1)){ 
-	alert ("주민등록번호를 바로 입력하여 주십시오."); 
-	form.jumin1.focus(); 
-	return ; 
-	} 
+	if ((form.jumin1.value.length!=6)||(yy <25||mm <1||mm>12||dd<1)){
+	alert ("주민등록번호를 바로 입력하여 주십시오.");
+	form.jumin1.focus();
+	return ;
+	}
 
-	if ((sex != 1 && sex !=2 )||(form.jumin2.value.length != 7 )){ 
-	alert ("주민등록번호를 바로 입력하여 주십시오."); 
-	form.jumin2.focus(); 
-	return; 
-	} 
+	if ((sex != 1 && sex !=2 )||(form.jumin2.value.length != 7 )){
+	alert ("주민등록번호를 바로 입력하여 주십시오.");
+	form.jumin2.focus();
+	return;
+	}
 
-  // 주민등록번호 체크 
+  // 주민등록번호 체크
 
-	for (var i = 0; i <=5 ; i++){ 
-	chk = chk + ((i%8+2) * parseInt(form.jumin1.value.substring(i,i+1))) 
-	} 
+	for (var i = 0; i <=5 ; i++){
+	chk = chk + ((i%8+2) * parseInt(form.jumin1.value.substring(i,i+1)))
+	}
 
-	for (var i = 6; i <=11 ; i++){ 
-	chk = chk + ((i%8+2) * parseInt(form.jumin2.value.substring(i-6,i-5))) 
-	} 
+	for (var i = 6; i <=11 ; i++){
+	chk = chk + ((i%8+2) * parseInt(form.jumin2.value.substring(i-6,i-5)))
+	}
 
-	chk = 11 - (chk %11) 
-	chk = chk % 10 
+	chk = 11 - (chk %11)
+	chk = chk % 10
 
-	if (chk != form.jumin2.value.substring(6,7)) 
-	{ 
-	alert ("유효하지 않은 주민등록번호입니다."); 
-	form.jumin1.focus(); 
-	return; 
+	if (chk != form.jumin2.value.substring(6,7))
+	{
+	alert ("유효하지 않은 주민등록번호입니다.");
+	form.jumin1.focus();
+	return;
 	}
 
   form.submit()
@@ -478,7 +479,7 @@ function focus_move3(){
      return true;
   }
 
-    
+
   function IsNumber(formname) {
      var form=eval("document.form1." + formname);
 
@@ -491,7 +492,7 @@ function focus_move3(){
      return true;
   }
 
- 
+
  function check_ID_Window(ref) {
    var user_id= eval(document.form1.user_id);
 	 var str=user_id.value.length;
