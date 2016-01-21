@@ -638,7 +638,7 @@ function pj_data_put_1(){
 			form.type_batch.focus();
 			return;
 		}
-		/* if(!form.price_batch.value){
+		if(!form.price_batch.value){
 			alert("해당 호수의 공급가격을 입력하십시요!");
 			form.price_batch.focus();
 			return;
@@ -647,7 +647,7 @@ function pj_data_put_1(){
 			alert("해당 호수의 수수료를 입력하십시요!");
 			form.pay_batch.focus();
 			return;
-		}*/
+		}
 	}
 	if(form.max_con_no.value){
 		if(!form.min_con_no.value){

@@ -18,7 +18,7 @@
 <html>
  <head>
 	<meta charset="UTF-8">
-	<!--<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">//-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<title> <?=$doc_title?> </title>
 	<link rel="shortcut icon" href="<?=$cms_url?>images/cms.ico">
 	<link type="text/css" rel="stylesheet" href="<?=$cms_url?>common/cms.css">
@@ -81,8 +81,8 @@
 		?>
 		<div style="width:1080px; height:650px; text-align:center; display: table-cell; vertical-align: middle;">
 			<p>로그인 정보가 없습니다. 다시 로그인하여 주십시요!</p>
-			<input type="button" value="로그인" class="sub_bt1" class="sub_bt1" onclick="location.href='<?=$cms_url?>member/login_form.php';">
-			<input type="button" value=" 닫 기 " class="sub_bt1" class="sub_bt1" onclick="window.self.close()">
+			<input type="button" value="로그인" class="sub_bt1" onclick="location.href='<?=$cms_url?>member/login_form.php';">
+			<input type="button" value=" 닫 기 " class="sub_bt1" onclick="window.self.close()">
 		</div>
 		<? }else{?>
 		<div>

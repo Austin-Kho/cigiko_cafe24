@@ -602,15 +602,15 @@
 								if($ct_1_1_row[ct_1_1]<2){
 									$submit_str="alert('등록 권한이 없습니다. 관리자에게 문의하여 주십시요!')";
 								}else{
-									 $submit_str="pj_data_put_0()";
+									$submit_str="pj_data_put_0()";
 								}
 							?>
 							<div style="height:48px; padding-top:23px; text-align:center;">
 								<input type="button" value="데이터 입력" onclick="<?=$submit_str?>" class="submit_bt">
 							</div>
 						<?
-							}
 								}
+							}
 						?>
 						<!-- 등록 마감 된 기 등록 데이터 수정일 때는 안보임 끝 -->
 						</form>

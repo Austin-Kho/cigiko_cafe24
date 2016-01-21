@@ -229,7 +229,7 @@
 					<tr>
 						<td class="form1" bgcolor="#F8F8F8" height="25">회사주소 <font color="red">*</font></td>
 						<td class="form2" colspan="3">
-							<input type="button" value="우편번호 검색" onclick="javascript:ZipWindow('../member/zip_search.php',2)" class="inputstyle_bt">
+							<input type="button" value="우편번호 검색" onclick="javascript:ZipWindow('../member/zip_search.php','zipcode','address')" class="inputstyle_bt">
 							<input type="text" name="zipcode1" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2)" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> -
 							<input type="text" name="zipcode2" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2)" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
 							<input type="text" name="address1" size="46" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
@@ -497,7 +497,7 @@
 					<tr>
 						<td class="form1" bgcolor="#F8F8F8" height="25">회사주소 <font color="red">*</font></td>
 						<td class="form2" colspan="3">
-							<input type="button" value="우편번호 검색" onclick="javascript:ZipWindow('../member/zip_search.php',2)" class="inputstyle_bt">
+							<input type="button" value="우편번호 검색" onclick="javascript:ZipWindow('../member/zip_search.php','zipcode','address')" class="inputstyle_bt">
 							<input type="text" name="zipcode1" value="<?=substr($rows[zipcode],0,3)?>" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2);" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');"> -
 							<input type="text" name="zipcode2" value="<?=substr($rows[zipcode],4,3)?>" size="5" class="inputstyle2" readonly onKeydown="ZipWindow('../member/zip_search.php',2);" onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">
 							<input type="text" name="address1" value="<?=$rows[address1]?>" size="46" class="inputstyle2" readonly onmouseover="cngClass(this,'inputstyle22')" onmouseout="cngClass(this,'inputstyle2');">

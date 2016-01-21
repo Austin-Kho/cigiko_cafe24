@@ -70,7 +70,7 @@
 							pj_ho IN ('$ho_1','$ho_2','$ho_3','$ho_4','$ho_5','$ho_6','$ho_7','$ho_8','$ho_9','$ho_10') ";
 			$ck_rlt = mysql_query($ck_qry, $connect);
 			$ck_row = mysql_fetch_array($ck_rlt);
-			 if($ck_row)err_msg('이미 등록되어 있는 동호수와 중복되는 동호수가 있습니다.');
+			if($ck_row)err_msg('이미 등록되어 있는 동호수와 중복되는 동호수가 있습니다.');
 
 			############# DB INSERT. #############
 			if($_REQUEST['floor_1']){
@@ -231,7 +231,7 @@
 		$max_con_no = $_REQUEST['max_con_no'];
 
 		// 계약관리번호별 관리일 경우 DB작업 시작
-		if($mode=='reg'){ // 신규 등록이면		 
+		if($mode=='reg'){ // 신규 등록이면
 			 
 			 
 			//기존에 등록되어 있는 계약관리번호가 있는지 체크 /// <----나중에 다시 체크

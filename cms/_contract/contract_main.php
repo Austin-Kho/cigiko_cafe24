@@ -17,8 +17,8 @@
 <html>
  <head>
 	<meta charset="UTF-8">
-	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> -->
-  <title><?=$doc_title?></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title><?=$doc_title?></title>
 	<link rel="shortcut icon" href="<?=$cms_url?>images/cms.ico">
 	<link type="text/css" rel="stylesheet" href="<?=$cms_url?>common/cms.css">
 	<script src="../common/global.js"></script>
