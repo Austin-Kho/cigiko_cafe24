@@ -67,9 +67,13 @@ $penumbra_options = get_option('penumbra_theme_options');?>
 			<?php esc_attr_e('&copy;', 'penumbra'); ?> <?php _e(date('Y')); ?> <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"><?php bloginfo('name'); ?></a><br />
 		</div><!-- .copyright -->
 			<!-- "The link to tutskid.com is completely optional, but if you like the Theme I would appreciate it if you keep the credit link at the bottom." -->
+			<?php if( is_home() || is_front_page() ): ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'WordPress', 'penumbra' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'penumbra' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'penumbra' ), 'Penumbra', '<a href="http://tutskid.com/" rel="designer">TutsKid</a>' ); ?>
+			<?php else: ?>
+			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'WordPress', 'penumbra' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'penumbra' ), 'WordPress' ); ?></a>
+			<?php endif;?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->

@@ -4,33 +4,26 @@
  * template hierarchy.  It is not much different than the default.  It was built to extend the default by 
  * making it smarter and more flexible.  The goal is to give theme developers and end users an 
  * easy-to-override system that doesn't involve massive amounts of conditional tags within files.
- *
- * @package    HybridCore
- * @subpackage Functions
- * @author     Justin Tadlock <justin@justintadlock.com>
- * @copyright  Copyright (c) 2008 - 2013, Justin Tadlock
- * @link       http://themehybrid.com/hybrid-core
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /* Filter the date template. */
-add_filter( 'date_template', 'hybrid_date_template' );
+add_filter( 'date_template', 'omega_date_template' );
 
 /* Filter the author/user template. */
-add_filter( 'author_template', 'hybrid_user_template' );
+add_filter( 'author_template', 'omega_user_template' );
 
 /* Filter the tag and category (taxonomy) templates. */
-add_filter( 'tag_template', 'hybrid_taxonomy_template' );
-add_filter( 'category_template', 'hybrid_taxonomy_template' );
-add_filter( 'taxonomy_template', 'hybrid_taxonomy_template' );
+add_filter( 'tag_template', 'omega_taxonomy_template' );
+add_filter( 'category_template', 'omega_taxonomy_template' );
+add_filter( 'taxonomy_template', 'omega_taxonomy_template' );
 
 /* Filter the single, page, and attachment (singular) templates. */
-add_filter( 'single_template', 'hybrid_singular_template' );
-add_filter( 'page_template', 'hybrid_singular_template' );
-add_filter( 'attachment_template', 'hybrid_singular_template' );
+add_filter( 'single_template', 'omega_singular_template' );
+add_filter( 'page_template', 'omega_singular_template' );
+add_filter( 'attachment_template', 'omega_singular_template' );
 
 /* Filter the comments template. */
-add_filter( 'comments_template', 'hybrid_comments_template' );
+add_filter( 'comments_template', 'omega_comments_template' );
 
 /**
  * Overrides WP's default template for date-based archives. Better abstraction of templates than 
@@ -42,7 +35,7 @@ add_filter( 'comments_template', 'hybrid_comments_template' );
  * @param string $template
  * @return string $template Full path to file.
  */
-function hybrid_date_template( $template ) {
+function omega_date_template( $template ) {
 	$templates = array();
 
 	/* If viewing a time-based archive. */
@@ -97,7 +90,7 @@ function hybrid_date_template( $template ) {
  * @param string $template
  * @return string Full path to file.
  */
-function hybrid_user_template( $template ) {
+function omega_user_template( $template ) {
 	$templates = array();
 
 	/* Get the user nicename. */
@@ -140,7 +133,7 @@ function hybrid_user_template( $template ) {
  * @param string $template
  * @return string Full path to file.
  */
-function hybrid_taxonomy_template( $template ) {
+function omega_taxonomy_template( $template ) {
 
 	/* Get the queried term object. */
 	$term = get_queried_object();
@@ -165,7 +158,7 @@ function hybrid_taxonomy_template( $template ) {
  * @param string $template The default WordPress post template.
  * @return string $template The theme post template after all templates have been checked for.
  */
-function hybrid_singular_template( $template ) {
+function omega_singular_template( $template ) {
 
 	$templates = array();
 
@@ -216,12 +209,12 @@ function hybrid_singular_template( $template ) {
  * template based on the post type of the current single post view.  If this template is not found, it falls 
  * back to the default "comments.php" template.
  *
- * @since 1.5.0
+ * @since 0.9.0
  * @access public
  * @param string $template The comments template file name.
  * @return string $template The theme comments template after all templates have been checked for.
  */
-function hybrid_comments_template( $template ) {
+function omega_comments_template( $template ) {
 
 	$templates = array();
 

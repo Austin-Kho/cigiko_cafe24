@@ -74,6 +74,7 @@ function expound_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'expound' ),
+		'social' => __( 'Social Menu', 'expound' ),
 	) );
 
 	/**
@@ -95,7 +96,7 @@ add_action( 'after_setup_theme', 'expound_setup' );
 /**
  * BuddyPress styles if BP is installed
  */
-if( function_exists( 'buddypress' ) ){
+if ( function_exists( 'buddypress' ) ) {
 	require( get_template_directory() . '/inc/buddypress.php' );
 }
 
@@ -118,7 +119,8 @@ add_action( 'widgets_init', 'expound_widgets_init' );
  * Enqueue scripts and styles
  */
 function expound_scripts() {
-	wp_enqueue_style( 'expound-style', get_stylesheet_uri(), array(), 3 );
+	// Don't forget to bump the version numbers in style.css and editor-style.css
+	wp_enqueue_style( 'expound-style', get_stylesheet_uri(), array(), 20140129 );
 
 	wp_enqueue_script( 'expound-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -130,6 +132,10 @@ function expound_scripts() {
 
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'expound-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+	}
+
+	if ( has_nav_menu( 'social' ) ) {
+		wp_enqueue_style( 'expound-genericons', get_template_directory_uri() . '/css/genericons.css', array(), '20140127' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'expound_scripts' );
@@ -178,23 +184,30 @@ if ( ! function_exists( 'expound_get_featured_posts' ) ) :
 function expound_get_featured_posts() {
 	global $wp_query;
 
+	// Default number of featured posts
+	$count = apply_filters( 'expound_featured_posts_count', 5 );
+
 	// Jetpack Featured Content support
 	$sticky = apply_filters( 'expound_get_featured_posts', array() );
-	if ( ! empty( $sticky ) )
+	if ( ! empty( $sticky ) ) {
 		$sticky = wp_list_pluck( $sticky, 'ID' );
+
+		// Let Jetpack override the sticky posts count because it has an option for that.
+		$count = count( $sticky );
+	}
 
 	if ( empty( $sticky ) )
 		$sticky = (array) get_option( 'sticky_posts', array() );
 
 	if ( empty( $sticky ) ) {
 		return new WP_Query( array(
-			'posts_per_page' => 5,
+			'posts_per_page' => $count,
 			'ignore_sticky_posts' => true,
 		) );
 	}
 
 	$args = array(
-		'posts_per_page' => 5,
+		'posts_per_page' => $count,
 		'post__in' => $sticky,
 		'ignore_sticky_posts' => true,
 	);
@@ -212,7 +225,7 @@ function expound_get_related_posts() {
 
 	// Support for the Yet Another Related Posts Plugin
 	if ( function_exists( 'yarpp_get_related' ) ) {
-		$related = yarpp_get_related( array(), $post->ID );
+		$related = yarpp_get_related( array( 'limit' => 3 ), $post->ID );
 		return new WP_Query( array(
 			'post__in' => wp_list_pluck( $related, 'ID' ),
 			'posts_per_page' => 3,

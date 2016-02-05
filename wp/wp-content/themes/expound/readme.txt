@@ -23,12 +23,18 @@ A: Yes, Expound is available for WordPress.com users. More information: http://t
 Q: The header image does not resize, but crops instead.
 A: That's true. The header image in Expound is designed to be used as a background image which crops, just like the Twenty Thirteen theme. If you'd like to add your company logo, don't use the header image functionality. Instead, use some custom CSS to add your logo to the site title.
 
+Q: How do you add social buttons to the navigation menu?
+A: Easy. Go to Appearance - Menus. Create a new menu, add your social profiles links to the new menu, then assign the menu to the "Social" location. Expound will figure out which icon to show based on the URL.
+
 = Additional Plugin Support =
 
 * BuddyPress
-* Jetpack Infinite Scroll
+* Jetpack: Infinite Scroll, Featured Content, Sharing
 * Yet Another Related Posts Plugin (YARPP)
 * WP-PageNavi
+* Disqus Comment System
+* Columns
+* Yandex.Share
 
 = Translations =
 
@@ -36,3 +42,11 @@ If you've translated this theme into your language, feel free to send the transl
 
 Russian by Konstantin Kovshenin ( http://kovshenin.com )
 French by Lumière de Lune ( http://lumieredelune.com )
+Brazilian Portugese by Rafael Funchal ( http://www.rafaelfunchal.com.br )
+Italian by Fx Bénard ( https://github.com/fxbenard )
+Chinese (Taiwan)
+Chinese (China)
+Polish
+Bulgarian
+German
+Spanish

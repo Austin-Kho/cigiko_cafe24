@@ -79,7 +79,11 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php penumbra_content_nav( 'nav-below' ); ?>
+				<?php if (  $wp_query->max_num_pages > 1 ) : ?>
+				<?php if (function_exists("penumbra_pagination")) {
+						penumbra_pagination($wp_query->max_num_pages);
+				} 
+				endif; ?>
 
 			<?php else : ?>
 

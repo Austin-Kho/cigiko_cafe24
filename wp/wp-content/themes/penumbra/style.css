@@ -4,10 +4,11 @@ Theme URI: http://tutskid.com/penumbra/
 Author: Marvie Pons
 Author URI: http://tutskid.com/
 Description: Penumbra is a responsive, simple, clean, two columns, customizable and search engine friendly theme. Also supports custom menus, widget ready sidebar and footer, and more customizable feature in the theme options page.
-Version: 1.1.2.7
+Version: 1.1.2.9
 License: GNU General Public License, version 2 (GPL).
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Tags: black, green, dark, two-columns, right-sidebar, custom-background, custom-header, custom-menu, theme-options, featured-images, flexible-header, microformats, post-formats, threaded-comments, translation-ready
+Text Domain: penumbra
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -98,7 +99,7 @@ input,
 select,
 textarea {
 	color: #4b4a45;
-	font-family: 'Helvetica Neue', 맑은 고딕, Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -380,7 +381,7 @@ a:active {
 .comment-meta,
 .comment-author,
 #reply-title {
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 }
 
 
@@ -394,6 +395,11 @@ a:active {
     margin: 0 auto;
 	max-width: 1050px;
 }
+
+.site-title  a {
+	max-width: 800px;
+}
+
 #main {
 	clear: both;
     overflow: hidden;
@@ -447,7 +453,7 @@ a:active {
 
 /* =Site Header
 ----------------------------------------------- */
-
+	
 .site-header hgroup {
 	padding: 1.5em 2em;
 }
@@ -459,7 +465,7 @@ a:active {
 .site-description {
 	font-size: 13px;
 	font-size: 1.3rem;
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 }
 .site-title a,
 .site-description {
@@ -609,19 +615,19 @@ a:active {
    	cursor: pointer;
 	font-size: 20px;
 	padding-left: .5em;
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 	text-transform: uppercase;
 	margin-bottom: 6px; text-align:center;
-}
+} 
 .main-small-navigation .menu {
 	display: none;
 		color:#c4c4c4;
-		font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+		font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 		text-transform: uppercase;
 }
 .main-small-navigation .menu a {
 		color:#fff!important;
-		font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+		font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 		text-transform: uppercase;
 }
 
@@ -675,7 +681,7 @@ body.archive .page-title {
 	clear: both;
 	font-size: 12px;
 	font-size: 1.2rem;
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 }
 .byline {
 	display: none;
@@ -834,7 +840,7 @@ object {
 
 #comments {
 	clear: both;
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 }
 .bypostauthor {
 background-color: #eef4ef;
@@ -952,7 +958,7 @@ p.nocomments {
 	font-size: 1.2rem;
 	line-height: 1.8;
 	margin: 0 0 1.5em;
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 }
 .widget-title {
 	color: #999;
@@ -978,11 +984,13 @@ p.nocomments {
 	margin-left: 2.5em;
 }
 
+.widget select { max-width: 100%;}
+
 /* Search widget */
 
 #s {
 	color: #4c4c4c;
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 	font-size: 1em;
 	background: url('images/icon-search.png') no-repeat 7px 10px #c1c1c1;
 	padding: 7px 10px 7px 30px;
@@ -1003,7 +1011,7 @@ p.nocomments {
 	color:#898989;
 	font-size: 13px;
 	font-size: 1.2rem;
-	font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 	padding: .5em 0 1.5em 0;
 	text-align: center;
 	background:url(images/background-bg-flip.jpg);
@@ -1081,20 +1089,26 @@ p.nocomments {
 /* =Responsive Structures
 ----------------------------------------------- */
 @media (min-width: 940px) and (max-width: 1210px) {
-
+	
 	#colophon {
 		background:url(images/boxes-bg.jpg) #FFF repeat-x;
 		width: 100%!important;
 	}
-
+	
 
 	#footleft {
 		margin-left: 40px!important;
 	}
-
+	
 	#footmiddle{
 		margin-left: 58px;
 	}
+	
+	.site-title {
+	max-width: 660px!important;
+	margin-left:1px;
+	}
+	
 }
 
 
@@ -1105,7 +1119,7 @@ p.nocomments {
 		right:.200%;
 		z-index:999999999;
 	}
-
+	
 }
 
 @media (max-width: 450px) {
@@ -1123,17 +1137,18 @@ p.nocomments {
 		background:url(images/boxes-bg.jpg) #FFF repeat-x;
 		width: 100%!important;
 	}
-
+	
 	#footleft,
 	#footmiddle,
 	#footright {
 		margin-left: 40px!important;
 
 	}
-
+	
 	.site-info {
 		background:url(images/background-bg-flip.jpg);
 	}
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -1141,7 +1156,7 @@ p.nocomments {
 	#main {
 		overflow: visible;
 	}
-
+	
 	#content,
 	#socials,
 	#primary,
@@ -1159,13 +1174,13 @@ p.nocomments {
 	#tertiary {
 		width: 100%;
 	}
-
+	
 	#colophon {
 		background: url('images/sitemain-bg.png') #fff;
 		float: none;
 		width: 100%!important;
 	}
-
+	
 	#footleft,
 	#footmiddle,
 	#footright {
@@ -1178,13 +1193,13 @@ p.nocomments {
 	#main {
 		padding: 0.8em;
 	}
-
+	
 	.main-small-navigation a {
 		color:#c4c4c4!important;
-		font-family: Cambria, 굴림, Georgia, Times, "Times New Roman", serif;
+		font-family: Cambria, Georgia, Times, "Times New Roman", serif;
 		text-transform: uppercase;
 	}
-
+	
 }
 
 /* =IE Styles
@@ -1204,4 +1219,40 @@ p.nocomments {
 
 .clearfix {
 	clear: both;
+}
+
+/* ----------- Paging ------------ */
+
+ul.paging {
+    margin:0;
+    padding:0;
+    float:left;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+ul.paging li {
+    margin:0;
+    padding:0;
+    display:inline;
+    margin-right:4px;
+}
+ul.paging li a {
+    color:#000;
+    padding:2px 7px 4px 7px;
+    width:20px;
+    height:20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius:5px;
+    border:1px solid #eeeeee;
+	background:silver;
+}
+ul.paging a.active, ul.paging a:hover, ul.paging a.current {
+    background:grey;
+    color:#fff;
+}
+
+.paging span, .pagination a {
+color: #000;
+background: grey;
 }

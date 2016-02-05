@@ -4,36 +4,11 @@
  *
  * @package Omega
  */
-
 get_header(); ?>
+	<main class="<?php echo omega_apply_atomic( 'main_class', 'content' );?>" <?php omega_attr( 'content' ); ?>>
+		<?php do_action( 'omega_before_content' ); ?>
+		<?php do_action( 'omega_content' ); ?>		
+		<?php do_action( 'omega_after_content' ); ?>
 
-	<main class="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/SearchResultsPage">
-
-		<?php do_atomic( 'before_content' ); // omega_before_content ?>
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'omega' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'search' ); ?>
-
-			<?php endwhile; ?>
-
-			<?php omega_content_nav( 'nav-below' ); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'search' ); ?>
-
-		<?php endif; ?>
-
-		<?php do_atomic( 'after_content' ); // omega_after_content ?>
-
-	</main><!-- .content -->
-	
+	</main><!-- .content -->	
 <?php get_footer(); ?>

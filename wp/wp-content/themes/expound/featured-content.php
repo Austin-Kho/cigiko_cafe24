@@ -24,6 +24,8 @@ $featured_posts = expound_get_featured_posts();
 			<p><a class="button-primary" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading &rarr;', 'expound' ); ?></a></p>
 		</div><!-- .entry-summary -->
 
+		<div class="clear"></div>
+
 	</article>
 
 </div><!-- .featured-content -->
@@ -52,6 +54,10 @@ $featured_posts = expound_get_featured_posts();
 				<?php the_excerpt(); ?>
 			</div><!-- .entry-summary -->
 		</article>
+
+		<?php if ( $featured_posts->current_post % 4 == 0 ) : ?>
+			<div class="clear"></div>
+		<?php endif; // % 4 ?>
 
 	<?php endwhile; ?>
 </div><!-- .featured-content-secondary -->

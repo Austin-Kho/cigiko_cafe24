@@ -74,6 +74,15 @@ function penumbra_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	
+	/**
+	 * Setup the WordPress core custom background feature.
+	 */
+	add_theme_support( 'custom-background', apply_filters( 'penumbra_custom_background_args', array(
+		'default-color' => '',
+		'default-image' => '',
+	) ) );
+	 
 }
 endif; // penumbra_setup
 add_action( 'after_setup_theme', 'penumbra_setup' );
@@ -161,30 +170,35 @@ require( get_template_directory() . '/functions/theme-options.php' );
 require( get_template_directory() . '/inc/custom-header.php' );
 
 /**
- * Setup the WordPress core custom background feature.
- *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- * Use feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
- * Hooks into the after_setup_theme action.
- *
+ * penumbra_pagination
  */
-function penumbra_register_custom_background() {
-    $args = array(
-        'default-color' => '',
-    );
- 
-    $args = apply_filters( 'penumbra_custom_background_args', $args );
- 
-    if ( function_exists( 'wp_get_theme' ) ) {
-        add_theme_support( 'custom-background', $args );
-    } else {
-        define( 'BACKGROUND_COLOR', $args['default-color'] );
-        define( 'BACKGROUND_IMAGE', $args['default-image'] );
-        add_custom_background();
+function penumbra_pagination($pages = '', $range = 2) {
+    $showitems = ($range * 2) + 1;
+    global $paged;
+    if (empty($paged))
+        $paged = 1;
+    if ($pages == '') {
+        global $wp_query;
+        $pages = $wp_query->max_num_pages;
+        if (!$pages) {
+            $pages = 1;
+        }
+    }
+    if (1 != $pages) {
+        echo "<ul class='paging'>";
+        if ($paged > 2 && $paged > $range + 1 && $showitems < $pages)
+            echo "<li><a href='" . get_pagenum_link(1) . "'>&laquo;</a></li>";
+        if ($paged > 1 && $showitems < $pages)
+            echo "<li><a href='" . get_pagenum_link($paged - 1) . "'>&lsaquo;</a></li>";
+        for ($i = 1; $i <= $pages; $i++) {
+            if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems )) {
+                echo ($paged == $i) ? "<li><a href='" . get_pagenum_link($i) . "' class='current' >" . $i . "</a></li>" : "<li><a href='" . get_pagenum_link($i) . "' class='inactive' >" . $i . "</a></li>";
+            }
+        }
+        if ($paged < $pages && $showitems < $pages)
+            echo "<li><a href='" . get_pagenum_link($paged + 1) . "'>&rsaquo;</a></li>";
+        if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages)
+            echo "<li><a href='" . get_pagenum_link($pages) . "'>&raquo;</a></li>";
+        echo "</ul>\n";
     }
 }
-add_action( 'after_setup_theme', 'penumbra_register_custom_background' );
-

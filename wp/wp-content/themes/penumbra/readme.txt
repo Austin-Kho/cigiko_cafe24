@@ -2,6 +2,8 @@
 Contributors: marviepons
 Donate link: http://tutskid.com/
 Tags: responsive, black, green, dark, two-columns, right-sidebar, custom-background, custom-header, custom-menu, theme-options, featured-images, flexible-header, microformats, post-formats, threaded-comments, translation-ready
+Penumbra WordPress theme, Copyright (C) 2014 Marvie Pons
+Penumbra WordPress theme is licensed under the GPL.
 
 Penumbra is a responsive and search engine friendly theme.
 
@@ -31,9 +33,18 @@ Just grab the Penumbra theme from the built in theme directory and choose "Insta
 * Theme based on theme _s (underscores.me)
 
 == Site Title Limitation ==
-* If your site has a very long site title, you may want to disable the top search box as it will cover long site title. You can hide or disable top search box in theme option or in theme customizer.
+* If your site has a very long site title, you may want to disable the top search box if it's cover long site title in some device screen. You can hide or disable top search box in theme option or in theme customizer.
 
 == Changelog ==
+
+= 1.1.2.9 =
+* Fixed bugs
+* Declared copyright
+* Provided Textdomain in style.css
+
+= 1.1.2.8 =
+* Replaced next/previous links for archive post pages with pagination
+* Minor changes to footer credits
 
 = 1.1.2.7 =
 * Added languages folder with .po file

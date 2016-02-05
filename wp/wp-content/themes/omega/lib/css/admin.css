@@ -1,64 +1,129 @@
-/* Theme settings page. */
-.appearance_page_theme-settings .side .form-table th {
-	width: 20%;
-	font-weight: bold;
-	text-align: left;
-	padding-left: 0;
-	}
+/* A dividing horizontal rule ----------- */
+
+hr.div {
+	background: #ccc;
+	height: 1px;
+	border: none;
+	margin: 10px 0;
+}
+
+/* Scribe nag ----------- */
+
+.scribe-nag {
+	overflow: hidden;
+}
+
+
+/* Fix notice placment on our admin pages ----------- */
+
+.wrap div.error,
+.wrap div.updated {
+	clear: both;
+}
+
 .appearance_page_theme-settings .metabox-holder textarea {
-	width: 100%;
-	}
+    margin-bottom: 5px;
+}
 
-/* Post edit screen. */
-.custom-post-format-wrap, .post-layout-wrap {
-	padding: 0 5px;
-	max-height: 170px;
-	overflow-y: auto;
-	}
-.hybrid-post-settings {
-	padding-top: 5px;
-	}
-.hybrid-post-settings p {
-	margin-bottom: 15px !important;
-	}
+/* Theme Settings ----------- */
+.appearance_page_theme-settings .side .form-table th{width:20%;font-weight:bold;text-align:left;padding-left:0}
+.appearance_page_theme-settings .metabox-holder textarea{width:100%}
+.custom-post-format-wrap,.post-layout-wrap{padding:0 5px;max-height:170px;overflow-y:auto}
 
-/* Widgets page. */
-.widgets-php .columns-1 {
-	}
-.widgets-php .columns-2 {
-	overflow: hidden;
+#wpbody-content #dashboard-widgets.columns-2 .col-1 {
+    width: 65%;
+}
+#wpbody-content #dashboard-widgets.columns-2 .col-2 {
+    width: 35%;
+}
+
+#wpbody-content #dashboard-widgets .col-2 .meta-box-sortables {
+    margin: 0 0 0 8px;
+}   
+#wpbody-content #dashboard-widgets .col-1 .meta-box-sortables {
+	margin: 0 8px 0 0;
+}
+
+
+#omega-about-theme .form-table td {
+    padding: 10px 0;
+}
+
+/* Widgets ----------- */
+
+.omega-widget-column {
 	float: left;
-	width: 48%;
-	}
-.widgets-php .columns-3 {
-	overflow: hidden;
-	float: left;
-	width: 31%;
-	margin-right: 3.5%;
-	}
-.widgets-php .column-last {
-	float: right;
-	margin-right: 0;
-	}
+	width: 250px;
+}
 
-.widgets-php .hybrid-widget-controls label {
-	font-size: 11px;
+.omega-widget-column-right {
+	margin-left: 10px;
+}
+
+.omega-widget-column-box {
+	background: #f1f1f1;
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 10px 10px 0;
+}
+
+.omega-widget-column-box-top {
+	margin-top: 0;
+}
+
+.omega-pagechecklist {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.omega-image-size-selector {
+	max-width: 205px;
+}
+
+.no-js .hide-if-no-js {
+	display: none;
+}
+
+.widget-control-actions {
+	clear: both;
+}
+
+.available-theme {
+	width: 300px;
+	height: 130px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 100px 20px 0;
+	background: #ddd;
+	margin: 0 30px 30px 0;
+	float: left;
+	font-size: 30px;
+}
+
+.available-theme a {
+	text-decoration: none;
+	display: block;
+}
+
+@media only screen and (max-width: 900px) {
+	#wpbody-content #dashboard-widgets.columns-2 .col-1,
+	#wpbody-content #dashboard-widgets.columns-2 .col-2 {
+	    width: 100%;
 	}
-.widgets-php .columns-2 input.widefat, .widgets-php .columns-2 select.widefat {
-	width: 99%;
+	#wpbody-content #dashboard-widgets .col-1 .meta-box-sortables,
+	#dashboard-widgets .meta-box-sortables {
+	    margin: 0;
 	}
-.widgets-php .columns-3 select.widefat {
-	width: 98.5%;
+}
+
+@media only screen and (max-width: 500px) {
+	.available-theme {
+		width: 87%;
+		height: 90px;
+		margin-right: 0px;
+		font-size: 26px;
+		display: block;
+		padding: 60px 20px 0;
 	}
-.widgets-php .hybrid-widget-controls select[multiple="multiple"] {
-	width: 100%;
-	height: 5.0em !important;
-	}
-.widgets-php input.smallfat {
-	float: right;
-	width: 66px;
-	}
-.widgets-php select.smallfat {
-	float: right;
-	min-width: 66px;
-	}
+}

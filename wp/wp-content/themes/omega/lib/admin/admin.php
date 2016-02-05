@@ -2,79 +2,60 @@
 /**
  * Theme administration functions used with other components of the framework admin.  This file is for 
  * setting up any basic features and holding additional admin helper functions.
- *
- * @package    HybridCore
- * @subpackage Admin
- * @author     Justin Tadlock <justin@justintadlock.com>
- * @copyright  Copyright (c) 2008 - 2013, Justin Tadlock
- * @link       http://themehybrid.com/hybrid-core
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /* Add the admin setup function to the 'admin_menu' hook. */
-add_action( 'admin_menu', 'hybrid_admin_setup' );
+add_action( 'admin_menu', 'omega_admin_setup' );
 
 /**
  * Sets up the adminstration functionality for the framework and themes.
  *
- * @since 1.3.0
+ * @since 0.9.0
  * @return void
  */
-function hybrid_admin_setup() {
-
-	/* Load the post meta boxes on the new post and edit post screens. */
-	add_action( 'load-post.php', 'hybrid_admin_load_post_meta_boxes' );
-	add_action( 'load-post-new.php', 'hybrid_admin_load_post_meta_boxes' );
+function omega_admin_setup() {
 
 	/* Registers admin stylesheets for the framework. */
-	add_action( 'admin_enqueue_scripts', 'hybrid_admin_register_styles', 1 );
+	add_action( 'admin_enqueue_scripts', 'omega_admin_register_styles', 1 );
 
 	/* Loads admin stylesheets for the framework. */
-	add_action( 'admin_enqueue_scripts', 'hybrid_admin_enqueue_styles' );
+	add_action( 'admin_enqueue_scripts', 'omega_admin_enqueue_styles' );
 }
 
 /**
- * Loads the core post meta box files on the 'load-post.php' action hook.  Each meta box file is only loaded if 
- * the theme declares support for the feature.
+ * Registers the framework's `admin-widgets.css` stylesheet file.  The function does not load the stylesheet.  
+ * It merely registers it with WordPress.
  *
- * @since 1.2.0
+ * @since  0.9.0
+ * @access public
  * @return void
  */
-function hybrid_admin_load_post_meta_boxes() {
-
-	/* Load the SEO post meta box. */
-	require_if_theme_supports( 'hybrid-core-seo', trailingslashit( HYBRID_ADMIN ) . 'meta-box-post-seo.php' );
-
-	/* Load the post template meta box. */
-	require_if_theme_supports( 'hybrid-core-template-hierarchy', trailingslashit( HYBRID_ADMIN ) . 'meta-box-post-template.php' );
-}
-
-/**
- * Registers the framework's 'admin.css' stylesheet file.  The function does not load the stylesheet.  It merely
- * registers it with WordPress.
- *
- * @since 1.2.0
- * @return void
- */
-function hybrid_admin_register_styles() {
+function omega_admin_register_styles() {
 
 	/* Use the .min stylesheet if SCRIPT_DEBUG is turned off. */
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	wp_register_style( 'hybrid-core-admin', trailingslashit( HYBRID_CSS ) . "admin{$suffix}.css", false, '20130515', 'screen' );
+	wp_register_style( 'omega-admin', trailingslashit( OMEGA_CSS ) . "admin.css" );
+
+	wp_register_style( 'omega-admin-widgets', trailingslashit( OMEGA_CSS ) . "admin-widgets{$suffix}.css" );
+
+	wp_register_script( 'omega-admin', esc_url( trailingslashit( OMEGA_JS ) . "admin.js" ), array( 'jquery' ), '20130528', true );
 }
 
 /**
- * Loads the admin.css stylesheet for admin-related features.
+ * Loads the `admin-widgets.css` file when viewing the widgets screen.
  *
- * @since 1.2.0
+ * @since  0.9.0
+ * @access public
  * @return void
  */
-function hybrid_admin_enqueue_styles( $hook_suffix ) {
+function omega_admin_enqueue_styles( $hook_suffix ) {
 
-	/* Load admin styles if on the widgets screen and the current theme supports 'hybrid-core-widgets'. */
-	if ( current_theme_supports( 'hybrid-core-widgets' ) && 'widgets.php' == $hook_suffix )
-		wp_enqueue_style( 'hybrid-core-admin' );
+	wp_enqueue_style( 'omega-admin' );
+
+	if ( current_theme_supports( 'omega-widgets' ) && 'widgets.php' == $hook_suffix )
+		wp_enqueue_style( 'omega-admin-widgets' );	   
+    
 }
 
 /**
@@ -86,16 +67,16 @@ function hybrid_admin_enqueue_styles( $hook_suffix ) {
  * @param string $post_type The name of the post type to get templates for.
  * @return array $post_templates The array of templates.
  */
-function hybrid_get_post_templates( $post_type = 'post' ) {
-	global $hybrid;
+function omega_get_post_templates( $post_type = 'post' ) {
+	global $omega;
 
 	/* If templates have already been called, just return them. */
-	if ( !empty( $hybrid->post_templates ) && isset( $hybrid->post_templates[ $post_type ] ) )
-		return $hybrid->post_templates[ $post_type ];
+	if ( !empty( $omega->post_templates ) && isset( $omega->post_templates[ $post_type ] ) )
+		return $omega->post_templates[ $post_type ];
 
 	/* Else, set up an empty array to house the templates. */
 	else
-		$hybrid->post_templates = array();
+		$omega->post_templates = array();
 
 	/* Set up an empty post templates array. */
 	$post_templates = array();
@@ -135,11 +116,11 @@ function hybrid_get_post_templates( $post_type = 'post' ) {
 		$post_templates[ $file ] = $headers["{$post_type_object->name} Template"];
 	}
 
-	/* Add the templates to the global $hybrid object. */
-	$hybrid->post_templates[ $post_type ] = array_flip( $post_templates );
+	/* Add the templates to the global $omega object. */
+	$omega->post_templates[ $post_type ] = array_flip( $post_templates );
 
 	/* Return array of post templates. */
-	return $hybrid->post_templates[ $post_type ];
+	return $omega->post_templates[ $post_type ];
 }
 
 ?>

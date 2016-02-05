@@ -6,17 +6,9 @@
  */
 
 if ( is_active_sidebar( 'primary' ) ) : ?>	
-
-	<aside class="sidebar-primary widget-area <?php echo apply_atomic( 'omega_sidebar_class', 'sidebar' );?>" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
-		
+	<aside id="sidebar" class="<?php echo omega_apply_atomic( 'sidebar_class', 'sidebar sidebar-primary widget-area' );?>" <?php omega_attr( 'sidebar' ); ?>>	
 		<?php do_action( 'before_primary' ); ?>
-
 		<?php dynamic_sidebar( 'primary' ); ?>
-
 		<?php do_action( 'after_primary' ); ?>
-
   	</aside><!-- .sidebar -->
-
 <?php endif;  ?>
-
-	

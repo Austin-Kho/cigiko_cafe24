@@ -1,7 +1,7 @@
 <?php
 $penumbra_themename = "Penumbra";
 $penumbra_shortname = "penumbra";
-$penumbra_version = "1.1.2.7";
+$penumbra_version = "1.1.2.9";
 
 $penumbra_option_group = $penumbra_shortname.'_theme_option_group';
 $penumbra_option_name = $penumbra_shortname.'_theme_options';

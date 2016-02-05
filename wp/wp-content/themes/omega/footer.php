@@ -7,25 +7,15 @@
  * @package Omega
  */
 ?>
-		<?php do_atomic( 'after_main' ); // omega_after_main ?>
-
+		<?php do_action( 'omega_after_main' ); ?>
 	</div><!-- .site-inner -->
-
-	<?php do_atomic( 'before_footer' ); // omega_before_footer ?>
-
-	<footer class="site-footer row" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">			
-
-		<?php do_atomic( 'footer' ); // omega_footer ?>					
-	
-	</footer><!-- .site-footer -->
-
-	<?php do_atomic( 'after_footer' ); // omega_after_footer ?>
-
+	<?php 
+	do_action( 'omega_before_footer' ); 
+	do_action( 'omega_footer' ); 
+	do_action( 'omega_after_footer' ); 
+	?>
 </div><!-- .site-container -->
-
-<?php do_atomic( 'after' ); // omega_after ?>
-
+<?php do_action( 'omega_after' ); ?>
 <?php wp_footer(); ?>
-
 </body>
 </html>
