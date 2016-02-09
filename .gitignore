@@ -8,13 +8,12 @@ util.php
 config_set.php
 
 
-#CodeIgniter 
+#CodeIgniter
 */config/development
 */logs/log-*.php
 */logs/!index.html
 */cache/*
 */cache/!index.html
 
-#wp 
+#wp
 wp-config.php
-
