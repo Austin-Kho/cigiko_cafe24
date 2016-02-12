@@ -81,7 +81,6 @@ $db['default'] = array(
 	'database' => 'cigiko',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
-	// pconnect TRUE 일 경우 웹호스팅 환경에서는 실행이 안됨
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
