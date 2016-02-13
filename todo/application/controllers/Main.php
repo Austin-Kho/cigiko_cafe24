@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * todo 컨트롤러
  */
-class Main extends CI_Controller{
+class Main extends CI_Controller
+{
 	/**
 	 * [__construct description] 이 클래스의 생성자
 	 * 부모클래스 생성자의 재정의를 막기 위해 부모생성자 상속 ==>parent::__construct();

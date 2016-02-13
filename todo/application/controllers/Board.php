@@ -1,13 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * 게시판 메인 컨트롤러
- */
-class Board extends CI_Controller {
-
+class Board extends CI_Controller
+{
 	/**
-	 * [__construct description]>생성자
+	 * [__construct description]>이 클래스의 생성자
+	 * 부모클래스 생성자의 재정의를 막기 위해 부모생성자 상속 ==>parent::__construct();
+	 * 클래스 내부에서 사용할 변수를 선언하거나 라이브러리, 모델, 헬퍼 등을 로딩한다.
 	 */
 	public function __construct(){
 		parent::__construct();
@@ -49,3 +48,4 @@ class Board extends CI_Controller {
 		$this->load->view('board/list_v', $data);
 	}
 }
+// End of this File.
