@@ -67,5 +67,18 @@ class Main extends CI_Controller{
 			$this->load->view('write_v');
 		}
 	}
+
+	/**
+	 * [delete description] >todo 게시물 삭제
+	 * @return [type] [description]
+	 */
+	public function delete(){
+		// 게시물번호에 해당하는 게시물 삭제
+		$id = $this->uri->segment(3);
+
+		$this->todo_m->delete_todo($id);
+
+		redirect('/main/lists/');
+	}
 }
 // End of file this File

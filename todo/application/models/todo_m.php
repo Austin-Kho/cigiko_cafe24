@@ -43,5 +43,15 @@ class Todo_m extends CI_Model{
 		$sql = "INSERT INTO ci_items (content, created_date, due_date) VALUES ('".$content."', '".$created_date."', '".$due_date."')";
 		$query = $this->db->query($sql); // 쿼리 실행 (mysql_query($sql)과 동일함.)
 	}
+
+	/**
+	 * [delete_todo description] > DB 삭제 함수
+	 * @param  [type] $id [description]
+	 * @return [type]     [description]
+	 */
+	public function delete_todo($id){
+		$sql = "DELETE FROM ci_items WHERE id = '".$id."'";
+		$query = $this->db->query($sql);
+	}
 }
 // End of this File
