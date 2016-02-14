@@ -17,7 +17,7 @@
 					<tr>
 						<th scope="row"><?php echo $lt->board_id; ?></th><!-- 모델에서 객체배열로 반환했기 때문에 $lt->board_id 형태로 사용 -->
 						<td>
-							<a href="/ci3/bbs/<?php echo $this->uri->segment(1); ?>/view/<?php echo $this->uri->segment(3); ?>/<?php echo $lt->board_id; ?>" rel="external">
+							<a href="/ci3/bbs/<?php echo $this->uri->segment(1); ?>/view/<?php echo $this->uri->segment(3); ?>/board_id/<?php echo $lt->board_id; ?>/page/<?php echo $this->uri->segment(5); ?>" rel="external">
 								<?php echo $lt->subject; ?>
 							</a>
 						</td>
@@ -35,4 +35,10 @@
 				</tr>
 			</tfoot>
 		</table>
+		<div>
+			<form action="" id="bd_search" method="post">
+				<input type="text" name="search_word" id="q" onkeypress="board_search_enter(document.q);">
+				<input type="button" id="search_btn" value="검색">
+			</form>
+		</div>
 	</article>
