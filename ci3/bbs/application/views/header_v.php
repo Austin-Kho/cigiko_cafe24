@@ -8,8 +8,8 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 	<![endif]-->
-	<!-- <link type="text/css" href="/todo/include/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> -->
+	<script type="text/javascript" src="http:ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="/ci3/bbs/include/css/bootstrap.min.css" media="screen" >
 </head>
 <body>
 <div id="main">
@@ -22,6 +22,6 @@
 
 <nav id="gnb">
 	<ul>
-		<li><a href="/bbs/<?php echo $this->uri->segment(1); ?>/lists/<?php echo $this->uri->segment(3); ?>" rel="external">게시판 프로젝트</a></li>
+		<li><a href="/ci3/bbs/<?php echo $this->uri->segment(1); ?>/lists/<?php echo $this->uri->segment(3); ?>" rel="external">게시판 프로젝트</a></li>
 	</ul>
 </nav>

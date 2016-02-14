@@ -8,8 +8,8 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 	<![endif]-->
-	<!-- <link type="text/css" href="/todo/include/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> -->
+	<script type="text/javascript" src="http:ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link type="text/css" href="/ci3/todo/include/css/bootstrap.min.css" media="screen" rel="stylesheet">
 </head>
 <body>
 	<div id="main">
@@ -45,7 +45,7 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<th colspan="4"><a href="/todo/index.php/main/lists/" class="btn btn-primary">목록</a><a href="/todo/index.php/main/delete/<?php echo $this->uri->segment(3); ?>" class="btn btn-danger">삭제</a><a href="/todo/index.php/main/write" class="btn btn-success">쓰기</a></th>
+						<th colspan="4"><a href="/ci3/todo/index.php/main/lists/" class="btn btn-primary">목록</a><a href="/ci3/todo/index.php/main/delete/<?php echo $this->uri->segment(3); ?>" class="btn btn-danger">삭제</a><a href="/ci3/todo/index.php/main/write" class="btn btn-success">쓰기</a></th>
 					</tr>
 				</tfoot>
 			</table>
