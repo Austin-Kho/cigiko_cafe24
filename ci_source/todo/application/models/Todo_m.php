@@ -18,7 +18,7 @@ class todo_m extends CI_Model
 	 */
     function get_view($id)
     {
-    	$sql = "SELECT * FROM items WHERE id='".$id."'";
+    	$sql = "SELECT * FROM ci_items WHERE id='".$id."'";
 
 		$query = $this->db->query($sql);
 
@@ -33,7 +33,7 @@ class todo_m extends CI_Model
 	 */
     function get_list()
     {
-		$sql = "SELECT * FROM items";
+		$sql = "SELECT * FROM ci_items";
 
 		$query = $this->db->query($sql);
 
@@ -47,7 +47,7 @@ class todo_m extends CI_Model
 	 */
 	function insert_todo($content, $created_on, $due_date)
  	{
-		$sql = "INSERT INTO items (content, created_on, due_date) VALUES ('".$content."', '".$created_on."', '".$due_date."')";
+		$sql = "INSERT INTO ci_items (content, created_date, due_date) VALUES ('".$content."', '".$created_on."', '".$due_date."')";
 
 		$query = $this->db->query($sql);
  	}
@@ -57,7 +57,7 @@ class todo_m extends CI_Model
 	 */
 	function delete_todo($id)
  	{
-		$sql = "DELETE FROM items WHERE id ='".$id."'";
+		$sql = "DELETE FROM ci_items WHERE id ='".$id."'";
 
 		$query = $this->db->query($sql);
  	}

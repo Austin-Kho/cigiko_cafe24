@@ -54,14 +54,14 @@ class Board extends CI_Controller
 		$config['total_rows'] = $this->board_m->get_list($this->uri->segment(3), 'count');  // 게시물의 전체 개수
 		$config['per_page'] = 5;    // 한페이지에 표시할 게시물 수
 		$config['num_links'] = 2; // 링크 좌우로 보여질 페이지 수
-		$config['uri_segment'] = 6; // 페이지번호가 위치한 세그먼트$config[‘num_links’] = 2;
+		$config['uri_segment'] = 4; // 페이지번호가 위치한 세그먼트$config[‘num_links’] = 2;
 
 		// 페이지네이션 초기화
 		$this->pagination->initialize($config); // 원하는 설정값을 넣고 페이지네이션 라이브러리 초기화
 		$data['pagination'] = $this->pagination->create_links(); // 초기화 후 링크생성하여 뷰에 전달하기 위해 $data 변수에 담음
 
 		// 게시물 목록을 불러오기 위한 offset, limit 값 가져오기
-		$page = $this->uri->segment(6, 1);
+		$page = $this->uri->segment($config['uri_segment'], 1);
 
 		if($page>1) {
 			$start = (($page/$config['per_page'])) * $config['per_page'];

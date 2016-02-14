@@ -99,10 +99,10 @@ class Test extends CI_Controller {
 		}
 	}
 
-	function test2() 
+	function test2()
 	{
 		$this->input->post('aa');
-		
+
 	}
 
 

@@ -9,7 +9,7 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<link rel='stylesheet' href="/todo/include/css/bootstrap.css" />
+	<link rel='stylesheet' href="/ci_source/todo/include/css/bootstrap.css" />
 </head>
 <body>
 <div id="main">

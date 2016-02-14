@@ -7,5 +7,5 @@
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 
-	RewriteRule ^(.*)$ /todo/index.php/$1 [L]
+	RewriteRule ^(.*)$ /ci_source/todo/index.php/$1 [L]
 </IfModule>

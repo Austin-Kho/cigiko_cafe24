@@ -9,7 +9,7 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<link rel='stylesheet' href="/todo/include/css/bootstrap.css" />
+	<link rel='stylesheet' href="/ci_source/todo/include/css/bootstrap.css" />
 </head>
 <body>
 <div id="main">
@@ -34,7 +34,7 @@
 			<thead>
 				<tr>
 					<th scope="col"><?php echo $views->id;?> 번 할일</th>
-					<th scope="col">시작일 : <?php echo $views->created_on;?></th>
+					<th scope="col">시작일 : <?php echo $views->created_date;?></th>
 					<th scope="col">종료일 : <?php echo $views->due_date;?></th>
 				</tr>
 			</thead>
@@ -47,7 +47,7 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colspan="4"><a href="/todo/index.php/main/lists/" class="btn btn-primary">목록</a> <a href="/todo/index.php/main/delete/<?php echo $this->uri->segment(3);?>" class="btn btn-danger">삭제</a> <a href="/todo/index.php/main/write" class="btn btn-success">쓰기</a></th>
+					<th colspan="4"><a href="/ci_source/todo/index.php/main/lists/" class="btn btn-primary">목록</a> <a href="/ci_source/todo/index.php/main/delete/<?php echo $this->uri->segment(3);?>" class="btn btn-danger">삭제</a> <a href="/ci_source/todo/index.php/main/write" class="btn btn-success">쓰기</a></th>
 				</tr>
 			</tfoot>
 		</table>

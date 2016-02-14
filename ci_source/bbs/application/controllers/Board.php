@@ -29,7 +29,7 @@ class Board extends CI_Controller {
 	public function _remap($method)
  	{
  		//헤더 include
-        $this->load->view('header_v');
+    $this->load->view('header_v');
 
 		if( method_exists($this, $method) )
 		{

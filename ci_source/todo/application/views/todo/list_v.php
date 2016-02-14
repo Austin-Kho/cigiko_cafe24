@@ -9,7 +9,7 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<link rel='stylesheet' href="/todo/include/css/bootstrap.css" />
+	<link rel='stylesheet' href="/ci_source/todo/include/css/bootstrap.css" />
 </head>
 <body>
 <div id="main">
@@ -48,8 +48,8 @@ foreach ($list as $lt)
 					<th scope="row">
 						<?php echo $lt->id;?>
 					</th>
-					<td><a rel="external" href="/todo/index.php/main/view/<?php echo $lt->id;?>"><?php echo $lt->content;?></a></td>
-					<td><time datetime="<?php echo mdate("%Y-%M-%j", human_to_unix($lt->created_on));?>"><?php echo $lt->created_on;?></time></td>
+					<td><a rel="external" href="/ci_source/todo/index.php/main/view/<?php echo $lt->id;?>"><?php echo $lt->content;?></a></td>
+					<td><time datetime="<?php echo mdate("%Y-%M-%j", human_to_unix($lt->created_date));?>"><?php echo $lt->created_date;?></time></td>
 					<td><time datetime="<?php echo mdate("%Y-%M-%j", human_to_unix($lt->due_date));?>"><?php echo $lt->due_date;?></time></td>
 				</tr>
 <?php
@@ -59,7 +59,7 @@ foreach ($list as $lt)
 			</tbody>
 			<tfoot>
 				<tr>
-					<th colspan="4"><a href="/todo/index.php/main/write/" class="btn btn-success">쓰기</a></th>
+					<th colspan="4"><a href="/ci_source/todo/index.php/main/write/" class="btn btn-success">쓰기</a></th>
 				</tr>
 			</tfoot>
 		</table>
