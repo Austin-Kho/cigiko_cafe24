@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 
 class Board_m extends CI_Model
 {
-	public function __construct(){
-		parent::__construct();
-	}
+	// public function __construct(){
+	// 	parent::__construct();
+	// }
 	/**
 	 * [get_list 게시물 목록 DB에서 가져오기 함수]
 	 * @param  string $table [테이블 명(세그먼트-인자로 사용)]>
@@ -100,6 +100,22 @@ class Board_m extends CI_Model
 
  		// 결과 반환
  		return $result;
+	}
+
+	/**
+	 * [delete_content 게시물 삭제 로직]
+	 * @param  [String] $table [테이블명]
+	 * @param  [int] $no    [게시물 번호]
+	 * @return [boolean]        [성공 여부]
+	 */
+	public function delete_content($table, $no){
+
+		$delete_array = array('board_id' => $no);
+
+		$result = $this->db->delete($table, $delete_array);
+
+		//결과 반환
+		return $result;
 	}
 }
 // End of this File

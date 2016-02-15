@@ -175,11 +175,11 @@ class Board extends CI_Controller
 
 			if($result){  // 8 : 모델에서 인서트가 성공하면 TRUE가 반환
 				// 글 작성 성공 시 게시물 목록으로
-				alert('입력 되었습니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$pages); // 9 : 성공메세지 후 목록으로
+				alert('입력 되었습니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3)/*.'/page/'.$pages*/); // 9 : 성공메세지 후 목록으로
 				exit;
 			}else{
 				// 글 작성 실패 시 게시물 목록으로
-				alert('다시 입력해 주세요.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$pages); // 10 : 실패메세지 후 목록으로
+				alert('다시 입력해 주세요.', '/ci3/bbs/board/write/'.$this->uri->segment(3)/*.'/page/'.$pages*/); // 10 : 실패메세지 후 목록으로
 				exit;
 			}
 		}else{
@@ -252,6 +252,30 @@ class Board extends CI_Controller
 			// 쓰기 폼 호출
 			// 뷰 파일 modify_v 에 글 내용을 $data 변수에 담아 전달하고 화면에 출력.
 			$this->load->view('board/modify_v', $data);
+		}
+	}
+
+	/**
+	 * [delete 게시물 삭제 컨트롤러]
+	 * @return [boolean] [삭제 sql 쿼리 성공 여부]
+	 */
+	public function delete(){
+		// 메세지가 깨지는 경우 방지
+		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
+
+		// 경고창 헬퍼 로딩
+		$this->load->helper('alert');
+
+		// 게시물 번호에 해당하는 게시물 삭제
+		$return = $this->board_m->delete_content($this->uri->segment(3), $this->uri->segment(5));
+
+		// 게시물 목록으로 돌아가기
+		if($return){
+			// 삭제가 성공한 경우
+			alert('삭제 되었습니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$this->uri->segment(7));
+		}else{
+			// 삭제가 실패한 경우
+			alert('삭제 실패하였습니다.', '/ci3/bbs/board/view/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$this->uri->segment(7));
 		}
 	}
 }
