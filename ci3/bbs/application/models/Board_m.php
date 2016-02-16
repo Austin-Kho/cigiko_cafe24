@@ -11,7 +11,9 @@ class Board_m extends CI_Model
 	 * @param  string $table [테이블 명(세그먼트-인자로 사용)]>
 	 * @return [Array]        [게시물 목록 데이터]
 	 */
-	public function get_list($table = 'ci_board', $type='', $offset='', $limit='', $search_word=''){
+	public function get_list($table = '', $type='', $offset='', $limit='', $search_word=''){
+
+		if($table=='') $table = 'ci_board';
 
 		$sword ='';
 

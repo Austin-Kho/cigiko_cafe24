@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit ('No direct script access allowed');
 
 class Board extends CI_Controller
 {
@@ -12,7 +12,7 @@ class Board extends CI_Controller
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('board_m');
-		$this->load->helper(array('url', 'date'));
+		$this->load->helper(array('url', 'date', 'form'));
 	}
 
 	/**
@@ -139,14 +139,21 @@ class Board extends CI_Controller
 	}
 
 	/**
-	 * [write 게시판 내용입력 로직]
+	 * [write 게시판 내용입력 함수]
 	 * @return [type] [description]
 	 */
 	public function write(){
 
 		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 
-		if($_POST){  // 2 : 작성 버튼 클릭 시
+		$this->load->library('form_validation');
+
+		// 폼 검증 규칙 사전 정의
+		$this->form_validation->set_rules('subject', '제목', 'required');
+		$this->form_validation->set_rules('contents', '내용', 'required');
+
+		// if($_POST){  // 2 : 작성 버튼 클릭 시
+		if($this->form_validation->run() == TRUE){  // 2 : 작성 버튼 클릭 시
 			// 글쓰기 POST 전송 시
 
 			// 경고창 헬퍼 로딩
@@ -163,7 +170,7 @@ class Board extends CI_Controller
 
 				// 글 내용이 없을 경우, 프로그램단에서 한 번 더 체크
 				alert('비 정상적인 접근입니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$pages); //경고창 후 목록으로 이동하고
-				exit; // 로직 종료
+				exit; // 함수 종료
 			}
 			// var_dump($_POST);  // 포스트 데이타 내용 확인 //
 			$write_data = array(  // 6 : 디비에 입력할 데이터를 배열로 할당
@@ -189,7 +196,7 @@ class Board extends CI_Controller
 	}
 
 	/**
-	 * [modify 게시물 수정 로직]
+	 * [modify 게시물 수정 함수]
 	 * @return [type] [description]
 	 */
 	public function modify(){
