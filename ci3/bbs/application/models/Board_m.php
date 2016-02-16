@@ -70,7 +70,7 @@ class Board_m extends CI_Model
 
 		$insert_array = array(
 			'board_pid' => 0,       // 원글이라 0을 입력, 댓글일 경우는 원글 번호 입력
-			'user_id' => 'advisor', // 7장에서 로그인 처리후엔 로그인한 아이디
+			'user_id' => $array['user_id'], // 세션에서 불러온 로그인한 아이디
 			'user_name' => '웅파',
 			'subject' => $arrays['subject'],
 			'contents' => $arrays['contents'],
@@ -118,6 +118,20 @@ class Board_m extends CI_Model
 
 		//결과 반환
 		return $result;
+	}
+
+	/**
+	 * [writer_check 게시글 수정 시 본인 확인 함수]
+	 * @return [type] [description]
+	 */
+	public function writer_check() {
+		$table = $this->uri->segment(3);
+		$board_id = $this->uri->segment(5);
+
+		$sql = " SELECT user_id FROM ".$table." WHERE board_id = '".$board_id."' ";
+		$qry = $this->db->query($sql);
+
+		return $qry->row();
 	}
 }
 // End of this File

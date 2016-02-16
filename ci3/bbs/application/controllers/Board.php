@@ -144,54 +144,59 @@ class Board extends CI_Controller
 	 */
 	public function write(){
 
+		// 경고창 헬퍼 로딩
+		$this->load->helper('alert'); // 3 : PHP에서 alert를 사용하기 위한 사용자 헬퍼 호출
 		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 
-		$this->load->library('form_validation');
+		if(@$this->session->userdata('logged_in')==TRUE){
+			$this->load->library('form_validation');
 
-		// 폼 검증 규칙 사전 정의
-		$this->form_validation->set_rules('subject', '제목', 'required');
-		$this->form_validation->set_rules('contents', '내용', 'required');
+			// 폼 검증 규칙 사전 정의
+			$this->form_validation->set_rules('subject', '제목', 'required');
+			$this->form_validation->set_rules('contents', '내용', 'required');
 
-		// if($_POST){  // 2 : 작성 버튼 클릭 시
-		if($this->form_validation->run() == TRUE){  // 2 : 작성 버튼 클릭 시
-			// 글쓰기 POST 전송 시
+			// if($_POST){  // 2 : 작성 버튼 클릭 시
+			if($this->form_validation->run() == TRUE){  // 2 : 작성 버튼 클릭 시
+				// 글쓰기 POST 전송 시
 
-			// 경고창 헬퍼 로딩
-			$this->load->helper('alert'); // 3 : PHP에서 alert를 사용하기 위한 사용자 헬퍼 호출
+				// 주소 중에서 page 세그먼트가 있는지 검사하기 위해 주소를 배열로 전환
+				$uri_array = $this->segment_explode($this->uri->uri_string()); // 4 : 게시물 작성 후 목록으로 이동할 때 페이지 수 필요해서 선언한 부분,
+				if(in_array('page', $uri_array) && urldecode($this->url_explode($uri_array, 'page'))!=''){ //주소중에 /page/세그먼트가 있다면
+					$pages = urldecode($this->url_explode($uri_array, 'page'));  //그 값을 $pages변수에 할당하고
+				}else{     //없다면
+					$pages = 1;  // 초기값인 1을 할당.urldecode($this->url_explode($uri_array, 'page'))!=''
+				}
+				if( !$this->input->post('subject', TRUE) AND !$this->input->post('contents', TRUE)){ // 5 : 글내용이 없으면
 
-			// 주소 중에서 page 세그먼트가 있는지 검사하기 위해 주소를 배열로 전환
-			$uri_array = $this->segment_explode($this->uri->uri_string()); // 4 : 게시물 작성 후 목록으로 이동할 때 페이지 수 필요해서 선언한 부분,
-			if(in_array('page', $uri_array) && urldecode($this->url_explode($uri_array, 'page'))!=''){ //주소중에 /page/세그먼트가 있다면
-				$pages = urldecode($this->url_explode($uri_array, 'page'));  //그 값을 $pages변수에 할당하고
-			}else{     //없다면
-				$pages = 1;  // 초기값인 1을 할당.urldecode($this->url_explode($uri_array, 'page'))!=''
-			}
-			if( !$this->input->post('subject', TRUE) AND !$this->input->post('contents', TRUE)){ // 5 : 글내용이 없으면
+					// 글 내용이 없을 경우, 프로그램단에서 한 번 더 체크
+					alert('비 정상적인 접근입니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$pages); //경고창 후 목록으로 이동하고
+					exit; // 함수 종료
+				}
+				// var_dump($_POST);  // 포스트 데이타 내용 확인 //
+				$write_data = array(  // 6 : 디비에 입력할 데이터를 배열로 할당
+					'table'=>$this->uri->segment(3),
+					'subject'=>$this->input->post('subject', TRUE),
+					'contents'=>$this->input->post('contents', TRUE),
+					'user_id'=>$this->session->userdata('username') // 게시물 작성자 // 현재 로그인한 사용자
+				);
+				$result = $this->board_m->insert_board($write_data);  // 7 : 모델의 insert_board(); 함수에 데이타 전달하고 result 에 할당??
 
-				// 글 내용이 없을 경우, 프로그램단에서 한 번 더 체크
-				alert('비 정상적인 접근입니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$pages); //경고창 후 목록으로 이동하고
-				exit; // 함수 종료
-			}
-			// var_dump($_POST);  // 포스트 데이타 내용 확인 //
-			$write_data = array(  // 6 : 디비에 입력할 데이터를 배열로 할당
-				'table'=>$this->uri->segment(3),
-				'subject'=>$this->input->post('subject', TRUE),
-				'contents'=>$this->input->post('contents', TRUE)
-			);
-			$result = $this->board_m->insert_board($write_data);  // 7 : 모델의 insert_board(); 함수에 데이타 전달하고 result 에 할당??
-
-			if($result){  // 8 : 모델에서 인서트가 성공하면 TRUE가 반환
-				// 글 작성 성공 시 게시물 목록으로
-				alert('입력 되었습니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3)/*.'/page/'.$pages*/); // 9 : 성공메세지 후 목록으로
-				exit;
+				if($result){  // 8 : 모델에서 인서트가 성공하면 TRUE가 반환
+					// 글 작성 성공 시 게시물 목록으로
+					alert('입력 되었습니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3)/*.'/page/'.$pages*/); // 9 : 성공메세지 후 목록으로
+					exit;
+				}else{
+					// 글 작성 실패 시 게시물 목록으로
+					alert('다시 입력해 주세요.', '/ci3/bbs/board/write/'.$this->uri->segment(3)/*.'/page/'.$pages*/); // 10 : 실패메세지 후 목록으로
+					exit;
+				}
 			}else{
-				// 글 작성 실패 시 게시물 목록으로
-				alert('다시 입력해 주세요.', '/ci3/bbs/board/write/'.$this->uri->segment(3)/*.'/page/'.$pages*/); // 10 : 실패메세지 후 목록으로
-				exit;
+				// 쓰기 폼 view 호출
+				$this->load->view('board/write_v');  // 1 : 글 쓰기 버튼 눌렀을 때 처음 호출 화면
 			}
 		}else{
-			// 쓰기 폼 view 호출
-			$this->load->view('board/write_v');  // 1 : 글 쓰기 버튼 눌렀을 때 처음 호출 화면
+			alert('로그인 후 작성하세요', '/ci3/bbs/auth/login/');
+			exit;
 		}
 	}
 
@@ -200,65 +205,82 @@ class Board extends CI_Controller
 	 * @return [type] [description]
 	 */
 	public function modify(){
+		// 경고창 헬퍼 로딩
+		$this->load->helper('alert');
 		// 메세지가 깨지는 경우 방지
 		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
 
-		if($_POST){
-			// 글 수정 POST 전송 시
+		// 주소 중에서 page 세그먼트가 있는지 검사하기 위해 주소를 배열로 변환
+		$uri_array = $this->segment_explode($this->uri->uri_string());
 
-			// 경고창 헬퍼 로딩
-			$this->load->helper('alert');
+		if(in_array('page', $uri_array)){
+			$pages = urldecode($this->url_explode($uri_array, 'page'));
+		}else{
+			$pages = 1;
+		}
 
-			// 주소 중에서 page 세그먼트가 있는지 검사하기 위해 주소를 배열로 변환
-			$uri_array = $this->segment_explode($this->uri->uri_string());
+		// 글 수정 POST 전송 시
+		if(@$this->session->userdata('logged_in') == TRUE) {
+			// 수정하려는 글의 작성자가 본인인지 검증
+			$writer_id = $this->board_m->writer_check();
 
-			if(in_array('page', $uri_array)){
-				$pages = urldecode($this->url_explode($uri_array, 'page'));
-			}else{
-				$pages = 1;
-			}
-
-			if( !$this->input->post('subject', TRUE) AND !$this->input->post('contents', TRUE)){
-				// 글 내용이 없을 경우, 프로그램단에서 한번 더 체크
-				alert('비 정상적인 접근입니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$pages);
+			if($writer_id->user_id != $this->session->userdata('username')) {
+				alert('본인이 작성한 글이 아닙니다.', '/ci3/bbs/board/view/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$pages);
 				exit;
 			}
 
-			// var_dump($_POST);
-			$modify_data = array(
-				'table' => $this->uri->segment(3),
-				// 해당 글을 수정하는 것이므로 게시물 아이디(board_id) 추가
-				'board_id' => $this->uri->segment(5),
-				'subject' => $this->input->post('subject', TRUE),
-				'contents' => $this->input->post('contents', TRUE)
-			);
+			// 폼 검증 라이브러리 로드
+			$this->load->library('form_validation');
 
-			// modify_board 함수로 배열을 전달해 글 내용 수정.
-			// 혹시나 $this->input->post(); 데이터를 받지 않고
-			// 기존처럼 $_POST 배열을 그대로 함수에 전달하는 경우
-			// ($result=$this->board_m->modify_board($_POST);)
-			// SQL 삽입공격에 100% 노출 되므로 변수를 재할당하기 귀찮아도
-			// 컨트롤러에서 처리하여 모델이 전달하고 모델에서는 데이터베이스
-			// 입출력 부분만 담당하게 하는 것이 좋다.
-			$result = $this->board_m->modify_board($modify_data);
+			//폼 검증할 필드와 규칙 사전 정의
+			$this->form_validation->set_rules('subject', '제목', 'required');
+			$this->form_validation->set_rules('contents', '내용', 'required');
 
-			if($result){
-				// 글 작성 성공 시 게시물 목록으로
-				alert('수정 되었습니다.', '/ci3/bbs/board/view/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$pages);
-				exit;
+
+			if($this->form_validation->run() == TRUE) {
+				if( !$this->input->post('subject', TRUE) AND !$this->input->post('contents', TRUE)) {
+					// 글 내용이 없을 경우, 프로그램 단에서 한 번 더 체크
+					alert('비 정상적인 접근입니다.', 'ci3/bbs/lists/'.$this->uri->segment(3).'/page'.$pages);
+					exit;
+				}
+
+				// var_dump($_POST);
+				$modify_data = array(
+					'table' => $this->uri->segment(3),
+					'board_id' => $this->uri->segment(5),
+					'subject' => $this->input->post('subject', TRUE),
+					'contents' => $this->input->post('contents', TRUE)
+				);
+				// modify_board 함수로 배열을 전달해 글 내용 수정.
+				// 혹시나 $this->input->post(); 데이터를 받지 않고
+				// 기존처럼 $_POST 배열을 그대로 함수에 전달하는 경우
+				// ($result=$this->board_m->modify_board($_POST);)
+				// SQL 삽입공격에 100% 노출 되므로 변수를 재할당하기 귀찮아도
+				// 컨트롤러에서 처리하여 모델이 전달하고 모델에서는 데이터베이스
+				// 입출력 부분만 담당하게 하는 것이 좋다.
+				$result = $this->board_m->modify_board($modify_data);
+
+				if($result){
+					// 글 작성 성공 시 게시물 목록으로
+					alert('수정 되었습니다.', '/ci3/bbs/board/view/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$pages);
+					exit;
+				}else{
+					// 글 수정 실패 시 글 내용으로
+					alert('다시 수정해 주세요.', '/ci3/bbs/board/modify/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$pages);
+					exit;
+				}
 			}else{
-				// 글 수정 실패 시 글 내용으로
-				alert('다시 수정해 주세요.', '/ci3/bbs/board/modify/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$pages);
-				exit;
+				// 게시물 내용 가져오기
+				// 글 입력과 달리 수정화면에서 내용을 보여주고 수정하기 때문에 글 내용을 가져오는 부분 추가
+				$data['views'] = $this->board_m->get_view($this->uri->segment(3), $this->uri->segment(5));
+
+				// 쓰기 폼 호출
+				// 뷰 파일 modify_v 에 글 내용을 $data 변수에 담아 전달하고 화면에 출력.
+				$this->load->view('board/modify_v', $data);
 			}
 		}else{
-			// 게시물 내용 가져오기
-			// 글 입력과 달리 수정화면에서 내용을 보여주고 수정하기 때문에 글 내용을 가져오는 부분 추가
-			$data['views'] = $this->board_m->get_view($this->uri->segment(3), $this->uri->segment(5));
-
-			// 쓰기 폼 호출
-			// 뷰 파일 modify_v 에 글 내용을 $data 변수에 담아 전달하고 화면에 출력.
-			$this->load->view('board/modify_v', $data);
+			alert('로그인 후 수정하세요.', '/ci3/bbs/auth/login/');
+			exit;
 		}
 	}
 

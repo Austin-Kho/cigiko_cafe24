@@ -17,6 +17,19 @@
 		<blockquote>
 			<p>만들면서 배우는 CodeIgniter</p>
 			<small>실행 예제</small>
+			<p>
+<?php
+	if(@$this->session->userdata['logged_in'] == TRUE) {
+?>
+<?php echo $this->session->userdata('username'); ?> 님 환영합니다. <a href="/ci3/bbs/auth/logout" class="btn">로그아웃</a>
+<?php
+	}else{
+?>
+<a href="/ci3/bbs/auth/login" class="btn btn-primary">로그인</a>
+<?php
+	}
+?>
+			</p>
 		</blockquote>
 	</header>
 
