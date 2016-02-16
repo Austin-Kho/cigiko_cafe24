@@ -25,7 +25,7 @@
 
 				<div class="form-actions">
 					<button class="btn btn-primary" type="submit">확인</button>
-					<button class="btn" onclick="document.location.reload()">취소</button>
+					<button class="btn" onclick="history.go(-1);">취소</button>
 				</div>
 			</div>
 		</fieldset>

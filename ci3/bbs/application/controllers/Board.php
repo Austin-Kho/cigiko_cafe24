@@ -289,22 +289,33 @@ class Board extends CI_Controller
 	 * @return [boolean] [삭제 sql 쿼리 성공 여부]
 	 */
 	public function delete(){
+		// 경고창 헬퍼 로딩
+		$this->load->helper('alert');
 		// 메세지가 깨지는 경우 방지
 		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
 
-		// 경고창 헬퍼 로딩
-		$this->load->helper('alert');
+		if(@$this->session->userdata('logged_in') == TRUE) {
+			// 삭제하려는 글의 작성자가 본인인지 검증
+			$writer_id = $this->board_m->writer_check();
 
-		// 게시물 번호에 해당하는 게시물 삭제
-		$return = $this->board_m->delete_content($this->uri->segment(3), $this->uri->segment(5));
+			if($writer_id->user_id != $this->session->userdata('username')) {
+				alert('본인이 작성한 글이 아닙니다.', '/ci3/bbs/board/view/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$pages);
+				exit;
+			}
+			// 게시물 번호에 해당하는 게시물 삭제
+			$return = $this->board_m->delete_content($this->uri->segment(3), $this->uri->segment(5));
 
-		// 게시물 목록으로 돌아가기
-		if($return){
-			// 삭제가 성공한 경우
-			alert('삭제 되었습니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$this->uri->segment(7));
+			// 게시물 목록으로 돌아가기
+			if($return){
+				// 삭제가 성공한 경우
+				alert('삭제 되었습니다.', '/ci3/bbs/board/lists/'.$this->uri->segment(3).'/page/'.$this->uri->segment(7));
+			}else{
+				// 삭제가 실패한 경우
+				alert('삭제 실패하였습니다.', '/ci3/bbs/board/view/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$this->uri->segment(7));
+			}
 		}else{
-			// 삭제가 실패한 경우
-			alert('삭제 실패하였습니다.', '/ci3/bbs/board/view/'.$this->uri->segment(3).'/board_id/'.$this->uri->segment(5).'/page/'.$this->uri->segment(7));
+			alert('로그인 후 삭제하세요.', '/ci3/bbs/auth/login/');
+			exit;
 		}
 	}
 }
