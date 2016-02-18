@@ -131,8 +131,14 @@ class Board extends CI_Controller
 	public function view(){
 		//$this->output->enable_profiler(TRUE); //프로파일러 보기//
 
+		$table = $this->uri->segment(3);
+		$board_id = $this->uri->segment(5);
+
 		// 게시판 이름과 게시물 번호에 해당하는 게시물 가져오기
 		$data['views'] = $this->board_m->get_view($this->uri->segment(3), $this->uri->segment(5));
+
+		// 게시판 이름과 게시물 번호에 해당하는 댓글 리스트 가져오기
+		$data['comment_list'] = $this->board_m->get_comment($table, $board_id);
 
 		// view 호출
 		$this->load->view('board/view_v', $data);
