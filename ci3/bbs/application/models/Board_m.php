@@ -90,7 +90,7 @@ class Board_m extends CI_Model
 	public function modify_board($arrays){
 		$modify_array = array(
 			'subject' => $arrays['subject'],
-			'contents' => $arrays['contents'],
+			'contents' => $arrays['contents']
  		);
 
  		$where = array( // 입력과 달리 추가된 부분
