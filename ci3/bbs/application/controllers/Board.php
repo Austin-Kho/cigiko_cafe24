@@ -44,7 +44,6 @@ class Board extends CI_Controller
 	 */
 	public function lists(){
 
-
 		// $this->output->enable_profiler(TRUE); //프로파일러 보기//
 
 		// 검색어 초기화
