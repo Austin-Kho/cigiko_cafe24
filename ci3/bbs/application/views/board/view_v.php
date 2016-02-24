@@ -1,27 +1,83 @@
 <script type="text/javascript" src="/ci3/bbs/include/js/httpRequest.js"></script>
 <script type="text/javascript">
 
-	function comment_add() {
+	$(function(){
+		$("#comment_add").click(function(){
+			$.ajax({
+				url: "/ci3/bbs/ajax_board/ajax_comment_add",
+				type: "POST",
+				data:{
+					"comment_contents" : encodeURIComponent($("#input01").val()),
+					"csrf_test_name" : getCookie('csrf_cookie_name'),
+					"table" : "<?php echo $this->uri->segment(3); ?>",
+					"board_id" : "<?php echo $this->uri->segment(5); ?>"
+				},
+				dataType: "html",
+				complete: function(xhr, textStatus) {
+					if(textStatus == 'success') {
+						if(textStatus == 1000) {
+							alert('댓글 내용을 입력하세요.');
+						}else if(xhr.responseText == 2000) {
+							alert('다시 입력하세요');
+						}else if(xhr.responseText == 9000) {
+							alert('로그인 하여야 합니다.');
+						}else{
+							$("#comment_area").html(xhr.responseText);
+							$("#input01").val('');
+						}
+					}
+				}
+			});
+		});
+	});
+	// function comment_add() {
+	// 	var csrf_token = getCookie('csrf_cookie_name');
+	// 	var name = "comment_contents="+encodeURIComponent(document.com_add.comment_contents.value)+"&csrf_test_name="+csrf_token+"&table=<?php echo $this->uri->segment(3);?>&board_id=<?php echo $this->uri->segment(5);?>";
+	// 	sendRequest("/ci3/bbs/ajax_board/ajax_comment_add", name, add_action, "POST");
+	// }
+
+	// function add_action() {
+	// 	if(httpRequest.readyState == 4) {
+	// 		if(httpRequest.status == 200) {
+	// 			if(httpRequest.responseText == 1000) {
+	// 				alert('댓글 내용을 입력하세요.');
+	// 			}else if(httpRequest.responseText == 2000) {
+	// 				alert('다시 입력하세요.');
+	// 			}else if(httpRequest.responseText == 9000) {
+	// 				alert('로그인 하여야 합니다.');
+	// 			}else{
+	// 				var contents = document.getElementById('comment_area');
+	// 				contents.innerHTML = httpRequest.responseText;
+
+	// 				var textareas = document.getElementById('input01');
+	// 				textareas.value = '';
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	function comment_delete(no) {
 		var csrf_token = getCookie('csrf_cookie_name');
-		var name = "comment_contents="+encodeURIComponent(document.com_add.comment_contents.value)+"&csrf_test_name="+csrf_token+"&table=<?php echo $this->uri->segment(3);?>&board_id=<?php echo $this->uri->segment(5);?>";
-		sendRequest("/ci3/bbs/ajax_board/ajax_comment_add", name, add_action, "POST");
+		var name = "csrf_test_name="+csrf_token+"&table=<?php echo $this->uri->segment(3);?>&board_id="+no;
+
+		sendRequest("/ci3/bbs/ajax_board/ajax_comment_delete", name, delete_action, "POST");
 	}
 
-	function add_action() {
+	function delete_action() {
 		if(httpRequest.readyState == 4) {
 			if(httpRequest.status == 200) {
-				if(httpRequest.responseText == 1000) {
-					alert('댓글 내용을 입력하세요.');
+				if(httpRequest.responseText == 9000) {
+					alert('로그인하여야 합니다.');
+				}else if(httpRequest.responseText == 8000) {
+					alert('본인의 댓글만 삭제할 수 있습니다');
 				}else if(httpRequest.responseText == 2000) {
-					alert('다시 입력하세요.');
-				}else if(httpRequest.responseText == 9000) {
-					alert('로그인 하여야 합니다.');
+					alert('다시 삭제하세요.');
 				}else{
-					var contents = document.getElementById('comment_area');
-					contents.innerHTML = httpRequest.responseText;
+					var no = httpRequest.responseText;
+					var delete_tr = document.getElementById("row_num_"+no);
 
-					var textareas = document.getElementById('input01');
-					textareas.value = '';
+					delete_tr.parentNode.removeChild(delete_tr);
+					alert("삭제되었습니다.");
 				}
 			}
 		}
@@ -85,20 +141,21 @@
 					<label for="input01" class="control-label">댓글</label>
 					<div class="controls">
 						<textarea name="comment_contents" id="input01" cols="30" rows="3" class="input-xlarge"></textarea>
-						<input type="button" class="btn btn-primary" onclick="comment_add()" value="작성">
+						<input type="button" class="btn btn-primary" id="comment_add" onclick="comment_add()" value="작성">
 							<p class="help-block"></p>
 					</div>
 				</div>
 			</fieldset>
 		</form>
 		<div id="comment_area">
-			<table cellspaing="0" cellpadding="0" class="table table-striped">
+			<table cellspaing="0" cellpadding="0" class="table table-striped" id="comment_table">
 				<tbody>
 <?php foreach ($comment_list as $lt) : ?>
-					<tr>
+					<tr id="row_num_<?php echo $lt->board_id;?>">
 						<th scope="row"><?php echo $lt->user_id; ?></th>
 						<td><?php echo $lt->contents; ?></td>
 						<td><time datetime="<?php echo mdate('%Y-%M-%j', human_to_unix($lt->reg_date)); ?>"><?php 	echo $lt->reg_date; ?></time></td>
+						<td><a href="#" onclick="javascript:comment_delete('<?php echo $lt->board_id; ?>')"><i class="icon-trash"></i>삭제</a></td>
 					</tr>
 <? endforeach; ?>
 				</tbody>

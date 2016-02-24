@@ -19,7 +19,7 @@ class Board_m extends CI_Model
 
 		if($search_word!=''){
 			// 검색어가 있을 경우 처리
-			$sword = ' WHERE subject LIKE "%'.$search_word.'%" OR contents LIKE "%'.$search_word.'%" ';
+			$sword = ' WHERE board_pid = "0" AND subject LIKE "%'.$search_word.'%" OR contents LIKE "%'.$search_word.'%" ';
 		}
 
 		$limit_query = '';
@@ -141,15 +141,14 @@ class Board_m extends CI_Model
 	 */
 	public function insert_comment($arrays) {
 		$insert_array = array(
-			'board_pid' => $arrays['board_pid'],
+			'board_pid' => $arrays['board_pid'], //원글 번호 입력
 			'user_id' => $arrays['user_id'],
-			'user_name' => $arrays['user_n'],
-			'subject' => $arrays['subject'],
+			'user_name' => $arrays['user_id'],
 			'contents' => $arrays['contents'],
 			'reg_date' => date("Y-m-d H:i:s")
 		);
 
-		$this->db->insert($this->uri->segment(3), $insert_array);
+		$this->db->insert('ci_board', $insert_array);
 
 		$board_id = $this->db->insert_id();
 

@@ -25,6 +25,7 @@ class Ajax_board extends CI_Controller
 	}
 
 	public function ajax_comment_add() {
+		$this->load->helper('date');
 		if(@$this->session->userdata('logged_in') == TRUE) {
 			$this->load->model('board_m');
 
@@ -35,7 +36,7 @@ class Ajax_board extends CI_Controller
 			if($comment_contents !='') {
 				$write_data = array(
 					'table' => $table,       // 게시판 테이블 명
-					'board_id' => $board_id, // 원글 번호
+					'board_pid' => $board_id, // 원글 번호
 					'subject' => '',
 					'contents' => $comment_contents,
 					'user_id' => $this->session->userdata('username')
@@ -50,13 +51,13 @@ class Ajax_board extends CI_Controller
 ?>
 	<table cellpadding="0" cellspacing="0" class="table table-striped">
 		<tbody>
-<?php foreach ($query->result() as $lt) : ?>
+<?php foreach ($qry->result() as $lt) { ?>
 			<tr>
 				<th scope="row"><?php echo $lt->user_id; ?></th>
 				<td><?php echo $lt->contents; ?></td>
 				<td><time datetime="<?php echo mdate("%Y-%M-%j", human_to_unix($lt->reg_date)); ?>"></time></td>
 			</tr>
-<?php endforeach; ?>
+<?php } ?>
 		</tbody>
 	</table>
 <?php
@@ -68,6 +69,33 @@ class Ajax_board extends CI_Controller
 			}
 		}else{
 			echo "9000"; // 로그인 에러
+		}
+	}
+
+	public function ajax_comment_delete() {
+		if(@$this->session->userdata('logged_in' == TRUE)) {
+			$this->load->model('board_m');
+
+			$table = $this->input->post("tabl", TRUE);
+			$board_id = $this->input->post("board_id", TRUE);
+
+			// 글 작성자가 본인인지 검증
+			$writer_id = $this->board_m->writer_check($table, $board_id);
+
+			if($writer_id->user_id != $this->session->userdata('username')) {
+				echo "8000"; // 본인이 작성한 글이 아닙니다.
+			}else {
+				$result = $this->board_m->delete_content($table, $board_id);
+
+				if($result) {
+					echo $board_id;
+				}else {
+					// 글 실패 시
+					echo "2000";
+				}
+			}
+		}else{
+			echo "9000"; // 로그인 필요 에러
 		}
 	}
 }
