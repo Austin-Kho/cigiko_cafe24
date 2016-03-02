@@ -38,7 +38,7 @@ class Board extends CI_Controller {
 
 		//푸터 include
 		$this->load->view('footer_v');
-    }
+  }
 
 	/**
 	 * 목록 불러오기
