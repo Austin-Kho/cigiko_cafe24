@@ -51,7 +51,7 @@ class Board extends CI_Controller
 		$uri_segment = 5;
 
 		// 주소 중에서 q(검색어) 세그먼트가 있는지 검사하기 위해 주소를 배열로 전환
-		$uri_array = $this->segment_explode($this->uri->uri_string());
+		$uri_array = $this->uri->segment_array();
 
 		if(in_array('q', $uri_array)){  // 주소에 검색어('q')가 있을 경우, 즉 검색 시 처리
 
@@ -101,7 +101,7 @@ class Board extends CI_Controller
 	 */
 	public function url_explode($url, $key){
 		$cnt = count($url);
-		for($i = 0; $cnt>$i; $i++){
+		for($i = 1; $cnt>=$i; $i++){
 			if($url[$i] == $key){
 				$k = $i+1;           // 'q' 바로 다음에 있는
 				return $url[$k];     // 검색어를 추출하여 리턴한다.
@@ -109,19 +109,19 @@ class Board extends CI_Controller
 		}
 	}
 
-	public function segment_explode($seg){
-		// 세그먼트 앞뒤 '/' 제거 후 uri를 배열로 반환
-		$len = strlen($seg);
-		if(substr($seg, 0, 1) == '/'){
-			$seg = substr($seg, 1, $len);
-		}
-		$len = strlen($seg);
-		if(substr($seg, -1) == '/'){
-			$seg = substr($seg, 0, $len-1);
-		}
-		$seg_exp = explode("/", $seg);
-		return $seg_exp;
-	}
+	// public function segment_explode($seg){
+	// 	// 세그먼트 앞뒤 '/' 제거 후 uri를 배열로 반환
+	// 	$len = strlen($seg);
+	// 	if(substr($seg, 0, 1) == '/'){
+	// 		$seg = substr($seg, 1, $len);
+	// 	}
+	// 	$len = strlen($seg);
+	// 	if(substr($seg, -1) == '/'){
+	// 		$seg = substr($seg, 0, $len-1);
+	// 	}
+	// 	$seg_exp = explode("/", $seg);
+	// 	return $seg_exp;
+	// }
 
 	/**
 	 * [view 게시물 내용 보기]
@@ -165,7 +165,7 @@ class Board extends CI_Controller
 				// 글쓰기 POST 전송 시
 
 				// 주소 중에서 page 세그먼트가 있는지 검사하기 위해 주소를 배열로 전환
-				$uri_array = $this->segment_explode($this->uri->uri_string()); // 4 : 게시물 작성 후 목록으로 이동할 때 페이지 수 필요해서 선언한 부분,
+				$uri_array = $this->uri->segment_array(); // 4 : 게시물 작성 후 목록으로 이동할 때 페이지 수 필요해서 선언한 부분,
 				if(in_array('page', $uri_array) && urldecode($this->url_explode($uri_array, 'page'))!=''){ //주소중에 /page/세그먼트가 있다면
 					$pages = urldecode($this->url_explode($uri_array, 'page'));  //그 값을 $pages변수에 할당하고
 				}else{     //없다면
@@ -216,7 +216,7 @@ class Board extends CI_Controller
 		echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
 
 		// 주소 중에서 page 세그먼트가 있는지 검사하기 위해 주소를 배열로 변환
-		$uri_array = $this->segment_explode($this->uri->uri_string());
+		$uri_array = $this->uri->segment_array();
 
 		if(in_array('page', $uri_array)){
 			$pages = urldecode($this->url_explode($uri_array, 'page'));
