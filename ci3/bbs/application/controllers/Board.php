@@ -66,7 +66,7 @@ class Board extends CI_Controller
 
 		////////페이지네이션 시작///////////////////////////////////////////////////////////////
 		// 페이지네이션 설정
-		$config['base_url'] = '/ci3/bbs/board/lists/ci_board/'.$page_url.'/page';  // 페이징 주소 > 게시물 목록 주소
+		$config['base_url'] = '/ci3/bbs/board/lists/ci_board/'.$page_url.'/page/';  // 페이징 주소 > 게시물 목록 주소
 		$config['total_rows'] = $this->board_m->get_list($this->uri->segment(3), 'count', '', '', $search_word);  // 게시물의 전체 개수
 		$config['per_page'] = 5;    // 한페이지에 표시할 게시물 수
 		$config['num_links'] = 4; // 링크 좌우로 보여질 페이지 수
