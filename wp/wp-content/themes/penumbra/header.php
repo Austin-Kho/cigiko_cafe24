@@ -14,6 +14,7 @@ $penumbra_options = get_option('penumbra_theme_options');?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="shortcut icon" href="nc2u.ico">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -60,7 +61,7 @@ $penumbra_options = get_option('penumbra_theme_options');?>
         if ( ! empty( $header_image ) ) { ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                 <img class="headerimg" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
-            </a>	
+            </a>
 <?php } // if ( ! empty( $header_image ) )
 ?>
 	</header><!-- #masthead .site-header -->
