@@ -14,6 +14,8 @@ config_set.php
 */logs/!index.html
 */cache/*
 */cache/!index.html
+*/application/config/database.php
+*/application/config/config.php
 
 #wp
 wp-config.php
