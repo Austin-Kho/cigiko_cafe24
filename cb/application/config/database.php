@@ -82,11 +82,11 @@ $query_builder = TRUE;
  * 위 부분에서 yourdatabasenamehere 이 부분을 실제 디비명으로 변경해주세요.
 */
 $db['default'] = array(
-	'dsn'	=> 'mysql:host=localhost;dbname=brdnc',
+	'dsn'	=> 'mysql:host=localhost;dbname=cigiko',
 	'hostname' => 'localhost',
-	'username' => 'brdnc',
-	'password' => 'qkfoa5928',
-	'database' => 'brdnc',
+	'username' => 'cigiko',
+	'password' => 'sc1965112',
+	'database' => 'cigiko',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'cms_cb_',
 	'pconnect' => FALSE,
