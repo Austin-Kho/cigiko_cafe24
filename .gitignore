@@ -1,5 +1,10 @@
 # a comment - this is ignored
+
+# sublime-text
 sftp-config.json
+
+# Atom
+.ftpconfig
 
 #db info
 auth.php
@@ -19,3 +24,4 @@ config_set.php
 
 #wp
 wp-config.php
+*/wp/wp-conent/uploads/2013/08/*.*
