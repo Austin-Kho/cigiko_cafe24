@@ -1,0 +1,409 @@
+# Translation of Themes - Codilight Lite in Korean
+# This file is distributed under the same license as the Themes - Codilight Lite package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-09-22 04:18:10+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ko_KR\n"
+"Project-Id-Version: Themes - Codilight Lite\n"
+
+#. Theme Name of the plugin/theme
+msgid "Codilight Lite"
+msgstr "Codilight 라이트"
+
+#. Template Name of the plugin/theme
+msgid "Homepage"
+msgstr "홈페이지"
+
+#. Template Name of the plugin/theme
+msgid "Fullwidth"
+msgstr "전체 폭"
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:27
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%s 더보기 <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/content-single.php:51
+msgid "Next article"
+msgstr "다음글"
+
+#. translators: %s: Name of current post
+#: template-parts/content-page.php:32
+msgid "Edit %s"
+msgstr "편집 %s"
+
+#: template-parts/content-page.php:21 template-parts/content-single.php:28
+#: template-parts/content.php:34
+msgid "Pages:"
+msgstr "페이지:"
+
+#: template-parts/content-none.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "찾고 있는 것을 찾을 수 없는 것 같습니다. 검색이 도움될 수도 있습니다."
+
+#: template-parts/content-none.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "죄송합니다. 회원님의 검색어와 일치하는 것이 없습니다. 다른 키워드로 다시 해보세요."
+
+#: template-parts/content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "첫번째 글을 발행할 준비가 됐나요? <a href=\"%1$s\">여기서 시작하세요</a>."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "찾을 수 없습니다"
+
+#: search.php:20
+msgid "Search Results for: %s"
+msgstr "검색 결과: %s"
+
+#: inc/widgets/block_4_widget.php:14
+msgid "FT Block 4"
+msgstr "FT 블록 4"
+
+#: inc/widgets/block_4_widget.php:13
+msgid "Display a list of popular/lastest posts for use on sidebar."
+msgstr "사이드바에 사용할 인기/최근 글 목록 표시."
+
+#: inc/widgets/block_3_widget.php:188
+msgid "Block Category:"
+msgstr "블록 카테고리:"
+
+#: inc/widgets/block_3_widget.php:14
+msgid "FT Block 3"
+msgstr "FT 블록 3"
+
+#: inc/widgets/block_3_widget.php:13
+msgid "Display a list of posts based on one parent category"
+msgstr "하나의 부모 카테고리를 기준으로 글 목록 표시"
+
+#: inc/widgets/block_2_widget.php:204
+msgid "This widget only show posts has featured image."
+msgstr "이 위젯은 특성 이미지가 있는 글만 보여줍니다."
+
+#: inc/widgets/block_2_widget.php:14
+msgid "FT Block 2 - Slider"
+msgstr "FT 블록 2 - 슬라이더"
+
+#: inc/widgets/block_2_widget.php:13
+msgid "Slider posts widget for use on homepage."
+msgstr "홈 페이지에서 사용할 슬라이더 글 위젯."
+
+#: inc/widgets/block_1_widget.php:222 inc/widgets/block_2_widget.php:211
+#: inc/widgets/block_3_widget.php:204 inc/widgets/block_4_widget.php:192
+msgid "Order By:"
+msgstr "순서:"
+
+#: inc/widgets/block_1_widget.php:219 inc/widgets/block_2_widget.php:208
+#: inc/widgets/block_3_widget.php:201 inc/widgets/block_4_widget.php:189
+msgid "Ignore Sticky Posts"
+msgstr "붙박이 글 무시"
+
+#: inc/widgets/block_1_widget.php:214 inc/widgets/block_2_widget.php:202
+#: inc/widgets/block_3_widget.php:196 inc/widgets/block_4_widget.php:184
+msgid "Number of posts to show:"
+msgstr "보여줄 글의 수:"
+
+#: inc/widgets/block_1_widget.php:206 inc/widgets/block_2_widget.php:194
+#: inc/widgets/block_4_widget.php:176
+msgid "Multiselect Categories (all by default):"
+msgstr "다중 선택 카테고리 (기본은 모두);"
+
+#: inc/widgets/block_1_widget.php:197
+msgid "Posts block layout:"
+msgstr "글 블록 레이아웃:"
+
+#: inc/widgets/block_1_widget.php:193 inc/widgets/block_2_widget.php:189
+#: inc/widgets/block_3_widget.php:184 inc/widgets/block_4_widget.php:171
+msgid "Widget Title:"
+msgstr "위젯 제목:"
+
+#: inc/widgets/block_1_widget.php:14
+msgid "FT Block 1 - Recent Posts"
+msgstr "FT 블록 1 - 최근 글"
+
+#: inc/widgets/block_1_widget.php:13
+msgid "Display posts with list or grid style for use on homepage."
+msgstr "홈 페이지에 사용할 목록 또는 그리드 스타일의 글 표시."
+
+#: inc/template-tags.php:161
+msgid "Your comment is awaiting moderation."
+msgstr "댓글이 검토를 기다리고 있습니다."
+
+#: inc/template-tags.php:156
+msgid "Edit"
+msgstr "편집"
+
+#: inc/template-tags.php:155
+msgid "Reply"
+msgstr "응답"
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:153
+msgid "%1$s"
+msgstr "%1$s"
+
+#: inc/template-tags.php:147
+msgid "Post author"
+msgstr "글쓴이"
+
+#: inc/template-tags.php:131
+msgid "(Edit)"
+msgstr "(편집)"
+
+#: inc/template-tags.php:131
+msgid "Pingback:"
+msgstr "핑백:"
+
+#: inc/template-tags.php:102
+msgid "Tags"
+msgstr "태그"
+
+#: inc/template-tags.php:95
+msgid "Categories"
+msgstr "카테고리:"
+
+#: inc/template-tags.php:72
+msgctxt "post author"
+msgid "by %s"
+msgstr "작성자 %s"
+
+#: inc/template-tags.php:67
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "발행일자 %s"
+
+#: inc/template-tags.php:30
+msgctxt "post author"
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:26
+msgctxt "post date"
+msgid "%s"
+msgstr "%s"
+
+#: inc/extras.php:91
+msgid "Add a menu"
+msgstr "메뉴 추가하기"
+
+#: inc/dashboard.php:51
+msgid "Theme Screenshot"
+msgstr "테마 스크린샷"
+
+#: inc/dashboard.php:43
+msgid "Support for %s WordPress theme is conducted through the WordPress free theme support forum."
+msgstr "%s 워드프레스 테마의 지원은 FameThemes 지원 티켓 시스템을 통해 실행됩니다."
+
+#: inc/dashboard.php:42
+msgid "Having Trouble, Need Support?"
+msgstr "문제가 있거나 지원이 필요하신가요?"
+
+#: inc/dashboard.php:38
+msgid "Online Documentation"
+msgstr "온라인 문서"
+
+#: inc/dashboard.php:35
+msgid "Theme Documentation"
+msgstr "테마 문서"
+
+#: inc/dashboard.php:31
+msgid "Start Customize"
+msgstr "사용자 정의하기 시작하기"
+
+#: inc/dashboard.php:29
+msgid "%s supports the Theme Customizer for all theme settings. Click \"Customize\" to start customize your site."
+msgstr "%s은(는) 모든 테마 설정에 테마 사용자 정의를 지원합니다. 사이트 사용자 정의를 시작하려면 \"사용자 정의하기\"를 클릭하세요."
+
+#: inc/dashboard.php:28
+msgid "Theme Customizer"
+msgstr "테마 사용자 정의하기"
+
+#. #-#-#-#-#  codilight-lite.pot (Codilight Lite 1.0.7)  #-#-#-#-#
+#. Author of the plugin/theme
+#: inc/dashboard.php:19
+msgid "FameThemes"
+msgstr "FameThemes"
+
+#. #-#-#-#-#  codilight-lite.pot (Codilight Lite 1.0.7)  #-#-#-#-#
+#. Description of the plugin/theme
+#: inc/dashboard.php:18
+msgid "Codilight Lite is a news magazine style WordPress theme from FameThemes which is a perfect option to create any kind of magazine or blog websites."
+msgstr "Codilight 라이트는 FameThemes에서 제작한 뉴스 매거진 스타일의 워드프레스 테마입니다. 모든 종류의 매거진 또는 블로그 웹사이트를 제작하는데 적합합니다."
+
+#: inc/dashboard.php:17
+msgid "Welcome to %1s - Version %2s"
+msgstr "%1s에 오신것을 환영합니다 - 버전 %2s"
+
+#: inc/dashboard.php:9
+msgid "%s"
+msgstr "%s"
+
+#: inc/dashboard.php:9
+msgid "%s Theme Dashboard"
+msgstr "%s 테마 알림판"
+
+#: inc/customizer.php:99
+msgid "Category, Tag, Author, Archive Page&hellip;"
+msgstr "카테고리, 태그, 글쓴이, 글 보관함 페이지&hellip;"
+
+#: inc/customizer.php:92
+msgid "Archive Page Posts Layout"
+msgstr "글보관함 페이지 글 레이아웃"
+
+#: inc/customizer.php:78
+msgid "Front Page Posts Layout"
+msgstr "전면 페이지 글 레이아웃"
+
+#: inc/customizer.php:64
+msgid "Default Sidebar Position"
+msgstr "기본 사이드바 위치"
+
+#: inc/customizer.php:54
+msgid "Site Layout"
+msgstr "사이트 레이아웃"
+
+#: inc/customizer.php:43
+msgid "Your site logo"
+msgstr "사이트 로고"
+
+#: inc/customizer.php:41
+msgid "Site Logo"
+msgstr "사이트 로고"
+
+#: inc/customizer-controls.php:38
+msgid "Upgrade to <a href=\"#\">Codilight Premium</a> to be able to change the section order and styling!"
+msgstr "섹션 순서와 스타일을 변경하려면 <a href=\"#\">Codilight Premium</a>으로 업그레이드 하세요!"
+
+#: header.php:42
+msgid "Search"
+msgstr "검색"
+
+#: header.php:32
+msgid "Menu"
+msgstr "메뉴"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "콘텐츠로 바로가기"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Raleway, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:190
+msgctxt "Raleway font: on or off"
+msgid "on"
+msgstr "off"
+
+#. Translators: If there are characters in your language that are not supported
+#. by merriweather, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:184
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr "off"
+
+#: functions.php:139
+msgid "Home 4"
+msgstr "홈 4"
+
+#: functions.php:130
+msgid "Home 3"
+msgstr "홈 3"
+
+#: functions.php:121
+msgid "Home 2"
+msgstr "홈 2"
+
+#: functions.php:112
+msgid "Home 1"
+msgstr "홈 1"
+
+#: functions.php:101
+msgid "Default Sidebar"
+msgstr "기본 사이드바"
+
+#: functions.php:52
+msgid "Footer Menu"
+msgstr "푸터메뉴"
+
+#: functions.php:51
+msgid "Primary Menu"
+msgstr "주 메뉴"
+
+#: footer.php:34
+msgid "Codilight Theme by %1$s"
+msgstr "Codilight 테마 제작자 %1$s"
+
+#: footer.php:32
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgstr "Copyright &copy; %1$s %2$s. All Rights Reserved."
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "댓글이 닫혔습니다."
+
+#: comments.php:43 comments.php:63
+msgid "Newer Comments"
+msgstr "새 댓글"
+
+#: comments.php:42 comments.php:62
+msgid "Older Comments"
+msgstr "이전 댓글"
+
+#: comments.php:39 comments.php:59
+msgid "Comment navigation"
+msgstr "댓글 내비게이션"
+
+#: archive.php:57 archive.php:77 category.php:57 category.php:77 index.php:62
+#: index.php:82 search.php:43
+msgid "Page %1$s of %2$s"
+msgstr "페이지 %2$s 중 %1$s"
+
+#: archive.php:55 archive.php:75 category.php:55 category.php:75 index.php:60
+#: index.php:80 search.php:41
+msgid "Page"
+msgstr "페이지"
+
+#: 404.php:29
+msgid "Latest Posts"
+msgstr "최근 글"
+
+#: 404.php:24
+msgid "Maybe try a search?"
+msgstr "검색을 해보시겠습니까?"
+
+#: 404.php:19
+msgid "Sorry, but the page you are looking for doesn&rsquo;t exist. "
+msgstr "죄송합니다. 찾고 있는 페이지는 없습니다. "
+
+#: 404.php:18
+msgid "Ooops&hellip; Error 404"
+msgstr "이런&hellip; 에러 404"
+
+#: template-parts/content-single.php:45
+msgid "Previous article"
+msgstr "이전 글"
+
+#: inc/dashboard.php:36
+msgid "Need any help to setup and configure %s? Please have a look at our documentations instructions."
+msgstr "%s를 설정하는데 도움이 필요하신가요? 저희 문서의 지침을 봐주세요."
+
+#: comments.php:31
+msgctxt "comments title"
+msgid "1 Comment"
+msgid_plural "%1$s comments"
+msgstr[0] "%1$s 댓글"
+
+#. Author URI of the plugin/theme
+msgid "http://www.famethemes.com"
+msgstr "http://www.famethemes.com"
+
+#. Theme URI of the plugin/theme
+msgid "http://www.famethemes.com/themes/codilight-lite"
+msgstr "http://www.famethemes.com/themes/codilight-lite"

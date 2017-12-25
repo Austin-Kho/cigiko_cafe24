@@ -1,0 +1,402 @@
+# Translation of Themes - EasyBlog in Korean
+# This file is distributed under the same license as the Themes - EasyBlog package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-09-25 23:10:39+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ko_KR\n"
+"Project-Id-Version: Themes - EasyBlog\n"
+
+#. Description of the plugin/theme
+msgid "EasyBlog is a fully responsive blogging WordPress theme perfect for personal blog, photo blogging, writers, travelers, bloggers, blog. It is SEO friendly with featured image supports and custom colors. Bootstrap is used for responsiveness and supports all major browsers.  It is beautifully designed clean and light color used theme perfect for everyone. Theme customizer can be used to change color, upload logo and other basic settings. 3 Built-in widgets recent posts will help you to show recently published post with thumbnails, Daisy social Icons help you to add your favorite social profiles and also included advertisement widget to add banner ads. You can get quick SUPPORT through support page https://daisythemes.com/support/ and view live DEMO at http://demo.daisythemes.com/easyblog/"
+msgstr "EasyBlog는 개인 블로그, 사진 블로그. 작가, 여행자, 블로거, 블로그 등에 적합니다. 완전 반응형 워드프레스 블로그 테마입니다. 특성 이미지와 사용자 정의 색상을 지원하는 SEO 친화적입니다. 반응형을 위해 부트스트랩이 사용됐으며 모든 주요 브라우저를 지원합니다. 아름답게 디자인 된 깨끗하고 밝은 색상을 사용하여 모든 사용자에게 완벽합니다. 테마 사용자 정의하기는 색상 변경, 로고 업로드, 기타 기본적인 설정을 지원합니다. 세 가지 위젯이 기본 설치돼있으며 최근 글 위젯은 최근에 발행된 글에 썸네일을 표시할 수 있습니다. 데이지 소셜 아이콘은 즐겨 사용하는 소셜 프로필을 추가할 수 있고 배너를 사용할 수 있는 광고 위젯이 포함돼있습니다. 지원 페이지( https://daisythemes.com/support/ )를 통해 빠른 지원을 받을 수 있으며 데모를 볼 수 있습니다( http://demo.daisythemes.com/easyblog/ )."
+
+#. Theme Name of the plugin/theme
+msgid "EasyBlog"
+msgstr "EasyBlog"
+
+#. Template Name of the plugin/theme
+msgid "Full Width"
+msgstr "전체폭"
+
+#: inc/customizer.php:62
+msgid "Check to activate the related posts"
+msgstr "관련 글을 활성화하려면 체크하세요"
+
+#: inc/customizer.php:45
+msgid "Related Posts"
+msgstr "관련 글"
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:33
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%s 더보기 <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/content-page.php:22 template-parts/content-single.php:25
+#: template-parts/content.php:38
+msgid "Pages:"
+msgstr "페이지:"
+
+#: template-parts/content-none.php:31
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "찾고 있는 것을 찾을 수 없는 것 같습니다. 검색이 도움이 될 수도 있습니다."
+
+#: template-parts/content-none.php:25
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "죄송하지만 검색어와 일치하는 것이 없습니다. 다른 검색어로 다시 시도해보세요."
+
+#: template-parts/content-none.php:21
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "첫 번째 글을 발행할 준비가 됐나요? <a href=\"%1$s\">여기서 시작하세요</a>."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "찾을 수 없습니다"
+
+#: search.php:22
+msgid "Search Results for: %s"
+msgstr "결색 결과: %s"
+
+#: inc/widgets/widgets.php:466
+msgid "No. of Posts"
+msgstr "글 수"
+
+#: inc/widgets/widgets.php:454
+msgid "Category"
+msgstr "카테고리"
+
+#: inc/widgets/widgets.php:430
+msgid "Sorry, no posts found in selected category."
+msgstr "죄송합니다. 선택된 카테고리에는 글을 찾을 수 없습니다."
+
+#: inc/widgets/widgets.php:382
+msgid "Show Recent Posts with thumbnail image"
+msgstr "썸네일 이미지가 있는 최근 글 보이기"
+
+#: inc/widgets/widgets.php:379
+msgid "Daisy: Recent Posts"
+msgstr "데이지: 최근 글"
+
+#: inc/widgets/widgets.php:352
+msgid "Select Ads Image"
+msgstr "광고 이미지 선택"
+
+#: inc/widgets/widgets.php:342
+msgid "Ads Image"
+msgstr "광고 이미지"
+
+#. #-#-#-#-#  easyblog.pot (EasyBlog 1.1.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: inc/widgets/widgets.php:338
+msgid "http://daisythemes.com/"
+msgstr "http://daisythemes.com/"
+
+#: inc/widgets/widgets.php:337
+msgid "Ads Link"
+msgstr "광고 링크"
+
+#: inc/widgets/widgets.php:333
+msgid "Ads Title"
+msgstr "광고 제목"
+
+#: inc/widgets/widgets.php:304
+msgid "Advertisement"
+msgstr "광고 "
+
+#: inc/widgets/widgets.php:292
+msgid "Advertisement for sidebar"
+msgstr "사이드바의 광고"
+
+#: inc/widgets/widgets.php:290
+msgid "Daisy: Banner Advertisement "
+msgstr "데이지: 배너 광고 "
+
+#: inc/widgets/widgets.php:252
+msgid "https://dribbble.com/"
+msgstr "https://dribbble.com/"
+
+#: inc/widgets/widgets.php:251
+msgid "Dribbble"
+msgstr "Dribbble"
+
+#: inc/widgets/widgets.php:247
+msgid "https://www.behance.net/"
+msgstr "https://www.behance.net/"
+
+#: inc/widgets/widgets.php:246
+msgid "Behance"
+msgstr "Behance"
+
+#: inc/widgets/widgets.php:242
+msgid "https://linkedin.com"
+msgstr "https://linkedin.com"
+
+#: inc/widgets/widgets.php:241
+msgid "Linkedin"
+msgstr "링트인"
+
+#: inc/widgets/widgets.php:237
+msgid "https://vimeo.com/"
+msgstr "https://vimeo.com/"
+
+#: inc/widgets/widgets.php:236
+msgid "Vimeo"
+msgstr "비미오"
+
+#: inc/widgets/widgets.php:232
+msgid "https://www.youtube.com/"
+msgstr "https://www.youtube.com/"
+
+#: inc/widgets/widgets.php:231
+msgid "YouTube"
+msgstr "유투브"
+
+#: inc/widgets/widgets.php:227
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: inc/widgets/widgets.php:226
+msgid "WordPress"
+msgstr "워드프레스"
+
+#: inc/widgets/widgets.php:222
+msgid "https://www.pinterest.com/"
+msgstr "https://www.pinterest.com/"
+
+#: inc/widgets/widgets.php:221
+msgid "Pinterest"
+msgstr "핀터레스트"
+
+#: inc/widgets/widgets.php:217
+msgid "https://www.flickr.com/\""
+msgstr "https://www.flickr.com/\""
+
+#: inc/widgets/widgets.php:216
+msgid "Flickr"
+msgstr "플리커"
+
+#: inc/widgets/widgets.php:212
+msgid "https://github.com/"
+msgstr "https://github.com/"
+
+#: inc/widgets/widgets.php:211
+msgid "Github"
+msgstr "깃허브"
+
+#: inc/widgets/widgets.php:207
+msgid "https://instagram.com/"
+msgstr "https://instagram.com/"
+
+#: inc/widgets/widgets.php:206
+msgid "Instagram"
+msgstr "인스타그램"
+
+#: inc/widgets/widgets.php:202
+msgid "https://plus.google.com/"
+msgstr "https://plus.google.com/"
+
+#: inc/widgets/widgets.php:201
+msgid "G plus"
+msgstr "구글 플러스"
+
+#: inc/widgets/widgets.php:197
+msgid "https://twitter.com/"
+msgstr "https://twitter.com/"
+
+#: inc/widgets/widgets.php:196
+msgid "Twitter"
+msgstr "트위터"
+
+#: inc/widgets/widgets.php:192
+msgid "https://www.facebook.com/"
+msgstr "https://www.facebook.com/"
+
+#: inc/widgets/widgets.php:191
+msgid "Facebook"
+msgstr "페이스북"
+
+#: inc/widgets/widgets.php:186 inc/widgets/widgets.php:187
+#: inc/widgets/widgets.php:332 inc/widgets/widgets.php:448
+msgid "Title"
+msgstr "타이틀"
+
+#: inc/widgets/widgets.php:73
+msgid "Social Icons"
+msgstr "소셜 아이콘"
+
+#: inc/widgets/widgets.php:71
+msgid "Daisy: Social Icons"
+msgstr "데이지: 소셜 아이콘"
+
+#: inc/widgets/widgets.php:36
+msgid "Add widgets to show at Frontpage After Content"
+msgstr "전면 페이지에서 콘텐츠 다음에 위젯 추가"
+
+#: inc/widgets/widgets.php:34
+msgid "Front Page: After Content"
+msgstr "전면 페이지: 콘텐츠 다음"
+
+#: inc/widgets/widgets.php:25
+msgid "Add widgets to show at Frontpage Before Content"
+msgstr "전면 페이지에서 콘텐츠 이전에 위젯 추가"
+
+#: inc/widgets/widgets.php:23
+msgid "Front Page: Before Content"
+msgstr "전면 페이지: 콘텐츠 이전"
+
+#: inc/widgets/widgets.php:14
+msgid "Add widgets to Show widgets at right panel of page"
+msgstr "페이지에서 우측 패널에 위젯 추가"
+
+#: inc/widgets/widgets.php:12
+msgid "Right Sidebar"
+msgstr "우측 사이드바"
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:71 template-parts/content-page.php:33
+msgid "Edit %s"
+msgstr "편집 %s"
+
+#: inc/template-tags.php:64
+msgid "% Comments"
+msgstr "% 댓글"
+
+#: inc/template-tags.php:64
+msgid "1 Comment"
+msgstr "1 댓글"
+
+#: inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr "댓글 달기"
+
+#: inc/template-tags.php:58
+msgid "Tagged %1$s"
+msgstr "태그 %1$s"
+
+#: inc/template-tags.php:52
+msgid "Posted in %1$s"
+msgstr "카테고리 %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:33
+msgctxt "post author"
+msgid "by %s"
+msgstr "작성자 %s"
+
+#: inc/template-tags.php:28
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "작성일자 %s"
+
+#: inc/customizer.php:28
+msgid "Primary Color"
+msgstr "주 색상"
+
+#: header.php:55
+msgid "Menu"
+msgstr "메뉴"
+
+#: functions.php:206
+msgid "Search Results"
+msgstr "검색 결과"
+
+#: functions.php:204
+msgid "Blog Archive"
+msgstr "블로그 글보관함"
+
+#: functions.php:202
+msgid "Author Archive"
+msgstr "글쓴이 글보관함"
+
+#: functions.php:196 functions.php:198 functions.php:200
+msgid "Archive for"
+msgstr "글보관함"
+
+#: functions.php:170
+msgid "Home"
+msgstr "홈"
+
+#: functions.php:60
+msgid "Primary"
+msgstr "프라이머리"
+
+#. #-#-#-#-#  easyblog.pot (EasyBlog 1.1.0)  #-#-#-#-#
+#. Author of the plugin/theme
+#: footer.php:25
+msgid "Daisy Themes"
+msgstr "데이지 테마"
+
+#: footer.php:25
+msgid "Designed by"
+msgstr "디자인"
+
+#: footer.php:23
+msgid "Powered %1$s by %2$s"
+msgstr "Powered %1$s by %2$s"
+
+#: footer.php:21
+msgid ". All rights reserved."
+msgstr ". All rights reserved."
+
+#: footer.php:21
+msgid "Copyright &copy;"
+msgstr "Copyright &copy;"
+
+#: comments.php:78
+msgid "Comments are closed."
+msgstr "댓글이 닫혀있습니다."
+
+#: comments.php:44 comments.php:65
+msgid "Newer Comments"
+msgstr "새 댓글"
+
+#: comments.php:43 comments.php:64
+msgid "Older Comments"
+msgstr "이전 댓글"
+
+#: comments.php:40 comments.php:61
+msgid "Comment navigation"
+msgstr "댓글 내비게이션"
+
+#: comments.php:31
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; 에 대한 %1$s 댓글"
+
+#: archive.php:65 front-page.php:95 home.php:63
+msgid "Sorry, no posts matched your criteria."
+msgstr "죄송합니다. 범위에 일치하는 글이 없습니다."
+
+#: archive.php:48 front-page.php:74 home.php:45
+msgid "Read more"
+msgstr "더보기"
+
+#. translators: %1$s: smiley
+#: 404.php:53
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "월간 보관물을 확인해보세요. %1$s"
+
+#: 404.php:35
+msgid "Most Used Categories"
+msgstr "가장 많이 사용한 카테고리"
+
+#: 404.php:24
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "이 위치에서 아무 것도 찾을 수 없을 것 같습니다. 아래의 링크 또는 검색 중 하나를 하세요."
+
+#: 404.php:20
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "이런! 해당 페이지를 찾을 수 없습니다."
+
+#. Theme URI of the plugin/theme
+msgid "http://daisythemes.com/theme/easyblog/"
+msgstr "http://daisythemes.com/theme/easyblog/"

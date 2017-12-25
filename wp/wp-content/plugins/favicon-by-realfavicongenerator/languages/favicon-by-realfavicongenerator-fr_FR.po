@@ -1,0 +1,94 @@
+# Copyright (C) 2014-2016 Favicon by RealFaviconGenerator
+# This file is distributed under the same license as the Favicon by RealFaviconGenerator package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Favicon by RealFaviconGenerator 1.1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/favicon-by-realfavicongenerator\n"
+"POT-Creation-Date: 2015-06-24 10:16+0100\n"
+"PO-Revision-Date: 2015-07-15 11:46+0200\n"
+"Last-Translator: Philippe Bernard <philippe@realfavicongenerator.net>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:77
+#: admin/class-favicon-by-realfavicongenerator-admin.php:78
+#: admin/class-favicon-by-realfavicongenerator-admin.php:82
+msgid "Favicon"
+msgstr "Favicon"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:81
+msgid "Favicon Settings"
+msgstr "Réglages du favicon"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:182
+msgid ""
+"Nonce was not recognized. This case is supposed to happen only in case of XSS attack. If you "
+"feel like something is wrong, please <a href=\\\"mailto:contact@realfavicongenerator.net\\"
+"\">contact us</a>."
+msgstr ""
+"Le nonce n'a pas été reconnu. Cela n'est censé arriver qu'en cas d'attaque XSS. Si vous pensez "
+"que quelque chose ne va pas, veuillez <a href=\\\"mailto:contact@realfavicongenerator.net\\"
+"\">nous contacter</a>."
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:190
+#: public/class-favicon-by-realfavicongenerator-common.php:414
+msgid "Cannot create directory %s to store the favicon package"
+msgstr "Impossible de créer le répertoire %s afin d'y stocker le package du favicon"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:442
+msgid "An update is available on RealFaviconGenerator:"
+msgstr "Une mise à jour est disponible sur RealFaviconGenerator"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:448
+msgid "You might want to <a href=\"%s\">generate your favicon again</a>"
+msgstr "Vous voulez peut-être <a href=\"%s\">générer votre favicon</a> à nouveau"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:454
+#: admin/class-favicon-by-realfavicongenerator-admin.php:477
+msgid "Hide this notice"
+msgstr "Masquer cette notice"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:458
+#: admin/class-favicon-by-realfavicongenerator-admin.php:481
+msgid "Do not warn me again in case of update"
+msgstr "Ne plus m'avertir en cas de mise à jour"
+
+#: admin/class-favicon-by-realfavicongenerator-admin.php:471
+msgid "Your favicon was updated automatically:"
+msgstr "Votre favicon a été mis à jour automatiquement :"
+
+#: admin/class-favicon-by-realfavicongenerator-api-response.php:159
+msgid "Cannot create directory %s to store the favicon package content"
+msgstr "Impossible de créer le répertoire %s afin d'y stocker le contenu du package du favicon"
+
+#: admin/class-favicon-by-realfavicongenerator-api-response.php:206
+msgid "Unknown reason"
+msgstr "Raison inconnu"
+
+#: admin/class-favicon-by-realfavicongenerator-api-response.php:212
+msgid "Error while unziping the favicon package %s to directory %s"
+msgstr "Erreur lors de la décompression du package du favicon %s dans le répertoire %s"
+
+#: admin/class-favicon-by-realfavicongenerator-api-response.php:281
+msgid "Cannot download file at %s"
+msgstr "Impossible de télécharger le fichier à l'adresse %s"
+
+#: admin/class-favicon-by-realfavicongenerator-api-response.php:284
+msgid "Cannot store downloaded file locally"
+msgstr "Impossible de stocker localement le fichier téléchargé"
+
+#: admin/views/appearance.php:11
+msgid "Favicon installation in progress. Please wait..."
+msgstr "Installation du favicon en cours. Veuillez patienter..."
+
+#: admin/views/appearance.php:16
+msgid "Favicon installed!"
+msgstr "Favicon installé !"
+
+#: admin/views/appearance.php:18
+msgid "Do you like the result? If so, would you like to <a %s>rate the plugin</a>?"
+msgstr "Satisfait du résultat ? Voudriez-vo
