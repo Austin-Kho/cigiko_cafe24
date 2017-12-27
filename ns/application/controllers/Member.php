@@ -76,12 +76,12 @@ class Member extends CI_Controller
 					);
 					$this->session->set_userdata($user_data);
 
-					if($this->input->post('id_rem') =='rem') {        // 쿠키 저장 체크가 되어 있으면
+					if($this->input->post('id_rem') =='rem') {        // 아이디 저장 체크가 되어 있으면
 						if( !get_cookie('id_r')) { // 실제 쿠키가 없으면 만들고
 	    					set_cookie('id_r', 'rem', 1000000);
 	    					set_cookie('id', $this->input->post('user_data'), 1000000);
 						}
-					}else{   // 쿠키 저장 체크가 되어 있지 않으면 ,쿠키를 파괴하라
+					}else{   // 아이디 저장 체크가 되어 있지 않으면 ,쿠키를 파괴하라.
 						delete_cookie('id_r');
 						delete_cookie('id');
 					}
