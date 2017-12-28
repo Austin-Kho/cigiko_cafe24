@@ -41,7 +41,7 @@ class Member extends CI_Controller
 	 * @return [type] [description]
 	 */
 	public function login(){
-		// $this->output->enable_profiler(TRUE); //프로파일러 보기//
+		$this->output->enable_profiler(TRUE); //프로파일러 보기//
 
 		// 라이브러리 로드
 		$this->load->library('form_validation'); // 폼 검증
