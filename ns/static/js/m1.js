@@ -260,14 +260,14 @@ function cont_check(){
 			form2.cont_pay_sche7.focus();
 			return;
 		}
-		if(form1.cont_sort2.value=='2'&& !form2.zipcode.value){
+		if(form1.cont_sort2.value=='2'&& !form2.postcode1.value){
 			alert("계약자 등록 주소 항목을 입력하세요.");
-			form2.zipcode.focus();
+			form2.postcode1.focus();
 			return;
 		}
-		if(form1.cont_sort2.value=='2'&& !form2.zipcode_.value){
+		if(form1.cont_sort2.value=='2'&& !form2.postcode2.value){
 			alert("계약자 우편 주소 항목을 입력하세요.");
-			form2.zipcode_.focus();
+			form2.postcode2.focus();
 			return;
 		}
 	}else if(typeof(form1.cont_sort3)!='undefined' && form1.cont_sort3.value=='3'){
@@ -311,25 +311,26 @@ function cont_sort(no){
 function same_addr(){
 	var form = document.form1;
 	if(form.sa_addr.checked===true){
-		if(form.zipcode_.value||form.address1_.value||form.address2_.value){
+		if(form.postcode2.value||form.address1_2.value||form.address2_2.value){
 			if(confirm('우편송부 주소를 주민등록 주소로 교체하시겠습니까?')===true){
-				form.zipcode_.value = form.zipcode.value;
-				form.address1_.value = form.address1.value;
-				form.address2_.value = form.address2.value;
+				form.postcode2.value = form.postcode1.value;
+				form.address1_2.value = form.address1_1.value;
+				form.address2_2.value = form.address2_1.value;
 			}else{
 				form.sa_addr.checked = false;
 				return;
 			}
 		}else{
-			form.zipcode_.value = form.zipcode.value;
-			form.address1_.value = form.address1.value;
-			form.address2_.value = form.address2.value;
+			form.postcode2.value = form.postcode1.value;
+			form.address1_2.value = form.address1_1.value;
+			form.address2_2.value = form.address2_1.value;
 		}
 	}else{
-		form.zipcode_.value = '';
-		form.address1_.value = '';
-		form.address2_.value = '';
+		form.postcode2.value = '';
+		form.address1_2.value = '';
+		form.address2_2.value = '';
 	}
+
 }
 
 function frm_view(){
