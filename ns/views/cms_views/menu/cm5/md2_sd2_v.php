@@ -5,7 +5,7 @@
 
 		<!-- 신규 사용자 등록자가 있을 때 처리 시작 -->
 <?php if($new_rq) : ?>
-			<form name="form2" method="post" action="<?php echo base_url('m5/config/2/2/') ?>">
+			<form name="form2" method="post" action="<?php echo base_url('cm5/config/2/2/') ?>">
 				<fieldset style="margin-bottom: 15px;">
 					<input type="hidden" name="no">
 					<input type="hidden" name="sf">
@@ -46,7 +46,7 @@
 				<div class="col-xs-12 col-sm-8 col-md-10 bo-top" style="height: 40px;">
 					<!-- <div class="" style="margin-right: 20px; padding-top: 10px;">(주) 바램디앤씨</div> -->
 					<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 4px;">
-						<select class="form-control input-sm" id="user_sel" name="user_sel" onchange="location.href='<?php echo base_url(); ?>m5/config/2/2/?un='+this.value">
+						<select class="form-control input-sm" id="user_sel" name="user_sel" onchange="location.href='<?php echo base_url(); ?>cm5/config/2/2/?un='+this.value">
 							<option value="">선 택</option>
 <?php foreach($user_list as $lt) : ?>
 							<option value="<?php echo $lt->no; ?>" <?php if($this->input->get('un')==$lt->no ) echo "selected"; ?>><?php echo $lt->name."(".$lt->user_id.")"; ?></option>
@@ -58,7 +58,7 @@
 		</div>
 <?php
 	$attributes = array('name' => 'form3', 'method' => 'post');
-	echo form_open(base_url().'m5/config/2/2?un='.$this->input->get('un'), $attributes);
+	echo form_open(base_url().'cm5/config/2/2?un='.$this->input->get('un'), $attributes);
 ?>
 			<fieldset class="font12">
 				<div class="row bo-top" style="padding-top: 15px;">

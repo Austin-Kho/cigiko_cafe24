@@ -87,11 +87,11 @@ for($i=(count($year)-1); $i>=0; $i--) :
 
 <?php foreach($now_payer as $lt) :
  	$dong_ho = explode("-", $lt->unit_dong_ho);
- 	echo $del_op."<a ".$red_style." href='".base_url('m1/sales/2/2?project='.$project.'&payer='.$lt->paid_who.'&dong='.$dong_ho[0].'&ho='.$dong_ho[1])."'>".$lt->paid_who."(".$lt->unit_dong_ho.")</a>".$del_cl;
+ 	echo $del_op."<a ".$red_style." href='".base_url('cm1/sales/2/2?project='.$project.'&payer='.$lt->paid_who.'&dong='.$dong_ho[0].'&ho='.$dong_ho[1])."'>".$lt->paid_who."(".$lt->unit_dong_ho.")</a>".$del_cl;
 ?>&nbsp;<?php endforeach; ?>
 			</div>
 			<div class="col-xs-1" style="padding: 8px;">
-				<button type="button" class="close" aria-label="Close" style="padding-left: 5px;" onclick="location.href='<?php echo base_url('m1/sales/2/2?project='.$project.'&dong='.$dong_ho[0].'&ho='.$dong_ho[1]) ?>'"><span aria-hidden="true">&times;</span></button>
+				<button type="button" class="close" aria-label="Close" style="padding-left: 5px;" onclick="location.href='<?php echo base_url('cm1/sales/2/2?project='.$project.'&dong='.$dong_ho[0].'&ho='.$dong_ho[1]) ?>'"><span aria-hidden="true">&times;</span></button>
 			</div>
 <?php endif; ?>
 		</div>
@@ -234,7 +234,7 @@ for($i=(count($year)-1); $i>=0; $i--) :
 	<?php if($auth<2) {$submit_str="alert('등록 권한이 없습니다!')";} else {$submit_str="receive_chk();";} ?>
 				<div class="form-group btn-wrap" style="margin: ;">
 <?php if($this->input->get('modi')=='1') : ?>
-					<input type="button" class="btn btn-warning btn-sm" onclick="location.href='<?php echo base_url('m1/sales/2/2').'?modi=0&project='.$project.'&dong='.$this->input->get('dong').'&ho='.$this->input->get('ho'); ?>'"  value="지우기">
+					<input type="button" class="btn btn-warning btn-sm" onclick="location.href='<?php echo base_url('cm1/sales/2/2').'?modi=0&project='.$project.'&dong='.$this->input->get('dong').'&ho='.$this->input->get('ho'); ?>'"  value="지우기">
 <?php endif;
 	$btn_val = ($this->input->get('modi')=='1') ? "변경 등록" : "신규 등록";
 ?>

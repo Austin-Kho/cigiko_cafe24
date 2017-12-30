@@ -5,8 +5,8 @@ class Project_data extends CI_Controller
 {
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('main_m');
-		$this->load->model('popup_m');            // 팝업 모델 로드
+		$this->load->model('cmain_m');
+		$this->load->model('cmpopup_m');            // 팝업 모델 로드
 	}
 
 	public function index() {
@@ -15,17 +15,17 @@ class Project_data extends CI_Controller
 
 	public function data_modi ($pj, $seq) {
 		// $this->output->enable_profiler(TRUE); //프로파일러 보기
-		$this->load->view('/popup/pop_header_v');
+		$this->load->view('/cms_views/popup/pop_header_v');
 
 		// 프로젝트 리스트 정보
-		$data['all_pj'] = $this->main_m->sql_result(' SELECT * FROM cms_project  ORDER BY biz_start_ym DESC ');
-		$data['now_pj'] = $this->main_m->sql_row(" SELECT * FROM cms_project  WHERE seq='".$pj."'");
+		$data['all_pj'] = $this->cmain_m->sql_result(' SELECT * FROM cms_project  ORDER BY biz_start_ym DESC ');
+		$data['now_pj'] = $this->cmain_m->sql_row(" SELECT * FROM cms_project  WHERE seq='".$pj."'");
 		$data['type'] = explode("-", $data['now_pj']->type_name);
 
 		// 수정할 데이터 정보
-		$data['modi_data'] = $this->main_m->sql_row(" SELECT * FROM cms_project_all_housing_unit WHERE seq='".$seq."'" );
+		$data['modi_data'] = $this->cmain_m->sql_row(" SELECT * FROM cms_project_all_housing_unit WHERE seq='".$seq."'" );
 		// 동 리스트 정보
-		$data['dong'] = $this->main_m->sql_result(" SELECT dong FROM cms_project_all_housing_unit GROUP BY dong ORDER BY dong " );
+		$data['dong'] = $this->cmain_m->sql_result(" SELECT dong FROM cms_project_all_housing_unit GROUP BY dong ORDER BY dong " );
 
 
 
@@ -42,8 +42,8 @@ class Project_data extends CI_Controller
 		if($this->form_validation->run() == FALSE) {
 
 			//본 페이지 로딩
-			$this->load->view('/popup/pj_data_modi_v', $data);
-			$this->load->view('/popup/pop_footer_v');
+			$this->load->view('/cms_views/popup/pj_data_modi_v', $data);
+			$this->load->view('/cms_views/popup/pop_footer_v');
 		}else{
 			// 데이터 가공
 			if($this->input->post('ho')==$data['modi_data']->ho){
@@ -71,7 +71,7 @@ class Project_data extends CI_Controller
 				'modi_worker' => $this->session->userdata('name')
 			);
 
-			$result = $this->main_m->update_data('cms_project_all_housing_unit', $update_data, $where = array('seq' => $this->input->post('seq')));
+			$result = $this->cmain_m->update_data('cms_project_all_housing_unit', $update_data, $where = array('seq' => $this->input->post('seq')));
 
 			if($result) { // 등록 성공 시
 				alert('프로젝트 정보가  수정되었습니다.', current_url());

@@ -83,7 +83,7 @@
 
 <?php
 	$attributes = array('name' => 'form1', 'class' => 'form-horizontal', 'method' => 'post');
-	echo form_open(base_url().'m5/config/1/2/', $attributes);
+	echo form_open(base_url().'cm5/config/1/2/', $attributes);
 ?>
 					<fieldset class="font12">
 						<div class="col-md-12" style="<?php if( !$this->agent->is_mobile()) echo 'height: 490px;'; ?>">

@@ -81,7 +81,7 @@
 			<div class="row" style="padding: 0 15px;">
 <?php
 	$attributes = array('name' => 'form1', 'class' => '', 'method' => 'post');
-	echo form_open(base_url().'m5/config/1/4/', $attributes);
+	echo form_open(base_url().'cm5/config/1/4/', $attributes);
 ?>
 					<fieldset class="font12">
 						<div class="row" style="<?php if( !$this->agent->is_mobile()) echo 'height: 490px;'; ?>">

@@ -1,7 +1,7 @@
 			<div class="main_start">&nbsp;</div>
 <?php
 	$attributes = array('name' => 'inout_frm', 'method' => 'post');
-	echo form_open(base_url('m4/capital/1/3/'), $attributes);
+	echo form_open(base_url('cm4/capital/1/3/'), $attributes);
 ?>
 				<label class="sr-only"><input type="hidden" name="cont_1_h" value=""></label> <!-- 수수료 발생 시 - 적요_1 -->
 				<label class="sr-only"><input type="hidden" name="cont_2_h" value=""></label> <!-- 수수료 발생 시 - 적요_2 -->

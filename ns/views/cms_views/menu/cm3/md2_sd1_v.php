@@ -3,7 +3,7 @@
     <div class="row" style="margin: 0; padding: 0;">
 <?php
 	$attributes = array('name' => 'form1', 'class' => '', 'method' => 'post');
-	echo form_open(base_url('/m3/project/2/1/'), $attributes);
+	echo form_open(base_url('/cm3/project/2/1/'), $attributes);
 ?>
 			<fieldset class="font12">
 				<div class="form-group"><!-- 프로젝트명/종류 -->

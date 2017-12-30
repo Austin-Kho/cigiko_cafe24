@@ -84,7 +84,7 @@
 
 <?php
 	$attributes = array('name' => 'form1', 'class' => 'form-horizontal', 'method' => 'post');
-	echo form_open(base_url().'m5/config/1/3/', $attributes);
+	echo form_open(base_url().'cm5/config/1/3/', $attributes);
 ?>
 					<fieldset class="font12">
 						<div class="col-md-12">
