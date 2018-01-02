@@ -20,7 +20,7 @@ class Cms_m5 extends CB_Controller {
 	 * [index 클래스명 생략시 기본 실행 함수]
 	 * @return [type] [description]
 	 */
-	public function index(){
+	public function index() {
 		$this->config();
 	}
 
@@ -31,13 +31,13 @@ class Cms_m5 extends CB_Controller {
 	 */
 	function _remap($method){ // $method 는 현재 호출된 함수
 		// 헤더 include
-		$this->load->view('/cms_views/cms_main_header');
+		$this->load->view('cms_views/cms_main_header');
 
 		if(method_exists($this, $method)){
 			$this->{"$method"}();
 		}
 		// 푸터 include
-		$this->load->view('/cms_views/cms_main_footer');
+		$this->load->view('cms_views/cms_main_footer');
 	}
 
 	/**
@@ -65,8 +65,7 @@ class Cms_m5 extends CB_Controller {
 		if($mdi==1 && $sdi==1 ){
 			// 조회 등록 권한 체크
 			$auth = $this->cms_main_model->auth_chk('_m5_1_1', $this->session->userdata['mem_id']);
-
-			if( !$auth['_m5_1_1'] or $auth['_m5_1_1']==0) { // 조회 권한이 없는 경우
+			if( empty($auth['_m5_1_1']) or $auth['_m5_1_1']==='0') {  // 조회 권한이 없는 경우
 				$this->load->view('/cms_views/no_auth');
 			}else{ // 조회 권한이 있는 경우
 
@@ -150,7 +149,7 @@ class Cms_m5 extends CB_Controller {
 		// 1. 기본정보관리 2. 직원관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cms_main_model->auth_chk('_m5_1_2', $this->session->userdata['mem_id']);
+			// $auth = $this->cms_main_model->auth_chk('_m5_1_2', $this->session->userdata['mem_id']);
 
 			if( !$auth['_m5_1_2'] or $auth['_m5_1_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -246,7 +245,7 @@ class Cms_m5 extends CB_Controller {
 		// 1. 기본정보관리 3. 거래처정보 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==3) {
 			// 조회 등록 권한 체크
-			$auth = $this->cms_main_model->auth_chk('_m5_1_3', $this->session->userdata['mem_id']);
+			// $auth = $this->cms_main_model->auth_chk('_m5_1_3', $this->session->userdata['mem_id']);
 
 			if( !$auth['_m5_1_3'] or $auth['_m5_1_3']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -343,7 +342,7 @@ class Cms_m5 extends CB_Controller {
 		// 1. 기본정보관리 4. 계좌관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==4) {
 			// 조회 등록 권한 체크
-			$auth = $this->cms_main_model->auth_chk('_m5_1_4', $this->session->userdata['mem_id']);
+			// $auth = $this->cms_main_model->auth_chk('_m5_1_4', $this->session->userdata['mem_id']);
 
 			if( !$auth['_m5_1_4'] or $auth['_m5_1_4']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -437,9 +436,9 @@ class Cms_m5 extends CB_Controller {
 		// 2. 회사정보관리 1. 회사정보 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==1) {
 			// 조회 등록 권한 체크
-			$auth = $this->cms_main_model->auth_chk('_m5_2_1', $this->session->userdata['mem_id']);
+			$auth21 = $this->cms_main_model->auth_chk('_m5_2_1', $this->session->userdata['mem_id']);
 
-			if( !$auth['_m5_2_1'] or $auth['_m5_2_1']==0) { // 조회권한 없을 때
+			if( !$auth['_m5_2_1'] or $auth['_m5_2_1']==='0') {                             // 조회권한 없을 때
 				$this->load->view('/cms_views/no_auth');                 // 권한 없음 페이지 보이기
 			}else{ // 조회 이상 권한 있을 때
 
@@ -572,7 +571,7 @@ class Cms_m5 extends CB_Controller {
 			// 조회 등록 권한 체크
 			$auth = $this->cms_main_model->auth_chk('_m5_2_2', $this->session->userdata['mem_id']);
 
-			if(( !empty($auth['_m5_2_2']) or $auth['_m5_2_2']===0) && $this->session->userdata['mem_is_admin']!=='1') {
+			if(( !$auth['_m5_2_2'] or $auth['_m5_2_2'] === '0' ) && $this->session->userdata['mem_is_admin']!=='1') {
 
 				$this->load->view('/cms_views/no_auth');
 
@@ -584,17 +583,18 @@ class Cms_m5 extends CB_Controller {
 				if($this->input->post('no')) $this->form_validation->set_rules('no', '유저번호', 'required');
 				if($this->input->post('user_no')) $this->form_validation->set_rules('user_no', '사용자 번호', 'required');
 
+
 				if($this->form_validation->run() == FALSE) { // 폼 전송 데이타가 없으면,
 					$data['auth'] = $auth['_m5_2_2'];   // 등록 권한
-					$data['new_rq'] = $this->cms_m5_m->new_rq_chk();   //  신규 등록 신청자가 있는 지 확인
-					$data['user_list'] = $this->cms_m5_m->user_list(); // 승인된 유저 목록
-					$data['sel_user'] = $this->cms_m5_m->sel_user($this->input->get('un', TRUE)); //  선택된 유저 데이터
-					$data['user_auth'] = $this->cms_m5_m->user_auth($this->input->get('un', TRUE)); //  선택된 유저의 권한 데이터
+					$data['new_rq'] = $this->cms_m5_model->new_rq_chk();   //  신규 등록 신청자가 있는 지 확인
+					$data['user_list'] = $this->cms_m5_model->user_list(); // 승인된 유저 목록
+					$data['sel_user'] = $this->cms_m5_model->sel_user($this->input->get('un', TRUE)); //  선택된 유저 데이터
+					$data['user_auth'] = $this->cms_m5_model->user_auth($this->input->get('un', TRUE)); //  선택된 유저의 권한 데이터
 
 					//본 페이지 로딩
 					$this->load->view('/cms_views/menu/cms_m5/md2_sd2_v', $data);
 
-				}else{ // 폼 검증 통과 시, 즉 post-data 가 있을 경우
+				}else{  // 폼 검증 통과 시, 즉 post-data 가 있을 경우
 
 					if(!empty($this->input->post('no'))){ // 신규 사용자 request 승인 또는 거부 클릭 시
 						//사용자 승인//////////////////////////////////////////////
@@ -611,10 +611,11 @@ class Cms_m5 extends CB_Controller {
 							alert('데이터베이스 에러입니다. 다시 확인하여 주십시요', base_url('/cms_m5/config/2/2/'));
 							exit;
 						}
-						//사용자 승인//////////////////////////////////////////////
+						// 사용자 승인//////////////////////////////////////////////
 					}
 
-					if($this->input->get('un')&&$this->input->post('user_no')&&$this->input->post('user_id')){
+					if($this->input->get('un')&&$this->input->post('user_no')&&$this->input->post('user_id')){ // 사용자 권한 설정 버튼 클릭 시
+
 						//사용자 권한 설정/////////////////////////////////////////
 						if($this->input->post('_m1_1_1_m')=='on'){$_m1_1_1=2;} else if($this->input->post('_m1_1_1')=='on') {$_m1_1_1=1;} else {$_m1_1_1=0;}
 						if($this->input->post('_m1_1_2_m')=='on'){$_m1_1_2=2;} else if($this->input->post('_m1_1_2')=='on') {$_m1_1_2=1;} else {$_m1_1_2=0;}
@@ -689,11 +690,9 @@ class Cms_m5 extends CB_Controller {
 						if($auth_result) alert('요청하신 작업이 정상적으로 처리되었습니다.', base_url('cms_m5/config/2/2/')."?un=".$this->input->get('un')); else alert('데이터베이스 에러입니다. 다시 시도하여 주십시요.', base_url('cms_m5/config/2/2/'));
 					}
 
-
-
 					//사용자 권한 설정/////////////////////////////////////////
 
-				}// 폼 검증 로직 종료
+				 }// 폼 검증 로직 종료
 			}// 조회 권한 분기 종료
 		}// 권한관리 sdi 분기 종료
 	}// config 함수 종료

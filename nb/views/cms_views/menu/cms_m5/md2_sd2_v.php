@@ -4,8 +4,11 @@
 		<div class="row" >
 
 		<!-- 신규 사용자 등록자가 있을 때 처리 시작 -->
-<?php if($new_rq) : ?>
-			<form name="form2" method="post" action="<?php echo base_url('cm5/config/2/2/') ?>">
+<?php if($new_rq) :
+	// form2 open
+		$attributes = array('name' => 'form2', 'method' => 'post');
+		echo form_open(base_url().'cms_m5/config/2/2', $attributes);
+?>
 				<fieldset style="margin-bottom: 15px;">
 					<input type="hidden" name="no"><!-- js -> permition	함수로 입력 // 신규 사용자 DB 등록 mem_id //-->
 					<input type="hidden" name="sf"><!-- js -> permition	함수로 입력 // member DB request 승인 여부 //-->
@@ -22,7 +25,7 @@
 						<div class="col-md-2 center str">승인처리</div>
 					</div>
 <?php foreach($new_rq as $lt) : ?>
-<?php if($auth!=='2' && $this->session->userdata['mem_is_admin']!=='1') $perm_str="alert('승인(거부) 권한이 없습니다!')"; else $perm_str="permition('$lt->mem_id', this.value);"; ?>
+<?php if($auth !=='2' && $this->session->userdata['mem_is_admin'] !=='1') $perm_str="alert('승인(거부) 권한이 없습니다!')"; else $perm_str="permition('$lt->mem_id', this.value);"; ?>
 					<div class="row new_user">
 						<div class="col-md-2 center str"><?php echo $lt->mem_username." (".$lt->mem_userid.")"; ?></div>
 						<div class="col-md-3 center str">(주) 바램디앤씨</div>
@@ -41,11 +44,11 @@
 
 			<div class="form-group mg-0-15">
 				<div class="point-sub col-xs-12 col-sm-4 col-md-2 bo-top" style="padding-top: 9px; height: 40px;">
-					<font color="red">*</font> <font color="black">권한 설정 직원 선택</font>
+					<font color="red">*</font> <font color="black">권한 설정 직원 선택<?php echo $auth;?></font>
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-10 bo-top" style="height: 40px;">
 					<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 4px;">
-						<select class="form-control input-sm" id="user_sel" name="user_sel" onchange="location.href='<?php echo base_url(); ?>cm5/config/2/2/?un='+this.value">
+						<select class="form-control input-sm" id="user_sel" name="user_sel" onchange="location.href='<?php echo base_url(); ?>cms_m5/config/2/2/?un='+this.value">
 							<option value="">선 택</option>
 <?php foreach($user_list as $lt) : ?>
 							<option value="<?php echo $lt->mem_id; ?>" <?php if($this->input->get('un')==$lt->mem_id ) echo "selected"; ?>><?php echo $lt->mem_username."(".$lt->mem_userid.")"; ?></option>
@@ -57,7 +60,7 @@
 		</div>
 <?php
 	$attributes = array('name' => 'form3', 'method' => 'post');
-	echo form_open(base_url().'cm5/config/2/2?un='.$this->input->get('un'), $attributes);
+	echo form_open(base_url().'cms_m5/config/2/2?un='.$this->input->get('un'), $attributes);
 ?>
 			<fieldset class="font12">
 				<div class="row bo-top" style="padding-top: 15px;">

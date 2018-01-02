@@ -89,7 +89,7 @@ endfor;
 						<td class="right"><?php echo $summary[$i]->hold." 세대"; ?></td>
 						<td class="right" style="color: #273169;"><?php echo $summary[$i]->app." 건"; ?></td>
 	<?php for($j=0; $j<count($sc_cont_diff); $j++):
-					$cn = $this->main_m->sql_row(" SELECT COUNT(seq) AS cont_num FROM cms_sales_contract WHERE pj_seq='$project' AND unit_type='".$tp_name[$i]->type."' AND cont_diff='".$sc_cont_diff[$j]->cont_diff."' ");
+					$cn = $this->main_m->sql_row(" SELECT COUNT(seq) AS cont_num FROM cb_cms_sales_contract WHERE pj_seq='$project' AND unit_type='".$tp_name[$i]->type."' AND cont_diff='".$sc_cont_diff[$j]->cont_diff."' ");
 	?>
 						<td class="right"><?php echo $cn->cont_num." 건 "; ?></td>
 	<?php endfor; ?>
@@ -107,7 +107,7 @@ endfor;
 						<td><?php echo $sum_all->hold." 세대"; ?></td>
 						<td style="color: #273169; font-weight: bold;"><?php echo $sum_all->app." 건"; ?></td>
 <?php for($j=0; $j<count($sc_cont_diff); $j++):
-				$cntot = $this->main_m->sql_row(" SELECT COUNT(seq) AS total FROM cms_sales_contract WHERE pj_seq='$project' AND cont_diff='".$sc_cont_diff[$j]->cont_diff."' ");
+				$cntot = $this->main_m->sql_row(" SELECT COUNT(seq) AS total FROM cb_cms_sales_contract WHERE pj_seq='$project' AND cont_diff='".$sc_cont_diff[$j]->cont_diff."' ");
 ?>
 						<td style="font-weight: bold;"><?php echo $cntot->total." 건"; ?></td>
 <?php endfor; ?>
@@ -154,8 +154,8 @@ foreach($app_data as $lt) :
 	endswitch;
 	$unit_dh = explode("-", $lt->unit_dong_ho);
 	switch ($lt->disposal_div) {
-		case '0': $app_edit_link = "<a href='/ns/cm1/sales/1/2?mode=2&cont_sort1=1&cont_sort2=1&project=".$project."&type=".$lt->unit_type."&dong=".$unit_dh[0]."&ho=".$unit_dh[1]."'>"; break;
-		case '2': $app_edit_link = "<a href='/ns/cm1/sales/1/2?mode=2&cont_sort1=2&cont_sort3=3&project=".$project."&type=".$lt->unit_type."&dong=".$unit_dh[0]."&ho=".$unit_dh[1]."'>"; break;
+		case '0': $app_edit_link = "<a href='/nb/cms_m1/sales/1/2?mode=2&cont_sort1=1&cont_sort2=1&project=".$project."&type=".$lt->unit_type."&dong=".$unit_dh[0]."&ho=".$unit_dh[1]."'>"; break;
+		case '2': $app_edit_link = "<a href='/nb/cms_m1/sales/1/2?mode=2&cont_sort1=2&cont_sort3=3&project=".$project."&type=".$lt->unit_type."&dong=".$unit_dh[0]."&ho=".$unit_dh[1]."'>"; break;
 		default: $app_edit_link = ""; break;
 	}
 	$app_edit = ($lt->disposal_div=='0' OR $lt->disposal_div=='2') ? "</a>" : "";
@@ -165,7 +165,7 @@ foreach($app_data as $lt) :
 						<td class="left"><span style="background-color: <?php echo $type_color[$lt->unit_type] ?>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; <?php echo $lt->unit_type; ?></span></td>
 						<td ><?php echo $app_edit_link.$lt->unit_dong_ho.$app_edit; ?></td>
 						<td><?php echo $app_edit_link.$lt->applicant.$app_edit; ?></td>
-<?php $diff = $this->main_m->sql_row(" SELECT diff_name FROM cms_sales_con_diff WHERE pj_seq='$project' AND diff_no = '$lt->app_diff' "); ?>
+<?php $diff = $this->main_m->sql_row(" SELECT diff_name FROM cb_cms_sales_con_diff WHERE pj_seq='$project' AND diff_no = '$lt->app_diff' "); ?>
 						<td ><?php echo $diff->diff_name;?></td>
 						<td class="right"><?php echo number_format($lt->app_in_mon)." 원"; ?></td>
 						<td><?php echo $new_span." ".$lt->app_date; ?></td>
@@ -304,11 +304,11 @@ echo form_open(base_url(uri_string()), $attributes);
 				<tbody class="bo-bottom center">
 <?php
 foreach ($cont_data as $lt) :
-	$nd = $this->main_m->sql_row(" SELECT diff_name FROM cms_sales_con_diff WHERE pj_seq='$project' AND diff_no='$lt->cont_diff' ");
-	$total_rec = $this->main_m->sql_row(" SELECT SUM(paid_amount) AS received FROM cms_sales_received WHERE pj_seq='$project' AND cont_seq='$lt->cont_seq' ");
+	$nd = $this->main_m->sql_row(" SELECT diff_name FROM cb_cms_sales_con_diff WHERE pj_seq='$project' AND diff_no='$lt->cont_diff' ");
+	$total_rec = $this->main_m->sql_row(" SELECT SUM(paid_amount) AS received FROM cb_cms_sales_received WHERE pj_seq='$project' AND cont_seq='$lt->cont_seq' ");
 
-	$deposit1 = $this->main_m->sql_row(" SELECT SUM(payment) AS payment FROM cms_sales_payment WHERE price_seq='$lt->price_seq' AND pay_sche_seq<3 ");
-	$deposit2 = $this->main_m->sql_row(" SELECT SUM(payment) AS payment FROM cms_sales_payment WHERE price_seq='$lt->price_seq' AND pay_sche_seq<5 ");
+	$deposit1 = $this->main_m->sql_row(" SELECT SUM(payment) AS payment FROM cb_cms_sales_payment WHERE price_seq='$lt->price_seq' AND pay_sche_seq<3 ");
+	$deposit2 = $this->main_m->sql_row(" SELECT SUM(payment) AS payment FROM cb_cms_sales_payment WHERE price_seq='$lt->price_seq' AND pay_sche_seq<5 ");
 	if($total_rec->received>=$deposit2->payment){
 		$is_paid_ok = "<span style='color: #2205D0;'>2차 완납</span>";
 	}elseif($total_rec->received>=$deposit1->payment){
@@ -316,7 +316,6 @@ foreach ($cont_data as $lt) :
 	}else{
 		$is_paid_ok = "<span style='color: #CD0505;'>미납</span>";
 	}
-
 
 	$idoc = explode("-", $lt->incom_doc); // 미비 서류
 	$incom_doc = "";
@@ -334,7 +333,7 @@ foreach ($cont_data as $lt) :
 	$adr2 = explode(" ", $adr1[1]);
 	$addr = $adr2[0]." ".$adr2[1];
 	$unit_dh = explode("-", $lt->unit_dong_ho);
-	$cont_edit_link = "<a href='/ns/cm1/sales/1/2?mode=2&cont_sort1=1&cont_sort2=2&project=".$project."&type=".$lt->unit_type."&dong=".$unit_dh[0]."&ho=".$unit_dh[1]."'>" ;
+	$cont_edit_link ="<a href ='".base_url('cms_m1/sales/1/2?mode=2&cont_sort1=1&cont_sort2=2&project=').$project."&type=".$lt->unit_type."&dong=".$unit_dh[0]."&ho=".$unit_dh[1]."'>" ;
 	$new_span = ($lt->cont_date>=date('Y-m-d', strtotime('-3 day')))  ? "<span style='background-color: #2A41DB; color: #fff; font-size: 10px;'>&nbsp;N </span>&nbsp; " : "";
 ?>
 					<tr>
@@ -345,7 +344,7 @@ foreach ($cont_data as $lt) :
 						<td><?php echo $cont_edit_link.$lt->contractor."</a>"; ?></td>
 						<td><?php echo $lt->cont_tel1; ?></td>
 						<td><?php echo $new_span." ".$lt->cont_date; ?></span></td>
-						<td class="right"><a href="<?php echo base_url('cm1/sales/2/2')."?project=".$project."&dong=".$dong_ho[0]."&ho=".$dong_ho[1]; ?>"><?php echo number_format($total_rec->received); ?></a></td>
+						<td class="right"><a href="<?php echo base_url('cms_m1/sales/2/2')."?project=".$project."&dong=".$dong_ho[0]."&ho=".$dong_ho[1]; ?>"><?php echo number_format($total_rec->received); ?></a></td>
 						<td><?php echo $is_paid_ok; ?></td>
 						<td><div style="cursor: pointer; color: red;" data-toggle="tooltip" data-placement="left" title="<?php echo $incom_doc; ?>"><?php echo cut_string($incom_doc, 9, ".."); ?></div></td>
 						<td class="left"><div style="cursor: pointer;" data-toggle="tooltip" data-placement="left" title="<?php echo $lt->note; ?>"><?php echo cut_string($lt->note, 12, ".."); ?></div></td>
