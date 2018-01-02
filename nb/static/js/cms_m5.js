@@ -480,12 +480,12 @@ function com_submit(mode){
 
 			if(sf=="승인") {form.sf.value ="1";}
 			if(sf=="거부") {form.sf.value ="0";}
-
-			if(confirm("사용자 등록을 "+sf+"하시겠습니까?") === true){
-				form.submit();
-			}else{
-				return;
-			}
+      //
+			// if(confirm("사용자 등록을 "+sf+"하시겠습니까?") === true){
+			// 	form.submit();
+			// }else{
+			// 	return;
+			// }
 		}
 
 		/////////////사용자 권한 설정 체크박스 컨트롤 ///////////////

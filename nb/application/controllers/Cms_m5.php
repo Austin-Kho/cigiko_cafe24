@@ -54,9 +54,9 @@ class Cms_m5 extends CB_Controller {
 
 		$menu['s_di'] = array(
 			array('부서 정보', '직원 정보', '거래처 정보', '계좌 정보'), // 첫번째 하위 메뉴
-			array('회사 정보', '권한 관리'),                          // 두번째 하위 메뉴
+			array('회사 정보', '권한 관리'),                        // 두번째 하위 메뉴
 			array('부서 정보 관리', '직원 정보 관리', '거래처 정보 정보', '은행계좌 관리'), // 첫번째 하위 제목
-			array('회사 기본 정보', '사용자 권한관리')                                  // 두번째 하위 제목
+			array('회사 기본 정보', '사용자 권한관리')                               // 두번째 하위 제목
 		);
 		// 메뉴데이터 삽입 하여 메인 페이지 호출
 		$this->load->view('/cms_views/menu/cms_m5/config_v', $menu);
@@ -84,7 +84,7 @@ class Cms_m5 extends CB_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cms_m5/config/1/1/');   //페이징 주소
-				$config['total_rows'] = $this->cms_m5_m->com_div_list($div_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
+				$config['total_rows'] = $this->cms_m5_model->com_div_list($div_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
 				$config['per_page'] = 10; // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 3; // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -101,13 +101,13 @@ class Cms_m5 extends CB_Controller {
 				$data['pagination'] = $this->pagination->create_links();
 
 				// db[전체부서목록] 데이터 불러오기
-				$data['all_div'] = $this->cms_m5_m->all_div_name($div_table);
+				$data['all_div'] = $this->cms_m5_model->all_div_name($div_table);
 
 				//  db [부서]데이터 불러오기
-				$data['list'] = $this->cms_m5_m->com_div_list($div_table, $start, $limit, $st1, $st2, '');
+				$data['list'] = $this->cms_m5_model->com_div_list($div_table, $start, $limit, $st1, $st2, '');
 
 				// 세부 부서데이터 - 열람(수정)모드일 경우 해당 키 값 가져오기
-				if($this->input->get('seq')) $data['sel_div'] = $this->cms_m5_m->select_data_row($div_table, $where = array('seq' => $this->input->get('seq')));
+				if($this->input->get('seq')) $data['sel_div'] = $this->cms_m5_model->select_data_row($div_table, $where = array('seq' => $this->input->get('seq')));
 
 				// 폼 검증 라이브러리 로드
 				$this->load->library('form_validation'); // 폼 검증
@@ -130,11 +130,11 @@ class Cms_m5 extends CB_Controller {
 					);
 
 					if($this->input->post('mode')=='reg') {
-						$result = $this->cms_m5_m->insert_data($div_table, $div_data);
+						$result = $this->cms_main_model->insert_data($div_table, $div_data);
 					}else if($this->input->post('mode')=='modify') {
-						$result = $this->cms_m5_m->update_data($div_table, $div_data, $where = array('seq' => $this->input->post('seq')));
+						$result = $this->cms_main_model->update_data($div_table, $div_data, $where = array('seq' => $this->input->post('seq')));
 					}else if($this->input->post('mode')=='del') {
-						$result = $this->cms_m5_m->delete_data($div_table, $this->input->post('seq'));
+						$result = $this->cms_main_model->delete_data($div_table, $this->input->post('seq'));
 					}
 					if($result){
 						alert('정상적으로 처리되었습니다.', base_url('cms_m5/config/1/1/'));
@@ -170,7 +170,7 @@ class Cms_m5 extends CB_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cms_m5/config/1/2/');  //페이징 주소
-				$config['total_rows'] = $this->cms_m5_m->com_mem_list($mem_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
+				$config['total_rows'] = $this->cms_m5_model->com_mem_list($mem_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
 				$config['per_page'] = 10; // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 3; // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -187,13 +187,13 @@ class Cms_m5 extends CB_Controller {
 				$data['pagination'] = $this->pagination->create_links();
 
 				// db[전체부서목록] 데이터 불러오기
-				$data['all_div'] = $this->cms_m5_m->all_div_name('cb_cms_com_div');
+				$data['all_div'] = $this->cms_m5_model->all_div_name('cb_cms_com_div');
 
 				//  db [직원 ]데이터 불러오기
-				$data['list'] = $this->cms_m5_m->com_mem_list($mem_table, $start, $limit, $st1, $st2, '');
+				$data['list'] = $this->cms_m5_model->com_mem_list($mem_table, $start, $limit, $st1, $st2, '');
 
 				// 세부 부서데이터 - 열람(수정)모드일 경우 해당 키 값 가져오기
-				if($this->input->get('seq')) $data['sel_mem'] = $this->cms_m5_m->select_data_row($mem_table, $where = array('seq' => $this->input->get('seq')));
+				if($this->input->get('seq')) $data['sel_mem'] = $this->cms_m5_model->select_data_row($mem_table, $where = array('seq' => $this->input->get('seq')));
 
 				// 폼 검증 라이브러리 로드
 				$this->load->library('form_validation'); // 폼 검증
@@ -206,9 +206,12 @@ class Cms_m5 extends CB_Controller {
 				$this->form_validation->set_rules('join_date', '입사일', 'required');
 
 				if($this->form_validation->run()==FALSE) {
+
 					//본 페이지 로딩
 					$this->load->view('/cms_views/menu/cms_m5/md1_sd2_v', $data);
+
 				}else{
+
 					if($this->input->post('is_reti')===NULL) $is_reti = 0; else $is_reti = 1;
 					if($this->input->post('reti_date')===NULL) $reti_date = 0; else $reti_date = $this->input->post('reti_date', TRUE);
 					$mem_data = array(
@@ -226,11 +229,11 @@ class Cms_m5 extends CB_Controller {
 					);
 
 					if($this->input->post('mode')=='reg') {
-						$result = $this->cms_m5_m->insert_data($mem_table, $mem_data);
+						$result = $this->cms_main_model->insert_data($mem_table, $mem_data);
 					}else if($this->input->post('mode')=='modify') {
-						$result = $this->cms_m5_m->update_data($mem_table, $mem_data, $where = array('seq' => $this->input->post('seq')));
+						$result = $this->cms_main_model->update_data($mem_table, $mem_data, $where = array('seq' => $this->input->post('seq')));
 					}else if($this->input->post('mode')=='del') {
-						$result = $this->cms_m5_m->delete_data($mem_table, $this->input->post('seq'));
+						$result = $this->cms_main_model->delete_data($mem_table, $this->input->post('seq'));
 					}
 					if($result){
 						alert('정상적으로 처리되었습니다.', base_url('cms_m5/config/1/2/'));
@@ -266,7 +269,7 @@ class Cms_m5 extends CB_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cms_m5/config/1/3/');  //페이징 주소
-				$config['total_rows'] = $this->cms_m5_m->com_accounts_list($acc_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
+				$config['total_rows'] = $this->cms_m5_model->com_accounts_list($acc_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
 				$config['per_page'] = 10; // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 3; // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -283,10 +286,10 @@ class Cms_m5 extends CB_Controller {
 				$data['pagination'] = $this->pagination->create_links();
 
 				//  db [거래처 ]데이터 불러오기
-				$data['list'] = $this->cms_m5_m->com_accounts_list($acc_table, $start, $limit, $st1, $st2, '');
+				$data['list'] = $this->cms_m5_model->com_accounts_list($acc_table, $start, $limit, $st1, $st2, '');
 
 				// 세부 거래처데이터 - 열람(수정)모드일 경우 해당 키 값 가져오기
-				if($this->input->get('seq')) $data['sel_acc'] = $this->cms_m5_m->select_data_row($acc_table, $where = array('seq' => $this->input->get('seq')));
+				if($this->input->get('seq')) $data['sel_acc'] = $this->cms_m5_model->select_data_row($acc_table, $where = array('seq' => $this->input->get('seq')));
 
 				// 폼 검증 라이브러리 로드
 				$this->load->library('form_validation'); // 폼 검증
@@ -296,9 +299,12 @@ class Cms_m5 extends CB_Controller {
 				$this->form_validation->set_rules('main_tel', '직급(책)', 'required');
 
 				if($this->form_validation->run()==FALSE) {
+
 					//본 페이지 로딩
 					$this->load->view('/cms_views/menu/cms_m5/md1_sd3_v', $data);
+
 				}else{
+
 					$tax_addr = $this->input->post('postcode1', TRUE)."-".$this->input->post('address1_1', TRUE)."-".$this->input->post('address2_1', TRUE);
 					$acc_data = array(
 						'si_name' => $this->input->post('si_name', TRUE),
@@ -323,11 +329,11 @@ class Cms_m5 extends CB_Controller {
 					);
 
 					if($this->input->post('mode')=='reg') {
-						$result = $this->cms_m5_m->insert_data($acc_table, $acc_data);
+						$result = $this->cms_main_model->insert_data($acc_table, $acc_data);
 					}else if($this->input->post('mode')=='modify') {
-						$result = $this->cms_m5_m->update_data($acc_table, $acc_data, $where = array('seq' => $this->input->post('seq')));
+						$result = $this->cms_main_model->update_data($acc_table, $acc_data, $where = array('seq' => $this->input->post('seq')));
 					}else if($this->input->post('mode')=='del') {
-						$result = $this->cms_m5_m->delete_data($acc_table, $where = array('seq' => $this->input->post('seq')));
+						$result = $this->cms_main_model->delete_data($acc_table, $where = array('seq' => $this->input->post('seq')));
 					}
 					if($result){
 						alert('정상적으로 처리되었습니다.', base_url('cms_m5/config/1/3/'));
@@ -346,6 +352,7 @@ class Cms_m5 extends CB_Controller {
 
 			if( !$auth['_m5_1_4'] or $auth['_m5_1_4']==0) {
 				$this->load->view('/cms_views/no_auth');
+
 			}else{
 				// 조회 권한이 있는 경우
 				// 불러올 페이지에 보낼 조회 권한 데이터
@@ -363,7 +370,7 @@ class Cms_m5 extends CB_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cms_m5/config/1/4/');  //페이징 주소
-				$config['total_rows'] = $this->cms_m5_m->bank_account_list($bank_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
+				$config['total_rows'] = $this->cms_m5_model->bank_account_list($bank_table, '', '', $st1, $st2, 'num');  //게시물의 전체 갯수
 				$config['per_page'] = 10; // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 3; // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -380,16 +387,16 @@ class Cms_m5 extends CB_Controller {
 				$data['pagination'] = $this->pagination->create_links();
 
 				// db[전체은행목록] 데이터 불러오기
-				$data['com_bank'] = $this->cms_m5_m->all_bank_name();
+				$data['com_bank'] = $this->cms_m5_model->all_bank_name();
 				//은행 디비 전체 불러오기
-				$data['all_bank'] = $this->cms_m5_m->select_data_list('cb_cms_capital_bank_code');
-				$data['all_div'] = $this->cms_m5_m->select_data_list('cb_cms_com_div');
+				$data['all_bank'] = $this->cms_main_model->select_data_list('cb_cms_capital_bank_code');
+				$data['all_div'] = $this->cms_main_model->select_data_list('cb_cms_com_div');
 
 				//  db [은행 ]데이터 불러오기
-				$data['list'] = $this->cms_m5_m->bank_account_list($bank_table, $start, $limit, $st1, $st2, '');
+				$data['list'] = $this->cms_m5_model->bank_account_list($bank_table, $start, $limit, $st1, $st2, '');
 
 				// 세부 은행데이터 - 열람(수정)모드일 경우 해당 키 값 가져오기
-				if($this->input->get('seq')) $data['sel_bank'] = $this->cms_m5_m->select_data_row($bank_table, $where = array('no' => $this->input->get('seq')));
+				if($this->input->get('seq')) $data['sel_bank'] = $this->cms_main_model->select_data_row($bank_table, $where = array('no' => $this->input->get('seq')));
 
 				// 폼 검증 라이브러리 로드
 				$this->load->library('form_validation'); // 폼 검증
@@ -401,10 +408,13 @@ class Cms_m5 extends CB_Controller {
 				$this->form_validation->set_rules('open_date', '개설일자', 'required');
 
 				if($this->form_validation->run()==FALSE) {
+
 					//본 페이지 로딩
 					$this->load->view('/cms_views/menu/cms_m5/md1_sd4_v', $data);
+
 				}else{
-					$bank_name = $this->cms_m5_m->select_data_row('cb_cms_capital_bank_code', $where = array('bank_code' => $this->input->post('bank_code')));
+
+					$bank_name = $this->cms_main_model->select_data_row('cb_cms_capital_bank_code', $where = array('bank_code' => $this->input->post('bank_code')));
 					$bank_data = array(
 						'bank' => $bank_name->bank_name,
 						'bank_code' => $this->input->post('bank_code', TRUE),
@@ -417,11 +427,11 @@ class Cms_m5 extends CB_Controller {
 					);
 
 					if($this->input->post('mode')=='reg') {
-						$result = $this->cms_m5_m->insert_data($bank_table, $bank_data);
+						$result = $this->cms_main_model->insert_data($bank_table, $bank_data);
 					}else if($this->input->post('mode')=='modify') {
-						$result = $this->cms_m5_m->update_data($bank_table, $bank_data, $where = array('no' => $this->input->post('seq')));
+						$result = $this->cms_main_model->update_data($bank_table, $bank_data, $where = array('no' => $this->input->post('seq')));
 					}else if($this->input->post('mode')=='del') {
-						$result = $this->cms_m5_m->delete_data($bank_table, $where = array('no' => $this->input->post('seq')));
+						$result = $this->cms_main_model->delete_data($bank_table, $where = array('no' => $this->input->post('seq')));
 					}
 					if($result){
 						alert('정상적으로 처리되었습니다.', base_url('cms_m5/config/1/4/'));
@@ -436,10 +446,11 @@ class Cms_m5 extends CB_Controller {
 		// 2. 회사정보관리 1. 회사정보 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==1) {
 			// 조회 등록 권한 체크
-			$auth21 = $this->cms_main_model->auth_chk('_m5_2_1', $this->session->userdata['mem_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_2_1', $this->session->userdata['mem_id']);
 
-			if( !$auth['_m5_2_1'] or $auth['_m5_2_1']==='0') {                             // 조회권한 없을 때
+			if( !$auth['_m5_2_1'] or $auth['_m5_2_1']==='0') {         // 조회권한 없을 때
 				$this->load->view('/cms_views/no_auth');                 // 권한 없음 페이지 보이기
+
 			}else{ // 조회 이상 권한 있을 때
 
 				// 라이브러리 로드
@@ -482,7 +493,7 @@ class Cms_m5 extends CB_Controller {
 
 
 				// 회사 등록 정보가 있는지 확인
-				$com_chk = $this->cms_m5_m->is_com_chk();
+				$com_chk = $this->cms_m5_model->is_com_chk();
 				if( !$com_chk) {
 					$data = array( // 없으면 등록권한 및 새로 등록하라는 변수 전달
 						'auth' => $auth['_m5_2_1'],
@@ -497,9 +508,12 @@ class Cms_m5 extends CB_Controller {
 				}
 
 				if($this->form_validation->run() == FALSE) { // 폼 전송 데이타가 없으면,
+
 					//본 페이지 로딩
 					$this->load->view('/cms_views/menu/cms_m5/md2_sd1_v', $data); // 조회권한 있고 폼 전송 데이타가 없을 때 등록권한 데이터 및 등록데이터와 함께 폼 열기
-				}else{
+
+				}else{ // 폼 전송 데이타가 있으면,
+
 					//폼 데이타 가공
 					$co_no = $this->input->post('co_no1')."-".$this->input->post('co_no2')."-".$this->input->post('co_no3');
 					$or_no = $this->input->post('or_no1')."-".$this->input->post('or_no2');
@@ -545,10 +559,10 @@ class Cms_m5 extends CB_Controller {
 					);
 
 				if($data['mode']=='com_reg') {
-					$result = $this->cms_m5_m->insert_data('cb_cms_com_info', $com_data);
+					$result = $this->cms_main_model->insert_data('cb_cms_com_info', $com_data);
 					$msg = '등록';
 				}else if($data['mode']=='com_modify') {
-					$result = $this->cms_m5_m->update_data('cb_cms_com_info', $com_data, array('seq'=>1));
+					$result = $this->cms_main_model->update_data('cb_cms_com_info', $com_data, array('seq'=>1));
 					$msg = '변경';
 				}
 
@@ -571,11 +585,12 @@ class Cms_m5 extends CB_Controller {
 			// 조회 등록 권한 체크
 			$auth = $this->cms_main_model->auth_chk('_m5_2_2', $this->session->userdata['mem_id']);
 
-			if(( !$auth['_m5_2_2'] or $auth['_m5_2_2'] === '0' ) && $this->session->userdata['mem_is_admin']!=='1') {
+			if(( !$auth['_m5_2_2'] or $auth['_m5_2_2'] === '0' ) && $this->session->userdata['mem_is_admin']!=='1') { // 권한이 없거나, 최고관리자가 아니면
 
 				$this->load->view('/cms_views/no_auth');
 
 			}else{
+
 				// 폼검증 라이브러리 로드
 				$this->load->library('form_validation');
 
@@ -585,6 +600,7 @@ class Cms_m5 extends CB_Controller {
 
 
 				if($this->form_validation->run() == FALSE) { // 폼 전송 데이타가 없으면,
+
 					$data['auth'] = $auth['_m5_2_2'];   // 등록 권한
 					$data['new_rq'] = $this->cms_m5_model->new_rq_chk();   //  신규 등록 신청자가 있는 지 확인
 					$data['user_list'] = $this->cms_m5_model->user_list(); // 승인된 유저 목록
@@ -596,14 +612,14 @@ class Cms_m5 extends CB_Controller {
 
 				}else{  // 폼 검증 통과 시, 즉 post-data 가 있을 경우
 
-					if(!empty($this->input->post('no'))){ // 신규 사용자 request 승인 또는 거부 클릭 시
+					if(!empty($this->input->post('no')) && empty($this->input->post('user_no')) && empty($this->input->post('user_id'))){ // 신규 사용자 request 승인 또는 거부 클릭 시
 						//사용자 승인//////////////////////////////////////////////
 						$where_no = $this->input->post('no', TRUE);
 						$auth_data = array(
 							'mem_level' => 50,
 							'request' => $this->input->post('sf', TRUE)
 						);
-						$result = $this->cms_m5_m->rq_perm($where_no, $auth_data);
+						$result = $this->cms_m5_model->rq_perm($where_no, $auth_data);
 						if($result){
 							alert('요청하신 작업이 정상적으로 처리 되었습니다.', base_url('cms_m5/config/2/2/'));
 							exit;
@@ -686,7 +702,7 @@ class Cms_m5 extends CB_Controller {
 							'_m5_2_1' => $_m5_2_1,
 							'_m5_2_2' => $_m5_2_2
 						);
-						$auth_result = $this->cms_m5_m->auth_reg($this->input->get('un'), $auth_dt);
+						$auth_result = $this->cms_m5_model->auth_reg($this->input->get('un'), $auth_dt);
 						if($auth_result) alert('요청하신 작업이 정상적으로 처리되었습니다.', base_url('cms_m5/config/2/2/')."?un=".$this->input->get('un')); else alert('데이터베이스 에러입니다. 다시 시도하여 주십시요.', base_url('cms_m5/config/2/2/'));
 					}
 

@@ -28,7 +28,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-8">
-								<input type="text" class="form-control input-sm han" id="co_name" name="co_name" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('co_name');} else {echo $com->co_name;} ?>" required autofocus>
+								<input type="text" class="form-control input-sm han" id="co_name" name="co_name" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('co_name');} else {echo $com->co_name;} ?>" required>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-4 col-md-2 label-wrap">
@@ -36,19 +36,19 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<input type="text" class="form-control input-sm en_only" id="co_no1" name="co_no1" maxlength="3" value="<?php if($mode=='com_reg') {echo set_value('co_no1');} else {echo substr($com->co_no, 0, 3);} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="co_no1" name="co_no1" maxlength="3" value="<?php if($mode=='com_reg') {echo set_value('co_no1');} else {echo substr($com->co_no, 0, 3);} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-2" style="padding-right: 0;">
 								<label for="co_no2" class="sr-only">사업자번호2 </label>
-								<input type="text" class="form-control input-sm en_only" id="co_no2" name="co_no2" maxlength="2" value="<?php if($mode=='com_reg') {echo set_value('co_no2');} else {echo substr($com->co_no, 4, 2);} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="co_no2" name="co_no2" maxlength="2" value="<?php if($mode=='com_reg') {echo set_value('co_no2');} else {echo substr($com->co_no, 4, 2);} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="co_no3" class="sr-only">사업자번호3 </label>
-								<input type="text" class="form-control input-sm wid-90 en_only" id="co_no3" name="co_no3" maxlength="5" value="<?php if($mode=='com_reg') {echo set_value('co_no3');} else {echo substr($com->co_no, 7, 11);} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm wid-90 en_only" id="co_no3" name="co_no3" maxlength="5" value="<?php if($mode=='com_reg') {echo set_value('co_no3');} else {echo substr($com->co_no, 7, 11);} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-4">
 								<label for="co_form" class="sr-only">사업자종류 </label>
-								<select class="form-control input-sm wid-90" id="co_form" name="co_form" required autofocus>
+								<select class="form-control input-sm wid-90" id="co_form" name="co_form" required>
 									<option value="">선택</option>
 									<option value="1" <?php if($mode=='com_reg'){echo set_select('co_form', '1');}else{if($com->co_form==1) echo 'selected';} ?>>법인</option>
 									<option value="2" <?php if($mode=='com_reg'){echo set_select('co_form', '2');}else{if($com->co_form==2) echo 'selected';} ?>>개인(일반)</option>
@@ -66,7 +66,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-8">
-								<input type="text" class="form-control input-sm han" id="ceo" name="ceo" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('ceo');} else {echo $com->ceo;} ?>" required autofocus>
+								<input type="text" class="form-control input-sm han" id="ceo" name="ceo" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('ceo');} else {echo $com->ceo;} ?>" required>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-4 col-md-2 label-wrap">
@@ -74,15 +74,15 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<input type="text" class="form-control input-sm en_only" id="or_no1" name="or_no1" maxlength="6" value="<?php if($mode=='com_reg') {echo set_value('or_no1');} else {echo substr($com->or_no, 0, 6);} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="or_no1" name="or_no1" maxlength="6" value="<?php if($mode=='com_reg') {echo set_value('or_no1');} else {echo substr($com->or_no, 0, 6);} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 					      	<div class="col-xs-4" style="padding-right: 0;">
 					      		<label for="or_no2" class="sr-only">법인(주민)등록번호2 </label>
-					      		<input type="text" class="form-control input-sm en_only" id="or_no2" name="or_no2" maxlength="7" value="<?php if($mode=='com_reg') {echo set_value('or_no2');} else {echo substr($com->or_no, 7, 13);} ?>" onkeydown="onlyNum(this);" required autofocus>
+					      		<input type="text" class="form-control input-sm en_only" id="or_no2" name="or_no2" maxlength="7" value="<?php if($mode=='com_reg') {echo set_value('or_no2');} else {echo substr($com->or_no, 7, 13);} ?>" onkeydown="onlyNum(this);" required>
 					      	</div>
 					      	<div class="col-xs-5">
 					      		<label for="sur" class="sr-only">부가세신고주기</label>
-								<select class="form-control input-sm wid-90" id="sur" name="sur" required autofocus>
+								<select class="form-control input-sm wid-90" id="sur" name="sur" required>
 									<option value="">선택</option>
 									<option value="1" <?php if($mode=='com_reg'){echo set_select('sur', '1');}else{if($com->sur==1) echo 'selected';} ?>>부가세 분기 신고</option>
 									<option value="2" <?php if($mode=='com_reg'){echo set_select('sur', '2');}else{if($com->sur==2) echo 'selected';} ?>>부가세 반기 신고</option>
@@ -99,7 +99,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-8">
-								<input type="text" class="form-control input-sm han" id="biz_cond" name="biz_cond" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('biz_cond');} else {echo $com->biz_cond;} ?>" required autofocus>
+								<input type="text" class="form-control input-sm han" id="biz_cond" name="biz_cond" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('biz_cond');} else {echo $com->biz_cond;} ?>" required>
 							</div>
 						</div>
 
@@ -108,7 +108,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-8">
-								<input type="text" class="form-control input-sm han" id="biz_even" name="biz_even" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('biz_even');} else {echo $com->biz_even;} ?>" required autofocus>
+								<input type="text" class="form-control input-sm han" id="biz_even" name="biz_even" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('biz_even');} else {echo $com->biz_even;} ?>" required>
 							</div>
 						</div>
 					</div>
@@ -118,15 +118,15 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<input type="text" class="form-control input-sm en_only" id="co_phone1" name="co_phone1" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_phone1');} else {$p = explode('-', $com->co_phone); echo $p[0];} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="co_phone1" name="co_phone1" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_phone1');} else {$p = explode('-', $com->co_phone); echo $p[0];} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="co_phone2" class="sr-only">대표전화2</label>
-								<input type="text" class="form-control input-sm en_only" id="co_phone2" name="co_phone2" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_phone2');} else {$p = explode('-', $com->co_phone); echo $p[1];} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="co_phone2" name="co_phone2" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_phone2');} else {$p = explode('-', $com->co_phone); echo $p[1];} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="co_phone3" class="sr-only">대표전화3</label>
-								<input type="text" class="form-control input-sm en_only" id="co_phone3" name="co_phone3" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_phone3');} else {$p = explode('-', $com->co_phone); echo $p[2];} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="co_phone3" name="co_phone3" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_phone3');} else {$p = explode('-', $com->co_phone); echo $p[2];} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-3"></div>
 						</div>
@@ -135,7 +135,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<select class="form-control input-sm" id="co_hp1" name="co_hp1" required autofocus>
+								<select class="form-control input-sm" id="co_hp1" name="co_hp1" required>
 									<option value="">선택</option>
 									<option value="010" <?php if($mode=='com_reg'){echo set_select('co_hp1', '010');}else{if(substr($com->co_hp, 0, 3)=='010') echo 'selected';} ?>>010</option>
 									<option value="011" <?php if($mode=='com_reg'){echo set_select('co_hp1', '011');}else{if(substr($com->co_hp, 0, 3)=='011') echo 'selected';} ?>>011</option>
@@ -147,11 +147,11 @@
 							</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="co_hp2" class="sr-only">휴대전화2</label>
-								<input type="text" class="form-control input-sm en_only" id="co_hp2" name="co_hp2" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_hp2');} else {$p = explode('-', $com->co_hp); echo $p[1];} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="co_hp2" name="co_hp2" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_hp2');} else {$p = explode('-', $com->co_hp); echo $p[1];} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="co_hp3" class="sr-only">휴대전화2</label>
-								<input type="text" class="form-control input-sm en_only" id="co_hp3" name="co_hp3" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_hp3');} else {$p = explode('-', $com->co_hp); echo $p[2];} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="co_hp3" name="co_hp3" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('co_hp3');} else {$p = explode('-', $com->co_hp); echo $p[2];} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-3"></div>
 						</div>
@@ -211,7 +211,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-6">
-								<input type="text" class="form-control input-sm wid-100" id="es_date" name="es_date" maxlength="10" value="<?php if($mode=='com_reg') {echo set_value('es_date');} else {echo $com->es_date;} ?>" readonly onClick="cal_add(this); event.cancelBubble=true" maxlength="10"  required autofocus>
+								<input type="text" class="form-control input-sm wid-100" id="es_date" name="es_date" maxlength="10" value="<?php if($mode=='com_reg') {echo set_value('es_date');} else {echo $com->es_date;} ?>" readonly onClick="cal_add(this); event.cancelBubble=true" maxlength="10"  required>
 							</div>
 							<div class="col-xs-6 glyphicon-wrap">
 								<a href="javascript:" onclick="cal_add(document.getElementById('es_date'),this); event.cancelBubble=true"><span class="glyphicon glyphicon-calendar" aria-hidden="true" id="glyphicon"></span></a>
@@ -222,7 +222,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-6">
-								<input type="text" class="form-control input-sm wid-100" id="op_date" name="op_date" maxlength="10" value="<?php if($mode=='com_reg') {echo set_value('op_date');} else {echo $com->op_date;} ?>" readonly onClick="cal_add(this); event.cancelBubble=true" maxlength="10" required autofocus>
+								<input type="text" class="form-control input-sm wid-100" id="op_date" name="op_date" maxlength="10" value="<?php if($mode=='com_reg') {echo set_value('op_date');} else {echo $com->op_date;} ?>" readonly onClick="cal_add(this); event.cancelBubble=true" maxlength="10" required>
 							</div>
 							<div class="col-xs-6 glyphicon-wrap">
 								<a href="javascript:" onclick="cal_add(document.getElementById('op_date'),this); event.cancelBubble=true"><span class="glyphicon glyphicon-calendar" aria-hidden="true" id="glyphicon"></span></a>
@@ -235,12 +235,12 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<input type="text" class="form-control input-sm en_only" id="carr_y" name="carr_y" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('carr_y');} else {$a = explode('-', $com->carr); echo $a[0];} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="carr_y" name="carr_y" maxlength="4" value="<?php if($mode=='com_reg') {echo set_value('carr_y');} else {$a = explode('-', $com->carr); echo $a[0];} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-1 text-wrap">년</div>
 							<div class="col-xs-2" style="padding-right: 0;">
 								<label for="carr_m" class="sr-only">기초잔액 입력월2</label>
-								<input type="text" class="form-control input-sm en_only" id="carr_m" name="carr_m" maxlength="2" value="<?php if($mode=='com_reg') {echo set_value('carr_m');} else {$a = explode('-', $com->carr); echo $a[1];} ?>" onkeydown="onlyNum(this);" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="carr_m" name="carr_m" maxlength="2" value="<?php if($mode=='com_reg') {echo set_value('carr_m');} else {$a = explode('-', $com->carr); echo $a[1];} ?>" onkeydown="onlyNum(this);" required>
 							</div>
 							<div class="col-xs-6 text-wrap">월</div>
 						</div>
@@ -249,7 +249,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<select class="form-control input-sm" id="m_wo_st" name="m_wo_st" required autofocus>
+								<select class="form-control input-sm" id="m_wo_st" name="m_wo_st" required>
 									<option value="">선택</option>
 									<option value="01" <?php if($mode=='com_reg'){echo set_select('m_wo_st', '01');}else{if($com->m_wo_st=='01') echo 'selected';} ?>>01</option>
 									<option value="02" <?php if($mode=='com_reg'){echo set_select('m_wo_st', '02');}else{if($com->m_wo_st=='02') echo 'selected';} ?>>02</option>
@@ -268,7 +268,7 @@
 							<div class="col-xs-1 text-wrap">월/</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="bl_cycle" class="sr-only">결산주기</label>
-								<select class="form-control input-sm" id="bl_cycle" name="bl_cycle" required autofocus>
+								<select class="form-control input-sm" id="bl_cycle" name="bl_cycle" required>
 									<option value="">선택</option>
 									<option value="01" <?php if($mode=='com_reg'){echo set_select('bl_cycle', '01');}else{if($com->bl_cycle=='01') echo 'selected';} ?>>01</option>
 									<option value="02" <?php if($mode=='com_reg'){echo set_select('bl_cycle', '02');}else{if($com->bl_cycle=='02') echo 'selected';} ?>>02</option>
@@ -287,12 +287,12 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<input type="text" class="form-control input-sm en_only" id="email1" name="email1" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('email1');} else {$a = explode('@', $com->email); echo $a[0];} ?>" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="email1" name="email1" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('email1');} else {$a = explode('@', $com->email); echo $a[0];} ?>" required>
 							</div>
 							<div class="col-xs-1 text-wrap">@</div>
 							<div class="col-xs-4" style="padding-right: 0;">
 									<label for="email2" class="sr-only">이메일2</label>
-									<input type="text" class="form-control input-sm en_only" id="email2" name="email2" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('email2');} else {$a = explode('@', $com->email); echo $a[1];} ?>" required autofocus>
+									<input type="text" class="form-control input-sm en_only" id="email2" name="email2" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('email2');} else {$a = explode('@', $com->email); echo $a[1];} ?>" required>
 							</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="email3" class="sr-only">이메일3</label>
@@ -310,12 +310,12 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-4 form-wrap">
 							<div class="col-xs-3" style="padding-right: 0;">
-								<input type="text" class="form-control input-sm en_only" id="calc_mail1" name="calc_mail1" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('calc_mail1');} else {$a = explode('@', $com->calc_mail); echo $a[0];} ?>" required autofocus>
+								<input type="text" class="form-control input-sm en_only" id="calc_mail1" name="calc_mail1" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('calc_mail1');} else {$a = explode('@', $com->calc_mail); echo $a[0];} ?>" required>
 							</div>
 							<div class="col-xs-1 text-wrap">@</div>
 							<div class="col-xs-4" style="padding-right: 0;">
 									<label for="calc_mail2" class="sr-only">세금계산서이메일2</label>
-									<input type="text" class="form-control input-sm en_only" id="calc_mail2" name="calc_mail2" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('calc_mail2');} else {$a = explode('@', $com->calc_mail); echo $a[1];} ?>" required autofocus>
+									<input type="text" class="form-control input-sm en_only" id="calc_mail2" name="calc_mail2" maxlength="30" value="<?php if($mode=='com_reg') {echo set_value('calc_mail2');} else {$a = explode('@', $com->calc_mail); echo $a[1];} ?>" required>
 							</div>
 							<div class="col-xs-3" style="padding-right: 0;">
 								<label for="calc_mail3" class="sr-only">세금계산서이메일3</label>
@@ -339,7 +339,7 @@
 								<tr>
 									<td class="col-xs-2" style="padding: 0;">
 										<div class="col-xs-11 input-group">
-											<input type="text" class="form-control input-sm" id="tax_off1_code" name="tax_off1_code" value="<?php if($mode=='com_reg') {echo set_value('tax_off1_code');} else {echo $com->tax_off1_code; } ?>" readonly required autofocus>
+											<input type="text" class="form-control input-sm" id="tax_off1_code" name="tax_off1_code" value="<?php if($mode=='com_reg') {echo set_value('tax_off1_code');} else {echo $com->tax_off1_code; } ?>" readonly required>
 											<span class="input-group-btn">
 											      <button class="btn btn-default btn-sm" type="button" onclick="javascript:open_Win('<?php echo base_url('popup/tax_off/lists/1/'); ?>', 'tax_search', 500, 616)"> &nbsp;
 													<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
@@ -350,7 +350,7 @@
 									<td class="col-xs-3" style="padding: 0;">
 										<div class="col-xs-10" style="padding-left: 0;">
 											<label for="tax_off1_name" class="sr-only">세무서1 이름</label>
-											<input type="text" class="form-control input-sm" id="tax_off1_name" name="tax_off1_name" value="<?php if($mode=='com_reg') {echo set_value('tax_off1_name');} else {echo $com->tax_off1_name; } ?>" readonly required autofocus>
+											<input type="text" class="form-control input-sm" id="tax_off1_name" name="tax_off1_name" value="<?php if($mode=='com_reg') {echo set_value('tax_off1_name');} else {echo $com->tax_off1_name; } ?>" readonly required>
 										</div>
 									</td>
 								</tr>
@@ -397,14 +397,14 @@
 						</div>
 						<div class="col-xs-12 col-sm-8 col-md-10 form-wrap">
 							<div class="col-xs-3 col-sm-5 col-md-1" style="padding-right: 0;">
-								<input type="text" class="form-control input-sm" id="postcode1" name="postcode1" maxlength="5" value="<?php if($mode=='com_reg') {echo set_value('zipcode');} else {echo $com->zipcode; } ?>" readonly required autofocus>
+								<input type="text" class="form-control input-sm" id="postcode1" name="postcode1" maxlength="5" value="<?php if($mode=='com_reg') {echo set_value('zipcode');} else {echo $com->zipcode; } ?>" readonly required>
 							</div>
 							<div class="col-xs-3 col-sm-2 col-md-1" style="padding-right: 0;">
 								<input type="button" class="btn btn-info btn-sm" value="우편번호" onclick="execDaumPostcode(1)">
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-4" style="padding-right: 0;">
 								<label for="address1_1" class="sr-only">회사주소1</label>
-								<input type="text" class="form-control input-sm" id="address1_1" name="address1_1" maxlength="100" value="<?php if($mode=='com_reg') {echo set_value('address1');} else {echo $com->address1; } ?>" readonly required autofocus>
+								<input type="text" class="form-control input-sm" id="address1_1" name="address1_1" maxlength="100" value="<?php if($mode=='com_reg') {echo set_value('address1');} else {echo $com->address1; } ?>" readonly required>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-3" style="padding-right: 0;">
 								<label for="address2_1" class="sr-only">회사주소2</label>

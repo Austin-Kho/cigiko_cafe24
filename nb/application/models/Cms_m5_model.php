@@ -6,6 +6,7 @@ class Cms_m5_model extends CB_Model {
 	////////////////////////////////////////////////////////
 	// 기본 정보 관리 모델
 	////////////////////////////////////////////////////////
+
 	/**
 	 * [com_div_list 등록 부서 리스트]
 	 * @param  [string] $search_text   [검색어]
@@ -31,6 +32,16 @@ class Cms_m5_model extends CB_Model {
 		if($n=='num'){ $result = $qry->num_rows(); }else{ $result = $qry->result(); }
 		return $result;
 	}
+
+	/**
+   * [all_div_name 셀렉트바 전체 목록 불러오기]
+   * @return [Array] [부서 목록]
+   */
+  public function all_div_name($table){
+    $this->db->select('seq, div_code, div_name');
+    $qry = $this->db->get($table);
+    return $result = $qry->result();
+  }
 
 	/**
 	 * [com_mem_list 직원 목록]
@@ -155,7 +166,7 @@ class Cms_m5_model extends CB_Model {
 	 * @return [Array] [신청대기자 목록]
 	 */
 	public function new_rq_chk() {
-		$this->db->select('mem_username, mem_userid, mem_email, mem_register_datetime');
+		$this->db->select('mem_id, mem_username, mem_userid, mem_email, mem_register_datetime');
 		$qry = $this->db->get_where('member', array('request' => '2'));
 		if($result = $qry->result()) {
 			return $result;
@@ -170,8 +181,8 @@ class Cms_m5_model extends CB_Model {
 	 * @param  [Array]    $data [사용신청대기자 승인 여부 데이터]
 	 * @return [Boolean]  $result [쿼리 성공 여부]
 	 */
-	public function rq_perm($no, $data){
-		$result = $this->db->update('member', $data, array('mem_id' => $no));
+	public function rq_perm($where_no, $data){
+		$result = $this->db->update('member', $data, array('mem_id' => $where_no));
 		return $result;
 	}
 

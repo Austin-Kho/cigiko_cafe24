@@ -24,15 +24,21 @@
 						<div class="col-md-2 center str">승인처리</div>
 					</div>
 <?php foreach($new_rq as $lt) : ?>
-<?php if($auth !=='2' && $this->session->userdata['mem_is_admin'] !=='1') $perm_str="alert('승인(거부) 권한이 없습니다!')"; else $perm_str="permition('$lt->mem_id', this.value);"; ?>
+<?php
+if($auth !=='2' && $this->session->userdata['mem_is_admin'] !=='1') :
+	 $perm_str="onclick=\"alert('승인(거부) 권한이 없습니다!')\"";
+else :
+	$perm_str="onclick='if(confirm(\"사용자 등록을 \"+this.value+\"하시겠습니까?\")===true) {permition(".$lt->mem_id.", this.value);} else {return;} '";
+endif;?>
+<!-- // $perm_str="permition('$lt->mem_id', this.value);"; ?> -->
 					<div class="row new_user">
 						<div class="col-md-2 center str"><?php echo $lt->mem_username." (".$lt->mem_userid.")"; ?></div>
 						<div class="col-md-3 center str">(주) 바램디앤씨</div>
 						<div class="col-md-2 center str"><?php echo $lt->mem_email; ?></div>
 						<div class="col-md-3 center str"><?php echo $lt->mem_register_datetime; ?></div>
 						<div class="col-md-2 center str">
-							<button class="btn btn-success btn-xs" value="승인" onclick="<?php echo $perm_str; ?>">승인</button>
-							<button class="btn btn-danger btn-xs" value="거부" onclick="<?php echo $perm_str; ?>">거부</button>
+							<button class="btn btn-success btn-xs" value="승인" <?php echo $perm_str; ?>>승인</button>
+							<button class="btn btn-danger btn-xs" value="거부" <?php echo $perm_str; ?>>거부</button>
 						</div>
 					</div>
 <?php endforeach; ?>
@@ -43,7 +49,7 @@
 
 			<div class="form-group mg-0-15">
 				<div class="point-sub col-xs-12 col-sm-4 col-md-2 bo-top" style="padding-top: 9px; height: 40px;">
-					<font color="red">*</font> <font color="black">권한 설정 직원 선택<?php echo $auth;?></font>
+					<font color="red">*</font> <font color="black">권한 설정 직원 선택</font>
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-10 bo-top" style="height: 40px;">
 					<div class="col-xs-12 col-sm-6 col-md-3" style="padding-top: 4px;">

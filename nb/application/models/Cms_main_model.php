@@ -184,16 +184,6 @@ class Cms_main_model extends CB_Model
     return $result = $qry->row();
   }
 
-  /**
-   * [all_div_name 셀렉트바 전체 목록 불러오기]
-   * @return [Array] [부서 목록]
-   */
-  public function all_div_name($table){
-    $this->db->select('seq, div_code, div_name');
-    $qry = $this->db->get($table);
-    return $result = $qry->result();
-  }
-
 	/**************************************************************************************/
 }
  // End of this File
