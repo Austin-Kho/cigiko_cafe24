@@ -1,8 +1,11 @@
 		<div class="main_start">&nbsp;</div>
 		<!-- 3. 프로젝트 -> 1. 프로젝트 관리 ->2. 기본정보 수정 -->
 		<div class="row bo-top bo-bottom font12" style="margin: 0 0 20px 0;">
-			<form method="get" name="pj_sel" action="<?php echo base_url(); ?>cm3/project/1/2/">
-
+			<!-- <form method="get" name="pj_sel" action="<?php echo base_url(); ?>cm3/project/1/2/"> -->
+<?php
+	$attributes = array('method' => 'get', 'name' => 'pj_sel');
+	form_open(current_url(), $attributes);
+?>
 				<div class="col-xs-4 col-sm-3 col-md-2 center point-sub" style="padding: 10px; 0">사업 개시년도</div>
 				<div class="col-xs-8 col-sm-9 col-md-4" style="padding: 4px 15px;">
 					<div class="col-xs-12 col-sm-8" style="padding: 0px;">

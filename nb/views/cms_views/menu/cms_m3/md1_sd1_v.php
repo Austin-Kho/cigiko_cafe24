@@ -3,7 +3,7 @@
 			<div class="row font12" style="margin: 0; padding: 0;">
 <?php
 	$attributes = array('name' => 'pj_data_reg', 'method' => 'get');
-	echo form_open(base_url('/cm3/project/1/1/'), $attributes);
+	echo form_open(current_url(), $attributes);
 ?>
 
 					<label for="mode" class="sr-only">모드</label>
@@ -51,7 +51,7 @@
 
 <?php
 	$attributes = array('name' => 'form1', 'method' => 'post', 'class' => 'form-inline');
-	echo form_open(base_url('/cm3/project/1/1/'), $attributes);
+	echo form_open(current_url(), $attributes);
 ?><!-- 메인폼(form1) 시작 -->
 				<!------------------------------------동호수 별 입력 시작--------------------------------------------->
 					<label for="mode" class="sr-only">모드</label><input type="hidden" name="mode" value="<?php echo $this->input->get('mode'); ?>">
