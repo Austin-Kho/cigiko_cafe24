@@ -9,7 +9,7 @@ class Cms_popup_model extends CB_Model
        * @param  string $start       [페이지네이션 스타트]
        * @param  string $limit       [페이진네이션 리미트]
        * @param  string $num         [총 게시물 구하기 위한 인자]
-       * @return [Array]              [결과 데이터]
+       * @return [Array]  $result      [결과 데이터]
        */
       public function tax_search($search_text='', $start='', $limit='', $num='') {
 		$where = "";

@@ -33,13 +33,15 @@
 <?php
 	switch ($this->uri->segment(1)) {
 		case 'cms_m1': $menu_js = 'cms_m1.js';	break;
-		case 'cms_2m': $menu_js = 'cms_m2.js';	break;
-		case 'cms_3m': $menu_js = 'cms_m3.js';	break;
-		case 'cms_4m': $menu_js = 'cms_m4.js';	break;
-		case 'cms_5m': $menu_js = 'cms_m5.js';	break;
+		case 'cms_m2': $menu_js = 'cms_m2.js';	break;
+		case 'cms_m3': $menu_js = 'cms_m3.js';	break;
+		case 'cms_m4': $menu_js = 'cms_m4.js';	break;
+		case 'cms_m5': $menu_js = 'cms_m5.js';	break;
 	}
+	if( !empty($this->uri->segment(1)) && $this->uri->segment(1) !=='cms_main') :
 ?>
 		<script src="<?php echo $this->config->base_url('static/js')."/".$menu_js;?>"></script>
+<?php endif; ?>
 	</head>
 
 	<body role="document" onclick="cal_del();">

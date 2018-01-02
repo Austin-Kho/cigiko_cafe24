@@ -19,39 +19,39 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/111.jpg" alt="First slide">
+			<img src="<?php echo $this->config->base_url('static/img/111.jpg'); ?>" alt="First slide">
 			<div class="carousel-caption"><h3>양우내안애 Ervache</h3><p>72Type 거실 --- Nulla vitae elit libero, a pharetra augue mollis interdum.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/222.jpg" alt="Second slide">
+			<img src="<?php echo $this->config->base_url('static/img/222.jpg'); ?>" alt="Second slide">
 			<div class="carousel-caption"><h3>Second slide label</h3><p>72Type 침실1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/333.jpg" alt="Third slide">
+			<img src="<?php echo $this->config->base_url('static/img/333.jpg'); ?>" alt="Third slide">
 			<div class="carousel-caption"><h3>Third slide label</h3><p>72Type 주방 Praesent commodo cursus magna, vel scelerisque nisl<br> consectetur.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/444.jpg" alt="4th slide">
+			<img src="<?php echo $this->config->base_url('static/img/444.jpg'); ?>" alt="4th slide">
 			<div class="carousel-caption"><h3>양우내안애 Ervache</h3><p>72Type 안방 Praesent commodo cursus magna, vel scelerisque nisl<br> consectetur.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/555.jpg" alt="5th slide">
+			<img src="<?php echo $this->config->base_url('static/img/555.jpg'); ?>" alt="5th slide">
 			<div class="carousel-caption"><h3>양우내안애 Ervache</h3><p>72Type 욕실 Praesent commodo cursus magna, vel scelerisque nisl<br> consectetur.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/666.jpg" alt="6th slide">
+			<img src="<?php echo $this->config->base_url('static/img/666.jpg'); ?>" alt="6th slide">
 			<div class="carousel-caption"><h3>양우내안애 Ervache</h3><p>84C Type 침실1 Praesent commodo cursus magna, vel scelerisque nisl<br> consectetur.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/777.jpg" alt="7th slide">
+			<img src="<?php echo $this->config->base_url('static/img/777.jpg'); ?>" alt="7th slide">
 			<div class="carousel-caption"><h3>양우내안애 Ervache</h3><p>84C Type 거실 Praesent commodo cursus magna, vel scelerisque nisl<br> consectetur.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/888.jpg" alt="8th slide">
+			<img src="<?php echo $this->config->base_url('static/img/888.jpg'); ?>" alt="8th slide">
 			<div class="carousel-caption"><h3>양우내안애 Ervache</h3><p>84C Type 주방 Praesent commodo cursus magna, vel scelerisque nisl<br> consectetur.</p></div>
 		</div>
 		<div class="item">
-			<img src="<?php echo $this->config->base_url(); ?>static/img/999.jpg" alt="9th slide">
+			<img src="<?php echo $this->config->base_url('static/img/999.jpg'); ?>" alt="9th slide">
 			<div class="carousel-caption"><h3>양우내안애 Ervache</h3><p>84C Type 안방 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
 		</div>
 	</div>
@@ -90,7 +90,7 @@
 				<div class="panel-body">
 					<div class="col-xs-5" style="padding: 0;">신규 계약 건 (최근 7일) : </div>
 					<div class="col-xs-3 right" style="padding: 0; color: #3404D6;"><?php echo number_format($cont_7day->num)." 건" ?></div>
-					<div class="col-xs-4 right " style="padding: 0;"><a href="/ns/m1/sales/1/2?cont_sort2=2">계약 등록 →</a></div>
+					<div class="col-xs-4 right " style="padding: 0;"><a href="/nb/cms_m1/sales/1/2?cont_sort2=2">계약 등록 →</a></div>
 				</div>
 				<div class="panel-body">
 					<div class="col-xs-5" style="padding: 0;">전체 청약 건 : </div>
@@ -100,7 +100,7 @@
 				<div class="panel-body">
 					<div class="col-xs-5" style="padding: 0;">전체 계약 건 : </div>
 					<div class="col-xs-3 right" style="padding: 0;"><?php echo number_format($cont_num->num)." 건" ?></div>
-					<div class="col-xs-4 right " style="padding: 0;"><a href="/ns/m1">계약 현황 →</a></div>
+					<div class="col-xs-4 right " style="padding: 0;"><a href="/nb/cms_m1">계약 현황 →</a></div>
 				</div>
 			</div>
 		</div>
@@ -121,7 +121,7 @@
 				</div>
 				<div class="panel-body">
 					<div class="col-xs-6" style="padding: 0;"></div>
-					<div class="col-xs-6 right" style="padding: 0;"><a href="/ns/m1/sales/2/1">수납현황 바로가기</a></div>
+					<div class="col-xs-6 right" style="padding: 0;"><a href="/nb/cms_m1/sales/2/1">수납현황 바로가기</a></div>
 				</div>
 			</div>
 		</div>
@@ -148,7 +148,7 @@
 				</div>
 				<div class="panel-body">
 					<div class="col-xs-6" style="padding: 0;"></div>
-					<div class="col-xs-6 right" style="padding: 0;"><a href="/ns/m1/sales/2/2">수납등록 바로가기</a></div>
+					<div class="col-xs-6 right" style="padding: 0;"><a href="/nb/cms_m1/sales/2/2">수납등록 바로가기</a></div>
 				</div>
 			</div>
 		</div>

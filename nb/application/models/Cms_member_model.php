@@ -10,7 +10,7 @@ class Cms_member_model extends CB_Model
 	/**
 	 * [join 회원가입 모델]
 	 * @param  [Array] $new_data [회원 가입 정보]
-	 * @return [boolean]           [입력 성공 여부]
+	 * @return [boolean] $result  [입력 성공 여부]
 	 */
 	public function join($new_data) {
 

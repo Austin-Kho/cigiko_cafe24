@@ -19,10 +19,10 @@ class Cms_m4_model extends CB_Model {
 		return $qry->result();
 	}
 
+
 	////////////////////////////////////////////////////////
 	// 입출금 내역 관리 모델
 	////////////////////////////////////////////////////////
-
 
 	public function cash_book_list($table, $where, $start='', $limit='', $sh_frm, $n, $ex='') {
 		$this->db->select('seq_num, class1, class2, account, cont, acc, in_acc, inc, out_acc, exp, evidence, cms_capital_cash_book.note AS memo, worker, deal_date, name, no');
