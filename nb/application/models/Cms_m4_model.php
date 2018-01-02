@@ -7,6 +7,19 @@ class Cms_m4_model extends CB_Model {
 	// 자금 일보 관리 모델
 	////////////////////////////////////////////////////////
 
+	public function select_data_lt($table, $sel='', $where, $group='', $order='') {
+		if($sel !='') { $this->db->select($sel); }
+		if($where !='') { $this->db->where($where); }
+		if($group !='') { $this->db->group_by($group); }
+		if($order !='') { $this->db->order_by($order); }
+		$qry = $this->db->get($table);
+		$rlt = array(
+			'num' => $qry->num_rows(),
+			'result' => $qry->result()
+		);
+		return $rlt;
+	}
+
 	public function da_in_total($table, $sh_date) {
 		$sql = "SELECT SUM(inc) AS total_inc FROM ".$table." WHERE (com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='".$sh_date."'";
 		$qry = $this->db->query($sql);
@@ -14,10 +27,11 @@ class Cms_m4_model extends CB_Model {
 	}
 
 	public function da_ex_total($table, $sh_date) {
-		$sql = "SELECT SUM(exp) AS total_exp FROM cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='".$sh_date."'";
+		$sql = "SELECT SUM(exp) AS total_exp FROM ".$table." WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='".$sh_date."'";
 		$qry = $this->db->query($sql);
 		return $qry->result();
 	}
+
 
 
 	////////////////////////////////////////////////////////

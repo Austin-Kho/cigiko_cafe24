@@ -49,7 +49,7 @@ class Cms_m4 extends CB_Controller {
 	 * @return [type]      [description]
 	 */
 	public function capital($mdi='', $sdi=''){
-		// $this->output->enable_profiler(TRUE); //프로파일러 보기//
+		$this->output->enable_profiler(TRUE); //프로파일러 보기//
 
 		$mdi = $this->uri->segment(3, 1);
 		$sdi = $this->uri->segment(4, 1);
@@ -80,8 +80,8 @@ class Cms_m4 extends CB_Controller {
 				if(!$this->input->post('sh_date')) $data['sh_date'] = date('Y-m-d');
 
 				// 은행계좌 데이터
-				$data['bank_acc'] = $this->cms_m4_m->select_data_lt('cb_cms_capital_bank_account', '', '', '');
-				//$data['b_acc'] = $this->cms_main_model->sql_result('SELECT no, name FROM cb_cms_capital_bank_account ORDER BY no');
+				$data['bank_acc'] = $this->cms_m4_model->select_data_lt('cb_cms_capital_bank_account', '', '', '');
+				$data['b_acc'] = $this->cms_main_model->sql_result('SELECT no, name FROM cb_cms_capital_bank_account ORDER BY no');
 
 				// 은행 계좌별 전일 잔고 및 금일 출납, 잔고 구하기 데이터
 				for($i=0; $i<$data['bank_acc']['num']; $i++) {
@@ -104,7 +104,7 @@ class Cms_m4 extends CB_Controller {
 
 
 				// 조합 대여금 데이터
-				$data['jh_data'] = $this->cms_m4_m->select_data_lt('cb_cms_capital_cash_book', 'any_jh', 'any_jh<>0', 'any_jh');
+				$data['jh_data'] = $this->cms_m4_model->select_data_lt('cb_cms_capital_cash_book', 'any_jh', 'any_jh<>0', 'any_jh');
 				for($i=0; $i<$data['jh_data']['num']; $i++){
 					$data['jh_name'][$i] = $this->cms_main_model->sql_result(" SELECT pj_name FROM cb_cms_project WHERE seq = '".$data['jh_data']['result'][$i]->any_jh."' ORDER BY seq ");//조합명
 					$data['jh_cum_in'][$i] = $this->cms_main_model->sql_result(" SELECT SUM(inc) AS inc FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '".$data['jh_data']['result'][$i]->any_jh."' AND deal_date<='".$data['sh_date']."' "); //총 회수금
@@ -127,16 +127,16 @@ class Cms_m4 extends CB_Controller {
 
 
 				// 설정일 입금 내역
-				$data['da_in'] = $this->cms_m4_m->select_data_lt("cb_cms_capital_cash_book", "account, cont, acc, inc, note", "(com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='".$data['sh_date']."'", "", "seq_num");
+				$data['da_in'] = $this->cms_m4_model->select_data_lt("cb_cms_capital_cash_book", "account, cont, acc, inc, note", "(com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='".$data['sh_date']."'", "", "seq_num");
 
 				// $aaq="SELECT SUM(inc) AS total_inc FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='$sh_date'";
-				$data['da_in_total'] = $this->cms_m4_m->da_in_total('cb_cms_capital_cash_book', $data['sh_date']);
+				$data['da_in_total'] = $this->cms_m4_model->da_in_total('cb_cms_capital_cash_book', $data['sh_date']);
 
-				// $da_ex_qry="SELECT account, cont, acc, exp, note FROM cb_cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='$sh_date' order by seq_num";
-				$data['da_ex'] = $this->cms_m4_m->select_data_lt("cb_cms_capital_cash_book", "account, cont, acc, exp, note", "(com_div>0) AND (class1='2' or class1='3') AND deal_date='".$data['sh_date']."'", "", "seq_num");
+				$da_ex_qry="SELECT account, cont, acc, exp, note FROM cb_cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='$sh_date' order by seq_num";
+				$data['da_ex'] = $this->cms_m4_model->select_data_lt("cb_cms_capital_cash_book", "account, cont, acc, exp, note", "(com_div>0) AND (class1='2' or class1='3') AND deal_date='".$data['sh_date']."'", "", "seq_num");
 
 				// $bbq="SELECT SUM(exp) AS total_exp FROM cb_cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='$sh_date'";
-				$data['da_ex_total'] = $this->cms_m4_m->da_ex_total('cb_cms_capital_cash_book', $data['sh_date']);
+				$data['da_ex_total'] = $this->cms_m4_model->da_ex_total('cb_cms_capital_cash_book', $data['sh_date']);
 
 
 				//본 페이지 로딩
@@ -198,7 +198,7 @@ class Cms_m4 extends CB_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cms_m4/capital/1/2/');   //페이징 주소
-				$config['total_rows'] = $this->cms_m4_m->cash_book_list($cb_table, $data['where'], '', '', $sh_frm, 'num');  //게시물의 전체 갯수
+				$config['total_rows'] = $this->cms_m4_model->cash_book_list($cb_table, $data['where'], '', '', $sh_frm, 'num');  //게시물의 전체 갯수
 				$config['per_page'] = 12; // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 4;  // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -214,10 +214,10 @@ class Cms_m4 extends CB_Controller {
 				//페이징 링크를 생성하여 view에서 사용할 변수에 할당
 				$data['pagination'] = $this->pagination->create_links();
 
-				$data['cb_list'] = $this->cms_m4_m->cash_book_list($cb_table, $data['where'], $start, $limit, $sh_frm, '', '');
+				$data['cb_list'] = $this->cms_m4_model->cash_book_list($cb_table, $data['where'], $start, $limit, $sh_frm, '', '');
 
 				if($this->input->get('del_code')) {
-					$result = $this->cms_m4_m->delete_data('cb_cms_capital_cash_book', array('seq_num' => $this->input->get('del_code')));
+					$result = $this->cms_m4_model->delete_data('cb_cms_capital_cash_book', array('seq_num' => $this->input->get('del_code')));
 					if($result) {
 						alert('삭제 되었습니다.', base_url('cms_m4/capital/1/2/'));
 					}else{
@@ -257,20 +257,20 @@ class Cms_m4 extends CB_Controller {
 				$data['auth'] = $auth['_m4_1_3'];
 
 				// 계정과목 데이터
-				$data['d3_d11'] = $this->cms_m4_m->d3_acc('1');
-				$data['d3_d12'] = $this->cms_m4_m->d3_acc('2');
-				$data['d3_d13'] = $this->cms_m4_m->d3_acc('3');
-				$data['d3_d14'] = $this->cms_m4_m->d3_acc('4');
-				$data['d3_d15'] = $this->cms_m4_m->d3_acc('5');
+				$data['d3_d11'] = $this->cms_m4_model->d3_acc('1');
+				$data['d3_d12'] = $this->cms_m4_model->d3_acc('2');
+				$data['d3_d13'] = $this->cms_m4_model->d3_acc('3');
+				$data['d3_d14'] = $this->cms_m4_model->d3_acc('4');
+				$data['d3_d15'] = $this->cms_m4_model->d3_acc('5');
 
 				// 현장 데이터
-				$data['pj_dt'] = $this->cms_m4_m->pj_dt();
+				$data['pj_dt'] = $this->cms_m4_model->pj_dt();
 				// 입출금처
-				$data['in_out'] = $this->cms_m4_m->select_data_list('cb_cms_capital_bank_account');
+				$data['in_out'] = $this->cms_main_model->select_data_list('cb_cms_capital_bank_account');
 
 				// 폼 검증 라이브러리 로드
 				$this->load->library('form_validation'); // 폼 검증
-				//// 폼 검증할 필드와 규칙 사전 정의
+				// 폼 검증할 필드와 규칙 사전 정의
 				if($this->input->post('class1_1')) {
 					$this->form_validation->set_rules('cont_1', '적요1', 'required');
 					$this->form_validation->set_rules('inc_1', '입금액1', 'numeric|integer');
@@ -335,8 +335,10 @@ class Cms_m4 extends CB_Controller {
 				// $this->form_validation->set_rules('res_work', '담당업무', 'required');
 
 				if($this->form_validation->run()==FALSE) {
+
 					//본 페이지 로딩
 					$this->load->view('/cms_views/menu/cms_m4/md1_sd3_v', $data);
+
 				}else{
 					// form(inout_frm-post)에서 받은 데이터
 					$deal_date = $this->input->post('deal_date', TRUE);
@@ -574,7 +576,7 @@ class Cms_m4 extends CB_Controller {
 								'worker' => $worker,
 								'deal_date' => $deal_date
 							);
-							$result = $this->cms_m4_m->insert_data('cb_cms_capital_cash_book', $cash_data);
+							$result = $this->cms_main_model->insert_data('cb_cms_capital_cash_book', $cash_data);
 							if( !$result) {alert('데이터베이스 오류가 발생하였습니다.', base_url('cms_m4/capital/1/3/')); exit;}
 							if($char1[$i]=='on'){
 								$char_data = array(
@@ -590,7 +592,7 @@ class Cms_m4 extends CB_Controller {
 									'worker' => $worker,
 									'deal_date' => $deal_date
 								);
-								$result = $this->cms_m4_m->insert_data('cb_cms_capital_cash_book', $char_data);
+								$result = $this->cms_main_model->insert_data('cb_cms_capital_cash_book', $char_data);
 								if( !$result) {alert('데이터베이스 오류가 발생하였습니다.', base_url('cms_m4/capital/1/3/')); exit;}
 							}
 						}

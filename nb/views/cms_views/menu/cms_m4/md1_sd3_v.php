@@ -1,4 +1,6 @@
 			<div class="main_start">&nbsp;</div>
+		<!-- 4. 본사관리 -> 1. 자금관리 ->3. 입출금 등록 페이지 -->
+
 <?php
 	$attributes = array('name' => 'inout_frm');
 	$hidden = array(
