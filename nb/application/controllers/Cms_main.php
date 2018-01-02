@@ -37,7 +37,7 @@ class Cms_main extends CB_Controller {
 	}
 
 	public function main() {
-		$this->output->enable_profiler(TRUE); //프로파일러 보기//
+		// $this->output->enable_profiler(TRUE); //프로파일러 보기//
 
 		$say_num = $this->cms_main_model->sql_num_rows(" SELECT seq FROM cb_cms_wise_saying ");
 		$now_num = mt_rand(1, $say_num);

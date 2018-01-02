@@ -1,18 +1,13 @@
 /**
  *
  */
-// 링크 점선 없애기
-function bluring(){
-	if(event.srcElement.tagName=="a"||event.srcElement.tagName=="img") document.body.focus();
-}
-document.onfocusin=bluring;
 
 // 우편번호 검색창 열기
-function ZipWindow(ref) { // ref = 파일경로, z_form = 우편번호 폼, a_form = 주소폼)
-	var window_left = (screen.width-640)/2;
-	var window_top = (screen.height-480)/2;
-	window.open(ref, "zipWin","scrollbars=no,width=530, height=618, status=no, top="+window_top+",left="+window_left);
-}
+// function ZipWindow(ref) { // ref = 파일경로, z_form = 우편번호 폼, a_form = 주소폼)
+// 	var window_left = (screen.width-640)/2;
+// 	var window_top = (screen.height-480)/2;
+// 	window.open(ref, "zipWin","scrollbars=no,width=530, height=618, status=no, top="+window_top+",left="+window_left);
+// }
 
 // 오픈 윈도우2
 function open_Win(ref,name, wid, hei) {

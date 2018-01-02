@@ -44,7 +44,7 @@ class Cms_m2 extends CB_Controller {
 	 * @return [type]      [description]
 	 */
 	public function process($mdi='', $sdi=''){
-		$this->output->enable_profiler(TRUE); //프로파일러 보기//
+		// $this->output->enable_profiler(TRUE); //프로파일러 보기//
 
 		$mdi = $this->uri->segment(3, 1);
 		$sdi = $this->uri->segment(4, 1);
