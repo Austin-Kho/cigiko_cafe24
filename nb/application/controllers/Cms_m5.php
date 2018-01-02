@@ -149,7 +149,7 @@ class Cms_m5 extends CB_Controller {
 		// 1. 기본정보관리 2. 직원관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==2) {
 			// 조회 등록 권한 체크
-			// $auth = $this->cms_main_model->auth_chk('_m5_1_2', $this->session->userdata['mem_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_1_2', $this->session->userdata['mem_id']);
 
 			if( !$auth['_m5_1_2'] or $auth['_m5_1_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -245,7 +245,7 @@ class Cms_m5 extends CB_Controller {
 		// 1. 기본정보관리 3. 거래처정보 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==3) {
 			// 조회 등록 권한 체크
-			// $auth = $this->cms_main_model->auth_chk('_m5_1_3', $this->session->userdata['mem_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_1_3', $this->session->userdata['mem_id']);
 
 			if( !$auth['_m5_1_3'] or $auth['_m5_1_3']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -342,7 +342,7 @@ class Cms_m5 extends CB_Controller {
 		// 1. 기본정보관리 4. 계좌관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==4) {
 			// 조회 등록 권한 체크
-			// $auth = $this->cms_main_model->auth_chk('_m5_1_4', $this->session->userdata['mem_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_1_4', $this->session->userdata['mem_id']);
 
 			if( !$auth['_m5_1_4'] or $auth['_m5_1_4']==0) {
 				$this->load->view('/cms_views/no_auth');

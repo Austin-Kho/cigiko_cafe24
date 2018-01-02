@@ -4,7 +4,11 @@
 			<div class="row">
 				<div class="col-md-12" style="<?php if( !$this->agent->is_mobile()) echo 'height: 490px;'; ?>">
 					<div class="row bo-top bo-bottom" style="margin: 0 0 20px 0;">
-						<form name="list_frm" method="get" action="">
+						<!-- <form name="list_frm" method="get" action=""> -->
+<?php
+	$attributes = array('method' => 'get', 'name' => 'list_frm');
+	echo form_open(current_url(), $attributes);
+?>
 							<div class="point-sub col-md-2" style="height: 40px; padding-top: 10px;">업체구분</div>
 							<div class="col-md-7" style="height: 40px; padding-top: 5px;">
 								<div class="col-md-3" style="padding: 0;">
@@ -83,8 +87,8 @@
 			<div class="row">
 
 <?php
-	$attributes = array('name' => 'form1', 'class' => 'form-horizontal', 'method' => 'post');
-	echo form_open(base_url().'cm5/config/1/3/', $attributes);
+	$attributes = array('name' => 'form1', 'class' => 'form-horizontal');
+	echo form_open(current_url(), $attributes);
 ?>
 					<fieldset class="font12">
 						<div class="col-md-12">

@@ -1,13 +1,17 @@
 			<div class="main_start">
 				<a href="<?php echo base_url('/excel_file/daily_money_report?sh_date=').$sh_date; ?>">
-					<img src="<?php echo base_url(); ?>static/img/excel_icon.jpg" height="10" border="0" alt="EXCEL 아이콘" /> EXCEL로 출력
+					<img src="<?php echo base_url('static/img/excel_icon.jpg'); ?>" height="10" border="0" alt="EXCEL 아이콘" /> EXCEL로 출력
 				</a>
 			</div>
 
 			<div class="row bo-top bo-bottom" style="margin: 0 0 20px 0;">
 				<div class="col-xs-4 col-sm-3 col-md-2 center point-sub" style="padding: 10px; 0">날 짜</div>
 				<div class="col-xs-8 col-sm-9 col-md-10" style="padding-top: 5px;">
-					<form method="post" name="d_cash_book_frm" action="">
+					<!-- <form method="post" name="d_cash_book_frm" action=""> -->
+<?php
+	$attributes = array('name' => 'd_cash_book_frm');
+	echo form_open(current_url(), $attributes);
+?>
 						<div class="col-xs-8 col-sm-5 col-md-3 glyphicon-wrap" style="padding: 0px;">
 							<label for="sh_date" class="sr-only">시작일</label>
 							<input type="text" class="form-control input-sm wid-95" id="sh_date" name="sh_date" maxlength="10" value="<?php echo $sh_date;?>" readonly onClick="cal_add(this); event.cancelBubble=true">

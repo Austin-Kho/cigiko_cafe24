@@ -1,17 +1,29 @@
 			<div class="main_start">&nbsp;</div>
 <?php
-	$attributes = array('name' => 'inout_frm', 'method' => 'post');
-	echo form_open(base_url('cm4/capital/1/3/'), $attributes);
+	$attributes = array('name' => 'inout_frm');
+	$hidden = array(
+		'cont_1_h' => '', // 수수료 발생 시 - 적요_1
+		'cont_2_h' => '', // 수수료 발생 시 - 적요_2
+		'cont_3_h' => '', // 수수료 발생 시 - 적요_3
+		'cont_4_h' => '', // 수수료 발생 시 - 적요_4
+		'cont_5_h' => '', // 수수료 발생 시 - 적요_5
+		'cont_6_h' => '', // 수수료 발생 시 - 적요_6
+		'cont_7_h' => '', // 수수료 발생 시 - 적요_7
+		'cont_8_h' => '', // 수수료 발생 시 - 적요_8
+		'cont_9_h' => '', // 수수료 발생 시 - 적요_9
+		'cont_10_h' => '', // 수수료 발생 시 - 적요_10
+	);
+	echo form_open(current_url(), $attributes, $hidden);
 ?>
-				<label class="sr-only"><input type="hidden" name="cont_1_h" value=""></label> <!-- 수수료 발생 시 - 적요_1 -->
-				<label class="sr-only"><input type="hidden" name="cont_2_h" value=""></label> <!-- 수수료 발생 시 - 적요_2 -->
-				<label class="sr-only"><input type="hidden" name="cont_3_h" value=""></label> <!-- 수수료 발생 시 - 적요_3 -->
-				<label class="sr-only"><input type="hidden" name="cont_4_h" value=""></label> <!-- 수수료 발생 시 - 적요_4 -->
-				<label class="sr-only"><input type="hidden" name="cont_5_h" value=""></label> <!-- 수수료 발생 시 - 적요_5 -->
-				<label class="sr-only"><input type="hidden" name="cont_6_h" value=""></label> <!-- 수수료 발생 시 - 적요_6 -->
-				<label class="sr-only"><input type="hidden" name="cont_7_h" value=""></label> <!-- 수수료 발생 시 - 적요_7 -->
-				<label class="sr-only"><input type="hidden" name="cont_8_h" value=""></label> <!-- 수수료 발생 시 - 적요_8 -->
-				<label class="sr-only"><input type="hidden" name="cont_9_h" value=""></label> <!-- 수수료 발생 시 - 적요_9 -->
+				<!-- <label class="sr-only"><input type="hidden" name="cont_1_h" value=""></label> <!-- 수수료 발생 시 - 적요_1
+				<label class="sr-only"><input type="hidden" name="cont_2_h" value=""></label> <!-- 수수료 발생 시 - 적요_2
+				<label class="sr-only"><input type="hidden" name="cont_3_h" value=""></label> <!-- 수수료 발생 시 - 적요_3
+				<label class="sr-only"><input type="hidden" name="cont_4_h" value=""></label> <!-- 수수료 발생 시 - 적요_4
+				<label class="sr-only"><input type="hidden" name="cont_5_h" value=""></label> <!-- 수수료 발생 시 - 적요_5
+				<label class="sr-only"><input type="hidden" name="cont_6_h" value=""></label> <!-- 수수료 발생 시 - 적요_6
+				<label class="sr-only"><input type="hidden" name="cont_7_h" value=""></label> <!-- 수수료 발생 시 - 적요_7
+				<label class="sr-only"><input type="hidden" name="cont_8_h" value=""></label> <!-- 수수료 발생 시 - 적요_8
+				<label class="sr-only"><input type="hidden" name="cont_9_h" value=""></label> <!-- 수수료 발생 시 - 적요_9
 				<label class="sr-only"><input type="hidden" name="cont_10_h" value=""></label> <!-- 수수료 발생 시 - 적요_10 -->
 
 				<div class="row bo-top bo-bottom" style="margin: 0 0 20px 0;">

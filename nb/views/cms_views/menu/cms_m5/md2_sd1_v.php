@@ -17,8 +17,8 @@
 
 		<div class="row" style="margin: 0; padding: 0;">
 <?php
-	$attributes = array('name' => 'form1', 'id' => 'com_reg_form', 'class' => 'form-horizontal', 'method' => 'post');
-	echo form_open(base_url().'cm5/config/2/1', $attributes);
+	$attributes = array('name' => 'form1', 'id' => 'com_reg_form', 'class' => 'form-horizontal');
+	echo form_open(current_url(), $attributes);
 ?>
 				<fieldset class="font12">
 
