@@ -1,7 +1,10 @@
 	<div class="main_start">&nbsp;</div>
 	<!-- 1. 분양관리 -> 2. 수납 관리 ->2.   설정 관리 -->
 
-	<form method="get" name="get_frm" action="<?php echo current_url(); ?>">
+<?php
+	$attributes = array('method' => 'get', 'name' => 'get_frm');
+	form_open(current_url(), $attributes);
+?>
 		<div class="row bo-top bo-bottom font12" style="margin: 0 0 20px 0;">
 			<div class="col-xs-4 col-sm-3 col-md-2 center point-sub" style="padding: 10px; 0">사업 개시년도</div>
 			<div class="col-xs-8 col-sm-9 col-md-2" style="padding: 4px 15px;">
@@ -134,7 +137,11 @@
 <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-5. 조건별 분양가 설정 종료-|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
 <?php elseif($this->input->get('reg_sort')==='6') : //6. 회차별 납입가 설정 ?>
-	<form method="get" name="get_frm" action="<?php echo current_url(); ?>">
+	<!-- <form method="get" name="get_frm" action="<?php echo current_url(); ?>"> -->
+<?php
+	$attributes = array('method' => 'get', 'name' => 'get_frm');
+	form_open(current_url(), $attributes);
+?>
 		<input type="hidden" name="yr" value="<?php echo $this->input->get('yr'); ?>">
 		<input type="hidden" name="project" value="<?php echo $this->input->get('project'); ?>">
 		<input type="hidden" name="reg_sort" value="<?php echo $this->input->get('reg_sort'); ?>">
@@ -177,7 +184,10 @@ if( !$this->input->get('con_diff') OR  !$this->input->get('pay_sort'))  :
 		<div class="col-xs-12 center" style="padding: 180px 0;"><?php echo $msg; ?></div>
 	</div>
 <?php else : ?>
-	<form class="" action="" method="post">
+	<!-- <form class="" action="" method="post"> -->
+<?php
+	form_open(current_url());
+?>
 		<div class="row font12" style="margin: 0; padding: 0;">
 			<div class="col-xs-12 table-responsive" style="padding: 0;">
 				<table class="table table-bordered center">
@@ -204,7 +214,7 @@ if( !$this->input->get('con_diff') OR  !$this->input->get('pay_sort'))  :
 							<td class="right"><?php echo number_format($price[$i]->unit_price); ?></td>
 <?php
 for($j=0; $j<count($pay_sche); $j++) :
-	$pmt = $this->main_m->sql_row(" SELECT * FROM cms_sales_payment WHERE pj_seq='$project' AND price_seq='".$price[$i]->pr_seq."' AND pay_sche_seq='".$pay_sche[$j]->seq."' ");
+	$pmt = $this->main_m->sql_row(" SELECT * FROM cb_cms_sales_payment WHERE pj_seq='$project' AND price_seq='".$price[$i]->pr_seq."' AND pay_sche_seq='".$pay_sche[$j]->seq."' ");
 ?>
 							<td style="background-color: ; padding: 3px;">
 								<div style="color: #B00447;"><?php echo form_error("pmt_".$price[$i]->pr_seq."-".$pay_sche[$j]->seq); ?>

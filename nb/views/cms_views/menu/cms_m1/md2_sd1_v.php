@@ -12,8 +12,11 @@
 	</script>
 
 	<div class="row bo-top bo-bottom font12" style="margin: 0 0 20px 0;">
-		<form method="get" name="pj_sel" action="<?php echo current_url(); ?>">
-
+		<!-- <form method="get" name="pj_sel" action="<?php echo current_url(); ?>"> -->
+<?php
+  $attributes = array('method' => 'get', 'name' => 'pj_sel');
+  echo form_open(current_url());
+?>
 			<div class="col-xs-4 col-sm-3 col-md-2 center point-sub" style="padding: 10px; 0">사업 개시년도</div>
 			<div class="col-xs-8 col-sm-9 col-md-4" style="padding: 4px 15px;">
 				<div class="col-xs-12 col-sm-8" style="padding: 0px;">
@@ -113,8 +116,8 @@
         <div class="col-md-12"><h4><span class="label label-success">최근 수납현황</span></h4></div>
 		<div class="col-md-12 bo-top bo-bottom" style="padding: 0; margin: 0 0 20px 0;">
 <?php
-$attributes = array('name' => 'form1', 'method' => 'get');
-echo form_open(base_url(uri_string()), $attributes);
+  $attributes = array('name' => 'form1', 'method' => 'get');
+  echo form_open(uri_string(), $attributes);
 ?>
 				<div class="col-xs-12 col-sm-2 col-md-1 center bgf8" style="height: 40px; padding: 10px 0;">검색 조건</div>
 				<div class="col-xs-6 col-sm-2 col-md-1" style="height: 40px; padding: 5px;">
@@ -192,7 +195,7 @@ echo form_open(base_url(uri_string()), $attributes);
 				</thead>
 				<tbody>
 <?php
-$tp = $this->cms_main_model->sql_row("SELECT type_name, type_color FROM cms_project WHERE seq='$project' ");
+$tp = $this->cms_main_model->sql_row("SELECT type_name, type_color FROM cb_cms_project WHERE seq='$project' ");
 if(!empty($tp)) :
   $tn = explode("-", $tp->type_name);
   $tc = explode("-", $tp->type_color);
@@ -204,8 +207,8 @@ endif;
 
 foreach($rec_list as $lt) :
 	$dong_ho = explode("-", $lt->unit_dong_ho);
-	$contractor = $this->cms_main_model->sql_row(" SELECT contractor AS ct FROM cms_sales_contractor WHERE cont_seq='$lt->cont_seq' ");
-	$total_rec = $this->cms_main_model->sql_row(" SELECT SUM(paid_amount) AS pa FROM cms_sales_received WHERE pj_seq='$project' AND cms_sales_received.cont_seq='$lt->cont_seq' GROUP BY cms_sales_received.cont_seq ");
+	$contractor = $this->cms_main_model->sql_row(" SELECT contractor AS ct FROM cb_cms_sales_contractor WHERE cont_seq='$lt->cont_seq' ");
+	$total_rec = $this->cms_main_model->sql_row(" SELECT SUM(paid_amount) AS pa FROM cb_cms_sales_received WHERE pj_seq='$project' AND cb_cms_sales_received.cont_seq='$lt->cont_seq' GROUP BY cb_cms_sales_received.cont_seq ");
 ?>
 					<tr class="center">
 						<td><?php echo $lt->paid_date; ?></td>

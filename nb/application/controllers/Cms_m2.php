@@ -69,13 +69,13 @@ class Cms_m2 extends CB_Controller {
 
 		// 예산집행 관리 1. 집행 현황 ////////////////////////////////////////////////////////////////////
 		if($mdi==1 && $sdi==1 ){
+			// $this->output->enable_profiler(TRUE); //프로파일러 보기//
 			// 조회 등록 권한 체크
 			$auth = $this->cms_main_model->auth_chk('_m2_1_1', $this->session->userdata['mem_id']);
 
 			if( !$auth['_m2_1_1'] or $auth['_m2_1_1']==0) { // 조회 권한이 없는 경우
 				$this->load->view('/cms_views/no_auth');
 			}else{ // 조회 권한이 있는 경우
-
 
 				// 불러올 페이지에 보낼 조회 권한 데이터
 				$data['auth'] = $auth['_m2_1_1'];

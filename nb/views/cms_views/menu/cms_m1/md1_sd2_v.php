@@ -2,7 +2,10 @@
 		<!-- 1. 분양관리 -> 1. 계약 관리 ->2. 계약 등록 -->
 
 		<!-- ===================계약물건 검색 시작================== -->
-		<form method="get" name="set1" action="/ns/cm1/sales/1/2">
+<?php
+	$attributes = array('method' => 'get', 'name' => 'set1');
+	echo form_open(uri_string(), $attributes);
+?>
 			<div class="row bo-top bo-bottom font12" style="margin: 0;">
 				<div class="row bo-bottom font12" style="margin: 0;">
 					<div class="col-xs-4 col-sm-3 col-md-2 center point-sub" style="padding: 10px; 0">처리 구분 <span class="red">*</span></div>

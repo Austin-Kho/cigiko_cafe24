@@ -1,8 +1,10 @@
 		<div class="main_start">&nbsp;</div>
 		<!-- 1. 분양관리 -> 1. 계약 관리 ->3. 동호수 현황 -->
 		<div class="row bo-top bo-bottom font12" style="margin: 0 0 20px 0;">
-			<form method="get" name="pj_sel" action="<?php echo current_url(); ?>">
-
+<?php
+	$attributes = array('method' => 'get', 'name' => 'pj_sel');
+	form_open(current_url(), $attributes);
+?>
 				<div class="col-xs-4 col-sm-3 col-md-2 center point-sub" style="padding: 10px; 0">사업 개시년도</div>
 				<div class="col-xs-8 col-sm-9 col-md-4" style="padding: 4px 15px;">
 					<div class="col-xs-12 col-sm-8" style="padding: 0px;">
@@ -90,21 +92,21 @@
 					$ho_no_r = $floor_no.$line_no_r;
 					// 실제 디비에서 가져온 동호수 데이터
 					$dong = $dong_data[$a]->dong;
-					$db_ho = $this->main_m->sql_row(" SELECT seq, type, ho, is_hold, is_application, is_contract FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$dong' AND ho='$ho_no' ");
+					$db_ho = $this->main_m->sql_row(" SELECT seq, type, ho, is_hold, is_application, is_contract FROM cb_cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$dong' AND ho='$ho_no' ");
 					// 우측라인 세대 확인
-					$db_ho_r = $this->main_m->sql_row(" SELECT ho FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$dong' AND ho='$ho_no_r' ");
+					$db_ho_r = $this->main_m->sql_row(" SELECT ho FROM cb_cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$dong' AND ho='$ho_no_r' ");
 
 					$now_ho = ($db_ho !==null) ? $db_ho->ho : ''; // 해당 호수
 					$now_type = ($db_ho !==null) ? $db_ho->type : ''; // 해당 타입
 					if($db_ho !==null) : // 세대 상태
 						if($db_ho->is_hold==1) : $condi = "hold";
 						elseif($db_ho->is_application==1) :
-							$app_data = $this->main_m->sql_row(" SELECT  applicant, app_date, unit_type, unit_dong_ho FROM cms_sales_application WHERE unit_seq='$db_ho->seq' AND disposal_div<>'3' ");
+							$app_data = $this->main_m->sql_row(" SELECT  applicant, app_date, unit_type, unit_dong_ho FROM cb_cms_sales_application WHERE unit_seq='$db_ho->seq' AND disposal_div<>'3' ");
 							$dong_ho = explode("-", $app_data->unit_dong_ho);
 							$condi = $app_data->applicant;
 							//$condi = '<span onclick="location.href='.base_url('cm1/sales/1/2').'?mode=2&cont_sort1=1&cont_sort2=1&project='.$project.'&type='.$app_data->unit_type.'&dong='.$dong_ho[0].'&ho='.$dong_ho[1].'">'.$app_data->applicant.'</span>';
 						elseif($db_ho->is_contract==1) :
-							$cont_data = $this->main_m->sql_row(" SELECT  cont_diff, contractor, cms_sales_contract.cont_date, unit_type, unit_dong_ho FROM cms_sales_contract, cms_sales_contractor WHERE unit_seq='$db_ho->seq' AND is_rescission='0' AND cms_sales_contract.seq=cont_seq AND is_transfer='0' ");
+							$cont_data = $this->main_m->sql_row(" SELECT  cont_diff, contractor, cb_cms_sales_contract.cont_date, unit_type, unit_dong_ho FROM cb_cms_sales_contract, cb_cms_sales_contractor WHERE unit_seq='$db_ho->seq' AND is_rescission='0' AND cb_cms_sales_contract.seq=cont_seq AND is_transfer='0' ");
 							$dong_ho = explode("-", $cont_data->unit_dong_ho);
 							$condi = $cont_data->contractor;
 							$con_diff = $cont_data->cont_diff;

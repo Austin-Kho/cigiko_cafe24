@@ -25,13 +25,13 @@ class Cms_m1 extends CB_Controller {
 	 */
 	public function _remap($method){
 		// 헤더 include
-		$this->load->view('cms_views/cms_main_header');
+		$this->load->view('/cms_views/cms_main_header');
 
 		if(method_exists($this, $method)){
 			$this->{"$method"}();
 		}
 		// 푸터 include
-		$this->load->view('cms_views/cms_main_footer');
+		$this->load->view('/cms_views/cms_main_footer');
 	}
 
 	/**
@@ -84,7 +84,6 @@ class Cms_m1 extends CB_Controller {
 
 				// 불러올 페이지에 보낼 조회 권한 데이터
 				$data['auth'] = $auth['_m1_1_1'];
-
 
 				// 프로젝트명, 타입 정보 구하기
 				$pj_info = $data['pj_info'] = $this->cms_main_model->sql_row(" SELECT pj_name, type_name, type_color FROM cb_cms_project WHERE seq='$project' ");

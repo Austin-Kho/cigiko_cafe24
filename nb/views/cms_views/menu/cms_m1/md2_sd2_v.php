@@ -1,7 +1,10 @@
     <div class="main_start">&nbsp;</div>
     <!-- 1. 분양관리 -> 2. 수납 관리 ->2. 수납 등록 -->
 
-	<form method="get" name="form1" action="<?php echo current_url(); ?>">
+<?php
+  $attributes = array('method' => 'get', 'name' => 'form1');
+  form_open(current_url(), $attributes);
+?>
 		<div class="row bo-top bo-bottom font12" style="margin: 0;">
 			<div class="col-xs-4 col-sm-3 col-md-2 center point-sub" style="padding: 10px; 0">사업 개시년도</div>
 			<div class="col-xs-8 col-sm-9 col-md-2" style="padding: 4px 15px;">
@@ -10,10 +13,10 @@
 					<select class="form-control input-sm" name="yr" onchange="submit();">
 						<option value=""> 전 체
 <?php
-$start_year = "2015";
-// if(!$yr) $yr=date('Y');  // 첫 화면에 전체 계약 목록을 보이고 싶으면 이 행을 주석 처리
-$year=range($start_year,date('Y'));
-for($i=(count($year)-1); $i>=0; $i--) :
+  $start_year = "2015";
+  // if(!$yr) $yr=date('Y');  // 첫 화면에 전체 계약 목록을 보이고 싶으면 이 행을 주석 처리
+  $year=range($start_year,date('Y'));
+  for($i=(count($year)-1); $i>=0; $i--) :
 ?>
 						<option value="<?php echo $year[$i]?>" <?php if($this->input->get('yr')==$year[$i]) echo "selected"; ?>><?php echo $year[$i]."년"?>
 <?php endfor; ?>
@@ -117,8 +120,8 @@ for($i=(count($year)-1); $i>=0; $i--) :
 					<tbody>
 <?php if($this->input->get('ho')) : ?>
 <?php foreach($received as $lt):
-	$paid_sche = $this->main_m->sql_row(" SELECT pay_name FROM cms_sales_pay_sche WHERE pj_seq='$project' AND pay_code='$lt->pay_sche_code' ");
-	$paid_acc_nick = $this->main_m->sql_row(" SELECT acc_nick FROM cms_sales_bank_acc WHERE pj_seq='$project' AND seq='$lt->paid_acc' ");
+	$paid_sche = $this->main_m->sql_row(" SELECT pay_name FROM cb_cms_sales_pay_sche WHERE pj_seq='$project' AND pay_code='$lt->pay_sche_code' ");
+	$paid_acc_nick = $this->main_m->sql_row(" SELECT acc_nick FROM cb_cms_sales_bank_acc WHERE pj_seq='$project' AND seq='$lt->paid_acc' ");
 
 
 	// 해지인 경우 red 스타일과 환불인 경우 Del 태그 만들기
@@ -152,7 +155,10 @@ for($i=(count($year)-1); $i>=0; $i--) :
 				</table>
 			</div>
 
-			<form class="" name="form2" action="<?php echo current_url(); ?>" method="post">
+<?php
+  $attributes = array('name' => 'form2');
+  form_open(current_url(), $attributes);
+?>
 				<input type="hidden" name="modi" value="<?php echo $this->input->get('modi'); ?>">
 				<input type="hidden" name="dong" value="<?php echo $this->input->get('dong'); ?>">
 				<input type="hidden" name="ho" value="<?php echo $this->input->get('ho'); ?>">
@@ -268,9 +274,9 @@ foreach($pay_sche_code as $lt) :
 		$due_date = "";
 	endif;
 	if( !empty($cont_data)) {
-		$ppsche = $this->main_m->sql_row(" SELECT SUM(paid_amount) AS pps FROM cms_sales_received WHERE pj_seq='$project' AND cont_seq='$cont_data->seq' AND pay_sche_code='$lt->pay_code' ");
+		$ppsche = $this->main_m->sql_row(" SELECT SUM(paid_amount) AS pps FROM cb_cms_sales_received WHERE pj_seq='$project' AND cont_seq='$cont_data->seq' AND pay_sche_code='$lt->pay_code' ");
 		$paid_per_sche = (empty($ppsche->pps) OR $ppsche->pps=='0') ? "-" : number_format($ppsche->pps); // 수납금액
-		$payment = $this->main_m->sql_row(" SELECT * FROM cms_sales_payment WHERE pj_seq='$project' AND price_seq='$cont_data->price_seq' AND pay_sche_seq='$lt->seq' "); // 약정금액
+		$payment = $this->main_m->sql_row(" SELECT * FROM cb_cms_sales_payment WHERE pj_seq='$project' AND price_seq='$cont_data->price_seq' AND pay_sche_seq='$lt->seq' "); // 약정금액
 		$col = ($ppsche->pps-$payment->payment<0) ? "#A80505" : "#0427A4";
 		$compair = ($ppsche->pps-$payment->payment===0) ? "-" : number_format($ppsche->pps-$payment->payment);
 	}

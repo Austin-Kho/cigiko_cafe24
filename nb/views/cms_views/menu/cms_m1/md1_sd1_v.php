@@ -180,7 +180,7 @@ foreach($app_data as $lt) :
 <?php endif; ?>
     </div>
 	<div class="row font12" style="margin: 0; padding: 0;">
-        <div class="col-md-12"><h4><span class="label label-primary">3. 계약 현황</span></h4></div>
+    <div class="col-md-12"><h4><span class="label label-primary">3. 계약 현황</span></h4></div>
 		<div class="col-md-12 bo-top bo-bottom" style="padding: 0; margin: 0 0 20px 0;">
 <?php
 $attributes = array('name' => 'form1', 'method' => 'get');
@@ -358,4 +358,4 @@ foreach ($cont_data as $lt) :
 		<div class="col-xs-12 center" style="margin-top: 0px; padding: 0;">
 			<ul class="pagination pagination-sm"><?php echo $pagination; ?></ul>
 		</div>
-    </div>
+  </div>
