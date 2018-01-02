@@ -9,9 +9,9 @@ class Cm5 extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if(@$this->session->userdata['logged_in'] !== TRUE) {
-			redirect(base_url('cmember').'?returnURL='.rawurlencode(base_url(uri_string())));
+			redirect(base_url('cms_member').'?returnURL='.rawurlencode(base_url(uri_string())));
 		}
-		$this->load->model('cmain_m'); //모델 파일 로드
+		$this->load->model('cms_main_model'); //모델 파일 로드
 		$this->load->model('cm5_m'); //모델 파일 로드
 		$this->load->helper('alert'); // 경고창 헤퍼 로딩
 	}
@@ -64,7 +64,7 @@ class Cm5 extends CI_Controller {
 		// 1. 기본정보관리 1. 부서관리 ////////////////////////////////////////////////////////////////////
 		if($mdi==1 && $sdi==1 ){
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m5_1_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_1_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m5_1_1'] or $auth['_m5_1_1']==0) { // 조회 권한이 없는 경우
 				$this->load->view('/cms_views/no_auth');
@@ -150,7 +150,7 @@ class Cm5 extends CI_Controller {
 		// 1. 기본정보관리 2. 직원관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m5_1_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_1_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m5_1_2'] or $auth['_m5_1_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -246,7 +246,7 @@ class Cm5 extends CI_Controller {
 		// 1. 기본정보관리 3. 거래처정보 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==3) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m5_1_3', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_1_3', $this->session->userdata['user_id']);
 
 			if( !$auth['_m5_1_3'] or $auth['_m5_1_3']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -343,7 +343,7 @@ class Cm5 extends CI_Controller {
 		// 1. 기본정보관리 4. 계좌관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==4) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m5_1_4', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_1_4', $this->session->userdata['user_id']);
 
 			if( !$auth['_m5_1_4'] or $auth['_m5_1_4']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -437,7 +437,7 @@ class Cm5 extends CI_Controller {
 		// 2. 회사정보관리 1. 회사정보 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==1) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m5_2_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_2_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m5_2_1'] or $auth['_m5_2_1']==0) { // 조회권한 없을 때
 				$this->load->view('/cms_views/no_auth');                 // 권한 없음 페이지 보이기
@@ -570,7 +570,7 @@ class Cm5 extends CI_Controller {
 		// 2. 회사정보관리 2. 권한관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m5_2_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m5_2_2', $this->session->userdata['user_id']);
 
 			if(( !$auth['_m5_2_2'] or $auth['_m5_2_2']==0) && $this->session->userdata['is_admin']!=1) {
 				$this->load->view('/cms_views/no_auth');

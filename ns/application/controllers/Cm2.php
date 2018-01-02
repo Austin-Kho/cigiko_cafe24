@@ -9,9 +9,9 @@ class Cm2 extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if(@$this->session->userdata['logged_in'] !== TRUE) {
-			redirect(base_url('cmember').'?returnURL='.rawurlencode(base_url(uri_string())));
+			redirect(base_url('cms_member').'?returnURL='.rawurlencode(base_url(uri_string())));
 		}
-		$this->load->model('cmain_m'); //모델 파일 로드
+		$this->load->model('cms_main_model'); //모델 파일 로드
 		$this->load->model('cm2_m'); //모델 파일 로드
 		$this->load->helper('alert'); // 경고창 헤퍼 로딩
 	}
@@ -51,7 +51,7 @@ class Cm2 extends CI_Controller {
 		// 등록된 프로젝트 데이터
 		$where = "";
 		if($this->input->get('yr') !="") $where=" WHERE biz_start_ym LIKE '".$this->input->get('yr')."%' ";
-		$data['all_pj'] = $this->cmain_m->sql_result(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC ');
+		$data['all_pj'] = $this->cms_main_model->sql_result(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC ');
 		$project = $data['project'] = ($this->input->get('project')) ? $this->input->get('project') : 1; // 선택한 프로젝트 고유식별 값(아이디)
 
 		// 메뉴데이터 삽입 하여 메인 페이지 호출
@@ -60,7 +60,7 @@ class Cm2 extends CI_Controller {
 		// 예산집행 관리 1. 집행 현황 ////////////////////////////////////////////////////////////////////
 		if($mdi==1 && $sdi==1 ){
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m2_1_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m2_1_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m2_1_1'] or $auth['_m2_1_1']==0) { // 조회 권한이 없는 경우
 				$this->load->view('/cms_views/no_auth');
@@ -70,7 +70,7 @@ class Cm2 extends CI_Controller {
 				$data['auth'] = $auth['_m2_1_1'];
 
 				// . 프로젝트명, 타입 정보 구하기
-				$pj_info = $data['pj_info'] = $this->cmain_m->sql_row(" SELECT pj_name, type_name, type_color FROM cms_project WHERE seq='$project' ");
+				$pj_info = $data['pj_info'] = $this->cms_main_model->sql_row(" SELECT pj_name, type_name, type_color FROM cms_project WHERE seq='$project' ");
 
 
 
@@ -84,7 +84,7 @@ class Cm2 extends CI_Controller {
 		// 예산집행 관리 2. 집행 관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m2_1_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m2_1_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m2_1_2'] or $auth['_m2_1_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -105,7 +105,7 @@ class Cm2 extends CI_Controller {
 		// 예산집행 관리 3. 수지 관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==3) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m2_1_3', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m2_1_3', $this->session->userdata['user_id']);
 
 			if( !$auth['_m2_1_3'] or $auth['_m2_1_3']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -123,7 +123,7 @@ class Cm2 extends CI_Controller {
 		// 프로세스 관리 1. 진행 현황 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==1) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m2_2_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m2_2_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m2_2_1'] or $auth['_m2_2_1']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -143,7 +143,7 @@ class Cm2 extends CI_Controller {
 		// 프로세스 관리 2. 프로세스 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m2_2_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m2_2_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m2_2_2'] or $auth['_m2_2_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -163,7 +163,7 @@ class Cm2 extends CI_Controller {
 		// 프로세스 관리 3. 일정 관리 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==3) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m2_2_3', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m2_2_3', $this->session->userdata['user_id']);
 
 			if( !$auth['_m2_2_3'] or $auth['_m2_2_3']==0) {
 				$this->load->view('/cms_views/no_auth');

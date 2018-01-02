@@ -9,9 +9,9 @@ class Cm3 extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if(@$this->session->userdata['logged_in'] !== TRUE) {
-			redirect(base_url('cmember').'?returnURL='.rawurlencode(base_url(uri_string())));
+			redirect(base_url('cms_member').'?returnURL='.rawurlencode(base_url(uri_string())));
 		}
-		$this->load->model('cmain_m'); //모델 파일 로드
+		$this->load->model('cms_main_model'); //모델 파일 로드
 		$this->load->model('cm3_m'); //모델 파일 로드
 		$this->load->helper('alert'); // 경고창 헤퍼 로딩
 	}
@@ -53,7 +53,7 @@ class Cm3 extends CI_Controller {
 		// 프로젝트 관리 1. 데이터등록 ////////////////////////////////////////////////////////////////////
 		if($mdi==1 && $sdi==1 ){
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m3_1_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m3_1_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m3_1_1'] or $auth['_m3_1_1']==0) { // 조회 권한이 없는 경우
 				$this->load->view('/cms_views/no_auth');
@@ -64,11 +64,11 @@ class Cm3 extends CI_Controller {
 
 				$where=" WHERE is_data_reg = '0' ";
 				if($this->input->get('yr')>1) $where.=" AND biz_start_ym LIKE '".$this->input->get('yr')."%' ";
-				$data['new_pj_list'] = $this->cmain_m->sql_result(" SELECT * FROM cms_project ".$where." ORDER BY biz_start_ym DESC  ");
+				$data['new_pj_list'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_project ".$where." ORDER BY biz_start_ym DESC  ");
 
 				$where=" WHERE is_data_reg = '1' ";
 				if($this->input->get('yr')>1) $where.=" AND biz_start_ym LIKE '".$this->input->get('yr')."%' ";
-				$data['end_pj_list'] = $this->cmain_m->sql_result(" SELECT * FROM cms_project ".$where." ORDER BY biz_start_ym DESC ");
+				$data['end_pj_list'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_project ".$where." ORDER BY biz_start_ym DESC ");
 
 				if($this->input->get('new_pj') OR $this->input->get('end_pj')){
 					if($this->input->get('new_pj') && !$this->input->get('end_pj')){
@@ -77,7 +77,7 @@ class Cm3 extends CI_Controller {
 						$data['pre_pj_seq'] = $this->input->get('end_pj'); // 기등록 프로젝트인지
 					}
 					$where = " WHERE seq = '".$data['pre_pj_seq']."'  ";
-					$data['project'] = $this->cmain_m->sql_row(" SELECT pj_name, sort, data_cr, type_name FROM cms_project ".$where);
+					$data['project'] = $this->cms_main_model->sql_row(" SELECT pj_name, sort, data_cr, type_name FROM cms_project ".$where);
 					switch ($data['project']->sort) {
 						case '1': $data['sort']="아파트(일반분양)"; break;
 						case '2': $data['sort']="아파트(조합)"; break;
@@ -90,12 +90,12 @@ class Cm3 extends CI_Controller {
 						default: $data['sort']=""; break;
 					}
 					if($this->input->get('new_pj')) { // 최근 동록한 동과 라인 총 등록 수량 구하기
-						$data['reg_chk'] = $this->cmain_m->sql_num_result(" SELECT dong, ho FROM cms_project_all_housing_unit, cms_project WHERE pj_seq = '".$data['pre_pj_seq']."' AND pj_seq = cms_project.seq AND is_data_reg != 1 ORDER BY cms_project_all_housing_unit.seq DESC ");
+						$data['reg_chk'] = $this->cms_main_model->sql_num_result(" SELECT dong, ho FROM cms_project_all_housing_unit, cms_project WHERE pj_seq = '".$data['pre_pj_seq']."' AND pj_seq = cms_project.seq AND is_data_reg != 1 ORDER BY cms_project_all_housing_unit.seq DESC ");
 					}
 					if($data['pre_pj_seq']){
 						$add_where = "";
 						if($this->input->get('type')) $add_where .= " AND type = '".$this->input->get('type')."' ";
-						$data['reg_dong'] = $this->cmain_m->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq = '".$data['pre_pj_seq']."' ".$add_where." GROUP BY dong  ");
+						$data['reg_dong'] = $this->cms_main_model->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq = '".$data['pre_pj_seq']."' ".$add_where." GROUP BY dong  ");
 						if($this->input->get('dong')) $add_where .= " AND dong = '".$this->input->get('dong')."' ";
 
 						// 상태에 따른 검색 소스
@@ -112,7 +112,7 @@ class Cm3 extends CI_Controller {
 
 						//페이지네이션 설정/////////////////////////////////
 						$config['base_url'] = base_url('cm3/project/1/1');   //페이징 주소
-						$config['total_rows'] = $this->cmain_m->sql_num_rows(" SELECT pj_seq, pj_name, type, dong, ho, type_name, type_color, is_hold FROM  cms_project_all_housing_unit, cms_project WHERE pj_seq = ".$data['pre_pj_seq']." AND pj_seq=cms_project.seq ".$add_where." ORDER BY cms_project_all_housing_unit.seq DESC ");  //게시물의 전체 갯수
+						$config['total_rows'] = $this->cms_main_model->sql_num_rows(" SELECT pj_seq, pj_name, type, dong, ho, type_name, type_color, is_hold FROM  cms_project_all_housing_unit, cms_project WHERE pj_seq = ".$data['pre_pj_seq']." AND pj_seq=cms_project.seq ".$add_where." ORDER BY cms_project_all_housing_unit.seq DESC ");  //게시물의 전체 갯수
 						if( !$this->input->get('num')) $config['per_page'] = 10;  else $config['per_page'] = $this->input->get('num'); // 한 페이지에 표시할 게시물 수
 						$config['num_links'] = 3; // 링크 좌우로 보여질 페이지 수
 						$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -141,7 +141,7 @@ class Cm3 extends CI_Controller {
 						}else if($this->input->get('dong_ho_sc1')=="2"){
 							$order = " ORDER BY dong DESC , ho DESC    ";
 						}
-						$data['reg_dong_ho'] = $this->cmain_m->sql_result(" SELECT cms_project_all_housing_unit.seq, pj_seq, pj_name, type, dong, ho, type_name, type_color, is_hold, hold_reason, is_application, is_contract FROM  cms_project_all_housing_unit, cms_project WHERE pj_seq = ".$data['pre_pj_seq']." AND pj_seq=cms_project.seq ".$add_where." ".$order." ".$limit);
+						$data['reg_dong_ho'] = $this->cms_main_model->sql_result(" SELECT cms_project_all_housing_unit.seq, pj_seq, pj_name, type, dong, ho, type_name, type_color, is_hold, hold_reason, is_application, is_contract FROM  cms_project_all_housing_unit, cms_project WHERE pj_seq = ".$data['pre_pj_seq']." AND pj_seq=cms_project.seq ".$add_where." ".$order." ".$limit);
 					}
 				}
 
@@ -183,13 +183,13 @@ class Cm3 extends CI_Controller {
 					if($this->input->get('mode')=='end'){// 데이터 등록 마감
 						$end_dt = array('is_data_reg'=>'1');
 						$end_wr = array('seq'=>$this->input->get('seq'));
-						$pj_end = $this->cmain_m->update_data('cms_project', $end_dt, $end_wr);
+						$pj_end = $this->cms_main_model->update_data('cms_project', $end_dt, $end_wr);
 						if($pj_end) alert('정상적으로 데이터 등록 마감 처리 되었습니다.', base_url('cm3/project/1/1'));
 
 					}else if($this->input->get('mode')=='re_reg'){ // 데이터 재등록
 						$rereg_dt = array('is_data_reg'=>'0');
 						$rereg_wr = array('seq'=>$this->input->get('seq'));
-						$pj_rereg = $this->cmain_m->update_data('cms_project', $rereg_dt, $rereg_wr);
+						$pj_rereg = $this->cms_main_model->update_data('cms_project', $rereg_dt, $rereg_wr);
 						if($pj_rereg) alert('정상적으로 마감 취소(재등록) 처리 되었습니다.', base_url('cm3/project/1/1'));
 
 					}else if($this->input->get('mode')=='individual_reg'){ // 개별 등록 수정일 경우
@@ -220,7 +220,7 @@ class Cm3 extends CI_Controller {
 							for($i=0; $i<$fn[$j]; $i++){
 								$ho[$j] = $fl_range[$j][$i].$line[$j];
 								//기존에 등록되어 있는 동호수가 있는지 체크
-								$ck_rlt = $this->cmain_m->sql_result(" SELECT seq FROM cms_project_all_housing_unit WHERE pj_seq='".$this->input->post('pj_seq')."' AND dong='".$dong[$j]."' AND	ho ='".$ho[$j]."' ");
+								$ck_rlt = $this->cms_main_model->sql_result(" SELECT seq FROM cms_project_all_housing_unit WHERE pj_seq='".$this->input->post('pj_seq')."' AND dong='".$dong[$j]."' AND	ho ='".$ho[$j]."' ");
 								if($ck_rlt) alert('이미 등록되어 있는 동호수와 중복되는 동호수가 있습니다.', '');
 							}
 						}
@@ -255,7 +255,7 @@ class Cm3 extends CI_Controller {
 										'is_hold' => $hold[$j],
 										'reg_worker' => $this->session->userdata['name']
 									);
-									$bat_insert = $this->cmain_m->insert_data('cms_project_all_housing_unit', $bat_data, 'reg_time');
+									$bat_insert = $this->cms_main_model->insert_data('cms_project_all_housing_unit', $bat_data, 'reg_time');
 									if(!$bat_insert) alert('데이터베이스 오류가 발생하였습니다.', base_url('cm3/project/1/1/'));
 								}
 							}
@@ -268,7 +268,7 @@ class Cm3 extends CI_Controller {
 		// 프로젝트 관리 2. 기본정보 수정 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m3_1_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m3_1_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m3_1_2'] or $auth['_m3_1_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -285,7 +285,7 @@ class Cm3 extends CI_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cm/project/1/2/');   //페이징 주소
-				$config['total_rows'] = $this->cmain_m->sql_num_rows(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC ');  //게시물의 전체 갯수
+				$config['total_rows'] = $this->cms_main_model->sql_num_rows(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC ');  //게시물의 전체 갯수
 				$config['per_page'] = 10; // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 4;  // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -304,9 +304,9 @@ class Cm3 extends CI_Controller {
 				if($start != '' or $limit !='')	$limit = " LIMIT ".$start.", ".$limit." ";
 
 				// 등록된 프로젝트 데이터
-				$data['all_pj'] = $this->cmain_m->sql_result(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC '.$limit);
+				$data['all_pj'] = $this->cms_main_model->sql_result(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC '.$limit);
 
-				if($this->input->get('project')) $data['project'] = $this->cmain_m->sql_result(' SELECT * FROM cms_project WHERE seq = '.$this->input->get('project'));
+				if($this->input->get('project')) $data['project'] = $this->cms_main_model->sql_result(' SELECT * FROM cms_project WHERE seq = '.$this->input->get('project'));
 
 				// 라이브러리 로드
 				$this->load->library('form_validation'); // 폼 검증
@@ -459,7 +459,7 @@ class Cm3 extends CI_Controller {
 						'biz_start_ym' => $biz_start_ym
 					);
 
-					$result = $this->cmain_m->update_data('cms_project', $update_pj_data, $where = array('seq' => $this->input->post('project')));
+					$result = $this->cms_main_model->update_data('cms_project', $update_pj_data, $where = array('seq' => $this->input->post('project')));
 
 					if($result) { // 등록 성공 시
 						alert('프로젝트 정보가  수정되었습니다.', base_url('cm3/project/1/2/?project='.$this->input->post('project')));
@@ -478,7 +478,7 @@ class Cm3 extends CI_Controller {
 		// 신규 프로젝트 1. 신규등록 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==1) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m3_2_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m3_2_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m3_2_1'] or $auth['_m3_2_1']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -639,7 +639,7 @@ class Cm3 extends CI_Controller {
 						'biz_start_ym' => $biz_start_ym
 					);
 
-					$result = $this->cmain_m->insert_data('cms_project', $new_pj_data, 'reg_date');
+					$result = $this->cms_main_model->insert_data('cms_project', $new_pj_data, 'reg_date');
 
 					if($result) { // 등록 성공 시
 						alert('프로젝트 정보가  등록되었습니다.', base_url('cm3/project/2/1/'));
@@ -657,7 +657,7 @@ class Cm3 extends CI_Controller {
 		// 신규 프로젝트 1. 예비검토 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m3_2_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m3_2_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m3_2_2'] or $auth['_m3_2_2']==0) {
 				$this->load->view('/cms_views/no_auth');

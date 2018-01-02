@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cmember extends CI_Controller
+class cms_member extends CI_Controller
 {
 	public function __construct(){
 		parent::__construct();
@@ -64,7 +64,7 @@ class Cmember extends CI_Controller
 			// 유저 정보가 있고 패스워드가 맞는 경우
 			if( !empty($user) && password_verify($this->input->post('passwd'), $user->passwd)){
 				if($user->request != 1 && $user->is_admin!=1){// 승인전 비관리자 회원인 경우 안내
-					alert('관리자 사용 승인 후 사용이 가능합니다.\n승인 지연 시, 직접 관리자에게 문의하여 주세요.\n\nEmail : cigiko@naver.com / 전화문의 : 010-3320-0088', base_url('/cmember/'));
+					alert('관리자 사용 승인 후 사용이 가능합니다.\n승인 지연 시, 직접 관리자에게 문의하여 주세요.\n\nEmail : cigiko@naver.com / 전화문의 : 010-3320-0088', base_url('/cms_member/'));
 				}else{ // 승인된 사용자인 경우
 					// 세션 생성
 					$user_data = array(
@@ -89,7 +89,7 @@ class Cmember extends CI_Controller
 					redirect(rawurldecode($returnURL));
 				}
 			}else{
-				alert('아이디 또는 비밀번호를 확인해 주세요.', base_url('/cmember/'));
+				alert('아이디 또는 비밀번호를 확인해 주세요.', base_url('/cms_member/'));
 			}
 		}
 	}
@@ -101,7 +101,7 @@ class Cmember extends CI_Controller
 	public function logout(){
 		$return = $this->input->get('returnURL');
 		$this->session->sess_destroy();
-		redirect(base_url('cmember').'?returnURL='.rawurlencode($return));
+		redirect(base_url('cms_member').'?returnURL='.rawurlencode($return));
 	}
 
 	public function join() {
@@ -136,10 +136,10 @@ class Cmember extends CI_Controller
 
 			if($result) {
 				// 등록 성공 시
-				alert('등록 되었습니다. \n 관리자의 승인 후 로그인 하여 주십시요.', base_url('cmember/login'));
+				alert('등록 되었습니다. \n 관리자의 승인 후 로그인 하여 주십시요.', base_url('cms_member/login'));
 			}else{ // 아이디 // 비번이 맞지 않을 때
 				// 실패 시
-				alert('계정등록에 실패하였습니다.\n 다시 시도하여 주십시요.', base_url('cmember/join'));
+				alert('계정등록에 실패하였습니다.\n 다시 시도하여 주십시요.', base_url('cms_member/join'));
 				exit;
 			}
 		} // 폼 검증 종료
@@ -192,13 +192,13 @@ class Cmember extends CI_Controller
 					exit;
 				}else{ // 아이디 // 비번이 맞지 않을 때
 					// 실패 시
-					alert('데이터베이스 에러가 발생하였습니다.', base_url('cmember/modify'));
+					alert('데이터베이스 에러가 발생하였습니다.', base_url('cms_member/modify'));
 					exit;
 				}
 			}else{ // 유저정보가 틀린 경우
-				alert('입력하신 기존 비밀번호가 맞지 않습니다.', base_url('cmember/modify'));
+				alert('입력하신 기존 비밀번호가 맞지 않습니다.', base_url('cms_member/modify'));
 			}
 		} // 폼 검증 종료
 	} // modify() 함수 종료
-} // cmember class 종료
+} // cms_member class 종료
 // End of this File

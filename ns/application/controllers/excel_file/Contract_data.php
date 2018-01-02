@@ -7,7 +7,7 @@ class Contract_data extends CI_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('cmain_m'); //모델 파일 로드
+		$this->load->model('cms_main_model'); //모델 파일 로드
 		$this->load->model('cm1_m'); //모델 파일 로드
 		// PHPExcel 라이브러리 로드
 		$this->load->library('excel');
@@ -138,7 +138,7 @@ class Contract_data extends CI_Controller {
 				return $c2;
 			}
 
-			// $b_acc = $this->cmain_m->sql_result(' SELECT no, name FROM cms_capital_bank_account ORDER BY no ');
+			// $b_acc = $this->cms_main_model->sql_result(' SELECT no, name FROM cms_capital_bank_account ORDER BY no ');
 
 
 

@@ -1,7 +1,7 @@
 <div class="container" style="color: #BBBBBB; width: 300px;">
 <?php
 	$attributes = array('name' => 'modify', 'class' => 'form-signup', 'method' => 'post');
-	echo form_open($this->config->base_url().'cmember/modify/', $attributes);
+	echo form_open($this->config->base_url().'cms_member/modify/', $attributes);
 ?>
 		<div id="main_logo" style="margin: 100px 0 50px 0;">
 			<img src="<?php echo $this->config->base_url(); ?>static/img/cms_main_logo_.png" alt="" style="cursor: pointer;">

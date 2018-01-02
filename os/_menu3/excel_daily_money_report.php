@@ -62,7 +62,7 @@ Header("Expires: 0");
 		<td style="background-color:#eaeaea;" colspan="2">금일잔액</td>
 	</tr>
 	<?
-		$d_qry=" SELECT * FROM cms_capital_bank_account "; // 은행계좌 정보 테이블
+		$d_qry=" SELECT * FROM cb_cms_capital_bank_account "; // 은행계좌 정보 테이블
 		$d_rlt=mysqli_query($connect, $d_qry);
 		$d_num=mysqli_num_rows($d_rlt);
 		$num=$d_num;  // 행수 설정;
@@ -72,16 +72,16 @@ Header("Expires: 0");
 			if($i==0) $td_str="<td align='center' style='width:72px;; ".$hk_bgcolor."'>현금</td>";
 			if($i==1) $td_str="<td align='center' rowspan='$num'>보통예금</td>";
 			if($i>1) $td_str="";
-			$in_qry="SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='$d_rows[no]' AND deal_date<='$sh_date' "; // 계정별 설정일까지 총 수입
+			$in_qry="SELECT SUM(inc) AS inc FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='$d_rows[no]' AND deal_date<='$sh_date' "; // 계정별 설정일까지 총 수입
 			$in_rlt=mysqli_query($connect, $in_qry);
 			$in_row=mysqli_fetch_array($in_rlt);
-			$in_qry1="SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='$d_rows[no]' AND deal_date='$sh_date' "; // 계정별 설정당일 수입
+			$in_qry1="SELECT SUM(inc) AS inc FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='$d_rows[no]' AND deal_date='$sh_date' "; // 계정별 설정당일 수입
 			$in_rlt1=mysqli_query($connect, $in_qry1);
 			$in_row1=mysqli_fetch_array($in_rlt1);
-			$ex_qry="SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND out_acc='$d_rows[no]' AND deal_date<='$sh_date' "; // 계정별 설정일까지 총 지출
+			$ex_qry="SELECT SUM(exp) AS exp FROM cb_cms_capital_cash_book WHERE (com_div>0) AND out_acc='$d_rows[no]' AND deal_date<='$sh_date' "; // 계정별 설정일까지 총 지출
 			$ex_rlt=mysqli_query($connect, $ex_qry);
 			$ex_row=mysqli_fetch_array($ex_rlt);
-			$ex_qry1="SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND out_acc='$d_rows[no]' AND deal_date='$sh_date' "; // 계정별 설정당일 지출
+			$ex_qry1="SELECT SUM(exp) AS exp FROM cb_cms_capital_cash_book WHERE (com_div>0) AND out_acc='$d_rows[no]' AND deal_date='$sh_date' "; // 계정별 설정당일 지출
 			$ex_rlt1=mysqli_query($connect, $ex_qry1);
 			$ex_row1=mysqli_fetch_array($ex_rlt1);
 			if(!$d_rows[name]){   // 입출금 계정이 없으면
@@ -141,32 +141,32 @@ Header("Expires: 0");
 	</tr>
 	<!-- -----------------------------------------대여금 집계 시작------------------------------------ -->
 	<?
-		$jh_qry = "SELECT any_jh FROM cms_capital_cash_book WHERE any_jh<>0 GROUP BY any_jh";// 조합 구하기
+		$jh_qry = "SELECT any_jh FROM cb_cms_capital_cash_book WHERE any_jh<>0 GROUP BY any_jh";// 조합 구하기
 		$jh_rlt = mysqli_query($connect, $jh_qry);
 		$jh_num=mysqli_num_rows($jh_rlt);
 		$col_num = $jh_num+1;
 		for($i=0; $i<=$jh_num; $i++){
 			$jh_row = mysqli_fetch_array($jh_rlt); // 거래한 조합을 구함// 조합코드 및 조합 수
-			$pn_qry = "SELECT pj_name FROM cms_project1_info WHERE seq = '$jh_row[any_jh]' "; // 조합명 구하기 쿼리
+			$pn_qry = "SELECT pj_name FROM cb_cms_project1_info WHERE seq = '$jh_row[any_jh]' "; // 조합명 구하기 쿼리
 			$pn_rlt = mysqli_query($connect, $pn_qry);
 			$pn_row = mysqli_fetch_array($pn_rlt); // 조합 명칭을 불러옴
 			// 총 회수금
-			$in_jh_qry="SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '$jh_row[any_jh]' AND deal_date<='$sh_date' "; // 조합별 설정일까지 조합 총 대여금 회수
+			$in_jh_qry="SELECT SUM(inc) AS inc FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '$jh_row[any_jh]' AND deal_date<='$sh_date' "; // 조합별 설정일까지 조합 총 대여금 회수
 			$in_jh_rlt=mysqli_query($connect, $in_jh_qry);
 			$in_jh_row=mysqli_fetch_array($in_jh_rlt);
 			if(!$in_jh_row) $in_jh_row = 0;
 			// 당일 회수금
-			$in_jh_qry1="SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '$jh_row[any_jh]' AND deal_date='$sh_date' "; // 조합별 설정당일 수입
+			$in_jh_qry1="SELECT SUM(inc) AS inc FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '$jh_row[any_jh]' AND deal_date='$sh_date' "; // 조합별 설정당일 수입
 			$in_jh_rlt1=mysqli_query($connect, $in_jh_qry1);
 			$in_jh_row1=mysqli_fetch_array($in_jh_rlt1);
 			if(!$in_jh_row1) $in_jh_row1 = 0;
 			// 총 대여금
-			$ex_jh_qry="SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh =' $jh_row[any_jh]' AND deal_date<='$sh_date' "; // 조합별 설정일까지 총 지출
+			$ex_jh_qry="SELECT SUM(exp) AS exp FROM cb_cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh =' $jh_row[any_jh]' AND deal_date<='$sh_date' "; // 조합별 설정일까지 총 지출
 			$ex_jh_rlt=mysqli_query($connect, $ex_jh_qry);
 			$ex_jh_row=mysqli_fetch_array($ex_jh_rlt);
 			if(!$ex_jh_row) $ex_jh_row = 0;
 			// 당일 대여금
-			$ex_jh_qry1="SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh = '$jh_row[any_jh]' AND deal_date='$sh_date' "; // 조합별 설정당일 지출
+			$ex_jh_qry1="SELECT SUM(exp) AS exp FROM cb_cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh = '$jh_row[any_jh]' AND deal_date='$sh_date' "; // 조합별 설정당일 지출
 			$ex_jh_rlt1=mysqli_query($connect, $ex_jh_qry1);
 			$ex_jh_row1=mysqli_fetch_array($ex_jh_rlt1);
 			if(!$ex_jh_row1) $ex_jh_row1 = 0;
@@ -244,7 +244,7 @@ Header("Expires: 0");
 
 	<!--  -->
 	<?
-		$da_in_qry="SELECT account, cont, acc, inc, note FROM cms_capital_cash_book WHERE (com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='$sh_date' order by seq_num";
+		$da_in_qry="SELECT account, cont, acc, inc, note FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='$sh_date' order by seq_num";
 		$da_in_rlt=mysqli_query($connect, $da_in_qry);
 		$in_num = mysqli_num_rows($da_in_rlt);
 		if($in_num<2) $num=2; else $num=$in_num; // 행수 설정;
@@ -262,7 +262,7 @@ Header("Expires: 0");
 	<? } ?>
 	<tr align="center" height="26" style="font-size: 9pt;" bgcolor="#eaeaea;">
 	<?
-		$aaq="SELECT SUM(inc) AS total_inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='$sh_date'";
+		$aaq="SELECT SUM(inc) AS total_inc FROM cb_cms_capital_cash_book WHERE (com_div>0 AND class2<>8) AND (class1='1' or class1='3') AND deal_date='$sh_date'";
 		$aar=mysqli_query($connect, $aaq);
 		$aaro=mysqli_fetch_array($aar);
 	?>
@@ -293,7 +293,7 @@ Header("Expires: 0");
 		<td style="background-color: #eaeaea;" colspan="3">비 고</td>
 	</tr>
 	<?
-		$da_ex_qry="SELECT account, cont, acc, exp, note FROM cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='$sh_date' order by seq_num";
+		$da_ex_qry="SELECT account, cont, acc, exp, note FROM cb_cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='$sh_date' order by seq_num";
 		$da_ex_rlt=mysqli_query($connect, $da_ex_qry);
 		$ex_num = mysqli_num_rows($da_ex_rlt);
 		if($ex_num<9) $num = 9; else $num = $ex_num;
@@ -312,7 +312,7 @@ Header("Expires: 0");
 
 	<tr align="center" height="26" style="font-size: 9pt;" bgcolor="#eaeaea;">
 	<?
-		$bbq="SELECT SUM(exp) AS total_exp FROM cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='$sh_date'";
+		$bbq="SELECT SUM(exp) AS total_exp FROM cb_cms_capital_cash_book WHERE (com_div>0) AND (class1='2' or class1='3') AND deal_date='$sh_date'";
 		$bbr=mysqli_query($connect, $bbq);
 		$bbro=mysqli_fetch_array($bbr);
 	?>

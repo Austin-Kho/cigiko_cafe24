@@ -1,7 +1,7 @@
 <div class="container" style="color: #BBBBBB; width: 300px;">
 <?php
 	$attributes = array('name' => 'login', 'class' => 'form-signin', 'method' => 'post');
-	echo form_open(base_url('cmember'), $attributes);
+	echo form_open(base_url('cms_member'), $attributes);
 ?>
 		<label><input type="hidden" name="returnURL" value="<?php echo $this->input->get('returnURL'); ?>"></label>
 		<div id="main_logo" style="margin: 100px 0 50px 0;">
@@ -19,5 +19,5 @@
 		</div>
 		<button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-bottom: 8px;">로그인</button>
 	</form>
-	<a href="<?php echo base_url('/cmember/join/'); ?>" style="color: #BBBBBB;" style="padding-top: 15px;">신규계정 등록하기</a>
+	<a href="<?php echo base_url('/cms_member/join/'); ?>" style="color: #BBBBBB;" style="padding-top: 15px;">신규계정 등록하기</a>
 </div><!-- /container -->

@@ -9,9 +9,9 @@ class Cm4 extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if(@$this->session->userdata['logged_in'] !== TRUE) {
-			redirect(base_url('cmember').'?returnURL='.rawurlencode(base_url(uri_string())));
+			redirect(base_url('cms_member').'?returnURL='.rawurlencode(base_url(uri_string())));
 		}
-		$this->load->model('cmain_m'); //모델 파일 로드
+		$this->load->model('cms_main_model'); //모델 파일 로드
 		$this->load->model('cm4_m'); //모델 파일 로드
 		$this->load->helper('alert'); // 경고창 헤퍼 로딩
 		$this->load->helper('cut_string'); // 문자열 자르기 헬퍼 로딩
@@ -66,7 +66,7 @@ class Cm4 extends CI_Controller {
 		// 자금 현황 1. 자금일보 ////////////////////////////////////////////////////////////////////
 		if($mdi==1 && $sdi==1 ){
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m4_1_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m4_1_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m4_1_1'] or $auth['_m4_1_1']==0) { // 조회 권한이 없는 경우
 				$this->load->view('/cms_views/no_auth');
@@ -81,21 +81,21 @@ class Cm4 extends CI_Controller {
 
 				// 은행계좌 데이터
 				$data['bank_acc'] = $this->cm4_m->select_data_lt('cms_capital_bank_account', '', '', '');
-				//$data['b_acc'] = $this->cmain_m->sql_result('SELECT no, name FROM cms_capital_bank_account ORDER BY no');
+				//$data['b_acc'] = $this->cms_main_model->sql_result('SELECT no, name FROM cms_capital_bank_account ORDER BY no');
 
 				// 은행 계좌별 전일 잔고 및 금일 출납, 잔고 구하기 데이터
 				for($i=0; $i<$data['bank_acc']['num']; $i++) {
-					$data['cum_in'][$i] = $this->cmain_m->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date<='".$data['sh_date']."' ");
-					$data['date_in'][$i] = $this->cmain_m->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date ='".$data['sh_date']."' ");
-					$data['cum_ex'][$i] = $this->cmain_m->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND out_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date<='".$data['sh_date']."' ");
-					$data['date_ex'][$i] = $this->cmain_m->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND out_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date ='".$data['sh_date']."' ");
+					$data['cum_in'][$i] = $this->cms_main_model->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date<='".$data['sh_date']."' ");
+					$data['date_in'][$i] = $this->cms_main_model->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND in_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date ='".$data['sh_date']."' ");
+					$data['cum_ex'][$i] = $this->cms_main_model->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND out_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date<='".$data['sh_date']."' ");
+					$data['date_ex'][$i] = $this->cms_main_model->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND out_acc='".$data['bank_acc']['result'][$i]->no."' AND deal_date ='".$data['sh_date']."' ");
 				}
 
 				// 회사 현금자산 설정일 전일잔고 및 금일 출납, 잔고 구하기 데이터
-				$cum_inc = $this->cmain_m->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND deal_date<='".$data['sh_date']."' ");
-				$date_inc = $this->cmain_m->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND deal_date ='".$data['sh_date']."' ");
-				$date_exp = $this->cmain_m->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND deal_date ='".$data['sh_date']."' ");
-				$cum_exp = $this->cmain_m->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND deal_date<='".$data['sh_date']."' ");
+				$cum_inc = $this->cms_main_model->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND deal_date<='".$data['sh_date']."' ");
+				$date_inc = $this->cms_main_model->sql_result("SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND deal_date ='".$data['sh_date']."' ");
+				$date_exp = $this->cms_main_model->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND deal_date ='".$data['sh_date']."' ");
+				$cum_exp = $this->cms_main_model->sql_result("SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND deal_date<='".$data['sh_date']."' ");
 				$data['yd_tot'] = $cum_inc[0]->inc-$cum_exp[0]->exp-$date_inc[0]->inc+$date_exp[0]->exp;
 				$data['td_inc'] = $date_inc[0]->inc;
 				$data['td_exp'] = $date_exp[0]->exp;
@@ -106,18 +106,18 @@ class Cm4 extends CI_Controller {
 				// 조합 대여금 데이터
 				$data['jh_data'] = $this->cm4_m->select_data_lt('cms_capital_cash_book', 'any_jh', 'any_jh<>0', 'any_jh');
 				for($i=0; $i<$data['jh_data']['num']; $i++){
-					$data['jh_name'][$i] = $this->cmain_m->sql_result(" SELECT pj_name FROM cms_project WHERE seq = '".$data['jh_data']['result'][$i]->any_jh."' ORDER BY seq ");//조합명
-					$data['jh_cum_in'][$i] = $this->cmain_m->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '".$data['jh_data']['result'][$i]->any_jh."' AND deal_date<='".$data['sh_date']."' "); //총 회수금
-					$data['jh_date_in'][$i] = $this->cmain_m->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '".$data['jh_data']['result'][$i]->any_jh."' AND deal_date='".$data['sh_date']."' "); // 당일 회수
-					$data['jh_cum_ex'][$i] = $this->cmain_m->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh ='".$data['jh_data']['result'][$i]->any_jh."' AND deal_date<='".$data['sh_date']."' "); // 총 대여금
-					$data['jh_date_ex'][$i] = $this->cmain_m->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh = '".$data['jh_data']['result'][$i]->any_jh."' AND deal_date='".$data['sh_date']."' "); // 당일 대여
+					$data['jh_name'][$i] = $this->cms_main_model->sql_result(" SELECT pj_name FROM cms_project WHERE seq = '".$data['jh_data']['result'][$i]->any_jh."' ORDER BY seq ");//조합명
+					$data['jh_cum_in'][$i] = $this->cms_main_model->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '".$data['jh_data']['result'][$i]->any_jh."' AND deal_date<='".$data['sh_date']."' "); //총 회수금
+					$data['jh_date_in'][$i] = $this->cms_main_model->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND any_jh = '".$data['jh_data']['result'][$i]->any_jh."' AND deal_date='".$data['sh_date']."' "); // 당일 회수
+					$data['jh_cum_ex'][$i] = $this->cms_main_model->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh ='".$data['jh_data']['result'][$i]->any_jh."' AND deal_date<='".$data['sh_date']."' "); // 총 대여금
+					$data['jh_date_ex'][$i] = $this->cms_main_model->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND any_jh = '".$data['jh_data']['result'][$i]->any_jh."' AND deal_date='".$data['sh_date']."' "); // 당일 대여
 				}
 
 				// 회사 현금자산 설정일 전일잔고 및 금일 출납, 잔고 구하기 데이터
-				$jh_cum_inc = $this->cmain_m->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND deal_date<='".$data['sh_date']."' "); //총 회수금
-				$jh_date_inc = $this->cmain_m->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND deal_date='".$data['sh_date']."' "); // 당일 회수
-				$jh_cum_exp = $this->cmain_m->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND deal_date<='".$data['sh_date']."' "); // 총 대여금
-				$jh_date_exp = $this->cmain_m->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND deal_date='".$data['sh_date']."' "); // 당일 대여
+				$jh_cum_inc = $this->cms_main_model->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND deal_date<='".$data['sh_date']."' "); //총 회수금
+				$jh_date_inc = $this->cms_main_model->sql_result(" SELECT SUM(inc) AS inc FROM cms_capital_cash_book WHERE (com_div>0 AND class2!=7) AND is_jh_loan='1' AND deal_date='".$data['sh_date']."' "); // 당일 회수
+				$jh_cum_exp = $this->cms_main_model->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND deal_date<='".$data['sh_date']."' "); // 총 대여금
+				$jh_date_exp = $this->cms_main_model->sql_result(" SELECT SUM(exp) AS exp FROM cms_capital_cash_book WHERE (com_div>0) AND is_jh_loan='1' AND deal_date='".$data['sh_date']."' "); // 당일 대여
 
 				$data['jh_yd_tot'] = ($jh_cum_exp[0]->exp-$jh_cum_inc[0]->inc)+($jh_date_exp[0]->exp-$jh_date_inc[0]->inc);
 				$data['jh_td_inc'] = $jh_date_inc[0]->inc;
@@ -151,8 +151,8 @@ class Cm4 extends CI_Controller {
 		// 자금 현황 2. 입출금 내역 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m4_1_2', $this->session->userdata['user_id']);
-			$m_auth = $this->cmain_m->master_auth_chk();
+			$auth = $this->cms_main_model->auth_chk('_m4_1_2', $this->session->userdata['user_id']);
+			$m_auth = $this->cms_main_model->master_auth_chk();
 
 			if( !$auth['_m4_1_2'] or $auth['_m4_1_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -247,7 +247,7 @@ class Cm4 extends CI_Controller {
 		// 자금 현황 3. 입출금 등록 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==3) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m4_1_3', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m4_1_3', $this->session->userdata['user_id']);
 
 			if( !$auth['_m4_1_3'] or $auth['_m4_1_3']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -606,7 +606,7 @@ class Cm4 extends CI_Controller {
 		// 회계관리 1. 분개장 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==1) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m4_2_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m4_2_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m4_2_1'] or $auth['_m4_2_1']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -626,7 +626,7 @@ class Cm4 extends CI_Controller {
 		// 회계관리 2. 일월계표 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m4_2_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m4_2_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m4_2_2'] or $auth['_m4_2_2']==0) {
 				$this->load->view('/cms_views/no_auth');
@@ -648,7 +648,7 @@ class Cm4 extends CI_Controller {
 		// 회계관리 3. 제무제표 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==2 && $sdi==3) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m4_2_3', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m4_2_3', $this->session->userdata['user_id']);
 
 			if( !$auth['_m4_2_3'] or $auth['_m4_2_3']==0) {
 				$this->load->view('/cms_views/no_auth');

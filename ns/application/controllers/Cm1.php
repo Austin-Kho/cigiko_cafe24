@@ -9,9 +9,9 @@ class Cm1 extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if(@$this->session->userdata['logged_in'] !== TRUE) {
-			redirect(base_url('cmember').'?returnURL='.rawurlencode(base_url(uri_string())));
+			redirect(base_url('cms_member').'?returnURL='.rawurlencode(base_url(uri_string())));
 		}
-		$this->load->model('cmain_m'); //모델 파일 로드
+		$this->load->model('cms_main_model'); //모델 파일 로드
 		$this->load->model('cm1_m'); //모델 파일 로드
 		$this->load->helper('alert'); // 경고창 헤퍼 로딩
 		$this->load->helper('cut_string'); // 문자열 자르기 헬퍼 로드
@@ -64,7 +64,7 @@ class Cm1 extends CI_Controller {
 		// 등록된 프로젝트 데이터
 		$where = "";
 		if($this->input->get('yr') !="") $where=" WHERE biz_start_ym LIKE '".$this->input->get('yr')."%' ";
-		$data['all_pj'] = $this->cmain_m->sql_result(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC ');
+		$data['all_pj'] = $this->cms_main_model->sql_result(' SELECT * FROM cms_project '.$where.' ORDER BY biz_start_ym DESC ');
 		$project = $data['project'] = ($this->input->get('project')) ? $this->input->get('project') : 1; // 선택한 프로젝트 고유식별 값(아이디)
 
 		// 메뉴데이터 삽입 하여 메인 페이지 호출
@@ -76,7 +76,7 @@ class Cm1 extends CI_Controller {
 		if($mdi==1 && $sdi==1 ){
 			// $this->output->enable_profiler(TRUE); //프로파일러 보기//
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m1_1_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m1_1_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m1_1_1'] or $auth['_m1_1_1']==0) { // 조회 권한이 없는 경우
 				$this->load->view('cms_views/no_auth');
@@ -87,29 +87,29 @@ class Cm1 extends CI_Controller {
 
 
 				// 프로젝트명, 타입 정보 구하기
-				$pj_info = $data['pj_info'] = $this->cmain_m->sql_row(" SELECT pj_name, type_name, type_color FROM cms_project WHERE seq='$project' ");
+				$pj_info = $data['pj_info'] = $this->cms_main_model->sql_row(" SELECT pj_name, type_name, type_color FROM cms_project WHERE seq='$project' ");
 				if($pj_info) $data['tp_color'] = explode("-", $pj_info->type_color);
 
-				$data['tp_name'] = $this->cmain_m->sql_result(" SELECT type FROM cms_project_all_housing_unit WHERE pj_seq='$project' GROUP BY type ");
+				$data['tp_name'] = $this->cms_main_model->sql_result(" SELECT type FROM cms_project_all_housing_unit WHERE pj_seq='$project' GROUP BY type ");
 
 				for($i=0; $i<count($data['tp_name']); $i++) {
-					$data['summary'][$i] = $this->cmain_m->sql_row(" SELECT COUNT(type) AS type_num, SUM(is_hold) AS hold, SUM(is_application) AS app, SUM(is_contract) AS cont FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND type='".$data['tp_name'][$i]->type."' ");
+					$data['summary'][$i] = $this->cms_main_model->sql_row(" SELECT COUNT(type) AS type_num, SUM(is_hold) AS hold, SUM(is_application) AS app, SUM(is_contract) AS cont FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND type='".$data['tp_name'][$i]->type."' ");
 				}
 
 				// 요약 총계 데이터 가져오기
-				$data['sum_all'] = $this->cmain_m->sql_row(" SELECT COUNT(seq) AS unit_num, SUM(is_hold) AS hold, SUM(is_application) AS app, SUM(is_contract) AS cont FROM cms_project_all_housing_unit WHERE pj_seq='$project' ");
+				$data['sum_all'] = $this->cms_main_model->sql_row(" SELECT COUNT(seq) AS unit_num, SUM(is_hold) AS hold, SUM(is_application) AS app, SUM(is_contract) AS cont FROM cms_project_all_housing_unit WHERE pj_seq='$project' ");
 
 				// 청약 데이터 가져오기
 				$dis_date = date('Y-m-d', strtotime('-3 day'));
-				$data['app_data'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_application WHERE pj_seq='$project' AND disposal_div='0' OR disposal_div='2' OR ((disposal_div='1' OR disposal_div='3') AND disposal_date>='$dis_date') ORDER BY app_date DESC, seq DESC ");
+				$data['app_data'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_application WHERE pj_seq='$project' AND disposal_div='0' OR disposal_div='2' OR ((disposal_div='1' OR disposal_div='3') AND disposal_date>='$dis_date') ORDER BY app_date DESC, seq DESC ");
 
 				// 계약 데이터 필터링(타입, 동 별)
-				$data['sc_cont_diff'] = $this->cmain_m->sql_result(" SELECT cont_diff FROM cms_sales_contract GROUP BY cont_diff ORDER BY cont_diff ");
-				$data['sc_cont_type'] = $this->cmain_m->sql_result(" SELECT unit_type FROM cms_sales_contract GROUP BY unit_type ORDER BY unit_type ");
+				$data['sc_cont_diff'] = $this->cms_main_model->sql_result(" SELECT cont_diff FROM cms_sales_contract GROUP BY cont_diff ORDER BY cont_diff ");
+				$data['sc_cont_type'] = $this->cms_main_model->sql_result(" SELECT unit_type FROM cms_sales_contract GROUP BY unit_type ORDER BY unit_type ");
 				if($this->input->get('type')) {
-					$data['sc_cont_dong'] = $this->cmain_m->sql_result(" SELECT unit_dong FROM cms_sales_contract WHERE unit_type='".$this->input->get('type')."' GROUP BY unit_dong ORDER BY unit_dong ");
+					$data['sc_cont_dong'] = $this->cms_main_model->sql_result(" SELECT unit_dong FROM cms_sales_contract WHERE unit_type='".$this->input->get('type')."' GROUP BY unit_dong ORDER BY unit_dong ");
 				}else {
-					$data['sc_cont_dong'] = $this->cmain_m->sql_result(" SELECT unit_dong FROM cms_sales_contract GROUP BY unit_dong ORDER BY unit_dong ");
+					$data['sc_cont_dong'] = $this->cms_main_model->sql_result(" SELECT unit_dong FROM cms_sales_contract GROUP BY unit_dong ORDER BY unit_dong ");
 				}
 
 				// 계약 데이터 검색 필터링
@@ -128,7 +128,7 @@ class Cm1 extends CI_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cm1/sales/1/1');   //페이징 주소
-				$config['total_rows'] = $data['total_rows'] = $this->cmain_m->sql_num_rows($cont_query);  //게시물의 전체 갯수
+				$config['total_rows'] = $data['total_rows'] = $this->cms_main_model->sql_num_rows($cont_query);  //게시물의 전체 갯수
 				if( !$this->input->get('num')) $config['per_page'] = 10;  else $config['per_page'] = $this->input->get('num'); // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 3; // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -150,7 +150,7 @@ class Cm1 extends CI_Controller {
 				if($this->input->get('order')=='1') $cont_query .= " ORDER BY cont_code ";
 				if($this->input->get('order')=='2') $cont_query .= " ORDER BY cont_code DESC ";
 				if($start != '' or $limit !='')	$cont_query .= " LIMIT ".$start.", ".$limit." ";
-				$data['cont_data'] = $this->cmain_m->sql_result($cont_query); // 계약 및 계약자 데이터
+				$data['cont_data'] = $this->cms_main_model->sql_result($cont_query); // 계약 및 계약자 데이터
 
 				//본 페이지 로딩
 				$this->load->view('/cms_views/menu/cm1/md1_sd1_v', $data);
@@ -165,7 +165,7 @@ class Cm1 extends CI_Controller {
 		// 계약현황 2. 계약등록 ////////////////////////////////////////////////////////////////////
 		}else if($mdi==1 && $sdi==2) {
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m1_1_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m1_1_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m1_1_2'] or $auth['_m1_1_2']==0) {
 				$this->load->view('cms_views/no_auth');
@@ -188,17 +188,17 @@ class Cm1 extends CI_Controller {
 					if($this->input->get('cont_sort1')==2 && $this->input->get('cont_sort3')==3) $where_add .= " AND is_application='1' "; // 청약 물건 (청약해지대상)
 					if($this->input->get('cont_sort1')==2 && $this->input->get('cont_sort3')==4) $where_add .= " AND is_contract='1' ";	 // 계약 물건 (계약해지대상)
 				}
-				$data['type_list'] = $this->cmain_m->sql_result("SELECT type FROM cms_project_all_housing_unit $where_add GROUP BY type ORDER BY type");
+				$data['type_list'] = $this->cms_main_model->sql_result("SELECT type FROM cms_project_all_housing_unit $where_add GROUP BY type ORDER BY type");
 
 				// 동 데이터 불러오기
 				$now_type = $this->input->get('type');
 				if($this->input->get('type')) $where_add .= " AND type='$now_type' ";
-				$data['dong_list'] = $this->cmain_m->sql_result("SELECT dong FROM cms_project_all_housing_unit $where_add GROUP BY dong ORDER BY dong");
+				$data['dong_list'] = $this->cms_main_model->sql_result("SELECT dong FROM cms_project_all_housing_unit $where_add GROUP BY dong ORDER BY dong");
 
 				// 호수 데이터 불러오기
 				$now_dong = $this->input->get('dong');
 				if($this->input->get('dong')) $where_add .= " AND dong='$now_dong' ";
-				$data['ho_list'] = $this->cmain_m->sql_result("SELECT ho FROM cms_project_all_housing_unit $where_add GROUP BY ho ORDER BY ho");
+				$data['ho_list'] = $this->cms_main_model->sql_result("SELECT ho FROM cms_project_all_housing_unit $where_add GROUP BY ho ORDER BY ho");
 
 				// 타입 동호수 텍스트
 				$now_ho = $this->input->get('ho');
@@ -224,40 +224,40 @@ class Cm1 extends CI_Controller {
 					$dongho = $data['unit_dong_ho'] = $now_dong."-".$now_ho; // 동호(1005-2002 형식)
 
 					//  등록할 동호수 유닛 데이터
-					$unit_seq = $data['unit_seq'] =  $this->cmain_m->sql_row(" SELECT * FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND type='$now_type' AND dong='$now_dong' AND ho='$now_ho' ");
+					$unit_seq = $data['unit_seq'] =  $this->cms_main_model->sql_row(" SELECT * FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND type='$now_type' AND dong='$now_dong' AND ho='$now_ho' ");
 
 					// 청약 또는 계약 유닛인지 확인
 					if($unit_seq->is_application=='1') { // 청약 물건이면
-						$app_data = $data['is_reg']['app_data'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_application WHERE unit_seq='$unit_seq->seq' AND disposal_div<>'3' "); // 청약 데이터
+						$app_data = $data['is_reg']['app_data'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_application WHERE unit_seq='$unit_seq->seq' AND disposal_div<>'3' "); // 청약 데이터
 					}else if($unit_seq->is_contract=='1'){ // 계약 물건이면
-						$data['is_app_cont'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_application WHERE pj_seq='$project' AND unit_seq='$unit_seq->seq' AND disposal_div='1' "); // 청약->계약전환 물건인지 확인
+						$data['is_app_cont'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_application WHERE pj_seq='$project' AND unit_seq='$unit_seq->seq' AND disposal_div='1' "); // 청약->계약전환 물건인지 확인
 						$cont_where = " WHERE unit_seq='$unit_seq->seq' AND is_transfer='0' AND is_rescission='0' AND cms_sales_contract.seq=cont_seq  ";
 						$cont_query = "  SELECT *, cms_sales_contract.seq AS cont_seq, cms_sales_contractor.seq AS contractor_seq  FROM cms_sales_contract, cms_sales_contractor ".$cont_where;
-						$cont_data = $data['is_reg']['cont_data'] = $this->cmain_m->sql_row($cont_query); // 계약 및 계약자 데이터
+						$cont_data = $data['is_reg']['cont_data'] = $this->cms_main_model->sql_row($cont_query); // 계약 및 계약자 데이터
 					}
 				}
 
 				// 차수 데이터 불러오기
-				$data['diff_no'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_con_diff  WHERE pj_seq='$project' ORDER BY diff_no ");
+				$data['diff_no'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_con_diff  WHERE pj_seq='$project' ORDER BY diff_no ");
 
 				// 분양대금 수납 계정
-				$data['dep_acc'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_bank_acc WHERE pj_seq='$project' ORDER BY seq ");
+				$data['dep_acc'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_bank_acc WHERE pj_seq='$project' ORDER BY seq ");
 
 				// 계약 등록 시 당회 납부 회차 데이터 가져오기
 				if($this->input->get('cont_sort2')=='2'){
-					$data['pay_schedule'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project' AND pay_code<3 ORDER BY seq ");
+					$data['pay_schedule'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project' AND pay_code<3 ORDER BY seq ");
 				}
 
 				// 수납 관리 테이블 정보 가져오기
-				if( !empty($cont_data)) $data['receiv_app'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='1' ");
-				if( !empty($cont_data)) $data['received']['1'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='2' ");
-				if( !empty($cont_data)) $data['received']['2'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='3' ");
-				if( !empty($cont_data)) $data['received']['3'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='4' ");
-				if( !empty($cont_data)) $data['received']['4'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='5' ");
-				if( !empty($cont_data)) $data['received']['5'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='6' ");
-				if( !empty($cont_data)) $data['received']['6'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='7' ");
-				if( !empty($cont_data)) $data['received']['7'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='8' ");
-				if( !empty($cont_data)) $data['rec_num'] = $this->cmain_m->sql_num_rows(" SELECT seq FROM cms_sales_received WHERE cont_seq='$cont_data->seq' ");
+				if( !empty($cont_data)) $data['receiv_app'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='1' ");
+				if( !empty($cont_data)) $data['received']['1'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='2' ");
+				if( !empty($cont_data)) $data['received']['2'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='3' ");
+				if( !empty($cont_data)) $data['received']['3'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='4' ");
+				if( !empty($cont_data)) $data['received']['4'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='5' ");
+				if( !empty($cont_data)) $data['received']['5'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='6' ");
+				if( !empty($cont_data)) $data['received']['6'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='7' ");
+				if( !empty($cont_data)) $data['received']['7'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE cont_seq='$cont_data->seq' AND cont_form_code='8' ");
+				if( !empty($cont_data)) $data['rec_num'] = $this->cms_main_model->sql_num_rows(" SELECT seq FROM cms_sales_received WHERE cont_seq='$cont_data->seq' ");
 
 
 				// 라이브러리 로드
@@ -330,20 +330,20 @@ class Cm1 extends CI_Controller {
 						if($this->input->post('mode')=='1' && $this->input->post('unit_is_app')=='0'){ // 신규 청약 등록 일 때
 							$add_arr = array('ini_reg_worker' => $this->session->userdata('name'));
 							$app_put = array_merge($app_arr, $add_arr);
-							$result = $this->cmain_m->insert_data('cms_sales_application', $app_put, 'ini_reg_date'); // 청약관리 테이블 데이터 입력
+							$result = $this->cms_main_model->insert_data('cms_sales_application', $app_put, 'ini_reg_date'); // 청약관리 테이블 데이터 입력
 							if( !$result){
 								alert('데이터베이스 에러입니다.', base_url(uri_string()));
 							}else{
 								// 2. 동호수 관리 테이블 입력
 								$where = array('type'=>$this->input->post('type'), 'dong'=>$this->input->post('dong'), 'ho'=>$this->input->post('ho'));
-								$result2 = $this->cmain_m->update_data('cms_project_all_housing_unit', array('is_application'=>'1', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), $where); // 동호수 테이블 청약상태로 변경
+								$result2 = $this->cms_main_model->update_data('cms_project_all_housing_unit', array('is_application'=>'1', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), $where); // 동호수 테이블 청약상태로 변경
 								if( !$result2) alert('데이터베이스 에러입니다.', base_url(uri_string()));
 							}
 						}else if($this->input->post('mode')=='2' && $this->input->post('unit_is_app')=='1'){ // 기존 청약정보 수정일 때
 							$add_arr = array('last_modi_date' => date('Y-m-d'), 'last_modi_worker' => $this->session->userdata('name'));
 							$app_put = array_merge($app_arr, $add_arr);
 							$where = array('pj_seq'=>$pj, 'unit_type' =>$this->input->post('type'), 'unit_dong_ho'=>$this->input->post('unit_dong_ho'));
-							$result = $this->cmain_m->update_data('cms_sales_application', $app_put, $where); // 청약관리 테이블 데이터 입력
+							$result = $this->cms_main_model->update_data('cms_sales_application', $app_put, $where); // 청약관리 테이블 데이터 입력
 							if( !$result){
 								alert('데이터베이스 에러입니다.', base_url(uri_string()));
 							}
@@ -358,7 +358,7 @@ class Cm1 extends CI_Controller {
 						$un = $this->input->post('unit_seq', TRUE); // 동호 아이디
 
 						/******************************계약 테이블 데이터******************************/
-						$con_fl = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_con_floor WHERE pj_seq='$pj' ORDER BY seq "); // 층별 조건 객체배열
+						$con_fl = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_con_floor WHERE pj_seq='$pj' ORDER BY seq "); // 층별 조건 객체배열
 
 						if(strlen($this->input->post('ho'))==3) { // 현재 층수 구하기
 							$now_floor = substr($this->input->post('ho'), 0, 1);
@@ -379,7 +379,7 @@ class Cm1 extends CI_Controller {
 							'con_floor_seq'=>$con_floor_seq
 						);
 
-						$price_seq = $this->cmain_m->select_data_row('cms_sales_price' , $pr_where);
+						$price_seq = $this->cms_main_model->select_data_row('cms_sales_price' , $pr_where);
 
 						$cont_arr1 = array( // 계약 테이블 입력 데이터
 							'pj_seq' => $this->input->post('project', TRUE),
@@ -399,14 +399,14 @@ class Cm1 extends CI_Controller {
 							//   1. 계약관리 테이블에 해당 데이터를 인서트한다.
 							$add_arr1 = array('ini_reg_worker' => $this->session->userdata('name'));
 							$cont_arr11 = array_merge($cont_arr1, $add_arr1);
-							$result[0] = $this->cmain_m->insert_data('cms_sales_contract', $cont_arr11, 'ini_reg_date');
+							$result[0] = $this->cms_main_model->insert_data('cms_sales_contract', $cont_arr11, 'ini_reg_date');
 							if( !$result[0]){
 								alert('데이터베이스 에러입니다.1', base_url(uri_string()));
 							}
 						}
 
 						/******************************계약자 테이블 데이터******************************/
-                        $cont_seq = $this->cmain_m->sql_row(" SELECT seq FROM cms_sales_contract WHERE pj_seq='$pj' AND unit_seq='$un' AND is_rescission='0' ");
+                        $cont_seq = $this->cms_main_model->sql_row(" SELECT seq FROM cms_sales_contract WHERE pj_seq='$pj' AND unit_seq='$un' AND is_rescission='0' ");
 						$addr_id = $this->input->post('postcode1')."|".$this->input->post('address1_1')."|".$this->input->post('address2_1');
 						$addr_dm = $this->input->post('postcode2')."|".$this->input->post('address1_2')."|".$this->input->post('address2_2');
 						$idoc1 = $this->input->post('incom_doc_1');
@@ -527,7 +527,7 @@ class Cm1 extends CI_Controller {
 							//   2. 계약자관리 테이블에 해당 데이터를 인서트한다.
 							$add_arr2 = array('cont_seq' => $cont_seq->seq, 'ini_reg_worker' => $this->session->userdata('name'));
 							$cont_arr22 = array_merge($cont_arr2, $add_arr2);
-							$result[1] = $this->cmain_m->insert_data('cms_sales_contractor', $cont_arr22, 'ini_reg_date');
+							$result[1] = $this->cms_main_model->insert_data('cms_sales_contractor', $cont_arr22, 'ini_reg_date');
 							if( !$result[1]) {
 								alert('데이터베이스 에러입니다.2', '');
 							}
@@ -541,13 +541,13 @@ class Cm1 extends CI_Controller {
 									'last_modi_date'=> date('Y-m-d'),
 									'last_modi_worker' =>$this->session->userdata('name')
 								);
-								$result[2] = $this->cmain_m->update_data('cms_sales_application', $dis_data, array('unit_seq'=>$this->input->post('unit_seq'))); // 청약 테이블 계약전환 처리
+								$result[2] = $this->cms_main_model->update_data('cms_sales_application', $dis_data, array('unit_seq'=>$this->input->post('unit_seq'))); // 청약 테이블 계약전환 처리
 								if( !$result[2]) {
 									alert('데이터베이스 에러입니다.3', base_url(uri_string()));
 								}
 
 								// 4. 동호수 관리 테이블 입력 청약->OFF
-								$result[3] = $this->cmain_m->update_data('cms_project_all_housing_unit', array('is_application'=>'0'), array('seq'=>$un)); // 동호수 테이블 계약상태로 변경
+								$result[3] = $this->cms_main_model->update_data('cms_project_all_housing_unit', array('is_application'=>'0'), array('seq'=>$un)); // 동호수 테이블 계약상태로 변경
 								if( !$result[3]) {
 									alert('데이터베이스 에러입니다.4', base_url(uri_string()));
 								}
@@ -565,21 +565,21 @@ class Cm1 extends CI_Controller {
 										'cont_form_code' => '1',
 										'reg_worker' => $this->session->userdata('name')
 									);
-									$result[4] = $this->cmain_m->insert_data('cms_sales_received', $app_mon, 'reg_date');
+									$result[4] = $this->cms_main_model->insert_data('cms_sales_received', $app_mon, 'reg_date');
 									if( !$result[4]) {
 										alert('데이터베이스 에러입니다.5', base_url(uri_string()));
 									}
 								}
 							}
 							// 6. 동호수 관리 테이블 입력 계약->On
-								$result[5] = $this->cmain_m->update_data('cms_project_all_housing_unit', array('is_contract'=>'1', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), array('seq'=>$un)); // 동호수 테이블 계약상태로 변경
+								$result[5] = $this->cms_main_model->update_data('cms_project_all_housing_unit', array('is_contract'=>'1', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), array('seq'=>$un)); // 동호수 테이블 계약상태로 변경
 								if( !$result[5]) {
 									alert('데이터베이스 에러입니다.6', base_url(uri_string()));
 								}
 
 							// 7. 계약금 데이터1 -> 수납 데이터로 입력
 							if($this->input->post('deposit_1') && $this->input->post('deposit_1')!='0'){ // 계약금 1 (분담금 // 또는 일반 분양대금) 입력정보 있을때 처리
-								$result[6] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr3, 'reg_date');
+								$result[6] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr3, 'reg_date');
 								if( !$result[6]) {
 									alert('데이터베이스 에러입니다.7', base_url(uri_string()));
 								}
@@ -587,7 +587,7 @@ class Cm1 extends CI_Controller {
 
 							// 8. 계약금 데이터2 -> 수납 데이터로 입력
 							if($this->input->post('deposit_2') && $this->input->post('deposit_2')!='0'){ // 계약금 2 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
-								$result[7] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr4, 'reg_date');
+								$result[7] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr4, 'reg_date');
 								if( !$result[7]) {
 									alert('데이터베이스 에러입니다.8', base_url(uri_string()));
 								}
@@ -595,7 +595,7 @@ class Cm1 extends CI_Controller {
 
 							// 9. 계약금 데이터3 -> 수납 데이터로 입력
 							if($this->input->post('deposit_3') && $this->input->post('deposit_3')!='0'){ // 계약금 3 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
-								$result[8] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr5, 'reg_date');
+								$result[8] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr5, 'reg_date');
 								if( !$result[8]) {
 									alert('데이터베이스 에러입니다.9', base_url(uri_string()));
 								}
@@ -603,7 +603,7 @@ class Cm1 extends CI_Controller {
 
 							// 10. 계약금 데이터4 -> 수납 데이터로 입력
 							if($this->input->post('deposit_4') && $this->input->post('deposit_4')!='0'){ // 계약금 3 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
-								$result[9] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr6, 'reg_date');
+								$result[9] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr6, 'reg_date');
 								if( !$result[9]) {
 									alert('데이터베이스 에러입니다.10', base_url(uri_string()));
 								}
@@ -611,7 +611,7 @@ class Cm1 extends CI_Controller {
 
 							// 11. 계약금 데이터5 -> 수납 데이터로 입력
 							if($this->input->post('deposit_5') && $this->input->post('deposit_5')!='0'){ // 계약금 3 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
-								$result[10] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr7, 'reg_date');
+								$result[10] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr7, 'reg_date');
 								if( !$result[10]) {
 									alert('데이터베이스 에러입니다.11', base_url(uri_string()));
 								}
@@ -619,7 +619,7 @@ class Cm1 extends CI_Controller {
 
 							// 12. 계약금 데이터6 -> 수납 데이터로 입력
 							if($this->input->post('deposit_6') && $this->input->post('deposit_6')!='0'){ // 계약금 3 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
-								$result[11] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr8, 'reg_date');
+								$result[11] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr8, 'reg_date');
 								if( !$result[11]) {
 									alert('데이터베이스 에러입니다.12', base_url(uri_string()));
 								}
@@ -627,7 +627,7 @@ class Cm1 extends CI_Controller {
 
 							// 13. 계약금 데이터7 -> 수납 데이터로 입력
 							if($this->input->post('deposit_7') && $this->input->post('deposit_7')!='0'){ // 계약금 3 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
-								$result[12] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr9, 'reg_date');
+								$result[12] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr9, 'reg_date');
 								if( !$result[12]) {
 									alert('데이터베이스 에러입니다.13', base_url(uri_string()));
 								}
@@ -640,14 +640,14 @@ class Cm1 extends CI_Controller {
 							//   1. 계약관리 테이블에 해당 데이터를 업데이트한다.
 							$add_arr1 = array('last_modi_date' => date('Y-m-d'), 'last_modi_worker' => $this->session->userdata('name'));
 							$cont_arr11 = array_merge($cont_arr1, $add_arr1);
-							$result[0] = $this->cmain_m->update_data('cms_sales_contract', $cont_arr11, array('seq'=>$this->input->post('cont_seq'), 'unit_seq'=>$un));
+							$result[0] = $this->cms_main_model->update_data('cms_sales_contract', $cont_arr11, array('seq'=>$this->input->post('cont_seq'), 'unit_seq'=>$un));
 							if( !$result[0]){
 								alert('데이터베이스 에러입니다.1', base_url(uri_string()));
 							}
 
 							//   2. 계약자관리 테이블에 해당 데이터를 업데이트한다.
 							$cont_arr22 = array_merge($cont_arr2, $add_arr1);
-							$result[1] = $this->cmain_m->update_data('cms_sales_contractor', $cont_arr22,  array('seq'=>$this->input->post('contractor_seq'), 'cont_seq'=>$this->input->post('cont_seq')));
+							$result[1] = $this->cms_main_model->update_data('cms_sales_contractor', $cont_arr22,  array('seq'=>$this->input->post('contractor_seq'), 'cont_seq'=>$this->input->post('cont_seq')));
 							if( !$result[1]) {
 								alert('데이터베이스 에러입니다.2', '');
 							}
@@ -655,9 +655,9 @@ class Cm1 extends CI_Controller {
 							// 3. 계약금 데이터1 -> 수납 데이터로 수정
 							if($this->input->post('deposit_1') && $this->input->post('deposit_1')!='0'){ // 계약금 1 (분담금 // 또는 일반 분양대금) 입력정보 있을때 처리
 								if($this->input->post('deposit_1_')=='1'){
-									$result[5] = $this->cmain_m->update_data('cms_sales_received', $cont_arr3, array('seq'=>$this->input->post('received1')));
+									$result[5] = $this->cms_main_model->update_data('cms_sales_received', $cont_arr3, array('seq'=>$this->input->post('received1')));
 								}else{
-									$result[5] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr3, 'reg_date');
+									$result[5] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr3, 'reg_date');
 								}
 								if( !$result[5]) {
 									alert('데이터베이스 에러입니다.6', base_url(uri_string()));
@@ -667,9 +667,9 @@ class Cm1 extends CI_Controller {
 							// 4. 계약금 데이터2 -> 수납 데이터로 수정
 							if($this->input->post('deposit_2') && $this->input->post('deposit_2')!='0'){ // 계약금 2 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
 								if($this->input->post('deposit_2_')=='1'){
-									$result[6] =$this->cmain_m->update_data('cms_sales_received', $cont_arr4, array('seq'=>$this->input->post('received2')));
+									$result[6] =$this->cms_main_model->update_data('cms_sales_received', $cont_arr4, array('seq'=>$this->input->post('received2')));
 								}else{
-									$result[6] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr4, 'reg_date');
+									$result[6] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr4, 'reg_date');
 								}
 								if( !$result[6]) {
 									alert('데이터베이스 에러입니다.7', base_url(uri_string()));
@@ -679,9 +679,9 @@ class Cm1 extends CI_Controller {
 							// 5. 계약금 데이터3 -> 수납 데이터로 수정
 							if($this->input->post('deposit_3') && $this->input->post('deposit_3')!='0'){ // 계약금 3 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
 								if($this->input->post('deposit_3_')=='1'){
-									$result[7] =$this->cmain_m->update_data('cms_sales_received', $cont_arr5, array('seq'=>$this->input->post('received3')));
+									$result[7] =$this->cms_main_model->update_data('cms_sales_received', $cont_arr5, array('seq'=>$this->input->post('received3')));
 								}else{
-									$result[7] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr5, 'reg_date');
+									$result[7] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr5, 'reg_date');
 								}
 								if( !$result[7]) {
 									alert('데이터베이스 에러입니다.8', base_url(uri_string()));
@@ -691,9 +691,9 @@ class Cm1 extends CI_Controller {
 							// 6. 계약금 데이터4 -> 수납 데이터로 수정
 							if($this->input->post('deposit_4') && $this->input->post('deposit_4')!='0'){ // 계약금 4 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
 								if($this->input->post('deposit_4_')=='1'){
-									$result[8] =$this->cmain_m->update_data('cms_sales_received', $cont_arr6, array('seq'=>$this->input->post('received4')));
+									$result[8] =$this->cms_main_model->update_data('cms_sales_received', $cont_arr6, array('seq'=>$this->input->post('received4')));
 								}else{
-									$result[8] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr6, 'reg_date');
+									$result[8] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr6, 'reg_date');
 								}
 								if( !$result[8]) {
 									alert('데이터베이스 에러입니다.9', base_url(uri_string()));
@@ -703,9 +703,9 @@ class Cm1 extends CI_Controller {
 							// 7. 계약금 데이터5 -> 수납 데이터로 수정
 							if($this->input->post('deposit_5') && $this->input->post('deposit_5')!='0'){ // 계약금 5 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
 								if($this->input->post('deposit_5_')=='1'){
-									$result[9] =$this->cmain_m->update_data('cms_sales_received', $cont_arr7, array('seq'=>$this->input->post('received5')));
+									$result[9] =$this->cms_main_model->update_data('cms_sales_received', $cont_arr7, array('seq'=>$this->input->post('received5')));
 								}else{
-									$result[9] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr7, 'reg_date');
+									$result[9] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr7, 'reg_date');
 								}
 								if( !$result[9]) {
 									alert('데이터베이스 에러입니다.10', base_url(uri_string()));
@@ -715,9 +715,9 @@ class Cm1 extends CI_Controller {
 							// 8. 계약금 데이터6 -> 수납 데이터로 수정
 							if($this->input->post('deposit_6') && $this->input->post('deposit_6')!='0'){ // 계약금 6 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
 								if($this->input->post('deposit_6_')=='1'){
-									$result[10] =$this->cmain_m->update_data('cms_sales_received', $cont_arr8, array('seq'=>$this->input->post('received6')));
+									$result[10] =$this->cms_main_model->update_data('cms_sales_received', $cont_arr8, array('seq'=>$this->input->post('received6')));
 								}else{
-									$result[10] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr8, 'reg_date');
+									$result[10] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr8, 'reg_date');
 								}
 								if( !$result[10]) {
 									alert('데이터베이스 에러입니다.11', base_url(uri_string()));
@@ -727,9 +727,9 @@ class Cm1 extends CI_Controller {
 							// 9. 계약금 데이터7 -> 수납 데이터로 수정
 							if($this->input->post('deposit_7') && $this->input->post('deposit_7')!='0'){ // 계약금 7 (대행비 // 또는 일반 분양대금) 입력정보 있을때 처리
 								if($this->input->post('deposit_7_')=='1'){
-									$result[11] =$this->cmain_m->update_data('cms_sales_received', $cont_arr9, array('seq'=>$this->input->post('received7')));
+									$result[11] =$this->cms_main_model->update_data('cms_sales_received', $cont_arr9, array('seq'=>$this->input->post('received7')));
 								}else{
-									$result[11] = $this->cmain_m->insert_data('cms_sales_received', $cont_arr9, 'reg_date');
+									$result[11] = $this->cms_main_model->insert_data('cms_sales_received', $cont_arr9, 'reg_date');
 								}
 								if( !$result[11]) {
 									alert('데이터베이스 에러입니다.12', base_url(uri_string()));
@@ -747,7 +747,7 @@ class Cm1 extends CI_Controller {
 								'last_modi_date'=>date('Y-m-d'),
 								'last_modi_worker'=>$this->session->userdata('name')
 							);
-							$result[0] = $this->cmain_m->update_data('cms_sales_application', $cancel_data, array('pj_seq'=>$pj, 'unit_seq'=>$un)); // 해지처리
+							$result[0] = $this->cms_main_model->update_data('cms_sales_application', $cancel_data, array('pj_seq'=>$pj, 'unit_seq'=>$un)); // 해지처리
 							if( !$result[0]) alert('데이터베이스 에러입니다.', '');
 							$ret_url = "?mode=2&cont_sort1=2&cont_sort3=3&project=".$pj."&type=".$this->input->post('type')."&dong=".$this->input->post('dong')."&ho=".$this->input->post('ho');
 							alert('청약 해지가 정상처리 되었습니다.', $ret_url);
@@ -760,9 +760,9 @@ class Cm1 extends CI_Controller {
 								'last_modi_date' => date('Y-m-d'),
 								'last_modi_worker' => $this->session->userdata('name')
 							);
-							$result[0] = $this->cmain_m->update_data('cms_sales_application', $cancel_data, array('pj_seq'=>$pj, 'unit_seq'=>$un)); // 해지 환불 처리
+							$result[0] = $this->cms_main_model->update_data('cms_sales_application', $cancel_data, array('pj_seq'=>$pj, 'unit_seq'=>$un)); // 해지 환불 처리
 							if( !$result[0]) alert('데이터베이스 에러입니다.', '');
-							$result[1] = $this->cmain_m->update_data('cms_project_all_housing_unit', array('is_application'=>'0', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), array('seq'=>$un));
+							$result[1] = $this->cms_main_model->update_data('cms_project_all_housing_unit', array('is_application'=>'0', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), array('seq'=>$un));
 							if( !$result[1])  alert('데이터베이스 에러입니다.', '');
 							$ret_url = "?mode=2&cont_sort1=2&cont_sort3=3&project=".$pj."&type=".$this->input->post('type')."&dong=".$this->input->post('dong')."&ho=".$this->input->post('ho');
 							alert('해지 환불이 정상처리 되었습니다.', $ret_url);
@@ -776,7 +776,7 @@ class Cm1 extends CI_Controller {
 								'last_modi_date'=>date('Y-m-d'),
 								'last_modi_worker'=>$this->session->userdata('name')
 							);
-							$result[0] = $this->cmain_m->update_data('cms_sales_contract', $cancel_data, array('seq'=>$this->input->post('cont_seq'))); // 해지 처리
+							$result[0] = $this->cms_main_model->update_data('cms_sales_contract', $cancel_data, array('seq'=>$this->input->post('cont_seq'))); // 해지 처리
 							if( !$result[0]) alert('데이터베이스 에러입니다.', '');
 							$cancel_data2 = array(
 								'is_transfer'=>'2', // 1.매도, 2. 해약
@@ -784,7 +784,7 @@ class Cm1 extends CI_Controller {
 								'last_modi_date'=>date('Y-m-d'),
 								'last_modi_worker'=>$this->session->userdata('name')
 							);
-							$result[1] = $this->cmain_m->update_data('cms_sales_contractor', $cancel_data2, array('cont_seq'=>$this->input->post('cont_seq'))); // 해지 처리
+							$result[1] = $this->cms_main_model->update_data('cms_sales_contractor', $cancel_data2, array('cont_seq'=>$this->input->post('cont_seq'))); // 해지 처리
 							if( !$result[1]) alert('데이터베이스 에러입니다.', '');
 							$ret_url = "?mode=2&cont_sort1=2&cont_sort3=4&project=".$pj."&type=".$this->input->post('type')."&dong=".$this->input->post('dong')."&ho=".$this->input->post('ho');
 							alert('계약 해지가 정상처리 되었습니다.', $ret_url);
@@ -796,7 +796,7 @@ class Cm1 extends CI_Controller {
 								'last_modi_date'=>date('Y-m-d'),
 								'last_modi_worker'=>$this->session->userdata('name')
 							);
-							$result[0] = $this->cmain_m->update_data('cms_sales_contract', $cancel_data, array('seq'=>$this->input->post('cont_seq'))); // 해지 환불 처리
+							$result[0] = $this->cms_main_model->update_data('cms_sales_contract', $cancel_data, array('seq'=>$this->input->post('cont_seq'))); // 해지 환불 처리
 							if( !$result[0]) alert('데이터베이스 에러입니다.', '');
 							$cancel_data2 = array(
 								'is_transfer'=>'2', // 1.매도, 2. 해약
@@ -804,11 +804,11 @@ class Cm1 extends CI_Controller {
 								'last_modi_date'=>date('Y-m-d'),
 								'last_modi_worker'=>$this->session->userdata('name')
 							);
-							$result[1] = $this->cmain_m->update_data('cms_sales_contractor', $cancel_data2, array('cont_seq'=>$this->input->post('cont_seq'))); // 해지 처리
+							$result[1] = $this->cms_main_model->update_data('cms_sales_contractor', $cancel_data2, array('cont_seq'=>$this->input->post('cont_seq'))); // 해지 처리
 							if( !$result[1]) alert('데이터베이스 에러입니다.', '');
-							$result[2] = $this->cmain_m->update_data('cms_sales_received', array('is_refund'=>'1'), array('cont_seq'=>$this->input->post('cont_seq'))); // 해지 환불 처리
+							$result[2] = $this->cms_main_model->update_data('cms_sales_received', array('is_refund'=>'1'), array('cont_seq'=>$this->input->post('cont_seq'))); // 해지 환불 처리
 							if( !$result[2]) alert('데이터베이스 에러입니다.', '');
-							$result[3] = $this->cmain_m->update_data('cms_project_all_housing_unit', array('is_contract'=>'0', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), array('seq'=>$un));
+							$result[3] = $this->cms_main_model->update_data('cms_project_all_housing_unit', array('is_contract'=>'0', 'modi_date'=>date('Y-m-d'), 'modi_worker'=>$this->session->userdata('name')), array('seq'=>$un));
 							if( !$result[3])  alert('데이터베이스 에러입니다.', '');
 							$ret_url = "?mode=2&cont_sort1=2&cont_sort3=4&project=".$pj."&type=".$this->input->post('type')."&dong=".$this->input->post('dong')."&ho=".$this->input->post('ho');
 							alert('해약 환불이 정상처리 되었습니다.', $ret_url);
@@ -826,7 +826,7 @@ class Cm1 extends CI_Controller {
 		}else if($mdi==1 && $sdi==3) {
 			// $this->output->enable_profiler(TRUE); //프로파일러 보기
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m1_1_3', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m1_1_3', $this->session->userdata['user_id']);
 
 			if( !$auth['_m1_1_3'] or $auth['_m1_1_3']==0) {
 				$this->load->view('cms_views/no_auth');
@@ -836,10 +836,10 @@ class Cm1 extends CI_Controller {
 				$data['auth'] = $auth['_m1_1_3'];
 
 				// 공급세대 및 유보세대 청약 계약세대 구하기
-				$data['summary_tb'] = $this->cmain_m->sql_row(" SELECT COUNT(*) AS total, SUM(is_hold) AS hold, SUM(is_application) AS acn, SUM(is_contract) AS cont FROM cms_project_all_housing_unit WHERE pj_seq='$project'  ");
+				$data['summary_tb'] = $this->cms_main_model->sql_row(" SELECT COUNT(*) AS total, SUM(is_hold) AS hold, SUM(is_application) AS acn, SUM(is_contract) AS cont FROM cms_project_all_housing_unit WHERE pj_seq='$project'  ");
 
 				// 타입 관련 데이터 구하기
-				$type = $this->cmain_m->sql_row(" SELECT type_name, type_color FROM cms_project WHERE seq='$project' ");
+				$type = $this->cms_main_model->sql_row(" SELECT type_name, type_color FROM cms_project WHERE seq='$project' ");
 				if($type) {
 					$data['type'] = array(
 						'name' => explode("-", $type->type_name),
@@ -849,17 +849,17 @@ class Cm1 extends CI_Controller {
 
 
 				// 해당 단지 최 고층 구하기
-				$max_fl = $this->cmain_m->sql_row(" SELECT MAX(ho) AS max_ho FROM cms_project_all_housing_unit WHERE pj_seq='$project' ");
+				$max_fl = $this->cms_main_model->sql_row(" SELECT MAX(ho) AS max_ho FROM cms_project_all_housing_unit WHERE pj_seq='$project' ");
 				if(strlen($max_fl->max_ho)==3) $data['max_floor'] = substr($max_fl->max_ho, -3,1);
 				if(strlen($max_fl->max_ho)==4) $data['max_floor'] = substr($max_fl->max_ho, -4,2);
 
 				// 해당 단지 동 수 및 리스트 구하기
-				$dong_data = $data['dong_data'] = $this->cmain_m->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq='$project' GROUP BY dong ");
+				$dong_data = $data['dong_data'] = $this->cms_main_model->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq='$project' GROUP BY dong ");
 
 				// 각 동별 라인 수 구하기   //$line_num[6]->to_line
 				for($j=0; $j<count($data['dong_data']); $j++) :
 					$d = $dong_data[$j]->dong;
-					$line_num = $data['line_num'][$j] = $this->cmain_m->sql_row(" SELECT MIN(RIGHT(ho,2)) AS from_line, MAX(RIGHT(ho,2)) AS to_line FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$d' ");
+					$line_num = $data['line_num'][$j] = $this->cms_main_model->sql_row(" SELECT MIN(RIGHT(ho,2)) AS from_line, MAX(RIGHT(ho,2)) AS to_line FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$d' ");
 				endfor;
 
 
@@ -877,7 +877,7 @@ class Cm1 extends CI_Controller {
 		}else if($mdi==2 && $sdi==1) {
 			// $this->output->enable_profiler(TRUE); //프로파일러 보기//
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m1_2_1', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m1_2_1', $this->session->userdata['user_id']);
 
 			if( !$auth['_m1_2_1'] or $auth['_m1_2_1']==0) {
 				$this->load->view('cms_views/no_auth');
@@ -887,16 +887,16 @@ class Cm1 extends CI_Controller {
 				$data['auth'] = $auth['_m1_2_1'];
 
 				// 총 약정금액
-				$data['total_pmt'] = $this->cmain_m->sql_row(" SELECT SUM(unit_price * unit_num) AS total FROM cms_sales_price WHERE pj_seq='$project' ");
+				$data['total_pmt'] = $this->cms_main_model->sql_row(" SELECT SUM(unit_price * unit_num) AS total FROM cms_sales_price WHERE pj_seq='$project' ");
 				// 분양 금액 구하기
-				$data['sell_data'] = $this->cmain_m->sql_row(" SELECT SUM(unit_price) AS sell_total FROM cms_sales_contract, cms_sales_price WHERE cms_sales_contract.pj_seq='$project' AND price_seq=cms_sales_price.seq ");
+				$data['sell_data'] = $this->cms_main_model->sql_row(" SELECT SUM(unit_price) AS sell_total FROM cms_sales_contract, cms_sales_price WHERE cms_sales_contract.pj_seq='$project' AND price_seq=cms_sales_price.seq ");
 
 				// 필터링 위한 데이터
-				$data['pay_sche'] = $this->cmain_m->sql_result(" SELECT pay_code, pay_name FROM cms_sales_pay_sche WHERE pj_seq='$project' ORDER BY pay_code ");
-				$data['paid_acc'] = $this->cmain_m->sql_result(" SELECT seq, acc_nick FROM cms_sales_bank_acc WHERE pj_seq='$project' ORDER BY seq ");
+				$data['pay_sche'] = $this->cms_main_model->sql_result(" SELECT pay_code, pay_name FROM cms_sales_pay_sche WHERE pj_seq='$project' ORDER BY pay_code ");
+				$data['paid_acc'] = $this->cms_main_model->sql_result(" SELECT seq, acc_nick FROM cms_sales_bank_acc WHERE pj_seq='$project' ORDER BY seq ");
 
 				// 수납데이터
-				$data['rec_data'] = $this->cmain_m->sql_row(" SELECT SUM(paid_amount) AS rec_total FROM cms_sales_received WHERE pj_seq='$project' ");
+				$data['rec_data'] = $this->cms_main_model->sql_row(" SELECT SUM(paid_amount) AS rec_total FROM cms_sales_received WHERE pj_seq='$project' ");
 
 
 				// 수납 데이터 검색 필터링
@@ -922,7 +922,7 @@ class Cm1 extends CI_Controller {
 
 				//페이지네이션 설정/////////////////////////////////
 				$config['base_url'] = base_url('cm1/sales/2/1');   //페이징 주소
-				$config['total_rows'] = $data['total_rows'] = $this->cmain_m->sql_num_rows($rec_query);  //게시물의 전체 갯수
+				$config['total_rows'] = $data['total_rows'] = $this->cms_main_model->sql_num_rows($rec_query);  //게시물의 전체 갯수
 				if( !$this->input->get('num')) $config['per_page'] = 10;  else $config['per_page'] = $this->input->get('num'); // 한 페이지에 표시할 게시물 수
 				$config['num_links'] = 3; // 링크 좌우로 보여질 페이지 수
 				$config['uri_segment'] = 5; //페이지 번호가 위치한 세그먼트
@@ -942,8 +942,8 @@ class Cm1 extends CI_Controller {
 				// 수납 데이터 가져오기
 				$rec_query .= "ORDER BY paid_date DESC, cms_sales_received.seq DESC ";
 				if($start != '' or $limit !='')	$rec_query .= " LIMIT ".$start.", ".$limit." ";
-				$data['rec_list'] = $this->cmain_m->sql_result($rec_query); // 수납 및 계약자 데이터
-				$data['rec'] = $this->cmain_m->sql_row($amount_qry.$w_qry); // 총 수납액 구하기
+				$data['rec_list'] = $this->cms_main_model->sql_result($rec_query); // 수납 및 계약자 데이터
+				$data['rec'] = $this->cms_main_model->sql_row($amount_qry.$w_qry); // 총 수납액 구하기
 
 				//본 페이지 로딩
 				$this->load->view('/cms_views/menu/cm1/md2_sd1_v', $data);
@@ -958,7 +958,7 @@ class Cm1 extends CI_Controller {
 		}else if($mdi==2 && $sdi==2) {
 			// $this->output->enable_profiler(TRUE); //프로파일러 보기//
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m1_2_2', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m1_2_2', $this->session->userdata['user_id']);
 
 			if( !$auth['_m1_2_2'] or $auth['_m1_2_2']==0) {
 				$this->load->view('cms_views/no_auth');
@@ -972,36 +972,36 @@ class Cm1 extends CI_Controller {
 				$now_ho = $this->input->get('ho');
 				if(!empty($this->input->get('payer'))){
 					$now_payer = $this->input->get('payer');
-					$paid_who = $this->cmain_m->sql_row(" SELECT seq FROM cms_sales_received WHERE paid_who='$now_payer' ");
+					$paid_who = $this->cms_main_model->sql_row(" SELECT seq FROM cms_sales_received WHERE paid_who='$now_payer' ");
 
 					if(!empty($paid_who)){
-						$data['now_payer'] = $this->cmain_m->sql_result(" SELECT paid_who, cont_seq, unit_dong_ho, is_rescission FROM cms_sales_received, cms_sales_contract WHERE cms_sales_received.pj_seq='$project' AND cont_seq=cms_sales_contract.seq AND paid_who LIKE '%$now_payer%' GROUP BY cont_seq ");
+						$data['now_payer'] = $this->cms_main_model->sql_result(" SELECT paid_who, cont_seq, unit_dong_ho, is_rescission FROM cms_sales_received, cms_sales_contract WHERE cms_sales_received.pj_seq='$project' AND cont_seq=cms_sales_contract.seq AND paid_who LIKE '%$now_payer%' GROUP BY cont_seq ");
 					}else {
-						$pay_cont_seq =  $this->cmain_m->sql_row(" SELECT cont_seq FROM cms_sales_contractor WHERE contractor='$now_payer' ");
+						$pay_cont_seq =  $this->cms_main_model->sql_row(" SELECT cont_seq FROM cms_sales_contractor WHERE contractor='$now_payer' ");
 						if(!empty($pay_cont_seq)){
-							$data['now_payer'] = $this->cmain_m->sql_result(" SELECT paid_who, cont_seq, unit_dong_ho, is_rescission FROM cms_sales_received, cms_sales_contract WHERE cms_sales_received.pj_seq='$project' AND cont_seq=cms_sales_contract.seq AND cont_seq='$pay_cont_seq->cont_seq' GROUP BY cont_seq ");
+							$data['now_payer'] = $this->cms_main_model->sql_result(" SELECT paid_who, cont_seq, unit_dong_ho, is_rescission FROM cms_sales_received, cms_sales_contract WHERE cms_sales_received.pj_seq='$project' AND cont_seq=cms_sales_contract.seq AND cont_seq='$pay_cont_seq->cont_seq' GROUP BY cont_seq ");
 						}
 					}
 				}
 
-				// $data['dong_list'] = $this->cmain_m->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND is_contract='1' GROUP BY dong ORDER BY dong "); // 동 리스트
-				$data['dong_list'] = $this->cmain_m->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq='$project' GROUP BY dong ORDER BY dong "); // 동 리스트
-				$data['ho_list'] = $this->cmain_m->sql_result(" SELECT ho FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$now_dong' AND is_contract='1' GROUP BY ho ORDER BY ho "); // 호 리스트
+				// $data['dong_list'] = $this->cms_main_model->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND is_contract='1' GROUP BY dong ORDER BY dong "); // 동 리스트
+				$data['dong_list'] = $this->cms_main_model->sql_result(" SELECT dong FROM cms_project_all_housing_unit WHERE pj_seq='$project' GROUP BY dong ORDER BY dong "); // 동 리스트
+				$data['ho_list'] = $this->cms_main_model->sql_result(" SELECT ho FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$now_dong' AND is_contract='1' GROUP BY ho ORDER BY ho "); // 호 리스트
 
-				$unit = $data['unit'] = $this->cmain_m->sql_row(" SELECT * FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$now_dong' AND ho='$now_ho' ");  // 선택한 동호수 유닛
+				$unit = $data['unit'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_project_all_housing_unit WHERE pj_seq='$project' AND dong='$now_dong' AND ho='$now_ho' ");  // 선택한 동호수 유닛
 
 				if( !empty($unit->seq)){
 					$cont_where = " WHERE unit_seq='$unit->seq' AND cms_sales_contract.seq=cont_seq  ";
 					$cont_query = "  SELECT *, cms_sales_contractor.seq AS contractor_seq FROM cms_sales_contract, cms_sales_contractor ".$cont_where;
-					$cont_data = $data['cont_data'] = $this->cmain_m->sql_row($cont_query); // 계약 및 계약자 데이터
+					$cont_data = $data['cont_data'] = $this->cms_main_model->sql_row($cont_query); // 계약 및 계약자 데이터
 
 					// 수납 데이터
-					$data['received'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_received WHERE pj_seq='$project' AND cont_seq='$cont_data->seq' ORDER BY paid_date, seq "); // 계약자별 수납데이터
-					$data['total_paid'] = $this->cmain_m->sql_row(" SELECT SUM(paid_amount) AS total_paid FROM cms_sales_received WHERE pj_seq='$project' AND cont_seq='$cont_data->seq' "); // 계약자별 총 수납액
+					$data['received'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_received WHERE pj_seq='$project' AND cont_seq='$cont_data->seq' ORDER BY paid_date, seq "); // 계약자별 수납데이터
+					$data['total_paid'] = $this->cms_main_model->sql_row(" SELECT SUM(paid_amount) AS total_paid FROM cms_sales_received WHERE pj_seq='$project' AND cont_seq='$cont_data->seq' "); // 계약자별 총 수납액
 				}
 				// 수납 약정
-            	$pay_sche_code = $data['pay_sche_code'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project' "); // 전체 약정 회차
-            	$pay_sche_code_sel = $data['pay_sche_code_sel'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project'  "); // 계약금 이후 약정 회차
+            	$pay_sche_code = $data['pay_sche_code'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project' "); // 전체 약정 회차
+            	$pay_sche_code_sel = $data['pay_sche_code_sel'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project'  "); // 계약금 이후 약정 회차
 
 
 
@@ -1012,9 +1012,9 @@ class Cm1 extends CI_Controller {
 				$data['cont_info'] =
 
 				// 수납 계좌
-				$data['paid_acc'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_bank_acc WHERE pj_seq='$project' ");
+				$data['paid_acc'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_bank_acc WHERE pj_seq='$project' ");
 				// 수정 시 수납 데이터
-				$data['modi_rec'] = $this->cmain_m->sql_row(" SELECT * FROM cms_sales_received WHERE seq='".$this->input->get('rec_seq')."' ");
+				$data['modi_rec'] = $this->cms_main_model->sql_row(" SELECT * FROM cms_sales_received WHERE seq='".$this->input->get('rec_seq')."' ");
 
 				// 라이브러리 로드
 				$this->load->library('form_validation'); // 폼 검증
@@ -1045,9 +1045,9 @@ class Cm1 extends CI_Controller {
 						'reg_worker' => $this->session->userdata('name')
 					);
 					if($this->input->post('modi')=='1'){
-						$result = $this->cmain_m->update_data('cms_sales_received', $ins_data, array('seq' => $this->input->post('rec_seq'))); // 수정 모드일 경우
+						$result = $this->cms_main_model->update_data('cms_sales_received', $ins_data, array('seq' => $this->input->post('rec_seq'))); // 수정 모드일 경우
 					}else{
-						$result = $this->cmain_m->insert_data('cms_sales_received', $ins_data); // 입력 모드일 경우
+						$result = $this->cms_main_model->insert_data('cms_sales_received', $ins_data); // 입력 모드일 경우
 					}
 
 					if( !$result) alert("데이터베이스 에러입니다.", '');
@@ -1065,7 +1065,7 @@ class Cm1 extends CI_Controller {
 		}else if($mdi==2 && $sdi==3) {
 			$this->output->enable_profiler(TRUE); //프로파일러 보기//
 			// 조회 등록 권한 체크
-			$auth = $this->cmain_m->auth_chk('_m1_2_3', $this->session->userdata['user_id']);
+			$auth = $this->cms_main_model->auth_chk('_m1_2_3', $this->session->userdata['user_id']);
 
 			if( !$auth['_m1_2_3'] or $auth['_m1_2_3']==0) {
 				$this->load->view('cms_views/no_auth');
@@ -1075,7 +1075,7 @@ class Cm1 extends CI_Controller {
 				$data['auth'] = $auth['_m1_2_3'];
 
 				// 1. 분양 차수 설정
-				$data['con_diff'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_con_diff WHERE pj_seq='$project' ORDER BY diff_no "); // 프로젝트 등록된 전체 차수
+				$data['con_diff'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_con_diff WHERE pj_seq='$project' ORDER BY diff_no "); // 프로젝트 등록된 전체 차수
 
 				// 2. 납입 회차 설정
 
@@ -1087,13 +1087,13 @@ class Cm1 extends CI_Controller {
 
 				// 6. 회차별 납입가 설정
 				// price - 데이터 불러오기
-				$price = $data['price'] = $this->cmain_m->sql_result(" SELECT *, cms_sales_price.seq AS pr_seq FROM cms_sales_price, cms_sales_con_floor WHERE cms_sales_price.pj_seq='$project' AND con_diff_seq='".$this->input->get('con_diff')."' AND con_floor_seq=cms_sales_con_floor.seq  ORDER BY cms_sales_price.seq ");
-				$pay_sche = $data['pay_sche'] = $this->cmain_m->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project' AND pay_sort='".$this->input->get('pay_sort')."' ORDER BY pay_code ");
+				$price = $data['price'] = $this->cms_main_model->sql_result(" SELECT *, cms_sales_price.seq AS pr_seq FROM cms_sales_price, cms_sales_con_floor WHERE cms_sales_price.pj_seq='$project' AND con_diff_seq='".$this->input->get('con_diff')."' AND con_floor_seq=cms_sales_con_floor.seq  ORDER BY cms_sales_price.seq ");
+				$pay_sche = $data['pay_sche'] = $this->cms_main_model->sql_result(" SELECT * FROM cms_sales_pay_sche WHERE pj_seq='$project' AND pay_sort='".$this->input->get('pay_sort')."' ORDER BY pay_code ");
 
 				$diff_no = $this->input->get('con_diff');
-				$data['pr_diff'] = $this->cmain_m->sql_result(" SELECT	seq, diff_no, diff_name FROM cms_sales_con_diff WHERE pj_seq='$project' AND diff_no='$diff_no' "); // 차수
-				$data['pr_floor'] = $this->cmain_m->sql_result(" SELECT seq, floor_name, COUNT(seq) AS num_floor FROM cms_sales_con_floor WHERE pj_seq='$project' "); // 층별
-				$data['pr_type'] = $this->cmain_m->sql_result(" SELECT seq, type_name, COUNT(seq) AS num_type FROM cms_sales_con_type WHERE pj_seq='$project' "); // 타입
+				$data['pr_diff'] = $this->cms_main_model->sql_result(" SELECT	seq, diff_no, diff_name FROM cms_sales_con_diff WHERE pj_seq='$project' AND diff_no='$diff_no' "); // 차수
+				$data['pr_floor'] = $this->cms_main_model->sql_result(" SELECT seq, floor_name, COUNT(seq) AS num_floor FROM cms_sales_con_floor WHERE pj_seq='$project' "); // 층별
+				$data['pr_type'] = $this->cms_main_model->sql_result(" SELECT seq, type_name, COUNT(seq) AS num_type FROM cms_sales_con_type WHERE pj_seq='$project' "); // 타입
 				$data['pr_row'] = $data['pr_floor'][0]->num_floor*$data['pr_type'][0]->num_type;
 
 				// 라이브러리 로드
@@ -1123,10 +1123,10 @@ class Cm1 extends CI_Controller {
 								'reg_worker' => $this->session->userdata('name')
 							);
 							if(empty($this->input->post("pmt_".$price[$i]->pr_seq."-".$pay_sche[$j]->seq."_h")) OR ($this->input->post("pmt_".$price[$i]->pr_seq."-".$pay_sche[$j]->seq."_h"))=='0') {
-								$result[$j] = $this->cmain_m->insert_data('cms_sales_payment', $pmt_data);
+								$result[$j] = $this->cms_main_model->insert_data('cms_sales_payment', $pmt_data);
 								if( !$result[$j]) {alert('데이터베이스 에러입니다.1', '');}
 							}elseif(($this->input->post("pmt_".$price[$i]->pr_seq."-".$pay_sche[$j]->seq."_h"))=='1') {
-								$result[$j] = $this->cmain_m->update_data('cms_sales_payment', $pmt_data, array('pj_seq'=>$project, 'price_seq'=>$price[$i]->pr_seq, 'pay_sche_seq'=>$pay_sche[$j]->seq));
+								$result[$j] = $this->cms_main_model->update_data('cms_sales_payment', $pmt_data, array('pj_seq'=>$project, 'price_seq'=>$price[$i]->pr_seq, 'pay_sche_seq'=>$pay_sche[$j]->seq));
 								if( !$result[$j]) {alert('데이터베이스 에러입니다.2', '');}
 							}
 						endfor;

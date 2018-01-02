@@ -1,7 +1,7 @@
 <?php
  defined('BASEPATH') OR exit ('No direct script access allowed');
 
-class Cmain_m extends CI_Model
+class cms_main_model extends CI_Model
 {
 	//공통 함수 Start//
 	/**
