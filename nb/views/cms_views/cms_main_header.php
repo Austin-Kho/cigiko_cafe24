@@ -74,9 +74,9 @@
 							</a>
 							<ul class="dropdown-menu" role="menu">
 <?php if($this->member->is_admin() === 'super') : ?>
-								<li><a href="<?php echo $this->config->base_url('admin');?>">관리자 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+								<li><a href="<?php echo $this->config->base_url('admin');?>"><span class="glyphicon glyphicon-cog" aria-hidden="true"> 관리자 페이지</span></a></li>
 <?php endif; ?>
-								<li><a href="<?php echo $this->config->base_url()."cms_member/logout?returnURL=".rawurlencode(base_url(uri_string()));?>">로그아웃</a></li>
+								<li><a href="<?php echo $this->config->base_url('cms_member/logout')."?returnURL=".rawurlencode(base_url(uri_string()));?>"><span class="glyphicon glyphicon-log-out" aria-hidden="true"> 로그아웃</span></a></li>
 								<li><a href="<?php echo $this->config->base_url('cms_member/modify');?>">정보수정</a></li>
 								<li><a href="javascript:" onclick="alert('준비 중입니다!');">공지사항</a></li>
 <?php   else :  ?>
