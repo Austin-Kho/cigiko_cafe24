@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('posts', function () {
+//   return 'Test message';
+// });
+
+Route::get('posts/{postId?}', function ($postId = 1) {
+  return 'Post ID: '. $postId;
+})->name('posts');
+
+Route::get('test', 'TestController@test')->name('test');
+
+Route::get('posts/{postId}/comments/{commentId}', function($postId = 1, $commentId){
+  return 'Post ID: '. $postId. ', Comment ID: '.$commentId;
+});
+
+Route::get('dashboard', function(){
+  return 'Dashboard';
+})->middleware('auth');
