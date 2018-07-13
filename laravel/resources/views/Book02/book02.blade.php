@@ -1,1 +1,8 @@
-개발자를 위한 파이썬
+
+@include('Book02/header')
+
+@include('Book02/sidebar')
+
+@include('Book02/content/01')
+
+@include('Book02/footer')
