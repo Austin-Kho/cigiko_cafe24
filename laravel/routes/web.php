@@ -12,23 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('py');
 });
 
-// Route::get('posts', function () {
-//   return 'Test message';
-// });
+Route::get('book01/{id?}', 'Book01\Book01Controller@index')->name('book01');
 
-Route::get('posts/{postId?}', function ($postId = 1) {
-  return 'Post ID: '. $postId;
-})->name('posts');
-
-Route::get('test', 'TestController@test')->name('test');
-
-Route::get('posts/{postId}/comments/{commentId}', function($postId = 1, $commentId){
-  return 'Post ID: '. $postId. ', Comment ID: '.$commentId;
-});
-
-Route::get('dashboard', function(){
-  return 'Dashboard';
-})->middleware('auth');
+Route::get('book02/{id?}', 'Book02\Book02Controller@index')->name('book02');
