@@ -63,3 +63,11 @@
     </script>
   </head>
   <body>
+    <div class="clearfix page-depth" style="margin-bottom: 50px;">
+      <div class="col-xs-10">
+        <!-- <small><a href="/py/book02"><i class="glyphicon glyphicon-folder-open"></i> 개발자를 위한 파이썬</a></small> -->
+      </div>
+      <div class="col-xs-2" style="text-align: right;">
+        <small><a href="/"><i class="glyphicon glyphicon-home"></i> Python</a></small>
+      </div>
+    </div>

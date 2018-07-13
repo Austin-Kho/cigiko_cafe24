@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                /* background-color: #fff; */
+                background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="./book01">01. 파이썬으로 지루한 작업 자동화 하기</a>
+                    <a href="./book01">01. 파이썬으로 지루한 작업 자동화 하기&nbsp;&nbsp;</a>
                 </div>
                 <div class="links">
                     <a href="./book02">02. 개발자를 위한 파이썬(P y t h o n)</a>
