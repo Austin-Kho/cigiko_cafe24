@@ -11,102 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- 부가적인 테마 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- fonts css -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- Custom styles for this template -->
-    <style media="screen">
-
-    .sub-header {
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-    /*
-     * Sidebar
-     */
-    @media (min-width: 768px) {
-    .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1000;
-        display: block;
-        padding: 20px;
-        overflow-x: hidden;
-        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-        background-color: #f9f5f5;
-        border-right: 1px solid #eee;
-      }
-    }
-
-    /* Sidebar navigation */
-    .nav-sidebar {
-      margin-right: -21px; /* 20px padding + 1px border */
-      margin-bottom: 20px;
-      margin-left: -20px;
-    }
-
-    .nav-sidebar > li > a.d1,
-    .nav-sidebar > li > a.d2,
-    .nav-sidebar > li > a.d3 {
-      padding-right: 20px;
-      font-size: 9pt;
-    }
-    .nav-sidebar > li > a.d1 {
-      padding-left: 20px;
-    }
-    .nav-sidebar > li > a.d2 {
-      padding-left: 40px;
-    }
-    .nav-sidebar > li > a.d3 {
-      padding-left: 60px;
-    }
-
-    .nav-sidebar > .active > a,
-    .nav-sidebar > .active > a:hover,
-    .nav-sidebar > .active > a:focus {
-      color: #fff;
-      background-color: #2872b1;
-    }
-    /*
-     * Main content
-     */
-
-    .main {
-      padding: 20px;
-    }
-    @media (min-width: 768px) {
-      .main {
-        padding-right: 40px;
-        padding-left: 40px;
-      }
-    }
-    .main .page-header {
-      margin-top: 0;
-    }
-
-    .chapter {
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-    }
-
-    /*
-     * Placeholder dashboard ideas
-     */
-
-    .placeholders {
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    .placeholders h4 {
-      margin-bottom: 0;
-    }
-    .placeholder {
-      margin-bottom: 20px;
-    }
-    .placeholder img {
-      display: inline-block;
-      border-radius: 50%;
-    }
-    </style>
+    <link href="/css/dashboard.css" rel="stylesheet">
 
     <script type="text/javascript">
       $(document).ready(function() {
