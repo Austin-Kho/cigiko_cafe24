@@ -17,6 +17,18 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
+    <style media="screen">
+      ::selection { background-color: #63c336; color: #FFF; }
+      ::-moz-selection { background-color: #63c336; color: #FFF; }
+      a#MOVE_TOP_BTN {
+        position: fixed;
+        right: 13%;
+        bottom: 38px;
+        display: none;
+        z-index: 999;
+      }
+    </style>
+
 
     <script type="text/javascript">
       $(document).ready(function() {

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class Book01Controller extends Controller
 {
-  public function index($id='01'){
+  public function index($id='1'){
     return view('Book01/book01');
   }
 }
