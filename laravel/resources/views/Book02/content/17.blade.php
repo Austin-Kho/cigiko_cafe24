@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">1.1 파이썬 코드가 말하는 파이썬의 특징</h2>
+  <h2 class="sub-header">B.1. IPython</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,7 +15,35 @@
       </article>
     </section>
   </div>
-  <h3 class="sub-header">1.1.1 파이</h3>
+
+  <h2 class="sub-header">B.2. Jupyter Notebook</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">B.3. IPython과 Jupyter Notebook 설치</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">B.4. IPython 사용하기</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">B.5. Jupyter Notebook 사용법</h2>
   <div class="chapter">
     <section>
       <article class="">

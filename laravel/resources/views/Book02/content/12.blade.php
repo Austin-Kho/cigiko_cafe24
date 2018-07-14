@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">1.1 파이썬 코드가 말하는 파이썬의 특징</h2>
+  <h2 class="sub-header">12.1. 봇이 뭐죠?</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,7 +15,8 @@
       </article>
     </section>
   </div>
-  <h3 class="sub-header">1.1.1 파이</h3>
+
+  <h2 class="sub-header">12.2. 제작 과정 알아보기</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -23,6 +24,88 @@
       </article>
     </section>
   </div>
+
+  <h2 class="sub-header">12.3. 상호작용하는 주사위 봇 만들기</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.3.1 - 슬랙 봇 API 토큰 얻기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.3.2 - slackbot 패키지 설치</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.3.3 - 파일 만들기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.3.4 - 주사위 기능 설정하기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">12.4. 정기적인 작업을 실행하는 봇 만들기</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.4.1 - API 토큰 얻기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.4.2 - 터미널에서 메시지 보내기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.4.3 - 작업을 파이썬 파일로 만들기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.4.4 - 파이썬 파일을 실행하는 셸 스크립트 만들기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">12.4.5 - crontab을 이용해 스크립트를 주기적으로 실행하기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
   <!-- <li class=@if($id=='112') active @endif><a href="/book02/112" class="d2">12.1 봇이 뭐죠?</a></li>
   <li class=@if($id=='113') active @endif><a href="/book02/113" class="d2">12.2 제작 과정 알아보기</a></li>
   <li class=@if($id=='114') active @endif><a href="/book02/114" class="d2">12.3 상호작용하는 주사위 봇 만들기</a></li>

@@ -1,9 +1,13 @@
 
         <div class="col-sm-4 col-md-3 sidebar">
-          <div class="row" style="border-bottom: solid 1px #ccc; margin-bottom: 20px;">
-            <div class="col-xs-10"><h5><strong>개발자를 위한 파이썬</strong></h5></div>
-            <div class="col-xs-2" style="padding: 8px 7px 6px 0;">
-              <a class="col-xs-2" style="cursor:pointer;"><span class="glyphicon glyphicon-menu-hamburger" title="메뉴"></span></a>
+          <div class="row" style="border-bottom: solid 1px #ccc; padding-bottom: 10px; margin-bottom: 20px;">
+            <div class="col-xs-10">
+              <!-- <form class="navbar-form navbar-right"> -->
+                <input type="text" class="form-control" placeholder="검색어를 입력하세요.">
+              <!-- </form> -->
+            </div>
+            <div class="col-xs-2" style="padding: 8px 7px 6px 0; text-align: right; cursor:pointer;">
+              <span class="glyphicon glyphicon-menu-hamburger" title="메뉴"></span>
             </div>
           </div>
 
@@ -47,6 +51,10 @@
           </div>
         </div>
 
+        <div class="" style="display: none;">
+
+        </div>
+
 
         <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main" style="padding-bottom:5px;">
           <!-- <div class="btn-group pull-right menu-group" role="group">
@@ -56,19 +64,19 @@
           </div> -->
           <div class="menu-wikidocs"></div>
 
-          <div class="clearfix page-depth" style="margin-bottom: 50px;">
+          <div class="clearfix page-depth" style="margin-bottom: 30px;">
             <div class="col-xs-9" style="color:#afb1af;">
               <small><a href="/book02"><i class="glyphicon glyphicon-folder-open"></i> 개발자를 위한 파이썬</a> / </small>
-              <small><a href="/book02/1">{{$sub[$id]}}</a></small>
+              <small><a href="/book02/{{$id}}">{{$sub[$id]}}</a></small>
             </div>
             <div class="col-xs-3" style="text-align: right;">
               <small><a href="/"><i class="glyphicon glyphicon-home"></i> Python Books</a></small>
             </div>
           </div>
 
-          <div class="row" style="margin-bottom: 50px; color:#FFF; font-size: 30tp;">
+          <div class="row" style="margin-bottom: 30px; color:#d0dae6; font-size: 30tp;">
             @if($id!='1')
-              <div onclick="location.href='/book02/{{(string)((int)($id)-1)}}'" class="col-xs-1" style="background-color:#82bbf6; padding: 10px; cursor: pointer;">
+              <div onclick="location.href='/book02/{{(string)((int)($id)-1)}}'" class="col-xs-1" style="padding: 10px; cursor: pointer; font-size: 30pt;">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
               </div>
             @endif
@@ -78,7 +86,7 @@
               <div class="col-xs-10"> </div>
             @endif
             @if($id!=='18')
-              <div onclick="location.href='/book02/{{(string)((int)($id)+1)}}'" class="col-xs-1"  style="background-color:#82bbf6; padding: 10px; cursor: pointer; text-align: right;">
+              <div onclick="location.href='/book02/{{(string)((int)($id)+1)}}'" class="col-xs-1"  style="padding: 10px; cursor: pointer; text-align: right; font-size: 30pt;">
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
               </div>
             @endif

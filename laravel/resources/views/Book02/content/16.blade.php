@@ -7,7 +7,46 @@
     </section>
   </div>
 
-  <h2 class="sub-header">1.1 파이썬 코드가 말하는 파이썬의 특징</h2>
+  <h2 class="sub-header">A.1. 패키지 관리자 pip</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">A.1.1 - 우분투에서 설치하기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">A.1.2 - macOS 및 윈도우에서 설치하기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">A.2. 가상 환경 venv</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">A.2.1 - 가상 환경 설정</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">A.3. pip와 venv를 동시에 활용하기</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,14 +54,7 @@
       </article>
     </section>
   </div>
-  <h3 class="sub-header">1.1.1 파이</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
+
   <!-- <li class=@if($id=='173') active @endif><a href="/book02/173" class="d2">A.1 패키지 관리자 pip</a></li>
   <li class=@if($id=='174') active @endif><a href="/book02/174" class="d3">A.1.1 우분투에서 설치하기</a></li>
   <li class=@if($id=='175') active @endif><a href="/book02/175" class="d3">A.1.2 macOS 및 윈도우에서 설치하기</a></li>

@@ -7,16 +7,66 @@
     </section>
   </div>
 
-  <h2 class="sub-header">1.1 파이썬 코드가 말하는 파이썬의 특징</h2>
+  <h2 class="sub-header">7.1. 모듈</h2>
   <div class="chapter">
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
+
+    <h3 class="sub-header">7.1.1 - 모듈 만들기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">7.1.2 - 모듈 불러오기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">7.1.3 - 특정 함수나 클래스만 불러오기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">7.1.4 - 다른 이름으로 모듈 불러오기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">7.1.5 - 모듈 실행하기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
   </div>
-  <h3 class="sub-header">1.1.1 파이</h3>
+
+  <h2 class="sub-header">7.2. 패키지</h2>
   <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">7.2.1 - 패키지 만들기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">7.2.2 - 패키지 불러오기</h3>
     <section>
       <article class="">
         <p>내용 입력</p>

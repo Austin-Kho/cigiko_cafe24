@@ -17,26 +17,6 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
-    <style media="screen">
-      ::selection { background-color: #63c336; color: #FFF; }
-      ::-moz-selection { background-color: #63c336; color: #FFF; }
-      .chapter { padding: 10px;}
-      .sub-header {
-        padding-bottom: 10px;
-        border-bottom: 1px solid #eee;
-      }
-      .main .page-header {
-        margin-top: 0;
-      }
-      section { padding-bottom: 30px; margin: 0;}
-      a#MOVE_TOP_BTN {
-        position: fixed;
-        right: 2.5%;
-        bottom: 70px;
-        display: none;
-        z-index: 999;
-      }
-    </style>
     <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
     <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
     <!--[if lt IE 9]>
@@ -78,5 +58,12 @@
     </script>
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/book02">개발자를 위한 파이썬</a>
+        </div>
+      </div>
+    </nav>
     <div class="container-fluid">
       <div class="row">

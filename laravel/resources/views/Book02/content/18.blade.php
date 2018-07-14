@@ -7,16 +7,96 @@
     </section>
   </div>
 
-  <h2 class="sub-header">1.1 파이썬 코드가 말하는 파이썬의 특징</h2>
+  <h2 class="sub-header">C.1. 코드 레이아웃</h2>
   <div class="chapter">
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
+
+    <h3 class="sub-header">C.1.1 - 들여쓰기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.1.2 - 탭이냐 스페이스냐</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.1.3 - 한 행의 길이는?</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.1.4 - 빈 행은 어떻게 얼마나?</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.1.5 - 소스 코드 파일의 인코딩은 어떻게?</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.1.6 - imports</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
   </div>
-  <h3 class="sub-header">1.1.1 파이</h3>
+
+  <h2 class="sub-header">C.2. 공백 표현과 구문</h2>
   <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.2.1 - 성가신 것들</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.2.2 - 그 외의 추천하는 방법</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">C.3. 주석</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.3.1 - 블록 주석</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">C.3.2 - 인라인 주석</h3>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -36,4 +116,3 @@
   <li class=@if($id=='197') active @endif><a href="/book02/197" class="d2">C.3 주석</a></li>
   <li class=@if($id=='198') active @endif><a href="/book02/198" class="d3">C.3.1 블록 주석</a></li>
   <li class=@if($id=='199') active @endif><a href="/book02/199" class="d3">C.3.2 인라인 주석</a></li> -->
-  <!-- <li class=@if($id=='200') active @endif><a href="/book02/200" class="d1">찾아보기</a></li> -->

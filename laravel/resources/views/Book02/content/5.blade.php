@@ -7,15 +7,30 @@
     </section>
   </div>
 
-  <h2 class="sub-header">1.1 파이썬 코드가 말하는 파이썬의 특징</h2>
+  <h2 class="sub-header">5.1. 함수</h2>
   <div class="chapter">
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
+
+    <h3 class="sub-header">5.1.1 - 타입 힌팅</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">5.1.2 - 함수를 변수처럼 전달하기</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
   </div>
-  <h3 class="sub-header">1.1.1 파이</h3>
+
+  <h2 class="sub-header">5.2. 람다</h2>
   <div class="chapter">
     <section>
       <article class="">
