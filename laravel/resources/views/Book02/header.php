@@ -58,10 +58,10 @@
     </script>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/book02">개발자를 위한 파이썬</a>
+          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand"> > </span><a class="navbar-brand" href="/book02">개발자를 위한 파이썬</a>
         </div>
       </div>
     </nav>

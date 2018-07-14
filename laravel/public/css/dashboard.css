@@ -3,10 +3,7 @@
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
-body {
-  padding-top: 50px;
-  color: #5b5c5d;
-}
+
 
 ::selection { background-color: #51c8fe; color: #FFF; }
 ::-moz-selection { background-color: #51c8fe; color: #FFF; }
@@ -14,8 +11,8 @@ body {
 section { padding-bottom: 30px; margin: 0;}
 a#MOVE_TOP_BTN {
   position: fixed;
-  right: 2.5%;
-  bottom: 70px;
+  right: 3%;
+  bottom: 30px;
   display: none;
   z-index: 999;
 }
@@ -36,21 +33,6 @@ a#MOVE_TOP_BTN {
 /* .sidebar {
   display: none;
 } */
-@media (min-width: 768px) {
-.sidebar {
-    position: fixed;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f9f5f5;
-    border-right: 1px solid #eee;
-  }
-}
 
 /* Sidebar navigation */
 .nav-sidebar {
@@ -59,20 +41,9 @@ a#MOVE_TOP_BTN {
   margin-left: -20px;
 }
 
-.nav-sidebar > li > a.d1,
-.nav-sidebar > li > a.d2,
-.nav-sidebar > li > a.d3 {
-  padding-right: 20px;
+.nav-sidebar > li > a {
+  padding: 8px 20px;
   font-size: 10pt;
-}
-.nav-sidebar > li > a.d1 {
-  padding-left: 20px;
-}
-.nav-sidebar > li > a.d2 {
-  padding-left: 40px;
-}
-.nav-sidebar > li > a.d3 {
-  padding-left: 60px;
 }
 
 .nav-sidebar > .active > a,
@@ -89,12 +60,12 @@ a#MOVE_TOP_BTN {
  */
 
 .main {
-  padding: 20px;
+  padding: 30px;
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 60px;
+    padding-left: 60px;
   }
 }
 
@@ -128,4 +99,668 @@ a#MOVE_TOP_BTN {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+}
+
+
+
+
+body, input, select {
+  /* font-family: "Malgun Gothic"; */
+  color: #5b5c5d;
+}
+
+body {
+  padding-top: 50px;
+}
+
+textarea {
+  font-size:12px !important;
+  font-family: "굴림체", Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+.navbar-inner {
+  /*height:55px;*/
+}
+
+.navbar {
+  margin:0;
+}
+
+blockquote {
+  margin:10px 0 !important;
+  padding:5px 0;
+  border:solid 1px #ddd;
+
+  /*border-left:solid 6px #ddd;*/
+  /*background-color: #fcfcfc;*/
+  background-color: #fff;
+  border-radius:5px;
+}
+blockquote p {
+/*background-color: #F7F7F9;*/
+  padding:5px 10px !important;
+  /*font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,"맑은고딕",'Malgun Gothic';*/
+  font-weight:normal;
+  font-size:13px !important;
+  overflow-x:auto;
+  padding:0;
+  margin-bottom:20px;
+  display:block;
+  line-height:180%;
+  color:#000 !important;
+}
+
+.menu-nav {
+  margin:0 !important;
+  padding:0 !important;
+  font-family: Consolas;
+  font-size: 18px;
+}
+.menu-btn {
+  margin-top:7px !important;
+}
+
+.book-item {
+  /*margin:20px;*/
+  /*margin-bottom:30px;*/
+}
+.book-detail {
+  color: #808080;
+  line-height: 1.8;
+  font-size:14px;
+}
+
+.book-image-box {
+  width:110px;
+  height:140px;
+
+  border: solid 1px #ccc;
+  padding:5px;
+
+  /*margin-left:-10px;*/
+  /*vertical-align: middle;*/
+  /*text-align: center;*/
+
+  position:relative;
+}
+
+.book-image {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  /*vertical-align: middle;*/
+  text-align: center;
+  max-width:100px;
+}
+
+.book-subject {
+  font-size:16px;
+  font-weight: bold;
+  margin-top:0;
+  color: #4183C4;
+}
+.book-author {
+  margin-top:10px;
+  /*color:#333;*/
+}
+.book-time {
+  /*color:#aaa;*/
+  /*font-size:12px;*/
+}
+
+.navbar-adv {
+  margin-left:10px !important;
+}
+
+.navbar-adv span {
+  font-size:12px;
+  font-weight: bold;
+}
+
+/* book */
+.recent_page_comments {
+  margin-top:20px;
+}
+
+/*page*/
+.content {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.content h1, h2, h3, h4, h5, h6 {
+  /* font-family: "Malgun Gothic"; */
+}
+
+.toc {
+  /*background-color: #f9f9f9;*/
+  /*padding:10px;*/
+  /* border:solid 1px #ccc; */
+  font-size:12px;
+  /*-webkit-border-radius: 4px;*/
+  /*-moz-border-radius: 4px;*/
+  /*border-radius: 4px;*/
+  /* padding:20px 20px; */
+  margin:0px;
+  display:none;
+}
+
+.toc-mobile {
+  margin-top:10px;
+  border-top:solid 1px #ddd;
+}
+
+.page .toc {
+  margin:0px;
+  display:block;
+}
+
+.toc-edit {
+  /* background-color: #f9f9f9; */
+}
+.toc-subject {
+  /* background-color: #f9f9f9; */
+  color: #003bb3;
+  font-size:14px;
+  font-weight:bold;
+  padding: 0px 10px 10px 10px;
+  /*padding:10px;*/
+  /*margin:5px 5px 10px 5px;*/
+
+  /*display:inline-block;*/
+  border-bottom:1px solid #ccc;
+}
+.toc ul {
+  margin:0;
+  padding:0px;
+}
+.toc li {
+  list-style: none;
+  margin:10px;
+}
+.selected_toc {
+  font-weight: bold;
+  color: #003bb3;
+  /* text-decoration: underline; */
+}
+
+.toc-open {
+  background-color: #f2f2f2;
+  padding:5px;
+  /*margin-top:10px;*/
+}
+
+.book-info {
+  margin:20px 0 15px 0;
+  /*font-size: 12px;*/
+  color:#808080;
+}
+
+.page-book-subject {
+  color:#fff;
+  /*font-weight: bold;*/
+  font-size:16px;
+  margin-top:7px;
+}
+
+.page-subject {
+  margin-top:0;
+  padding-bottom:10px;
+  border-bottom: solid 1px #666;
+}
+
+.page-prev-next {
+  /*background-color: #f9f9f9;*/
+  padding:10px 0 10px 0;
+  border-top:solid 1px #666;
+  margin-top:20px;
+  font-size: 12px;
+
+}
+.page-prev-next ul {
+  margin:0 !important;
+  padding:0 !important;
+}
+.page-prev-next li {
+  list-style: none;
+  margin:5px 5px 5px 0;
+}
+
+.footer {
+  border-top: solid 1px #f2f2f2;
+  margin-top:30px;
+  margin-bottom:30px;
+  padding-top:10px;
+
+  font-size:12px;
+}
+
+
+/*comments*/
+.user_comments {
+  /*display:none;*/
+}
+.comments, .pages {
+  /*border-top:solid 1px #666;*/
+  margin:10px 0 5px 0;
+  /*background-color: #fcfcfc;*/
+}
+.comments .comment, .pages .comment {
+  font-size:12px;
+  color:#333;
+  margin:0;
+  padding:10px 0;
+  /*border-bottom:solid 1px #333;*/
+}
+.comment_border_top {
+  border-top:dotted 1px #ccc;
+}
+.comment_border_bottom {
+  border-bottom:dotted 1px #ccc;
+}
+
+/* markdown toc */
+.page .toc {
+  background: #fefefe;
+  border:dotted 1px #ccc;
+  font-size:12px;
+  padding:10px;
+  /*display: inline-block;*/
+}
+.page .toc ul {
+  padding:5px;
+  margin:0;
+}
+
+.page .toc li {
+  list-style: decimal;
+  margin: 0 0 0 20px;
+  padding-bottom:5px;
+}
+
+.footnote {
+  font-size:12px;
+}
+
+.toc-area {
+  /*padding-bottom:10px;*/
+}
+
+.toc-area::-webkit-scrollbar {
+  /*display: none;*/
+}
+.toc-area::-webkit-scrollbar {
+  width: 5px;
+}
+
+.toc-area::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.toc-area::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+
+.nano { background: #bba; width: 500px; height: 500px; }
+.nano .content { padding: 10px; }
+.nano .pane   { background: #888; }
+.nano .slider { background: #111; }
+
+.back-to-top {
+  position:fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+.back-to-home {
+  position:fixed;
+  top: 1em;
+  right: 1em;
+  cursor:pointer;
+}
+
+div.tip {
+  padding:0 15px;
+  border: solid 2px #F7BE81;
+  border-radius:10px;
+  /*background: #FFFCE4*/
+}
+
+.scrollable-menu {
+  height: auto;
+  overflow-x: hidden;
+}
+
+/* Hide for mobile, show later */
+.sidebar {
+  /*display: none;*/
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding-bottom:20px;
+  }
+
+  .sidebar-edit {
+    /* top: 51px; */
+  }
+}
+
+.sidebar-padding {
+  padding:0 14%;
+}
+
+.prev_icon {
+  position: fixed;
+  top:50%;
+  left: 10%;
+  color:red;
+}
+
+.next_icon {
+  position: fixed;
+  top:50%;
+  right: 10%;
+}
+
+.prev_icon:link, .next_icon:link { color:#ccc; }
+.prev_icon:visited, .next_icon:visited { color: #ccc; }
+.prev_icon:hover, .next_icon:hover { color:#aaa !important; }
+.prev_icon:active, next_icon:active { color: #aaa; }
+
+
+.list-group-item:first-child {
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-top:0;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.list-group {
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+}
+
+.list-group-item {
+  border:0;
+}
+
+.list-group-item-mobile {
+  border:solid 1px #ddd;
+}
+
+.navbar-toc {
+  padding:0 20px 0 0px;
+  margin:0;
+  -webkit-box-shadow:none;
+  border-bottom: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+}
+
+.list-group-toc {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.page-depth {
+  padding:0;
+  margin-bottom:20px;
+}
+
+.page-depth .breadcrumb {
+  padding:0 !important;
+  background:#fff;
+  margin:0 !important;
+}
+
+.page-depth li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page-depth a {color:#333;cursor:pointer;}
+.page-depth a:hover {color:#000;}
+
+.page_child {
+  margin:30px 0 ;
+}
+
+.page_child ul {
+  padding-left:25px !important;
+}
+
+.page_child li {
+  list-style-type: square;
+}
+
+.page_child a {color:#888;}
+.page_child a:hover {color:#333;}
+
+.menu_link {color:#888; cursor:pointer;}
+.menu_link:hover {color:#333;text-decoration:none;}
+
+.home_link {color:#ccc;}
+.home_link:hover {color:#aaa;text-decoration:none;}
+
+.menu-wikidocs {
+  margin:10px 0;
+}
+
+.menu-wikidocs a {color:#eee; cursor:pointer;}
+.menu-wikidocs a:hover {color:#333;text-decoration:none;}
+
+.input-search {
+  width:100%;
+  padding:15px 15px;
+  border:0;
+  /*border-bottom:solid 1px #ccc;*/
+}
+
+.input-search:focus{
+  outline: none;
+}
+
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 16px 15px;
+  pointer-events: none;
+  color: #aaa;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  35px; }
+.right-addon input { padding-right: 30px; }
+
+/* menu-group */
+.menu-group {
+  position:fixed;
+  left:20px;
+  top:15px;
+  display:none;
+}
+
+.page-content {
+  margin-bottom:20px;
+}
+
+
+
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+
+*/
+
+pre code {
+  display: block; padding: 0.5em;
+  background: #F0F0F0;
+}
+
+pre code,
+pre .subst,
+pre .tag .title,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title {
+  color: black;
+}
+
+pre .string,
+pre .title,
+pre .constant,
+pre .parent,
+pre .tag .value,
+pre .rules .value,
+pre .rules .value .number,
+pre .preprocessor,
+pre .haml .symbol,
+pre .ruby .symbol,
+pre .ruby .symbol .string,
+pre .aggregate,
+pre .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .addition,
+pre .flow,
+pre .stream,
+pre .bash .variable,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .tex .special,
+pre .erlang_repl .function_or_atom,
+pre .asciidoc .header,
+pre .markdown .header,
+pre .coffeescript .attribute {
+  color: #800;
+}
+
+pre .comment,
+pre .annotation,
+pre .template_comment,
+pre .diff .header,
+pre .chunk,
+pre .asciidoc .blockquote,
+pre .markdown .blockquote {
+  color: #888;
+}
+
+pre .number,
+pre .date,
+pre .regexp,
+pre .literal,
+pre .hexcolor,
+pre .smalltalk .symbol,
+pre .smalltalk .char,
+pre .go .constant,
+pre .change,
+pre .lasso .variable,
+pre .asciidoc .bullet,
+pre .markdown .bullet,
+pre .asciidoc .link_url,
+pre .markdown .link_url {
+  color: #080;
+}
+
+pre .label,
+pre .javadoc,
+pre .ruby .string,
+pre .decorator,
+pre .filter .argument,
+pre .localvars,
+pre .array,
+pre .attr_selector,
+pre .important,
+pre .pseudo,
+pre .pi,
+pre .haml .bullet,
+pre .doctype,
+pre .deletion,
+pre .envvar,
+pre .shebang,
+pre .apache .sqbracket,
+pre .nginx .built_in,
+pre .tex .formula,
+pre .erlang_repl .reserved,
+pre .prompt,
+pre .asciidoc .link_label,
+pre .markdown .link_label,
+pre .vhdl .attribute,
+pre .clojure .attribute,
+pre .asciidoc .attribute,
+pre .lasso .attribute,
+pre .coffeescript .property {
+  color: #88F
+}
+
+pre .keyword,
+pre .id,
+pre .title,
+pre .built_in,
+pre .aggregate,
+pre .css .tag,
+pre .javadoctag,
+pre .phpdoc,
+pre .yardoctag,
+pre .smalltalk .class,
+pre .winutils,
+pre .bash .variable,
+pre .apache .tag,
+pre .go .typename,
+pre .tex .command,
+pre .asciidoc .strong,
+pre .markdown .strong,
+pre .request,
+pre .status {
+  font-weight: bold;
+}
+
+pre .asciidoc .emphasis,
+pre .markdown .emphasis {
+  font-style: italic;
+}
+
+pre .nginx .built_in {
+  font-weight: normal;
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .lasso .markup,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
 }
