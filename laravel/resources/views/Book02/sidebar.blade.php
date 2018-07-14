@@ -94,10 +94,9 @@
             <li class=@if($id=='80') active @endif><a href="/book02/80" class="d3">8.1.4 for 문 이용하기</a></li>
             <li class=@if($id=='81') active @endif><a href="/book02/81" class="d2">8.2 파일 닫기</a></li>
             <li class=@if($id=='82') active @endif><a href="/book02/82" class="d3">8.2.1 with 이용하기</a></li> -->
-            <hr>
           </div>
 
-          <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF;">
+          <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
             <div class="col-xs-12"><h5>II 도전! 파이썬 실무 예제</h5></div>
           </div>
 
@@ -191,7 +190,12 @@
             <li class=@if($id=='169') active @endif><a href="/book02/169" class="d3">15.3.3 매시업 API 서버 만들기</a></li>
             <li class=@if($id=='170') active @endif><a href="/book02/170" class="d3">15.3.4 HTML 렌더링을 위한 템플릿</a></li>
             <li class=@if($id=='171') active @endif><a href="/book02/171" class="d3">15.3.5 매시업 응용</a></li> -->
-            <hr>
+
+          </div>
+          <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
+            <div class="col-xs-12"><h5>Appendix</h5></div>
+          </div>
+          <div class="nav nav-sidebar">
             <li class=@if($id=='16') active @endif><a href="/book02/16" class="d1">A. pip 설치와 venv 설정하기</a></li>
             <!-- <li class=@if($id=='173') active @endif><a href="/book02/173" class="d2">A.1 패키지 관리자 pip</a></li>
             <li class=@if($id=='174') active @endif><a href="/book02/174" class="d3">A.1.1 우분투에서 설치하기</a></li>
@@ -223,3 +227,40 @@
             <!-- <li class=@if($id=='200') active @endif><a href="/book02/200" class="d1">찾아보기</a></li> -->
           </div>
         </div>
+
+
+        <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main" style="padding-bottom:5px;">
+          <!-- <div class="btn-group pull-right menu-group" role="group">
+            <small>
+              <a class="menu_link menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" title="메뉴"></span></a>
+            </small>
+          </div> -->
+          <div class="menu-wikidocs"></div>
+
+          <div class="clearfix page-depth" style="margin-bottom: 50px;">
+            <div class="col-xs-9" style="color:#afb1af;">
+              <small><a href="/book02"><i class="glyphicon glyphicon-folder-open"></i> 개발자를 위한 파이썬</a> / </small>
+              <small><a href="/book02/1">{{$sub[$id]}}</a></small>
+            </div>
+            <div class="col-xs-3" style="text-align: right;">
+              <small><a href="/"><i class="glyphicon glyphicon-home"></i> Python Books</a></small>
+            </div>
+          </div>
+
+          <div class="row" style="margin-bottom: 50px; color:#FFF; font-size: 30tp;">
+            @if($id!='1')
+              <div onclick="location.href='/book02/{{(string)((int)($id)-1)}}'" class="col-xs-1" style="background-color:#82bbf6; padding: 10px; cursor: pointer;">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              </div>
+            @endif
+            @if($id=='1' or $id==18)
+              <div class="col-xs-11"> </div>
+            @else
+              <div class="col-xs-10"> </div>
+            @endif
+            @if($id!=='18')
+              <div onclick="location.href='/book02/{{(string)((int)($id)+1)}}'" class="col-xs-1"  style="background-color:#82bbf6; padding: 10px; cursor: pointer; text-align: right;">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              </div>
+            @endif
+          </div>

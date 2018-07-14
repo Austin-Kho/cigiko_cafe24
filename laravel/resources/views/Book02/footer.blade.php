@@ -1,8 +1,11 @@
-
-      <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
-        <div id="disqus_thread" style="margin-top: 50px;"></div>
+      </div>
+      <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main" style="padding-top: 0;">
+        <div class="" style="margin-top: 0;">
+          @if($id!='1')<p>이전글 : <a href="book02/{{(string)((int)$id-1)}}">{{$sub[(string)((int)$id-1)]}}</a></p>@endif
+          @if($id!=='18')<p>다음글 : <a href="book02/{{(string)((int)$id+1)}}">{{$sub[(string)((int)$id+1)]}}</a></p>@endif
+        </div>
+        <div id="disqus_thread" style="margin-top: 60px;"></div>
         <script>
-
           /**
           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
@@ -24,15 +27,9 @@
     </div>
   </div>
 
-  <div style="font-size: 25pt; text-align:right;">
-    <a id="MOVE_TOP_BTN" href="#" style=" color: #9cbbf7;"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></a>
+  <div style="font-size: 25pt;">
+    <a id="MOVE_TOP_BTN" href="#" style=" color: #b4dea0;"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></a>
   </div>
-
-  <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
   <script id="dsq-count-scr" src="//cigiko.disqus.com/count.js" async></script>
 </body>
 </html>
