@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.1. 변수 선언</h2>
+  <h3 class="sub-header">3.1. 변수 선언</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,7 +16,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.2. 정수</h2>
+  <h3 class="sub-header">3.2. 정수</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -25,7 +25,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.3. 실수</h2>
+  <h3 class="sub-header">3.3. 실수</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -34,7 +34,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.4. 정수와 실수 연산</h2>
+  <h3 class="sub-header">3.4. 정수와 실수 연산</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -43,7 +43,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.5. 문자열</h2>
+  <h3 class="sub-header">3.5. 문자열</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -51,30 +51,21 @@
       </article>
     </section>
 
-    <h3 class="sub-header">3.5.1 - 기본적인 선언과 사용</h3>
+    <h4 class="sub-header">3.5.1 - 기본적인 선언과 사용</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">3.5.2 - raw 문자열 표현법</h3>
+    <h4 class="sub-header">3.5.2 - raw 문자열 표현법</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">3.5.3 - 멀티라인 문자열 표현법</h3>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h2 class="sub-header">3.6. 문자열의 연산</h2>
-  <div class="chapter">
+    <h4 class="sub-header">3.5.3 - 멀티라인 문자열 표현법</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -82,37 +73,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.7. 리스트</h2>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h3 class="sub-header">3.7.1 - 리스트 연산</h3>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h3 class="sub-header">3.7.2 - 리스트 아이템에 접근하기</h3>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h3 class="sub-header">3.7.3 - 문자열을 리스트처럼 다루기</h3>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h2 class="sub-header">3.8. 딕셔너리</h2>
+  <h3 class="sub-header">3.6. 문자열의 연산</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -121,7 +82,37 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.9. 집합</h2>
+  <h3 class="sub-header">3.7. 리스트</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">3.7.1 - 리스트 연산</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">3.7.2 - 리스트 아이템에 접근하기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">3.7.3 - 문자열을 리스트처럼 다루기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h3 class="sub-header">3.8. 딕셔너리</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -130,7 +121,16 @@
     </section>
   </div>
 
-  <h2 class="sub-header">3.10. 튜플</h2>
+  <h3 class="sub-header">3.9. 집합</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h3 class="sub-header">3.10. 튜플</h3>
   <div class="chapter">
     <section>
       <article class="">

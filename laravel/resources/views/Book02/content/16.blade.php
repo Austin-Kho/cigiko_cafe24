@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">A.1. 패키지 관리자 pip</h2>
+  <h3 class="sub-header">A.1. 패키지 관리자 pip</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,14 +15,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">A.1.1 - 우분투에서 설치하기</h3>
+    <h4 class="sub-header">A.1.1 - 우분투에서 설치하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">A.1.2 - macOS 및 윈도우에서 설치하기</h3>
+    <h4 class="sub-header">A.1.2 - macOS 및 윈도우에서 설치하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -30,7 +30,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">A.2. 가상 환경 venv</h2>
+  <h3 class="sub-header">A.2. 가상 환경 venv</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -38,7 +38,7 @@
       </article>
     </section>
 
-    <h3 class="sub-header">A.2.1 - 가상 환경 설정</h3>
+    <h4 class="sub-header">A.2.1 - 가상 환경 설정</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -46,7 +46,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">A.3. pip와 venv를 동시에 활용하기</h2>
+  <h3 class="sub-header">A.3. pip와 venv를 동시에 활용하기</h3>
   <div class="chapter">
     <section>
       <article class="">

@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">5.1. 함수</h2>
+  <h3 class="sub-header">5.1. 함수</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,14 +15,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">5.1.1 - 타입 힌팅</h3>
+    <h4 class="sub-header">5.1.1 - 타입 힌팅</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">5.1.2 - 함수를 변수처럼 전달하기</h3>
+    <h4 class="sub-header">5.1.2 - 함수를 변수처럼 전달하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -30,7 +30,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">5.2. 람다</h2>
+  <h3 class="sub-header">5.2. 람다</h3>
   <div class="chapter">
     <section>
       <article class="">

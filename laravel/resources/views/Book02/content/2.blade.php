@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.1. 파이썬 코드가 말하는 파이썬의 특징</h2>
+  <h3 class="sub-header">2.1. 파이썬 코드가 말하는 파이썬의 특징</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,7 +16,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.2. 들여쓰기</h2>
+  <h3 class="sub-header">2.2. 들여쓰기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -25,7 +25,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.3. 세미콜론 없음</h2>
+  <h3 class="sub-header">2.3. 세미콜론 없음</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -34,7 +34,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.4. 인터랙티브 인터프리터</h2>
+  <h3 class="sub-header">2.4. 인터랙티브 인터프리터</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -43,7 +43,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.5. py 파일 실행</h2>
+  <h3 class="sub-header">2.5. py 파일 실행</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -52,7 +52,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.6. py 파일 인코딩</h2>
+  <h3 class="sub-header">2.6. py 파일 인코딩</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -61,7 +61,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.7. Pythonic way</h2>
+  <h3 class="sub-header">2.7. Pythonic way</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -70,7 +70,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">2.8. 파이썬 2와 파이썬 3의 차이점</h2>
+  <h3 class="sub-header">2.8. 파이썬 2와 파이썬 3의 차이점</h3>
   <div class="chapter">
     <section>
       <article class="">

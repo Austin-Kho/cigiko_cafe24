@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">B.1. IPython</h2>
+  <h3 class="sub-header">B.1. IPython</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,7 +16,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">B.2. Jupyter Notebook</h2>
+  <h3 class="sub-header">B.2. Jupyter Notebook</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -25,7 +25,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">B.3. IPython과 Jupyter Notebook 설치</h2>
+  <h3 class="sub-header">B.3. IPython과 Jupyter Notebook 설치</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -34,7 +34,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">B.4. IPython 사용하기</h2>
+  <h3 class="sub-header">B.4. IPython 사용하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -43,7 +43,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">B.5. Jupyter Notebook 사용법</h2>
+  <h3 class="sub-header">B.5. Jupyter Notebook 사용법</h3>
   <div class="chapter">
     <section>
       <article class="">

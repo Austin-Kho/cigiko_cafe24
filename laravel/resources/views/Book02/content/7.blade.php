@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">7.1. 모듈</h2>
+  <h3 class="sub-header">7.1. 모듈</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,35 +15,35 @@
       </article>
     </section>
 
-    <h3 class="sub-header">7.1.1 - 모듈 만들기</h3>
+    <h4 class="sub-header">7.1.1 - 모듈 만들기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">7.1.2 - 모듈 불러오기</h3>
+    <h4 class="sub-header">7.1.2 - 모듈 불러오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">7.1.3 - 특정 함수나 클래스만 불러오기</h3>
+    <h4 class="sub-header">7.1.3 - 특정 함수나 클래스만 불러오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">7.1.4 - 다른 이름으로 모듈 불러오기</h3>
+    <h4 class="sub-header">7.1.4 - 다른 이름으로 모듈 불러오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">7.1.5 - 모듈 실행하기</h3>
+    <h4 class="sub-header">7.1.5 - 모듈 실행하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -51,7 +51,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">7.2. 패키지</h2>
+  <h3 class="sub-header">7.2. 패키지</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -59,14 +59,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">7.2.1 - 패키지 만들기</h3>
+    <h4 class="sub-header">7.2.1 - 패키지 만들기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">7.2.2 - 패키지 불러오기</h3>
+    <h4 class="sub-header">7.2.2 - 패키지 불러오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>

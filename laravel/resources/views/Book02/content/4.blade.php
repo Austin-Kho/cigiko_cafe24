@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">4.1. if 문</h2>
+  <h3 class="sub-header">4.1. if 문</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,14 +15,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">4.1.1 - else 문</h3>
+    <h4 class="sub-header">4.1.1 - else 문</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">4.1.2 - elif 문</h3>
+    <h4 class="sub-header">4.1.2 - elif 문</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -30,7 +30,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">4.2. and, or, not</h2>
+  <h3 class="sub-header">4.2. and, or, not</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -38,7 +38,7 @@
       </article>
     </section>
 
-    <h3 class="sub-header">4.2.1 - 리스트, 딕셔너리, 집합, 튜플과 함께 사용하는 in</h3>
+    <h4 class="sub-header">4.2.1 - 리스트, 딕셔너리, 집합, 튜플과 함께 사용하는 in</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -46,39 +46,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">4.3. while 문</h2>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h2 class="sub-header">4.4. for 문</h2>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h3 class="sub-header">4.4.1 - 리스트 및 딕셔너리와 함께 for 문 사용하기</h3>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h3 class="sub-header">4.4.2 - range() 함수와 함께 사용하기</h3>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h2 class="sub-header">4.5. break</h2>
+  <h3 class="sub-header">4.3. while 문</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -87,7 +55,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">4.6. continue</h2>
+  <h3 class="sub-header">4.4. for 문</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -95,7 +63,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">4.6.1 - else</h3>
+    <h4 class="sub-header">4.4.1 - 리스트 및 딕셔너리와 함께 for 문 사용하기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">4.4.2 - range() 함수와 함께 사용하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -103,7 +78,32 @@
     </section>
   </div>
 
-  <h2 class="sub-header">4.7. pass</h2>
+  <h3 class="sub-header">4.5. break</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h3 class="sub-header">4.6. continue</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">4.6.1 - else</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h3 class="sub-header">4.7. pass</h3>
   <div class="chapter">
     <section>
       <article class="">

@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">14.1. 팬더스</h2>
+  <h3 class="sub-header">14.1. 팬더스</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,7 +16,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">14.2. 설치하기</h2>
+  <h3 class="sub-header">14.2. 설치하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -25,7 +25,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">14.3. 데이터 타입 만들기</h2>
+  <h3 class="sub-header">14.3. 데이터 타입 만들기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -33,14 +33,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">14.3.1 - Series 데이터 타입 만들기</h3>
+    <h4 class="sub-header">14.3.1 - Series 데이터 타입 만들기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.3.2 - DataFrame 데이터 타입 만들기</h3>
+    <h4 class="sub-header">14.3.2 - DataFrame 데이터 타입 만들기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -48,7 +48,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">14.4. 데이터를 불러오고 저장하기</h2>
+  <h3 class="sub-header">14.4. 데이터를 불러오고 저장하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -56,21 +56,21 @@
       </article>
     </section>
 
-    <h3 class="sub-header">14.4.1 - CSV 파일</h3>
+    <h4 class="sub-header">14.4.1 - CSV 파일</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.4.2 - 엑셀 파일</h3>
+    <h4 class="sub-header">14.4.2 - 엑셀 파일</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.4.3 - 데이터베이스</h3>
+    <h4 class="sub-header">14.4.3 - 데이터베이스</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -78,7 +78,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">14.5. 여러 가지 형태로 데이터 다루기</h2>
+  <h3 class="sub-header">14.5. 여러 가지 형태로 데이터 다루기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -86,21 +86,21 @@
       </article>
     </section>
 
-    <h3 class="sub-header">14.5.1 - 조건에 맞춰 데이터 선택해 가져오기</h3>
+    <h4 class="sub-header">14.5.1 - 조건에 맞춰 데이터 선택해 가져오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.5.2 - 불리언 인덱싱</h3>
+    <h4 class="sub-header">14.5.2 - 불리언 인덱싱</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.5.3 - 인덱스 기준에 따라 데이터 다루기</h3>
+    <h4 class="sub-header">14.5.3 - 인덱스 기준에 따라 데이터 다루기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -108,7 +108,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">14.6. 데이터 병합하기</h2>
+  <h3 class="sub-header">14.6. 데이터 병합하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -116,14 +116,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">14.6.1 - merge()</h3>
+    <h4 class="sub-header">14.6.1 - merge()</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.6.2 - concat()</h3>
+    <h4 class="sub-header">14.6.2 - concat()</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -131,7 +131,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">14.7. 데이터 분석하기</h2>
+  <h3 class="sub-header">14.7. 데이터 분석하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -139,21 +139,21 @@
       </article>
     </section>
 
-    <h3 class="sub-header">14.7.1 - 그룹화하기</h3>
+    <h4 class="sub-header">14.7.1 - 그룹화하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.7.2 - agg()와 apply() 함수로 데이터 가공하기</h3>
+    <h4 class="sub-header">14.7.2 - agg()와 apply() 함수로 데이터 가공하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">14.7.3 - 그래프 그리기</h3>
+    <h4 class="sub-header">14.7.3 - 그래프 그리기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>

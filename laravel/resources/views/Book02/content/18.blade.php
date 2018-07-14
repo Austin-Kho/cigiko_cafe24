@@ -1,4 +1,4 @@
-  <h1 class="page-header">{{$sub[$id]}}</h1>
+  <h2 class="page-header">{{$sub[$id]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">C.1. 코드 레이아웃</h2>
+  <h3 class="sub-header">C.1. 코드 레이아웃</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,42 +15,42 @@
       </article>
     </section>
 
-    <h3 class="sub-header">C.1.1 - 들여쓰기</h3>
+    <h4 class="sub-header">C.1.1 - 들여쓰기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">C.1.2 - 탭이냐 스페이스냐</h3>
+    <h4 class="sub-header">C.1.2 - 탭이냐 스페이스냐</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">C.1.3 - 한 행의 길이는?</h3>
+    <h4 class="sub-header">C.1.3 - 한 행의 길이는?</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">C.1.4 - 빈 행은 어떻게 얼마나?</h3>
+    <h4 class="sub-header">C.1.4 - 빈 행은 어떻게 얼마나?</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">C.1.5 - 소스 코드 파일의 인코딩은 어떻게?</h3>
+    <h4 class="sub-header">C.1.5 - 소스 코드 파일의 인코딩은 어떻게?</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">C.1.6 - imports</h3>
+    <h4 class="sub-header">C.1.6 - imports</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -58,7 +58,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">C.2. 공백 표현과 구문</h2>
+  <h3 class="sub-header">C.2. 공백 표현과 구문</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -66,14 +66,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">C.2.1 - 성가신 것들</h3>
+    <h4 class="sub-header">C.2.1 - 성가신 것들</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">C.2.2 - 그 외의 추천하는 방법</h3>
+    <h4 class="sub-header">C.2.2 - 그 외의 추천하는 방법</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -81,7 +81,7 @@
     </section>
   </div>
 
-  <h2 class="sub-header">C.3. 주석</h2>
+  <h3 class="sub-header">C.3. 주석</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -89,14 +89,14 @@
       </article>
     </section>
 
-    <h3 class="sub-header">C.3.1 - 블록 주석</h3>
+    <h4 class="sub-header">C.3.1 - 블록 주석</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h3 class="sub-header">C.3.2 - 인라인 주석</h3>
+    <h4 class="sub-header">C.3.2 - 인라인 주석</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
