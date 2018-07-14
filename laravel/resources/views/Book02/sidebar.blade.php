@@ -6,11 +6,11 @@
                 <div class="row" style="border-bottom: solid 1px #ccc; padding-bottom: 10px; margin-bottom: 20px;">
                   <div class="col-xs-10">
                     <form class="">
-                      <input type="text" class="form-control" placeholder="검색어를 입력하세요.">
+                      <input type="text" class="form-control" placeholder="검색어를 입력하세요. (준비중..!)">
                     </form>
                   </div>
-                  <div class="col-xs-2 side_handle" style="padding: 8px 7px 6px 0; text-align: right; cursor:pointer;">
-                    <span class="glyphicon glyphicon-menu-hamburger" title="메뉴"></span>
+                  <div class="col-xs-2" style="padding: 0; text-align: right;">
+                    <a class="pull-right menu_link menu-toggle col-xs-2" style="cursor:pointer; margin: 9px;"><span class="glyphicon glyphicon-menu-hamburger" title="메뉴"></span></a>
                   </div>
                 </div>
 

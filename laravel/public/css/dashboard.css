@@ -2,20 +2,17 @@
  * Base structure
  */
 
-/* Move down content because we have a fixed navbar that is 50px tall */
+ body, input, select {
+   /* font-family: "Malgun Gothic"; */
+   color: #5b5c5d;
+ }
 
+ body {
+   padding-top: 50px;
+ }
 
 ::selection { background-color: #51c8fe; color: #FFF; }
 ::-moz-selection { background-color: #51c8fe; color: #FFF; }
-
-section { padding-bottom: 30px; margin: 0;}
-a#MOVE_TOP_BTN {
-  position: fixed;
-  right: 3%;
-  bottom: 30px;
-  display: none;
-  z-index: 999;
-}
 
 /*
  * Top navigation
@@ -24,6 +21,7 @@ a#MOVE_TOP_BTN {
 .navbar-fixed-top {
   border: 0;
 }
+
 
 /*
  * Sidebar
@@ -53,14 +51,53 @@ a#MOVE_TOP_BTN {
   background-color: #02a1e9;
 }
 
-.chapter { padding: 10px;}
+.page-depth {
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #666;
+}
+
+.page-depth .breadcrumb {
+  padding:0 !important;
+  background:#fff;
+  margin:0 !important;
+}
+
+.page-depth li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page-depth a {color:#333;cursor:pointer;}
+.page-depth a:hover {color:#000;}
+
+.page_child {
+  margin:30px 0 ;
+}
+
+.page_child ul {
+  padding-left:25px !important;
+}
+
+.page_child li {
+  list-style-type: square;
+}
+
+.page_child a {color:#888;}
+.page_child a:hover {color:#333;}
+/* .navbar-inner {
+  height:55px;
+}
+
+.navbar {
+  margin:0;
+} */
 
 /*
  * Main content
  */
-
 .main {
-  padding: 30px;
+  /* padding: 21px; */
 }
 @media (min-width: 768px) {
   .main {
@@ -73,166 +110,17 @@ a#MOVE_TOP_BTN {
   margin-top: 0;
 }
 
-/*
- * Global add-ons
- */
-
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
 
-/*
- * Placeholder dashboard ideas
- */
-
-.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+.chapter { padding: 10px;}
+section {
+  padding-bottom: 30px;
+  margin: 0;
 }
 
-
-
-
-body, input, select {
-  /* font-family: "Malgun Gothic"; */
-  color: #5b5c5d;
-}
-
-body {
-  padding-top: 50px;
-}
-
-textarea {
-  font-size:12px !important;
-  font-family: "굴림체", Monaco, Menlo, Consolas, "Courier New", monospace;
-}
-
-.navbar-inner {
-  /*height:55px;*/
-}
-
-.navbar {
-  margin:0;
-}
-
-blockquote {
-  margin:10px 0 !important;
-  padding:5px 0;
-  border:solid 1px #ddd;
-
-  /*border-left:solid 6px #ddd;*/
-  /*background-color: #fcfcfc;*/
-  background-color: #fff;
-  border-radius:5px;
-}
-blockquote p {
-/*background-color: #F7F7F9;*/
-  padding:5px 10px !important;
-  /*font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,"맑은고딕",'Malgun Gothic';*/
-  font-weight:normal;
-  font-size:13px !important;
-  overflow-x:auto;
-  padding:0;
-  margin-bottom:20px;
-  display:block;
-  line-height:180%;
-  color:#000 !important;
-}
-
-.menu-nav {
-  margin:0 !important;
-  padding:0 !important;
-  font-family: Consolas;
-  font-size: 18px;
-}
-.menu-btn {
-  margin-top:7px !important;
-}
-
-.book-item {
-  /*margin:20px;*/
-  /*margin-bottom:30px;*/
-}
-.book-detail {
-  color: #808080;
-  line-height: 1.8;
-  font-size:14px;
-}
-
-.book-image-box {
-  width:110px;
-  height:140px;
-
-  border: solid 1px #ccc;
-  padding:5px;
-
-  /*margin-left:-10px;*/
-  /*vertical-align: middle;*/
-  /*text-align: center;*/
-
-  position:relative;
-}
-
-.book-image {
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin:auto;
-  /*vertical-align: middle;*/
-  text-align: center;
-  max-width:100px;
-}
-
-.book-subject {
-  font-size:16px;
-  font-weight: bold;
-  margin-top:0;
-  color: #4183C4;
-}
-.book-author {
-  margin-top:10px;
-  /*color:#333;*/
-}
-.book-time {
-  /*color:#aaa;*/
-  /*font-size:12px;*/
-}
-
-.navbar-adv {
-  margin-left:10px !important;
-}
-
-.navbar-adv span {
-  font-size:12px;
-  font-weight: bold;
-}
-
-/* book */
-.recent_page_comments {
-  margin-top:20px;
-}
-
-/*page*/
-.content {
-  margin-top:20px;
-  margin-bottom:20px;
-}
-.content h1, h2, h3, h4, h5, h6 {
-  /* font-family: "Malgun Gothic"; */
-}
 
 .toc {
   /*background-color: #f9f9f9;*/
@@ -327,40 +215,6 @@ blockquote p {
   list-style: none;
   margin:5px 5px 5px 0;
 }
-
-.footer {
-  border-top: solid 1px #f2f2f2;
-  margin-top:30px;
-  margin-bottom:30px;
-  padding-top:10px;
-
-  font-size:12px;
-}
-
-
-/*comments*/
-.user_comments {
-  /*display:none;*/
-}
-.comments, .pages {
-  /*border-top:solid 1px #666;*/
-  margin:10px 0 5px 0;
-  /*background-color: #fcfcfc;*/
-}
-.comments .comment, .pages .comment {
-  font-size:12px;
-  color:#333;
-  margin:0;
-  padding:10px 0;
-  /*border-bottom:solid 1px #333;*/
-}
-.comment_border_top {
-  border-top:dotted 1px #ccc;
-}
-.comment_border_bottom {
-  border-bottom:dotted 1px #ccc;
-}
-
 /* markdown toc */
 .page .toc {
   background: #fefefe;
@@ -379,11 +233,6 @@ blockquote p {
   margin: 0 0 0 20px;
   padding-bottom:5px;
 }
-
-.footnote {
-  font-size:12px;
-}
-
 .toc-area {
   /*padding-bottom:10px;*/
 }
@@ -403,25 +252,6 @@ blockquote p {
 .toc-area::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-
-
-.nano { background: #bba; width: 500px; height: 500px; }
-.nano .content { padding: 10px; }
-.nano .pane   { background: #888; }
-.nano .slider { background: #111; }
-
-.back-to-top {
-  position:fixed;
-  bottom: 1em;
-  right: 1em;
-}
-
-.back-to-home {
-  position:fixed;
-  top: 1em;
-  right: 1em;
-  cursor:pointer;
 }
 
 div.tip {
@@ -465,6 +295,28 @@ div.tip {
   padding:0 14%;
 }
 
+/* menu-group */
+.menu-group {
+  position:fixed;
+  left:20px;
+  top:75px;
+  display:none;
+}
+
+.menu_link {color:#888; cursor:pointer;}
+.menu_link:hover {color:#333;text-decoration:none;}
+
+/* .home_link {color:#ccc;}
+.home_link:hover {color:#aaa;text-decoration:none;} */
+
+.menu-wikidocs {
+  margin:1px;
+}
+.menu-wikidocs a {color:#eee; cursor:pointer;}
+.menu-wikidocs a:hover {color:#333;text-decoration:none;}
+
+
+
 .prev_icon {
   position: fixed;
   top:50%;
@@ -483,144 +335,45 @@ div.tip {
 .prev_icon:hover, .next_icon:hover { color:#aaa !important; }
 .prev_icon:active, next_icon:active { color: #aaa; }
 
-
-.list-group-item:first-child {
-  border-top-right-radius: 0px !important;
-  border-top-left-radius: 0px !important;
-  border-top:0;
-}
-
-.list-group-item:last-child {
-  border-bottom-right-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
-}
-
-.list-group {
-  -webkit-box-shadow: 0;
-          box-shadow: 0;
-}
-
-.list-group-item {
-  border:0;
-}
-
-.list-group-item-mobile {
+blockquote {
+  margin:10px 0 !important;
+  padding:5px 0;
   border:solid 1px #ddd;
-}
 
-.navbar-toc {
-  padding:0 20px 0 0px;
-  margin:0;
-  -webkit-box-shadow:none;
-  border-bottom: solid 1px #ddd;
-  border-right: solid 1px #ddd;
+  /*border-left:solid 6px #ddd;*/
+  /*background-color: #fcfcfc;*/
+  background-color: #fff;
+  border-radius:5px;
 }
-
-.list-group-toc {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.page-depth {
+blockquote p {
+/*background-color: #F7F7F9;*/
+  padding:5px 10px !important;
+  /*font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,"맑은고딕",'Malgun Gothic';*/
+  font-weight:normal;
+  font-size:13px !important;
+  overflow-x:auto;
   padding:0;
   margin-bottom:20px;
+  display:block;
+  line-height:180%;
+  color:#000 !important;
 }
 
-.page-depth .breadcrumb {
-  padding:0 !important;
-  background:#fff;
-  margin:0 !important;
+textarea {
+  font-size:12px !important;
+  font-family: "굴림체", Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 
-.page-depth li {
-  margin: 0 !important;
-  padding: 0 !important;
+/* Top button */
+a#MOVE_TOP_BTN {
+  position: fixed;
+  right: 3%;
+  bottom: 65px;
+  display: none;
+  z-index: 999;
 }
 
-.page-depth a {color:#333;cursor:pointer;}
-.page-depth a:hover {color:#000;}
-
-.page_child {
-  margin:30px 0 ;
-}
-
-.page_child ul {
-  padding-left:25px !important;
-}
-
-.page_child li {
-  list-style-type: square;
-}
-
-.page_child a {color:#888;}
-.page_child a:hover {color:#333;}
-
-.menu_link {color:#888; cursor:pointer;}
-.menu_link:hover {color:#333;text-decoration:none;}
-
-.home_link {color:#ccc;}
-.home_link:hover {color:#aaa;text-decoration:none;}
-
-.menu-wikidocs {
-  margin:10px 0;
-}
-
-.menu-wikidocs a {color:#eee; cursor:pointer;}
-.menu-wikidocs a:hover {color:#333;text-decoration:none;}
-
-.input-search {
-  width:100%;
-  padding:15px 15px;
-  border:0;
-  /*border-bottom:solid 1px #ccc;*/
-}
-
-.input-search:focus{
-  outline: none;
-}
-
-
-/* enable absolute positioning */
-.inner-addon {
-  position: relative;
-}
-
-/* style icon */
-.inner-addon .glyphicon {
-  position: absolute;
-  padding: 16px 15px;
-  pointer-events: none;
-  color: #aaa;
-}
-
-/* align icon */
-.left-addon .glyphicon  { left:  0px;}
-.right-addon .glyphicon { right: 0px;}
-
-/* add padding  */
-.left-addon input  { padding-left:  35px; }
-.right-addon input { padding-right: 30px; }
-
-/* menu-group */
-.menu-group {
-  position:fixed;
-  left:20px;
-  top:15px;
-  display:none;
-}
-
-.page-content {
-  margin-bottom:20px;
-}
-
-
-
-/*
-
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-
-*/
-
+/* pre & code */
 pre code {
   display: block; padding: 0.5em;
   background: #F0F0F0;
@@ -764,3 +517,259 @@ pre .xml .css,
 pre .xml .cdata {
   opacity: 0.5;
 }
+
+/* .input-search {
+  width:100%;
+  padding:15px 15px;
+  border:0;
+  border-bottom:solid 1px #ccc;
+}
+
+.input-search:focus{
+  outline: none;
+} */
+
+
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+/* .placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+} */
+
+
+
+
+
+/*page*/
+/* .content {
+  margin-top:20px;
+  margin-bottom:20px;
+} */
+/* .content h1, h2, h3, h4, h5, h6 {
+  font-family: "Malgun Gothic";
+} */
+
+/* .footer {
+  border-top: solid 1px #f2f2f2;
+  margin-top:30px;
+  margin-bottom:30px;
+  padding-top:10px;
+
+  font-size:12px;
+} */
+
+
+
+
+
+
+/* .footnote {
+  font-size:12px;
+}
+
+.nano { background: #bba; width: 500px; height: 500px; }
+.nano .content { padding: 10px; }
+.nano .pane   { background: #888; }
+.nano .slider { background: #111; }
+
+.back-to-top {
+  position:fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+.back-to-home {
+  position:fixed;
+  top: 1em;
+  right: 1em;
+  cursor:pointer;
+} */
+
+
+/* .list-group-item:first-child {
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-top:0;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.list-group {
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+}
+
+.list-group-item {
+  border:0;
+}
+
+.list-group-item-mobile {
+  border:solid 1px #ddd;
+}
+
+.navbar-toc {
+  padding:0 20px 0 0px;
+  margin:0;
+  -webkit-box-shadow:none;
+  border-bottom: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+}
+
+.list-group-toc {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+} */
+
+/* enable absolute positioning */
+/* .inner-addon {
+  position: relative;
+} */
+
+/* style icon */
+/* .inner-addon .glyphicon {
+  position: absolute;
+  padding: 16px 15px;
+  pointer-events: none;
+  color: #aaa;
+} */
+
+/* align icon */
+/* .left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;} */
+
+/* add padding  */
+/* .left-addon input  { padding-left:  35px; }
+.right-addon input { padding-right: 30px; } */
+
+/*
+.page-content {
+  margin-bottom:20px;
+} */
+
+
+
+
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+
+*/
+
+
+
+
+
+/* .menu-nav {
+  margin:0 !important;
+  padding:0 !important;
+  font-family: Consolas;
+  font-size: 18px;
+}
+.menu-btn {
+  margin-top:7px !important;
+} */
+
+/* .book-item {
+  margin:20px;
+  margin-bottom:30px;
+}
+.book-detail {
+  color: #808080;
+  line-height: 1.8;
+  font-size:14px;
+} */
+
+/* .book-image-box {
+  width:110px;
+  height:140px;
+
+  border: solid 1px #ccc;
+  padding:5px; */
+
+  /*margin-left:-10px;*/
+  /*vertical-align: middle;*/
+  /*text-align: center;*/
+
+  /* position:relative;
+} */
+
+/* .book-image {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  vertical-align: middle;
+  text-align: center;
+  max-width:100px;
+}
+
+.book-subject {
+  font-size:16px;
+  font-weight: bold;
+  margin-top:0;
+  color: #4183C4;
+} */
+/* .book-author {
+  margin-top:10px; */
+  /*color:#333;*/
+/* } */
+/* .book-time { */
+  /*color:#aaa;*/
+  /*font-size:12px;*/
+/* } */
+
+/* .navbar-adv {
+  margin-left:10px !important;
+}
+
+.navbar-adv span {
+  font-size:12px;
+  font-weight: bold;
+} */
+
+/* book */
+/* .recent_page_comments {
+  margin-top:20px;
+} */
+/*comments*/
+/* .user_comments { */
+  /*display:none;*/
+/* } */
+/* .comments, .pages { */
+  /*border-top:solid 1px #666;*/
+  /* margin:10px 0 5px 0; */
+  /*background-color: #fcfcfc;*/
+/* } */
+/* .comments .comment, .pages .comment {
+  font-size:12px;
+  color:#333;
+  margin:0;
+  padding:10px 0; */
+  /*border-bottom:solid 1px #333;*/
+/* } */
+/* .comment_border_top {
+  border-top:dotted 1px #ccc;
+}
+.comment_border_bottom {
+  border-bottom:dotted 1px #ccc;
+} */
