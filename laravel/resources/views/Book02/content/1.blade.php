@@ -1,4 +1,4 @@
-  <h1 class="page-header">1. 파이썬 프로그래밍 준비와 시작</h1>
+  <h1 class="page-header">{{$sub[$id]}}</h1>
   <div class="chapter">
     <section>
       <article class="">
@@ -8,6 +8,81 @@
   </div>
 
   <h2 class="sub-header">1.1 파이썬의 역사</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">1.2 파이썬을 익히면 좋은 점</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">1.3 파이썬 활용이 활발한 개발 분야</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+    <h3>1.3.1 웹 애플리케이션 개발</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3>1.3.2 크롤링</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3>1.3.3 데이터 과학과 인공지능 개발</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">1.4 파이썬 개발 환경 설치</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h3 class="sub-header">1.4.1 우분투</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+    <h3 class="sub-header">1.4.2 macOS</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+    <h3 class="sub-header">1.4.3 윈도우</h3>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h2 class="sub-header">1.5 조금은 어려운 Hello World</h2>
   <div class="chapter">
     <section>
       <article class="">

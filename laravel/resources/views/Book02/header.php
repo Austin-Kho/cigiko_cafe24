@@ -20,6 +20,15 @@
     <style media="screen">
       ::selection { background-color: #63c336; color: #FFF; }
       ::-moz-selection { background-color: #63c336; color: #FFF; }
+      .chapter { padding: 10px;}
+      .sub-header {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      .main .page-header {
+        margin-top: 0;
+      }
+      section { padding-bottom: 30px; margin: 0;}
       a#MOVE_TOP_BTN {
         position: fixed;
         right: 2.5%;

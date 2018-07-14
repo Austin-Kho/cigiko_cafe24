@@ -1,8 +1,11 @@
+        <div style="border-bottom: 1px solid #eee;">
+
+        </div>
       </div>
       <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main" style="padding-top: 0;">
         <div class="" style="margin-top: 0;">
-          @if($id!='1')<p>이전글 : <a href="book02/{{(string)((int)$id-1)}}">{{$sub[(string)((int)$id-1)]}}</a></p>@endif
-          @if($id!=='18')<p>다음글 : <a href="book02/{{(string)((int)$id+1)}}">{{$sub[(string)((int)$id+1)]}}</a></p>@endif
+          @if($id!='1')<p>이전글 : <a href="/book02/{{(string)((int)$id-1)}}">{{$sub[(string)((int)$id-1)]}}</a></p>@endif
+          @if($id!=='18')<p>다음글 : <a href="/book02/{{(string)((int)$id+1)}}">{{$sub[(string)((int)$id+1)]}}</a></p>@endif
         </div>
         <div id="disqus_thread" style="margin-top: 60px;"></div>
         <script>
