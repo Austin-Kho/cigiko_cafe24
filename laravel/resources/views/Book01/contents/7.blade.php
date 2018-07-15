@@ -11,9 +11,9 @@
             <h5><strong>▶ 문자열 리터럴</strong></h5>
             <p>파이썬 코드에서 문자열 값 입력은 기본적으로 홑따옴표로 시작하고 홑따옴표로 끝난다. 그러나 문자열 안에 따옴표를 입력하여야 할 경우 다른 방식이 필요하다.</p>
             <p><strong>• 겹따옴표</strong> : 문자열은 홑따옴표를 쓰는 방식과 마찬가지로 겹따옴표로도 시작하고 끝맺을 수 있다. 겹따옴표를 사용하는 이점 중 하나는 문자열 안에 홑따옴표를 둘 수 있다는 것이다.</p>
-            <pre>>>> spam = "That is Alice's cat."</pre>
+            <pre><code class="python">>>> spam = "That is Alice's cat."</code></pre>
             <p><strong>• 이스케이프 문자</strong> : 하지만 문자열 안에 홑따옴표와 겹따옴표를 모두 사용해야 한다면 이스케이프 문자를 사용해야 한다. 이스케이프 문자는 백슬래시(\) 다음에 문자열에 넣고 싶은 글자를 두는 방식으로 구성된다.(두 글자로 이루어졌지만 보통은 한 개의 이스케이프 문자로 간주된다.)</p>
-            <pre>>>> spam = 'Say hi to Bob\'s mother.'</pre>
+            <pre><code class="python">>>> spam = 'Say hi to Bob\'s mother.'</code></pre>
             <h5><strong>•• 표 6-1 이스케이프 문자</strong></h5>
             <table class="table table-hover table-condensed table table-bordered">
               <thead>
@@ -29,28 +29,28 @@
                 <tr><td>\\</td><td>백슬래쉬</td></tr>
               </tbody>
             </table>
-            <pre>>>> print("Hello there!\nHow are you?\nI\'m doing fine.")<br>Hello there!<br>How are you?<br>I'm doing fine.</pre>
+            <pre><code class="python">>>> print("Hello there!\nHow are you?\nI\'m doing fine.")<br>Hello there!<br>How are you?<br>I'm doing fine.</code></pre>
             <p><strong>• 원시 문자열</strong> : 문자열을 시작하는 따옴표 앞에 r을 놓으면 문자열을 원시 문자열로 만들 수 있다. 원시 문자열은 모든 이스케이프 문자을 완전히 무시하고 문자열에 나타나는 백슬래시를 인쇄한다.</p>
-            <pre>>>> print(r'That is Carol\'s cat.')<br>That is Carol\'s cat.</pre>
+            <pre><code class="python">>>> print(r'That is Carol\'s cat.')<br>That is Carol\'s cat.</code></pre>
             <p>위 문자열은 원시 문자열이기 때문에 파이썬은 백스래시를 문자열의 일부가 아니라 이스케이프 문자의 시작으로 간주한다. 정규표현식을 사용하는 문자열과 같이 백슬래시가 많이 들어 있는 문자열을 입력할 때에는 원시 문자열이 도움이 된다.</p>
 
 
             <p><strong>• 세겹 따옴표를 사용하는 여러 줄에 걸친 문자열</strong> : 파이썬에서 여러 줄 문자열은 세 개의 홑따옴표나 세 개의 겹따옴표로 시작하고 끝난다. 세겹 따옴표 사이의 모든 따옴표, 탭, 또는 줄바꿈은 문자열의 일부로 간주된다. 블록에 대한 파이썬의 들여쓰기 규칙은 여러 줄 문자열 안에 있는 줄들에는 적용되지 않는다.</p>
-            <pre>>>> print('''Dear Alice,<br><br>Eve's cat has been arrested for catnapping, cat burglary, and extortion.<br><br>Sincerely,<br>Bob''')</pre>
+            <pre><code class="python">>>> print('''Dear Alice,<br><br>Eve's cat has been arrested for catnapping, cat burglary, and extortion.<br><br>Sincerely,<br>Bob''')</code></pre>
             <p><strong>• 여러 줄 주석</strong> : 해시 문자(#)는 그 줄의 나머지 부분에 대한 주식의 시작을 표시하는 반면, 여러 줄에 걸친 문자열을 여러 줄에 걸친 주석에 사용할 때도 있다. </p>
-            <pre>"""This is a test Python program.<br>Written by Al Sweigart al@inventwithpython.com<br><br>This program was designed for Python 3, not Python 2.<br>"""</pre>
+            <pre><code class="python">"""This is a test Python program.<br>Written by Al Sweigart al@inventwithpython.com<br><br>This program was designed for Python 3, not Python 2.<br>"""</code></pre>
           </p>
 
           <p>
             <h5><strong>▶ 문자열 인덱스와 슬라이스</strong></h5>
             <p>문자열은 리스트처럼 인덱스와 슬라이스를 사용한다.</p>
-            <pre>>>> spam = 'Hello world!'<br>>>> spam[0]<br>'H'<br>>>> spam[4]<br>'o'<br>spam[-1]<br>'!'<br>>>> spam[0:5]<br>'Hello'<br>spam[:5]<br>'Hello'<br>>>> spam[6:]<br>'world!'</pre>
+            <pre><code class="python">>>> spam = 'Hello world!'<br>>>> spam[0]<br>'H'<br>>>> spam[4]<br>'o'<br>spam[-1]<br>'!'<br>>>> spam[0:5]<br>'Hello'<br>spam[:5]<br>'Hello'<br>>>> spam[6:]<br>'world!'</code></pre>
           </p>
 
           <p>
             <h5><strong>▶ 문자열에 in 또는 not in 연산자 사용하기</strong></h5>
             <p>문자열은 리스트처럼 in 또는 not in 연산자를 쓸 수 있다. 이 표현식은 부울 True 또는 False 값으로 평가된다.</p>
-            <pre>>>> 'Hello' in 'Hello World'<br>True<br>'Hello' in 'Hello'<br>True<br>'HELLO' in 'Hello World'<br>False<br>'' in 'spam'<br>True<br>'cats' not in 'cats and dogs'<br>False</pre>
+            <pre><code class="python">>>> 'Hello' in 'Hello World'<br>True<br>'Hello' in 'Hello'<br>True<br>'HELLO' in 'Hello World'<br>False<br>'' in 'spam'<br>True<br>'cats' not in 'cats and dogs'<br>False</code></pre>
           </p>
 
           <p>
@@ -64,12 +64,12 @@
             <ul>
               <li><strong>upper()</strong> : upper() 함수는 문자열의 모든 글자를 대문자로 변환한 새로운 문자열을 돌려준다.</li>
               <li><strong>lower()</strong> : lower() 함수는 문자열의 모든 글자를 소문자로 변환한 새로운 문자열을 돌려준다.</li>
-              <pre>>>> spam = 'Hello world!'<br>>>> spam = spam.upper()<br>>>> spam<br>'HELLO WORLD!'<br>>>> spam = spam.lower()<br>>>> spam<br>'hello world!'</pre>
+              <pre><code class="python">>>> spam = 'Hello world!'<br>>>> spam = spam.upper()<br>>>> spam<br>'HELLO WORLD!'<br>>>> spam = spam.lower()<br>>>> spam<br>'hello world!'</code></pre>
               <li><strong>isupper()</strong> : isupper() 함수는 문자열이 모두 대문자로 이루어져 있다면 부울 값 True 를 돌려준다. 모두 숫자면 False.</li>
               <li><strong>islower()</strong> : islower() 함수는 문자열이 모두 소문자로 이루어져 있다면 부울 값 True 를 돌려준다. 모두 숫자면 False.</li>
               <li><strong>startswith()</strong> : startswith() 함수는 호출한 문자열 값이 메소드에 전달된 문자열로 시작되면 True 그렇지 않으면 False 를 돌려준다.</li>
               <li><strong>endswith()</strong> : endswith() 함수는 호출한 문자열 값이 메소드에 전달된 문자열로 끝나면 True 그렇지 않으면 False 를 돌려준다.</li>
-              <pre>>>> 'Hello world!'.startswith('Hello')<br>True<br>>>> 'Hello world!'.endswith('world!')<br>True</pre>
+              <pre><code class="python">>>> 'Hello world!'.startswith('Hello')<br>True<br>>>> 'Hello world!'.endswith('world!')<br>True</code></pre>
             </ul>
             <h5><strong>• isX 문자열 메소드</strong></h5>
             <ul>
@@ -82,9 +82,9 @@
             <h5><strong>• join() 과 split() 문자열 메소드</strong></h5>
             <ul>
               <li><strong>join()</strong> : join() 함수는 문자열로 이루어진 리스트를 하나의 문자열로 연결시켜 준다.</li>
-              <pre>>>> ', '.join(['cats', 'rats', 'bats'])<br>'cats, rats, bats'<br>>>> ' '.join(['My', 'name', 'is', 'Simon'])<br>'My name is Simon'</pre>
+              <pre><code class="python">>>> ', '.join(['cats', 'rats', 'bats'])<br>'cats, rats, bats'<br>>>> ' '.join(['My', 'name', 'is', 'Simon'])<br>'My name is Simon'</code></pre>
               <li><strong>split()</strong> : split() 함수는 join() 과 반대로 문자열을 호출하여 문자열의 리스트를 돌려준다.</li>
-              <pre>>>> 'My name is Simon'.split()<br>['My', 'name', 'is', 'Simon']</pre>
+              <pre><code class="python">>>> 'My name is Simon'.split()<br>['My', 'name', 'is', 'Simon']</code></pre>
               <p>기본적으로 split() 에 호출되는 문자열은 빈칸, 탭, 또는 줄바꿈과 같은 공백 문자가 있는 곳에서 분리된다.</p>
             </ul>
 
@@ -93,7 +93,7 @@
               <li><strong>rjust()</strong> : rjust() 함수는 이를 호출한 문자열을 오른쪽으로 정렬한 문자열을 돌려주며, 텍스트 정렬을 위해서 빈칸을 사용한다. 첫 번째 인수는 문자열 정렬을 위한 정수값 길이다. 두번째 인자가 있는 경우 빈칸을 대신해 채울 문자를 지정한다.</li>
               <li><strong>ljust()</strong> : ljust() 함수는 이를 호출한 문자열을 왼쪽으로 정렬한 문자열을 돌려주며, 텍스트 정렬을 위해서 빈칸을 사용한다. 첫 번째 인수는 문자열 정렬을 위한 정수값 길이다. 두번째 인자가 있는 경우 빈칸을 대신해 채울 문자를 지정한다.</li>
               <li><strong>center()</strong> : center() 함수는 이를 호출한 문자열을 가운데로 정렬한 문자열을 돌려주며, 텍스트 정렬을 위해서 빈칸을 사용한다. 첫 번째 인수는 문자열 정렬을 위한 정수값 길이다. 두번째 인자가 있는 경우 빈칸을 대신해 채울 문자를 지정한다.</li>
-              <pre>>>> 'Hello'.rjust(10)<br>'     Hello'<br>'Hello'.ljust(10)<br>'Hello     '<br>'Hello'.center(20, '.')<br>'........Hello........'</pre>
+              <pre><code class="python">>>> 'Hello'.rjust(10)<br>'     Hello'<br>'Hello'.ljust(10)<br>'Hello     '<br>'Hello'.center(20, '.')<br>'........Hello........'</code></pre>
             </ul>
 
             <h5><strong>• strip(), rstrip(), lstrip() 메소드로 공백 없애기</strong></h5>
@@ -101,7 +101,7 @@
               <li><strong>strip()</strong> : strip() 함수는 문자열 양쪽 끝에 있는 공백문자(빈칸, 탭, 줄 바꿈)들을 제거한다. 선택사항으로 문자열 끝에서 제거되어야 할 글자들을 지정하는 하나의 문자열 매개변수를 지정할 수 있다.</li>
               <li><strong>rstrip()</strong> : rstrip() 함수는 문자열 오른쪽에 있는 공백문자(빈칸, 탭, 줄 바꿈)들을 제거한다. 선택사항으로 문자열 끝에서 제거되어야 할 글자들을 지정하는 하나의 문자열 매개변수를 지정할 수 있다.</li>
               <li><strong>lstrip()</strong> : lstrip() 함수는 문자열 왼쪽에 있는 공백문자(빈칸, 탭, 줄 바꿈)들을 제거한다. 선택사항으로 문자열 끝에서 제거되어야 할 글자들을 지정하는 하나의 문자열 매개변수를 지정할 수 있다.</li>
-              <pre>>>> spam = '     Hello World     '<br>spam.strip()<br>'Hello World'<br>>>> spam = 'SpamSpamBaconSpamEggsSpamSpam'<br>>>> spam.strip('ampS')<br>'BaconSpamEggs'</pre>
+              <pre><code class="python">>>> spam = '     Hello World     '<br>spam.strip()<br>'Hello World'<br>>>> spam = 'SpamSpamBaconSpamEggsSpamSpam'<br>>>> spam.strip('ampS')<br>'BaconSpamEggs'</code></pre>
               <p>strip() 에 'ampS' 매개변수를 전달하면 spam에 저장되어 있는 문자열의 끝에 있는 a, m, p, S 를 제거하라고 지시하는 것이다. 글자의 순서는 중요치 않다. stirp('ampS')는 strip('mapS') 또는 strip('Spam')과 똑같은 일을 한다.</p>
             </ul>
           </p>
@@ -115,11 +115,11 @@
               <li>4. 문자열 값 "Howl's Moving Castle"은 유효한 문자열이다. Howl's에 있는 따옴표가 이스케이프되지 않았는데 문제가 생기지 않는 이유는 무엇인가?</li>
               <li>5. 문자열에 \n을 넣고 싶지 않다면 줄바꿈을 넣는 문자열을 어떻게 만들 수 있는가?</li>
               <li>6. 다음 표현식은 어떻게 평가되는가?</li>
-              <pre>'Hello world!'[1]<br>'Hello world!'[0:5]<br>'Hello world!'[:5]<br>'Hello world!'[3:]</pre>
+              <pre><code class="python">'Hello world!'[1]<br>'Hello world!'[0:5]<br>'Hello world!'[:5]<br>'Hello world!'[3:]</code></pre>
               <li>7. 다음 표현식은 어떻게 평가되는가?</li>
-              <pre>'Hello'.upper()<br>'Hello'.upper().isupper()<br>'Hello'.upper().lower()</pre>
+              <pre><code class="python">'Hello'.upper()<br>'Hello'.upper().isupper()<br>'Hello'.upper().lower()</code></pre>
               <li>8. 다음 표현식은 어떻게 평가되는가?</li>
-              <pre>'Remember, remember, the fifth of November.'.split()<br>'-'.join('There can be only one.'.split())</pre>
+              <pre><code class="python">'Remember, remember, the fifth of November.'.split()<br>'-'.join('There can be only one.'.split())</code></pre>
               <li>9. 어떤 문자열 메소드를 사용하여 문자열을 오른쪽, 왼쪽, 가운데로 정렬할 수 있는가?</li>
               <li>10. 문자열의 시작 또는 끝에 있는 공백 문자를 어떻게 잘라낼 수 있는가?</li>
             </ul>

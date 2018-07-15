@@ -5,7 +5,7 @@
           <p>
             <h5><strong>■ 부울 값</strong></h5>
             <p>True(참)와 False(거짓) 두 가지 값만 있으며, 따옴표를 두르지 않고, 첫 글자를 대문자로 그 뒤의 글자는 소문자로 쓴다. </p>
-            <pre class="brush:xml">>>> spam = True<br>>>> spam<br>True</pre>
+            <pre><code class="python">>>> spam = True<br>>>> spam<br>True</code></pre>
             <p>다른 값과 마찬가지로 부울 값은 표현식에 사용되며 변수에 저장될 수 있으나 변수 이름으로 사용될 수 없다. </p>
           </p>
 
@@ -85,54 +85,54 @@
           <p>
             <h5><strong>■ if 문</strong></h5>
             <p><strong>▶ 구성</strong> : if 키워드 + 조건 (즉, True 또는 False로 평가되는 표현식) + 콜론 + 다음 줄에서 시작되는, 들여쓰기 된 코드 블록 (if 절이라고 부른다.)</p>
-            <pre>>>> if name == 'Alice':<br>        print('Hi, Alice.')</pre>
+            <pre><code class="python">>>> if name == 'Alice':<br>        print('Hi, Alice.')</code></pre>
           </p>
 
           <p>
             <h5><strong>■ else 문</strong></h5>
             <p><strong>▶ 구성</strong> : else 키워드 + 콜론 + 다음 줄에서 시작되는, 들여쓰기 된 코드 블록 (else 절이라고 부른다.)</p>
-            <pre>>>> if name == 'Alice':<br>        print('Hi, Alice.')<br>    else:<br>        print('Hello, stranger.')</pre>
+            <pre><code class="python">>>> if name == 'Alice':<br>        print('Hi, Alice.')<br>    else:<br>        print('Hello, stranger.')</code></pre>
           </p>
 
           <p>
             <h5><strong>■ elif 문</strong></h5>
             <p><strong>▶ 구성</strong> : elif 키워드 + 조건 (즉, True 또는 False로 평가되는 표현식) + 콜론 + 다음 줄에서 시작되는, 들여쓰기 된 코드 블록 (elif 절이라고 부른다.)</p>
-            <pre>>>> if name == 'Alice':<br>        print('Hi, Alice.')<br>    elif age < 12:<br>        print('You are not Alice, kiddo.')</pre>
+            <pre><code class="python">>>> if name == 'Alice':<br>        print('Hi, Alice.')<br>    elif age < 12:<br>        print('You are not Alice, kiddo.')</code></pre>
           </p>
 
           <p>
             <h5><strong>■ while 루프문</strong></h5>
             <p><strong>▶ 구성</strong> : while 키워드 + 조건 (True 또는 False로 평가되는 표현식) + 콜론 + 다음 줄에서 시작되는, 들여쓰기 된 코드 블록 (while 절이라고 부른다.)</p>
-            <pre>>>> spam = 0<br>>>> while spam < 5:<br>        print('Hello, world.')<br>        spam = spam + 1</pre>
+            <pre><code class="python">>>> spam = 0<br>>>> while spam < 5:<br>        print('Hello, world.')<br>        spam = spam + 1</code></pre>
           </p>
 
           <p>
             <h5><strong>■ break 문</strong></h5>
             <p>▶ 반복문 루프에서 break 문에 다다르면 즉시 루프문에서 빠져 나온다. 단순히 break 키워드만 쓰면 된다.</p>
-            <pre>>>> while True:<br>        print('Please type your name.')<br>        name = input()<br>        if name == 'your name':<br>           break<br>        print('Thank you!')</pre>
+            <pre><code class="python">>>> while True:<br>        print('Please type your name.')<br>        name = input()<br>        if name == 'your name':<br>           break<br>        print('Thank you!')</code></pre>
           </p>
 
           <p>
             <h5><strong>■ continue 문</strong></h5>
             <p>▶ break 문과 같이 루프 안에서 사용된다. 루프에서 continue 문에 다다르면 프로그램 실행은 즉시 루프의 시작 부분으로 되돌아가서 루프의 조건을 다시 판단한다.(실행이 루프의 끝에 다다를 때 일어나는 일과 똑같다.) 단순히 continue 키워드만 쓰면 된다.</p>
-            <pre>>>> while True:<br>        print('Who are you?')<br>        name = input()<br>        if name != 'Joe':<br>           continue<br>        print('Hello, Joe. What is the password? (I is a fish.)')<br>        password = input()<br>        if password == 'swordfish':<br>           break<br>        print('Access granted.')</pre>
+            <pre><code class="python">>>> while True:<br>        print('Who are you?')<br>        name = input()<br>        if name != 'Joe':<br>           continue<br>        print('Hello, Joe. What is the password? (I is a fish.)')<br>        password = input()<br>        if password == 'swordfish':<br>           break<br>        print('Access granted.')</code></pre>
           </p>
 
           <p>
             <h5><strong>■ for 루프와 range() 함수</strong></h5>
             <p><strong>▶ 구성</strong> : for 키워드 + 변수이름 + in 키워드 + 최대 세 개의 정수를 포함하는 range() 메소드 호출 + 콜론 + 다음 줄에서 시작되는, 들여쓰기 된 코드 블록 (for 절이라고 부른다.)</p>
-            <pre>>>> print('My name is ')<br>>>> for i in range(5):<br>        print('Jimmy Five Times (' + str(i) + ')')</pre>
+            <pre><code class="python">>>> print('My name is ')<br>>>> for i in range(5):<br>        print('Jimmy Five Times (' + str(i) + ')')</code></pre>
             <p>※ for 루프 안에서도 break 와 continue 문을 사용할 수 있다. continue 문은 for 루프의 카운터를 다음 값으로 진행 시킨다.마치 프로그램 실행이 루프의 끝에 다다른 것과도 같다. 사실 continue 와 break 문은 while 과 for 루프 안에서만 사용할 수 있다.</p>
             <p><strong>▶ range()</strong> 메소드 : range(시작 값, 종료 값(자신을 포함하지 않음), 증감 값)와 같이 인자를 사용하며, 첫번째(생략 시 0)와 세번째 인자(생략 시 1)는 생략할 수 있다.</p>
-            <pre>>>> for i in range(5):<br>        print(i)<br>0<br>1<br>2<br>3<br>4<br>>>> for i in range(12, 16):<br>        print(i)<br>12<br>13<br>14<br>15<br>>>> for i in range(0, 10, 2):<br>        print(i)<br>0<br>2<br>4<br>6<br>8<br>>>> for i in range(5, -1, -1):<br>        print(i)<br>5<br>4<br>3<br>2<br>1<br>0</pre>
+            <pre><code class="python">>>> for i in range(5):<br>        print(i)<br>0<br>1<br>2<br>3<br>4<br>>>> for i in range(12, 16):<br>        print(i)<br>12<br>13<br>14<br>15<br>>>> for i in range(0, 10, 2):<br>        print(i)<br>0<br>2<br>4<br>6<br>8<br>>>> for i in range(5, -1, -1):<br>        print(i)<br>5<br>4<br>3<br>2<br>1<br>0</code></pre>
           </p>
 
           <p>
             <h5><strong>■ 모듈 가져오기</strong></h5>
             <p><strong>▶ 구성</strong> : import 키워드 + 모듈의 이름 + 쉼표로 구분하면 더 많은 모듈 이름을 넣을 수도 있다.</p>
-            <pre>>>> import random<br>>>> for i in range(5):<br>        print(random.randint(i, 10))</pre>
+            <pre><code class="python">>>> import random<br>>>> for i in range(5):<br>        print(random.randint(i, 10))</code></pre>
             <p>※ 다음은 네 가지 모듈을 가져오는 import 문의 예다.</p>
-            <pre>>>> import random, sys, os, math</pre>
+            <pre><code class="python">>>> import random, sys, os, math</code></pre>
             <p>이제 이들 4개의 모듈에 있는 함수를 사용할 수 있다.</p>
           </p>
 
@@ -145,7 +145,7 @@
           <p>
             <h5><strong>■ sys.exit() 함수로 프로그램을 일찍 끝내기</strong></h5>
             <p>마지막으로 다룰 흐름 제어 개념은 프로그램의 종료다. <br>프로그램 실행이 명령의 끝에 다다르면 항상 일어나는 일이지만 sys.exit() 함수를 호출해서 프로그램을 종료시킬 수 있다. 이 기능은 sys 모듈에 들어 있다.</p>
-            <pre>>>> import sys<br>>>><br>>>> while True:<br>       print('Type exit to exit.')<br>       response = input()<br>       if response == 'exit':<br>          sys.exit()<br>       print('You typed ' + response + '.')</pre>
+            <pre><code class="python">>>> import sys<br>>>><br>>>> while True:<br>       print('Type exit to exit.')<br>       response = input()<br>       if response == 'exit':<br>          sys.exit()<br>       print('You typed ' + response + '.')</code></pre>
           </p>
 
           <p>
@@ -155,12 +155,12 @@
               <li>2. 세 개의 부울 연산자는 무엇인가?</li>
               <li>3. 각 부울 연산자의 진리표를만들어 보라. (즉, 연산자에 대해 가능한 모든 부울 값 조합, 그리고 각 조합이 어떻게 평가되는지 써 보라)</li>
               <li>4. 다음과 같은 표현식은 어떻게 평가되는가?</li>
-              <pre>(5 >4) and (3 == 5)<br>not (5 > 4)<br>(5 >4) or (3 == 5)<br>not ((5 >4) or (3 == 5))<br>(True and True) and (True == False)<br>(not False) or (not True)</pre>
+              <pre><code class="python">(5 >4) and (3 == 5)<br>not (5 > 4)<br>(5 >4) or (3 == 5)<br>not ((5 >4) or (3 == 5))<br>(True and True) and (True == False)<br>(not False) or (not True)</code></pre>
               <li>5. 여섯 가지 비교 연산자는 무엇인가?</li>
               <li>6. 같음 연산자와 할당 연산자의 차이점은 무엇인가?</li>
               <li>7. 조건이란 무엇이며 이를 어디에서 사용하는지 설명하라.</li>
               <li>8. 아래 코드에 있는 3개의 블록을 지적하라.</li>
-              <pre>spam = 0<br>if spam == 10:<br>    print('eggs')<br>    if spam > 5:<br>        print('bacon')<br>    else:<br>        print('ham')<br>    print('spam')<br>print('spam')</pre>
+              <pre><code class="python">spam = 0<br>if spam == 10:<br>    print('eggs')<br>    if spam > 5:<br>        print('bacon')<br>    else:<br>        print('ham')<br>    print('spam')<br>print('spam')</code></pre>
               <li>9. spam 변수에 1이 저장되어 있으면 Hello를, 2가 저장되어 있으면 Howdy를 출력하고, 그 밖에 다른 값이라면 Greetings!를 출력하는 코드를 만들어라.</li>
               <li>10. 프로그램이 무한루프에 갇혔다면 어떤 키를 눌러야 할까?</li>
               <li>11. break 와 continue 사이의 차이점은 무엇인가?</li>

@@ -21,7 +21,7 @@
             <br>컴퓨터에 여러 버전의 파이썬이 설치되어 있는 경우 py.exe 프로그램은 올바른 버전으로 파이썬 프로그램을 실행시킨다. 파이썬 프로그램을 편리하게 실행하려면 파이썬 프로그램을 py.exe로 실행하기 위한 .bat 배치파일을 만든다.
             <br>배치파일을 만들려면 다음과 같은 한 줄을 포함하는 새 텍스트 파일을 만든다.
             </p>
-            <pre>@py.exe C:\path\to\your\pythonScript.py</pre>
+            <pre><code class="python">@py.exe C:\path\to\your\pythonScript.py</code></pre>
             <p>여기서 경로는 자신이 실행하고자 하는 프로그램의 절대 경로로 바꾼 뒤, .bat 파일 확장자로 이 파일을 저장하자.(예를 들어 pythonScript.bat) 이 배치 파일은 파이썬 프로그램을 실행할 때마다 전체 절대 경로를 입력해야 하는 번거로움을 덜어준다. 이러한 모든 배치 파일 및 .py 파일을 하나의 폴더, 이를테면 C:\MyPythonScripts 또는 C:\Users\Myname\PythonScripts 같은 곳에 모아 두기를 권한다.</p>
             <p>C:\MyPythonScripts 폴더를 윈도우 시스템 경로에 추가하면 배치 파일을 실행 대화상자에서 실행시킬 수 있다. 이렇게 하려면 PATH 환경 변수를 수정해야 한다.</p>
           </p>
@@ -30,7 +30,7 @@
             <h5><strong>■ OS X와 리눅스에서 파이썬 프로그램 실행하기</strong></h5>
             <p>OS X 또는 리눅스에서 터미널을 열고 'cd ~'를 입력하고 실행하여 홈폴더로 이동한다. 홈 폴더에 .py 파일을 저장한 다음, chmod +xpythonScript.py 를 실행해서 .py 파일의 권한을 실행 가능하도록 바꾼다. 터미널 창에서 프로그램을 실행하려면 이와 같이 파일 권한을 지정한 후에 해당 파이썬 파일에 대해 이 명령을 실행해야 한다.
             <br>이렇게 하면 터미널 창을 열고 ./pythonScript.py를 입력할 때마다 스크리브를 실행할 수 있게 된다. 스크립트의 가장 처음에 나오는 쉬뱅 라인은 운영체제에게 파이썬 인터프리터가 있는 곳을 알려 준다.</p>
-            <pre>@py.exe C:\path\to\your\pythonScript.py</pre>
+            <pre><code class="python">@py.exe C:\path\to\your\pythonScript.py</code></pre>
             <p>여기서 경로는 자신이 실행하고자 하는 프로그램의 절대 경로로 바꾼 뒤, .bat 파일 확장자로 이 파일을 저장하자.(예를 들어 pythonScript.bat) 이 배치 파일은 파이썬 프로그램을 실행할 때마다 전체 절대 경로를 입력해야 하는 번거로움을 덜어준다. 이러한 모든 배치 파일 및 .py 파일을 하나의 폴더, 이를테면 C:\MyPythonScripts 또는 C:\Users\Myname\PythonScripts 같은 곳에 모아 두기를 권한다.</p>
             <p>C:\MyPythonScripts 폴더를 윈도우 시스템 경로에 추가하면 배치 파일을 실행 대화상자에서 실행시킬 수 있다. 이렇게 하려면 PATH 환경 변수를 수정해야 한다.</p>
           </p>
