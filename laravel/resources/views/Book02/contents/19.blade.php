@@ -11,7 +11,7 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>우분투의 aptitude나, macOS의 Homebrew, Node.js의 npm 같은 패키지 관리자가 파이썬에도 있습니다. pip가 그것이죠. pip를 이용하면 거의 모든 파이썬 패키지를 쉽게 사용할 수 있습니다.</p>
+        <p>우분투의 aptitude나, macOS의 Homebrew, Node.js의 npm 같은 패키지 관리자가 파이썬에도 있다. pip가 그것이죠. pip를 이용하면 거의 모든 파이썬 패키지를 쉽게 사용할 수 있다.</p>
       </article>
     </section>
 
@@ -146,7 +146,14 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>pip의 명령어 중에는 freeze 가 있다. freeze 명령을 지원하는 패키지 리스트를 읽어 들여서 한 번에 설치하는 install -r 옵션이 있다. 이 명령과 venv를 조합하면 어딜 가든 동일한 파이썬 환경을 순식간에 만들 수 있다.</p>
+        <p>예를 들어 플라스크와 장고 프레임워크가 설치된 상태에서 pip freeze 명령을 실행하면 다음과 같은 출력 결과를 확인할 수 있다.</p>
+        <pre><code>click==6.7<br>Django==1.11.6<br>Flask==0.12.2<br>itsdangerous==0.24<br>Jinja2==2.9.6<br>MarkupSafe==1.0<br>pytz==2017.2<br>Werkzeug==0.11.11</code></pre>
+        <p>위 출력 내용은 다음 명령으로 requirements 형식의 텍스트 파일(requirements.txt)로 저장할 수 있다.</p>
+        <pre><code>$ pip freeze > requirements.txt</code></pre>
+        <p>A.2를 참고해서 venv 가상환경을 실행한다. 그리고 requirements.txt 파일을 가상 환경 시작 디렉터리에 위치시킨 후 다음 명령을 실행해서 새 가상환경에서 해당 패키지를 설치하게 할 수 있다. 새 가상환경의 깨끗한 pip 목록을 채워줄 수 있는 셈이다.</p>
+        <pre><code>$ pip install -r requirements.txt</code></pre>
+        <p>위 명령을 실행하면 requirements.txt에 있는 패키지들을 가상 환경에 설치한다. 더 자세한 팁은 스택오버플로의 'How to install packages using pip according to the requirements.txt file from a local directory?'(https://goo.gl/SpDjRO)를 참고한다.</p>
       </article>
     </section>
   </div>
