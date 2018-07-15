@@ -55,7 +55,7 @@
       <ul>
         @if($id!='1')
         <li><strong>이전글</strong> : <a href="/book02/{{(string)((int)$id-1)}}">{{$sub[(string)((int)$id-1)]}}</a></li>@endif
-        @if($id!=='18')
+        @if($id!==$maxid)
         <li><strong>다음글</strong> : <a href="/book02/{{(string)((int)$id+1)}}">{{$sub[(string)((int)$id+1)]}}</a></p></li>@endif
       </ul>
     </div>
@@ -85,7 +85,7 @@
   <a class="prev_icon" href="/book02/{{(string)((int)$id-1)}}" role="button">
     <span class="glyphicon glyphicon-chevron-left" style="font-size:2em;"></span>
   </a>@endif
-  @if($id!=='18')
+  @if($id!==$maxid)
   <a class="next_icon" href="/book02/{{(string)((int)$id+1)}}" role="button">
     <span class="glyphicon glyphicon-chevron-right" style="font-size:2em;"></span>
   </a>@endif

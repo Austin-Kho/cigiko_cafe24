@@ -25,9 +25,10 @@ class Book02Controller extends Controller
     $view->sub[13] = '13. 메시지 큐 만들기';
     $view->sub[14] = '14. 팬더스로 데이터 분석하기';
     $view->sub[15] = '15. Open API로 매시업 API 서버 만들기';
-    $view->sub[16] = 'A. pip 설치와 venv 설정하기';
-    $view->sub[17] = 'B. IPython과 Jupyter Notebook';
-    $view->sub[18] = 'C. PEP 8';
+    $view->sub[16] = '부록 A. pip 설치와 venv 설정하기';
+    $view->sub[17] = '부록 B. IPython과 Jupyter Notebook';
+    $view->sub[18] = '부록 C. PEP 8';
+    $view->maxid = '18';
     return $view;
   }
 }

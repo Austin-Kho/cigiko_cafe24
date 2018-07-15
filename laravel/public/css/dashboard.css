@@ -37,21 +37,19 @@
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
   margin-left: -20px;
-  background-color: yellow;
 }
 
 .nav-sidebar > li > a {
   /* padding: 8px 20px; */
   /* font-size: 10pt; */
-  /* background-color: red; */
 }
-/*
+
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
   color: #fff;
   background-color: #02a1e9;
-} */
+}
 
 .page-depth {
   padding-bottom: 20px;

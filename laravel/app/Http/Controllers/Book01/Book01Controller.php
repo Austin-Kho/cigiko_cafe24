@@ -31,6 +31,7 @@ class Book01Controller extends Controller
     $view->sub[19] = '부록-A 타사 모듈 설치';
     $view->sub[20] = '부록-B 프로그램 실행하기';
     $view->sub[21] = '부록-C 연습 문제 해답';
+    $view->maxid = '21';
     return $view;
   }
 }
