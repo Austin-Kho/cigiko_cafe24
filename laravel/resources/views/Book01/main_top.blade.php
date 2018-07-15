@@ -8,8 +8,8 @@
   <div class="menu-wikidocs">&nbsp;</div>
   <div class="clearfix page-depth">
     <div class="col-xs-8" style="color:#afb1af;">
-      <small><a href="/book02"><i class="glyphicon glyphicon-folder-open"></i> 개발자를 위한 파이썬</a> / </small>
-      <small><a href="/book02/{{$id}}">{{$sub[$id]}}</a></small>
+      <small><a href="/book01"><i class="glyphicon glyphicon-folder-open"></i> 파이썬으로 지루한 작업 자동화 하기</a> / </small>
+      <small><a href="/book01/{{$id}}">{{$sub[$id]}}</a></small>
     </div>
     <div class="col-xs-4" style="text-align: right;">
       <small><a href="/"><i class="glyphicon glyphicon-home"></i> Python Books</a></small>

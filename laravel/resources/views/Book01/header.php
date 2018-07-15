@@ -61,7 +61,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand"> | </span><a class="navbar-brand" href="/book01"><small>파이썬으로 지루한 작업 자동화 하기</small></a>
+          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand">|</span><a class="navbar-brand" href="/book01"><small style="font-size: 10pt;">파이썬으로 지루한 작업 자동화 하기</small></a>
         </div>
       </div>
     </nav>
