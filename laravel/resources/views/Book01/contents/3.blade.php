@@ -1,5 +1,4 @@
-
-    <h4 class="heading"><a>2장 흐름 제어</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">

@@ -1,8 +1,8 @@
-    <h4 class="heading"><a>13장 PDF 및 워드 문서 작업</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">
-
+          내용 입력
         </article>
       </section>
     </div>

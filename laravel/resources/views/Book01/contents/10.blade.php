@@ -1,4 +1,4 @@
-    <h4 class="heading"><a>8장 파일 읽기 및 쓰기</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter" id="no8">
       <section>
         <article class="">

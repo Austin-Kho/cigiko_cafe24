@@ -1,8 +1,8 @@
-    <h4 class="heading"><a>12장 엑셀 스프레드시트 다루기</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">
-
+          내용 입력
         </article>
       </section>
     </div>

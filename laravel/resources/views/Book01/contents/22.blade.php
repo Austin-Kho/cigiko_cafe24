@@ -1,4 +1,4 @@
-    <h4 class="heading"><a>■ 부록-A 타사 모듈 설치</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">

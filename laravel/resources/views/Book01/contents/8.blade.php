@@ -1,8 +1,8 @@
-    <h4 class="heading"><a>2. ppp</a></h4>
+    <h2 class="page-header">{{$sub[$id][1]}}</h2>
     <div class="chapter">
       <section>
         <article class="">
-
+          내용 입력
         </article>
       </section>
     </div>

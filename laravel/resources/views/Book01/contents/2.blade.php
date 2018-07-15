@@ -1,4 +1,4 @@
-    <h3 class="page-header">1장 파이썬(python) 기초</h3>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">

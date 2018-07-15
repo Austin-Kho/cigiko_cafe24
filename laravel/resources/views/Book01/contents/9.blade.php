@@ -1,6 +1,4 @@
-    <h2>2부 작업 자동화하기</h2>
-
-    <h4 class="heading"><a>7장 정규표현식을 사용한 패턴 대조하기</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">

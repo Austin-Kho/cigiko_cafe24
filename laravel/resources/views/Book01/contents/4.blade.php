@@ -1,4 +1,4 @@
-    <h4 class="heading"><a>3장 함수(method)</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">

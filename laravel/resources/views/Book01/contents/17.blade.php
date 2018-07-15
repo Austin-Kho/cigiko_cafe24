@@ -1,8 +1,8 @@
-    <h4 class="heading"><a>15장 시간 지키기, 작업 예약하기 및 프로그램 실행시키기</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">
-
+          내용 입력
         </article>
       </section>
     </div>

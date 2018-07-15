@@ -1,8 +1,8 @@
-    <h4 class="heading"><a>16장 전자메일 및 문자 메시지 전송</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">
-
+          내용 입력
         </article>
       </section>
     </div>

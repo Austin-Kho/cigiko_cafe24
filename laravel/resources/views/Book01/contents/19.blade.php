@@ -1,8 +1,8 @@
-    <h4 class="heading"><a>17장 이미지 조작</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">
-
+          내용 입력
         </article>
       </section>
     </div>

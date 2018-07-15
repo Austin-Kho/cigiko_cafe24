@@ -1,8 +1,8 @@
-    <h4 class="heading"><a>9장 파일 조직화하기</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">
-
+          내용 입력
         </article>
       </section>
     </div>

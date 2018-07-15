@@ -1,4 +1,4 @@
-    <h4 class="heading"><a>5장 사전(dictionary) 및 구조화 데이터</a></h4>
+    <h3 class="page-header">{{$sub[$id][1]}}</h3>
     <div class="chapter">
       <section>
         <article class="">
