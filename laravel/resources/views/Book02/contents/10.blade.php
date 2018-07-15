@@ -2,91 +2,17 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>이번 장에서는 파이썬이 무엇인지, 파이썬을 활용하는 법을 배우기 전에 파이썬 그 자체를 알아보겠습니다. 파이썬의 역사부터 시작해서 조금은 어려울 수 있는 Hello World 예제까지 해보겠습니다.</p>
+        <p>2부에서는 필자가 실무에서 겪었던 경험을 바탕으로 둔 예제를 소개합니다. 실제로 바로 현업에서 사용하기에 무리가 없는 수준의 예제를 목표로 만들었으며, 예제 중 몇 가지는 서로 유기적으로 연동할 수 있게 구성했습니다. 하지만 그와는 별개로 현재 필요를 느끼는 부분만 먼저 골라서 볼 수도 있습니다.</p>
+        <p>2부를 원활히 진행하려면 부록에서 설명하는 Jupyter Notebook과 가상환경인 venv 설정을 꼭 살펴볼 것을 권합니다. 이 도구들은 이 책의 예제는 물론 실무에서 파이썬을 사용할 때 꼭 활용되는 도구입니다.</p>
+        <ul>
+          <li><a href="/book02/11">{{$sub[11][1]}}</a></li>
+          <li><a href="/book02/12">{{$sub[12][1]}}</a></li>
+          <li><a href="/book02/13">{{$sub[13][1]}}</a></li>
+          <li><a href="/book02/14">{{$sub[14][1]}}</a></li>
+          <li><a href="/book02/15">{{$sub[15][1]}}</a></li>
+          <li><a href="/book02/16">{{$sub[16][1]}}</a></li>
+          <li><a href="/book02/17">{{$sub[17][1]}}</a></li>
+        </ul>
       </article>
     </section>
   </div>
-
-  <!-- <h3 class="sub-header">1.1. 파이썬의 역사</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">1.2. 파이썬을 익히면 좋은 점</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">1.3. 파이썬 활용이 활발한 개발 분야</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-    <h4 class="sub-header">1.3.1 - 웹 애플리케이션 개발</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">1.3.2 - 크롤링</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">1.3.3 - 데이터 과학과 인공지능 개발</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">1.4. 파이썬 개발 환경 설치</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">1.4.1 - 우분투</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-    <h4 class="sub-header">1.4.2 - macOS</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-    <h4 class="sub-header">1.4.3 - 윈도우</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">1.5. 조금은 어려운 Hello World</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div> -->
