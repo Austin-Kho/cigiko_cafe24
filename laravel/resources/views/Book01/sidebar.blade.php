@@ -20,7 +20,11 @@
 
         <div class="nav nav-sidebar list-group">
           @for($i=1; $i<=$maxid; $i++)
-            <a href="/book01/{{$i}}" class="@if(($i=='1' and $id=='1') or $id==$i) active @endif list-group-item {{"d".$sub[$i][0]}}">{{$sub[$i][1]}} @if(($i=='1' and $id=='1') or $id==$i)<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/{{$i}}" class="@if(($i=='1' and $id=='1') or $id==$i) active @endif list-group-item">
+            <span style="white-space:nowrap;overflow:hidden;display:block;">
+              <span class="{{"d".$sub[$i][0]}}">{{$sub[$i][1]}} @if(($i=='1' and $id=='1') or $id==$i)<span class="sr-only">(current)</span>@endif</span>
+            </span>
+          </a>
           @endfor
         </div>
       </div>

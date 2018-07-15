@@ -39,7 +39,10 @@
   margin-left: -20px;
 }
 
-.nav-sidebar > a > .d2 {
+.nav-sidebar > a > span > .d2 {
+  padding-left: 20px;
+}
+.nav-sidebar > a > span > .d3 {
   padding-left: 40px;
 }
 
