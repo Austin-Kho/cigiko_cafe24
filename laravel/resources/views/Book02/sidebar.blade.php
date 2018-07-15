@@ -1,6 +1,6 @@
         <div class="col-sm-3">
           <div class="row">
-            <div class="col-sm-4 col-md-3 sidebar" style="display:none;">
+            <div class="col-sm-3 sidebar" style="display:none;">
               <div class="toc" data-spy="affix_">
                 <div class="visible-xs" style="height:20px;">&nbsp;</div>
                 <div class="row" style="border-bottom: solid 1px #ccc; padding-bottom: 10px; margin-bottom: 20px;">

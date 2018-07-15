@@ -43,6 +43,7 @@
               $("#load_content").toggleClass("col-sm-9");
               $("#load_content").toggleClass("col-sm-12");
               $("#load_content").toggleClass("sidebar-padding");
+              $("#load_content").toggleClass("hidden-xs");
               $(".prev_next_indicator").toggle();
               $(".menu-group").toggle();
             }

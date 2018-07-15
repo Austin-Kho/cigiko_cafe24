@@ -1,4 +1,4 @@
-<div class="page col-sm-offset-3 col-sm-9 main" id="load_content" style="display:none;">
+<div class="page col-sm-offset-3 col-sm-9 main hidden-xs" id="load_content" style="display:none;">
 
   <div class="btn-group pull-right menu-group" role="group">
     <small>
@@ -14,5 +14,4 @@
     <div class="col-xs-4" style="text-align: right;">
       <small><a href="/"><i class="glyphicon glyphicon-home"></i> Python Books</a></small>
     </div>
-
   </div>
