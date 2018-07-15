@@ -14,43 +14,43 @@
                   </div>
                 </div>
 
-                <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
+                <!-- <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
                   <div class="col-xs-12"><h5>I 빠르게 살펴보는 파이썬 기초</h5></div>
-                </div>
+                </div> -->
 
                 <div class="nav nav-sidebar">
-                  <li class=@if($id==null or $id=='1') active @endif><a href="/book02/1">1. 파이썬 프로그래밍 준비와 시작<span class="sr-only">(current)</span></a></li>
-                  <li class=@if($id=='2') active @endif><a href="/book02/2">2. 파이썬의 주요 특징</a></li>
-                  <li class=@if($id=='3') active @endif><a href="/book02/3">3. 데이터 타입과 기본 연산자</a></li>
-                  <li class=@if($id=='4') active @endif><a href="/book02/4">4. 흐름 제어와 예외 처리</a></li>
-                  <li class=@if($id=='5') active @endif><a href="/book02/5">5. 함수와 람다</a></li>
-                  <li class=@if($id=='6') active @endif><a href="/book02/6">6. 객체지향과 클래스</a></li>
-                  <li class=@if($id=='7') active @endif><a href="/book02/7">7. 모듈과 패키지</a></li>
-                  <li class=@if($id=='8') active @endif><a href="/book02/8">8. 파일 읽고 쓰기</a></li>
-                </div>
+                  <li class=@if($id==null or $id=='1') active @endif><a href="/book02/1">{{$sub[1]}} @if($id==null or $id=='1')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='2') active @endif><a href="/book02/2">{{$sub[2]}} @if($id=='2')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='3') active @endif><a href="/book02/3">{{$sub[3]}} @if($id=='3')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='4') active @endif><a href="/book02/4">{{$sub[4]}} @if($id=='4')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='5') active @endif><a href="/book02/5">{{$sub[5]}} @if($id=='5')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='6') active @endif><a href="/book02/6">{{$sub[6]}} @if($id=='6')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='7') active @endif><a href="/book02/7">{{$sub[7]}} @if($id=='7')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='8') active @endif><a href="/book02/8">{{$sub[8]}} @if($id=='8')<span class="sr-only">(current)</span>@endif</a></li>
+                <!-- </div> -->
 
-                <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
+                <!-- <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
                   <div class="col-xs-12"><h5>II 도전! 파이썬 실무 예제</h5></div>
-                </div>
+                </div> -->
 
-                <div class="nav nav-sidebar">
-                  <li class=@if($id=='9') active @endif><a href="/book02/9">9. 크롤링 애플리케이션 만들기</a></li>
-                  <li class=@if($id=='10') active @endif><a href="/book02/10">10. SQLite 데이터베이스 사용하기</a></li>
-                  <li class=@if($id=='11') active @endif><a href="/book02/11">11. 플라스크로 API 서버 만들기</a></li>
-                  <li class=@if($id=='12') active @endif><a href="/book02/12">12. 슬랙 봇 만들기</a></li>
-                  <li class=@if($id=='13') active @endif><a href="/book02/13">13. 메시지 큐 만들기</a></li>
-                  <li class=@if($id=='14') active @endif><a href="/book02/14">14. 팬더스로 데이터 분석하기</a></li>
-                  <li class=@if($id=='15') active @endif><a href="/book02/15">15. Open API로 매시업 API 서버 만들기</a></li>
-                </div>
+                <!-- <div class="nav nav-sidebar"> -->
+                  <li class=@if($id=='9') active @endif><a href="/book02/9">{{$sub[9]}} @if($id=='9')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='10') active @endif><a href="/book02/10">{{$sub[10]}} @if($id=='10')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='11') active @endif><a href="/book02/11">{{$sub[11]}} @if($id=='11')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='12') active @endif><a href="/book02/12">{{$sub[12]}} @if($id=='12')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='13') active @endif><a href="/book02/13">{{$sub[13]}} @if($id=='13')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='14') active @endif><a href="/book02/14">{{$sub[14]}} @if($id=='14')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='15') active @endif><a href="/book02/15">{{$sub[15]}} @if($id=='15')<span class="sr-only">(current)</span>@endif</a></li>
+                <!-- </div> -->
 
-                <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
+                <!-- <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
                   <div class="col-xs-12"><h5>Appendix</h5></div>
-                </div>
-
-                <div class="nav nav-sidebar">
-                  <li class=@if($id=='16') active @endif><a href="/book02/16">A. pip 설치와 venv 설정하기</a></li>
-                  <li class=@if($id=='17') active @endif><a href="/book02/17">B. IPython과 Jupyter Notebook</a></li>
-                  <li class=@if($id=='18') active @endif><a href="/book02/18">C. PEP 8</a></li>
+                </div> -->
+                <hr />
+                <!-- <div class="nav nav-sidebar"> -->
+                  <li class=@if($id=='16') active @endif><a href="/book02/16">{{$sub[16]}} @if($id=='16')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='17') active @endif><a href="/book02/17">{{$sub[17]}} @if($id=='17')<span class="sr-only">(current)</span>@endif</a></li>
+                  <li class=@if($id=='18') active @endif><a href="/book02/18">{{$sub[18]}} @if($id=='18')<span class="sr-only">(current)</span>@endif</a></li>
                 </div>
               </div>
             </div>

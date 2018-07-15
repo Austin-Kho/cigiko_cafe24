@@ -1,45 +1,40 @@
 <!DOCTYPE html>
-<html lang="ko" dir="ltr">
+<html lang="ko">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
     <title>파이썬으로 지루한 작업 자동화 하기</title>
+
     <!-- 합쳐지고 최소화된 최신 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- 부가적인 테마 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <style media="screen">
-      h1 {padding: 10px 10px 50px; }
-      h2 {padding: 10px 10px 10px; }
-      h4 {padding: 10px 20px 10px; cursor: pointer; }
-      section > article > h4 { padding: 0;}
-      pre { background-color: #f0f5fa; }
-      pre > strong { color: #980202; }
-      p { padding: 2px; }
-      section { background-color: #FFF; padding: 10px; margin: 10px 0;}
-      /* article { background-color: yellow; } */
-      ::selection { background-color: #63c336; color: #FFF; }
-    	::-moz-selection { background-color: #63c336; color: #FFF; }
-      .chapter { margin-left: 30px; padding: 10px 20px; background-color: #eaf4fc; display: none;}
-      a#MOVE_TOP_BTN {
-        position: fixed;
-        right: 3%;
-        bottom: 38px;
-        display: none;
-        z-index: 999;
-      }
-    </style>
+    <!-- fonts css -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <!-- jquery Framework -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        $(".heading").click(function() {
-          if($(this).next(".chapter").is(":visible")){
-            $(this).next(".chapter").slideUp(350);
+        $(".subject_group").click(function() {
+          if($(this).next(".nav").is(":visible")){
+            $(this).next(".nav").slideUp(350);
           } else {
-            $(".chapter").slideUp(300);
-            $(this).next(".chapter").slideDown(350);
+            // $(".nav").slideUp(300);
+            $(this).next(".nav").slideDown(350);
           }
         });
       });
@@ -63,11 +58,12 @@
     </script>
   </head>
   <body>
-    <div class="clearfix page-depth" style="margin-bottom: 50px;">
-      <div class="col-xs-10">
-        <!-- <small><a href="/py/book02"><i class="glyphicon glyphicon-folder-open"></i> 개발자를 위한 파이썬</a></small> -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand"> | </span><a class="navbar-brand" href="/book01"><small>파이썬으로 지루한 작업 자동화 하기</small></a>
+        </div>
       </div>
-      <div class="col-xs-2" style="text-align: right;">
-        <small><a href="/"><i class="glyphicon glyphicon-home"></i> Python</a></small>
-      </div>
-    </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">

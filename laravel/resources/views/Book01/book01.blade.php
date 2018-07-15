@@ -1,27 +1,8 @@
 
-    @include('Book01/header')
-    
-    @include('Book01/chapter01')
-    @include('Book01/chapter02')
-    @include('Book01/chapter03')
-    @include('Book01/chapter04')
-    @include('Book01/chapter05')
-    @include('Book01/chapter06')
-    @include('Book01/chapter07')
-    @include('Book01/chapter08')
-    @include('Book01/chapter09')
-    @include('Book01/chapter10')
-    @include('Book01/chapter11')
-    @include('Book01/chapter12')
-    @include('Book01/chapter13')
-    @include('Book01/chapter14')
-    @include('Book01/chapter15')
-    @include('Book01/chapter16')
-    @include('Book01/chapter17')
-    @include('Book01/chapter18')
-    <hr>
-    @include('Book01/appendix01')
-    @include('Book01/appendix02')
-    @include('Book01/appendix03')
 
+
+    @include('Book01/header')
+    @include('Book01/sidebar')
+    @include('Book01/main_top')
+    @include('Book01/contents/'.$id)
     @include('Book01/footer')
