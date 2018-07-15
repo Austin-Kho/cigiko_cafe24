@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">11.1. 설치와 Hello World 웹 페이지 실행하기</h3>
+  <h3 class="sub-header">9.1. 스크래피</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,7 +16,46 @@
     </section>
   </div>
 
-  <h3 class="sub-header">11.2. 파라미터로 URL 경로와 쿼리 추가하기</h3>
+  <h3 class="sub-header">9.2. 설치</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">9.2.1 - 스크래피 프로젝트 생성</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">9.2.2 - 아이템 설정하기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h3 class="sub-header">9.3. 스파이더 만들기</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">9.3.1 - 스파이더 파일 수정하기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+
+  <h3 class="sub-header">9.4. 스파이더 규칙 설정하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -25,46 +64,39 @@
     </section>
   </div>
 
-  <h3 class="sub-header">11.3. API 서버 만들기</h3>
+  <h3 class="sub-header">9.5. 파서 함수 정의하기</h3>
   <div class="chapter">
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
+  </div>
 
-    <h4 class="sub-header">11.3.1 - 데이터베이스와 연결하기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">11.3.1 - 데이터베이스와 연결하기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">11.3.3 - 조건에 따라 데이터 가져오기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">11.3.4 - 최종 코드</h4>
+  <h3 class="sub-header">9.6. 완성된 스파이더 클래스</h3>
+  <div class="chapter">
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
   </div>
-  <!-- <li class=@if($id=='104') active @endif><a href="/book02/104" class="d2">11.1 설치와 Hello World 웹 페이지 실행하기</a></li>
-  <li class=@if($id=='105') active @endif><a href="/book02/105" class="d2">11.2 파라미터로 URL 경로와 쿼리 추가하기</a></li>
-  <li class=@if($id=='106') active @endif><a href="/book02/106" class="d2">11.3 API 서버 만들기</a></li>
-  <li class=@if($id=='107') active @endif><a href="/book02/107" class="d3">11.3.1 데이터베이스와 연결하기</a></li>
-  <li class=@if($id=='108') active @endif><a href="/book02/108" class="d3">11.3.2 모든 데이터 내려받기</a></li>
-  <li class=@if($id=='109') active @endif><a href="/book02/109" class="d3">11.3.3 조건에 따라 데이터 가져오기</a></li>
-  <li class=@if($id=='110') active @endif><a href="/book02/110" class="d3">11.3.4 최종 코드</a></li> -->
+
+  <h3 class="sub-header">9.7. 크롤링 GO!</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+  <!-- <li class=@if($id=='84') active @endif><a href="/book02/84" class="d2">9.1 스크래피</a></li>
+  <li class=@if($id=='85') active @endif><a href="/book02/85" class="d2">9.2 설치</a></li>
+  <li class=@if($id=='86') active @endif><a href="/book02/86" class="d3">9.2.1 스크래피 프로젝트 생성</a></li>
+  <li class=@if($id=='87') active @endif><a href="/book02/87" class="d3">9.2.2 아이템 설정하기</a></li>
+  <li class=@if($id=='88') active @endif><a href="/book02/88" class="d2">9.3 스파이더 만들기</a></li>
+  <li class=@if($id=='89') active @endif><a href="/book02/89" class="d3">9.3.1 스파이더 파일 수정하기</a></li>
+  <li class=@if($id=='90') active @endif><a href="/book02/90" class="d2">9.4 스파이더 규칙 설정하기</a></li>
+  <li class=@if($id=='91') active @endif><a href="/book02/91" class="d2">9.5 파서 함수 정의하기</a></li>
+  <li class=@if($id=='92') active @endif><a href="/book02/92" class="d2">9.6 완성된 스파이더 클래스</a></li>
+  <li class=@if($id=='93') active @endif><a href="/book02/93" class="d2">9.7 크롤링 GO!</a></li> -->

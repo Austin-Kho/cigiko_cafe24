@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,8 +7,22 @@
     </section>
   </div>
 
-  <h3 class="sub-header">6.1. 클래스</h3>
+  <h3 class="sub-header">5.1. 함수</h3>
   <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">5.1.1 - 타입 힌팅</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">5.1.2 - 함수를 변수처럼 전달하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -16,7 +30,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">6.2. 클래스 변수와 인스턴스 변수</h3>
+  <h3 class="sub-header">5.2. 람다</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -24,35 +38,7 @@
       </article>
     </section>
   </div>
-
-  <h3 class="sub-header">6.3. 클래스 메서드</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">6.4. 상속</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">6.5. 덕 타이핑</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-  <!-- <li class=@if($id=='60') active @endif><a href="/book02/60" class="d2">6.1 클래스</a></li>
-  <li class=@if($id=='61') active @endif><a href="/book02/61" class="d2">6.2 클래스 변수와 인스턴스 변수</a></li>
-  <li class=@if($id=='62') active @endif><a href="/book02/62" class="d2">6.3 클래스 메서드</a></li>
-  <li class=@if($id=='63') active @endif><a href="/book02/63" class="d2">6.4 상속</a></li>
-  <li class=@if($id=='64') active @endif><a href="/book02/64" class="d2">6.5 덕 타이핑</a></li> -->
+  <!-- <li class=@if($id=='55') active @endif><a href="/book02/55" class="d2">5.1 함수</a></li>
+  <li class=@if($id=='56') active @endif><a href="/book02/56" class="d3">5.1.1 타입 힌팅</a></li>
+  <li class=@if($id=='57') active @endif><a href="/book02/57" class="d3">5.1.2 함수를 변수처럼 전달하기</a></li>
+  <li class=@if($id=='58') active @endif><a href="/book02/58" class="d2">5.2 람다</a></li> -->

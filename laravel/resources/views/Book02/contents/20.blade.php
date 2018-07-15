@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">6.1. 클래스</h3>
+  <h3 class="sub-header">B.1. IPython</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,7 +16,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">6.2. 클래스 변수와 인스턴스 변수</h3>
+  <h3 class="sub-header">B.2. Jupyter Notebook</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -25,7 +25,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">6.3. 클래스 메서드</h3>
+  <h3 class="sub-header">B.3. IPython과 Jupyter Notebook 설치</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -34,7 +34,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">6.4. 상속</h3>
+  <h3 class="sub-header">B.4. IPython 사용하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -43,7 +43,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">6.5. 덕 타이핑</h3>
+  <h3 class="sub-header">B.5. Jupyter Notebook 사용법</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -51,8 +51,8 @@
       </article>
     </section>
   </div>
-  <!-- <li class=@if($id=='60') active @endif><a href="/book02/60" class="d2">6.1 클래스</a></li>
-  <li class=@if($id=='61') active @endif><a href="/book02/61" class="d2">6.2 클래스 변수와 인스턴스 변수</a></li>
-  <li class=@if($id=='62') active @endif><a href="/book02/62" class="d2">6.3 클래스 메서드</a></li>
-  <li class=@if($id=='63') active @endif><a href="/book02/63" class="d2">6.4 상속</a></li>
-  <li class=@if($id=='64') active @endif><a href="/book02/64" class="d2">6.5 덕 타이핑</a></li> -->
+  <!-- <li class=@if($id=='181') active @endif><a href="/book02/181" class="d2">B.1 IPython</a></li>
+  <li class=@if($id=='182') active @endif><a href="/book02/182" class="d2">B.2 Jupyter Notebook</a></li>
+  <li class=@if($id=='183') active @endif><a href="/book02/183" class="d2">B.3 IPython과 Jupyter Notebook 설치</a></li>
+  <li class=@if($id=='184') active @endif><a href="/book02/184" class="d2">B.4 IPython 사용하기</a></li>
+  <li class=@if($id=='185') active @endif><a href="/book02/185" class="d2">B.5 Jupyter Notebook 사용법</a></li> -->

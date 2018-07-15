@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">

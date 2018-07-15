@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">14.1. 팬더스</h3>
+  <h3 class="sub-header">12.1. 봇이 뭐죠?</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,7 +16,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">14.2. 설치하기</h3>
+  <h3 class="sub-header">12.2. 제작 과정 알아보기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -25,7 +25,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">14.3. 데이터 타입 만들기</h3>
+  <h3 class="sub-header">12.3. 상호작용하는 주사위 봇 만들기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -33,14 +33,28 @@
       </article>
     </section>
 
-    <h4 class="sub-header">14.3.1 - Series 데이터 타입 만들기</h4>
+    <h4 class="sub-header">12.3.1 - 슬랙 봇 API 토큰 얻기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">14.3.2 - DataFrame 데이터 타입 만들기</h4>
+    <h4 class="sub-header">12.3.2 - slackbot 패키지 설치</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">12.3.3 - 파일 만들기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">12.3.4 - 주사위 기능 설정하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -48,7 +62,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">14.4. 데이터를 불러오고 저장하기</h3>
+  <h3 class="sub-header">12.4. 정기적인 작업을 실행하는 봇 만들기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -56,21 +70,35 @@
       </article>
     </section>
 
-    <h4 class="sub-header">14.4.1 - CSV 파일</h4>
+    <h4 class="sub-header">12.4.1 - API 토큰 얻기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">14.4.2 - 엑셀 파일</h4>
+    <h4 class="sub-header">12.4.2 - 터미널에서 메시지 보내기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">14.4.3 - 데이터베이스</h4>
+    <h4 class="sub-header">12.4.3 - 작업을 파이썬 파일로 만들기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">12.4.4 - 파이썬 파일을 실행하는 셸 스크립트 만들기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">12.4.5 - crontab을 이용해 스크립트를 주기적으로 실행하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -78,105 +106,16 @@
     </section>
   </div>
 
-  <h3 class="sub-header">14.5. 여러 가지 형태로 데이터 다루기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.5.1 - 조건에 맞춰 데이터 선택해 가져오기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.5.2 - 불리언 인덱싱</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.5.3 - 인덱스 기준에 따라 데이터 다루기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">14.6. 데이터 병합하기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.6.1 - merge()</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.6.2 - concat()</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">14.7. 데이터 분석하기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.7.1 - 그룹화하기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.7.2 - agg()와 apply() 함수로 데이터 가공하기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">14.7.3 - 그래프 그리기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-  <!-- <li class=@if($id=='139') active @endif><a href="/book02/139" class="d2">14.1 팬더스</a></li>
-  <li class=@if($id=='140') active @endif><a href="/book02/140" class="d2">14.2 설치하기</a></li>
-  <li class=@if($id=='141') active @endif><a href="/book02/141" class="d2">14.3 데이터 타입 만들기</a></li>
-  <li class=@if($id=='142') active @endif><a href="/book02/142" class="d3">14.3.1 Series 데이터 타입 만들기</a></li>
-  <li class=@if($id=='143') active @endif><a href="/book02/143" class="d3">14.3.2 DataFrame 데이터 타입 만들기</a></li>
-  <li class=@if($id=='144') active @endif><a href="/book02/144" class="d2">14.4 데이터를 불러오고 저장하기</a></li>
-  <li class=@if($id=='145') active @endif><a href="/book02/145" class="d3">14.4.1 CSV 파일</a></li>
-  <li class=@if($id=='146') active @endif><a href="/book02/146" class="d3">14.4.2 엑셀 파일</a></li>
-  <li class=@if($id=='147') active @endif><a href="/book02/147" class="d3">14.4.3 데이터베이스</a></li>
-  <li class=@if($id=='148') active @endif><a href="/book02/148" class="d2">14.5 여러 가지 형태로 데이터 다루기</a></li>
-  <li class=@if($id=='149') active @endif><a href="/book02/149" class="d3">14.5.1 조건에 맞춰 데이터 선택해 가져오기</a></li>
-  <li class=@if($id=='150') active @endif><a href="/book02/150" class="d3">14.5.2 불리언 인덱싱</a></li>
-  <li class=@if($id=='151') active @endif><a href="/book02/151" class="d3">14.5.3 인덱스 기준에 따라 데이터 다루기</a></li>
-  <li class=@if($id=='152') active @endif><a href="/book02/152" class="d2">14.6 데이터 병합하기</a></li>
-  <li class=@if($id=='153') active @endif><a href="/book02/153" class="d3">14.6.1 merge()</a></li>
-  <li class=@if($id=='154') active @endif><a href="/book02/154" class="d3">14.6.2 concat()</a></li>
-  <li class=@if($id=='155') active @endif><a href="/book02/155" class="d2">14.7 데이터 분석하기</a></li>
-  <li class=@if($id=='156') active @endif><a href="/book02/156" class="d3">14.7.1 그룹화하기</a></li>
-  <li class=@if($id=='157') active @endif><a href="/book02/157" class="d3">14.7.2 agg()와 apply() 함수로 데이터 가공하기</a></li>
-  <li class=@if($id=='158') active @endif><a href="/book02/158" class="d3">14.7.3 그래프 그리기</a></li> -->
+  <!-- <li class=@if($id=='112') active @endif><a href="/book02/112" class="d2">12.1 봇이 뭐죠?</a></li>
+  <li class=@if($id=='113') active @endif><a href="/book02/113" class="d2">12.2 제작 과정 알아보기</a></li>
+  <li class=@if($id=='114') active @endif><a href="/book02/114" class="d2">12.3 상호작용하는 주사위 봇 만들기</a></li>
+  <li class=@if($id=='115') active @endif><a href="/book02/115" class="d3">12.3.1 슬랙 봇 API 토큰 얻기</a></li>
+  <li class=@if($id=='116') active @endif><a href="/book02/116" class="d3">12.3.2 slackbot 패키지 설치</a></li>
+  <li class=@if($id=='117') active @endif><a href="/book02/117" class="d3">12.3.3 파일 만들기</a></li>
+  <li class=@if($id=='118') active @endif><a href="/book02/118" class="d3">12.3.4 주사위 기능 설정하기</a></li>
+  <li class=@if($id=='119') active @endif><a href="/book02/119" class="d2">12.4 정기적인 작업을 실행하는 봇 만들기</a></li>
+  <li class=@if($id=='120') active @endif><a href="/book02/120" class="d3">12.4.1 API 토큰 얻기</a></li>
+  <li class=@if($id=='121') active @endif><a href="/book02/121" class="d3">12.4.2 터미널에서 메시지 보내기</a></li>
+  <li class=@if($id=='122') active @endif><a href="/book02/122" class="d3">12.4.3 작업을 파이썬 파일로 만들기</a></li>
+  <li class=@if($id=='123') active @endif><a href="/book02/123" class="d3">12.4.4 파이썬 파일을 실행하는 셸 스크립트 만들기</a></li>
+  <li class=@if($id=='124') active @endif><a href="/book02/124" class="d3">12.4.5 crontab을 이용해 스크립트를 주기적으로 실행하기</a></li> -->

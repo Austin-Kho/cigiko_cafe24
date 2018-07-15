@@ -1,0 +1,54 @@
+<div class="col-sm-3">
+  <div class="row">
+    <div class="col-sm-3 sidebar" style="display:none;">
+      <div class="toc" data-spy="affix_">
+        <div class="visible-xs" style="height:20px;">&nbsp;</div>
+        <div class="row" style="border-bottom: solid 1px #ccc; padding-bottom: 10px; margin-bottom: 20px;">
+          <div class="col-xs-10">
+            <form class="">
+              <input type="text" class="form-control" placeholder="검색어를 입력하세요. (준비중..!)">
+            </form>
+          </div>
+          <div class="col-xs-2" style="padding: 0; text-align: right;">
+            <a class="pull-right menu_link menu-toggle col-xs-2" style="cursor:pointer; margin: 9px;"><span class="glyphicon glyphicon-menu-hamburger" title="메뉴"></span></a>
+          </div>
+        </div>
+
+        <!-- <div class="row subject_group" style="margin-bottom: 10px; background-color: #b6b2af; color: #FFF; cursor: pointer;">
+          <div class="col-xs-12"><h5>1부 파이썬 프로그래밍 기초</h5></div>
+        </div> -->
+
+        <div class="nav nav-sidebar list-group">
+
+
+          <a href="/book01/1" class="@if($id==null or $id=='1') active @endif list-group-item {{"d".$sub[1][0]}}">{{$sub[1][1]}} @if($id==null or $id=='1')<span class="sr-only">(current)</span>@endif</a>
+
+
+          <a href="/book01/2" class="@if($id=='2') active @endif list-group-item {{"d".$sub[2][0]}}">{{$sub[2][1]}} @if($id=='2')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/3" class="@if($id=='3') active @endif list-group-item {{"d".$sub[3][0]}}">{{$sub[3][1]}} @if($id=='3')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/4" class="@if($id=='4') active @endif list-group-item {{"d".$sub[4][0]}}">{{$sub[4][1]}} @if($id=='4')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/5" class="@if($id=='5') active @endif list-group-item {{"d".$sub[5][0]}}">{{$sub[5][1]}} @if($id=='5')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/6" class="@if($id=='6') active @endif list-group-item {{"d".$sub[6][0]}}">{{$sub[6][1]}} @if($id=='6')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/7" class="@if($id=='7') active @endif list-group-item {{"d".$sub[7][0]}}">{{$sub[7][1]}} @if($id=='7')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/8" class="@if($id=='8') active @endif list-group-item {{"d".$sub[8][0]}}">{{$sub[8][1]}} @if($id=='8')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/9" class="@if($id=='9') active @endif list-group-item {{"d".$sub[9][0]}}">{{$sub[9][1]}} @if($id=='9')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/10" class="@if($id=='10') active @endif list-group-item {{"d".$sub[10][0]}}">{{$sub[10][1]}} @if($id=='10')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/11" class="@if($id=='11') active @endif list-group-item {{"d".$sub[11][0]}}">{{$sub[11][1]}} @if($id=='11')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/12" class="@if($id=='12') active @endif list-group-item {{"d".$sub[12][0]}}">{{$sub[12][1]}} @if($id=='12')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/13" class="@if($id=='13') active @endif list-group-item {{"d".$sub[13][0]}}">{{$sub[13][1]}} @if($id=='13')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/14" class="@if($id=='14') active @endif list-group-item {{"d".$sub[14][0]}}">{{$sub[14][1]}} @if($id=='14')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/15" class="@if($id=='15') active @endif list-group-item {{"d".$sub[15][0]}}">{{$sub[15][1]}} @if($id=='15')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/16" class="@if($id=='16') active @endif list-group-item {{"d".$sub[16][0]}}">{{$sub[16][1]}} @if($id=='16')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/17" class="@if($id=='17') active @endif list-group-item {{"d".$sub[17][0]}}">{{$sub[17][1]}} @if($id=='17')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/18" class="@if($id=='18') active @endif list-group-item {{"d".$sub[18][0]}}">{{$sub[18][1]}} @if($id=='18')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/19" class="@if($id=='19') active @endif list-group-item {{"d".$sub[19][0]}}">{{$sub[19][1]}} @if($id=='19')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/20" class="@if($id=='20') active @endif list-group-item {{"d".$sub[20][0]}}">{{$sub[20][1]}} @if($id=='20')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/21" class="@if($id=='21') active @endif list-group-item {{"d".$sub[21][0]}}">{{$sub[21][1]}} @if($id=='21')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/22" class="@if($id=='22') active @endif list-group-item {{"d".$sub[22][0]}}">{{$sub[22][1]}} @if($id=='22')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/23" class="@if($id=='23') active @endif list-group-item {{"d".$sub[23][0]}}">{{$sub[23][1]}} @if($id=='23')<span class="sr-only">(current)</span>@endif</a>
+          <a href="/book01/24" class="@if($id=='24') active @endif list-group-item {{"d".$sub[24][0]}}">{{$sub[24][1]}} @if($id=='24')<span class="sr-only">(current)</span>@endif</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

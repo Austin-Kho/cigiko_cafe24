@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,22 +7,8 @@
     </section>
   </div>
 
-  <h3 class="sub-header">15.1. 접근 권한 획득하기</h3>
+  <h3 class="sub-header">13.1. 메시지 큐</h3>
   <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">15.1.1 - 카카오 API 키 획득하기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">15.1.2 - 네이버 API 키 획득하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -30,7 +16,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">15.2. 데이터 요청하기와 표시하기</h3>
+  <h3 class="sub-header">13.2. RabbitMQ 소개</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -38,14 +24,7 @@
       </article>
     </section>
 
-    <h4 class="sub-header">15.2.1 - Daum</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">15.2.2 - 네이버</h4>
+    <h4 class="sub-header">13.2.1 - RabbitMQ 설치와 메시지 큐 서버 실행하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -53,7 +32,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">15.3. 매시업 API 서버 만들기</h3>
+  <h3 class="sub-header">13.3. RabbitMQ의 기본 동작 개념</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -61,50 +40,73 @@
       </article>
     </section>
 
-    <h4 class="sub-header">15.3.1 - 영화 정보를 모아서 보여주기</h4>
+    <h4 class="sub-header">13.3.1 - pika 패키지 설치</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">15.3.2 - 영화 검색 결과 가져오기</h4>
+    <h4 class="sub-header">13.3.2 - 메시지 전달: 쿠에 넣고 가져오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">15.3.3 - 매시업 API 서버 만들기</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">15.3.4 - HTML 렌더링을 위한 템플릿</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">15.3.5 - 매시업 응용</h4>
+    <h4 class="sub-header">13.3.3 - 작업 분배: 큐에 넣고 여러 개의 워커가 가져가고 작업 종료 확인하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
   </div>
-  <!-- <li class=@if($id=='160') active @endif><a href="/book02/160" class="d2">15.1 접근 권한 획득하기</a></li>
-  <li class=@if($id=='161') active @endif><a href="/book02/161" class="d3">15.1.1 카카오 API 키 획득하기</a></li>
-  <li class=@if($id=='162') active @endif><a href="/book02/162" class="d3">15.1.2 네이버 API 키 획득하기</a></li>
-  <li class=@if($id=='163') active @endif><a href="/book02/163" class="d2">15.2 데이터 요청하기와 표시하기</a></li>
-  <li class=@if($id=='164') active @endif><a href="/book02/164" class="d3">15.2.1 Daum</a></li>
-  <li class=@if($id=='165') active @endif><a href="/book02/165" class="d3">15.2.2 네이버</a></li>
-  <li class=@if($id=='166') active @endif><a href="/book02/166" class="d2">15.3 매시업 API 서버 만들기</a></li>
-  <li class=@if($id=='167') active @endif><a href="/book02/167" class="d3">15.3.1 영화 정보를 모아서 보여주기</a></li>
-  <li class=@if($id=='168') active @endif><a href="/book02/168" class="d3">15.3.2 영화 검색 결과 가져오기</a></li>
-  <li class=@if($id=='169') active @endif><a href="/book02/169" class="d3">15.3.3 매시업 API 서버 만들기</a></li>
-  <li class=@if($id=='170') active @endif><a href="/book02/170" class="d3">15.3.4 HTML 렌더링을 위한 템플릿</a></li>
-  <li class=@if($id=='171') active @endif><a href="/book02/171" class="d3">15.3.5 매시업 응용</a></li> -->
+
+  <h3 class="sub-header">13.4. 셀러리: 메시지 큐를 이용한 분산 처리 애플리케이션</h3>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">13.4.1 - 설치</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">13.4.2 - 셀러리의 동작 구조</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">13.4.3 - 워커 서버</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">13.4.4 - 태스크 퍼블리셔(사용자 앱)</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+  </div>
+  <!-- <li class=@if($id=='126') active @endif><a href="/book02/126" class="d2">13.1 메시지 큐</a></li>
+  <li class=@if($id=='127') active @endif><a href="/book02/127" class="d2">13.2 RabbitMQ 소개</a></li>
+  <li class=@if($id=='128') active @endif><a href="/book02/128" class="d3">13.2.1 RabbitMQ 설치와 메시지 큐 서버 실행하기</a></li>
+  <li class=@if($id=='129') active @endif><a href="/book02/129" class="d2">13.3 RabbitMQ의 기본 동작 개념</a></li>
+  <li class=@if($id=='130') active @endif><a href="/book02/130" class="d3">13.3.1 pika 패키지 설치</a></li>
+  <li class=@if($id=='131') active @endif><a href="/book02/131" class="d3">13.3.2 메시지 전달: 쿠에 넣고 가져오기</a></li>
+  <li class=@if($id=='132') active @endif><a href="/book02/132" class="d3">13.3.3 작업 분배: 큐에 넣고 여러 개의 워커가 가져가고 작업 종료 확인하기</a></li>
+  <li class=@if($id=='133') active @endif><a href="/book02/133" class="d2">13.4 셀러리: 메시지 큐를 이용한 분산 처리 애플리케이션</a></li>
+  <li class=@if($id=='134') active @endif><a href="/book02/134" class="d3">13.4.1 설치</a></li>
+  <li class=@if($id=='135') active @endif><a href="/book02/135" class="d3">13.4.2 셀러리의 동작 구조</a></li>
+  <li class=@if($id=='136') active @endif><a href="/book02/136" class="d3">13.4.3 워커 서버</a></li>
+  <li class=@if($id=='137') active @endif><a href="/book02/137" class="d3">13.4.4 태스크 퍼블리셔(사용자 앱)</a></li> -->

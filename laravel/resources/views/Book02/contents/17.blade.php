@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,8 +7,22 @@
     </section>
   </div>
 
-  <h3 class="sub-header">B.1. IPython</h3>
+  <h3 class="sub-header">15.1. 접근 권한 획득하기</h3>
   <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">15.1.1 - 카카오 API 키 획득하기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">15.1.2 - 네이버 API 키 획득하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -16,8 +30,22 @@
     </section>
   </div>
 
-  <h3 class="sub-header">B.2. Jupyter Notebook</h3>
+  <h3 class="sub-header">15.2. 데이터 요청하기와 표시하기</h3>
   <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">15.2.1 - Daum</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">15.2.2 - 네이버</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -25,34 +53,58 @@
     </section>
   </div>
 
-  <h3 class="sub-header">B.3. IPython과 Jupyter Notebook 설치</h3>
+  <h3 class="sub-header">15.3. 매시업 API 서버 만들기</h3>
   <div class="chapter">
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
-  </div>
 
-  <h3 class="sub-header">B.4. IPython 사용하기</h3>
-  <div class="chapter">
+    <h4 class="sub-header">15.3.1 - 영화 정보를 모아서 보여주기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
-  </div>
 
-  <h3 class="sub-header">B.5. Jupyter Notebook 사용법</h3>
-  <div class="chapter">
+    <h4 class="sub-header">15.3.2 - 영화 검색 결과 가져오기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">15.3.3 - 매시업 API 서버 만들기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">15.3.4 - HTML 렌더링을 위한 템플릿</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">15.3.5 - 매시업 응용</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
   </div>
-  <!-- <li class=@if($id=='181') active @endif><a href="/book02/181" class="d2">B.1 IPython</a></li>
-  <li class=@if($id=='182') active @endif><a href="/book02/182" class="d2">B.2 Jupyter Notebook</a></li>
-  <li class=@if($id=='183') active @endif><a href="/book02/183" class="d2">B.3 IPython과 Jupyter Notebook 설치</a></li>
-  <li class=@if($id=='184') active @endif><a href="/book02/184" class="d2">B.4 IPython 사용하기</a></li>
-  <li class=@if($id=='185') active @endif><a href="/book02/185" class="d2">B.5 Jupyter Notebook 사용법</a></li> -->
+  <!-- <li class=@if($id=='160') active @endif><a href="/book02/160" class="d2">15.1 접근 권한 획득하기</a></li>
+  <li class=@if($id=='161') active @endif><a href="/book02/161" class="d3">15.1.1 카카오 API 키 획득하기</a></li>
+  <li class=@if($id=='162') active @endif><a href="/book02/162" class="d3">15.1.2 네이버 API 키 획득하기</a></li>
+  <li class=@if($id=='163') active @endif><a href="/book02/163" class="d2">15.2 데이터 요청하기와 표시하기</a></li>
+  <li class=@if($id=='164') active @endif><a href="/book02/164" class="d3">15.2.1 Daum</a></li>
+  <li class=@if($id=='165') active @endif><a href="/book02/165" class="d3">15.2.2 네이버</a></li>
+  <li class=@if($id=='166') active @endif><a href="/book02/166" class="d2">15.3 매시업 API 서버 만들기</a></li>
+  <li class=@if($id=='167') active @endif><a href="/book02/167" class="d3">15.3.1 영화 정보를 모아서 보여주기</a></li>
+  <li class=@if($id=='168') active @endif><a href="/book02/168" class="d3">15.3.2 영화 검색 결과 가져오기</a></li>
+  <li class=@if($id=='169') active @endif><a href="/book02/169" class="d3">15.3.3 매시업 API 서버 만들기</a></li>
+  <li class=@if($id=='170') active @endif><a href="/book02/170" class="d3">15.3.4 HTML 렌더링을 위한 템플릿</a></li>
+  <li class=@if($id=='171') active @endif><a href="/book02/171" class="d3">15.3.5 매시업 응용</a></li> -->

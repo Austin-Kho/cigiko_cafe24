@@ -1,131 +1,70 @@
-    <h4 class="heading"><a>6장 문자열(String) 조작하기</a></h4>
+    <h4 class="heading"><a>5장 사전(dictionary) 및 구조화 데이터</a></h4>
     <div class="chapter">
       <section>
         <article class="">
           <p>
-            <h4><strong>■ 문자열 다루기</strong></h4>
-            <p>파이썬이 문자열을 작성하고, 출력하고, 사용하는 몇 가지 방법을 알아보자.</p>
+            <h5><strong>■ 사전 데이터 유형</strong></h5>
+            <p>리스트와 마찬가지로 사전(dictionary)은 많은 값의 모음이다. 그러나 리스트의 인덱스와는 달리 사전의 인덱스는 정수만이 아닌 다양한 데이터 유형을 사용할 수 있다.<br>사전을 위한 인덱스를 키(key)라고 하며, 키와 그에 연관된 값을 키-값 쌍(key-value pair)이라고 한다. 코드에서 사전은 중괄호 { }로 정의된다.</p>
+            <pre>>>> myCat = {'size': 'fat', 'color': 'gray', 'disposition': 'loud'}<br>>>> myCat['size']<br>'fat'<br>>>> 'My cat has ' + myCat['color'] + ' fur.'<br>'My cat has gray fur.'</b></pre>
           </p>
 
           <p>
-            <h5><strong>▶ 문자열 리터럴</strong></h5>
-            <p>파이썬 코드에서 문자열 값 입력은 기본적으로 홑따옴표로 시작하고 홑따옴표로 끝난다. 그러나 문자열 안에 따옴표를 입력하여야 할 경우 다른 방식이 필요하다.</p>
-            <p><strong>• 겹따옴표</strong> : 문자열은 홑따옴표를 쓰는 방식과 마찬가지로 겹따옴표로도 시작하고 끝맺을 수 있다. 겹따옴표를 사용하는 이점 중 하나는 문자열 안에 홑따옴표를 둘 수 있다는 것이다.</p>
-            <pre>>>> spam = "That is Alice's cat."</pre>
-            <p><strong>• 이스케이프 문자</strong> : 하지만 문자열 안에 홑따옴표와 겹따옴표를 모두 사용해야 한다면 이스케이프 문자를 사용해야 한다. 이스케이프 문자는 백슬래시(\) 다음에 문자열에 넣고 싶은 글자를 두는 방식으로 구성된다.(두 글자로 이루어졌지만 보통은 한 개의 이스케이프 문자로 간주된다.)</p>
-            <pre>>>> spam = 'Say hi to Bob\'s mother.'</pre>
-            <h5><strong>•• 표 6-1 이스케이프 문자</strong></h5>
-            <table class="table table-hover table-condensed table table-bordered">
-              <thead>
-                <tr>
-                  <td>이스케이프 문자</td><td>출력되는 글자</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>\'</td><td>홑따옴표</td></tr>
-                <tr><td>\"</td><td>겹따옴표</td></tr>
-                <tr><td>\t</td><td>탭</td></tr>
-                <tr><td>\n</td><td>줄바꿈</td></tr>
-                <tr><td>\\</td><td>백슬래쉬</td></tr>
-              </tbody>
-            </table>
-            <pre>>>> print("Hello there!\nHow are you?\nI\'m doing fine.")<br>Hello there!<br>How are you?<br>I'm doing fine.</pre>
-            <p><strong>• 원시 문자열</strong> : 문자열을 시작하는 따옴표 앞에 r을 놓으면 문자열을 원시 문자열로 만들 수 있다. 원시 문자열은 모든 이스케이프 문자을 완전히 무시하고 문자열에 나타나는 백슬래시를 인쇄한다.</p>
-            <pre>>>> print(r'That is Carol\'s cat.')<br>That is Carol\'s cat.</pre>
-            <p>위 문자열은 원시 문자열이기 때문에 파이썬은 백스래시를 문자열의 일부가 아니라 이스케이프 문자의 시작으로 간주한다. 정규표현식을 사용하는 문자열과 같이 백슬래시가 많이 들어 있는 문자열을 입력할 때에는 원시 문자열이 도움이 된다.</p>
-
-
-            <p><strong>• 세겹 따옴표를 사용하는 여러 줄에 걸친 문자열</strong> : 파이썬에서 여러 줄 문자열은 세 개의 홑따옴표나 세 개의 겹따옴표로 시작하고 끝난다. 세겹 따옴표 사이의 모든 따옴표, 탭, 또는 줄바꿈은 문자열의 일부로 간주된다. 블록에 대한 파이썬의 들여쓰기 규칙은 여러 줄 문자열 안에 있는 줄들에는 적용되지 않는다.</p>
-            <pre>>>> print('''Dear Alice,<br><br>Eve's cat has been arrested for catnapping, cat burglary, and extortion.<br><br>Sincerely,<br>Bob''')</pre>
-            <p><strong>• 여러 줄 주석</strong> : 해시 문자(#)는 그 줄의 나머지 부분에 대한 주식의 시작을 표시하는 반면, 여러 줄에 걸친 문자열을 여러 줄에 걸친 주석에 사용할 때도 있다. </p>
-            <pre>"""This is a test Python program.<br>Written by Al Sweigart al@inventwithpython.com<br><br>This program was designed for Python 3, not Python 2.<br>"""</pre>
+            <h5><strong>■ 사전과 리스트의 차이</strong></h5>
+            <p>리스트와는 달리 사전의 아이템들은 순서가 없다.</p>
+            <pre>>>> spam = ['cats', 'dogs', 'moose']<br>>>> bacon = ['dogs', 'moose', 'cats']<br>>>> spam == bacon<br><strong>False</strong>
+              <br>>>> eggs = {'name': 'Zophie', 'species': 'cat', 'age': '8'}<br>>>> ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}<br>>>> eggs == ham<br><strong>True</strong>
+            </pre>
           </p>
 
           <p>
-            <h5><strong>▶ 문자열 인덱스와 슬라이스</strong></h5>
-            <p>문자열은 리스트처럼 인덱스와 슬라이스를 사용한다.</p>
-            <pre>>>> spam = 'Hello world!'<br>>>> spam[0]<br>'H'<br>>>> spam[4]<br>'o'<br>spam[-1]<br>'!'<br>>>> spam[0:5]<br>'Hello'<br>spam[:5]<br>'Hello'<br>>>> spam[6:]<br>'world!'</pre>
+            <h5><strong>■ 키 또는 값이 사전에 존재하는지 확인하기</strong></h5>
+            <p>리스트에서와 같이 사전에서도 in 연산자와 not in 연산자로 특정 키 또는 값이 사전에 존재하는지 여부를 확인할 수 있다.</p>
+            <pre>>>> spam = {'name': 'Zophie', 'age': 7}<br>>>> 'name' in spam.keys()<br>True<br>>>> 'Zophie' in spam.values()<br>True<br>'color' in spam.keys()<br>False<br>'color' not in spam.keys()<br>True<br>>>> 'color' in spam<br>False</pre>
           </p>
 
           <p>
-            <h5><strong>▶ 문자열에 in 또는 not in 연산자 사용하기</strong></h5>
-            <p>문자열은 리스트처럼 in 또는 not in 연산자를 쓸 수 있다. 이 표현식은 부울 True 또는 False 값으로 평가된다.</p>
-            <pre>>>> 'Hello' in 'Hello World'<br>True<br>'Hello' in 'Hello'<br>True<br>'HELLO' in 'Hello World'<br>False<br>'' in 'spam'<br>True<br>'cats' not in 'cats and dogs'<br>False</pre>
+            <h5><strong>■ get() 메소드와 setdefault() 메소드</strong></h5>
+            <p><strong>▶ get()</strong> : 키의 값을 사용할 때마다 그 전에 사전에 키가 존재하는지 여부를 확인하려면 귀찮을 것이다. 다행히도 사전에는 두개의 매개변수를 가지는 get() 메소드가 있다. 하나는 가져올 값의 키이며, 다른 하나는 키가 존재하지 않을 때 대신 돌려줄 값이다.</p>
+            <pre>>>> picnicItems = {'apples': 5, 'cups': 2}<br>>>> 'I am bringing ' + str(picnicItems.get('cups', 0)) + ' cups.'<br>'I am bringing 2 cups.'<br>>>> 'I am bringing ' + str(picnicItems.get('eggs', 0)) + ' eggs.'<br>'I am bringing 0 eggs.'</pre>
+            <p><strong>▶ setdefault()</strong> : 사전 안의 어떤 특정한 키에 이미 값이 존재하지 않는 경우에만 그 키에 값을 설정할 때가 종종 있다.</p>
+            <pre>>>> spam = {'name': 'Pooka', 'age': 5}<br>>>> if 'color' not in spam:<br>        spam['color'] = 'black'</pre>
+            <p>setdefault() 메소드는 한 줄의 코드에서 이러한 작업을 수행할 수 있는 방법을 제공한다. 메소드에 전달되는 첫 번째 매개변수는 검사할 키이며, 두 번째 매개변수는 키가 존재하지 않을 때 해당 키에 설정할 수 있는 값이다. 키가 존재하는 경우 setdefault() 메소드는 키의 값을 돌려준다.</p>
+            <pre>>>> spam = {'name': 'Pooka', 'age': 5}<br>>>> spam.setdefault('color', 'black')<br>'black'<br>>>> spam<br>{'color': 'black', 'age': 5, 'name': 'Pooka'}
+              <br>>>> spam.setdefault('color': 'white')<br>'black'<br>>>> spam<br>{'color': 'black', 'age': 5, 'name': 'Pooka'}</pre>
           </p>
 
           <p>
             <h5><strong>■ 관련 모듈</strong></h5>
             <ul>
-              <li><strong>import pyperclip</strong> : pyperclip 모듈은 컴퓨터의 클립보드로 텍스트를 보내거나 클립보드에서 텍스트를 가지고 올 수 있는 copy(), paste() 함수를 가지고 있다. 프로그램의 출력을 클립보드로 보내면 이메일, 워드프로세서 또는 다른 소프트웨어에 텍스트를 쉽게 붙여 넣을 수 있다.
-                <br>pyperclip 모듈은 python에 들어있지 않다. 각 OS별 타사 모듈 설치 가이드를 따라야 한다.</li>
+              <li><strong>import pprint</strong> : pprint.pprint(dict) 사전을 키와 값으로 정렬하여 보기 좋게 출력하여 준다.</li>
             </ul>
+          </p>
 
+          <p>
             <h5><strong>■ 관련 메소드</strong></h5>
             <ul>
-              <li><strong>upper()</strong> : upper() 함수는 문자열의 모든 글자를 대문자로 변환한 새로운 문자열을 돌려준다.</li>
-              <li><strong>lower()</strong> : lower() 함수는 문자열의 모든 글자를 소문자로 변환한 새로운 문자열을 돌려준다.</li>
-              <pre>>>> spam = 'Hello world!'<br>>>> spam = spam.upper()<br>>>> spam<br>'HELLO WORLD!'<br>>>> spam = spam.lower()<br>>>> spam<br>'hello world!'</pre>
-              <li><strong>isupper()</strong> : isupper() 함수는 문자열이 모두 대문자로 이루어져 있다면 부울 값 True 를 돌려준다. 모두 숫자면 False.</li>
-              <li><strong>islower()</strong> : islower() 함수는 문자열이 모두 소문자로 이루어져 있다면 부울 값 True 를 돌려준다. 모두 숫자면 False.</li>
-              <li><strong>startswith()</strong> : startswith() 함수는 호출한 문자열 값이 메소드에 전달된 문자열로 시작되면 True 그렇지 않으면 False 를 돌려준다.</li>
-              <li><strong>endswith()</strong> : endswith() 함수는 호출한 문자열 값이 메소드에 전달된 문자열로 끝나면 True 그렇지 않으면 False 를 돌려준다.</li>
-              <pre>>>> 'Hello world!'.startswith('Hello')<br>True<br>>>> 'Hello world!'.endswith('world!')<br>True</pre>
-            </ul>
-            <h5><strong>• isX 문자열 메소드</strong></h5>
-            <ul>
-              <li><strong>isalpha()</strong> : isalpha() 함수는 문자열이 (기호가 아닌) 문자로만 구성되어 있으며 빈칸이 없으면 True 를 반환한다.</li>
-              <li><strong>isalnum()</strong> : isalnum() 함수는 문자열이 (기호가 아닌) 문자와 숫자로만 구성되어 있으며 빈칸이 없으면 True 를 반환한다.</li>
-              <li><strong>isdecimal()</strong> : isdecimal() 함수는 문자열이 숫자로만 구성되어 있으며 빈칸이 없으면 True 를 반환한다.</li>
-              <li><strong>isspace()</strong> : isspace() 함수는 문자열이 빈칸, 탭, 줄바꿈 문자로만 구성되어 있지만 비어 있지는 않으면 True 를 반환한다.</li>
-            </ul>
-
-            <h5><strong>• join() 과 split() 문자열 메소드</strong></h5>
-            <ul>
-              <li><strong>join()</strong> : join() 함수는 문자열로 이루어진 리스트를 하나의 문자열로 연결시켜 준다.</li>
-              <pre>>>> ', '.join(['cats', 'rats', 'bats'])<br>'cats, rats, bats'<br>>>> ' '.join(['My', 'name', 'is', 'Simon'])<br>'My name is Simon'</pre>
-              <li><strong>split()</strong> : split() 함수는 join() 과 반대로 문자열을 호출하여 문자열의 리스트를 돌려준다.</li>
-              <pre>>>> 'My name is Simon'.split()<br>['My', 'name', 'is', 'Simon']</pre>
-              <p>기본적으로 split() 에 호출되는 문자열은 빈칸, 탭, 또는 줄바꿈과 같은 공백 문자가 있는 곳에서 분리된다.</p>
-            </ul>
-
-            <h5><strong>• rjust(), ljust(), center() 메소드로 텍스트 정렬하기</strong></h5>
-            <ul>
-              <li><strong>rjust()</strong> : rjust() 함수는 이를 호출한 문자열을 오른쪽으로 정렬한 문자열을 돌려주며, 텍스트 정렬을 위해서 빈칸을 사용한다. 첫 번째 인수는 문자열 정렬을 위한 정수값 길이다. 두번째 인자가 있는 경우 빈칸을 대신해 채울 문자를 지정한다.</li>
-              <li><strong>ljust()</strong> : ljust() 함수는 이를 호출한 문자열을 왼쪽으로 정렬한 문자열을 돌려주며, 텍스트 정렬을 위해서 빈칸을 사용한다. 첫 번째 인수는 문자열 정렬을 위한 정수값 길이다. 두번째 인자가 있는 경우 빈칸을 대신해 채울 문자를 지정한다.</li>
-              <li><strong>center()</strong> : center() 함수는 이를 호출한 문자열을 가운데로 정렬한 문자열을 돌려주며, 텍스트 정렬을 위해서 빈칸을 사용한다. 첫 번째 인수는 문자열 정렬을 위한 정수값 길이다. 두번째 인자가 있는 경우 빈칸을 대신해 채울 문자를 지정한다.</li>
-              <pre>>>> 'Hello'.rjust(10)<br>'     Hello'<br>'Hello'.ljust(10)<br>'Hello     '<br>'Hello'.center(20, '.')<br>'........Hello........'</pre>
-            </ul>
-
-            <h5><strong>• strip(), rstrip(), lstrip() 메소드로 공백 없애기</strong></h5>
-            <ul>
-              <li><strong>strip()</strong> : strip() 함수는 문자열 양쪽 끝에 있는 공백문자(빈칸, 탭, 줄 바꿈)들을 제거한다. 선택사항으로 문자열 끝에서 제거되어야 할 글자들을 지정하는 하나의 문자열 매개변수를 지정할 수 있다.</li>
-              <li><strong>rstrip()</strong> : rstrip() 함수는 문자열 오른쪽에 있는 공백문자(빈칸, 탭, 줄 바꿈)들을 제거한다. 선택사항으로 문자열 끝에서 제거되어야 할 글자들을 지정하는 하나의 문자열 매개변수를 지정할 수 있다.</li>
-              <li><strong>lstrip()</strong> : lstrip() 함수는 문자열 왼쪽에 있는 공백문자(빈칸, 탭, 줄 바꿈)들을 제거한다. 선택사항으로 문자열 끝에서 제거되어야 할 글자들을 지정하는 하나의 문자열 매개변수를 지정할 수 있다.</li>
-              <pre>>>> spam = '     Hello World     '<br>spam.strip()<br>'Hello World'<br>>>> spam = 'SpamSpamBaconSpamEggsSpamSpam'<br>>>> spam.strip('ampS')<br>'BaconSpamEggs'</pre>
-              <p>strip() 에 'ampS' 매개변수를 전달하면 spam에 저장되어 있는 문자열의 끝에 있는 a, m, p, S 를 제거하라고 지시하는 것이다. 글자의 순서는 중요치 않다. stirp('ampS')는 strip('mapS') 또는 strip('Spam')과 똑같은 일을 한다.</p>
+              <li><strong>keys()</strong> : 사전명.keys() 형식으로 사용하며 해당 사전의 key 데이터를 추출한다.</li>
+              <li><strong>values()</strong> : 사전명.values() 형식으로 사용하며 해당 사전의 value 데이터를 추출한다.</li>
+              <li><strong>items()</strong> :  사전명.items() 형식으로 사용하며 해당 사전의 key와 value 데이터를 추출한다.(dict_items[('key1', 'value1'), ('key2', 'value2')]형식의 튜플로 반환)</li>
+              <li><strong>get()</strong> : 사전명.get('key', 'defaultValue') 형식으로 사용하며 해당 사전의 키와 값을 가져오는데, 첫번째 인자로 가져올 값의 키, 두번째 인자로 해당 키가 없을 때 가져올 기본 값을 사용한다.</li>
+              <li><strong>setdefault()</strong> : 사전명.setdefault('key', 'value') 형식으로 사용하며 해당 사전 안에 어떤 특정한 키에 값이 존재하지 않는 경우에만 그 키에 값을 설정한다. 첫 번째 매개변수는 검사할 키이며, 두 번째 매개변수는 키가 존재하지 않을 때 해당 키에 설정할 수 있는 값이다. 키가 존재하는 경우 setDefault() 메소드는 키의 값을 돌려준다.</li>
             </ul>
           </p>
 
           <p>
             <h5><strong>■ 연습 문제</strong></h5>
             <ul>
-              <li>1. 이스케이프 문자란 무엇인가?</li>
-              <li>2. \n과 \t 이스케이프 문자는 무엇을 뜻하는가?</li>
-              <li>3. 문자열에 \ 백슬래시 문자를 어떻게 넣을 수 있는가?</li>
-              <li>4. 문자열 값 "Howl's Moving Castle"은 유효한 문자열이다. Howl's에 있는 따옴표가 이스케이프되지 않았는데 문제가 생기지 않는 이유는 무엇인가?</li>
-              <li>5. 문자열에 \n을 넣고 싶지 않다면 줄바꿈을 넣는 문자열을 어떻게 만들 수 있는가?</li>
-              <li>6. 다음 표현식은 어떻게 평가되는가?</li>
-              <pre>'Hello world!'[1]<br>'Hello world!'[0:5]<br>'Hello world!'[:5]<br>'Hello world!'[3:]</pre>
-              <li>7. 다음 표현식은 어떻게 평가되는가?</li>
-              <pre>'Hello'.upper()<br>'Hello'.upper().isupper()<br>'Hello'.upper().lower()</pre>
-              <li>8. 다음 표현식은 어떻게 평가되는가?</li>
-              <pre>'Remember, remember, the fifth of November.'.split()<br>'-'.join('There can be only one.'.split())</pre>
-              <li>9. 어떤 문자열 메소드를 사용하여 문자열을 오른쪽, 왼쪽, 가운데로 정렬할 수 있는가?</li>
-              <li>10. 문자열의 시작 또는 끝에 있는 공백 문자를 어떻게 잘라낼 수 있는가?</li>
+              <li>1. 빈 사전의 코드는 어떤 모습인가?</li>
+              <li>2. 키 'foo'와 값 42인 사전 값은 어떤 모습인가?</li>
+              <li>3. 사전과 리스트의 주요한 차이점은 무엇인가?</li>
+              <li>4. spam 이 {'bar': 100}이라고 했을 때 spam['foo']를 사용하려고 하면 어떤 일이 일어나는가?</li>
+              <li>5. 사전이 spam에 저장되어 있는 경우, 'cat' in spam과 'cat' in spam.keys()의 차이는 무엇인가?</li>
+              <li>6. 사전이 spam에 저장되어 있는 경우, 'cat' in spam과 'cat' in spam.values()의 차이는 무엇인가?</li>
+              <li>7. 다음 코드를 짧게 줄이는 방법은?</li>
+              <pre>if 'color' not in spam:<br>    spam['color'] = 'black'</pre>
+              <li>8. 사전 값을 '보기 좋게 출력하는'데 쓰일 수 있는 모듈과 함수는 무엇인가?</li>
             </ul>
           </p>
         </article>
       </section>
     </div>
-
-    <p>&nbsp;</p>

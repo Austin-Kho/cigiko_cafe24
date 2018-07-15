@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">1.1. 파이썬의 역사</h3>
+  <!-- <h3 class="sub-header">1.1. 파이썬의 역사</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -89,4 +89,4 @@
         <p>내용 입력</p>
       </article>
     </section>
-  </div>
+  </div> -->

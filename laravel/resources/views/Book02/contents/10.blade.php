@@ -1,4 +1,13 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
+  <div class="chapter">
+    <section>
+      <article class="">
+        <p>이번 장에서는 파이썬이 무엇인지, 파이썬을 활용하는 법을 배우기 전에 파이썬 그 자체를 알아보겠습니다. 파이썬의 역사부터 시작해서 조금은 어려울 수 있는 Hello World 예제까지 해보겠습니다.</p>
+      </article>
+    </section>
+  </div>
+
+  <!-- <h3 class="sub-header">1.1. 파이썬의 역사</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +16,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">10.1. SQLite</h3>
+  <h3 class="sub-header">1.2. 파이썬을 익히면 좋은 점</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,8 +25,28 @@
     </section>
   </div>
 
-  <h3 class="sub-header">10.2. 데이터베이스 연결하기</h3>
+  <h3 class="sub-header">1.3. 파이썬 활용이 활발한 개발 분야</h3>
   <div class="chapter">
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+    <h4 class="sub-header">1.3.1 - 웹 애플리케이션 개발</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">1.3.2 - 크롤링</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">1.3.3 - 데이터 과학과 인공지능 개발</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -25,16 +54,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">10.3. 테이블 생성하기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">10.4. 데이터 삽입</h3>
+  <h3 class="sub-header">1.4. 파이썬 개발 환경 설치</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -42,7 +62,19 @@
       </article>
     </section>
 
-    <h4 class="sub-header">10.4.1 - 여러 개 데이터 한꺼번에 넣기</h4>
+    <h4 class="sub-header">1.4.1 - 우분투</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+    <h4 class="sub-header">1.4.2 - macOS</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+    <h4 class="sub-header">1.4.3 - 윈도우</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -50,37 +82,11 @@
     </section>
   </div>
 
-  <h3 class="sub-header">10.5. 데이터 선택하기</h3>
+  <h3 class="sub-header">1.5. 조금은 어려운 Hello World</h3>
   <div class="chapter">
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
-  </div>
-
-  <h3 class="sub-header">10.6. 기존 데이터 갱신하기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">10.7. 데이터 삭제하기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-  <!-- <li class=@if($id=='95') active @endif><a href="/book02/95" class="d2">10.1 SQLite</a></li>
-  <li class=@if($id=='96') active @endif><a href="/book02/96" class="d2">10.2 데이터베이스 연결하기</a></li>
-  <li class=@if($id=='97') active @endif><a href="/book02/97" class="d2">10.3 테이블 생성하기</a></li>
-  <li class=@if($id=='98') active @endif><a href="/book02/98" class="d2">10.4 데이터 삽입</a></li>
-  <li class=@if($id=='99') active @endif><a href="/book02/99" class="d3">10.4.1 여러 개 데이터 한꺼번에 넣기</a></li>
-  <li class=@if($id=='100') active @endif><a href="/book02/100" class="d2">10.5 데이터 선택하기</a></li>
-  <li class=@if($id=='101') active @endif><a href="/book02/101" class="d2">10.6 기존 데이터 갱신하기</a></li>
-  <li class=@if($id=='102') active @endif><a href="/book02/102" class="d2">10.7 데이터 삭제하기</a></li> -->
+  </div> -->

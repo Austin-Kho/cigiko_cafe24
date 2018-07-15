@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">8.1. 파일 열기와 읽기</h3>
+  <h3 class="sub-header">7.1. 모듈</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -15,28 +15,35 @@
       </article>
     </section>
 
-    <h4 class="sub-header">8.1.1 - 파일 전체 읽기</h4>
+    <h4 class="sub-header">7.1.1 - 모듈 만들기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">8.1.2 - 파일 한 행 읽기</h4>
+    <h4 class="sub-header">7.1.2 - 모듈 불러오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">8.1.3 - 파일 전부를 읽고 한 행마다 리스트 아이템으로 가져오기</h4>
+    <h4 class="sub-header">7.1.3 - 특정 함수나 클래스만 불러오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">8.1.4 - for 문 이용하기</h4>
+    <h4 class="sub-header">7.1.4 - 다른 이름으로 모듈 불러오기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">7.1.5 - 모듈 실행하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -44,7 +51,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">8.2. 파일 닫기</h3>
+  <h3 class="sub-header">7.2. 패키지</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -52,17 +59,26 @@
       </article>
     </section>
 
-    <h4 class="sub-header">8.2.1 - with 이용하기</h4>
+    <h4 class="sub-header">7.2.1 - 패키지 만들기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">7.2.2 - 패키지 불러오기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
   </div>
-  <!-- <li class=@if($id=='76') active @endif><a href="/book02/76" class="d2">8.1 파일 열기와 읽기</a></li>
-  <li class=@if($id=='77') active @endif><a href="/book02/77" class="d3">8.1.1 파일 전체 읽기</a></li>
-  <li class=@if($id=='78') active @endif><a href="/book02/78" class="d3">8.1.2 파일 한 행 읽기</a></li>
-  <li class=@if($id=='79') active @endif><a href="/book02/79" class="d3">8.1.3 파일 전부를 읽고 한 행마다 리스트 아이템으로 가져오기</a></li>
-  <li class=@if($id=='80') active @endif><a href="/book02/80" class="d3">8.1.4 for 문 이용하기</a></li>
-  <li class=@if($id=='81') active @endif><a href="/book02/81" class="d2">8.2 파일 닫기</a></li>
-  <li class=@if($id=='82') active @endif><a href="/book02/82" class="d3">8.2.1 with 이용하기</a></li> -->
+  <!-- <li class=@if($id=='66') active @endif><a href="/book02/66" class="d2">7.1 모듈</a></li>
+  <li class=@if($id=='67') active @endif><a href="/book02/67" class="d3">7.1.1 모듈 만들기</a></li>
+  <li class=@if($id=='68') active @endif><a href="/book02/68" class="d3">7.1.2 모듈 불러오기</a></li>
+  <li class=@if($id=='69') active @endif><a href="/book02/69" class="d3">7.1.3 특정 함수나 클래스만 불러오기</a></li>
+  <li class=@if($id=='70') active @endif><a href="/book02/70" class="d3">7.1.4 다른 이름으로 모듈 불러오기</a></li>
+  <li class=@if($id=='71') active @endif><a href="/book02/71" class="d3">7.1.5 모듈 실행하기</a></li>
+  <li class=@if($id=='72') active @endif><a href="/book02/72" class="d2">7.2 패키지</a></li>
+  <li class=@if($id=='73') active @endif><a href="/book02/73" class="d2">7.2.1 패키지 만들기</a></li>
+  <li class=@if($id=='74') active @endif><a href="/book02/74" class="d2">7.2.2 패키지 불러오기</a></li> -->

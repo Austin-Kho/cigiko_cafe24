@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,16 +7,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">9.1. 스크래피</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">9.2. 설치</h3>
+  <h3 class="sub-header">8.1. 파일 열기와 읽기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -24,14 +15,28 @@
       </article>
     </section>
 
-    <h4 class="sub-header">9.2.1 - 스크래피 프로젝트 생성</h4>
+    <h4 class="sub-header">8.1.1 - 파일 전체 읽기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">9.2.2 - 아이템 설정하기</h4>
+    <h4 class="sub-header">8.1.2 - 파일 한 행 읽기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">8.1.3 - 파일 전부를 읽고 한 행마다 리스트 아이템으로 가져오기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">8.1.4 - for 문 이용하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -39,7 +44,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">9.3. 스파이더 만들기</h3>
+  <h3 class="sub-header">8.2. 파일 닫기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -47,56 +52,17 @@
       </article>
     </section>
 
-    <h4 class="sub-header">9.3.1 - 스파이더 파일 수정하기</h4>
+    <h4 class="sub-header">8.2.1 - with 이용하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
   </div>
-
-  <h3 class="sub-header">9.4. 스파이더 규칙 설정하기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">9.5. 파서 함수 정의하기</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">9.6. 완성된 스파이더 클래스</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header">9.7. 크롤링 GO!</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-  <!-- <li class=@if($id=='84') active @endif><a href="/book02/84" class="d2">9.1 스크래피</a></li>
-  <li class=@if($id=='85') active @endif><a href="/book02/85" class="d2">9.2 설치</a></li>
-  <li class=@if($id=='86') active @endif><a href="/book02/86" class="d3">9.2.1 스크래피 프로젝트 생성</a></li>
-  <li class=@if($id=='87') active @endif><a href="/book02/87" class="d3">9.2.2 아이템 설정하기</a></li>
-  <li class=@if($id=='88') active @endif><a href="/book02/88" class="d2">9.3 스파이더 만들기</a></li>
-  <li class=@if($id=='89') active @endif><a href="/book02/89" class="d3">9.3.1 스파이더 파일 수정하기</a></li>
-  <li class=@if($id=='90') active @endif><a href="/book02/90" class="d2">9.4 스파이더 규칙 설정하기</a></li>
-  <li class=@if($id=='91') active @endif><a href="/book02/91" class="d2">9.5 파서 함수 정의하기</a></li>
-  <li class=@if($id=='92') active @endif><a href="/book02/92" class="d2">9.6 완성된 스파이더 클래스</a></li>
-  <li class=@if($id=='93') active @endif><a href="/book02/93" class="d2">9.7 크롤링 GO!</a></li> -->
+  <!-- <li class=@if($id=='76') active @endif><a href="/book02/76" class="d2">8.1 파일 열기와 읽기</a></li>
+  <li class=@if($id=='77') active @endif><a href="/book02/77" class="d3">8.1.1 파일 전체 읽기</a></li>
+  <li class=@if($id=='78') active @endif><a href="/book02/78" class="d3">8.1.2 파일 한 행 읽기</a></li>
+  <li class=@if($id=='79') active @endif><a href="/book02/79" class="d3">8.1.3 파일 전부를 읽고 한 행마다 리스트 아이템으로 가져오기</a></li>
+  <li class=@if($id=='80') active @endif><a href="/book02/80" class="d3">8.1.4 for 문 이용하기</a></li>
+  <li class=@if($id=='81') active @endif><a href="/book02/81" class="d2">8.2 파일 닫기</a></li>
+  <li class=@if($id=='82') active @endif><a href="/book02/82" class="d3">8.2.1 with 이용하기</a></li> -->

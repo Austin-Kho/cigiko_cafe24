@@ -1,4 +1,4 @@
-  <h2 class="page-header">{{$sub[$id]}}</h2>
+  <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
       <article class="">
@@ -7,7 +7,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">13.1. 메시지 큐</h3>
+  <h3 class="sub-header">11.1. 설치와 Hello World 웹 페이지 실행하기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -16,15 +16,8 @@
     </section>
   </div>
 
-  <h3 class="sub-header">13.2. RabbitMQ 소개</h3>
+  <h3 class="sub-header">11.2. 파라미터로 URL 경로와 쿼리 추가하기</h3>
   <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">13.2.1 - RabbitMQ 설치와 메시지 큐 서버 실행하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
@@ -32,7 +25,7 @@
     </section>
   </div>
 
-  <h3 class="sub-header">13.3. RabbitMQ의 기본 동작 개념</h3>
+  <h3 class="sub-header">11.3. API 서버 만들기</h3>
   <div class="chapter">
     <section>
       <article class="">
@@ -40,73 +33,38 @@
       </article>
     </section>
 
-    <h4 class="sub-header">13.3.1 - pika 패키지 설치</h4>
+    <h4 class="sub-header">11.3.1 - 데이터베이스와 연결하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">13.3.2 - 메시지 전달: 쿠에 넣고 가져오기</h4>
+    <h4 class="sub-header">11.3.1 - 데이터베이스와 연결하기</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
 
-    <h4 class="sub-header">13.3.3 - 작업 분배: 큐에 넣고 여러 개의 워커가 가져가고 작업 종료 확인하기</h4>
+    <h4 class="sub-header">11.3.3 - 조건에 따라 데이터 가져오기</h4>
+    <section>
+      <article class="">
+        <p>내용 입력</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">11.3.4 - 최종 코드</h4>
     <section>
       <article class="">
         <p>내용 입력</p>
       </article>
     </section>
   </div>
-
-  <h3 class="sub-header">13.4. 셀러리: 메시지 큐를 이용한 분산 처리 애플리케이션</h3>
-  <div class="chapter">
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">13.4.1 - 설치</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">13.4.2 - 셀러리의 동작 구조</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">13.4.3 - 워커 서버</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-
-    <h4 class="sub-header">13.4.4 - 태스크 퍼블리셔(사용자 앱)</h4>
-    <section>
-      <article class="">
-        <p>내용 입력</p>
-      </article>
-    </section>
-  </div>
-  <!-- <li class=@if($id=='126') active @endif><a href="/book02/126" class="d2">13.1 메시지 큐</a></li>
-  <li class=@if($id=='127') active @endif><a href="/book02/127" class="d2">13.2 RabbitMQ 소개</a></li>
-  <li class=@if($id=='128') active @endif><a href="/book02/128" class="d3">13.2.1 RabbitMQ 설치와 메시지 큐 서버 실행하기</a></li>
-  <li class=@if($id=='129') active @endif><a href="/book02/129" class="d2">13.3 RabbitMQ의 기본 동작 개념</a></li>
-  <li class=@if($id=='130') active @endif><a href="/book02/130" class="d3">13.3.1 pika 패키지 설치</a></li>
-  <li class=@if($id=='131') active @endif><a href="/book02/131" class="d3">13.3.2 메시지 전달: 쿠에 넣고 가져오기</a></li>
-  <li class=@if($id=='132') active @endif><a href="/book02/132" class="d3">13.3.3 작업 분배: 큐에 넣고 여러 개의 워커가 가져가고 작업 종료 확인하기</a></li>
-  <li class=@if($id=='133') active @endif><a href="/book02/133" class="d2">13.4 셀러리: 메시지 큐를 이용한 분산 처리 애플리케이션</a></li>
-  <li class=@if($id=='134') active @endif><a href="/book02/134" class="d3">13.4.1 설치</a></li>
-  <li class=@if($id=='135') active @endif><a href="/book02/135" class="d3">13.4.2 셀러리의 동작 구조</a></li>
-  <li class=@if($id=='136') active @endif><a href="/book02/136" class="d3">13.4.3 워커 서버</a></li>
-  <li class=@if($id=='137') active @endif><a href="/book02/137" class="d3">13.4.4 태스크 퍼블리셔(사용자 앱)</a></li> -->
+  <!-- <li class=@if($id=='104') active @endif><a href="/book02/104" class="d2">11.1 설치와 Hello World 웹 페이지 실행하기</a></li>
+  <li class=@if($id=='105') active @endif><a href="/book02/105" class="d2">11.2 파라미터로 URL 경로와 쿼리 추가하기</a></li>
+  <li class=@if($id=='106') active @endif><a href="/book02/106" class="d2">11.3 API 서버 만들기</a></li>
+  <li class=@if($id=='107') active @endif><a href="/book02/107" class="d3">11.3.1 데이터베이스와 연결하기</a></li>
+  <li class=@if($id=='108') active @endif><a href="/book02/108" class="d3">11.3.2 모든 데이터 내려받기</a></li>
+  <li class=@if($id=='109') active @endif><a href="/book02/109" class="d3">11.3.3 조건에 따라 데이터 가져오기</a></li>
+  <li class=@if($id=='110') active @endif><a href="/book02/110" class="d3">11.3.4 최종 코드</a></li> -->

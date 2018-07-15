@@ -39,9 +39,8 @@
   margin-left: -20px;
 }
 
-.nav-sidebar > li > a {
-  /* padding: 8px 20px; */
-  /* font-size: 10pt; */
+.nav-sidebar > a > .d2 {
+  padding-left: 40px;
 }
 
 .nav-sidebar > .active > a,
