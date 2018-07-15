@@ -2,7 +2,11 @@
     <div class="chapter">
       <section>
         <article class="">
-          내용 입력
+          <ul>
+            <li><a href="/book01/22">{{$sub[22][1]}}</a></li>
+            <li><a href="/book01/23">{{$sub[23][1]}}</a></li>
+            <li><a href="/book01/24">{{$sub[24][1]}}</a></li>
+          </ul>
         </article>
       </section>
     </div>
