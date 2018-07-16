@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('book01/{id?}', 'Book01\Book01Controller@index')->name('book01');
 
 Route::get('book02/{id?}', 'Book02\Book02Controller@index')->name('book02');
+
+Route::get('write', 'WriteController@index')->name('write');
