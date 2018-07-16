@@ -331,6 +331,14 @@ div.tip {
   right: 6%;
 }
 
+.bg-primary,
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger {
+  padding: 10px;
+}
+
 .prev_icon:link, .next_icon:link { color:#ccc; }
 .prev_icon:visited, .next_icon:visited { color: #ccc; }
 .prev_icon:hover, .next_icon:hover { color:#aaa !important; }
