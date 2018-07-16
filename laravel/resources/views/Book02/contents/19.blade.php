@@ -11,15 +11,15 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>우분투의 aptitude나, macOS의 Homebrew, Node.js의 npm 같은 패키지 관리자가 파이썬에도 있다. pip가 그것이죠. pip를 이용하면 거의 모든 파이썬 패키지를 쉽게 사용할 수 있다.</p>
+        <p>우분투의 aptitude나, macOS의 Homebrew, Node.js의 npm 같이, 파이썬에도 pip(윈도우의 경우, 우분투와 macOS에서는 pip3)라는 패키지 관리자가 있다. pip를 이용하면 거의 모든 파이썬 패키지를 쉽게 사용할 수 있다.</p>
       </article>
     </section>
 
     <h4 class="sub-header">A.1.1 - 우분투에서 설치하기</h4>
     <section>
       <article class="">
-        <p>우분투는 pip가 설치되어 있지 않을 경우 pip라는 명령어를 터미널에서 실행하면 다음과 같은 메시지를 보여줍니다. 그대로 입력하면 pip가 설치된다.</p>
-        <pre><code>$pip<br>프로그램 'pip'을(를) 설치하지 않습니다. 다음을 입력해 설치할 수 있습니다:<br>sudo apt install python-pip</code></pre>
+        <p>우분투는 pip3가 설치되어 있지 않을 경우 pip3라는 명령어를 터미널에서 실행하면 다음과 같은 메시지를 보여준다. 그대로 입력하면 pip3가 설치된다.</p>
+        <pre><code>$pip<br>프로그램 'pip3'을(를) 설치하지 않습니다. 다음을 입력해 설치할 수 있습니다:<br>sudo apt install python-pip3</code></pre>
       </article>
     </section>
 

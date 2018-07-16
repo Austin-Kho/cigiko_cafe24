@@ -77,22 +77,50 @@ In [1]: </code></pre>
              </tr>
            </thead>
            <tbody>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>
+             <tr><td><kbd>←</kbd>, <kbd>→</kbd></td><td>한 글자씩 좌우로 이동하기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>←</kbd>, <kbd>→</kbd></td><td>한 단어씩 좌우로 이동하기</td></tr>
+             <tr><td><kbd>↑</kbd>, or <kbd>Ctrl</kbd> + <kbd>P</kbd></td><td>입력했던 명령어 검색(과거 순서)하기</td></tr>
+             <tr><td><kbd>↓</kbd>, or <kbd>Ctrl</kbd> + <kbd>N</kbd></td><td>입력했던 명령어 검색(최신 순서)하기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>R</kbd></td><td>입력했던 명령어 검색(검색어 입력)하기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd></td><td>클립보드에서 텍스트 붙여넣기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>C</kbd></td><td>현재 실행 중인 코드 중단하기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>A</kbd></td><td>커서를 줄의 처음으로 이동시키기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>E</kbd></td><td>커서를 줄의 끝으로 이동시키기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>K</kbd></td><td>커서가 위치한 곳부터 줄의 끝까지 텍스트 삭제하기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>U</kbd></td><td>현재 입력한 모든 텍스트 지우기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>앞으로 한 글자씩 커서 이동시키기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>B</kbd></td><td>뒤로 한 글자씩 커서 이동 시키기</td></tr>
+             <tr><td><kbd>Ctrl</kbd> + <kbd>L</kbd></td><td>화면 지우기</td></tr>
            </tbody>
          </table>
+         <p>또한 여러 가지 특수 명령어를 '매직' 명령어라고 부른다. [표B-2]는 주요 매직 명령어를 소개한다.</p>
+         <h5>표B-2 주요 매직 명령어</h5>
+         <table class="table table-hover table-condensed table table-bordered">
+           <thead>
+             <tr>
+               <td>매직 명령어</td><td>기능</td>
+             </tr>
+           </thead>
+           <tbody>
+             <tr><td>%quickref</td><td>IPython의 빠른 도움말 표시하기</td></tr>
+             <tr><td>%magic<td>모든 매직 명령어의 상세 도움말 출력하기</td></tr>
+             <tr><td>%debug</td><td>최근 예외 발생 상황 아래 행에서 대화형 디버거로 진입하기</td></tr>
+             <tr><td>%hist</td><td>명령어 입력(그리고 선택적 출력)내역 출력하기</td></tr>
+             <tr><td>%pdb</td><td>예외가 발생하면 자동으로 디버거로 진입하기</td></tr>
+             <tr><td>%paste</td><td>들여쓰기가 된 상태로 파이썬 코드 붙여넣기</td></tr>
+             <tr><td>%cpaste</td><td>실행 상태에서 파이썬 코드를 수동으로 붙여넣을 수 있는 프롬프트 표시하기</td></tr>
+             <tr><td>%reset</td><td>대화형 네임스페이스에서 정의한 모든 변수와 이름 삭제하기</td></tr>
+             <tr><td>%page OBJECT</td><td>pager를 이용해 객체 출력하기</td></tr>
+             <tr><td>%run script.py</td><td>IPython안에서 파이썬 파일 실행하기</td></tr>
+             <tr><td>%prun statement</td><td>cProfie을 이용해 statement를 실행하고 프로파일링 결과 출력하기</td></tr>
+             <tr><td>%time statement</td><td>단일 statement 실행 시간 출력하기</td></tr>
+             <tr><td>%timeit statement</td><td>여러 번 실행한 statement의 평균 실행 시간 출력하기</td></tr>
+             <tr><td>%who, %who_ls, %whos</td><td>대화형 네임스페이스 안에서 정의한 변수 표시하기</td></tr>
+             <tr><td>%xdel variable</td><td>variable을 삭제하고 해당 객체의 모든 IPython 내부 참조 제거하기</td></tr>
+             <tr><td>%%writefile filename</td><td>filename인 파일 생성하기</td></tr>
+           </tbody>
+         </table>
+         <p>이러한 기능들을 알아두면 좀 더 편학 IPython을 사용할 수 있다.</p>
       </article>
     </section>
   </div>
@@ -101,12 +129,43 @@ In [1]: </code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>본 편은 지금부터다. 셸에서 Jupyter Notebook 명령을 실행하면 Jupyter Notebook을 실행할 수 있다. 웹 브라우저가 열리고 현재 위치를 루트로 하는 대시보드 화면이 나타난다.</p>
+        <h5>그림B-1 Jupyter Notebook 루트 화면</h5>
+        <img src="/img/img01.png" alt="Jupyter Notebook 루트 화면" border="1">
+        <p>오른쪽 위 [New]를 누르면 새 노트북을 만들 수 있다. 기본적인 텍스트파일부터 터미널, 파이썬 버전별 커널, 혹은 설정에 따라 루비, R, Scala 등의 프로그래밍 언어를 선택할 수 있다.</p>
+        <p class="bg-info" style="padding:10px;"><strong>NOTE_파이썬 2와 파이썬 3을 동시에 사용하기<br>Jupyter Notebook을 실행했을 때 파이썬 2와 3을 동시에 실행할 수 없다면 nohup jupyter notebook & 이라는 명령을 실행한다. 한 번 실행한 이후에는 jupyter notebook 명령만으로도 파이썬 2와 3을 동시에 사용할 수 있다.</strong></p>
+        <p>[Terminal]을 선택하면 기존 셸 대신 Jupyter Notebook 안에서 셀을 사용할 수 있다.</p>
+        <h5>그림B-2 터미널 사용</h5>
+        <img src="/img/img02.png" alt="터미널 사용" border="1">
+        <p>파이썬 3을 사용하여 새 노트북을 만들어 보자</p>
+        <h5>그림B-3 새 노트북 입력 환경 및 자동완성 기능</h5>
+        <img src="/img/img03.png" alt="새 노트북 입력 환경 및 자동완성 기능" border="1">
+        <p>IPython 커맨드라인과 유사하고 동일하게 작동한다. 파일 이름을 바꾸고 싶다면 왼쪽 상단 'Untitled'를 선택해 변경한다. 또한 p를 입력하고 <kbd>Tab</kbd>을 누르면 자동완성 기능도 사용할 수 있다. 사용자가 선언한 변수나 클래스, 함수 등도 당연히 나타난다.</p>
+        <h5>그림B-4 셀 타입 지정</h5>
+        <img src="/img/img04.png" alt="셀 타입 지정" border="1">
+        <p>IPython 커맨드라인과 유사하고 동일하게 작동한다. 파일 이름을 바꾸고 싶다면 왼쪽 상단 'Untitled'를 선택해 변경한다. 또한 p를 입력하고 <kbd>Tab</kbd>을 누르면 자동완성 기능도 사용할 수 있다. 사용자가 선언한 변수나 클래스, 함수 등도 당연히 나타난다.</p>
+        <h5>그림B-5 파이썬 코드와 마크다운을 함께 작성한 예</h5>
+        <img src="/img/img05.png" alt="파이썬 코드와 마크다운을 함께 작성한 예" border="1">
+        <p>IPython 커맨드라인과 유사하고 동일하게 작동한다. 파일 이름을 바꾸고 싶다면 왼쪽 상단 'Untitled'를 선택해 변경한다. 또한 p를 입력하고 <kbd>Tab</kbd>을 누르면 자동완성 기능도 사용할 수 있다. 사용자가 선언한 변수나 클래스, 함수 등도 당연히 나타난다.</p>
+        <p>Jupyter Notebook의 사용법을 모르더라도 [help] > [User Interface Tour]를 선택하면 주요 기능별로 풍선말과 함께 Jupyter Notebook 의 기능을 익힐 수 있다.</p>
+        <p>다음 표를 참조해서 주요 단축키를 익히고 사용할 수 있다.</p>
+        <h5>표B-3 Jupyter Notebook 주요 단축키</h5>
+        <table class="table table-hover table-condensed table table-bordered">
+          <thead>
+            <tr>
+              <td>단축키</td><td>기능</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>노트북 파일 저장하기</td></tr>
+            <tr><td><kbd>A</kbd></td><td>한 줄 위에 행 추가하기</td></tr>
+            <tr><td><kbd>B</kbd></td><td>한 줄 아래에 행 추가하기</td></tr>
+            <tr><td><kbd>D</kbd>, <kbd>D</kbd></td><td>현재 선택한 행 삭제하기</td></tr>
+            <tr><td><kbd>Ctrl</kbd> + <kbd>Enter</kbd></td><td>입력했던 명령어 검색(검색어 입력)하기</td></tr>
+            <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></td><td>노트북 파일 실행하기</td></tr>
+            <tr><td><kbd>Enter</kbd></td><td>선택한 셀 입력 시작하기</td></tr>
+          </tbody>
+        </table>
       </article>
     </section>
   </div>
-  <!-- <li class=@if($id=='181') active @endif><a href="/book02/181" class="d2">B.1 IPython</a></li>
-  <li class=@if($id=='182') active @endif><a href="/book02/182" class="d2">B.2 Jupyter Notebook</a></li>
-  <li class=@if($id=='183') active @endif><a href="/book02/183" class="d2">B.3 IPython과 Jupyter Notebook 설치</a></li>
-  <li class=@if($id=='184') active @endif><a href="/book02/184" class="d2">B.4 IPython 사용하기</a></li>
-  <li class=@if($id=='185') active @endif><a href="/book02/185" class="d2">B.5 Jupyter Notebook 사용법</a></li> -->
