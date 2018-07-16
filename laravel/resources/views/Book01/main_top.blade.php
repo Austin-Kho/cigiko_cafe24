@@ -7,7 +7,7 @@
   </div>
   <div class="menu-wikidocs">&nbsp;</div>
   <div class="clearfix page-depth">
-    <div class="col-xs-8" style="color:#afb1af;">
+    <div class="col-xs-9" style="color:#afb1af;">
       <small><a href="/book01"><i class="glyphicon glyphicon-folder-open"></i> 파이썬으로 지루한 작업 자동화 하기</a> / </small>
 <?php
   $bs_arr = [];
@@ -20,7 +20,7 @@
       <small><a href="/book01/{{max($bs_arr)}}">{{$sub[max($bs_arr)][1]}}</a></small>
       @if($sub[$id][0]==2) <small> / <a href="/book01/{{$id}}">{{$sub[$id][1]}}</a></small>@endif
     </div>
-    <div class="col-xs-4" style="text-align: right;">
+    <div class="col-xs-3" style="text-align: right;">
       <small><a href="/"><i class="glyphicon glyphicon-home"></i> Python Books</a></small>
     </div>
   </div>

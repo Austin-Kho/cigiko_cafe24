@@ -26,8 +26,8 @@
     <h4 class="sub-header">A.1.2 - macOS 및 윈도우에서 설치하기</h4>
     <section>
       <article class="">
-        <p>macOS는 pip를 따로 설치해주어야 한다. pip홈페이지(https://pip.pypa.io)에서 제공하는 설치 스크립트를 이용할 수 있지만 가능하면 패키지 매니저로 설치하는 방법을 더 추천한다.</p>
-        <p>우선 파이썬 실행환경이 설치되어 있어야 한다.(1.4.2, 1.4.3을 통해 파이썬 실행환경을 설치한다.) 그리고 pip홈페이지의 Installation(https://pip.pypa.io/en/stable/installing/)을 참고하여 pip를 설치한다.  get-pip.py(https://bootstrap.pypa.io/get-pip.py)파일을 다운로드 한 후, 터미널에서 get-pip.py파일을 다운로드한 경로로 이동한 후 다음 명령을 실행한다.</p>
+        <p>macOS는 pip를 따로 설치해주어야 한다. pip홈페이지(<a href="https://pip.pypa.io" target="_blank">https://pip.pypa.io</a>)에서 제공하는 설치 스크립트를 이용할 수 있지만 가능하면 패키지 매니저로 설치하는 방법을 더 추천한다.</p>
+        <p>우선 파이썬 실행환경이 설치되어 있어야 한다.(1.4.2, 1.4.3을 통해 파이썬 실행환경을 설치한다.) 그리고 pip홈페이지의 Installation(<a href="https://pip.pypa.io/en/stable/installing/" target="_blank">https://pip.pypa.io/en/stable/installing/</a>)을 참고하여 pip를 설치한다.  get-pip.py(<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">https://bootstrap.pypa.io/get-pip.py</a>)파일을 다운로드 한 후, 터미널에서 get-pip.py파일을 다운로드한 경로로 이동한 후 다음 명령을 실행한다.</p>
         <pre><code>$ python get-pip.py</code></pre>
         <p>윈도우의 경우 명령 프롬프트를 관리자 권한으로 실행해서 pip를 설치하길 권장한다.</p>
 
@@ -137,7 +137,7 @@
         <br>> Set-ExecutionPolicy Unrestricted</p>
         <p>명령을 실행하면 아래처럼 터미널의 명령어 입력 줄의 맨 앞에 가상환경 이름이 붙게 된다.</p>
         <pre><code>(venv_test0) &lt;사용자 이름>@&lt;현재경로>:~/$</code></pre>
-        <p>더 자세한 내용은 파이썬 개발 문서의 '28.3 venv -- Creation of virtual environments(https://docs.python.org/3/library/venv.html)'를 참고한다.</p>
+        <p>더 자세한 내용은 파이썬 개발 문서의 '28.3 venv -- Creation of virtual environments(<a href="https://docs.python.org/3/library/venv.html" target="_blank">https://docs.python.org/3/library/venv.html</a>)'를 참고한다.</p>
       </article>
     </section>
   </div>
@@ -153,7 +153,7 @@
         <pre><code>$ pip freeze > requirements.txt</code></pre>
         <p>A.2를 참고해서 venv 가상환경을 실행한다. 그리고 requirements.txt 파일을 가상 환경 시작 디렉터리에 위치시킨 후 다음 명령을 실행해서 새 가상환경에서 해당 패키지를 설치하게 할 수 있다. 새 가상환경의 깨끗한 pip 목록을 채워줄 수 있는 셈이다.</p>
         <pre><code>$ pip install -r requirements.txt</code></pre>
-        <p>위 명령을 실행하면 requirements.txt에 있는 패키지들을 가상 환경에 설치한다. 더 자세한 팁은 스택오버플로의 'How to install packages using pip according to the requirements.txt file from a local directory?'(https://goo.gl/SpDjRO)를 참고한다.</p>
+        <p>위 명령을 실행하면 requirements.txt에 있는 패키지들을 가상 환경에 설치한다. 더 자세한 팁은 스택오버플로의 'How to install packages using pip according to the requirements.txt file from a local directory?'(<a href="https://goo.gl/SpDjRO" target="_blank">https://goo.gl/SpDjRO</a>)를 참고한다.</p>
       </article>
     </section>
   </div>

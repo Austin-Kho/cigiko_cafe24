@@ -11,7 +11,7 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>IPython(http://ipython.org)을 한마디로 말하자면 기본 파이썬 인터프리터보다 강력한 명령행 쉘이라고 할 수 있다. 2001년 페르난도 페레즈(Fernando Perez)가 처음 개발해 공개했다.</p>
+        <p>IPython(<a href="http://ipython.org" target="_blank">http://ipython.org</a>)을 한마디로 말하자면 기본 파이썬 인터프리터보다 강력한 명령행 쉘이라고 할 수 있다. 2001년 페르난도 페레즈(Fernando Perez)가 처음 개발해 공개했다.</p>
         <ul>
           <li>강력한 대화형 셸.</li>
           <li>Jupyter의 커널 역할.</li>
@@ -45,7 +45,7 @@
     <section>
       <article class="">
         <p>설치 과정은 간단하다. pip를 설치했다는 가정 아래 pip install jupyter(pip3 install jupyter) 명령을 가상환경 등에서 실행하면 된다. Jupyter를 설치하면 IPython까지 모두 설치된다.</p>
-        <p class="bg-info" style="padding: 10px;"><strong>NOTE_Jupyter Notebook과 아나콘다</strong><br>만약 위 명령어로 설치가 되지 않는다면 'Installing Jupyter Notebook'(https://jupyter.org)에서 설치 방법을 찾아볼 수 있다. 또한 Jupyter 홈페이지에서 추천하는 방법은 '아나콘다(Anaconda)'를 사용해 Jupyter Notebook을 설치하는 것이다.<br><br>아나콘다는 파이썬을 이용해 데이터 분석을 할 수 있게 해주는 무료 엔터프라이즈급 패키지이다. Jupyter Notebook을 포함해 이 책에서 다루는 다수의 패키지를 한꺼번에 설치할 수 있다.</p>
+        <p class="bg-info" style="padding: 10px;"><strong>NOTE_Jupyter Notebook과 아나콘다</strong><br>만약 위 명령어로 설치가 되지 않는다면 'Installing Jupyter Notebook'(<a href="https://jupyter.org" target="_blank">https://jupyter.org</a>)에서 설치 방법을 찾아볼 수 있다. 또한 Jupyter 홈페이지에서 추천하는 방법은 '아나콘다(Anaconda)'를 사용해 Jupyter Notebook을 설치하는 것이다.<br><br>아나콘다는 파이썬을 이용해 데이터 분석을 할 수 있게 해주는 무료 엔터프라이즈급 패키지이다. Jupyter Notebook을 포함해 이 책에서 다루는 다수의 패키지를 한꺼번에 설치할 수 있다.</p>
       </article>
     </section>
   </div>
@@ -90,7 +90,7 @@ In [1]: </code></pre>
              <tr><td>ㅁ</td><td>한</td></tr>
              <tr><td>ㅁ</td><td>한</td></tr>
              <tr><td>ㅁ</td><td>한</td></tr>
-             <tr><td>ㅁ</td><td>한</td></tr>             
+             <tr><td>ㅁ</td><td>한</td></tr>
            </tbody>
          </table>
       </article>
