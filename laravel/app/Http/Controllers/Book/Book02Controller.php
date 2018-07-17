@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Book02;
+namespace App\Http\Controllers\Book;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -8,7 +8,10 @@ use App\Http\Controllers\Controller;
 class Book02Controller extends Controller
 {
   public function index($id='1'){
-    $view = view('Book02.book02');
+
+    $view = view('book.Book02.book02');
+    $view->title = '개발자를 위한 파이썬';
+    $view->defurl = 'book02';
     $view->id = $id;
     $view->sub[1] = [1, 'I. 빠르게 살펴보는 파이썬 기초'];
     $view->sub[2] = [2, '01. 파이썬 프로그래밍 준비와 시작'];

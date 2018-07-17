@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
-    <title>개발자를 위한 파이썬</title>
+    <title>{{$title}}</title>
 
     <!-- 합쳐지고 최소화된 최신 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -61,7 +61,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand"> | </span><a class="navbar-brand" href="/book02"><small>개발자를 위한 파이썬</small></a>
+          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand">|</span><a class="navbar-brand" href="/{{$defurl}}"><small style="font-size: 10pt;">{{$title}}</small></a>
         </div>
       </div>
     </nav>
