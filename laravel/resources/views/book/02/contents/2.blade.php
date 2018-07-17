@@ -94,13 +94,31 @@
     <h4 class="sub-header">1.4.2 - macOS</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>macOS는 파이썬 2.7만 기본 탑재하고 있다. 따라서 파이썬 3은 별도로 설칳야 한다.macOS에서 파이썬을 설치할 때는 설치파일을 다운로드해서 설치하는 방법과 'Homebrew'라는 패키지 관리자를 이용해 설치하는 방법이 있다.</p>
+        <h4>Homebrew를 이용한 파이썬 설치</h4>
+        <p>Homebrew는 macOS에서 소프트웨어를 설치하고 버전별로 관리할 수 있는 패키지 관리 시스템의 하나이다. 실무에서 파이썬을 사용할 때는 다양한 패키지나 가상환경(부록 A 참고)을 구축할 때가 많으므로 개발자라면 Homebrew를 이용해 파이썬을 설치하길 권한다.</p>
+        <h5>그림1-1 Homebrew 홈페이지</h5>
+        <img src="/img/img06.png" alt="Homebrew 홈페이지">
+        <p>터미널 실행 후 설치 소스를 복사해 붙여 넣은 후 실행하면 설치가 끝난다.</p>
+        <pre><code>$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></pre>
+        <p>Homebrew를 설치하면 파이썬 설치 준비가 끝났다. 다음 명령을 터미널에서 실행하면 된다.(우분투와 달리 .x를 붙이지 않아야 한다는 점에 주의한다.)</p>
+        <pre><code>$ brew install python3</code></pre>
+        <p class="bg-info"><strong>NOTE_macOS의 파이썬 설치 주의사항</strong><br>macOS에서 Homebrew나 파이썬을 설치하려먼 Xcode Command Line Tools가 설치되어 있어야 한다. 설치 필요 시 다음 명령으로 Xcode command Line Tools를 설치할 수 있다.</p>
+        <pre><code>$ xcode-select --install</code></pre>
+        <p class="bg-info">또한 Homebrew 설치 스크립트는 변경될 가능성이 있으므로 Homebrew 홈페이지에 있는 명령어에 변화가 있는지 확인한다. 간혹 Xcode 라이선스에 동의하지 않았다면 Homebrew가 제대로 설치되지 않을 수 있다. 이 때는 아래 명령을 실행한 다음 다시 Homebrew설치 명령을 실행한다.</p>
+        <pre><code>$ sudo xcodebuild -license</code></pre>
+
+        <h4>파이썬 설치 파일</h4>
+        <p>파이썬 개발 환경 다운로드 사이트(<a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>)를 방문해 자신의 운영체제에 맞는 설치 파일을 다운로드 한 후 설치하면 된다. 이 책에서 활용할 3.x버전을 다운로드 한다. 설치는 [계속] 버튼을 누르면 되니 따로 설명하지 않는다.</p>
+        <h5>그림1-2 파이썬 다운로드 페이지(macOS)</h5>
+        <img src="/img/img07.png" alt="파이썬 다운로드 페이지(macOS)">
       </article>
     </section>
     <h4 class="sub-header">1.4.3 - 윈도우</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>윈도우는 우분투나 macOS와는 달리 파이썬이 기본 설치되어 있지 않다. 따라서 직접 파이썬 개발환경 다운로드 사이트에서 파일을 다운로드해서 설치해야 한다. 파이썬 개발환경 다운로드 사이트(<a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>)에서 윈도우용 파이썬 설치파일을 다운로드 한 후 설치한다.</p>
+        <p>설치할 때 꼭 [Add Python 3.x to PATH]의 체크를 켜 준다. 이렇게 하면 윈도우 명령 프롬프트나 Windows PowerShell을 실행하여 파이썬을 바로 사용할 수 있다.</p>
       </article>
     </section>
   </div>
@@ -109,7 +127,44 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬으로 무언가를 하기가 얼마나 간단한지는 다음 코드만 봐도 알 수 있다. 일단은 전통적인 Hello World, 즉 출력이다.</p>
+        <h5>코드1-1 Hello World</h5>
+        <pre><code>In[1]:<br>print('Hello World!')
+        <br>Out[1]:<br>Hello World!</code></pre>
+        <p>파이썬의 철학 중 하나는 '건전지 포함(Batteries included)'이라는 개념이다. 여러 가지 기본 라이브러리들을 포함시켜 별도로 찾지 않아도 바로 사용할 수 있게 하자는 것이다. 참고로 기본 제공하는 표준 라이브러리 목록은 'The Python Standard Library(<a href="https://docs.python.org/3/library/index.html" target="_blank">https://docs.python.org/3/library/index.html</a>)'에서 확인할 수 있다.</p>
+        <p class="bg-success"><strong>NOTE_ 이 책의 코드 표기 방식</strong><br>이 책의 예제는 터미널이나 파이썬 셸에서 py 파일을 실행하면 좋은 예제와 부록 B에서 설명하는 Jupyter Notebook에서 실행하면 좋은 예제가 있다. 후자의 경우 코드 부분 위에 In[숫자]:를, 출력 결과 부분 위에는 Out[숫자]: 형태로 표기한다. Jupyter Notebook의 자세한 사용법은 해당 부록을 참고하자.</p>
+      </article>
+    </section>
+
+    <h4 class="sub-header">1.5.1 - 입력과 출력</h4>
+    <section>
+      <article class="">
+        <p>100번의 설명보다 한 번의 코드가 더 좋은 법이다. 입력을 받은 후 해당 내용을 출력하는 간단한 파이썬 코드를 소개한다.</p>
+        <h5>코드1-2 입력을 받은 후 출력</h5>
+        <pre><code>In[2]:<br>user_name = input("Please input Your name: ")<br>user_number = input("Please input your favorite number: ")
+        <br>print("%s's favorite number is %d"%(user_name, int(user_number)))
+        <br>Out[2]:<br>Please input Your name: Miku<br>Please input your favorite number: 39<br>Miku's favorite number is 39</code></pre>
+        <p>조금 더 나아가서 파일을 읽고 쓰는 것을 해보자. 예제 파일 ch01 디렉터리 안에 있는 test.csv 파일을 이용한다. 파일 안에는 0~9의 숫자가 열 하나에 입력되어 있다.</p>
+        
+        <h5>코드1-3 파일 읽고 쓰기</h5>
+        <pre><code>In[3]:<br>infile_name = input("Please input file name: ")<br>outfile_name = "out.log"
+        <br>with open(infile_name) as infile:
+    with open(outfile_name, "W") as outfile:
+        for in_line in infile.readlines():
+            outfile.write("read from '%s' : %s"%(infile_name, in_line))
+        <br>Out[3]:<br>Please input file name: test.csv</code></pre>
+        <p>입력 파일을 test.csv라고 입력하면 출력 파일을 out.log라고 생성되며 다음과 같은 출력 내용을 저장한다.</p>
+        <pre><code>read from 'test.csv' : 0
+read from 'test.csv' : 1
+read from 'test.csv' : 2
+read from 'test.csv' : 3
+read from 'test.csv' : 4
+read from 'test.csv' : 5
+read from 'test.csv' : 6
+read from 'test.csv' : 7
+read from 'test.csv' : 8
+read from 'test.csv' : 9</code></pre>
+        <p>즉, [코드1-3]은 입력받은 파일을 열어서 한 줄마다 "read from 'test.csv' :"라는 메시지를 덧붙여서 새로운 파일을 만드는 프로그램이다. 여기서는 단순히 메시지를 복사했지만 사용자가 원하는 바에 따라서 중간에 다양한 계산을 할 수도 있을 것이다.</p>
       </article>
     </section>
   </div>

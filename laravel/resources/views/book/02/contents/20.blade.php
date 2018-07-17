@@ -131,21 +131,21 @@ In [1]: </code></pre>
       <article class="">
         <p>본 편은 지금부터다. 셸에서 Jupyter Notebook 명령을 실행하면 Jupyter Notebook을 실행할 수 있다. 웹 브라우저가 열리고 현재 위치를 루트로 하는 대시보드 화면이 나타난다.</p>
         <h5>그림B-1 Jupyter Notebook 루트 화면</h5>
-        <img src="/img/img01.png" alt="Jupyter Notebook 루트 화면" border="1">
+        <img src="/img/img01.png" alt="Jupyter Notebook 루트 화면">
         <p>오른쪽 위 [New]를 누르면 새 노트북을 만들 수 있다. 기본적인 텍스트파일부터 터미널, 파이썬 버전별 커널, 혹은 설정에 따라 루비, R, Scala 등의 프로그래밍 언어를 선택할 수 있다.</p>
         <p class="bg-info"><strong>NOTE_파이썬 2와 파이썬 3을 동시에 사용하기</strong><br>Jupyter Notebook을 실행했을 때 파이썬 2와 3을 동시에 실행할 수 없다면 nohup jupyter notebook & 이라는 명령을 실행한다. 한 번 실행한 이후에는 jupyter notebook 명령만으로도 파이썬 2와 3을 동시에 사용할 수 있다.</p>
         <p>[Terminal]을 선택하면 기존 셸 대신 Jupyter Notebook 안에서 셀을 사용할 수 있다.</p>
         <h5>그림B-2 터미널 사용</h5>
-        <img src="/img/img02.png" alt="터미널 사용" border="1">
+        <img src="/img/img02.png" alt="터미널 사용">
         <p>파이썬 3을 사용하여 새 노트북을 만들어 보자</p>
         <h5>그림B-3 새 노트북 입력 환경 및 자동완성 기능</h5>
-        <img src="/img/img03.png" alt="새 노트북 입력 환경 및 자동완성 기능" border="1">
+        <img src="/img/img03.png" alt="새 노트북 입력 환경 및 자동완성 기능">
         <p>IPython 커맨드라인과 유사하고 동일하게 작동한다. 파일 이름을 바꾸고 싶다면 왼쪽 상단 'Untitled'를 선택해 변경한다. 또한 p를 입력하고 <kbd>Tab</kbd>을 누르면 자동완성 기능도 사용할 수 있다. 사용자가 선언한 변수나 클래스, 함수 등도 당연히 나타난다.</p>
         <h5>그림B-4 셀 타입 지정</h5>
-        <img src="/img/img04.png" alt="셀 타입 지정" border="1">
+        <img src="/img/img04.png" alt="셀 타입 지정">
         <p>IPython 커맨드라인과 유사하고 동일하게 작동한다. 파일 이름을 바꾸고 싶다면 왼쪽 상단 'Untitled'를 선택해 변경한다. 또한 p를 입력하고 <kbd>Tab</kbd>을 누르면 자동완성 기능도 사용할 수 있다. 사용자가 선언한 변수나 클래스, 함수 등도 당연히 나타난다.</p>
         <h5>그림B-5 파이썬 코드와 마크다운을 함께 작성한 예</h5>
-        <img src="/img/img05.png" alt="파이썬 코드와 마크다운을 함께 작성한 예" border="1">
+        <img src="/img/img05.png" alt="파이썬 코드와 마크다운을 함께 작성한 예">
         <p>IPython 커맨드라인과 유사하고 동일하게 작동한다. 파일 이름을 바꾸고 싶다면 왼쪽 상단 'Untitled'를 선택해 변경한다. 또한 p를 입력하고 <kbd>Tab</kbd>을 누르면 자동완성 기능도 사용할 수 있다. 사용자가 선언한 변수나 클래스, 함수 등도 당연히 나타난다.</p>
         <p>Jupyter Notebook의 사용법을 모르더라도 [help] > [User Interface Tour]를 선택하면 주요 기능별로 풍선말과 함께 Jupyter Notebook 의 기능을 익힐 수 있다.</p>
         <p>다음 표를 참조해서 주요 단축키를 익히고 사용할 수 있다.</p>
