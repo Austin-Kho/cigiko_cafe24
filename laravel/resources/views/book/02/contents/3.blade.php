@@ -121,6 +121,20 @@ Namespaces are one honking great idea -- let's do more of those!</code></pre>
         <p>원래 파이썬이 처음 등장했을 때 기본 파일 인코딩은 아스키(ASCII)였다. 하지만 아스키는 다양한 언어를 표현하는데 문제가 있어서 파이썬 2.0부터 UTF-8을 지원하기 시작했다. 하지만 UTF-8이 기본 인코딩이 아니었고, UTF-8을 지원하려면 다음과 같은 코드를 사용해야 했다.</p>
         <pre><code># UTF-8 인코딩 지정<br># -*- coding: utf-8 -*-</code></pre>
         <p>파이썬은 3.x 버전부터 py 파일의 기본 인코딩을 UTF-8로 정했다. 이후부터 유니코드 문자열도 아무런 문제 없이 사용할 수 있게 되었다. 또한 변수 이름이나 함수 이름을 한글이나 기타 유니코드로 정할 수도 있다.</p>
+
+        <h5>코드2-5 파이썬 3.x 버전에서의 한글 사용</h5>
+        <pre><code>In[4]:<br>def 안녕():<br>    print("안녕 미쿠!")
+        <br>이름 = "미쿠"<br>print(이름)<br>안녕()
+        <br>Out[4]:<br>미쿠<br>안녕 미쿠!</code></pre>
+        <p>참고로 py파일을 ANSI로 저장한 경우 기존 터미널 포맷을 의미하는 CP949를 UTF-8로 바꿔준다. 혹은 앞서 설명한 UTF-8 인코딩 명령을 삽입하거나 UTF-8로 저장해주어야 한다. 파이썬은 입출력 인코딩을 확인하고 싶다면 다음 코드를 입력한다.</p>
+
+        <h5>코드2-6 입출력 인코딩 확인</h5>
+        <pre><code>In[5]:<br>import sys
+        <br># 입력 인코딩 확인<br>sys.stdin.encoding
+        <br>Out[5]:<br>'cp949'
+        <br>In[6]:<br># 출력 인코딩<br>sys.stdout.encoding
+        <br>Out[6]:<br>'UTF-8'</code></pre>
+        <p>더 자세한 사항을 확인하려면 파이썬 개발문서의 'PEP 263--Defining Python Source Code Encodings(<a href="https://www.python.org/dev/peps/pep-0263" target="_blank">https://www.python.org/dev/peps/pep-0263</a>)'를 확인한다.</p>
       </article>
     </section>
   </div>
@@ -129,7 +143,11 @@ Namespaces are one honking great idea -- let's do more of those!</code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬의 창시자 귀도 반 로섬은 코드를 작성하는 시간보다 읽는 시간이 더 많다는 것에 중점을 두고 명확하고 읽기 쉬운 언어를 만들었다. 파이썬의 디자인 철학은 코드 가독성과 명확성을 살리기 위한 특징들을 두루 갖추고 있다. 들여쓰기, 세미콜론 없음(새 행이 하나의 구문) 등과 switch와 case 문이 없는 것도 그러한 디자인 철학의 구체적인 예이다.</p>
+        <p>무엇보다도 파이썬의 철학을 매우 강력하게 제안하는 것이 있는데, 그것은 Pythonic way이다. 더 구체적으로는 Zen of Python의 한가지 인 'There should be one-- and preferably only one --obvious way to do it.(선호할 수 있는 확실한 방법)'을 따르는 것으로 말할 수 있다. 다음 예제를 참고한다.</p>
+        <h5>코드2-7 파이써닉 코딩</h5>
+        <pre><code># 문제 없는 코드이다. 하지만 파이써닉한 방법은 아니다.<br>for i in range(maylist_length):<br>    do_something(mylist[i])
+        <br># 이 코드가 파이썬다운 코딩방법이다.<br>for element in mylist:<br>    do_something(element)</code></pre>
       </article>
     </section>
   </div>
