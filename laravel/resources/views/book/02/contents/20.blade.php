@@ -133,7 +133,7 @@ In [1]: </code></pre>
         <h5>그림B-1 Jupyter Notebook 루트 화면</h5>
         <img src="/img/img01.png" alt="Jupyter Notebook 루트 화면" border="1">
         <p>오른쪽 위 [New]를 누르면 새 노트북을 만들 수 있다. 기본적인 텍스트파일부터 터미널, 파이썬 버전별 커널, 혹은 설정에 따라 루비, R, Scala 등의 프로그래밍 언어를 선택할 수 있다.</p>
-        <p class="bg-info"><strong>NOTE_파이썬 2와 파이썬 3을 동시에 사용하기<br>Jupyter Notebook을 실행했을 때 파이썬 2와 3을 동시에 실행할 수 없다면 nohup jupyter notebook & 이라는 명령을 실행한다. 한 번 실행한 이후에는 jupyter notebook 명령만으로도 파이썬 2와 3을 동시에 사용할 수 있다.</strong></p>
+        <p class="bg-info"><strong>NOTE_파이썬 2와 파이썬 3을 동시에 사용하기</strong><br>Jupyter Notebook을 실행했을 때 파이썬 2와 3을 동시에 실행할 수 없다면 nohup jupyter notebook & 이라는 명령을 실행한다. 한 번 실행한 이후에는 jupyter notebook 명령만으로도 파이썬 2와 3을 동시에 사용할 수 있다.</p>
         <p>[Terminal]을 선택하면 기존 셸 대신 Jupyter Notebook 안에서 셀을 사용할 수 있다.</p>
         <h5>그림B-2 터미널 사용</h5>
         <img src="/img/img02.png" alt="터미널 사용" border="1">
