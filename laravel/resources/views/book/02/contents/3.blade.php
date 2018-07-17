@@ -156,7 +156,9 @@ Namespaces are one honking great idea -- let's do more of those!</code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬3에서 눈에 띄게 바뀐점은 print() 가 확실하게 함수처럼 사용된ㄷ는 것이다. 그 외에는 연산자의 동작 방식이 조금 변했다든가, py파일의 기본 인코딩이 UTF-8이 되면서 문서 안에서 유니코드 문자열을 다루는 방식이 달라졌다던가 하는 부분이다.</p>
+        <p>물론 메이저 버전이 바뀐만큼 파이썬2 코드와 파이썬3 코드는 호환이 되지 않는다. 하지만 '2to3(<a href="https://docs.python.org/3/library/2to3.html" target="_blank">https://docs.python.org/3/library/2to3.html</a>)'이라는 변환 라이브러리로 파이썬2 코드를 파이썬3코드로 변환활 수 있다. 또한 '__future__'라는 패키지는 파이썬3에서 등장했지만 파이썬2에 지원되지 않는 기능들을 사용할 수 있게 해준다.</p>
+        <p>요약하자면 크게 바뀐 건 없지만 새로 파이썬을 배운다면 파이썬 3으로 시작하는 것이 좋다.</p>
       </article>
     </section>
   </div>
