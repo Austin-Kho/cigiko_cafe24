@@ -339,6 +339,13 @@ div.tip {
   padding: 10px;
 }
 
+article > img {
+  max-width: 100%;
+  height: auto;
+  border:1px solid #eaeaea;
+  padding: 0px;
+}
+
 .prev_icon:link, .next_icon:link { color:#ccc; }
 .prev_icon:visited, .next_icon:visited { color: #ccc; }
 .prev_icon:hover, .next_icon:hover { color:#aaa !important; }
