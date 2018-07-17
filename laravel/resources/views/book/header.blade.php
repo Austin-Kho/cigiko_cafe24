@@ -61,7 +61,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand">|</span><a class="navbar-brand" href="/{{$defurl}}"><small style="font-size: 10pt;">{{$title}}</small></a>
+          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand">|</span><a class="navbar-brand" href="/book/{{$defurl}}"><small style="font-size: 10pt;">{{$title}}</small></a>
         </div>
       </div>
     </nav>

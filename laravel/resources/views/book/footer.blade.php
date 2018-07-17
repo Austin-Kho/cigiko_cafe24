@@ -54,9 +54,9 @@
     <div class="pull-left">
       <ul>
         @if($id!='1')
-        <li><strong>이전글</strong> : <a href="/{{$defurl}}/{{(string)((int)$id-1)}}">{{$sub[(string)((int)$id-1)][1]}}</a></li>@endif
+        <li><strong>이전글</strong> : <a href="/book/{{$defurl}}/{{(string)((int)$id-1)}}">{{$sub[(string)((int)$id-1)][1]}}</a></li>@endif
         @if($id!==(string)$maxid)
-        <li><strong>다음글</strong> : <a href="/{{$defurl}}/{{(string)((int)$id+1)}}">{{$sub[(string)((int)$id+1)][1]}}</a></p></li>@endif
+        <li><strong>다음글</strong> : <a href="/book/{{$defurl}}/{{(string)((int)$id+1)}}">{{$sub[(string)((int)$id+1)][1]}}</a></p></li>@endif
       </ul>
     </div>
   </div>
@@ -82,11 +82,11 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <div style="display:none" class="prev_next_indicator">
   @if($id!='1')
-  <a class="prev_icon" href="/{{$defurl}}/{{(string)((int)$id-1)}}" role="button">
+  <a class="prev_icon" href="/book/{{$defurl}}/{{(string)((int)$id-1)}}" role="button">
     <span class="glyphicon glyphicon-chevron-left" style="font-size:2em;"></span>
   </a>@endif
   @if($id!==(string)$maxid)
-  <a class="next_icon" href="/{{$defurl}}/{{(string)((int)$id+1)}}" role="button">
+  <a class="next_icon" href="/book/{{$defurl}}/{{(string)((int)$id+1)}}" role="button">
     <span class="glyphicon glyphicon-chevron-right" style="font-size:2em;"></span>
   </a>@endif
 </div>
