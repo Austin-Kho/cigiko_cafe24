@@ -23,7 +23,7 @@
     <section>
       <article class="">
         <p>위키백과에서 파이썬의 특징을 다음과 같이 표현한다.</p>
-        <p class="bg-success"><strong>초보자부터 전문가까지 사용자층을 보유하고 있으며, 다양한 플랫폼에서 쓸 수 있고, 라이브러리(모듈)가 풍부하여, 대학을 비롯한 여러 교육 연구 기관 및 산업계에서 이용이 증가하고 있다.</strong></p>
+        <blockquote><strong>초보자부터 전문가까지 사용자층을 보유하고 있으며, 다양한 플랫폼에서 쓸 수 있고, 라이브러리(모듈)가 풍부하여, 대학을 비롯한 여러 교육 연구 기관 및 산업계에서 이용이 증가하고 있다.</strong></blockquote>
         <p>즉, 어떤 연구 과정에서 프로그래밍이 필요할 때 파이썬으로 쉽고 빠르게 아이디어를 실증해볼 수 있다는 의미다. 이는 강력한 IDE를 제공하며, 컴파일하지 않고 변경사항을 즉시 확인할 수 있는 장점 때문이다. </p><p>또한 수 많은 라이브러리 덕분에 C나 자바 등으로 구현하기 번거로운 각종 반복 작업을 쉽게 구현해 자동화 할 수있고 운영체제를 가리지 않는 호환성은 어떤 환경에서 파이썬으로 구현한 프로그램을 실행해도 작업에 차질이 없게 한다. 2010년대에는 프로그래밍 교육용 언어로 파이썬을 도입하고 있다.</p>
       </article>
     </section>
@@ -84,7 +84,7 @@
     <h4 class="sub-header">1.4.1 - 우분투</h4>
     <section>
       <article class="">
-        <p>우분투는 파이썬 2.x 버전과 3.x 버전 모두 기본 탑재하고 있다. python -V 또는 python3 -V 명령으로 설치 버전을 확인할 수 있다. 설치가 필요한 경우 다음 명령으로 설치할 수 있다.</p>
+        <p>우분투는 파이썬 2.x 버전과 3.x 버전 모두 기본 탑재하고 있다. <code>python -V</code> 또는 <code>python3 -V</code> 명령으로 설치 버전을 확인할 수 있다. 설치가 필요한 경우 다음 명령으로 설치할 수 있다.</p>
         <pre><code>$ sudo apt-get install python버전 넘버</code></pre>
         <p class="bg-info"><strong>NOTE_파이썬 최신 버전이 설치되지 않았다면</strong><br>우분투 리눅스에 최신 파이썬 버전이 설치되지 않은 경우가 있다. 다음 명령으로 최신 버전을 설치하자
         <pre><code>$ sudo add-apt-repository ppa:jonathonf/python-3.x<br>$ sudo apt-get update<br>$ sudo apt-get install python3.x</code></pre>
@@ -98,7 +98,7 @@
         <h4>Homebrew를 이용한 파이썬 설치</h4>
         <p>Homebrew는 macOS에서 소프트웨어를 설치하고 버전별로 관리할 수 있는 패키지 관리 시스템의 하나이다. 실무에서 파이썬을 사용할 때는 다양한 패키지나 가상환경(부록 A 참고)을 구축할 때가 많으므로 개발자라면 Homebrew를 이용해 파이썬을 설치하길 권한다.</p>
         <h5>그림1-1 Homebrew 홈페이지</h5>
-        <img src="/img/img06.png" alt="Homebrew 홈페이지">
+        <img src="/img/img06.png" alt="Homebrew 홈페이지" class="bo">
         <p>터미널 실행 후 설치 소스를 복사해 붙여 넣은 후 실행하면 설치가 끝난다.</p>
         <pre><code>$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></pre>
         <p>Homebrew를 설치하면 파이썬 설치 준비가 끝났다. 다음 명령을 터미널에서 실행하면 된다.(우분투와 달리 .x를 붙이지 않아야 한다는 점에 주의한다.)</p>
@@ -111,7 +111,7 @@
         <h4>파이썬 설치 파일</h4>
         <p>파이썬 개발 환경 다운로드 사이트(<a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>)를 방문해 자신의 운영체제에 맞는 설치 파일을 다운로드 한 후 설치하면 된다. 이 책에서 활용할 3.x버전을 다운로드 한다. 설치는 [계속] 버튼을 누르면 되니 따로 설명하지 않는다.</p>
         <h5>그림1-2 파이썬 다운로드 페이지(macOS)</h5>
-        <img src="/img/img07.png" alt="파이썬 다운로드 페이지(macOS)">
+        <img src="/img/img07.png" alt="파이썬 다운로드 페이지(macOS)" class="bo">
       </article>
     </section>
     <h4 class="sub-header">1.4.3 - 윈도우</h4>
@@ -145,7 +145,7 @@
         <br>print("%s's favorite number is %d"%(user_name, int(user_number)))
         <br>Out[2]:<br>Please input Your name: Miku<br>Please input your favorite number: 39<br>Miku's favorite number is 39</code></pre>
         <p>조금 더 나아가서 파일을 읽고 쓰는 것을 해보자. 예제 파일 ch01 디렉터리 안에 있는 test.csv 파일을 이용한다. 파일 안에는 0~9의 숫자가 열 하나에 입력되어 있다.</p>
-        
+
         <h5>코드1-3 파일 읽고 쓰기</h5>
         <pre><code>In[3]:<br>infile_name = input("Please input file name: ")<br>outfile_name = "out.log"
         <br>with open(infile_name) as infile:

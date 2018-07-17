@@ -339,7 +339,7 @@ div.tip {
   padding: 10px;
 }
 
-article > img {
+article > .bo {
   max-width: 100%;
   height: auto;
   border:1px solid #eaeaea;
