@@ -293,7 +293,31 @@ l1[7:15:3] = [7, 10, 13]</code></pre>
 # True and False
 print(d1[True])
 print(d1[False])
-print(d1[1 > 0])</code></pre>
+print(d1[1 > 0])
+print(d1[-1 > 0])
+
+# numbers
+miku = 39
+print(d1[39])
+print(d1[39.39])
+
+# string
+print(d1["Diva"])
+
+Out[19]:
+Yes! This is True!!!
+Nope
+Yes! This is True!!!
+Nope
+Miku
+Hatsune
+Song Hana</code></pre>
+        <p>리스트와 마찬가지로 딕셔너리를 만드는 방법이 하나 더 있다. dict()를 사용하는 방법이다.</p>
+        <h5>코드3-20 dict()를 사용한 딕셔너리 생성</h5>
+        <pre><code>In[20]:<br>d2 = dict(on=999, off=100, l=[1,2,3], s="Miku")
+        <br>print(d2)
+        <br>Out[20]<br>{'on': 999, 'off': 100, 'l': [1, 2, 3], 's': 'Miku'}</code></pre>
+        <p>단, <u>dict()를 이용해서 딕셔너리를 생성할 경우 <mark>키 값은 문자열</mark>만 사용해야 한다</u>.</p>
       </article>
     </section>
   </div>
@@ -302,7 +326,18 @@ print(d1[1 > 0])</code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬에서는 집합이라는 데이터 타입을 제공한다. 형태는 딕셔너리에서 키 값만 있는 것과 비슷하다. 딕셔너리와 같이 키는 그 안에서 유일해야 한다. 또 다른 특징은 키에 순서가 없다는 것이다.</p>
+        <h5>코드3-21 기본적인 집합 사용 예</h5>
+        <pre><code>In[21]:<br>set1 = {'h', 'e', 'l', 'l', 'o', 'h', 'a', 't', 's', 'u', 'n', 'e'}<br>set2 = {'m', 'i', 'k', 'u', 'l', 'o', 'v', 'e'}<br>set3 = set("Song Hana")
+        <br>print(set1)<br>print(set2)<br>print(set3)
+        <br>Out[21]:<br>{'s', 'o', 'n', 'a', 'u', 't', 'h', 'e', 'l'}<br>{'o', 'k', 'e', 'm', 'u', 'v', 'i', 'l'}<br>{'o', 'n', 'S', 'a', ' ', 'h', 'g'}</code></pre>
+        <p>또한 수학과 마찬가지로 교집합, 합집합, 차집합 등과 같은 집합 관련 연산을 할 수 있다.</p>
+        <h5>코드3-23 집합의 연산</h5>
+        <pre><code>In[22]:<br># 교집합<br>print(set1 & set2)
+        <br># 합집합<br>print(set1 | set2)
+        <br># 차집합<br>print(set1 - set2)
+        <br>Out[22]:<br>{'l', 'o', 'e', 'u'}<br>{'o', 'n', 's', 'k', 'v', 'l', 'i', 'a', 'h', 'e', 't', 'm', 'u'}<br>{'n', 't', 's', 'a', 'h'}</code></pre>
+        <p>일반적으로 집합이 필요한 부분에 사용할 때 유용한 데이터 타입이다.</p>
       </article>
     </section>
   </div>
@@ -311,7 +346,13 @@ print(d1[1 > 0])</code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>튜플은 리스트와 비슷하지만 변경할 수 없는 데이터 타입이다. 요소의 추가, 삭제, 변경을 할 수 없다. 리스트와 비슷하지만 괄호((, ))로 열고 닫아서 선언한다는 점이 다르다. 더 정확히 설명하면 튜플은 콤마(,)로 구별되는 객체의 나열이다. 괄호를 이용해서 튜플임을 좀 더 명확하게 하는 것이다. 따라서 다음처럼 튜플을 선언할 수도 있다.</p>
+        <pre><code># 요소가 1개인 튜플<br>t = 1,<br># 요소가 2개인 튜플<br>t2 = 1, 2</code></pre>
+        <h5>코드3-23 기본적인 튜플 사용 예</h5>
+        <pre><code>In[23]:<br>t1 = (5, 6, 7, 8, 9)
+        <br>print(t1)<br>print(t1[0])<br>print(t1[3:])<br>print(t1[:2])
+        <br>Out[23]:<br>(5, 6, 7, 8, 9)<br>5<br>(8, 9)<br>(5, 6)</code></pre>
+        <p>이처럼 요소에 접근만 하는 것이라면 리스트와 똑같이 사용할 수 있다. 하지만 추가, 변경, 삭제가 되지 않으므로 절대로 변경되어서는 안 되는 값을 튜플로 사용하길 권한다.</p>
       </article>
     </section>
   </div>
