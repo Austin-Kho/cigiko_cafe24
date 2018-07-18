@@ -387,7 +387,9 @@ a#MOVE_TOP_BTN {
   bottom: 65px;
   display: none;
   z-index: 999;
+  color: #7fafdb;
 }
+a#MOVE_TOP_BTN:hover {color: #42a6ff;}
 
 .input-search {
   width:100%;

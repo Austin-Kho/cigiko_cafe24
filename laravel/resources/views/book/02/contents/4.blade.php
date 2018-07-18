@@ -76,53 +76,33 @@ print(type(new_challenger))
         <h5>코드3-4 정수와 실수를 이용하는 연산</h5>
         <pre><code>In[4]:<br>i1 = 39<br>i2 = 939<br>f1 = 1.234<br>f2 = 3.939
 # +
-print("### + ###")
 print("i1 + i2: ", i1 + i2)   # 정수끼리
 
 # -
-print("### - ###")
 print("f1 - f2: ", f1 - f2)   # 실수끼리
 
 # *
-print("### * ###")
 print("i1 * f1: ", i1 * f1)   # 정수와 실수끼리
 
 # /
-print("### / ###")
 print("i2 / i1: ", i2 / i1)   # 정수끼리
 
 # //
-print("### // ###")
 print("f2 // f1: ", f2 // f1)   # 실수끼리
 
 # %
-print("### % ###")
 print("i1 % f1: ", i1 % f1)   # 정수와 실수끼리
 
 # **
-print("### ** ###")
 print("i1 ** f1: ", i1 ** f1)   # 정수와 실수끼리
 
 Out[4]
-### + ###
 i1 + i2: 978
-
-### - ###
 f1 - f2: -2.705
-
-### * ###
 i1 * f1: 48.126
-
-### / ###
 i2 / i1: 24.076923076923077
-
-### // ###
 f2 // f1: 3.0
-
-### % ###
 i1 % f1: 0.7460000000000004
-
-### ** ###
 i1 ** f1: 91.91231928197118</code></pre>
         <p>정수와 실수의 연산 실행 결과는 더 큰 범위를 다루는 숫자 형식으로 결과를 반환한다. 예를 들어 어느 한 쪽의 숫자가 부동소수점 수이면 결과도 부동소수점 수로 출력한다.</p>
         <p class="bg-warning"><strong>TIP</strong> 파이썬2와 3에서는 나누기 연산(/)의 동작이 다르다. 파이썬2의 경우 나누기 연산은 파이썬3의 '나누기 - 소숫점 버림(//)'처럼 동작한다.</p>
@@ -141,21 +121,54 @@ i1 ** f1: 91.91231928197118</code></pre>
     <h4 class="sub-header">3.5.1 - 기본적인 선언과 사용</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>문자열은 변수에 작은따옴표(')와 큰따옴표(")를 넣어서 선언하고 사용한다.</p>
+
+        <h5>코드3-5 기본적인 문자열 선언과 사용</h5>
+        <pre><code>In[5]:<br>diva = "Miku"<br>another_diva = 'Song Hana'
+        <br>print(type(diva))<br>print(type(another_diva))
+        <br>Out[5]:<br>&lt;class 'str'><br>&lt;class 'str'></code></pre>
+        <p>또한 다른 프로그래밍 언어처럼 이스케이프 문자로 역슬래시(\)를 사용한다.</p>
+
+        <h5>코드3-6 이스케이프 문자 사용 예 1</h5>
+        <pre><code>In[6]:<br>escape_s1 = "This is \"double quote\""<br>escape_s2 = 'This isn\'t'
+        <br>print(escape_s1)<br>print(escape_s2)
+        <br>Out[6]:<br>This is "double quote"<br>This isn't</code></pre>
+
+        <h5>코드3-7 이스케이프 문자 사용 예 2</h5>
+        <pre><code>In[7]:<br>s1 = "Tab \tThis"<br>s2 = "New Line\nHello!"
+        <br>print(s1)<br>print(s2)
+        <br>Out[7]:<br>Tab  This<br>New Line<br>Hello!</code></pre>
+
       </article>
     </section>
 
     <h4 class="sub-header">3.5.2 - raw 문자열 표현법</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>역슬래시 자체를 문자열에 자주 포함해야 할 때가 있다. 예를 들면 경로 표현 등이 있겠다. 이런 경우에는 문자열 앞에 r을 붙여서 raw문자열로 만들어 줄 수 있다.</p>
+
+        <h5>코드3-8 raw 문자열 사용 예</h5>
+        <pre><code>In[8]:<br>raw_s1 = r'C:\Programs\new Program\"'<br>raw_s2 = r"\\t\n\b\s"<br>raw_s3 = r'\'"'<br>raw_s4 = r"\"'"
+        <br>print(raw_s1)<br>print(raw_s2)<br>print(raw_s3)<br>print(raw_s4)
+        <br>Out[8]:<br>C:\Programs\new program\"<br>\\t\n\b\s<br>\'"<br>\"'</code></pre>
+        <p>raw 문자열일 경우에는 안에 들어간 역실래시가 역슬래시 그대로 사용된다. 다만 문자열을 감싸는 것이 작은따옴표나 큰 따옴료일 경우, 이를 그대로 사용하기 위한 역슬래시조차 그대로 쓰인다는 것에 주의한다.</p>
+
       </article>
     </section>
 
     <h4 class="sub-header">3.5.3 - 멀티라인 문자열 표현법</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬은 한 번에 여러 줄의 문자열을 작성해야 할 때, 간편하게 멀티라인 문자열을 할당할 수 있는 방법을 제공한다.</p>
+        <h5>코드3-9 멀티라인 문자열 사용 예 1</h5>
+        <pre><code>In[9]:<br>multi_s = """이 문자열은 <br>멀티라인<br>문자열입니다."""
+        <br>print(multi_s)
+        <br>Out[10]:<br>이 문자열은<br>멀티라인<br>문자열입니.</code></pre>
+        <p>이 처럼 작은따옴표나 큰따옴표 3개로 감싸면, 해당 문자열은 멀티라인 문자열이 되며, 문자열 안에서 입력한 줄바꿈을 그대로 사용한다. 멀티라인 문자열에서 각 라인의 마지막에 붙는 역슬래시(\)는 완전 다른 역할을 한다. 해당 라인의 줄바꿈을 적용하지 않게 한다.</p>
+        <h5>코드3-10 멀티라인 문자 사용 예 2</h5>
+        <pre><code>In[10]:<br>multi_s2 = '''이 문자열 역시 \<br>멀티라인 문자열입니다.\<br>한 줄의 마지막에<br>역슬래시를 붙이면<br>줄바꿈이 \<br>되지 않습니다.<br>'''
+        <br>print(multi_s2)
+        <br>Out[10]:<br>이 문자열 역시 멀티라인 문자열입니다. 한 줄의 마지막에<br>역슬래시를 붙이면<br>줄바꿈이 되지 않습니다.</code></pre>
       </article>
     </section>
   </div>
@@ -164,7 +177,22 @@ i1 ** f1: 91.91231928197118</code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>문자열 또한 덧셈과 곱셈 연산을 할 수 있다.</p>
+        <h5>코드3-11 문자열의 덧셈과 곱셈 연산</h5>
+        <pre><code>In[11]:<br>diva = "Miku"<br>first_sound = "Hatsune"
+        <br>print(3*diva)<br>print(first_sound+diva)
+        <br>Out[11]:<br>MikuMikuMiku<br>HatsuneMiku</code></pre>
+        <p>그 외 다른 프로그래밍 언어에서 문자열로 할 수 있는 모든 것을 파이썬에서도 그대로 할 수 있다.</p>
+        <h5>코드3-12 함수나 배열을 이용하는 문자열 연산</h5>
+        <pre><code>In[12]:<br>print(dir(diva))<br>print("Capitalize: ", diva.capitalize())<br>print("is 'first_sound' end with 'e'?: ", first_sound.endswith("e"))<br>print("join strings with 'diva' str: ", diva.join(["kagamine", "len", "megurine"]))
+        <br>Out[12]:
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__',
+--snip--
+'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+Capitalize: Miku
+is 'first_sound' end with 'e'?:  True
+join strings with 'diva' str:  kagamineMikulenMikumegurine</code></pre>
+        <p>파이썬의 str 클래스로 할 수 있는 작업들은 앞 실행 결과와 같다. 해당 문자열에 '.'을 입력하고 IDE가 제시하는 자동 완성 기능을 이용해 코드를 입력하는 연습을 몇 번 하면 금방 익힐 수 있다.</p>
       </article>
     </section>
   </div>
@@ -173,28 +201,75 @@ i1 ** f1: 91.91231928197118</code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>C에 배열이 있다면 파이썬에는 리스트가 있다. 파이썬의 리스트는 담을 수 있는 아이템 타입에 제한이 없다. 심지어 리스트 그 자신도 담을 수 있을 정도다. 다중 배열처럼 사용할 수도 있다.</p>
+        <p>리스트는 대괄호([, ])로 열고 닫으며, 콤마(,)로 각 요소들을 구별한다.</p>
+        <h5>코드3-13 기본적인 리스트 사용 예</h5>
+        <pre><code>In[13]:<br>l1 = [1, 2, 3]<br>l2 = ["a", "b", "c", "diva"]<br>l3 = ['Miku', 39]<br>[[0, 1], [2, 3], [4, 5]]
+        <br>print(l1)<br>print(l1[0])<br>print(l2)<br>print(l2[1])<br>print(l3)<br>print(l3[0])<br>print(l4)<br>print(l4[2][1])
+        <br>Out[13]:<br>[1, 2, 3]<br>1<br>['a', 'b', 'c', 'diva']<br>b<br>['miku', 39]<br>miku<br>[[0, 1], [2, 3], [4, 5]]<br>5</code></pre>
+        <p>리스트를 생성할 때 위 코드 처럼 대괄호를 사용해서 만드는 방법 외에 한 가지 방법이 더 있다. list()를 사용하는 것이다.</p>
+        <h5>코드3-14 list()를 사용한 리스트 생성</h5>
+        <pre><code>In[14]:<br>l5 = list("Hatsune Miku")
+        <br># 앞에서 생성한 리스트를 이용해 새로 리스트를 생성합니다.<br>l6 = list(l1+l2+l3)
+        <br>print(l5)<br>print(l6)
+        <br>Out[14]:<br>['H', 'a', 't', 's', 'u', 'n', 'e', ' ', 'M', 'i', 'k', 'u']<br>[1, 2, 3, 'a', 'b', 'c', 'diva', 'miku', 39]</code></pre>
+        <p>실행 결과에서 보듯 리스트의 인덱스는 0부터 시작한다. 그리고 파이썬에서 한 가지 특이한 점은 음수 인덱스를 사용할 수 있다는 점이다.</p>
+        <h5>코드3-15 음수 인덱스 사용</h5>
+        <pre><code>In[15]:<br>l5 = [0, 1, 2, 3, 4, 5]<br>#  0  1  2  3  4  5<br># -6 -5 -4 -3 -2 -1
+        <br>print("l5 = ", l5)<br>print("l5[-1] = ", l5[-1])<br>print("l5[-2] = ", l5[-2])<br>print("l5[-6] = ", l5[-6])
+        <br>Out[15]:<br>l5 = [0, 1, 2, 3, 4, 5]<br>l5[-1] = 5<br>l5[-2] = 4<br>l5[-6] = 0</code></pre>
+        <p>음수 인덱스는 '뒤에서 몇 번째~' 하는 방식으로 아이템을 가져올 때 매우 유용하다. 리스트 전체의 길이를 구한 다음 다시 계산하지 않아도 되는 것이다.</p>
       </article>
     </section>
 
     <h4 class="sub-header">3.7.1 - 리스트 연산</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>리스트를 대상으로 사칙연산을 할 수 있다. 물론 일반적인 연산과 다르지만, 리스트 자체를 빠르게 다룰 수 있다는 점에서 굉장한 편리함을 제공한다.</p>
+        <h5>코드3-16 리스트 연산</h5>
+        <pre><code>In[16]:<br>l1 = [1, 2, 3]<br>l2 = [4, 5, 6]
+        <br>print("l1 + l2 = ", l1 + l2)<br>print("l1 * 3 ", l1 * 3)
+        <br>Out[16]:<br>l1 + l2 = [1, 2, 3, 4, 5, 6]<br>l1 * 3 = [1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
+        <p>앞에서 살펴 본 문자열 덧셈, 곱셈 연산과 같다. 더하면 이어 붙이고, 곱하면 해당 숫자만큼 반복한 결과를 반환한다.</p>
       </article>
     </section>
 
     <h4 class="sub-header">3.7.2 - 리스트 아이템에 접근하기</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>리스트에 있는 아이템을 꺼내는 방법에는 여러가지가 있다. 간단하게 인덱스만 지정해서 해당 아이템만 꺼낼 수도 있고, 범위를 지정할 수도 있고, 범위와 동시에 특정 n번째 아이템만 반환 받을 수도 있다.</p>
+        <h5>코드3-17 리스트 아이템 접근(슬라이스)</h5>
+        <pre><code>In[17]:<br>l1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+        <br>print("l1 = ", l1)
+        <br># list[start:stop:step]<br># list[start:]<br># list[:stop]<br># list[::step]<br># list[start:stop]<br># list[start::step]<br># list[:stop:step]
+        <br># 9번째 인덱스 이후만 가져오기<br>print("l1[9:] = ", l1[9:])
+        <br># 15번째 인덱스 이전만 가져오기<br>print("l1[:15] = ", l1[:15])
+        <br># 2번째마다의 아이템을 가져오기<br>print("l1[::2] = ", l1[::2])
+        <br># 7번째마다의 아이템을 가져오기<br>print("l1[::7] = ", l1[::7])
+        <br># 5번째부터 시작해서 2번째마다 아이템을 가져오기<br>print("l1[5::2] = ", l1[5::2])
+        <br># 17번째 이전까지 매 4번째마다 아이템을 가져오기<br>print("l1[:17:4] = " li[:17:4])
+        <br># 7번째부터 시작해서 3번째마다 아이템을 가져오고, 15번째를 전달하지 않기<br>print("l1[7:15:3] = ", l1[7:15:3])
+        <br>Out[17]:<br>li = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+l1[9:] = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+l1[:15] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+l1[::2] = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+l1[::7] = [0, 7, 14]
+l1[5::2] = [0, 4, 8, 12, 16]
+l1[:17:4] = [0, 4, 8, 12, 16]
+l1[7:15:3] = [7, 10, 13]</code></pre>
       </article>
     </section>
 
     <h4 class="sub-header">3.7.3 - 문자열을 리스트처럼 다루기</h4>
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬에서 문자열은 리스트처럼 인덱스와 슬라이스를 이용해서 각 요소에 접근할 수 있다.</p>
+        <h5>코드3-18 문자열을 리스트로 다루기</h5>
+        <pre><code>In[18]:<br>s1 = "Hatsune Miku"
+        <br>print("s1 =  ", s1)
+        <br>print("s1[2] = ", s1[2])<br>print("s1[8:] = ", s1[8:])<br>print("s1[-4:] = ", s1[-4:])<br>print("s1[:7] = ", s1[:7]<br>print("s1[::2] = ", s1[::2])
+        <br>Out[18]:<br>s1 = Hatsune Miku<br>s1[2] = t<br>s1[8:] = Miku<br>s1[-4:] = Miku<br>s1[:7] = Hatsune<br>s1[::2] = HtueMk</code></pre>
+        <p>문자열을 리스트처럼 다룰 때의 장점은 문자열의 특정 구간을 잘라낼 때 매우 편리하다는 것이다.</p>
       </article>
     </section>
   </div>
@@ -203,7 +278,22 @@ i1 ** f1: 91.91231928197118</code></pre>
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>다른 프로그래밍 언어에서는 '연관 배열', '구조체', '해시 맵' 등으로 부르는 '카 : 값' 쌍을 다룰 수 있는 데이터 타입을 파이썬에서는 딕셔너리(dictionary)라고 한다. 딕셔너리는 중괄호({, })로 열고 닫고, 키와 값을 콜론(:)으로 묶는다. 각각의 키:값 쌍은 콤마(,)로 구분한다.</p>
+        <p>딕셔너리의 키 값은 어떠한 것이라도 될 수 있다. 심지어 True나 False 같은 논리값이라도 사용할 수 있다. 단 대응 관계가 해시블(hashable)한 타입이어야 한다. True와 False는 정수 1과 0으로 간주하며 대응 관계이다.</p>
+        <p>딕셔너리의 값을 가져올 때는 리스트와 동일하게 '딕셔너리[키]'형식을 사용한다. 또한 한 딕셔너리 안의 키는 고유(unique) 값을 사용해야 한다.</p>
+        <h5>코드3-19 기본적인 딕셔너리 사용 예</h5>
+        <pre><code>In[19]:<br>d1 = {
+  True : "Yes! This is True!!!",
+  False : "Nope",
+  39 : "Miku",
+  39.39 : "Hatsune",
+  "Diva" : "Song Hana"
+}
+
+# True and False
+print(d1[True])
+print(d1[False])
+print(d1[1 > 0])</code></pre>
       </article>
     </section>
   </div>
@@ -225,19 +315,3 @@ i1 ** f1: 91.91231928197118</code></pre>
       </article>
     </section>
   </div>
-  <!-- <li class=@if($id=='24') active @endif><a href="/book02/24" class="d2">3.1 변수 선언</a></li>
-  <li class=@if($id=='25') active @endif><a href="/book02/25" class="d2">3.2 정수</a></li>
-  <li class=@if($id=='26') active @endif><a href="/book02/26" class="d2">3.3 실수</a></li>
-  <li class=@if($id=='27') active @endif><a href="/book02/27" class="d2">3.4 정수와 실수 연산</a></li>
-  <li class=@if($id=='28') active @endif><a href="/book02/28" class="d2">3.5 문자열</a></li>
-  <li class=@if($id=='29') active @endif><a href="/book02/29" class="d3">3.5.1 기본적인 선언과 사용</a></li>
-  <li class=@if($id=='30') active @endif><a href="/book02/30" class="d3">3.5.2 raw 문자열 표현법</a></li>
-  <li class=@if($id=='31') active @endif><a href="/book02/31" class="d3">3.5.3 멀티라인 문자열 표현법</a></li>
-  <li class=@if($id=='32') active @endif><a href="/book02/32" class="d2">3.6 문자열의 연산</a></li>
-  <li class=@if($id=='33') active @endif><a href="/book02/33" class="d2">3.7 리스트</a></li>
-  <li class=@if($id=='34') active @endif><a href="/book02/34" class="d3">3.7.1 리스트 연산</a></li>
-  <li class=@if($id=='35') active @endif><a href="/book02/35" class="d3">3.7.2 리스트 아이템에 접근하기</a></li>
-  <li class=@if($id=='36') active @endif><a href="/book02/36" class="d3">3.7.3 문자열을 리스트처럼 다루기</a></li>
-  <li class=@if($id=='37') active @endif><a href="/book02/37" class="d2">3.8 딕셔너리</a></li>
-  <li class=@if($id=='38') active @endif><a href="/book02/38" class="d2">3.9 집합</a></li>
-  <li class=@if($id=='39') active @endif><a href="/book02/39" class="d2">3.10 튜플</a></li> -->

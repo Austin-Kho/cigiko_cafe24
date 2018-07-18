@@ -95,7 +95,7 @@
 </div>
 
 <div style="font-size: 25pt;">
-<a id="MOVE_TOP_BTN" href="#" style=" color: #73bfe2;"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></a>
+<a id="MOVE_TOP_BTN" href="#"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></a>
 </div>
 <script id="dsq-count-scr" src="//cigiko.disqus.com/count.js" async></script>
 </body>
