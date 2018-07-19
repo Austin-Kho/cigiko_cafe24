@@ -1,7 +1,7 @@
   <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -10,7 +10,7 @@
   <h3 class="sub-header">13.1. 메시지 큐</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -19,14 +19,14 @@
   <h3 class="sub-header">13.2. RabbitMQ 소개</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.2.1 - RabbitMQ 설치와 메시지 큐 서버 실행하기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -35,28 +35,28 @@
   <h3 class="sub-header">13.3. RabbitMQ의 기본 동작 개념</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.3.1 - pika 패키지 설치</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.3.2 - 메시지 전달: 쿠에 넣고 가져오기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.3.3 - 작업 분배: 큐에 넣고 여러 개의 워커가 가져가고 작업 종료 확인하기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -65,35 +65,35 @@
   <h3 class="sub-header">13.4. 셀러리: 메시지 큐를 이용한 분산 처리 애플리케이션</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.4.1 - 설치</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.4.2 - 셀러리의 동작 구조</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.4.3 - 워커 서버</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">13.4.4 - 태스크 퍼블리셔(사용자 앱)</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>

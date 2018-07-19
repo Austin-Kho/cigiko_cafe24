@@ -1,7 +1,7 @@
   <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -10,7 +10,7 @@
   <h3 class="sub-header">11.1. 설치와 Hello World 웹 페이지 실행하기</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -19,7 +19,7 @@
   <h3 class="sub-header">11.2. 파라미터로 URL 경로와 쿼리 추가하기</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -28,35 +28,35 @@
   <h3 class="sub-header">11.3. API 서버 만들기</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">11.3.1 - 데이터베이스와 연결하기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">11.3.1 - 데이터베이스와 연결하기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">11.3.3 - 조건에 따라 데이터 가져오기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">11.3.4 - 최종 코드</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>

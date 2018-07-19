@@ -1,7 +1,7 @@
   <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -10,7 +10,7 @@
   <h3 class="sub-header">6.1. 클래스</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -19,7 +19,7 @@
   <h3 class="sub-header">6.2. 클래스 변수와 인스턴스 변수</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -28,7 +28,7 @@
   <h3 class="sub-header">6.3. 클래스 메서드</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -37,7 +37,7 @@
   <h3 class="sub-header">6.4. 상속</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -46,7 +46,7 @@
   <h3 class="sub-header">6.5. 덕 타이핑</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>

@@ -1,7 +1,7 @@
   <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>모두가 코드를 쉽게 읽기 위해서는 먼저 코딩 방법이 구체적으로 정해져 있어야 한다. 이를 제시하는 것이 PEP8이다. PEP는 Python Enhancement Proposals 의 약자고, 8이라는 숫자는 'PEP 8 -- Style Guide for Python Code'에서 유래한 것으로, 파이썬 코딩 스타일 제안이다.</p>
       </article>
     </section>
@@ -10,14 +10,14 @@
   <h3 class="sub-header">C.1. 코드 레이아웃</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>코드 레이아웃에서는 코드의 전체적인 모습이 어떻게 되어야 하는지 설명한다. 가독성과 그에 따른 명시성이 주요 주제가 된다.</p>
       </article>
     </section>
 
     <h4 class="sub-header">C.1.1 - 들여쓰기</h4>
     <section>
-      <article class="">
+      <article>
         <p>4개의 공백을 들여쓰기 단위로 사용할 것을 권장한다. 더불어 괄호 안의 요소들을 정렬하는 법도 다룬다.</p>
         <h5>코드C-1 들여쓰기의 올바른 예</h5>
         <pre class="python"><code># Aligned with opening delimiter.
@@ -52,14 +52,14 @@ def long_function_name(
 
     <h4 class="sub-header">C.1.2 - 탭이냐 스페이스냐</h4>
     <section>
-      <article class="">
+      <article>
         <p>공백, 즉 스페이스를 사용하는 것이 좋다. 탭의 경우 시스템의 설정에 따라 그 너비가 달라질 수도 있다. 탭을 사용할 수 있는 경우는 기존 코드가 이미 탭으로 들여쓰기가 되어 있는 경우에만 하라고 권장한다.</p>
       </article>
     </section>
 
     <h4 class="sub-header">C.1.3 - 한 행의 길이는?</h4>
     <section>
-      <article class="">
+      <article>
         <p>최대 79자를 권장한다. 물론 이 숫자는 공백을 포함한 숫자이다. 따라서 들여쓰기로 인한 제약을 생각한다면 실제 한 행에 적을 수 있는 코드의 양은 그 만큼 적다.</p>
         <p>이렇게 명시적으로 한 행에 적는 코드의 양을 권장함으로써 한 행에 담기는 코드가 한 가지의 의미에 집중되게 하는 효과가 있다.</p>
 
@@ -73,7 +73,7 @@ def long_function_name(
 
     <h4 class="sub-header">C.1.4 - 빈 행은 어떻게 얼마나?</h4>
     <section>
-      <article class="">
+      <article>
         <p>파이썬은 가독성을 중시하는 언어이다. 따라서 함수와 클래스 앞뒤로 빈 행을 얼마나 붙일지도 권장하는 기준이 있다. 단순히 코드를 작성한다고 끝나는 것이 아니라, 다른 사람이 읽는 경우까지도 고려하는 코드 작성을 권장하는 것이다.</p>
         <ul>
             <li>최상위 레벨의 함수는 두 행의 빈 행으로 감싼다.</li>
@@ -96,14 +96,14 @@ def long_function_name(
 
     <h4 class="sub-header">C.1.5 - 소스 코드 파일의 인코딩은 어떻게?</h4>
     <section>
-      <article class="">
+      <article>
         <p>파이썬 3에서 py 파일의 기본 인코딩은 UTF-8이다. 반면 파이썬 2의 py 파일 인코딩은 아스키(ASCII)이다. 각각의 버전에 따라 기본 인코딩을 작성한 코드 파일은 별도의 인코딩 선언을 해주지 않아도 된다. 파이썬 3의 UTF-8 py 파일, 파이썬 2의 아스키 py 코드 파일으 경우가 이에 해당한다.</p>
       </article>
     </section>
 
     <h4 class="sub-header">C.1.6 - imports</h4>
     <section>
-      <article class="">
+      <article>
         <p>파이썬은 모듈과 패키지를 사용할 때 import 명령어를 사용한다. 그리고 import 명령어를 사용할 때 권장하는 방법은 한 줄에 하나만 import 명령어를 사용하는 것이다.</p>
         <h5>코드C-5 import 사용 예</h5>
         <pre class="python"><code># 올바른 예<br>import os<br>import sys
@@ -123,14 +123,14 @@ def long_function_name(
   <h3 class="sub-header">C.2. 공백 표현과 구문</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>괄호 안의 요소 사이사이에 어떻게 공백을 넣을까도 권장하는 사항이 있다.</p>
       </article>
     </section>
 
     <h4 class="sub-header">C.2.1 - 성가신 것들</h4>
     <section>
-      <article class="">
+      <article>
         <p>괄호 바로 안쪽에는 가능하면 공백을 사용하지 않도록 한다.</p>
         <h5>코드C-8 공백 사용 예 1</h5>
         <pre class="python"><code># 올바른 예<br>spam(ham[1], {eggs: 2})
@@ -169,7 +169,7 @@ ham[ : upper]</code></pre>
 
     <h4 class="sub-header">C.2.2 - 그 외의 추천하는 방법</h4>
     <section>
-      <article class="">
+      <article>
         <p>바이너리 연산자는 공백으로 감싸주는 것이 좋다. 또한 연산자 사이에 우선순위가 다를 경우 낮은 우선순위의 연산자에 추가 공백을 넣어 주는 것이 좋다. 공백을 넣는 ㅣ것은 자신의 판단에 따르되 하나 이상의 공백을 넣는 것은 피해야 한다.</p>
         <h5>코드C-14 공백 사용 예 7</h5>
         <pre class="python"><code># 올바른 예<br>i = i + 1<br>submitted += 1<br>x = x*2 - 1<br>hypot2 = x*x + y*y<br>c = (a+b) * (a-b)
@@ -195,14 +195,14 @@ ham[ : upper]</code></pre>
   <h3 class="sub-header">C.3. 주석</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>올바른 주석 표기 방법을 살펴보자.</p>
       </article>
     </section>
 
     <h4 class="sub-header">C.3.1 - 블록 주석</h4>
     <section>
-      <article class="">
+      <article>
         <p>블록 주석은 주석 표시 바로 뒤에 작성하며 코드를 설명하는 역할을 한다. 주석 각각은 각 행의 처음에서 #으로 시작하며 블록 주석 안의 문단은 # 하나만 있는 행으로 구분한다.</p>
         <h5>코드C-17 주석 사용 예 1</h5>
         <pre class="python"><code># 코드 예제</code></pre>
@@ -211,7 +211,7 @@ ham[ : upper]</code></pre>
 
     <h4 class="sub-header">C.3.2 - 인라인 주석</h4>
     <section>
-      <article class="">
+      <article>
         <p>인라인 주석은 어쩔 수 없는 경우에만 사용할 것을 권장한다. 해당 구문과 같은 행에 있는 주석이고, 인라인 주석은 해당 구문과 최소 2개 이상의 공백으로 떨어져 있어야 한다.</p>
         <h5>코드C-18 주석 사용 예 2</h5>
         <pre class="python"><code>x = x + 1               # x가 1 증가합니다.</code></pre>

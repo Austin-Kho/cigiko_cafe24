@@ -1,7 +1,7 @@
   <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -10,35 +10,35 @@
   <h3 class="sub-header">8.1. 파일 열기와 읽기</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">8.1.1 - 파일 전체 읽기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">8.1.2 - 파일 한 행 읽기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">8.1.3 - 파일 전부를 읽고 한 행마다 리스트 아이템으로 가져오기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">8.1.4 - for 문 이용하기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
@@ -47,14 +47,14 @@
   <h3 class="sub-header">8.2. 파일 닫기</h3>
   <div class="chapter">
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
 
     <h4 class="sub-header">8.2.1 - with 이용하기</h4>
     <section>
-      <article class="">
+      <article>
         <p>내용 입력</p>
       </article>
     </section>
