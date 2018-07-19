@@ -2,7 +2,7 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬 또한 다른 언어와 같이 일정 횟수를 반복 실행할 수 있게 하는 for문, 조건이 맞는 동안 반복 실행하는 while문, 조건에 따라 특정 코드를 처리하도록 나누는 if-else문을 제공한다. 그리고 그 안에서 좀 더 세부적인 동작을 할 수 있게 하는 break, continue, pass 문 등이 있다.</p>
       </article>
     </section>
   </div>
@@ -11,7 +11,17 @@
   <div class="chapter">
     <section>
       <article class="">
-        <p>내용 입력</p>
+        <p>파이썬의 if 문은 괄호와 코드블록에 중괄호를 사용하지 않는다는 점을 제외하면 다르지 않다.</p>
+        <h5>코드4-1 if문의 기본 사용 예</h5>
+        <pre><code>In[1]:<br>if True:
+    print("Yes")
+    
+if False:
+    # 출력되지 않음
+    print("No")
+    
+Out[1]:
+Yes</code></pre>
       </article>
     </section>
 
