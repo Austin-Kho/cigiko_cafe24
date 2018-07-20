@@ -85,9 +85,9 @@
     <section>
       <article>
         <p>우분투는 파이썬 2.x 버전과 3.x 버전 모두 기본 탑재하고 있다. <code>python -V</code> 또는 <code>python3 -V</code> 명령으로 설치 버전을 확인할 수 있다. 설치가 필요한 경우 다음 명령으로 설치할 수 있다.</p>
-        <pre class="python"><code>$ sudo apt-get install python버전 넘버</code></pre>
+        <pre class="python"><code><blockquote><ol><li>$&nbsp;sudo&nbsp;apt-get&nbsp;install&nbsp;python버전&nbsp;넘버</li></ol></blockquote></code></pre>
         <p class="bg-info"><strong>NOTE_파이썬 최신 버전이 설치되지 않았다면</strong><br>우분투 리눅스에 최신 파이썬 버전이 설치되지 않은 경우가 있다. 다음 명령으로 최신 버전을 설치하자
-        <pre class="python"><code>$ sudo add-apt-repository ppa:jonathonf/python-3.x<br>$ sudo apt-get update<br>$ sudo apt-get install python3.x</code></pre>
+        <pre class="python"><code><blockquote><ol><li>$&nbsp;sudo&nbsp;add-apt-repository&nbsp;ppa:jonathonf/python-3.x</li><li>$&nbsp;sudo&nbsp;apt-get&nbsp;update</li><li>$&nbsp;sudo&nbsp;apt-get&nbsp;install&nbsp;python3.x</li></ol></blockquote></code></pre>
         </p>
       </article>
     </section>
@@ -100,13 +100,13 @@
         <h5>그림1-1 Homebrew 홈페이지</h5>
         <img src="/img/img06.png" alt="Homebrew 홈페이지" class="bo">
         <p>터미널 실행 후 설치 소스를 복사해 붙여 넣은 후 실행하면 설치가 끝난다.</p>
-        <pre class="python"><code>$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></pre>
+        <pre class="python"><code><blockquote><ol><li>$&nbsp;/usr/bin/ruby&nbsp;-e&nbsp;&quot;$<font color="#33cc33">(</font>curl&nbsp;-fsSL&nbsp;https://raw.githubusercontent.com/Homebrew/install/master/install<font color="#33cc33">)</font>&quot;</li></ol></blockquote></code></pre>
         <p>Homebrew를 설치하면 파이썬 설치 준비가 끝났다. 다음 명령을 터미널에서 실행하면 된다.(우분투와 달리 .x를 붙이지 않아야 한다는 점에 주의한다.)</p>
-        <pre class="python"><code>$ brew install python3</code></pre>
+        <pre class="python"><code><blockquote><ol><li>$&nbsp;brew&nbsp;install&nbsp;python3</li></ol></blockquote></code></pre>
         <p class="bg-info"><strong>NOTE_macOS의 파이썬 설치 주의사항</strong><br>macOS에서 Homebrew나 파이썬을 설치하려먼 Xcode Command Line Tools가 설치되어 있어야 한다. 설치 필요 시 다음 명령으로 Xcode command Line Tools를 설치할 수 있다.</p>
-        <pre class="python"><code>$ xcode-select --install</code></pre>
+        <pre class="python"><code><blockquote><ol><li>$&nbsp;xcode-select&nbsp;--install</li></ol></blockquote></code></pre>
         <p class="bg-info">또한 Homebrew 설치 스크립트는 변경될 가능성이 있으므로 Homebrew 홈페이지에 있는 명령어에 변화가 있는지 확인한다. 간혹 Xcode 라이선스에 동의하지 않았다면 Homebrew가 제대로 설치되지 않을 수 있다. 이 때는 아래 명령을 실행한 다음 다시 Homebrew설치 명령을 실행한다.</p>
-        <pre class="python"><code>$ sudo xcodebuild -license</code></pre>
+        <pre class="python"><code><blockquote><ol><li>$&nbsp;sudo&nbsp;xcodebuild&nbsp;-license</li></ol></blockquote></code></pre>
 
         <h4>파이썬 설치 파일</h4>
         <p>파이썬 개발 환경 다운로드 사이트(<a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>)를 방문해 자신의 운영체제에 맞는 설치 파일을 다운로드 한 후 설치하면 된다. 이 책에서 활용할 3.x버전을 다운로드 한다. 설치는 [계속] 버튼을 누르면 되니 따로 설명하지 않는다.</p>
@@ -129,8 +129,7 @@
       <article>
         <p>파이썬으로 무언가를 하기가 얼마나 간단한지는 다음 코드만 봐도 알 수 있다. 일단은 전통적인 Hello World, 즉 출력이다.</p>
         <h5>코드1-1 Hello World</h5>
-        <pre class="python"><code>In[1]:<br>print('Hello World!')
-        <br>Out[1]:<br>Hello World!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">'Hello&nbsp;World!'</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li>Hello&nbsp;World<font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <p>파이썬의 철학 중 하나는 '건전지 포함(Batteries included)'이라는 개념이다. 여러 가지 기본 라이브러리들을 포함시켜 별도로 찾지 않아도 바로 사용할 수 있게 하자는 것이다. 참고로 기본 제공하는 표준 라이브러리 목록은 'The Python Standard Library(<a href="https://docs.python.org/3/library/index.html" target="_blank">https://docs.python.org/3/library/index.html</a>)'에서 확인할 수 있다.</p>
         <p class="bg-success"><strong>NOTE_ 이 책의 코드 표기 방식</strong><br>이 책의 예제는 터미널이나 파이썬 셸에서 py 파일을 실행하면 좋은 예제와 부록 B에서 설명하는 Jupyter Notebook에서 실행하면 좋은 예제가 있다. 후자의 경우 코드 부분 위에 In[숫자]:를, 출력 결과 부분 위에는 Out[숫자]: 형태로 표기한다. Jupyter Notebook의 자세한 사용법은 해당 부록을 참고하자.</p>
       </article>
@@ -141,29 +140,13 @@
       <article>
         <p>100번의 설명보다 한 번의 코드가 더 좋은 법이다. 입력을 받은 후 해당 내용을 출력하는 간단한 파이썬 코드를 소개한다.</p>
         <h5>코드1-2 입력을 받은 후 출력</h5>
-        <pre class="python"><code>In[2]:<br>user_name = input("Please input Your name: ")<br>user_number = input("Please input your favorite number: ")
-        <br>print("%s's favorite number is %d"%(user_name, int(user_number)))
-        <br>Out[2]:<br>Please input Your name: Miku<br>Please input your favorite number: 39<br>Miku's favorite number is 39</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li>user_name&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#008000">input</font><font>&#40;</font><font color="#483d8b">&quot;Please&nbsp;input&nbsp;Your&nbsp;name:&nbsp;&quot;</font><font>&#41;</font></li><li>user_number&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#008000">input</font><font>&#40;</font><font color="#483d8b">&quot;Please&nbsp;input&nbsp;your&nbsp;favorite&nbsp;number:&nbsp;&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;%s's&nbsp;favorite&nbsp;number&nbsp;is&nbsp;%d&quot;</font>%<font>&#40;</font>user_name<font color="#66cc66">,</font>&nbsp;<font color="#008000">int</font><font>&#40;</font>user_number<font>&#41;</font><font>&#41;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li>Please&nbsp;<font color="#008000">input</font>&nbsp;Your&nbsp;name:&nbsp;Miku</li><li>Please&nbsp;<font color="#008000">input</font>&nbsp;your&nbsp;favorite&nbsp;number:&nbsp;<font color="#ff4500">39</font></li><li>Miku<font color="#483d8b">'s&nbsp;favorite&nbsp;number&nbsp;is&nbsp;39</font></li></ol></blockquote></code></pre>
         <p>조금 더 나아가서 파일을 읽고 쓰는 것을 해보자. 예제 파일 ch01 디렉터리 안에 있는 test.csv 파일을 이용한다. 파일 안에는 0~9의 숫자가 열 하나에 입력되어 있다.</p>
 
         <h5>코드1-3 파일 읽고 쓰기</h5>
-        <pre class="python"><code>In[3]:<br>infile_name = input("Please input file name: ")<br>outfile_name = "out.log"
-        <br>with open(infile_name) as infile:
-    with open(outfile_name, "W") as outfile:
-        for in_line in infile.readlines():
-            outfile.write("read from '%s' : %s"%(infile_name, in_line))
-        <br>Out[3]:<br>Please input file name: test.csv</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li>infile_name&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#008000">input</font><font>&#40;</font><font color="#483d8b">&quot;Please&nbsp;input&nbsp;file&nbsp;name:&nbsp;&quot;</font><font>&#41;</font></li><li>outfile_name&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;out.log&quot;</font></li><li>&nbsp;</li><li><font color="#ff7700">with</font>&nbsp;<font color="#008000">open</font><font>&#40;</font>infile_name<font>&#41;</font>&nbsp;<font color="#ff7700">as</font>&nbsp;infile:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">with</font>&nbsp;<font color="#008000">open</font><font>&#40;</font>outfile_name<font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;W&quot;</font><font>&#41;</font>&nbsp;<font color="#ff7700">as</font>&nbsp;outfile:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">for</font>&nbsp;in_line&nbsp;<font color="#ff7700">in</font>&nbsp;infile.<font>readlines</font><font>&#40;</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outfile.<font>write</font><font>&#40;</font><font color="#483d8b">&quot;read&nbsp;from&nbsp;'%s'&nbsp;:&nbsp;%s&quot;</font>%<font>&#40;</font>infile_name<font color="#66cc66">,</font>&nbsp;in_line<font>&#41;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li>Please&nbsp;<font color="#008000">input</font>&nbsp;<font color="#008000">file</font>&nbsp;name:&nbsp;<font color="#dc143c">test</font>.<font color="#dc143c">csv</font></li></ol></blockquote></code></pre>
         <p>입력 파일을 test.csv라고 입력하면 출력 파일을 out.log라고 생성되며 다음과 같은 출력 내용을 저장한다.</p>
-        <pre class="python"><code>read from 'test.csv' : 0
-read from 'test.csv' : 1
-read from 'test.csv' : 2
-read from 'test.csv' : 3
-read from 'test.csv' : 4
-read from 'test.csv' : 5
-read from 'test.csv' : 6
-read from 'test.csv' : 7
-read from 'test.csv' : 8
-read from 'test.csv' : 9</code></pre>
+        <pre class="python"><code><blockquote><ol><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">0</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">1</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">2</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">3</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">4</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">5</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">6</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">7</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">8</font></li><li>read&nbsp;<font color="#ff7700">from</font>&nbsp;<font color="#483d8b">'test.csv'</font>&nbsp;:&nbsp;<font color="#ff4500">9</font></li></ol></blockquote></code></pre>
         <p>즉, [코드1-3]은 입력받은 파일을 열어서 한 줄마다 "read from 'test.csv' :"라는 메시지를 덧붙여서 새로운 파일을 만드는 프로그램이다. 여기서는 단순히 메시지를 복사했지만 사용자가 원하는 바에 따라서 중간에 다양한 계산을 할 수도 있을 것이다.</p>
       </article>
     </section>

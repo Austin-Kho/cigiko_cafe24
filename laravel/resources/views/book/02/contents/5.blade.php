@@ -13,32 +13,16 @@
       <article>
         <p>파이썬의 if 문은 괄호와 코드블록에 중괄호를 사용하지 않는다는 점을 제외하면 다르지 않다.</p>
         <h5>코드4-1 if문의 기본 사용 예</h5>
-        <pre class="python"><code>In[1]:<br>if True:
-    print("Yes")
-    
-if False:
-    # 출력되지 않음
-    print("No")
-    
-Out[1]:
-Yes</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li><font color="#ff7700">if</font>&nbsp;<font color="#008000">True</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Yes&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;<font color="#008000">False</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;출력되지&nbsp;않음</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;No&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li>Yes</li></ol></blockquote></code></pre>
         <p>if 문은 다음 형식으로 사용한다.</p>
-        <pre class="python"><code>if &lt;조건표현식>:<br>    조건이 참일 때<br>    실행할 <br>    코드를 적습니다.</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#ff7700">if</font>&nbsp;<font color="#66cc66">&lt;</font>조건표현식<font color="#66cc66">&gt;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;조건이&nbsp;참일&nbsp;때</li><li>&nbsp;&nbsp;&nbsp;&nbsp;실행할&nbsp;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;코드를&nbsp;적습니다.</li></ol></blockquote></code></pre>
         <p>if 문 다음에 조건 표현식과 콜론(:)을 입력한 후, 다음 행부터는 한 단계 들여쓰기 한다. 해당 블록의 조건 표현식이 참일 때 실행된다.</p>
         <p>조건표현식은 True나 False를 반환할 수 있는 표현식이면 무엇이든 된다.</p>
         <h5>코드4-2 조건표현식의 사용 예</h5>
-        <pre class="python"><code># 다음은 단독으로 조건에 들어가면 True로 취급합니다.<br>number_ture = 39<br>string_true = "miku"<br>list_true = [3, 9, 39]<br>tuple_true = (3.9, 39.39)<br>dict_true = {"name":"Song Hana"}
-        <br># 다음은 False로 취급합니다.<br>number_false = 0<br>string_false = ""<br>list_false = []<br>tuple_false = ()<br>dict_false = {}</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#808080">#&nbsp;다음은&nbsp;단독으로&nbsp;조건에&nbsp;들어가면&nbsp;True로&nbsp;취급합니다.</font></li><li>number_ture&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">39</font></li><li>string_true&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;miku&quot;</font></li><li>list_true&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#ff4500">3</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">9</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">39</font><font>&#93;</font></li><li>tuple_true&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#40;</font><font color="#ff4500">3.9</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">39.39</font><font>&#41;</font></li><li>dict_true&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#123;</font><font color="#483d8b">&quot;name&quot;</font>:<font color="#483d8b">&quot;Song&nbsp;Hana&quot;</font><font>&#125;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;다음은&nbsp;False로&nbsp;취급합니다.</font></li><li>number_false&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">0</font></li><li>string_false&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;&quot;</font></li><li>list_false&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font>&#93;</font></li><li>tuple_false&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#40;</font><font>&#41;</font></li><li>dict_false&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#123;</font><font>&#125;</font></li></ol></blockquote></code></pre>
         <p>그리고 이러한 변수들을 비교할 때 다음과 같이 사용할 수 있다.</p>
         <h5>코드4-3 조건표현식 변수 비교</h5>
-        <pre class="python"><code>In[2]:<br>a = 1<br>b = 0
-        <br># == 양 변이 같을 때 참.<br>print(a == b)
-        <br># != 양 변이 다를 때 참.<br>print(a != b)
-        <br># > 왼쪽이 클 때 참.<br>print(a > b)
-        <br># >= 왼쪽이 크거나 같을 때 참.<br>print(a >= b)
-        <br># < 오른쪽이 클 때 참.<br>print(a < b)
-        <br># <= 오른쪽이 크거나 같을 때 참.<br>print(a <= b)
-        <br>Out[2]:<br>False<br>True<br>True<br>True<br>False<br>False</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li>a&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">1</font></li><li>b&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">0</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;==&nbsp;양&nbsp;변이&nbsp;같을&nbsp;때&nbsp;참.</font></li><li><font color="#ff7700">print</font><font>&#40;</font>a&nbsp;<font color="#66cc66">==</font>&nbsp;b<font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;!=&nbsp;양&nbsp;변이&nbsp;다를&nbsp;때&nbsp;참.</font></li><li><font color="#ff7700">print</font><font>&#40;</font>a&nbsp;<font color="#66cc66">!=</font>&nbsp;b<font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;&gt;&nbsp;왼쪽이&nbsp;클&nbsp;때&nbsp;참.</font></li><li><font color="#ff7700">print</font><font>&#40;</font>a&nbsp;<font color="#66cc66">&gt;</font>&nbsp;b<font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;&gt;=&nbsp;왼쪽이&nbsp;크거나&nbsp;같을&nbsp;때&nbsp;참.</font></li><li><font color="#ff7700">print</font><font>&#40;</font>a&nbsp;<font color="#66cc66">&gt;=</font>&nbsp;b<font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;&lt;&nbsp;오른쪽이&nbsp;클&nbsp;때&nbsp;참.</font></li><li><font color="#ff7700">print</font><font>&#40;</font>a&nbsp;<font color="#66cc66">&lt;</font>&nbsp;b<font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;&lt;=&nbsp;오른쪽이&nbsp;크거나&nbsp;같을&nbsp;때&nbsp;참.</font></li><li><font color="#ff7700">print</font><font>&#40;</font>a&nbsp;<font color="#66cc66">&lt;=</font>&nbsp;b<font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li><font color="#008000">False</font></li><li><font color="#008000">True</font></li><li><font color="#008000">True</font></li><li><font color="#008000">True</font></li><li><font color="#008000">False</font></li><li><font color="#008000">False</font></li></ol></blockquote></code></pre>
       </article>
     </section>
 
@@ -46,29 +30,14 @@ Yes</code></pre>
     <section>
       <article>
         <p>if문의 조건이 거짓일 때는 if문 블록이 실행되지 않는다. 반면 else문에서는 조건이 거짓일 때 그 다음 블록이 실행된다.</p>
-        <pre class="python"><code>if &lt;조건표현식>:<br>    조건이 참일 때<br>    실행할<br>    코드를<br>    넣습니다.<br>else:<br>    조건이 거짓일 때<br>    실행됩니다.</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#ff7700">if</font>&nbsp;<font color="#66cc66">&lt;</font>조건표현식<font color="#66cc66">&gt;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;조건이&nbsp;참일&nbsp;때</li><li>&nbsp;&nbsp;&nbsp;&nbsp;실행할</li><li>&nbsp;&nbsp;&nbsp;&nbsp;코드를</li><li>&nbsp;&nbsp;&nbsp;&nbsp;넣습니다.</li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;조건이&nbsp;거짓일&nbsp;때</li><li>&nbsp;&nbsp;&nbsp;&nbsp;실행됩니다.</li></ol></blockquote></code></pre>
         <h5>코드4-4 if-else문 사용 예 1</h5>
-        <pre class="python"><code>In[3]:<br>if False:<br>    # 여기는 실행되지 않음.<br>    print("You can't reach here")<br>else:<br>    # 여기가 실행된다.<br>    print("Oh, you are here")
-        <br>Out[3]:<br>Oh, you are here</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li><font color="#ff7700">if</font>&nbsp;<font color="#008000">False</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;여기는&nbsp;실행되지&nbsp;않음.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;You&nbsp;can't&nbsp;reach&nbsp;here&quot;</font><font>&#41;</font></li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;여기가&nbsp;실행된다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Oh,&nbsp;you&nbsp;are&nbsp;here&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li>Oh<font color="#66cc66">,</font>&nbsp;you&nbsp;are&nbsp;here</li></ol></blockquote></code></pre>
         <p>각 타입에 따라 False로 취급되는 경우를 이용하면 다음과 같이 사용할 수도 있다.</p>
         <h5>코드4-5 False로 취급되는 경우를 응용한 예</h5>
-        <pre class="python"><code>In[4]:<br>name = ""
-if name:
-    print("Your name is ", name)
-else:
-    # 이쪽이 출력된다.
-    print("Please enter your name")
-        <br>Out[4]:<br>Please enter your name</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">4</font><font>&#93;</font>:</li><li>name&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;&quot;</font></li><li><font color="#ff7700">if</font>&nbsp;name:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Your&nbsp;name&nbsp;is&nbsp;&quot;</font><font color="#66cc66">,</font>&nbsp;name<font>&#41;</font></li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;이쪽이&nbsp;출력된다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Please&nbsp;enter&nbsp;your&nbsp;name&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">4</font><font>&#93;</font>:</li><li>Please&nbsp;enter&nbsp;your&nbsp;name</li></ol></blockquote></code></pre>
         <h5>코드4-6 if-else문의 사용 예 2</h5>
-        <pre class="python"><code>In[5]:<br>name = "Miku"<br>
-if name:
-    # 이쪽이 출력된다.
-    print("Your name is: ", name)
-else:
-    print("Please enter your name")
-
-Out[5]
-Your name is: Miku</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">5</font><font>&#93;</font>:</li><li>name&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;Miku&quot;</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;name:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;이쪽이&nbsp;출력된다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Your&nbsp;name&nbsp;is:&nbsp;&quot;</font><font color="#66cc66">,</font>&nbsp;name<font>&#41;</font></li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Please&nbsp;enter&nbsp;your&nbsp;name&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">5</font><font>&#93;</font></li><li>Your&nbsp;name&nbsp;<font color="#ff7700">is</font>:&nbsp;Miku</li></ol></blockquote></code></pre>
       </article>
     </section>
 
@@ -76,24 +45,9 @@ Your name is: Miku</code></pre>
     <section>
       <article>
         <p>else 문 블록에 조건을 설정하고자 할 때 elif를 사용한다. 다른 프로그래밍 언어의 else if 에 해당한다.</p>
-        <pre class="python"><code>if &lt;조건표현식>:<br>    참일 때<br>elif &lt;조건표현식>:
-    앞 블록이 거짓일 때
-    여기의 조건을 검사해
-    참이면 실행됩니다.<br>else:
-    앞 조건 중
-    아무것도 만족하지 않을 때
-    실행됩니다.</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#ff7700">if</font>&nbsp;<font color="#66cc66">&lt;</font>조건표현식<font color="#66cc66">&gt;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;참일&nbsp;때</li><li><font color="#ff7700">elif</font>&nbsp;<font color="#66cc66">&lt;</font>조건표현식<font color="#66cc66">&gt;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;앞&nbsp;블록이&nbsp;거짓일&nbsp;때</li><li>&nbsp;&nbsp;&nbsp;&nbsp;여기의&nbsp;조건을&nbsp;검사해</li><li>&nbsp;&nbsp;&nbsp;&nbsp;참이면&nbsp;실행됩니다.</li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;앞&nbsp;조건&nbsp;중</li><li>&nbsp;&nbsp;&nbsp;&nbsp;아무것도&nbsp;만족하지&nbsp;않을&nbsp;때</li><li>&nbsp;&nbsp;&nbsp;&nbsp;실행됩니다.</li></ol></blockquote></code></pre>
         <h5>코드4-7 elif 문 사용 예</h5>
-        <pre class="python"><code>In[6]:<br>number = 39
-        <br>if number == 13:
-    # 실행되지 않는다.
-    print("First if block")<br>elif number == 39:
-    # 이 블록이 실행된다.
-    print("Second elif block")
-    print("Hello Miku!")<br>else:
-    # 실행되지 않는다.
-    print("oh...")
-        <br>Out[6]:<br>Second elif block<br>Hello Miku!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">6</font><font>&#93;</font>:</li><li>number&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">39</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;number&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">13</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;실행되지&nbsp;않는다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;First&nbsp;if&nbsp;block&quot;</font><font>&#41;</font></li><li><font color="#ff7700">elif</font>&nbsp;number&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">39</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;이&nbsp;블록이&nbsp;실행된다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Second&nbsp;elif&nbsp;block&quot;</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Hello&nbsp;Miku!&quot;</font><font>&#41;</font></li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;실행되지&nbsp;않는다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;oh...&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">6</font><font>&#93;</font>:</li><li>Second&nbsp;<font color="#ff7700">elif</font>&nbsp;block</li><li>Hello&nbsp;Miku<font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <p>참고로 파이썬은 switch 문이 없다. elif 문으로 switch 문을 대신해야 한다.</p>
       </article>
     </section>
@@ -105,20 +59,11 @@ Your name is: Miku</code></pre>
       <article>
         <p>여러 조건을 한 번에 확인해야 할 경우가 있다. 보통 복수의 조건이 전부 참일 경우(and), 복수의 조건 중 하나라도 참일 경우(or), 조건 하나의 참과 거짓을 뒤집어서 검사하는 경우(not)가 된다. 참고로 파이썬에서는 익숙한 논리 연산자인 &&과 ||를 사용하지 않는다.</p>
         <h5>코드4-8 and 사용 예</h5>
-        <pre class="python"><code>In[7]:<br>name = "miku"<br>number = 39
-        <br># 복수의 조건이 모두 참일 경우에 실행<br>if name == "miku" and number == 39:<br>    print("You are digital diva miku!")<br>else:<br>    print("D.va?")
-        <br>Out[7]:<br>You are digital diva miku!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">7</font><font>&#93;</font>:</li><li>name&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;miku&quot;</font></li><li>number&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">39</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;복수의&nbsp;조건이&nbsp;모두&nbsp;참일&nbsp;경우에&nbsp;실행</font></li><li><font color="#ff7700">if</font>&nbsp;name&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;miku&quot;</font>&nbsp;<font color="#ff7700">and</font>&nbsp;number&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">39</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;You&nbsp;are&nbsp;digital&nbsp;diva&nbsp;miku!&quot;</font><font>&#41;</font></li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;D.va?&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">7</font><font>&#93;</font>:</li><li>You&nbsp;are&nbsp;digital&nbsp;diva&nbsp;miku<font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <h5>코드4-10 or 사용 예</h5>
-        <pre class="python"><code>In[8]:<br>nick = "D.va"<br>name = "Song hana"
-        <br>if nick == "D.va" or nick == "Diva":<br>    print("You must be", nick, "!!")
-        <br>if nick == "Diva" or name == "Song hana":<br>    print("Welcome back to overwatch")
-        <br>Out[8]:<br>You must be D.va !!<br>Welcome back to overwatch</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">8</font><font>&#93;</font>:</li><li>nick&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;D.va&quot;</font></li><li>name&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;Song&nbsp;hana&quot;</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;nick&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;D.va&quot;</font>&nbsp;<font color="#ff7700">or</font>&nbsp;nick&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;Diva&quot;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;You&nbsp;must&nbsp;be&quot;</font><font color="#66cc66">,</font>&nbsp;nick<font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;!!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;nick&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;Diva&quot;</font>&nbsp;<font color="#ff7700">or</font>&nbsp;name&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;Song&nbsp;hana&quot;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Welcome&nbsp;back&nbsp;to&nbsp;overwatch&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">8</font><font>&#93;</font>:</li><li>You&nbsp;must&nbsp;be&nbsp;D.<font>va</font>&nbsp;<font color="#66cc66">!!</font></li><li>Welcome&nbsp;back&nbsp;to&nbsp;overwatch</li></ol></blockquote></code></pre>
         <h5>코드4-10 not 사용 예</h5>
-        <pre class="python"><code>In[9]:<br>print(not True)<br>print(not False)
-        <br>Out[9]:<br>False<br>True
-        <br>In[10]:<br>is_diva = False
-        <br>if not is_diva:<br>   print("You are diva!")
-        <br>Out[10]:<br>You are diva!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">9</font><font>&#93;</font>:</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff7700">not</font>&nbsp;<font color="#008000">True</font><font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff7700">not</font>&nbsp;<font color="#008000">False</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">9</font><font>&#93;</font>:</li><li><font color="#008000">False</font></li><li><font color="#008000">True</font></li><li>&nbsp;</li><li>In<font>&#91;</font><font color="#ff4500">10</font><font>&#93;</font>:</li><li>is_diva&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#008000">False</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;<font color="#ff7700">not</font>&nbsp;is_diva:</li><li>&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;You&nbsp;are&nbsp;diva!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">10</font><font>&#93;</font>:</li><li>You&nbsp;are&nbsp;diva<font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <p>조건의 반대 결과가 필요할 경우 not을 사용할 수 있다. 다른 프로그래밍 언어에서 !를 앞에 붙이는 것보다는 훨씬 코드를 이해하기 쉽다는 점은 덤이다.</p>
       </article>
     </section>
@@ -128,14 +73,10 @@ Your name is: Miku</code></pre>
       <article>
         <p>여러 값을 갖는 리스트, 딕셔너리, 집합, 튜플 타입의 데이터에서 특정 값이 있거나 없는 경우를 확인해야 할 경우에 사용할 수 있는 것이 in 이다.</p>
         <h5>코드4-11 in 의 기본 사용법</h5>
-        <pre class="python"><code>In[11]:<br>l = [1, 2, 3]<br>s = {4, 5, 6, 6}<br>d = {"one":1, "two":2, "three":3}<br>t = (7, 8, 9)
-        <br>print(1 in l)<br>print(6 in s)<br>print(7 in s)<br>print("one" in d)<br>print(9 in t)<br>print(10 in t)
-        <br>Out[11]:<br>True<br>True<br>False<br>True<br>True<br>False</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">11</font><font>&#93;</font>:</li><li>l&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#ff4500">1</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">3</font><font>&#93;</font></li><li>s&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#123;</font><font color="#ff4500">4</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">5</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">6</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">6</font><font>&#125;</font></li><li>d&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#123;</font><font color="#483d8b">&quot;one&quot;</font>:<font color="#ff4500">1</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;two&quot;</font>:<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;three&quot;</font>:<font color="#ff4500">3</font><font>&#125;</font></li><li>t&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#40;</font><font color="#ff4500">7</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">8</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">9</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff4500">1</font>&nbsp;<font color="#ff7700">in</font>&nbsp;l<font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff4500">6</font>&nbsp;<font color="#ff7700">in</font>&nbsp;s<font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff4500">7</font>&nbsp;<font color="#ff7700">in</font>&nbsp;s<font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;one&quot;</font>&nbsp;<font color="#ff7700">in</font>&nbsp;d<font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff4500">9</font>&nbsp;<font color="#ff7700">in</font>&nbsp;t<font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff4500">10</font>&nbsp;<font color="#ff7700">in</font>&nbsp;t<font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">11</font><font>&#93;</font>:</li><li><font color="#008000">True</font></li><li><font color="#008000">True</font></li><li><font color="#008000">False</font></li><li><font color="#008000">True</font></li><li><font color="#008000">True</font></li><li><font color="#008000">False</font></li></ol></blockquote></code></pre>
         <p>특정 값이 해당 데이터 타입에 들어 있으면 True, 그렇지 않으면 False 를 반환하게 했다. 참고로 딕셔너리의 경우는 키 값을 기준으로 검사를 하게 된다. 만약 딕셔너리의 특정 값이 존재하는지 찾고 싶을 때에는 다음과 같이 한다.</p>
         <h5>코드4-12 딕셔너리의 특정 값 검색</h5>
-        <pre class="python"><code>In[12]:<br>d = {"one":1, "two":2, "three":3}
-        <br>print(1 in d.values())
-        <br>Out[12]:<br>True</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">12</font><font>&#93;</font>:</li><li>d&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#123;</font><font color="#483d8b">&quot;one&quot;</font>:<font color="#ff4500">1</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;two&quot;</font>:<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;three&quot;</font>:<font color="#ff4500">3</font><font>&#125;</font></li><li>&nbsp;</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#ff4500">1</font>&nbsp;<font color="#ff7700">in</font>&nbsp;d.<font>values</font><font>&#40;</font><font>&#41;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">12</font><font>&#93;</font>:</li><li><font color="#008000">True</font></li></ol></blockquote></code></pre>
         <p>in dict.key() 또는 keys()를 생략한 채 in dict 로 검색할 경우 딕셔너리의 키를 검색한다. 반면 딕셔너리의 '값'을 검색하기 위해서는 in dict.values() 로 딕셔너리의 모든 값을 검색할 수 있다.</p>
       </article>
     </section>
@@ -147,9 +88,7 @@ Your name is: Miku</code></pre>
       <article>
         <p>if 문이 조건이 맞는 블록을 단 한번 실행한다면, while 문은 조건이 일치하는 동안 블록을 반복 실행한다.</p>
         <h5>코드4-13 while 문의 기본 사용 예</h5>
-        <pre class="python"><code>In[13]:<br>i = 0
-        <br>while i < 10:<br>    print("i is :", i)<br>    i += 1
-        <br>Out[13]:<br>i is : 0<br>i is : 1<br>i is : 2<br>i is : 3<br>i is : 4<br>i is : 5<br>i is : 6<br>i is : 7<br>i is : 8<br>i is : 9</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">13</font><font>&#93;</font>:</li><li>i&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">0</font></li><li>&nbsp;</li><li><font color="#ff7700">while</font>&nbsp;i&nbsp;<font color="#66cc66">&lt;</font>&nbsp;<font color="#ff4500">10</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;i&nbsp;is&nbsp;:&quot;</font><font color="#66cc66">,</font>&nbsp;i<font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;+<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">1</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">13</font><font>&#93;</font>:</li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">0</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">1</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">2</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">3</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">4</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">5</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">6</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">7</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">8</font></li><li>i&nbsp;<font color="#ff7700">is</font>&nbsp;:&nbsp;<font color="#ff4500">9</font></li></ol></blockquote></code></pre>
         <p>while 문을 쓸 때는 무한루프에 빠지지 않도록 주의한다.</p>
       </article>
     </section>
@@ -160,15 +99,12 @@ Your name is: Miku</code></pre>
     <section>
       <article>
         <p>파이썬 흐름 제어의 정수라고 한다면 단연 for 문을 꼽을 수 있다. 간단한 구문으로 리스트와 딕셔너리를 순회하거나, 지정된 횟수만큼 작업을 반복할 수 있다.</p>
-        <pre class="python"><code>for &lt;루프안 변수> in &lt;순회할 목록>:<br>    루프 내 실행문.<br>    실행문.</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#ff7700">for</font>&nbsp;<font color="#66cc66">&lt;</font>루프안&nbsp;변수<font color="#66cc66">&gt;</font>&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#66cc66">&lt;</font>순회할&nbsp;목록<font color="#66cc66">&gt;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;루프&nbsp;내&nbsp;실행문.</li><li>&nbsp;&nbsp;&nbsp;&nbsp;실행문.</li></ol></blockquote></code></pre>
         <p>루프를 순회할 때마다 목록에서 아이템을 꺼내와 '루프안 변수'에 할당시킨다. 그렇게 할당된 '루프안 변수'는 루프 안에서 사용된다. </p>
         <h5>코드4-14 for 문의 기본 사용 예</h5>
-        <pre class="python"><code>In[14]:<br>for i in range(10):<br>    print(i)
-        <br>Out[14]:<br>0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">14</font><font>&#93;</font>:</li><li><font color="#ff7700">for</font>&nbsp;i&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#008000">range</font><font>&#40;</font><font color="#ff4500">10</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font>i<font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">14</font><font>&#93;</font>:</li><li><font color="#ff4500">0</font></li><li><font color="#ff4500">1</font></li><li><font color="#ff4500">2</font></li><li><font color="#ff4500">3</font></li><li><font color="#ff4500">4</font></li><li><font color="#ff4500">5</font></li><li><font color="#ff4500">6</font></li><li><font color="#ff4500">7</font></li><li><font color="#ff4500">8</font></li><li><font color="#ff4500">9</font></li></ol></blockquote></code></pre>
         <h5>코드4-15 리스트를 순회하는 for 문의 예</h5>
-        <pre class="python"><code>In[15]:<br>names = ["Miku", "Rin", "Ren", "Luka", "Seeu", "D.va"]
-        <br>for name in names:<br>    print("You are", name)
-        <br>Out[15]:<br>You are Miku<br>You are Rin<br>You are Ren<br>You are Luka<br>You are Seeu<br>You are D.va</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">15</font><font>&#93;</font>:</li><li>names&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#483d8b">&quot;Miku&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Rin&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Ren&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Luka&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Seeu&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;D.va&quot;</font><font>&#93;</font></li><li>&nbsp;</li><li><font color="#ff7700">for</font>&nbsp;name&nbsp;<font color="#ff7700">in</font>&nbsp;names:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;You&nbsp;are&quot;</font><font color="#66cc66">,</font>&nbsp;name<font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">15</font><font>&#93;</font>:</li><li>You&nbsp;are&nbsp;Miku</li><li>You&nbsp;are&nbsp;Rin</li><li>You&nbsp;are&nbsp;Ren</li><li>You&nbsp;are&nbsp;Luka</li><li>You&nbsp;are&nbsp;Seeu</li><li>You&nbsp;are&nbsp;D.<font>va</font></li></ol></blockquote></code></pre>
         <p>파이썬의 for 문은 C나 자바의 for 문과 조금 다르다. '(초기화, 조건, 실행)'의 형태가 아니라 해당 범위의 데이터 안을 순회하고, 순회를 완료하면 실행을 종료한다. 즉, 코드에서 for 문을 영어로 번역했을 때 읽히는 모습 그대로가 파이썬의 for 문이다. 따라서 파이썬의 for 문은 항상 in 이라는 키워드를 사용하는데, 특정 데이터 타입이 갖는 값(또는 키)를 순회한다는 뜻이다.</p>
       </article>
     </section>
@@ -178,35 +114,12 @@ Your name is: Miku</code></pre>
       <article>
         <p>리스트와 함께 for 문을 사용하는 것은 간단하다. in 뒤에 리스트를 위치시키면 된다. enumerate 키워드로 인덱스와 리스트 요소를 동시에 순회할 수도 있다.</p>
         <h5>코드4-16 리스트를 사용하는 for 문과 enumerate()</h5>
-        <pre class="python"><code>In[16]:<br>names = ["Miku", "Rin", "Ren", "Luka", "Seeu", "D.va"]
-        <br>for i, v in enumerate(names):<br>    print("Index :", i, "- value :", v)
-        <br>Out[16]
-Index : 0 - value : Miku
-Index : 1 - value : Rin
-Index : 2 - value : Ren
-Index : 3 - value : Luka
-Index : 4 - value : Seeu
-Index : 5 - value : D.va</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">16</font><font>&#93;</font>:</li><li>names&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#483d8b">&quot;Miku&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Rin&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Ren&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Luka&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;Seeu&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;D.va&quot;</font><font>&#93;</font></li><li>&nbsp;</li><li><font color="#ff7700">for</font>&nbsp;i<font color="#66cc66">,</font>&nbsp;v&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#008000">enumerate</font><font>&#40;</font>names<font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Index&nbsp;:&quot;</font><font color="#66cc66">,</font>&nbsp;i<font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;-&nbsp;value&nbsp;:&quot;</font><font color="#66cc66">,</font>&nbsp;v<font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">16</font><font>&#93;</font></li><li>Index&nbsp;:&nbsp;<font color="#ff4500">0</font>&nbsp;-&nbsp;value&nbsp;:&nbsp;Miku</li><li>Index&nbsp;:&nbsp;<font color="#ff4500">1</font>&nbsp;-&nbsp;value&nbsp;:&nbsp;Rin</li><li>Index&nbsp;:&nbsp;<font color="#ff4500">2</font>&nbsp;-&nbsp;value&nbsp;:&nbsp;Ren</li><li>Index&nbsp;:&nbsp;<font color="#ff4500">3</font>&nbsp;-&nbsp;value&nbsp;:&nbsp;Luka</li><li>Index&nbsp;:&nbsp;<font color="#ff4500">4</font>&nbsp;-&nbsp;value&nbsp;:&nbsp;Seeu</li><li>Index&nbsp;:&nbsp;<font color="#ff4500">5</font>&nbsp;-&nbsp;value&nbsp;:&nbsp;D.<font>va</font></li></ol></blockquote></code></pre>
         <h5>코드4-17 딕셔너리에서 for 문 사용</h5>
-        <pre class="python"><code>In[17]:<br>Diva_info = {
-    "Name":"Miku",
-    "version":3,
-    "company":"Overwatch",
-    "like_number":39
-}
-for title in Diva_info:
-    print(title, ":", Diva_info[title])
-
-Out[17]:
-like_number : 39
-version : 3
-company : Overwatch
-Name : Miku</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">17</font><font>&#93;</font>:</li><li>Diva_info&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#123;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#483d8b">&quot;Name&quot;</font>:<font color="#483d8b">&quot;Miku&quot;</font><font color="#66cc66">,</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#483d8b">&quot;version&quot;</font>:<font color="#ff4500">3</font><font color="#66cc66">,</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#483d8b">&quot;company&quot;</font>:<font color="#483d8b">&quot;Overwatch&quot;</font><font color="#66cc66">,</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#483d8b">&quot;like_number&quot;</font>:<font color="#ff4500">39</font></li><li><font>&#125;</font></li><li><font color="#ff7700">for</font>&nbsp;title&nbsp;<font color="#ff7700">in</font>&nbsp;Diva_info:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font>title<font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;:&quot;</font><font color="#66cc66">,</font>&nbsp;Diva_info<font>&#91;</font>title<font>&#93;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">17</font><font>&#93;</font>:</li><li>like_number&nbsp;:&nbsp;<font color="#ff4500">39</font></li><li>version&nbsp;:&nbsp;<font color="#ff4500">3</font></li><li>company&nbsp;:&nbsp;Overwatch</li><li>Name&nbsp;:&nbsp;Miku</li></ol></blockquote></code></pre>
         <p>딕셔너리 내부에 순서가 없는 데이터 타입이므로 선언할 때의 순서와는 다른 결과가 나온다. 키를 순회하면서 값에 접근하는 것이 아니라 처음부터 값에만 접근하려면 values()를 사용한다.</p>
         <h5>코드4-18 딕셔너리의 값에만 접근하는 for 문</h5>
-        <pre class="python"><code>In[18]:<br>for values in Diva_info.values():
-    print(values)
-          <br>Out[18]:<br>39<br>3<br>Overwatch<br>Miku</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">18</font><font>&#93;</font>:</li><li><font color="#ff7700">for</font>&nbsp;values&nbsp;<font color="#ff7700">in</font>&nbsp;Diva_info.<font>values</font><font>&#40;</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font>values<font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">18</font><font>&#93;</font>:</li><li><font color="#ff4500">39</font></li><li><font color="#ff4500">3</font></li><li>Overwatch</li><li>Miku</li></ol></blockquote></code></pre>
       </article>
     </section>
 
@@ -215,8 +128,7 @@ Name : Miku</code></pre>
       <article>
         <p>특정 횟수만큼 반복 실행하려면 코드4-14 와 같이 range() 함수를 사용한다. range()라는 함수를 사용하면 range(시작, 끝, 간격)형태로 지정하는 숫자 시퀀스를 만들 수 있다. 리스트의 슬라이스 형식과 유사하다.</p>
         <h5>코드4-19 range() 함수를 이용한 숫자 시퀀스</h5>
-        <pre class="python"><code>In[19]:<br>for i in range(1, 20, 2):<br>    print(i)
-        <br>Out[19]:<br>1<br>3<br>5<br>7<br>9<br>11<br>13<br>15<br>17<br>19</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">19</font><font>&#93;</font>:</li><li><font color="#ff7700">for</font>&nbsp;i&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#008000">range</font><font>&#40;</font><font color="#ff4500">1</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">20</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font>i<font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">19</font><font>&#93;</font>:</li><li><font color="#ff4500">1</font></li><li><font color="#ff4500">3</font></li><li><font color="#ff4500">5</font></li><li><font color="#ff4500">7</font></li><li><font color="#ff4500">9</font></li><li><font color="#ff4500">11</font></li><li><font color="#ff4500">13</font></li><li><font color="#ff4500">15</font></li><li><font color="#ff4500">17</font></li><li><font color="#ff4500">19</font></li></ol></blockquote></code></pre>
         <p>1부터 시작해서 2씩 증가하며 20이 끝인 range()함수의 값을 순서대로 출력한 것이다. 이렇게 for 문을 일정한 횟수만큼, 그리고 특정 숫자 구간을 반복 실행할 수 있다.</p>
       </article>
     </section>
@@ -228,24 +140,7 @@ Name : Miku</code></pre>
       <article>
         <p>루프안에서 break 문을 만나면 파이썬은 즉시 반복을 종료하고 루프를 탈출한다. 보통 루프 안에서 조건문 안에 넣고 특정 조건이 만족할 경우에 break를 실행한다.</p>
         <h5>코드4-20 break 의 기본 사용 예</h5>
-        <pre class="python"><code>In[20]:<br>numbers = [9, 1, 2, 7, 0, 4, 10, 2, 39, 10, 33, 36, 38]
-        <br>for number in numbers:
-    if number == 39:
-        print("I Found it! 39!!")
-        break
-    else:
-        print("I found", number, "but this is not I want")
-
-Out[20]:
-I found 9 but this is not I want
-I found 1 but this is not I want
-I found 2 but this is not I want
-I found 7 but this is not I want
-I found 0 but this is not I want
-I found 4 but this is not I want
-I found 10 but this is not I want
-I found 2 but this is not I want
-I Fount it! 39!!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">20</font><font>&#93;</font>:</li><li>numbers&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#ff4500">9</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">1</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">7</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">0</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">4</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">10</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">39</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">10</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">33</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">36</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">38</font><font>&#93;</font></li><li>&nbsp;</li><li><font color="#ff7700">for</font>&nbsp;number&nbsp;<font color="#ff7700">in</font>&nbsp;numbers:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;number&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">39</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;I&nbsp;Found&nbsp;it!&nbsp;39!!&quot;</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">break</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;I&nbsp;found&quot;</font><font color="#66cc66">,</font>&nbsp;number<font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;but&nbsp;this&nbsp;is&nbsp;not&nbsp;I&nbsp;want&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">20</font><font>&#93;</font>:</li><li>I&nbsp;found&nbsp;<font color="#ff4500">9</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">1</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">2</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">7</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">0</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">4</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">10</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">2</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;Fount&nbsp;it<font color="#66cc66">!</font>&nbsp;<font color="#ff4500">39</font><font color="#66cc66">!!</font></li></ol></blockquote></code></pre>
         <p>break 가 실행되면 뒤에 리스트 아이템이 더 남아있더라도 for 문 실행을 중단한다.</p>
       </article>
     </section>
@@ -257,19 +152,7 @@ I Fount it! 39!!</code></pre>
       <article>
         <p>continue는 break와 다르게 실행되는 즉시 루프 블록의 나머지 부분을 건너뛰고, 다음 아이템을 대상으로 새로 for 문 실행을 시작한다.</p>
         <h5>코드4-21 continue의 사용 예</h5>
-        <pre class="python"><code>In[21]:<br>l = ['1', 2, '3', '4', 5]
-        <br>for item in l:<br>    if type(item) is str:<br>
-        # item의 타입이 str일 때 실행된다.
-        continue
-    
-    print("number:", item)
-    print("multiply by 2:", item * 2)
-
-Out[21]:
-number: 2
-multiply by 2: 4
-number: 5
-multiply by 2: 10</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">21</font><font>&#93;</font>:</li><li>l&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#483d8b">'1'</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">'3'</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">'4'</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">5</font><font>&#93;</font></li><li>&nbsp;</li><li><font color="#ff7700">for</font>&nbsp;item&nbsp;<font color="#ff7700">in</font>&nbsp;l:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;<font color="#008000">type</font><font>&#40;</font>item<font>&#41;</font>&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#008000">str</font>:</li><li>&nbsp;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;item의&nbsp;타입이&nbsp;str일&nbsp;때&nbsp;실행된다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">continue</font></li><li>&nbsp;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;number:&quot;</font><font color="#66cc66">,</font>&nbsp;item<font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;multiply&nbsp;by&nbsp;2:&quot;</font><font color="#66cc66">,</font>&nbsp;item&nbsp;*&nbsp;<font color="#ff4500">2</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">21</font><font>&#93;</font>:</li><li>number:&nbsp;<font color="#ff4500">2</font></li><li>multiply&nbsp;by&nbsp;<font color="#ff4500">2</font>:&nbsp;<font color="#ff4500">4</font></li><li>number:&nbsp;<font color="#ff4500">5</font></li><li>multiply&nbsp;by&nbsp;<font color="#ff4500">2</font>:&nbsp;<font color="#ff4500">10</font></li></ol></blockquote></code></pre>
         <p>continue 문으로 특정 조건일 때 루프의 나머지를 통째로 지나치게 할 수 있다.</p>
       </article>
     </section>
@@ -280,52 +163,10 @@ multiply by 2: 10</code></pre>
         <p>for 문이나 while 문에서도 else를 사용할 수 있다. 더 정확하게는 break와 짝을 지어서 사용할 수 있다.</p>
         <p>for 문에서 사용하는 else문 블록은 break로 루프를 빠져 나오지 않았을 때 실행된다. 다른 프로그래밍 언어에서 따로 플래그용 변수를 사용하는 걸 대체 하는 셈이다.</p>
         <h5>코드4-22 for 문에서의 else 문 사용</h5>
-        <pre class="python"><code>In[22]:<br>numbers = [9, 1, 2, 7, 0, 4, 10, 2, 39, 10, 33, 36, 38]
-        <br>for number in numbers:
-    if number == 39:
-        print("I Found it! 39!!")
-        break
-    else:
-        print("I found", number, "but this is not I want")
-else:
-    print("Not Found 39...")
-
-Out[22]:
-I found 9 but this is not I want
-I found 1 but this is not I want
-I found 2 but this is not I want
-I found 7 but this is not I want
-I found 0 but this is not I want
-I found 4 but this is not I want
-I found 10 but this is not I want
-I found 2 but this is not I want
-I Fount it! 39!!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">22</font><font>&#93;</font>:</li><li>numbers&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#ff4500">9</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">1</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">7</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">0</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">4</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">10</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">39</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">10</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">33</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">36</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">38</font><font>&#93;</font></li><li>&nbsp;</li><li><font color="#ff7700">for</font>&nbsp;number&nbsp;<font color="#ff7700">in</font>&nbsp;numbers:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;number&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">39</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;I&nbsp;Found&nbsp;it!&nbsp;39!!&quot;</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">break</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;I&nbsp;found&quot;</font><font color="#66cc66">,</font>&nbsp;number<font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;but&nbsp;this&nbsp;is&nbsp;not&nbsp;I&nbsp;want&quot;</font><font>&#41;</font></li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Not&nbsp;Found&nbsp;39...&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">22</font><font>&#93;</font>:</li><li>I&nbsp;found&nbsp;<font color="#ff4500">9</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">1</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">2</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">7</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">0</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">4</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">10</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">2</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;Fount&nbsp;it<font color="#66cc66">!</font>&nbsp;<font color="#ff4500">39</font><font color="#66cc66">!!</font></li></ol></blockquote></code></pre>
         <p>이 예제는 코드4-20와 형태가 같으며, for 문 블록 뒤에 else 문을 붙인 것만 다르다. 찾으면 찾았다고 출력하고, 못찾으면 못찾았다고 출력한다. 이 경우 39를 찾아서 break 가 실행되었으니 for 문의 else 문 블록은 실행되지 않아서 코드4-20의 예제와 결과와 같다.</p>
         <h5>코드4-23 대상 리스테에서 39 제외</h5>
-        <pre class="python"><code>In[23]:<br>numbers = [9, 1, 2, 7, 0, 4, 10, 2, 10, 33, 36, 38]
-        <br>for number in numbers:
-    if number == 39:
-        print("I Found it! 39!!")
-        break
-    else:
-        print("I found", number, "but this is not I want")
-else:
-    print("Not Found 39...")
-
-Out[23]:
-I found 9 but this is not I want
-I found 1 but this is not I want
-I found 2 but this is not I want
-I found 7 but this is not I want
-I found 0 but this is not I want
-I found 4 but this is not I want
-I found 10 but this is not I want
-I found 2 but this is not I want
-I found 10 but this is not I want
-I found 33 but this is not I want
-I found 36 but this is not I want
-I found 38 but this is not I want
-Not Found 39...</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">23</font><font>&#93;</font>:</li><li>numbers&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font><font color="#ff4500">9</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">1</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">7</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">0</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">4</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">10</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">10</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">33</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">36</font><font color="#66cc66">,</font>&nbsp;<font color="#ff4500">38</font><font>&#93;</font></li><li>&nbsp;</li><li><font color="#ff7700">for</font>&nbsp;number&nbsp;<font color="#ff7700">in</font>&nbsp;numbers:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;number&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">39</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;I&nbsp;Found&nbsp;it!&nbsp;39!!&quot;</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">break</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;I&nbsp;found&quot;</font><font color="#66cc66">,</font>&nbsp;number<font color="#66cc66">,</font>&nbsp;<font color="#483d8b">&quot;but&nbsp;this&nbsp;is&nbsp;not&nbsp;I&nbsp;want&quot;</font><font>&#41;</font></li><li><font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Not&nbsp;Found&nbsp;39...&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">23</font><font>&#93;</font>:</li><li>I&nbsp;found&nbsp;<font color="#ff4500">9</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">1</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">2</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">7</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">0</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">4</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">10</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">2</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">10</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">33</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">36</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>I&nbsp;found&nbsp;<font color="#ff4500">38</font>&nbsp;but&nbsp;this&nbsp;<font color="#ff7700">is</font>&nbsp;<font color="#ff7700">not</font>&nbsp;I&nbsp;want</li><li>Not&nbsp;Found&nbsp;<font color="#ff4500">39</font>...</li></ol></blockquote></code></pre>
         <p>코드4-22와 같지만 대상 리스트에 39가 없다. 따라서 모든 리스트를 순회하더라도 break 가 실행되지 않았으므로 else 문 블록이 실행된다.</p>
         <p>이렇듯 플래그 변수 사용을 줄일 수 있는 것이 for 문이나 while 문에서의 else 문블록이다.</p>
       </article>
@@ -338,7 +179,7 @@ Not Found 39...</code></pre>
       <article>
         <p>아무것도 실행하지 않지만 무언가 있어야 할 자리에 넣는 것이 pass 이다.</p>
         <h5>코드4-24 pass 사용 예</h5>
-        <pre class="python"><code>for  i in range(10):<br>    # 실제 아무것도 하지 않습니다.<br>    pass</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#ff7700">for</font>&nbsp;&nbsp;i&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#008000">range</font><font>&#40;</font><font color="#ff4500">10</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;실제&nbsp;아무것도&nbsp;하지&nbsp;않습니다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">pass</font></li></ol></blockquote></code></pre>
         <p>아무것도 하지 않고 에러가 나지도 않는다.</p>
       </article>
     </section>

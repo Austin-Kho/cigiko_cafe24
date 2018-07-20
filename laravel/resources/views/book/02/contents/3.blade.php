@@ -23,30 +23,7 @@
         </ul>
         <p>즉, 보거나 읽기 좋고, 명시적이고, 간단하고, 누가 생각해도 같은 방법에 다다를 수 있게 작성하는 것을 장려하는 것이 파이썬이다. Zen of Python은 파이썬 콘솔에서 <code>import this</code>라고 입력해도 볼 수 있다.</p>
         <h5>코드2-1 Zen of Python</h5>
-        <pre class="python"><code>In[1]:
-import this
-<br>Out[1]:
-The Zen of Python, by Tim Peters
-
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li><font color="#ff7700">import</font>&nbsp;this</li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li>The&nbsp;Zen&nbsp;of&nbsp;Python<font color="#66cc66">,</font>&nbsp;by&nbsp;Tim&nbsp;Peters</li><li>&nbsp;</li><li>Beautiful&nbsp;is&nbsp;better&nbsp;than&nbsp;ugly.</li><li>Explicit&nbsp;is&nbsp;better&nbsp;than&nbsp;implicit.</li><li>Simple&nbsp;is&nbsp;better&nbsp;than&nbsp;complex.</li><li>Complex&nbsp;is&nbsp;better&nbsp;than&nbsp;complicated.</li><li>Flat&nbsp;is&nbsp;better&nbsp;than&nbsp;nested.</li><li>Sparse&nbsp;is&nbsp;better&nbsp;than&nbsp;dense.</li><li>Readability&nbsp;counts.</li><li>Special&nbsp;cases&nbsp;aren't&nbsp;special&nbsp;enough&nbsp;to&nbsp;break&nbsp;the&nbsp;rules.</li><li>Although&nbsp;practicality&nbsp;beats&nbsp;purity.</li><li>Errors&nbsp;should&nbsp;never&nbsp;pass&nbsp;silently.</li><li>Unless&nbsp;explicitly&nbsp;silenced.</li><li>In&nbsp;the&nbsp;face&nbsp;of&nbsp;ambiguity,&nbsp;refuse&nbsp;the&nbsp;temptation&nbsp;to&nbsp;guess.</li><li>There&nbsp;should&nbsp;be&nbsp;one--&nbsp;and&nbsp;preferably&nbsp;only&nbsp;one&nbsp;--obvious&nbsp;way&nbsp;to&nbsp;do&nbsp;it.</li><li>Although&nbsp;that&nbsp;way&nbsp;may&nbsp;not&nbsp;be&nbsp;obvious&nbsp;at&nbsp;first&nbsp;unless&nbsp;you're&nbsp;Dutch.</li><li>Now&nbsp;is&nbsp;better&nbsp;than&nbsp;never.</li><li>Although&nbsp;never&nbsp;is&nbsp;often&nbsp;better&nbsp;than&nbsp;*right*&nbsp;now.</li><li>If&nbsp;the&nbsp;implementation&nbsp;is&nbsp;hard&nbsp;to&nbsp;explain,&nbsp;it's&nbsp;a&nbsp;bad&nbsp;idea.</li><li>If&nbsp;the&nbsp;implementation&nbsp;is&nbsp;easy&nbsp;to&nbsp;explain,&nbsp;it&nbsp;may&nbsp;be&nbsp;a&nbsp;good&nbsp;idea.</li><li>Namespaces&nbsp;are&nbsp;one&nbsp;honking&nbsp;great&nbsp;idea&nbsp;--&nbsp;let's&nbsp;do&nbsp;more&nbsp;of&nbsp;those!</li></ol></blockquote></code></pre>
       </article>
     </section>
   </div>
@@ -57,21 +34,11 @@ Namespaces are one honking great idea -- let's do more of those!</code></pre>
       <article>
         <p>C와 같은 다른 언어는 들여쓰기가 문법과 상관 없이 코드의 흐름일 이해하기 편하도록 정해진 약속에 불과한데 반해, 파이썬에서는 들여쓰기가 문법의 일부이다. 같은 깊이만큼 들여쓰기가 되어 있다면 같은 레벨의 블록으로 인식한다.</p>
         <h5>코드2-2 들여쓰기</h5>
-        <pre class="python"><code>In[2]:<br>print("World is mine")
-        <br>You = "Miku"
-        <br>if You == "Miku":<br>    print("39!")
-        <br>def working():<br>    return False
-        <br>Out[2]:<br>World is mine<br>39!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;World&nbsp;is&nbsp;mine&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>You&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;Miku&quot;</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;You&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;Miku&quot;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;39!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#ff7700">def</font>&nbsp;working<font>&#40;</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">return</font>&nbsp;<font color="#008000">False</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li>World&nbsp;<font color="#ff7700">is</font>&nbsp;mine</li><li><font color="#ff4500">39</font><font color="#66cc66">!</font></li></ol></blockquote></code></pre>
 
         <p>위키백과에는 코드의 들여쓰기 스타일을 설명하는 개별문서인 Indent style(<a href="https://en.wikipedia.org/wiki/indent_style" target="_blank">https://en.wikipedia.org/wiki/indent_style</a>)가 있을 만큼 개발자들의 들여쓰기 스타일은 제각각이다. 하지만 파이썬은 가독성에 신경써야 한다는 디자인 철학에 따르기 위해 명시적인 블록 구분법으로 들여쓰기를 적용했고, 이로써 사람이 읽기 쉬운 코드를 지향한다.</p>
         <h5>코드2-3 for 문과 if-else 문의 들여쓰기</h5>
-        <pre class="python"><code>In[3]:<br>for i in range(10):<br>    if i % 2 == 0:<br>        print(i ** 2)
-    else:
-        if i < 5:
-            print("Under 5!")
-        else:
-            print("Over 5!")
-        <br>Out[3]:<br>0<br>Under 5!<br>4<br>Under 5!<br>16<br>Over 5!<br>36<br>Over 5!<br>64<br>Over 5!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li><font color="#ff7700">for</font>&nbsp;i&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#008000">range</font><font>&#40;</font><font color="#ff4500">10</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;i&nbsp;%&nbsp;<font color="#ff4500">2</font>&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">0</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font>i&nbsp;**&nbsp;<font color="#ff4500">2</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;i&nbsp;<font color="#66cc66">&lt;</font>&nbsp;<font color="#ff4500">5</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Under&nbsp;5!&quot;</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Over&nbsp;5!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li><font color="#ff4500">0</font></li><li>Under&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">4</font></li><li>Under&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">16</font></li><li>Over&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">36</font></li><li>Over&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">64</font></li><li>Over&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <p>따라서 파이썬은 C나 자바 등에서 발생하는 괄호 위치 논쟁이 발생하지 않는다. 모두가 같은 모양으로 코드를 작성할 수 있으므로 다른 사람의 코드를 읽기 쉬워진다.</p>
       </article>
     </section>
@@ -86,7 +53,7 @@ Namespaces are one honking great idea -- let's do more of those!</code></pre>
 
         <p>그런데 세미콜론을 사용해야 하는 경우도 있다. 이런 경우 다음 코드처럼 사용한다.</p>
         <h5>코드2-4 파이썬에서 세미콜론 사용</h5>
-        <pre class="python"><code>if grade == 5 : a = 1; b = 2; c = 3;</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#ff7700">if</font>&nbsp;grade&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">5</font>&nbsp;:&nbsp;a&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">1</font><font color="#66cc66">;</font>&nbsp;b&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">2</font><font color="#66cc66">;</font>&nbsp;c&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#ff4500">3</font><font color="#66cc66">;</font></li></ol></blockquote></code></pre>
         <p>간혹 한 행의 내용이 간단해서 코드 가독성에 큰 무리가 없는 경우라면 이런 방식으로 코드를 작성해도 괜찮다.</p>
       </article>
     </section>
@@ -119,21 +86,15 @@ Namespaces are one honking great idea -- let's do more of those!</code></pre>
     <section>
       <article>
         <p>원래 파이썬이 처음 등장했을 때 기본 파일 인코딩은 아스키(ASCII)였다. 하지만 아스키는 다양한 언어를 표현하는데 문제가 있어서 파이썬 2.0부터 UTF-8을 지원하기 시작했다. 하지만 UTF-8이 기본 인코딩이 아니었고, UTF-8을 지원하려면 다음과 같은 코드를 사용해야 했다.</p>
-        <pre class="python"><code># UTF-8 인코딩 지정<br># -*- coding: utf-8 -*-</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#808080">#&nbsp;UTF-8&nbsp;인코딩&nbsp;지정</font></li><li><font color="#808080">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</font></li></ol></blockquote></code></pre>
         <p>파이썬은 3.x 버전부터 py 파일의 기본 인코딩을 UTF-8로 정했다. 이후부터 유니코드 문자열도 아무런 문제 없이 사용할 수 있게 되었다. 또한 변수 이름이나 함수 이름을 한글이나 기타 유니코드로 정할 수도 있다.</p>
 
         <h5>코드2-5 파이썬 3.x 버전에서의 한글 사용</h5>
-        <pre class="python"><code>In[4]:<br>def 안녕():<br>    print("안녕 미쿠!")
-        <br>이름 = "미쿠"<br>print(이름)<br>안녕()
-        <br>Out[4]:<br>미쿠<br>안녕 미쿠!</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">4</font><font>&#93;</font>:</li><li><font color="#ff7700">def</font>&nbsp;안녕<font>&#40;</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;안녕&nbsp;미쿠!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>이름&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;미쿠&quot;</font></li><li><font color="#ff7700">print</font><font>&#40;</font>이름<font>&#41;</font></li><li>안녕<font>&#40;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">4</font><font>&#93;</font>:</li><li>미쿠</li><li>안녕&nbsp;미쿠<font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <p>참고로 py파일을 ANSI로 저장한 경우 기존 터미널 포맷을 의미하는 CP949를 UTF-8로 바꿔준다. 혹은 앞서 설명한 UTF-8 인코딩 명령을 삽입하거나 UTF-8로 저장해주어야 한다. 파이썬은 입출력 인코딩을 확인하고 싶다면 다음 코드를 입력한다.</p>
 
         <h5>코드2-6 입출력 인코딩 확인</h5>
-        <pre class="python"><code>In[5]:<br>import sys
-        <br># 입력 인코딩 확인<br>sys.stdin.encoding
-        <br>Out[5]:<br>'cp949'
-        <br>In[6]:<br># 출력 인코딩<br>sys.stdout.encoding
-        <br>Out[6]:<br>'UTF-8'</code></pre>
+        <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">5</font><font>&#93;</font>:</li><li><font color="#ff7700">import</font>&nbsp;<font color="#dc143c">sys</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;입력&nbsp;인코딩&nbsp;확인</font></li><li><font color="#dc143c">sys</font>.<font>stdin</font>.<font>encoding</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">5</font><font>&#93;</font>:</li><li><font color="#483d8b">'cp949'</font></li><li>&nbsp;</li><li>In<font>&#91;</font><font color="#ff4500">6</font><font>&#93;</font>:</li><li><font color="#808080">#&nbsp;출력&nbsp;인코딩</font></li><li><font color="#dc143c">sys</font>.<font>stdout</font>.<font>encoding</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">6</font><font>&#93;</font>:</li><li><font color="#483d8b">'UTF-8'</font></li></ol></blockquote></code></pre>
         <p>더 자세한 사항을 확인하려면 파이썬 개발문서의 'PEP 263--Defining Python Source Code Encodings(<a href="https://www.python.org/dev/peps/pep-0263" target="_blank">https://www.python.org/dev/peps/pep-0263</a>)'를 확인한다.</p>
       </article>
     </section>
@@ -146,8 +107,7 @@ Namespaces are one honking great idea -- let's do more of those!</code></pre>
         <p>파이썬의 창시자 귀도 반 로섬은 코드를 작성하는 시간보다 읽는 시간이 더 많다는 것에 중점을 두고 명확하고 읽기 쉬운 언어를 만들었다. 파이썬의 디자인 철학은 코드 가독성과 명확성을 살리기 위한 특징들을 두루 갖추고 있다. 들여쓰기, 세미콜론 없음(새 행이 하나의 구문) 등과 switch와 case 문이 없는 것도 그러한 디자인 철학의 구체적인 예이다.</p>
         <p>무엇보다도 파이썬의 철학을 매우 강력하게 제안하는 것이 있는데, 그것은 Pythonic way이다. 더 구체적으로는 Zen of Python의 한가지 인 'There should be one-- and preferably only one --obvious way to do it.(선호할 수 있는 확실한 방법)'을 따르는 것으로 말할 수 있다. 다음 예제를 참고한다.</p>
         <h5>코드2-7 파이써닉 코딩</h5>
-        <pre class="python"><code># 문제 없는 코드이다. 하지만 파이써닉한 방법은 아니다.<br>for i in range(maylist_length):<br>    do_something(mylist[i])
-        <br># 이 코드가 파이썬다운 코딩방법이다.<br>for element in mylist:<br>    do_something(element)</code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#808080">#&nbsp;문제&nbsp;없는&nbsp;코드이다.&nbsp;하지만&nbsp;파이써닉한&nbsp;방법은&nbsp;아니다.</font></li><li><font color="#ff7700">for</font>&nbsp;i&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#008000">range</font><font>&#40;</font>maylist_length<font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;do_something<font>&#40;</font>mylist<font>&#91;</font>i<font>&#93;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;이&nbsp;코드가&nbsp;파이썬다운&nbsp;코딩방법이다.</font></li><li><font color="#ff7700">for</font>&nbsp;element&nbsp;<font color="#ff7700">in</font>&nbsp;mylist:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;do_something<font>&#40;</font>element<font>&#41;</font></li></ol></blockquote></code></pre>
       </article>
     </section>
   </div>

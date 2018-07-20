@@ -59,9 +59,9 @@
 Type 'copyright', 'credits' or 'license' for more information
 IPython 6.4.0 -- An enhanced Interactive Python. Type '?' for help.
 
-In [1]: </code></pre>
+<blockquote><ol><li>In&nbsp;<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:&nbsp;</li></ol></blockquote></code></pre>
         <p>예를 들어 'p'를 입력한 다음 <kbd>Tap</kbd>키를 누르면, 자동 완성할 수 있는 목록이 나타난다.</p>
-        <pre><code>In [1]: p
+        <pre><code><blockquote><ol><li>In&nbsp;<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:&nbsp;p</li></ol></blockquote>
          %page      %pdoc      %popd      property   %pwd       %%python3
          pass       %%perl     pow        %prun      %pycat
          %paste     %pfile     %pprint    %%prun     %pylab
