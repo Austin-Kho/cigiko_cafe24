@@ -404,7 +404,7 @@ a#MOVE_TOP_BTN:hover {color: #42a6ff;}
 
 /* pre & code */
 pre code {
-  display: block; padding: 0.5em;
+  display: block; padding: 0.2em 1em ;
   background: #F0F0F0;
 }
 
