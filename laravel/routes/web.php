@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('py');
 });
 
+Route::get('book' , function(){
+    return view('py');
+});
+
 Route::get('book/{bookid}/{id?}', 'Book\BookController@index')->name('book');
 
 Route::get('write', 'WriteController@index')->name('write');
