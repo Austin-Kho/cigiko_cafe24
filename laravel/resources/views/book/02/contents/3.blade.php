@@ -11,9 +11,9 @@
   <div class="chapter">
     <section>
       <article>
-        <p>위키백과(<a href="https://ko.wikipedia.org/wiki/파이썬" target="_blank">https://ko.wikipedia.org/wiki/파이썬</a>)에서는 파이썬을 다음과 같이 정의 한다.</p>
+        <p><a href="https://ko.wikipedia.org/wiki/파이썬" target="_blank">위키백과</a>에서는 파이썬을 다음과 같이 정의 한다.</p>
         <blockquote><strong>플랫폼 독립적이며 인터프리터 방식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어</strong></blockquote>
-        <p>파이썬을 가장 잘 나타내는 것이 있다면, 'The Zen of Python(https://www.python.org/dev/peps/pep-0020)'이라고 하는 문서일 것이다. 이 문서는 19줄의 짧은 문장으로 파이썬을 사용하는 사람들이 추구해야 할 가치를 명쾌하게 이야기 하고 있다. 그 일부를 인용해 보자.</p>
+        <p>파이썬을 가장 잘 나타내는 것이 있다면, '<a href="https://www.python.org/dev/peps/pep-0020" target="_blank">The Zen of Python</a>'이라고 하는 문서일 것이다. 이 문서는 19줄의 짧은 문장으로 파이썬을 사용하는 사람들이 추구해야 할 가치를 명쾌하게 이야기 하고 있다. 그 일부를 인용해 보자.</p>
         <ul>
           <li>Beutiful is better than ugly. (추한 것보다는 예쁜 것이 좋다.)</li>
           <li>Explicit is better than implicit. (모호함보다는 명쾌함이 좋다.)</li>
@@ -36,7 +36,7 @@
         <h5>코드2-2 들여쓰기</h5>
         <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;World&nbsp;is&nbsp;mine&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>You&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;Miku&quot;</font></li><li>&nbsp;</li><li><font color="#ff7700">if</font>&nbsp;You&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;Miku&quot;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;39!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#ff7700">def</font>&nbsp;working<font>&#40;</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">return</font>&nbsp;<font color="#008000">False</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">2</font><font>&#93;</font>:</li><li>World&nbsp;<font color="#ff7700">is</font>&nbsp;mine</li><li><font color="#ff4500">39</font><font color="#66cc66">!</font></li></ol></blockquote></code></pre>
 
-        <p>위키백과에는 코드의 들여쓰기 스타일을 설명하는 개별문서인 Indent style(<a href="https://en.wikipedia.org/wiki/indent_style" target="_blank">https://en.wikipedia.org/wiki/indent_style</a>)가 있을 만큼 개발자들의 들여쓰기 스타일은 제각각이다. 하지만 파이썬은 가독성에 신경써야 한다는 디자인 철학에 따르기 위해 명시적인 블록 구분법으로 들여쓰기를 적용했고, 이로써 사람이 읽기 쉬운 코드를 지향한다.</p>
+        <p>위키백과에는 코드의 들여쓰기 스타일을 설명하는 개별문서인 <a href="https://en.wikipedia.org/wiki/indent_style" target="_blank">Indent style</a>이라는 문서가 있을 만큼 개발자들의 들여쓰기 스타일은 제각각이다. 하지만 파이썬은 가독성에 신경써야 한다는 디자인 철학에 따르기 위해 명시적인 블록 구분법으로 들여쓰기를 적용했고, 이로써 사람이 읽기 쉬운 코드를 지향한다.</p>
         <h5>코드2-3 for 문과 if-else 문의 들여쓰기</h5>
         <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li><font color="#ff7700">for</font>&nbsp;i&nbsp;<font color="#ff7700">in</font>&nbsp;<font color="#008000">range</font><font>&#40;</font><font color="#ff4500">10</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;i&nbsp;%&nbsp;<font color="#ff4500">2</font>&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#ff4500">0</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font>i&nbsp;**&nbsp;<font color="#ff4500">2</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">if</font>&nbsp;i&nbsp;<font color="#66cc66">&lt;</font>&nbsp;<font color="#ff4500">5</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Under&nbsp;5!&quot;</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">else</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">&quot;Over&nbsp;5!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">3</font><font>&#93;</font>:</li><li><font color="#ff4500">0</font></li><li>Under&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">4</font></li><li>Under&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">16</font></li><li>Over&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">36</font></li><li>Over&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li><li><font color="#ff4500">64</font></li><li>Over&nbsp;<font color="#ff4500">5</font><font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <p>따라서 파이썬은 C나 자바 등에서 발생하는 괄호 위치 논쟁이 발생하지 않는다. 모두가 같은 모양으로 코드를 작성할 수 있으므로 다른 사람의 코드를 읽기 쉬워진다.</p>
@@ -95,7 +95,7 @@
 
         <h5>코드2-6 입출력 인코딩 확인</h5>
         <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">5</font><font>&#93;</font>:</li><li><font color="#ff7700">import</font>&nbsp;<font color="#dc143c">sys</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;입력&nbsp;인코딩&nbsp;확인</font></li><li><font color="#dc143c">sys</font>.<font>stdin</font>.<font>encoding</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">5</font><font>&#93;</font>:</li><li><font color="#483d8b">'cp949'</font></li><li>&nbsp;</li><li>In<font>&#91;</font><font color="#ff4500">6</font><font>&#93;</font>:</li><li><font color="#808080">#&nbsp;출력&nbsp;인코딩</font></li><li><font color="#dc143c">sys</font>.<font>stdout</font>.<font>encoding</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">6</font><font>&#93;</font>:</li><li><font color="#483d8b">'UTF-8'</font></li></ol></blockquote></code></pre>
-        <p>더 자세한 사항을 확인하려면 파이썬 개발문서의 'PEP 263--Defining Python Source Code Encodings(<a href="https://www.python.org/dev/peps/pep-0263" target="_blank">https://www.python.org/dev/peps/pep-0263</a>)'를 확인한다.</p>
+        <p>더 자세한 사항을 확인하려면 파이썬 개발문서의 '<a href="https://www.python.org/dev/peps/pep-0263" target="_blank">PEP 263--Defining Python Source Code Encodings</a>'를 확인한다.</p>
       </article>
     </section>
   </div>
@@ -116,8 +116,8 @@
   <div class="chapter">
     <section>
       <article>
-        <p>파이썬3에서 눈에 띄게 바뀐점은 print() 가 확실하게 함수처럼 사용된ㄷ는 것이다. 그 외에는 연산자의 동작 방식이 조금 변했다든가, py파일의 기본 인코딩이 UTF-8이 되면서 문서 안에서 유니코드 문자열을 다루는 방식이 달라졌다던가 하는 부분이다.</p>
-        <p>물론 메이저 버전이 바뀐만큼 파이썬2 코드와 파이썬3 코드는 호환이 되지 않는다. 하지만 '2to3(<a href="https://docs.python.org/3/library/2to3.html" target="_blank">https://docs.python.org/3/library/2to3.html</a>)'이라는 변환 라이브러리로 파이썬2 코드를 파이썬3코드로 변환활 수 있다. 또한 '__future__'라는 패키지는 파이썬3에서 등장했지만 파이썬2에 지원되지 않는 기능들을 사용할 수 있게 해준다.</p>
+        <p>파이썬3에서 눈에 띄게 바뀐점은 <code>print()</code> 가 확실하게 함수처럼 사용된다는 것이다. 그 외에는 연산자의 동작 방식이 조금 변했다든가, py파일의 기본 인코딩이 UTF-8이 되면서 문서 안에서 유니코드 문자열을 다루는 방식이 달라졌다던가 하는 부분이다.</p>
+        <p>물론 메이저 버전이 바뀐만큼 파이썬2 코드와 파이썬3 코드는 호환이 되지 않는다. 하지만 '<a href="https://docs.python.org/3/library/2to3.html" target="_blank">2to3</a>'이라는 변환 라이브러리로 파이썬2 코드를 파이썬3코드로 변환할 수 있다. 또한 <strong>__future__</strong>라는 패키지는 파이썬3에서 등장했지만 파이썬2에 지원되지 않는 기능들을 사용할 수 있게 해준다.</p>
         <p>요약하자면 크게 바뀐 건 없지만 새로 파이썬을 배운다면 파이썬 3으로 시작하는 것이 좋다.</p>
       </article>
     </section>

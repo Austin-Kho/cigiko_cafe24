@@ -13,7 +13,7 @@
       <article>
         <p>파이썬은 1991년에 귀도 반 로섬(Guido van Rossum)이 발표한 프로그래밍 언어이다. 동적 타이핑 스크립트 언어로, 이와 비교할 만한 언어라고 한다면 펄(Perl)이나 루비(Ruby) 등이 있다. 파이썬은 뱀 이름이기도 하지만 귀도는 자신이 좋아하는 '몬티 파이썬의 플라잉 서커스'에서 따왔다고 밝혔다. </p>
 
-        <p>파이썬은 점점 발전해서 현재 프로그래밍 언어의 인기도를 조사해 공개하는 TIOVE Index(<a href="http://www.tiobe.com/tiobe-index" target="_blank">http://www.tiobe.com/tiobe-index</a>)순위에서 상위권을 유지하고 있다. 현재는 2.x와 3.x버전을 유지하고 있는데 2.x는 '2.7.x'의 형태로 지원은 하지만 새로운 기능이 추가되지 않을 예정이며, 3.x 는 향후 계속 발전할 버전이다.</p>
+        <p>파이썬은 점점 발전해서 현재 프로그래밍 언어의 인기도를 조사해 공개하는 <a href="http://www.tiobe.com/tiobe-index" target="_blank">TIOVE Index</a> 순위에서 상위권을 유지하고 있다. 현재는 2.x와 3.x버전을 유지하고 있는데 2.x는 '2.7.x'의 형태로 지원은 하지만 새로운 기능이 추가되지 않을 예정이며, 3.x 는 향후 계속 발전할 버전이다.</p>
       </article>
     </section>
   </div>
@@ -94,14 +94,14 @@
     <h4 class="sub-header">1.4.2 - macOS</h4>
     <section>
       <article>
-        <p>macOS는 파이썬 2.7만 기본 탑재하고 있다. 따라서 파이썬 3은 별도로 설칳야 한다.macOS에서 파이썬을 설치할 때는 설치파일을 다운로드해서 설치하는 방법과 'Homebrew'라는 패키지 관리자를 이용해 설치하는 방법이 있다.</p>
+        <p>macOS는 파이썬 2.7만 기본 탑재하고 있다. 따라서 파이썬 3은 별도로 설칳야 한다.macOS에서 파이썬을 설치할 때는 설치파일을 다운로드해서 설치하는 방법과 '<code>Homebrew</code>'라는 패키지 관리자를 이용해 설치하는 방법이 있다.</p>
         <h4>Homebrew를 이용한 파이썬 설치</h4>
-        <p>Homebrew는 macOS에서 소프트웨어를 설치하고 버전별로 관리할 수 있는 패키지 관리 시스템의 하나이다. 실무에서 파이썬을 사용할 때는 다양한 패키지나 가상환경(부록 A 참고)을 구축할 때가 많으므로 개발자라면 Homebrew를 이용해 파이썬을 설치하길 권한다.</p>
+        <p><code>Homebrew</code>는 macOS에서 소프트웨어를 설치하고 버전별로 관리할 수 있는 패키지 관리 시스템의 하나이다. 실무에서 파이썬을 사용할 때는 다양한 패키지나 가상환경(부록 A 참고)을 구축할 때가 많으므로 개발자라면 <code>Homebrew</code>를 이용해 파이썬을 설치하길 권한다.</p>
         <h5>그림1-1 Homebrew 홈페이지</h5>
         <img src="/img/img06.png" alt="Homebrew 홈페이지" class="bo">
         <p>터미널 실행 후 설치 소스를 복사해 붙여 넣은 후 실행하면 설치가 끝난다.</p>
         <pre class="python"><code><blockquote><ol><li>$&nbsp;/usr/bin/ruby&nbsp;-e&nbsp;&quot;$<font color="#33cc33">(</font>curl&nbsp;-fsSL&nbsp;https://raw.githubusercontent.com/Homebrew/install/master/install<font color="#33cc33">)</font>&quot;</li></ol></blockquote></code></pre>
-        <p>Homebrew를 설치하면 파이썬 설치 준비가 끝났다. 다음 명령을 터미널에서 실행하면 된다.(우분투와 달리 .x를 붙이지 않아야 한다는 점에 주의한다.)</p>
+        <p><code>Homebrew</code>를 설치하면 파이썬 설치 준비가 끝났다. 다음 명령을 터미널에서 실행하면 된다.(우분투와 달리 .x를 붙이지 않아야 한다는 점에 주의한다.)</p>
         <pre class="python"><code><blockquote><ol><li>$&nbsp;brew&nbsp;install&nbsp;python3</li></ol></blockquote></code></pre>
         <p class="bg-info"><strong>NOTE_macOS의 파이썬 설치 주의사항</strong><br>macOS에서 Homebrew나 파이썬을 설치하려먼 Xcode Command Line Tools가 설치되어 있어야 한다. 설치 필요 시 다음 명령으로 Xcode command Line Tools를 설치할 수 있다.</p>
         <pre class="python"><code><blockquote><ol><li>$&nbsp;xcode-select&nbsp;--install</li></ol></blockquote></code></pre>
@@ -130,7 +130,7 @@
         <p>파이썬으로 무언가를 하기가 얼마나 간단한지는 다음 코드만 봐도 알 수 있다. 일단은 전통적인 Hello World, 즉 출력이다.</p>
         <h5>코드1-1 Hello World</h5>
         <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">'Hello&nbsp;World!'</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li>Hello&nbsp;World<font color="#66cc66">!</font></li></ol></blockquote></code></pre>
-        <p>파이썬의 철학 중 하나는 '건전지 포함(Batteries included)'이라는 개념이다. 여러 가지 기본 라이브러리들을 포함시켜 별도로 찾지 않아도 바로 사용할 수 있게 하자는 것이다. 참고로 기본 제공하는 표준 라이브러리 목록은 'The Python Standard Library(<a href="https://docs.python.org/3/library/index.html" target="_blank">https://docs.python.org/3/library/index.html</a>)'에서 확인할 수 있다.</p>
+        <p>파이썬의 철학 중 하나는 '건전지 포함(Batteries included)'이라는 개념이다. 여러 가지 기본 라이브러리들을 포함시켜 별도로 찾지 않아도 바로 사용할 수 있게 하자는 것이다. 참고로 기본 제공하는 표준 라이브러리 목록은 '<a href="https://docs.python.org/3/library/index.html" target="_blank">The Python Standard Library</a>'에서 확인할 수 있다.</p>
         <p class="bg-success"><strong>NOTE_ 이 책의 코드 표기 방식</strong><br>이 책의 예제는 터미널이나 파이썬 셸에서 py 파일을 실행하면 좋은 예제와 부록 B에서 설명하는 Jupyter Notebook에서 실행하면 좋은 예제가 있다. 후자의 경우 코드 부분 위에 In[숫자]:를, 출력 결과 부분 위에는 Out[숫자]: 형태로 표기한다. Jupyter Notebook의 자세한 사용법은 해당 부록을 참고하자.</p>
       </article>
     </section>
