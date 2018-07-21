@@ -84,7 +84,7 @@
         <h5>코드6-11 Miku 클래스 이용</h5>
         <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">9</font><font>&#93;</font>:</li><li>hatsune_miku&nbsp;<font color="#66cc66">=</font>&nbsp;Miku<font>&#40;</font><font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font>hatsune_miku.<font>module</font><font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font>hatsune_miku.<font>version</font><font>&#41;</font></li><li><font color="#ff7700">print</font><font>&#40;</font>hatsune_miku.<font>name</font><font>&#41;</font></li><li>hatsune_miku.<font>dance</font><font>&#40;</font><font>&#41;</font></li><li>hatsune_miku.<font>song</font><font>&#40;</font><font color="#483d8b">&quot;Hello&nbsp;worker&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">9</font><font>&#93;</font>:</li><li><font color="#ff7700">class</font>&nbsp;uniform</li><li>v3</li><li>miku</li><li>Dancing<font color="#66cc66">!</font></li><li>miku&nbsp;sing&nbsp;the&nbsp;Hello&nbsp;worker</li></ol></blockquote></code></pre>
         <p>이처럼 상속을 이용해서 서브클래스를 만들 수 있다.</p>
-        <blockquote><strong>TIP</strong>: 서브클래스를 만들 때 슈퍼클래스 자리에 여러 클래스를 넣어 다중 삭송할 수 있다. 이 때 서브클래스에 없는 변수나 메서드 등을 참조하려 하면, 슈퍼클래스가 할당된 순서대로 왼쪽부터 깊이 우선 탐색으로 변수, 메서드를 찾는다.</blockquote>
+        <blockquote><strong>TIP</strong>: 서브클래스를 만들 때 슈퍼클래스 자리에 여러 클래스를 넣어 다중 상속할 수 있다. 이 때 서브클래스에 없는 변수나 메서드 등을 참조하려 하면, 슈퍼클래스가 할당된 순서대로 왼쪽부터 깊이 우선 탐색으로 변수, 메서드를 찾는다.</blockquote>
       </article>
     </section>
   </div>
