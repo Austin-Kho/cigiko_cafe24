@@ -19,9 +19,7 @@ Route::get('book' , function(){
     return view('book_index');
 });
 
-Route::get('test' , function(){
-    return view('book.header02');
-});
+Route::get('test/{bookid}/{id?}', 'Book\BookController02@index')->name('book02');
 
 Route::get('book/{bookid}/{id?}', 'Book\BookController@index')->name('book');
 
