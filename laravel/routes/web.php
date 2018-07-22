@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('py');
+    return view('index');
 });
 
 Route::get('book' , function(){
-    return view('py');
+    return view('book_index');
 });
 
 Route::get('book/{bookid}/{id?}', 'Book\BookController@index')->name('book');

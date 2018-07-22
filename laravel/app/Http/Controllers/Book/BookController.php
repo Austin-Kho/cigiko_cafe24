@@ -9,7 +9,7 @@ class BookController extends Controller
 {
   public function index($bookid='01', $id='1'){
 
-    $view = view('book.book');
+    $view = view('book.main_page');
 
     if($bookid=='01'){
 
