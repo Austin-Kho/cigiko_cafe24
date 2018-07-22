@@ -19,6 +19,10 @@ Route::get('book' , function(){
     return view('book_index');
 });
 
+Route::get('test' , function(){
+    return view('book.header02');
+});
+
 Route::get('book/{bookid}/{id?}', 'Book\BookController@index')->name('book');
 
 Route::get('write', 'WriteController@index')->name('write');
