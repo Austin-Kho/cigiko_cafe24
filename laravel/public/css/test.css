@@ -131,6 +131,19 @@ section {
  border-bottom: solid 1px #666;
 }
 
+@media (min-width: 768px) {
+  [role="main"] {
+    padding-right: 60px !important;
+    padding-left: 60px !important;
+    
+  }
+}
+
+.sidebar-padding {
+  padding-left: 14% !important;
+  padding-right: 14% !important;
+}
+
 .page-prev-next {
  /*background-color: #f9f9f9;*/
  padding:10px 0 10px 0;
@@ -176,15 +189,6 @@ section {
  width: 5px;
 }
 
-.toc-area::-webkit-scrollbar-track {
- -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
- border-radius: 10px;
-}
-
-.toc-area::-webkit-scrollbar-thumb {
- border-radius: 10px;
- -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
 
 div.tip {
  padding:0 15px;
@@ -222,16 +226,13 @@ div.tip {
  } */
 }
 
-.sidebar-padding {
- padding:0 14%;
-}
-
 /* menu-group */
 .menu-group {
  position:fixed;
- left:20px;
+ left:10px !important;
  top:75px;
  display:none;
+ text-align: left !important;
 }
 
 .menu_link {color:#888; cursor:pointer;}
@@ -249,15 +250,15 @@ div.tip {
 
 
 .prev_icon {
- position: fixed;
- top:50%;
- left: 6%;
+ position: fixed !important;
+ top: 50% !important;
+ left: 6% !important;
 }
 
 .next_icon {
- position: fixed;
- top:50%;
- right: 6%;
+ position: fixed !important;
+ top: 50% !important;
+ right: 6% !important;
 }
 
 .bg-primary,
@@ -278,7 +279,7 @@ article > .bo {
 .prev_icon:link, .next_icon:link { color:#ccc; }
 .prev_icon:visited, .next_icon:visited { color: #ccc; }
 .prev_icon:hover, .next_icon:hover { color:#aaa !important; }
-.prev_icon:active, next_icon:active { color: #aaa; }
+.prev_icon:active, .next_icon:active { color: #aaa; }
 
 blockquote {
  margin:10px 0 !important;

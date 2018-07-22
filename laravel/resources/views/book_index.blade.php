@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
 
         <!-- Styles -->
         <style>
@@ -79,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Python Books
+                    <ion-icon name="logo-python"></ion-icon> Python Books
                 </div>
 
                 <div class="links">

@@ -82,7 +82,7 @@
             <a href="/book">Books</a>
           </div>
           <div class="title m-b-md">
-            <a href="test">Layout Tests</a>
+            <a href="test/01">Layout Tests</a>
           </div>
 
           <div class="links">
