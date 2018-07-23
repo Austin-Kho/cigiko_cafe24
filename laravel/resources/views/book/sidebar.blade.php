@@ -4,7 +4,7 @@
             <div class="d-sm-block d-md-none" style="height:20px;"></div>
             <div class="row border-bottom" style="padding-bottom: 10px; margin-bottom: 20px;">
               <div class="col-9 col-sm-10" style="padding-left: 15px;">
-                <a class="nav-link active" href="/book/" style="font-size: 1.3em;"><ion-icon name="logo-python"></ion-icon> Python Books<span class="sr-only">(current)</span>
+                <a class="nav-link active" href="/book/">Study Books<span class="sr-only">(current)</span>
                 </a>
               </div>
               <div class="col-3 col-sm-2" style="padding:7px 0; text-align: right;">

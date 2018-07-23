@@ -13,7 +13,7 @@
               <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <a href="/book/{{$defurl}}"><ion-icon name="logo-python"></ion-icon> {{$title}}</a>
+                    <a href="/book/{{$defurl}}"><ion-icon name="bookmarks"></ion-icon> {{$title}}</a>
                   </li>
                   @php
                     $bs_arr = [];
