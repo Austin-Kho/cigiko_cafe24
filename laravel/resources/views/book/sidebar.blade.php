@@ -4,7 +4,9 @@
             <div class="d-sm-block d-md-none" style="height:20px;"></div>
             <div class="row border-bottom" style="padding-bottom: 10px; margin-bottom: 20px;">
               <div class="col-9 col-sm-10" style="padding-left: 15px;">
-                <a class="nav-link active" href="/book/">Study Books<span class="sr-only">(current)</span>
+                <a class="nav-link active" href="/book/"><svg id="i-book" viewBox="0 0 32 32" width="20" height="20" fill="orange" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <path d="M16 7 C16 7 9 1 2 6 L2 28 C9 23 16 28 16 28 16 28 23 23 30 28 L30 6 C23 1 16 7 16 7 Z M16 7 L16 28" />
+                  </svg> Study Books<span class="sr-only">(current)</span>
                 </a>
               </div>
               <div class="col-3 col-sm-2" style="padding:7px 0; text-align: right;">

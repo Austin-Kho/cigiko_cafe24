@@ -86,9 +86,11 @@
       <article>
         <p>우분투는 파이썬 2.x 버전과 3.x 버전 모두 기본 탑재하고 있다. <code>python -V</code> 또는 <code>python3 -V</code> 명령으로 설치 버전을 확인할 수 있다. 설치가 필요한 경우 다음 명령으로 설치할 수 있다.</p>
         <pre class="python"><code><blockquote><ol><li>$&nbsp;sudo&nbsp;apt-get&nbsp;install&nbsp;python버전&nbsp;넘버</li></ol></blockquote></code></pre>
-        <p class="bg-info"><strong>NOTE_파이썬 최신 버전이 설치되지 않았다면</strong><br>우분투 리눅스에 최신 파이썬 버전이 설치되지 않은 경우가 있다. 다음 명령으로 최신 버전을 설치하자
+        <div class="tip">
+        <h4 id="conveying-meaning-to-assistive-technologies">NOTE_파이썬 최신 버전이 설치되지 않았다면</h4>
+        <p>우분투 리눅스에 최신 파이썬 버전이 설치되지 않은 경우가 있다. 다음 명령으로 최신 버전을 설치하자.</p>
         <pre class="python"><code><blockquote><ol><li>$&nbsp;sudo&nbsp;add-apt-repository&nbsp;ppa:jonathonf/python-3.x</li><li>$&nbsp;sudo&nbsp;apt-get&nbsp;update</li><li>$&nbsp;sudo&nbsp;apt-get&nbsp;install&nbsp;python3.x</li></ol></blockquote></code></pre>
-        </p>
+        </div>
       </article>
     </section>
     <h4 class="sub-header">1.4.2 - macOS</h4>
@@ -103,10 +105,10 @@
         <pre class="python"><code><blockquote><ol><li>$&nbsp;/usr/bin/ruby&nbsp;-e&nbsp;&quot;$<font color="#33cc33">(</font>curl&nbsp;-fsSL&nbsp;https://raw.githubusercontent.com/Homebrew/install/master/install<font color="#33cc33">)</font>&quot;</li></ol></blockquote></code></pre>
         <p><code>Homebrew</code>를 설치하면 파이썬 설치 준비가 끝났다. 다음 명령을 터미널에서 실행하면 된다.(우분투와 달리 .x를 붙이지 않아야 한다는 점에 주의한다.)</p>
         <pre class="python"><code><blockquote><ol><li>$&nbsp;brew&nbsp;install&nbsp;python3</li></ol></blockquote></code></pre>
-        <p class="bg-info"><strong>NOTE_macOS의 파이썬 설치 주의사항</strong><br>macOS에서 Homebrew나 파이썬을 설치하려먼 Xcode Command Line Tools가 설치되어 있어야 한다. 설치 필요 시 다음 명령으로 Xcode command Line Tools를 설치할 수 있다.</p>
+        <div class="tip"><h4>NOTE_macOS의 파이썬 설치 주의사항</h4><p>macOS에서 Homebrew나 파이썬을 설치하려먼 Xcode Command Line Tools가 설치되어 있어야 한다. 설치 필요 시 다음 명령으로 Xcode command Line Tools를 설치할 수 있다.</p>
         <pre class="python"><code><blockquote><ol><li>$&nbsp;xcode-select&nbsp;--install</li></ol></blockquote></code></pre>
-        <p class="bg-info">또한 Homebrew 설치 스크립트는 변경될 가능성이 있으므로 Homebrew 홈페이지에 있는 명령어에 변화가 있는지 확인한다. 간혹 Xcode 라이선스에 동의하지 않았다면 Homebrew가 제대로 설치되지 않을 수 있다. 이 때는 아래 명령을 실행한 다음 다시 Homebrew설치 명령을 실행한다.</p>
-        <pre class="python"><code><blockquote><ol><li>$&nbsp;sudo&nbsp;xcodebuild&nbsp;-license</li></ol></blockquote></code></pre>
+        <p>또한 Homebrew 설치 스크립트는 변경될 가능성이 있으므로 Homebrew 홈페이지에 있는 명령어에 변화가 있는지 확인한다. 간혹 Xcode 라이선스에 동의하지 않았다면 Homebrew가 제대로 설치되지 않을 수 있다. 이 때는 아래 명령을 실행한 다음 다시 Homebrew설치 명령을 실행한다.</p>
+        <pre class="python"><code><blockquote><ol><li>$&nbsp;sudo&nbsp;xcodebuild&nbsp;-license</li></ol></blockquote></code></pre></div>
 
         <h4>파이썬 설치 파일</h4>
         <p>파이썬 개발 환경 다운로드 사이트(<a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>)를 방문해 자신의 운영체제에 맞는 설치 파일을 다운로드 한 후 설치하면 된다. 이 책에서 활용할 3.x버전을 다운로드 한다. 설치는 [계속] 버튼을 누르면 되니 따로 설명하지 않는다.</p>
@@ -131,7 +133,7 @@
         <h5>코드1-1 Hello World</h5>
         <pre class="python"><code><blockquote><ol><li>In<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li><font color="#ff7700">print</font><font>&#40;</font><font color="#483d8b">'Hello&nbsp;World!'</font><font>&#41;</font></li><li>&nbsp;</li><li>Out<font>&#91;</font><font color="#ff4500">1</font><font>&#93;</font>:</li><li>Hello&nbsp;World<font color="#66cc66">!</font></li></ol></blockquote></code></pre>
         <p>파이썬의 철학 중 하나는 '건전지 포함(Batteries included)'이라는 개념이다. 여러 가지 기본 라이브러리들을 포함시켜 별도로 찾지 않아도 바로 사용할 수 있게 하자는 것이다. 참고로 기본 제공하는 표준 라이브러리 목록은 '<a href="https://docs.python.org/3/library/index.html" target="_blank">The Python Standard Library</a>'에서 확인할 수 있다.</p>
-        <p class="bg-success"><strong>NOTE_ 이 책의 코드 표기 방식</strong><br>이 책의 예제는 터미널이나 파이썬 셸에서 py 파일을 실행하면 좋은 예제와 부록 B에서 설명하는 Jupyter Notebook에서 실행하면 좋은 예제가 있다. 후자의 경우 코드 부분 위에 In[숫자]:를, 출력 결과 부분 위에는 Out[숫자]: 형태로 표기한다. Jupyter Notebook의 자세한 사용법은 해당 부록을 참고하자.</p>
+        <div class="tip"><h4>NOTE_ 이 책의 코드 표기 방식</h4><p>이 책의 예제는 터미널이나 파이썬 셸에서 py 파일을 실행하면 좋은 예제와 부록 B에서 설명하는 Jupyter Notebook에서 실행하면 좋은 예제가 있다. 후자의 경우 코드 부분 위에 In[숫자]:를, 출력 결과 부분 위에는 Out[숫자]: 형태로 표기한다. Jupyter Notebook의 자세한 사용법은 해당 부록을 참고하자.</p></div>
       </article>
     </section>
 

@@ -59,7 +59,7 @@
         text-decoration: none;
         text-transform: uppercase;
       }
-      .links > a:hover { color: #4b0202; }
+      .links > a:hover { color: #850143; }
 
       .m-b-md {
         margin: 50px;
@@ -81,14 +81,14 @@
 
       <div class="content">
         <div class="title m-b-md">
-          Study Books
+          <a href="/book">Study Books</a>
         </div>
 
         <div class="links">
-          <a href="./book/01">01. 파이썬으로 지루한 작업 자동화 하기&nbsp;&nbsp;</a>
+          <a href="/book/01">01. 파이썬으로 지루한 작업 자동화 하기&nbsp;&nbsp;</a>
         </div>
         <div class="links">
-          <a href="./book/02">02. 개발자를 위한 파이썬(P y t h o n)</a>
+          <a href="/book/02">02. 개발자를 위한 파이썬(P y t h o n)</a>
         </div>
       </div>
     </div>

@@ -1,9 +1,7 @@
   <h2 class="page-header">{{$sub[$id][1]}}</h2>
   <div class="chapter">
     <section>
-      <article class="">
-
-      </article>
+      <article class=""></article>
     </section>
   </div>
 
@@ -66,7 +64,7 @@
         <pre><code><blockquote><ol><li>$&nbsp;python&nbsp;-m&nbsp;venv&nbsp;<font color="#33cc33">&lt;</font>가상환경&nbsp;경로<font color="#33cc33">&gt;</font></li></ol></blockquote></code></pre>
         <p>다른 하나는 pyvenv 모듈을 사용해 가상환경 경로를 지정해 생성하는 것이다.</p>
         <pre><code>$ pyvenv &lt;가상환경 경로></code></pre>
-        <p class="bg-success"><strong>[Tip]</strong> 윈도우에서는 pyvenv 패키지가 위치한 '파이썬 실행환경 폴더\Tools\scripts'에서 명령을 실행하거나 윈도우의 [시스템 속성]->[환경 변수]->[시스템 변수]의 Path 변수에 해당 경로를 추가해 실행해야 한다.</p>
+        <div class="tip"><h4>[Tip]</h4><p>윈도우에서는 pyvenv 패키지가 위치한 '파이썬 실행환경 폴더\Tools\scripts'에서 명령을 실행하거나 윈도우의 [시스템 속성]->[환경 변수]->[시스템 변수]의 Path 변수에 해당 경로를 추가해 실행해야 한다.</p></div>
         <p>앞 두 가지 방법 중 운영체제에 맞춰 자신에게 더 편리한 방법으로 가상환경을 생성하면 된다.</p>
         <p>다음은 venv_test0이라는 가상환경 디렉터리를 만든 후 tree 명령을 실행해 만들어진 가상환경에 어떤 파일들이 있는지 살펴보자.</p>
         <pre><code><blockquote><ol><li>$&nbsp;python&nbsp;-m&nbsp;venv&nbsp;venv_test0</li><li>&nbsp;</li><li>#&nbsp;윈도우의&nbsp;경우</li><li><font color="#33cc33">&gt;</font>&nbsp;tree&nbsp;/f&nbsp;venv_test0</li><li>&nbsp;</li><li>#&nbsp;우분투&nbsp;혹은&nbsp;macOS의&nbsp;경우</li><li>$&nbsp;tree&nbsp;-L&nbsp;4&nbsp;venv_test0</li></ol></blockquote></code></pre>
@@ -87,8 +85,10 @@
         <p>Windows PowerShell을 사용한다면 &lt;가상환경 경로>\Scripts에 있는 actvate.ps1 파일을 실행한다.</p>
         <pre><code><blockquote><ol><li><font color="#33cc33">&gt;</font>&nbsp;.\Scripts\activate.ps1</li></ol></blockquote></code></pre>
         <p>종료할 때는 명령 프롬프트와 조금 다르다. deactivate 명령어를 실행하면 된다.</p>
-        <p class="bg-warning"><strong>NOTE_activate.ps1 파일을 실행할 수 없는 경우</strong><br>Windows PowerShell은 기본적으로 보안을 위해 외부스크립트를 실행하지 않도록 설정되어 있다. 이 경우 다음 명령을 실행해서 외부 스크립트를 실행할 수 있게 바꾼다.
-        <br>> Set-ExecutionPolicy Unrestricted</p>
+        <div class="tip"><h4>NOTE_activate.ps1 파일을 실행할 수 없는 경우</h4><p>Windows PowerShell은 기본적으로 보안을 위해 외부스크립트를 실행하지 않도록 설정되어 있다. 이 경우 다음 명령을 실행해서 외부 스크립트를 실행할 수 있게 바꾼다.</p>
+        <p><svg id="i-chevron-right" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M12 30 L24 16 12 2" />
+        </svg> Set-ExecutionPolicy Unrestricted</p></div>
         <p>명령을 실행하면 아래처럼 터미널의 명령어 입력 줄의 맨 앞에 가상환경 이름이 붙게 된다.</p>
         <pre><code><blockquote><ol><li><font color="#33cc33">(</font>venv_test0<font color="#33cc33">)</font>&nbsp;<font color="#33cc33">&lt;</font>사용자&nbsp;이름<font color="#33cc33">&gt;@&lt;</font>현재경로<font color="#33cc33">&gt;</font>:~/$</li></ol></blockquote></code></pre>
         <p>더 자세한 내용은 파이썬 개발 문서의 '<a href="https://docs.python.org/3/library/venv.html" target="_blank">28.3 venv -- Creation of virtual environments</a>'를 참고한다.</p>

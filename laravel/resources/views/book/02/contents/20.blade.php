@@ -45,7 +45,7 @@
     <section>
       <article class="">
         <p>설치 과정은 간단하다. pip를 설치했다는 가정 아래 pip install jupyter(pip3 install jupyter) 명령을 가상환경 등에서 실행하면 된다. Jupyter를 설치하면 IPython까지 모두 설치된다.</p>
-        <p class="bg-info"><strong>NOTE_Jupyter Notebook과 아나콘다</strong><br>만약 위 명령어로 설치가 되지 않는다면 'Installing Jupyter Notebook'(<a href="https://jupyter.org" target="_blank">https://jupyter.org</a>)에서 설치 방법을 찾아볼 수 있다. 또한 Jupyter 홈페이지에서 추천하는 방법은 '아나콘다(Anaconda)'를 사용해 Jupyter Notebook을 설치하는 것이다.<br><br>아나콘다는 파이썬을 이용해 데이터 분석을 할 수 있게 해주는 무료 엔터프라이즈급 패키지이다. Jupyter Notebook을 포함해 이 책에서 다루는 다수의 패키지를 한꺼번에 설치할 수 있다.</p>
+        <div class="tip"><h4>NOTE_Jupyter Notebook과 아나콘다</h4><p>만약 위 명령어로 설치가 되지 않는다면 'Installing Jupyter Notebook'(<a href="https://jupyter.org" target="_blank">https://jupyter.org</a>)에서 설치 방법을 찾아볼 수 있다. 또한 Jupyter 홈페이지에서 추천하는 방법은 '아나콘다(Anaconda)'를 사용해 Jupyter Notebook을 설치하는 것이다.</p><p>아나콘다는 파이썬을 이용해 데이터 분석을 할 수 있게 해주는 무료 엔터프라이즈급 패키지이다. Jupyter Notebook을 포함해 이 책에서 다루는 다수의 패키지를 한꺼번에 설치할 수 있다.</p></div>
       </article>
     </section>
   </div>
@@ -133,7 +133,7 @@ IPython 6.4.0 -- An enhanced Interactive Python. Type '?' for help.
         <h5>그림B-1 Jupyter Notebook 루트 화면</h5>
         <img src="/img/img01.png" alt="Jupyter Notebook 루트 화면">
         <p>오른쪽 위 [New]를 누르면 새 노트북을 만들 수 있다. 기본적인 텍스트파일부터 터미널, 파이썬 버전별 커널, 혹은 설정에 따라 루비, R, Scala 등의 프로그래밍 언어를 선택할 수 있다.</p>
-        <p class="bg-info"><strong>NOTE_파이썬 2와 파이썬 3을 동시에 사용하기</strong><br>Jupyter Notebook을 실행했을 때 파이썬 2와 3을 동시에 실행할 수 없다면 nohup jupyter notebook & 이라는 명령을 실행한다. 한 번 실행한 이후에는 jupyter notebook 명령만으로도 파이썬 2와 3을 동시에 사용할 수 있다.</p>
+        <div class="tip"><h4>NOTE_파이썬 2와 파이썬 3을 동시에 사용하기</h4><p>Jupyter Notebook을 실행했을 때 파이썬 2와 3을 동시에 실행할 수 없다면 nohup jupyter notebook & 이라는 명령을 실행한다. 한 번 실행한 이후에는 jupyter notebook 명령만으로도 파이썬 2와 3을 동시에 사용할 수 있다.</p></div>
         <p>[Terminal]을 선택하면 기존 셸 대신 Jupyter Notebook 안에서 셀을 사용할 수 있다.</p>
         <h5>그림B-2 터미널 사용</h5>
         <img src="/img/img02.png" alt="터미널 사용">
