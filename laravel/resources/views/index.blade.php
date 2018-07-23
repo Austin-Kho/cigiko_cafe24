@@ -81,9 +81,6 @@
           <div class="title m-b-md">
             <a href="/book">Books</a>
           </div>
-          <div class="title m-b-md">
-            <a href="test/01">Layout Tests</a>
-          </div>
 
           <div class="links">
             <!-- <a href="https://laravel.com/docs">Documentation</a>

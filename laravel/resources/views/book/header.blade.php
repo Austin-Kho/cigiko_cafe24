@@ -1,69 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
-    <title>{{$title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
 
-    <!-- 합쳐지고 최소화된 최신 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!-- 부가적인 테마 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <!-- fonts css -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
-    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
+    <title>개발자를 위한 파이썬</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
     <!-- Custom styles for this template -->
-    <link href="/css/books.css" rel="stylesheet">
-    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
-    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $(".subject_group").click(function() {
-          if($(this).next(".nav").is(":visible")){
-            $(this).next(".nav").slideUp(350);
-          } else {
-            // $(".nav").slideUp(300);
-            $(this).next(".nav").slideDown(350);
-          }
-        });
-      });
-
-      $(function() {
-        $(window).scroll(function() {
-          if ($(this).scrollTop() > 500) {
-            $('#MOVE_TOP_BTN').fadeIn();
-          } else {
-            $('#MOVE_TOP_BTN').fadeOut();
-          }
-        });
-
-        $("#MOVE_TOP_BTN").click(function() {
-          $('html, body').animate({
-            scrollTop : 0
-          }, 400);
-          return false;
-        });
-      });
-    </script>
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="/css/test.css" rel="stylesheet">    
   </head>
+
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Python Books</a><span class="navbar-brand">|</span><a class="navbar-brand" href="/book/{{$defurl}}"><small style="font-size: 10pt;">{{$title}}</small></a>
-        </div>
-      </div>
+    <!-- nab bar -->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-sm-3 mr-0" href="/"><span data-feather="home"></span> NC2U!</a>
+      <input class="form-control form-control-dark d-none d-sm-none d-md-block" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3 d-none d-sm-none .d-md-block">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign in</a>
+        </li>
+      </ul>
     </nav>
+
     <div class="container-fluid">
       <div class="row">
