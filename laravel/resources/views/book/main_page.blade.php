@@ -9,29 +9,40 @@
           
           <!-- main_top start -->
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <div class="mb-10"> 
-              <nav aria-label="breadcrumb">
+            <div class="col-sm-12 col-md-9">
+              <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item active">
-                    <a href="/book/{{$defurl}}">{{$title}}</a>
+                  <li class="breadcrumb-item">
+                    <a href="/book/{{$defurl}}"><ion-icon name="logo-python"></ion-icon> {{$title}}</a>
                   </li>
-                  <?php
+                  @php
                     $bs_arr = [];
                     for($i=1; $i<=$id; $i++){
                       if($sub[$i][0]==1) {
                         array_push($bs_arr, $i);
                       };
                     };
-                  ?>
-                  <li class="breadcrumb-item active"><a href="/book/{{$defurl}}/{{max($bs_arr)}}">{{$sub[max($bs_arr)][1]}}</a></li>
-                  @if($sub[$id][0]==2) 
-                  <li class="breadcrumb-item" aria-current="page"><a href="/book/{{$defurl}}/{{$id}}">{{$sub[$id][1]}}</a></li>
+                    $fcl = (max($bs_arr)==$id)?"breadcrumb-item active":"breadcrumb-item";
+
+                    $scl = ($i-1==$id)?"breadcrumb-item active":"breadcrumb-item";                    
+                  @endphp
+                  <li class="{{$fcl}}"@if(max($bs_arr)==$id) aria-current="page"@endif>
+                    @if(max($bs_arr)!=$id)<a href="/book/{{$defurl}}/{{max($bs_arr)}}">@endif
+                    {{$sub[max($bs_arr)][1]}}
+                    @if(max($bs_arr)!=$id)</a>@endif
+                  </li>
+                  @if($sub[$id][0]==2)
+                  <li class="{{$scl}}"@if($i-1==$id) aria-current="page"@endif>
+                    @if($i-1!=$id)<a href="/book/{{$defurl}}"></a>@endif
+                    {{$sub[$id][1]}}
+                    @if($i-1!=$id)</a>@endif
+                  </li>
                   @endif
                 </ol>
               </nav>
             </div>
             
-            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-toolbar col-sm-12 col-md-3 d-none">
               <div class="btn-group mr-2">
                 <button class="btn btn-sm btn-outline-secondary">Share</button>
                 <button class="btn btn-sm btn-outline-secondary">Export</button>
