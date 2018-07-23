@@ -100,55 +100,11 @@
         <p>패키지 만들기를 한 줄로 요약하면 다음과 같다.</p>
         <blockquote><code>__init__.py</code> 파일을 어떤 디렉터리 안에 넣으면 해당 디렉터리는 패키지가 된다.</blockquote>
         <p>즉, 패키지는 모듈을 갖는 디렉터리이다. 다음 디렉터리 구조를 보면 vacaloids 라는 디렉터리 안에 9개의 py 파일이 있는 것을 볼 수 있다.</p>
-        <pre><code>vocaloids/
-├── __init__.py
-├── hatsuneMiku.py
-├── kagamineRen.py
-├── kagamineRin.py
-├── kaito.py
-├── megpoid.py
-├── megurineLuka.py
-├── meiko.py
-└── seeu.py
-
-0 directories, 9 files</code></pre>
+        <pre><code><blockquote><ol><li>vocaloids/</li><li>├──&nbsp;__init__.py</li><li>├──&nbsp;hatsuneMiku.py</li><li>├──&nbsp;kagamineRen.py</li><li>├──&nbsp;kagamineRin.py</li><li>├──&nbsp;kaito.py</li><li>├──&nbsp;megpoid.py</li><li>├──&nbsp;megurineLuka.py</li><li>├──&nbsp;meiko.py</li><li>└──&nbsp;seeu.py</li><li>&nbsp;</li><li>0&nbsp;directories,&nbsp;9&nbsp;files</li></ol></blockquote></code></pre>
         <p>이 9개의 파일 중 __init__.py 를 제외한 모든 파이썬 파일들은 모듈이다. 남은 __init__.py 가 해당 디렉터리를 패키지로 인식될 수 있게 해준다. 즉, 클래스 내부에서 <code>__init__()</code> 메서드가 해당 클래스를 초기화 시켜주는 것처럼 패키지 내부의 __init__.py 는 해당 디렉터리를 패키지로 인식하도록 초기화시켜 준다고 할 수있다.</p>
 
         <p>또한 패키지는 다른 패키지를 포함할 수 있다. 다음과 같은 구조가 될 수 있다.</p>
-        <pre><code>overwatch/
-├── __init__.py
-├── defense
-│   ├── __init__.py
-│   ├── bastion.py
-│   ├── hanzo.py
-│   ├── junkrat.py
-│   ├── mei.py
-│   ├── torbjorn.py
-│   └── widowmaker.py
-├── offense
-│   ├── __init__.py
-│   ├── genji.py
-│   ├── mccree.py
-│   ├── pharah.py
-│   ├── reaper.py
-│   ├── soldier.py
-│   └── tracer.py
-├── support
-│   ├── __init__.py
-│   ├── ana.py
-│   ├── lucio.py
-│   ├── mercy.py
-│   ├── symmetra.py
-│   └── zenyatta.py
-└── tank
-    ├── __init__.py
-    ├── dva.py
-    ├── reinhardt.py
-    ├── roadhog.py
-    ├── winston.py
-    └── zarya.py
-
-4 directories, 27 files</code></pre>
+        <pre><code><blockquote><ol><li>overwatch/</li><li>├──&nbsp;__init__.py</li><li>├──&nbsp;defense</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;__init__.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;bastion.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;hanzo.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;junkrat.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;mei.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;torbjorn.py</li><li>│&nbsp;&nbsp;&nbsp;└──&nbsp;widowmaker.py</li><li>├──&nbsp;offense</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;__init__.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;genji.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;mccree.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;pharah.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;reaper.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;soldier.py</li><li>│&nbsp;&nbsp;&nbsp;└──&nbsp;tracer.py</li><li>├──&nbsp;support</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;__init__.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;ana.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;lucio.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;mercy.py</li><li>│&nbsp;&nbsp;&nbsp;├──&nbsp;symmetra.py</li><li>│&nbsp;&nbsp;&nbsp;└──&nbsp;zenyatta.py</li><li>└──&nbsp;tank</li><li>&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;__init__.py</li><li>&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;dva.py</li><li>&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;reinhardt.py</li><li>&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;roadhog.py</li><li>&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;winston.py</li><li>&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;zarya.py</li><li>&nbsp;</li><li>4&nbsp;directories,&nbsp;27&nbsp;files</li></ol></blockquote></code></pre>
       </article>
     </section>
 
