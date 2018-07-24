@@ -90,7 +90,7 @@
           <li><strong>xmlfeed</strong>: xml 피드를 크롤링 한다. 더 자세하게 말하면 xml의 각 노드를 크롤링한다.</li>
           <li><strong>csvfeed</strong>: xmlfeed 크롤러와 비교했을 때 각 행을 크롤링한다는 차이가 있다.</li>
         </ul>
-        <p>이제 scrapy genspider -t crawl book_crawl hanbit.co.kr 명령을 실행해 스파이더를 생성한다. 주의할 점은 도메인 이름을 입력할 때 'http://'와 'www'를 생략해야 한다는 것이다. 결과는 다음과 같다.</p>
+        <p>이제 <code>scrapy genspider -t crawl book_crawl hanbit.co.kr</code> 명령을 실행해 스파이더를 생성한다. 주의할 점은 도메인 이름을 입력할 때 'http://' 와 'www'를 생략해야 한다는 것이다. 결과는 다음과 같다.</p>
         <pre><code><blockquote><ol><li>$&nbsp;scrapy&nbsp;genspider&nbsp;-t&nbsp;crawl&nbsp;book_crawl&nbsp;hanbit.co.kr</li><li>Created&nbsp;spider&nbsp;'book_crawl'&nbsp;using&nbsp;template&nbsp;'crawl'&nbsp;<font color="#00b100">in</font>&nbsp;module:</li><li>&nbsp;&nbsp;hanbit.spiders.book_crawl</li></ol></blockquote></code></pre>
         <p>스파이더가 생성되었음을 알 수 있다. 스파이더 파일은 spiders 디렉터리에 생성된다.</p>
         <h5>코드9-3 book_crawl.py 내용 확인</h5>
