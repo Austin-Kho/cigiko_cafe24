@@ -23,7 +23,7 @@
     <!-- nab bar -->
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-sm-3 mr-0" href="/"><span data-feather="home"></span> NC2U!</a>
-      <input class="form-control form-control-dark d-none d-sm-none d-md-block" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control form-control-dark d-none d-sm-none d-md-block" type="text" placeholder="Search... preparing..." aria-label="Search">
       <ul class="navbar-nav px-3 d-none d-sm-none .d-md-block">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="#">Sign in</a>
