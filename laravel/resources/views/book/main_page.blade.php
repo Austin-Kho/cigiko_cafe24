@@ -22,15 +22,19 @@
                         array_push($bs_arr, $i);
                       };
                     };
-                    $fcl = (max($bs_arr)==$id)?"breadcrumb-item active":"breadcrumb-item";
-
-                    $scl = ($i-1==$id)?"breadcrumb-item active":"breadcrumb-item";                    
+                    if($bs_arr != []){
+                      $fcl = (max($bs_arr)==$id)?"breadcrumb-item active":"breadcrumb-item";                      
+                    }
+                    $scl = ($i-1==$id)?"breadcrumb-item active":"breadcrumb-item";
                   @endphp
+
+                  @if($bs_arr != [])
                   <li class="{{$fcl}}"@if(max($bs_arr)==$id) aria-current="page"@endif>
                     @if(max($bs_arr)!=$id)<a href="/book/{{$defurl}}/{{max($bs_arr)}}">@endif
                     {{$sub[max($bs_arr)][1]}}
                     @if(max($bs_arr)!=$id)</a>@endif
                   </li>
+                  @endif
                   @if($sub[$id][0]==2)
                   <li class="{{$scl}}"@if($i-1==$id) aria-current="page"@endif>
                     @if($i-1!=$id)<a href="/book/{{$defurl}}"></a>@endif
