@@ -90,6 +90,9 @@
         <div class="links">
           <a href="/book/02">02. 개발자를 위한 파이썬(P y t h o n)</a>
         </div>
+        <div class="links">
+          <a href="/book/03">03. 핵심만 골라 마스터하는 SQL</a>
+        </div>
       </div>
     </div>
   </body>
