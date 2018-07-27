@@ -60,7 +60,7 @@
     <section>
       <article class="">
         <p>첫 번째 단계로 파이썬에서 venv 패키지를 이용해서 가상환경을 생성하는 방법은 두가지이다.</p>
-        <p>하나는 python 명령의 옵션에서 가상환경을 생성하는 것이다. (윈도우의 경우 이 명령을 사용하길 권)</p>
+        <p>하나는 python 명령의 옵션에서 가상환경을 생성하는 것이다. (윈도우의 경우 이 명령을 사용하길 권장한다.)</p>
         <pre><code><blockquote><ol><li>$&nbsp;python&nbsp;-m&nbsp;venv&nbsp;<font color="#33cc33">&lt;</font>가상환경&nbsp;경로<font color="#33cc33">&gt;</font></li></ol></blockquote></code></pre>
         <p>다른 하나는 pyvenv 모듈을 사용해 가상환경 경로를 지정해 생성하는 것이다.</p>
         <pre><code>$ pyvenv &lt;가상환경 경로></code></pre>

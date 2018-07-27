@@ -43,7 +43,7 @@
           <li>(Bots의 경우) 리액션 설정하기</li>
           <li>봇을 계속 실행해 두기</li>
         </ol>
-        <p>그럼 본격적으로 본 만들기를 시작해보자.</p>
+        <p>그럼 본격적으로 봇 만들기를 시작해보자.</p>
       </article>
     </section>
   </div>
@@ -89,7 +89,7 @@
     <h4 class="sub-header">12.3.2 - slackbot 패키지 설치</h4>
     <section>
       <article>
-        <p>이제부터 본격적인 코드 작성이다. 평소처럼 venv를 이용해 가상환경을 설정하고 활성화시킨다.(물론 가상환경을 설정하지 않아도 괜찮다). 그리고 다음 명령을 실행한다.</p>
+        <p>이제부터 본격적인 코드 작성이다. 평소처럼 <code>venv</code>를 이용해 가상환경을 설정하고 활성화시킨다.(물론 가상환경을 설정하지 않아도 괜찮다). 그리고 다음 명령을 실행한다.</p>
         <pre><code>$ pip install slackbot</code></pre>
         <p>이 명령으로 slackbot 패키지 설치는 끝났다.</p>
         <div class="tip">
@@ -101,8 +101,8 @@
     <h4 class="sub-header">12.3.3 - 파일 만들기</h4>
     <section>
       <article>
-        <p>slackbot 패키지는 Bot()을 실행 중인 스크립트를 불러온 경로에서 slack_settings.py 안 설정에 있는 플러그인을 읽어 들여 실행한다. 따라서 몇 가지 파일을 만들어야 한다.</p>
-        <p>설치해야 할 파일을 tree 명령 실행 결과 형식으로 나타내면 다음과 같다. (tree 명령이 무엇인지 잘 모른다면 부록 A.2.1을 참고한다).</p>
+        <p>slackbot 패키지는 <code>Bot()</code>을 실행 중인 스크립트를 불러온 경로에서 <code>slack_settings.py</code> 안 설정에 있는 플러그인을 읽어 들여 실행한다. 따라서 몇 가지 파일을 만들어야 한다.</p>
+        <p>설치해야 할 파일을 <code>tree</code> 명령 실행 결과 형식으로 나타내면 다음과 같다. (<code>tree</code> 명령이 무엇인지 잘 모른다면 부록 A.2.1을 참고한다).</p>
         <pre><code>.<br>
 ├── dice_bot.py<br>
 ├── run.py<br>
@@ -116,15 +116,18 @@
         <p>먼저 실행 파일인 <code>run.py</code> 부터 살펴보자. 여기서 한번 만든 후에는 바뀌지 않을 것이다.</p>
         <h5>코드12-1 run.py</h5>
         <pre class="python"><code><blockquote><ol><li><font color="#808080">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</font></li><li><font color="#808080">#&nbsp;slackbot&nbsp;패키지의&nbsp;Bot&nbsp;클래스를&nbsp;불러옵니다.</font></li><li><font color="#ff7700">from</font>&nbsp;slackbot.<font>bot</font>&nbsp;<font color="#ff7700">import</font>&nbsp;Bot</li><li>&nbsp;</li><li><font color="#808080">#&nbsp;Bot&nbsp;클래스&nbsp;객체를&nbsp;생성하고&nbsp;실행합니다.</font></li><li><font color="#ff7700">def</font>&nbsp;main<font>&#40;</font><font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;bot&nbsp;<font color="#66cc66">=</font>&nbsp;Bot<font>&#40;</font><font>&#41;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;bot.<font>run</font><font>&#40;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;이&nbsp;스크립트에서&nbsp;실행할&nbsp;것을&nbsp;작성합니다.&nbsp;앞에서&nbsp;만든&nbsp;main()을&nbsp;실행하게&nbsp;했습니다.</font></li><li><font color="#ff7700">if</font>&nbsp;__name__&nbsp;<font color="#66cc66">==</font>&nbsp;<font color="#483d8b">&quot;__main__&quot;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;main<font>&#40;</font><font>&#41;</font></li></ol></blockquote></code></pre>
+        <p>다음은 설정 파일인 <code>slackbot_settings.py</code> 이다. 이 파일도 마찬가지로 한번 생성한 후에는 바꿀일이 거의 없다.</p>
+        <h5>코드12-2 slackbot_settings.py</h5>
+        <pre class="python"><code><blockquote><ol><li><font color="#808080">#&nbsp;아까&nbsp;슬랙&nbsp;앱&nbsp;페이지에서&nbsp;얻은&nbsp;토큰을&nbsp;여기에&nbsp;넣습니다.</font></li><li>API_TOKEN&nbsp;<font color="#66cc66">=</font>&nbsp;<font color="#483d8b">&quot;&lt;API&nbsp;Token&gt;&quot;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;실제로&nbsp;작성한&nbsp;코드는&nbsp;dice_bot.py&nbsp;모듈에&nbsp;있습니다.&nbsp;그러니&nbsp;dice_bot&nbsp;모듈을&nbsp;넣어줍니다.</font></li><li><font color="#808080">#&nbsp;모듈/패키지&nbsp;모두&nbsp;넣을&nbsp;수&nbsp;있습니다.&nbsp;패키지라면&nbsp;하위&nbsp;모듈을&nbsp;모두&nbsp;가져옵니다.</font></li><li>PLUGINS&nbsp;<font color="#66cc66">=</font>&nbsp;<font>&#91;</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#483d8b">'dice_bot'</font></li><li><font>&#93;</font></li></ol></blockquote></code></pre>
       </article>
     </section>
 
     <h4 class="sub-header">12.3.4 - 주사위 기능 설정하기</h4>
     <section>
       <article>
-        <p>여기서부터는 dice_bot.py 파일의 내용을 넣는 부분이다. 먼저 'hello'를 적으면 'World!!'로 답하는 간단한 봇을 만들어 보자.</p>
+        <p>여기서부터는 <code>dice_bot.py</code> 파일의 내용을 넣는 부분이다. 먼저 'hello'를 적으면 'World!!'로 답하는 간단한 봇을 만들어 보자.</p>
         <h5>코드12-3 간단한 대답을 하는 봇 만들기</h5>
-        <pre class="python"><code><blockquote><ol><li><font color="#808080">#&nbsp;bot이&nbsp;반응할&nbsp;수&nbsp;있게&nbsp;하는&nbsp;디코레이터&nbsp;함수들을&nbsp;불러옵니다.</font></li><li><font color="#ff7700">from</font>&nbsp;slackbot.<font>bot</font>&nbsp;<font color="#ff7700">import</font>&nbsp;respond_to</li><li><font color="#ff7700">from</font>&nbsp;slackbot.<font>bot</font>&nbsp;<font color="#ff7700">import</font>&nbsp;listen_to</li><li><font color="#ff7700">from</font>&nbsp;slackbot.<font>dispatcher</font>&nbsp;<font color="#ff7700">import</font>&nbsp;Message</li><li>&nbsp;</li><li><font color="#808080">#&nbsp;무엇을&nbsp;반응할지&nbsp;잡아줄&nbsp;수&nbsp;있는&nbsp;re(정규표현식)&nbsp;패키지를&nbsp;불러옵니다.</font></li><li><font color="#ff7700">import</font>&nbsp;<font color="#dc143c">re</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;listen_to&nbsp;는&nbsp;채널에서&nbsp;오가는&nbsp;모든&nbsp;대화에&nbsp;반응합니다.</font></li><li><font color="#808080">#&nbsp;디코레이터&nbsp;함수의&nbsp;첫&nbsp;번째&nbsp;파리미터는&nbsp;정규표현식이고&nbsp;두&nbsp;번째&nbsp;파라미터는&nbsp;플래그입니다.</font></li><li><font color="#66cc66">@</font>listen_to<font>&#40;</font><font color="#483d8b">&quot;Hello&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#dc143c">re</font>.<font>IGNORECASE</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;첫&nbsp;번째&nbsp;파라미터는&nbsp;디스패처의&nbsp;메시지&nbsp;클래스입니다.</font></li><li><font color="#808080">#&nbsp;반응해야&nbsp;할&nbsp;채널에&nbsp;메시지를&nbsp;보내는&nbsp;함수&nbsp;등이&nbsp;있습니다.</font></li><li><font color="#808080">#&nbsp;여기&nbsp;없는&nbsp;두&nbsp;번째&nbsp;이후의&nbsp;파라미터는&nbsp;앞&nbsp;정규&nbsp;표현식에&nbsp;그룹이&nbsp;있으면&nbsp;매칭된&nbsp;문자열이&nbsp;들어갑니다.</font></li><li><font color="#808080">#&nbsp;개수는&nbsp;상한이&nbsp;없습니다.&nbsp;그룹&nbsp;숫자에&nbsp;따라&nbsp;파라미터를&nbsp;더&nbsp;늘리면&nbsp;됩니다.</font></li><li><font color="#ff7700">def</font>&nbsp;hello<font>&#40;</font>msg:&nbsp;Message<font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;send는&nbsp;채널에&nbsp;그냥&nbsp;말합니다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;msg.<font>send</font><font>&#40;</font><font color="#483d8b">&quot;World!!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;respond_to는&nbsp;@을&nbsp;이용해서&nbsp;멘션했을&nbsp;경우에만&nbsp;반응합니다.&nbsp;나머지는&nbsp;listen_to의&nbsp;역할과&nbsp;같습니다.</font></li><li><font color="#66cc66">@</font>respond_to<font>&#40;</font><font color="#483d8b">&quot;hi&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#dc143c">re</font>.<font>IGNORECASE</font><font>&#41;</font></li><li><font color="#ff7700">def</font>&nbsp;hi<font>&#40;</font>msg:&nbsp;Message<font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;reply는&nbsp;해당&nbsp;반응을&nbsp;일으킨&nbsp;사람에게&nbsp;말합니다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;listen_to든&nbsp;respond_to든&nbsp;말을&nbsp;건&nbsp;사람에게&nbsp;대답합니다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;msg.<font>reply</font><font>&#40;</font><font color="#483d8b">&quot;Thank&nbsp;you&nbsp;39!!&quot;</font><font>&#41;</font></li></ol></blockquote></code></pre>
+        <pre class="python"><code><blockquote><ol><li><font color="#808080">#&nbsp;bot이&nbsp;반응할&nbsp;수&nbsp;있게하는&nbsp;디코레이터&nbsp;함수들을&nbsp;임포트합니다.</font></li><li><font color="#ff7700">from</font>&nbsp;slackbot.<font>bot</font>&nbsp;<font color="#ff7700">import</font>&nbsp;respond_to</li><li><font color="#ff7700">from</font>&nbsp;slackbot.<font>bot</font>&nbsp;<font color="#ff7700">import</font>&nbsp;listen_to</li><li><font color="#ff7700">from</font>&nbsp;slackbot.<font>dispatcher</font>&nbsp;<font color="#ff7700">import</font>&nbsp;Message</li><li>&nbsp;</li><li><font color="#808080">#&nbsp;무엇에&nbsp;반응할지&nbsp;잡아줄&nbsp;수&nbsp;있는&nbsp;re(정규식)&nbsp;패키지를&nbsp;임포트합니다.</font></li><li><font color="#ff7700">import</font>&nbsp;<font color="#dc143c">re</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;listen_to는&nbsp;채널에서&nbsp;오가는&nbsp;모든&nbsp;대화에&nbsp;반응합니다.</font></li><li><font color="#808080">#&nbsp;디코레이터&nbsp;함수의&nbsp;첫&nbsp;번째&nbsp;파라미터는&nbsp;정규식이고&nbsp;두&nbsp;번째&nbsp;파라미터는&nbsp;플래그입니다.</font></li><li><font color="#66cc66">@</font>listen_to<font>&#40;</font><font color="#483d8b">&quot;Hello&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#dc143c">re</font>.<font>IGNORECASE</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;첫&nbsp;번째&nbsp;파라미터는&nbsp;디스패처의&nbsp;메시지&nbsp;클래스입니다.</font></li><li><font color="#808080">#&nbsp;반응해야&nbsp;할&nbsp;채널에&nbsp;메시지를&nbsp;보내는&nbsp;함수등이&nbsp;있습니다.</font></li><li><font color="#808080">#&nbsp;여기&nbsp;없는&nbsp;두&nbsp;번째&nbsp;이후의&nbsp;파라미터는&nbsp;위&nbsp;정규식에&nbsp;그룹이&nbsp;있을&nbsp;경우&nbsp;매칭된&nbsp;문자열이&nbsp;들어갑니다.</font></li><li><font color="#808080">#&nbsp;개수는&nbsp;상한이&nbsp;없습니다.&nbsp;그룹&nbsp;숫자에&nbsp;따라&nbsp;파라미터를&nbsp;더&nbsp;늘리면&nbsp;됩니다.</font></li><li><font color="#ff7700">def</font>&nbsp;hello<font>&#40;</font>msg:&nbsp;Message<font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;send는&nbsp;채널에&nbsp;그냥&nbsp;말합니다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;msg.<font>send</font><font>&#40;</font><font color="#483d8b">&quot;World!!&quot;</font><font>&#41;</font></li><li>&nbsp;</li><li><font color="#808080">#&nbsp;respond_to는,&nbsp;@을&nbsp;이용해서&nbsp;멘션했을&nbsp;경우에만&nbsp;반응합니다.&nbsp;나머지는&nbsp;listen_to의&nbsp;역할과&nbsp;같습니다.</font></li><li><font color="#66cc66">@</font>respond_to<font>&#40;</font><font color="#483d8b">&quot;hi&quot;</font><font color="#66cc66">,</font>&nbsp;<font color="#dc143c">re</font>.<font>IGNORECASE</font><font>&#41;</font></li><li><font color="#ff7700">def</font>&nbsp;hi<font>&#40;</font>msg:&nbsp;Message<font>&#41;</font>:</li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;reply는&nbsp;해당&nbsp;반응을&nbsp;일으킨&nbsp;사람에게&nbsp;말합니다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#808080">#&nbsp;listen_to든&nbsp;respond_to든&nbsp;말을&nbsp;건&nbsp;사람에게&nbsp;대답합니다.</font></li><li>&nbsp;&nbsp;&nbsp;&nbsp;msg.<font>reply</font><font>&#40;</font><font color="#483d8b">&quot;Thank&nbsp;you&nbsp;39!!&quot;</font><font>&#41;</font></li></ol></blockquote></code></pre>
         <p>이제 [코드12-3]을 저장하고 <code>python run.py</code> 명령을 실행한다. 슬랙 앱에 dice_bot이 등장하는 것을 확인할 수 있다.</p>
         <h5>그림12-7 dice_bot 등장과 활성화</h5>
         <img src="/img/img21.png" alt="dice_bot 등장과 활성화" class="bo">
@@ -219,7 +222,7 @@
         <p>관리의 편의성이라던가, 다른 파이썬 파일을 실행하는 상황이나, 변경이나 로그 기록 등을 고려해 가상 환경별로 실행 스크립트를 구분해 다른 작업과의 연결을 느슨하게 하면 좋다.</p>
         <div class="tip">
           <h4>TIP</h4>
-          <p>12.4.4와 이어지는 12.4.5의 내용은 우분투와 윈도우에만 실행할 수 있는 내용이다. 윈도우에서는 배치파일을 만들고 작업 스케줄러에서 배치 파일을 실행하게 해야 한다. 작업 스케줄러를 설정하는 방법은 '<a href="https://technet.microsoft.com/ko-kr/library/cc766428(v=ws.11).aspx" target="_blank">작업 스케줄러 사용법</a>'을 참고한다.</p>
+          <p>12.4.4와 이어지는 12.4.5의 내용은 <mark>우분투</mark>와 <mark>윈도우</mark>에만 실행할 수 있는 내용이다. 윈도우에서는 배치파일을 만들고 작업 스케줄러에서 배치 파일을 실행하게 해야 한다. 작업 스케줄러를 설정하는 방법은 '<a href="https://technet.microsoft.com/ko-kr/library/cc766428(v=ws.11).aspx" target="_blank">작업 스케줄러 사용법</a>'을 참고한다.</p>
         </div>
       </article>
     </section>
