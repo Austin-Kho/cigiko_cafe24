@@ -9,7 +9,7 @@
 
   <h3 class="sub-header"><svg id="i-archive" viewBox="0 0 32 32" width="20" height="20" fill="aqua" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M4 10 L4 28 28 28 28 10 M2 4 L2 10 30 10 30 4 Z M12 15 L20 15" />
-    </svg> 3데이터베이스의 기본 
+    </svg> 데이터베이스의 기본 
   </h3>
   <div class="chapter">
     <section>
