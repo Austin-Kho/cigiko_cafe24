@@ -42,7 +42,9 @@ class BookController extends Controller
       $view->sub[25] = [2, 'A. 샘플 테이블 스크립트'];
       $view->sub[26] = [2, 'B. 주요 응용 프로그램에서의 사용'];
       $view->sub[27] = [2, 'C. SQL 문의 구문'];
-      $view->maxid = 27;      
+      $view->sub[28] = [2, 'D. SQL 데이터 형식의 사용'];
+      $view->sub[29] = [2, 'E. SQL 예약 단어'];
+      $view->maxid = 29;      
     }elseif($bookid=='02'){
       $view->title = '파이썬으로 지루한 작업 자동화 하기';
       $view->defurl = $bookid;

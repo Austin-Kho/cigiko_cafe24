@@ -7,6 +7,8 @@
           <li><a href="/book/01/25">{{$sub[25][1]}}</a></li>
           <li><a href="/book/01/26">{{$sub[26][1]}}</a></li>
           <li><a href="/book/01/27">{{$sub[27][1]}}</a></li>
+          <li><a href="/book/01/28">{{$sub[28][1]}}</a></li>
+          <li><a href="/book/01/29">{{$sub[29][1]}}</a></li>
         </ul>
       </article>
     </section>
