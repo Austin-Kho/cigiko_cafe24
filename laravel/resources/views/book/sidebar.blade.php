@@ -10,7 +10,9 @@
                 </a>
               </div>
               <div class="col-3 col-sm-2" style="padding:7px 0; text-align: right;">
-                <a class="pull-right menu_link menu-toggle col-2" style="cursor:pointer; margin: 9px;"><ion-icon name="menu" style="font-size:1.6em;" title="메뉴"></ion-icon></a>
+                <a class="pull-right menu_link menu-toggle col-2" style="cursor:pointer; margin: 9px;"><svg id="i-menu" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                  <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
+              </svg></a>
               </div>
             </div>
 

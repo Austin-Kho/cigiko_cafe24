@@ -260,8 +260,8 @@ div.tip>h4 {
  text-align: left !important;
 }
 
-.menu_link {color:#888; cursor:pointer;}
-.menu_link:hover {color:#333;text-decoration:none;}
+.menu_link>#i-menu {color:#999; cursor:pointer;}
+.menu_link>#i-menu:hover {color:#555;text-decoration:none;}
 
 /* .home_link {color:#ccc;}
 .home_link:hover {color:#aaa;text-decoration:none;} */
@@ -269,8 +269,8 @@ div.tip>h4 {
 .menu-wikidocs {
  margin:1px;
 }
-.menu-wikidocs a {color:#eee; cursor:pointer;}
-.menu-wikidocs a:hover {color:#333;text-decoration:none;}
+.menu-wikidocs a {color:#ccc; cursor:pointer;}
+.menu-wikidocs a:hover {color:#666;text-decoration:none;}
 
 
 
@@ -303,8 +303,8 @@ article > .bo {
 
 .prev_icon:link, .next_icon:link { color:#ccc; }
 .prev_icon:visited, .next_icon:visited { color: #ccc; }
-.prev_icon:hover, .next_icon:hover { color:#aaa !important; }
-.prev_icon:active, .next_icon:active { color: #aaa; }
+.prev_icon:hover, .next_icon:hover { color:#666 !important; }
+.prev_icon:active, .next_icon:active { color: #666; }
 
 blockquote {
  margin:10px 0 !important;

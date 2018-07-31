@@ -2,11 +2,12 @@
         <main role="main" class="col-sm-12 col-md-9 offset-md-3 page" id="load_content" styale="display:none;">
           <div class="btn-group pull-left menu-group" role="group" style="text-align: left;">
             <small>
-              <a class="pull-left menu_link menu-toggle col-2" style="cursor:pointer; margin: 9px;"><ion-icon name="menu" style="font-size:1.6em;" title="메뉴"></ion-icon></a>
+              <a class="pull-left menu_link menu-toggle col-2" style="cursor:pointer; margin: 9px;"><svg id="i-menu" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
+            </svg></a>
             </small>
           </div>
 
-          
           <!-- main_top start -->
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <div class="col-sm-12 col-md-9">

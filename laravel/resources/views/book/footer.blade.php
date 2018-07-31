@@ -11,16 +11,15 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
     <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    {{-- <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
-    <script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script> --}}
 
     <script>
       $(document).ready(function () {
@@ -102,13 +101,13 @@
     <div style="display:none" class="prev_next_indicator">
       @if($id!='1')
       <a class="prev_icon" href="/book/{{$defurl}}/{{(string)((int)$id-1)}}" role="button">
-      <svg id="i-chevron-left" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="7">
+      <svg id="i-chevron-left" viewBox="0 0 32 32" width="25" height="25" fill="none" stroke="currentcolor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="5">
           <path d="M20 30 L8 16 20 2" />
       </svg>
       </a>@endif
       @if($id!==(string)$maxid)
       <a class="next_icon" href="/book/{{$defurl}}/{{(string)((int)$id+1)}}" role="button">
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="7">
+      <svg id="i-chevron-right" viewBox="0 0 32 32" width="25" height="25" fill="none" stroke="currentcolor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="5">
           <path d="M12 30 L24 16 12 2" />
       </svg>
       </a>@endif
