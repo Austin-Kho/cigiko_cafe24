@@ -2,13 +2,13 @@
   <div class="chapter">
     <section>
       <article>
-        <p></p>
+        <p>이 단원에서는 SELECT 문을 사용하여 테이블에서 하나 이상의 열 데이터를 가져오는 방법을 배울 것이다.</p>
       </article>
     </section>
   </div>
 
-  <h3 class="sub-header"><svg id="i-code" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
+  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
     </svg> SELECT 문
   </h3>
   <div class="chapter">
@@ -65,13 +65,17 @@
     <h4 class="sub-header">여러 열 가져오기</h4>
     <section>
       <article>
+        <p>테이블에서 여러 열을 가져올 때도 마찬가지로 SELECT 문을 사용한다. 유일한 차이점은 SELECT 문 뒤에 여러 열의 이름을 콤마로 구분하여 적어준다는 것 뿐이다.</p>
+        <div class="tip">
+            <h4><span class="badge badge-secondary">TIP</span> 콤마 사용 시 주의점</h4>
+            <p>여러 열을 선택할 때는 각 열 이름 사이에 콤마를 입력해야 하지만, 가장 마지막 열 뒤에는 콤마를 넣지 않는다.</p>
+          </div>
         <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
         <pre><code>SELECT prod_id, prod_name, prod_price<br>FROM Products;</code></pre>
 
         <h4><span class="badge badge-pill badge-info">분 석</span></h4>
         <p>위 문은 SELECT 문을 사용하여 Products라는 테이블에서 prod_name이라는 열을 가져온다. 가져오고자 하는 열은 이와 같이 SELECT 키워드 바로 옆에 적어주면 되며, FROM 키워드는 데이터를 가져올 테이블의 이름을 지정하는 데 사용된다.</p>
         <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-        
         <pre><code>          
         <table class="table-sm">
             <thead>
@@ -89,24 +93,30 @@
             </tbody>
           </table>
         </code></pre>
-      </article>
-    </section>
-  </div>
-
-  <h3 class="sub-header"><svg id="i-code" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
-    </svg> SQL이란 무엇인가?</h3>
-  <div class="chapter">
-    <section>
-      <article>
-        <p>내용 입력</p>
+        <div class="tip">
+          <h4><span class="badge badge-secondary">참고</span> 데이터의 표현</h4>
+          <p>위 출력을 보면 알 수 있겠지만 SQL문을 실행하면 포맷팅 되지 않은 기본 그대로의 데이터가 반환 된다. 데이터 포매팅은 표현 방식의 문제로 데이터를 가져오는 것과는 관계가 없다. 따라서 가격을 통화 단위로 하여 적절한 소수점을 넣어서 표시한다거나 하는 과정은 응용 프로그램에서 처리할 작업이다.</p>
+        </div>
       </article>
     </section>
 
-    <h4 class="sub-header">데이터</h4>
+    <h4 class="sub-header">모든 열 가져오기</h4>
     <section>
-      <article>
-        <p>내용 입력</p>
+      <article> 
+        <p>원하는 열을 지정하지 않고 지정한 테이블의 모든 열을 가져오려면 와일드카드 문자인 <code>*</code> 를 <code>SELECT</code> 뒤에 적어주면 된다. 이는 '모든 열'을 의미한다.</p>
+
+        <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+        <pre><code>SELECT *<br>FROM Products;</code></pre>
+
+        <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+        <p>와일드카드 문자 <code>*</code>을 지정하면 데이블의 모든 열이 반환된다.</p>
+        <div class="tip">
+            <h4><span class="badge badge-secondary">주의</span> 와일드카드 사용</h4>
+            <p>정말로 테이블의 모든 열이 필요한 경우가 아니라면 <code>*</code> 와일드카드 문자는 사용하지 않는 것이 좋다. SQL 문의 입력하는 수고는 덜 수 있지만 불필요한 열을 가져 오게 되면 성능에 좋지 않은 영향을 주어 응용 프로그램의 속도가 저하되기 때문이다.</p>
+
+              <h4><span class="badge badge-secondary">TIP</span> 알 수 없는 열 가져오기</h4>
+              <p>와일드카드 문자의 큰 장점 중 하나는 열 이름을 직접 지정할 필요가 없다는 것으로, 열의 이름을 모를 때 유용하게 사용할 수 있다.</p>
+            </div>
       </article>
     </section>
   </div>
