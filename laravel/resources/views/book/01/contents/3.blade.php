@@ -91,9 +91,9 @@
             </thead>
             <tbody>
             @php
-              $users = DB::table('Products')->select('prod_id', 'prod_name', 'prod_price')->get();
+              $data = DB::table('Products')->select('prod_id', 'prod_name', 'prod_price')->get();
             @endphp
-            @foreach($users as $lt)
+            @foreach($data as $lt)
               <tr><td>{{$lt->prod_id}}</td><td>{{$lt->prod_name}}</td><td>{{$lt->prod_price}}</td></tr>
             @endforeach
             </tbody>
