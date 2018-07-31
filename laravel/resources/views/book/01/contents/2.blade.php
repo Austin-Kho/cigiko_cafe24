@@ -7,11 +7,11 @@
     </section>
   </div>
 
-  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
-    </svg> 데이터베이스의 기본 
-  </h3>
   <div class="chapter">
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> 데이터베이스의 기본 
+    </h3>
     <section>
       <article>
         <p>SQL은 데이터베이스를 제어하기 위한 목적을 가진 언어이다. 따라서 SQL에 대해 배우기 전에 먼저 데이터베이스와 그 기술에 대한 기본 개념부터 이해하는 것이 중요하다.</p>
@@ -90,12 +90,11 @@
         <p>기본 키 외에도 외부 키라는 중요한 개념이 있다. 이에 대해서는 12장 '테이블 조인'에서 설명한다.</p>
       </article>
     </section>
-  </div>
 
-  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
     </svg> SQL이란 무엇인가???</h3>
-  <div class="chapter">
+
     <section>
       <article>
         <p>SQL(S-Q-L로 각 문자로 따로 발음하거나 붙여서 sequel, 즉 시퀄이라고 발음함)은 Structured Query Language(구조적 쿼리 언어)의 약자이다. SQL은 데이터베이스와의 통신을 위해 고안된 언어이다.</p>

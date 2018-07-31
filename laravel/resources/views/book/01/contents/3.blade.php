@@ -7,11 +7,11 @@
     </section>
   </div>
 
-  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
-    </svg> SELECT 문
-  </h3>
   <div class="chapter">
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> SELECT 문
+    </h3>
     <section>
       <article>
         <p>SQL 문은 평범한 영어 단어로 이루어진다, 이러한 단어를 키워드라고 하며 SQL 의 모든 문은 하나 이상의 키워드가 결합되어 구성된다. 'SELECT'문의 목적은 하나 이상의 테이블에서 정보를 가져오는 것이다.</p>
