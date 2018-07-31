@@ -7,8 +7,8 @@
     </section>
   </div>
 
-  <h3 class="sub-header"><svg id="i-archive" viewBox="0 0 32 32" width="20" height="20" fill="aqua" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M4 10 L4 28 28 28 28 10 M2 4 L2 10 30 10 30 4 Z M12 15 L20 15" />
+  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
     </svg> 데이터베이스의 기본 
   </h3>
   <div class="chapter">
@@ -26,9 +26,9 @@
     </section>
   </div>
 
-  <h3 class="sub-header"><svg id="i-archive" viewBox="0 0 32 32" width="20" height="20" fill="aqua" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M4 10 L4 28 28 28 28 10 M2 4 L2 10 30 10 30 4 Z M12 15 L20 15" />
-    </svg> SQL이란 무엇인가?</h3>
+  <h3 class="sub-header"><svg id="i-code" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
+</svg> SQL이란 무엇인가?</h3>
   <div class="chapter">
     <section>
       <article>
