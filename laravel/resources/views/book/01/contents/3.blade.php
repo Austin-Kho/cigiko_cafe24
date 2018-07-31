@@ -86,7 +86,6 @@
             @foreach($users as $lt)
               <tr><td>{{$lt->prod_id}}</td><td>{{$lt->prod_name}}</td><td>{{$lt->prod_price}}</td></tr>
             @endforeach
-              
             </tbody>
           </table>
         </code></pre>
