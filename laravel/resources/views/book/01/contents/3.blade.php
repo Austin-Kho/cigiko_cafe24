@@ -24,7 +24,10 @@
       </article>
     </section>
 
-    <h4 class="sub-header">각 열 가져오기</h4>
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> 각 열 가져오기
+    </h3>
     <section>
       <article>
         <p>간단한 SQL SELECT 문부터 살펴보자.</p>
@@ -62,7 +65,10 @@
       </article>
     </section>
 
-    <h4 class="sub-header">여러 열 가져오기</h4>
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> 어려 열 가져오기
+    </h3>
     <section>
       <article>
         <p>테이블에서 여러 열을 가져올 때도 마찬가지로 SELECT 문을 사용한다. 유일한 차이점은 SELECT 문 뒤에 여러 열의 이름을 콤마로 구분하여 적어준다는 것 뿐이다.</p>
@@ -100,7 +106,10 @@
       </article>
     </section>
 
-    <h4 class="sub-header">모든 열 가져오기</h4>
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> 모든 열 가져오기
+    </h3>
     <section>
       <article> 
         <p>원하는 열을 지정하지 않고 지정한 테이블의 모든 열을 가져오려면 와일드카드 문자인 <code>*</code> 를 <code>SELECT</code> 뒤에 적어주면 된다. 이는 '모든 열'을 의미한다.</p>
@@ -111,12 +120,12 @@
         <h4><span class="badge badge-pill badge-info">분 석</span></h4>
         <p>와일드카드 문자 <code>*</code>을 지정하면 데이블의 모든 열이 반환된다.</p>
         <div class="tip">
-            <h4><span class="badge badge-secondary">주의</span> 와일드카드 사용</h4>
-            <p>정말로 테이블의 모든 열이 필요한 경우가 아니라면 <code>*</code> 와일드카드 문자는 사용하지 않는 것이 좋다. SQL 문의 입력하는 수고는 덜 수 있지만 불필요한 열을 가져 오게 되면 성능에 좋지 않은 영향을 주어 응용 프로그램의 속도가 저하되기 때문이다.</p>
+          <h4><span class="badge badge-secondary">주의</span> 와일드카드 사용</h4>
+          <p>정말로 테이블의 모든 열이 필요한 경우가 아니라면 <code>*</code> 와일드카드 문자는 사용하지 않는 것이 좋다. SQL 문의 입력하는 수고는 덜 수 있지만 불필요한 열을 가져 오게 되면 성능에 좋지 않은 영향을 주어 응용 프로그램의 속도가 저하되기 때문이다.</p>
 
-              <h4><span class="badge badge-secondary">TIP</span> 알 수 없는 열 가져오기</h4>
-              <p>와일드카드 문자의 큰 장점 중 하나는 열 이름을 직접 지정할 필요가 없다는 것으로, 열의 이름을 모를 때 유용하게 사용할 수 있다.</p>
-            </div>
+          <h4><span class="badge badge-secondary">TIP</span> 알 수 없는 열 가져오기</h4>
+          <p>와일드카드 문자의 큰 장점 중 하나는 열 이름을 직접 지정할 필요가 없다는 것으로, 열의 이름을 모를 때 유용하게 사용할 수 있다.</p>
+        </div>
       </article>
     </section>
   </div>
