@@ -73,7 +73,7 @@
     <h4 class="sub-header">기본 키</h4>
     <section>
       <article>
-        <blockquote><strong>기본 키</strong>: 테이블 내에서 각 행을 고유하게 구분하는 데 사용되는 열(여러 열일 수도 있음</blockquote>
+        <blockquote><strong>기본 키</strong>: 테이블 내에서 각 행을 고유하게 구분하는 데 사용되는 열(여러 열일 수도 있음)</blockquote>
         <div class="tip">
           <h4>항상 기본 키를 정의하자</h4>
           <p>기본 키는 반드시 필요한 것은 아니지만 데이터베이스를 다자인할 때는 모든 테이블에 기본 키를 넣어 이후에 제어와 관리 작업이 수월하게 이루어질 수 있도록 하는 것이 좋다.</p>
