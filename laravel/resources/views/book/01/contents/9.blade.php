@@ -153,101 +153,119 @@
       <p>날짜오 시간을 저장하는 데 사용되는 형식을 클라이언트의 응용프로그램에서 그대로 사용하는 경우는 거의 없으므로, 적절한 함수를 사용하여 이 값을 읽고, 확장 하고, 또 제어한다.</p>
       <p>간단한 예를 들어보자. Orders 테이블에 주문 날짜를 나타내는 값이 있고, SQL Server나 Sybase에서 2004년에 주문된 항목의 주문 번호를 얻으려면 다음과 같은 문을 사용한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-    <pre><code>
-      SELECT order_num<br>
-      FROM Orders<br>
-      WHERE DATEPART(yy, order_date) = 2004;
-    </code></pre>    
-    <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-    <pre><code>
-      <table class="table-sm">
-        <thead>
-          <tr><th>order_num</th></tr>
-        </thead>
-        @php
-          $data = DB::table('Orders')
-                    ->select('order_num')
-                    ->where(DB::raw('YEAR(order_date) = 2004'))
-                    ->get();
-        @endphp
-        <tbody>
-          @foreach($data as $lt)
-          <tr><td>{{$lt->order_num}}</td></tr>
-          @endforeach
-        </tbody>
-      </table>
-    </code></pre>
-    <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-    <p>내용 입력</p>
+      <pre><code>
+        SELECT order_num<br>
+        FROM Orders<br>
+        WHERE DATEPART(yy, order_date) = 2004;
+      </code></pre>    
+      <h4><span class="badge badge-pill badge-success">출 력</span></h4>
+      <pre><code>
+        <table class="table-sm">
+          <thead>
+            <tr><th>order_num</th></tr>
+          </thead>
+          @php
+            $data = DB::table('Orders')
+                      ->select('order_num')
+                      ->whereBetween('order_date', ['2004-01-01', '2004-12-31'])
+                      ->get();
+          @endphp
+          <tbody>
+            @foreach($data as $lt)
+            <tr><td>{{$lt->order_num}}</td></tr>
+            @endforeach
+          </tbody>
+        </table>
+      </code></pre>
+      <p>Access에서는 다음과 같이 입력해야 한다.</p>
+      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+      <pre><code>
+        SELECT order_num<br>
+        FROM Orders<br>
+        WHERE DATEPART('yyyy', order_date) = 2004;
+      </code></pre>  
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>DATEPART() 함수는 두 개의 매개변수를 받는데, 하나는 반환할 부분이고 다른 하나는 반환 대상이 되는 날짜이다. 이 예에서는 order_date 열 연도 부분만 2004년에 해당하는 주문만 걸러내게 된다.</p>
+      <p>PostgreSQL 에서는 같은 기능을 하는 DATE_PART()라는 함수를 사용한다.</p>
+      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+      <pre><code>
+        SELECT order_num<br>
+        FROM Orders<br>
+        WHERE DATE_PART('year', order_date) = 2004;
+      </code></pre>
+      <p>MySQL 에는 대부분의 데이터 제어함수가 있지만 DATEPART()는 지원하지 않는다. 따라서 이와 같은 기능을 가진 YEAR()를 사용하여 날짜에서 연도 부분을 떼어내야 한다.</p>
+      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+      <pre><code>
+        SELECT order_num<br>
+        FROM Orders<br>
+        WHERE YEAR(order_date) = 2004;
+      </code></pre>
+      <p>Oracle 에는 DATEPART() 함수가 없으므로, 같은 결과를 얻으려면 다음과 같이 두 함수를 사용해야 한다.</p>
+      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+      <pre><code>
+        SELECT order_num<br>
+        FROM Orders<br>
+        WHERE to_number(to_char(order_date, 'YY')) = 2004;
+      </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>이 예에서는 to_char() 함수는 날짜의 일부분을 얻는 데 사용되었고 to_number() 는 이를 다시 숫자 값으로 바꾸어 2004와 비교하는 데 사용되었다.</p>
+      <p>같은 결과를 다음과 같이 BETWEEN 연산자를 사용해도 얻을 수 있다.</p>
+      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+      <pre><code>
+        SELECT order_num<br>
+        FROM Orders<br>
+        WHERE order_date BETWEEN to_date('01-JAN-2004') <br>AND to_date('31-DEC-2004');
+      </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>이 예에서 Oracle의 to_date() 함수는 두 문자열을 날짜로 변환하였다. 하나는 2004년 1월 1일이고, 다른 하나는 2004년 12월 31일이다. 표준 연산자인 BETWEEN은 이 두 날짜 사이의 모든 주문을 찾는데 필요하다.</p>
+      <p>여기서는 연도 부분을 얻어 비교했지만, 만약 월로 비교하려면 AND 연산자를 사용하여 연도와 월을 모두 비교하면 된다.</p>
     </article>
   </section>
 
-  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
-    </svg> 데이터베이스의 기본 
-  </h3>
+  <h4 class="sub-header">숫자 제어 함수</h4>
   <section>
     <article>
-      <p>내용 입력</p>
-      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-    <pre><code></code></pre>
-    <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-    <p>내용 입력</p>
-    <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-    <pre><code>
-      <table class="table-sm">
+      <p>숫자 제어 함수는 말 그대로 숫자 데이터를 조작하는 데 사용된다. 이러한 함수는 대수, 삼각법, 기하학적 계산을 위해 사용되므로 문자열이나 날짜 제어 함수보다는 자주 사용되지 않는다.</p>
+      <p>그러나 아이러니하게도 이러한 숫자 함수가 오히려 다른 함수보다 모든 DBMS에서 고른 방법으로 지원되고 있다.</p>
+      <h4>표 8.3 자주 사용되는 숫자 제어 함수</h4>
+      <table class="table table-hover table-sm">
         <thead>
-          <tr><th>aa</th></tr>
+          <tr>
+            <th>함수</th>
+            <th>설명</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>bb</td></tr>
+          <tr>
+            <td><code>ABS()</code></td>
+            <td>숫자의 절대값을 반환한다.</td>
+          </tr>
+          <tr>
+            <td><code>COS()</code></td>
+            <td>지정한 각도의 코사인 값을 반환한다.</td>
+          </tr>
+          <tr>
+            <td><code>EXP()</code></td>
+            <td>지정한 숫자의 지수 값을 반환한다.</td>
+          </tr>
+          <tr>
+            <td><code>PI()</code></td>
+            <td>𝞹(파이)의 값을 반환한다.</td>
+          </tr>
+          <tr>
+            <td><code>SIN()</code></td>
+            <td>지정한 각도의 사인 값을 반환한다.</td>
+          </tr>
+          <tr>
+            <td><code>SQRT()</code></td>
+            <td>지정한 숫자의 제곱근을 반환한다.</td>
+          </tr>
+          <tr>
+            <td><code>TAN()</code></td>
+            <td>지정한 각도의 탄젠트 값을 반환한다.</td>
+          </tr>
         </tbody>
       </table>
-    </code></pre>
-    </article>
-  </section>
-
-  <h4 class="sub-header">테이블</h4>
-  <section>
-    <article>
-      <p>내용 입력</p>
-      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-    <pre><code></code></pre>
-    <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-    <p>내용 입력</p>
-    <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-    <pre><code>
-      <table class="table-sm">
-        <thead>
-          <tr><th>aa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>bb</td></tr>
-        </tbody>
-      </table>
-    </code></pre>
-    </article>
-  </section>
-
-  <h4 class="sub-header">테이블</h4>
-  <section>
-    <article>
-      <p>내용 입력</p>
-      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-    <pre><code></code></pre>
-    <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-    <p>내용 입력</p>
-    <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-    <pre><code>
-      <table class="table-sm">
-        <thead>
-          <tr><th>aa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>bb</td></tr>
-        </tbody>
-      </table>
-    </code></pre>
     </article>
   </section>
 </div>
