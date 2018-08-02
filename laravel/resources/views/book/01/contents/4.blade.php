@@ -193,4 +193,14 @@
         </div>
       </article>
     </section>
+
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> 요약
+    </h3>
+    <section>
+      <article>
+        <p>이 단원에서는 SELECT 문의 ORDER BY 절을 사용하여 가져온 데이터를 정렬하는 방법을 배웠다. 이 절은 SELECT 문의 가장 끝에 지정되며 필요에 따라 하나 이상의 열을 기준으로 데이터를 정렬하는 기능을 한다.</p>
+      </article>
+    </section>
   </div>

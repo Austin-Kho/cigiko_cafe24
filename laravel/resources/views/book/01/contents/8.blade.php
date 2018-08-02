@@ -254,4 +254,14 @@
       </table>
     </article>
   </section>
+
+  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+    </svg> 요약
+  </h3>
+  <section>
+    <article>
+      <p>이 단원에서는 계산 필드가 무엇이며 어떻게 만드는지 배웠다. 문자열 결합과 수학 연산을 위한 몇 가지 예를 살펴보았으며 별칭을 만들어 계산 필드에 이름을 붙이는 방법도 배웠다.</p>
+    </article>
+  </section>
 </div>

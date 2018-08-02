@@ -268,4 +268,14 @@
       </table>
     </article>
   </section>
+
+  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+    </svg> 요약
+  </h3>
+  <section>
+    <article>
+      <p>이 단원에서는 SQL 의 데이터 제어 함수에 대해 배웠다. 이러한 함수들이 응용 프로그램에서 값의 형식을 지정하고 데이터를 제어하거나 필터링하는 데 아주 유용하지만, 각 함수의 방법은 사용하는 DBMS 에 따라 다르다는 점을 주의해야 한다.</p>
+    </article>
+  </section>
 </div>

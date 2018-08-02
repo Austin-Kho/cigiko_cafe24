@@ -257,4 +257,14 @@
       </ul>
     </article>
   </section>
+
+  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+    </svg> 요약
+  </h3>
+  <section>
+    <article>
+      <p>이 단원에서는 와일드카드가 무엇이며 WHERE 절에서 SQL 와일드카드를 어떻게 사용하는지 배웠다. 또한 와일드카드를 어떻게 사용하면 좋은지 몇 가지 팁도 살펴보았다.</p>
+    </article>
+  </section>
 </div>

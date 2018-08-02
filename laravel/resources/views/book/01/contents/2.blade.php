@@ -114,4 +114,14 @@
         </div>
       </article>
     </section>
+
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> 요약
+    </h3>
+    <section>
+      <article>
+        <p>이번 단원에선은 SQL이 무엇이며 왜 유용한지에 대해 배웠다. SQL은 데이터베이스와의 상호작용을 위한 언어이므로 몇 가지 기본적인 데이터베이스 용어에 대해서도 설명하였다.</p>
+      </article>
+    </section>
   </div>

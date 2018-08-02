@@ -325,4 +325,14 @@
       </div>
     </article>
   </section>
+
+  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+    </svg> 요약
+  </h3>
+  <section>
+    <article>
+      <p>이 단원에서는 AND 와 OR 연산자를 사용하여 WHERE 절 내의 조건을 결합하는 방법, 조건의 평가 순서를 제어하는 방법과 IN, NOT 연산자를 사용하는 방법을 배웠다.</p>
+    </article>
+  </section>
 </div>

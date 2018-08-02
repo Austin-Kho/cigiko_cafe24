@@ -128,4 +128,14 @@
         </div>
       </article>
     </section>
+
+    <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+      </svg> 요약
+    </h3>
+    <section>
+      <article>
+        <p>이 단원에서는 SQL SELECT 문을 사용하여 테이블에서 하나의 열, 여러 열, 그리고 모든 열을 가져오는 방법을 배웠다. 다음은 가져온 데이터를 정렬하는 방법을 배울 차례이다.</p>
+      </article>
+    </section>
   </div>
