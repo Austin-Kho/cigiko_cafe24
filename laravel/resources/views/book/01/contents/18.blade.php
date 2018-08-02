@@ -16,9 +16,7 @@
     <article>
       <p>내용 입력</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-      <pre><code></code></pre>
-      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>내용 입력</p>
+      <pre><code></code></pre>      
       <h4><span class="badge badge-pill badge-success">출 력</span></h4>
       <pre><code>
         <table class="table-sm">
@@ -30,6 +28,8 @@
           </tbody>
         </table>
       </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>내용 입력</p>
     </article>
   </section>
 
@@ -38,9 +38,7 @@
     <article>
       <p>내용 입력</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-      <pre><code></code></pre>
-      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>내용 입력</p>
+      <pre><code></code></pre>      
       <h4><span class="badge badge-pill badge-success">출 력</span></h4>
       <pre><code>
         <table class="table-sm">
@@ -52,6 +50,8 @@
           </tbody>
         </table>
       </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>내용 입력</p>
     </article>
   </section>
 
@@ -63,20 +63,20 @@
     <article>
       <p>내용 입력</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-    <pre><code></code></pre>
-    <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-    <p>내용 입력</p>
-    <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-    <pre><code>
-      <table class="table-sm">
-        <thead>
-          <tr><th>aa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>bb</td></tr>
-        </tbody>
-      </table>
-    </code></pre>
+      <pre><code></code></pre>      
+      <h4><span class="badge badge-pill badge-success">출 력</span></h4>
+      <pre><code>
+        <table class="table-sm">
+          <thead>
+            <tr><th>aa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>bb</td></tr>
+          </tbody>
+        </table>
+      </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>내용 입력</p>
     </article>
   </section>
 
@@ -85,20 +85,20 @@
     <article>
       <p>내용 입력</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-    <pre><code></code></pre>
-    <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-    <p>내용 입력</p>
-    <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-    <pre><code>
-      <table class="table-sm">
-        <thead>
-          <tr><th>aa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>bb</td></tr>
-        </tbody>
-      </table>
-    </code></pre>
+      <pre><code></code></pre>      
+      <h4><span class="badge badge-pill badge-success">출 력</span></h4>
+      <pre><code>
+        <table class="table-sm">
+          <thead>
+            <tr><th>aa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>bb</td></tr>
+          </tbody>
+        </table>
+      </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>내용 입력</p>
     </article>
   </section>
 
