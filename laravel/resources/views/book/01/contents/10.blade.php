@@ -324,7 +324,7 @@
       <p>다섯 개의 집계 함수는 다음과 같이 두 가지 방법으로 사용할 수 있다.</p>
       <ul>
         <li>ALL 인수를 지정하여 모든 행을 계산. ALL 이 기본 인수이므로 인수를 지정하지 않으면 이 방식으로 계산된다.</li>
-        <li>고유값만 계산하려면 DISTINCT 인수를 지정한다.</li>
+        <li>고유값만 계산(<mark>중복되는 값들은 1회만 계산하고 나머지는 무시</mark>)하려면 DISTINCT 인수를 지정한다.</li>
       </ul>
       <br>
       <div class="tip">
@@ -334,7 +334,7 @@
         <p>Microsoft Access 에서는 집계 함수에서 DISTINCT를 지원하지 않으므로 다음 예는 Access에서는 사용할 수 없다.</p>
       </div>
 
-      <p>다음 예에서는 <code>AVG()</code> 함수를 사용하여 특정한 공급업체 제품의 평균가격을 반환한다. 전과 같은 <code>SELECT</code> 문을 사용하지만 이번에는 DISTINCT 인수를 넣어 고유 가격만 계산한다.</p>
+      <p>다음 예에서는 <code>AVG()</code> 함수를 사용하여 특정한 공급업체 제품의 평균가격을 반환한다. 전과 같은 <code>SELECT</code> 문을 사용하지만 이번에는 <code>DISTINCT</code> 인수를 넣어 고유 가격만 계산한다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -350,8 +350,9 @@
           </thead>
           @php
             $avg_price = DB::table('Products')
-                           ->select(DB::raw('AVG(prod_price) AS avg_price'))
-                           ->where('vend_id', 'DLL01')->get()     
+                           ->distinct()
+                           ->where('vend_id', 'DLL01')                          
+                           ->avg('prod_price');
           @endphp
           <tbody>
             <tr><td>{{$avg_price}}</td></tr>
@@ -359,7 +360,13 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>내용 입력</p>
+      <p>이와 같이 가격이 같은 물품이 있을 경우 여러 번 계산에 넣지 않고 한 번만 계산에 포함시키므로 전에 비해 평균가격이 높아졌다. 이는 제품 중에 평균가격보다 가격이 낮은 제품이 여럿 있다는 의미이다.</p>
+      <div class="tip">
+        <h4><span class="badge badge-secondary">주의</span> 주의</h4>
+        <p>DISTINCT 는 열 이름이 지정된 COUNT() 에만 사용하며 COUNT(*)에는 사용해도 별 의미가 없다. 마찬가지로 열 이름이 지정된 경우에만 DISTINCT 가 유용하지, 계산이나 식에서는 사용하지 않는다.</p>
+        <h4><span class="badge badge-secondary">TIP</span> MIN()이나 MAX()에서 DISTINCT 사용</h4>
+        <p>MIN() 이나 MAX() 에서 DISTINCT 를 사용하는 것에 기술적으로 아무 문제도 없지만, 이런 계산은 대개 아무런 의미가 없다. 최대값과 최소값은 값이 동일한 경우에도 모두 계산에 넣어야 의미가 있는 경우가 대부분이기 때문이다.</p>
+      </div>
     </article>
   </section>
 
@@ -369,22 +376,48 @@
   </h3>
   <section>
     <article>
-      <p>내용 입력</p>
+      <p>지금까지 모든 집계 함수 예는 하나의 함수만 사용했지만, 실제로는 SELECT 문에서 여러 집계 함수를 넣어 활용하면 더욱 유용하다. 예를 보자.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-    <pre><code></code></pre>
-    <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-    <p>내용 입력</p>
-    <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-    <pre><code>
-      <table class="table-sm">
-        <thead>
-          <tr><th>aa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>bb</td></tr>
-        </tbody>
-      </table>
-    </code></pre>
+      <pre><code>
+        SELECT COUNT(*) AS num_items,<br>
+        MIN(prod_price) AS price_min,<br>
+        MAX(prod_price) AS price_max,<br>
+        AVG(prod_price) AS price_avg<br>
+        FROM Products;
+      </code></pre>      
+      <h4><span class="badge badge-pill badge-success">출 력</span></h4>
+      <pre><code>
+        <table class="table-sm">
+          <thead>
+            <tr><th>num_items</th><th>price_min</th><th>price_max</th><th>price_avg</th></tr>
+          </thead>
+          @php
+            $count = DB::table('Products')->count();
+            $min = DB::table('Products')->min('prod_price');
+            $max = DB::table('Products')->max('prod_price');
+            $avg = DB::table('Products')->avg('prod_price');
+          @endphp
+          <tbody>
+            <tr><td>{{$count}}</td><td>{{$min}}</td><td>{{$max}}</td><td>{{$avg}}</td></tr>
+          </tbody>
+        </table>
+      </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>하나의 SELECT 문으로 한 번에 여러 값을 얻어냈다. 즉 Products 테이블에 있는 물품의 수, 가격이 가장 높은 물품과 낮은 물품, 그리고 가격의 평균을 구할 수 있다.</p>
+      <div class="tip">
+        <h4><span class="badge badge-secondary">주의</span> 별칭 이름 짓기</h4>
+        <p>집계 함수의 결과를 담을 별칭을 지정할 때는 테이블에 있는 실제 열을 포함하지 않는 이름으로 지정하자. 포함하는 것이 잘못된 것은 아니지만 많은 DBMS 에서 이러한 형식을 지원하지 않으므로 예기치 못한 오류가 발생할 수 있다.</p>
+      </div>
+    </article>
+  </section>
+
+  <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
+    </svg> 요약
+  </h3>
+  <section>
+    <article>
+      <p>집계 함수는 데이터를 요약하는 데 사용된다. SQL 은 다섯 개의 집계 함수를 지원하며 이를 사용ㅎ여 결과를 원하는 대로 반환할 수 있다. 이러한 함수는 효율이 높은 방식으로 디자인되어 있으므로 클라이언트 응용 프로그램에서 계산하는 것보다 빠르게 처리할 수 있다는 장점이 있다.</p>
     </article>
   </section>
 </div>
