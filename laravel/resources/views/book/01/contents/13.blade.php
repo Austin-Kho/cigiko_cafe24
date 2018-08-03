@@ -133,7 +133,7 @@
           </thead>
           @php
             $data = DB::table('Vendors')                      
-                      ->join('Products', 'Vendors.vend_id', '=', 'Products.vend_id')
+                      ->crossjoin('Products')
                       ->select('vend_name', 'prod_name', 'prod_price')
                       ->get()
           @endphp
@@ -145,73 +145,151 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>내용 입력</p>
+      <p>일반적으로 이런 곱집합인 결과를 원하는 경우는 거의 없을 것이다. 모든 제품을 모든 공급업체와 짝지은 것으로, 공급업체와 제품사이의 관계가 무시되기 때문에 공급업체와 제품이 서로 맞지 않는 경우까지 모두 포함된다.</p>
+      <div class="tip">
+        <h4><span class="badge badge-secondary">주의</span> WHERE 절을 잊지 말자.</h4>
+        <p>모든 조인에는 WHERE 절이 있어야 하며, 그렇지 않으면 여러분이 원하는 데이터보다 훨씬 많고 의미 없는 데이터가 반환된다. 마찬가지로 WHERE 절이 정확한지도 확인해야 한다. 잘못된 필터 조건을 입력하면 DBMS 에서 잘못된 데이터가 반환된다.</p>
+        <h4><span class="badge badge-secondary">TIP</span> Cross 조인</h4>
+        <p>곱집합을 결과로 반환하는 조인의 종류를 Cross 조인이라고 한다.</p>
+      </div>
     </article>
   </section>
 
-  <h4 class="sub-header">WHERE 절의 중요성</h4>
+  <h4 class="sub-header">내부 조인</h4>
   <section>
     <article>
-      <p>내용 입력</p>
+      <p>지금까지 살펴본 조인은 동등 조인(equijoin)으로, 두 테이블을 대상으로 동일성 테스트를 하여 그 결과를 기준으로 조인을 하게 된다. 이러한 조인을 내부 조인(Inner Join)이라고도 부른다. 내부 조인임을 명확하게 지정할 경우 전과는 약간 다른 구문이 사용된다. 예를 들어 구문은 다르지만 다음 SELECT 문의 결과는 전에 살펴본 문과 동일하다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-      <pre><code></code></pre>      
+      <pre><code>
+        SELECT vend_name, prod_name, prod_price<br>
+        FROM Vendors, INNER JOIN Products<br>
+        ON Vendors.vend_id = Products.vend_id
+      </code></pre>      
+      <h4><span class="badge badge-pill badge-success">출 력</span></h4>
+      <pre><code>
+          <table class="table-sm">
+            <thead>
+              <tr><th>vend_name</th><th>prod_name</th><th>prod_price</th></tr>
+            </thead>
+            @php
+              $data = DB::table('Vendors')                      
+                        ->join('Products', 'Vendors.vend_id', '=', 'Products.vend_id')
+                        ->select('vend_name', 'prod_name', 'prod_price')
+                        ->get()
+            @endphp
+            <tbody>
+              @foreach($data as $lt)
+              <tr><td>{{$lt->vend_name}}</td><td>{{$lt->prod_name}}</td><td>{{$lt->prod_price}}</td></tr>
+              @endforeach
+            </tbody>
+          </table>
+        </code></pre>
+      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
+      <p>이 문의 SELECT 문은 앞서 살펴본 것과 동일하지만 FROM 절이 다르다. 두 테이블 사이의 관계가 FROM 절 내에서 INNER JOIN을 사용해 지정되고 있다. 이런 방식으로 조인 조건을 지정할 때는 WHERE 절 대신 ON 절이 사용되며, 뒤에 이어지는 조건 자체는 WHERE 절을 사용할 때와 동일하다.</p>
+
+      <p>둘 중 어떤 구문이 더 선호되는 방식인지는 DBMS에 따라 다르므로 현재 사용하고 있는 DBMS 의 설명서를 참조한다.</p>
+      <div class="tip">
+        <h4><span class="badge badge-secondary">참고</span> "올바른" 구문</h4>
+        <p>ANSI SQL 규약에 따르면 INNER JOIN을 사용하는 구문이 정식 구문이라고 할 수 있다.</p>
+      </div>
+    </article>
+  </section>
+
+  <h4 class="sub-header">여러 테이블의 조인</h4>
+  <section>
+    <article>
+      <p>SQL에서는 SELECT 내에서 조인할 수 있는 테이블의 수에 제한을 두지 않고 있다. 즉 테이블 개수에 관계없이 규칙은 같다. 먼저 테이블을 나열하고, 그 다음 테이블 사이의 관계를 정의하면 된다.</p>
+      <p>예를 들어보자.</p>
+      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+      <pre><code>
+        SELECT prod_name, vend_name, prod_price, quantity<br>
+        FROM OrderItems, Products, Vendors<br>
+        WHERE Products.vend_id = Vendors.vend_id<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND OrderItems.prod_id = Products.prod_id<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND order_num = 20007;
+      </code></pre>      
       <h4><span class="badge badge-pill badge-success">출 력</span></h4>
       <pre><code>
         <table class="table-sm">
           <thead>
-            <tr><th>aa</th></tr>
+            <tr><th>prod_name</th><th>vend_name</th><th>prod_price</th><th>quantity</th></tr>
           </thead>
+          @php
+            $data = DB::table('OrderItems')
+                      ->join('Products', 'OrderItems.prod_id', '=', 'Products.prod_id')
+                      ->join('Vendors', 'Products.vend_id', '=', 'Vendors.vend_id')
+                      ->where('order_num', 20007)->get();
+          @endphp
           <tbody>
-            <tr><td>bb</td></tr>
+            @foreach($data as $lt)
+            <tr>
+              <td>{{$lt->prod_name}}</td>
+              <td>{{$lt->vend_name}}</td>
+              <td>{{$lt->prod_price}}</td>
+              <td>{{$lt->quantity}}</td>
+            </tr>
+            @endforeach
           </tbody>
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>내용 입력</p>
-    </article>
-  </section>
+      <p>이 예에서 표시된 각 항목은 주문 번호가 20007인 것으로, 주문 번호는 OrderItems 테이블에 저자되어 있으며 각 제품은 product ID 를 기준으로 Products 테이블을 참조하게 된다. 또 제품은 vendor ID 를 기준으로 Vendors 테이블에 있는 공급업체에 연결된다. FROM 절에 세 개의 테이블이 있고 WHERE 절에서 세 테이블 간의 관계를 정의하고 있는 것이다. WHERE 절의 마지막 부분은 주문 번호가 20007인 항목을 걸러내기 위한 필터 역할을 하고 있다.</p>
+      <div class="tip">
+        <h4><span class="badge badge-secondary">주의</span> 성능을 위한 고려 사항</h4>
+        <p>DBMS 는 지정된 각 테이블 간의 관계를 기준으로 런타임에 조인을 수행한다. 이러한 작업은 자원을 많이 소모하므로 불필요한 조인은 하지 않아야 한다. 테이블을 더 조인할 수록 성능은 떨어진다.</p>
+        <h4><span class="badge badge-secondary">주의</span> 조인할 수 있는 테이블의 최대 수</h4>
+        <p>SQL에서는 조인할 수 있는 테이블 수에 제한을 두고 있지 않지만 DBMS 마다 자체적인 제한이 있는 경우가 많다. 이에 대해서는 각 DBMS 설명서를 참고하기 바란다.</p>
+      </div>
 
-  <h4 class="sub-header">WHERE 절의 중요성</h4>
-  <section>
-    <article>
-      <p>내용 입력</p>
+      <p>이제 11장에서 설명한 다음 예를 다시 살펴보자. SELECT 문에서 RGAN01이라는 제품을 주문한 고객의 목록을 반환하는 예이다.</p>
+
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-      <pre><code></code></pre>      
+      <pre><code>
+        SELECT cust_name, cust_contact<br>
+        FROM Customers<br>
+        WHERE cust_id IN (SELECT cust_id<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM Orders<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE order_num IN (SELECT order_num<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM OrderItems<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE prod_id = 'RGAN01'));
+      </code></pre>
+
+      <p>11장에서 설명했듯 복잡한 SELECT 작업을 하는 데 하위 쿼리가 항상 가장 효율적인 방븝은 아니다. 조인을 사용하면 다음과 같이 보다 효율적인 작업이 가능하다.</p>
+      
+      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
+      <pre><code>
+        SELECT cust_name, cust_contact<br>
+        FROM Customers, Orders, OrderItems<br>
+        WHERE Customers.cust_id = Orders.cust_id<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND OrderItems.order_num = Orders.order_num<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND prod_id = 'RGAN01';
+      </code></pre> 
       <h4><span class="badge badge-pill badge-success">출 력</span></h4>
       <pre><code>
         <table class="table-sm">
           <thead>
-            <tr><th>aa</th></tr>
+            <tr><th>cust_name</th><th>cust_contact</th></tr>
           </thead>
+          @php
+            $data = DB::table('Customers')
+                      ->join('Orders', 'Customers.cust_id', '=', 'Orders.cust_id')
+                      ->join('OrderItems', 'OrderItems.order_num', '=', 'Orders.order_num')
+                      ->where('prod_id', 'RGAN01')->get();
+          @endphp
           <tbody>
-            <tr><td>bb</td></tr>
+            @foreach($data as $lt)
+            <tr><td>{{$lt->cust_name}}</td><td>{{$lt->cust_contact}}</td></tr>
+            @endforeach
           </tbody>
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>내용 입력</p>
+      <p>11장에서 설명했듯이 이 쿼리에서 필요한 데이터를 반환하려면 세 개의 테이블이 필요하다. 하지만 전에 중첩된 하위 쿼리를 사용했던 것과 달리 이번에는 두 개의 조인을 사용하여 테이블을 연결하였다. 조인 조건은 WHERE 절에 지정되에 있는데, 첫 번째는 두 테이블을 조인하고, 두 번째는 RGAN01이라는 제품을 필터링 하기 위해 쓰였다.</p>
+      <div class="tip">
+        <h4><span class="badge badge-secondary">TIP</span> 실험이 필요하다.</h4>
+        <p>이와 같이 필요한 결과를 위해 사용할 수 있는 SQL이 한 가지만 있는 것은 아니며, 어떤 것이 맞고 어떤 것이 틀리다고는 말하기 힘들다. 가장 중요한 것은 성능으로, 사용하는 DBMS,테이블의 데이터 양, 인덱스나 키 사용 여부, 다른 조건 등을 모두 고려해야 한다. 따라서 가장 좋은 방법은 몇 가지 메커니즘을 만든 뒤 어떤 것이 가장 좋은지 실험해보는 것이다.</p>
+      </div>
     </article>
-  </section>
-
-  <h4 class="sub-header">WHERE 절의 중요성</h4>
-  <section>
-    <article>
-      <p>내용 입력</p>
-      <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
-      <pre><code></code></pre>      
-      <h4><span class="badge badge-pill badge-success">출 력</span></h4>
-      <pre><code>
-        <table class="table-sm">
-          <thead>
-            <tr><th>aa</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>bb</td></tr>
-          </tbody>
-        </table>
-      </code></pre>
-      <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>내용 입력</p>
     </article>
   </section>
 
@@ -221,7 +299,7 @@
   </h3>
   <section>
     <article>
-      <p>내용 입력</p>
+      <p>조인은 SQL의 가장 중요하고 강력한 기능 중 하나이며 이를 위해서는 관계형 데이터베이스 디자인의 기본을 이해해야 한다. 이 단원에서는 관계형 데이터베이스 디자인의 기본에 대해 소개하고 조인에 대해 살펴보았다. 가장 자주 사용되는 형식으로 내부 조인이라고도 부르는 동등 조인에 대해 배웠으며, 다음 단원에서는 다른 종류의 조인에 대해 살펴볼 것이다.</p>
     </article>
   </section>
 </div>
