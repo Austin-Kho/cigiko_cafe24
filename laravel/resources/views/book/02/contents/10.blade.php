@@ -85,6 +85,12 @@
             </ul>
             <pre><code class="python"><blockquote><font color="#66cc66">&gt;&gt;&gt;</font>&nbsp;<font color="#dc143c">os</font>.<font>path</font>.<font>getsize</font><font>&#40;</font><font color="#483d8b">'C:<font color="#000099">\\</font>Windows<font color="#000099">\\</font>System32<font color="#000099">\\</font>calc.exe'</font><font>&#41;</font><br/><font color="#ff4500">776192</font><br/><font color="#66cc66">&gt;&gt;&gt;</font>&nbsp;<font color="#dc143c">os</font>.<font>listdir</font><font>&#40;</font><font color="#483d8b">'C:<font color="#000099">\\</font>Windows<font color="#000099">\\</font>System32'</font><font>&#41;</font><br/><font>&#91;</font><font color="#483d8b">'0049'</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">'12520437.cpx'</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">'12520850.cpx'</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">'5U877.ax'</font><font color="#66cc66">,</font>&nbsp;<font color="#483d8b">'aaclient.dll,<br/>--snip--<br/>'</font>xwtpdui.<font>dll</font><font color="#483d8b">',&nbsp;'</font>xwtpw32.<font>dll</font><font color="#483d8b">',&nbsp;'</font>zh-CN<font color="#483d8b">',&nbsp;'</font>zh-HK<font color="#483d8b">',&nbsp;'</font>zh-TW<font color="#483d8b">',&nbsp;'</font>zipfldr.<font>dll</font><font color="#483d8b">']</font></blockquote></code></pre>
           </p>
+
+
+
+          <p>
+            <h5><strong><a href="/book/02/24#ch8">■ 연습 문제</a></strong></h5>
+          </p>
         </article>
       </section>
     </div>

@@ -89,7 +89,7 @@
           </p>
 
           <p>
-            <h5><strong>■ 연습 문제</strong></h5>
+            <h5><strong><a href="/book/02/24#ch1">■ 연습 문제</a></strong></h5>
             <ul>
               <li>1. 다음 중 무엇이 연산자이고 무엇이 값인가?</li>
               <pre><code class="python"><blockquote>*<br/><font color="#483d8b">'hello'</font><br/>-<font color="#ff4500">88.8</font><br/>-<br/>/<br/>+<br/><font color="#ff4500">5</font></blockquote></code></pre>

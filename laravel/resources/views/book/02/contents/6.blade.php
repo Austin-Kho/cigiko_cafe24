@@ -49,7 +49,7 @@
           </p>
 
           <p>
-            <h5><strong>■ 연습 문제</strong></h5>
+            <h5><strong><a href="/book/02/24#ch5">■ 연습 문제</a></strong></h5>
             <ul>
               <li>1. 빈 사전의 코드는 어떤 모습인가?</li>
               <li>2. 키 'foo'와 값 42인 사전 값은 어떤 모습인가?</li>

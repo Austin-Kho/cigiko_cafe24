@@ -107,7 +107,7 @@
           </p>
 
           <p>
-            <h5><strong>■ 연습 문제</strong></h5>
+            <h5><strong><a href="/book/02/24#ch6">■ 연습 문제</a></strong></h5>
             <ul>
               <li>1. 이스케이프 문자란 무엇인가?</li>
               <li>2. \n과 \t 이스케이프 문자는 무엇을 뜻하는가?</li>

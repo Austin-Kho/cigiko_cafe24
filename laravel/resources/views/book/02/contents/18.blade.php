@@ -3,6 +3,10 @@
       <section>
         <article class="">
           내용 입력
+
+          <p>
+            <h5><strong><a href="/book/02/24#ch16">■ 연습 문제</a></strong></h5>
+          </p>
         </article>
       </section>
     </div>
