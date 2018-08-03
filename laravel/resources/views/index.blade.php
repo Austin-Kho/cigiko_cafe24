@@ -79,7 +79,7 @@
 
         <div class="content">
           <div class="title m-b-md">
-            <a href="/book">Books</a>
+            <a href="/book">NC2U!</a>
           </div>
 
           <div class="links">

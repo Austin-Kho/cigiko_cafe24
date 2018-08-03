@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Python Books</title>
+    <title>Study Books</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -54,7 +54,7 @@
         padding: 0 60px;
         line-height: 2;
         font-size: 15px;
-        font-weight: 600;
+        font-weight: 250;
         letter-spacing: .1rem;
         text-decoration: none;
         text-transform: uppercase;
