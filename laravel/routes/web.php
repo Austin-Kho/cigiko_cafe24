@@ -19,10 +19,9 @@ Route::get('book' , function(){
     return view('book');
 });
 
-Route::get('test/{bookid}/{id?}', 'Book\BookController02@index')->name('book02');
-
 Route::get('book/{bookid}/{id?}', 'Book\BookController@index')->name('book');
 
+Route::get('write', 'WriteController@index')->name('write');
 
 
 
@@ -34,7 +33,6 @@ Route::get('book/{bookid}/{id?}', 'Book\BookController@index')->name('book');
 |
 |
 */
-Route::get('write', 'WriteController@index')->name('write');
 
 // with 로 view 에 데이터 바인딩
 Route::get('abc', function(){
