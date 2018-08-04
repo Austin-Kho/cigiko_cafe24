@@ -24,7 +24,7 @@
       <p>각각에 대해 알아보자.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">TIP</span>INSERT와 시스템 보안</h4>
-        <p>INSERT 문을 사용하려면 클라이언트-서버 FBMS에서 특별한 보안 권한이 있어야 한다. INSERT 문을 실행하기 전에 적절한 권한을 가지고 있는지 확인해보기 바란다.</p>
+        <p>INSERT 문을 사용하려면 클라이언트-서버 DBMS에서 특별한 보안 권한이 있어야 한다. INSERT 문을 실행하기 전에 적절한 권한을 가지고 있는지 확인해보기 바란다.</p>
       </div>      
     </article>
   </section>
