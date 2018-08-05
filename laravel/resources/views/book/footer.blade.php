@@ -114,8 +114,12 @@
     </div>
 
     <!-- Top button -->
-    <div style="font-size: 3em;">
-      <a id="MOVE_TOP_BTN" href="#"><ion-icon name="arrow-dropup-circle"></ion-icon></a>
+    <div>
+      <a id="MOVE_TOP_BTN" href="#">
+        <strong>TOP</strong>
+        {{-- <svg id="i-chevron-top" viewBox="0 0 32 32" width="25" height="25" fill="none" stroke="currentcolor" stroke-linecap="butt" stroke-linejoin="round" stroke-width="5">
+          <path d="M30 20 L16 8 2 20" /></svg> --}}
+        </a>
     </div>
   </body>
 </html>

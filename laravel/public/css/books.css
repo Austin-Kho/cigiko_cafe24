@@ -160,8 +160,8 @@ section {
 }
 
 .sidebar-padding {
-  padding-left: 14% !important;
-  padding-right: 14% !important;
+  padding-left: 8% !important;
+  padding-right: 8% !important;
 }
 
 .page-prev-next {
@@ -342,7 +342,6 @@ a#MOVE_TOP_BTN {
  bottom: 65px;
  display: none;
  z-index: 999;
- color: #7fafdb;
 }
 a#MOVE_TOP_BTN:hover {color: #42a6ff;}
 
