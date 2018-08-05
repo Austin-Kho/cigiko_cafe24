@@ -2,7 +2,7 @@
   <div class="chapter">
     <section>
       <article>
-        <p>이 단원에서는 SELECT 문의 WHERE 절을 사용하여 검색 조건을 지정하는 방법을 알아보자.</p>
+        <p>이 단원에서는 <code>SELECT</code> 문의 <code>WHERE</code> 절을 사용하여 검색 조건을 지정하는 방법을 알아보자.</p>
       </article>
     </section>
   </div>
@@ -61,7 +61,7 @@
     </h3>
     <section>
       <article>
-        <p>앞서 살펴본 WHERE 절에서는 '동일성 테스트'를 했었다. 즉 열이 특정한 값을 가지고 있는지를 살펴보았다. SQL 에서 제공하는 조건부 연산자의 목록을 살펴보자.</p>
+        <p>앞서 살펴본 <code>WHERE</code> 절에서는 '동일성 테스트'를 했었다. 즉 열이 특정한 값을 가지고 있는지를 살펴보았다. SQL 에서 제공하는 조건부 연산자의 목록을 살펴보자.</p>
         <h4>표 4.1 WHERE 절 연산자</h4>
         <table class="table table-hover table-sm ">
           <thead>
@@ -212,7 +212,7 @@
     <h4 class="sub-header">값이 없을 경우를 확인</h4>
     <section>
       <article>
-        <p>테이블을 만들 때 디자이너는 열에 값이 없어도 되는지를 지정할 수 있다. 열에 값이 없는 경우 이를 NULL 값이라고 한다.</p>
+        <p>테이블을 만들 때 디자이너는 열에 값이 없어도 되는지를 지정할 수 있다. 열에 값이 없는 경우 이를 <code>NULL</code> 값이라고 한다.</p>
         <blockquote><strong>NULL</strong>: <i>No value</i>, 즉 값이 없음을 의미한다. 값이 <code>0</code>이거나 빈 문자열(<code>''</code>), 또는 공백(<code>' '</code>)인 경우와는 다름을 주의하자. <code>0</code>, 또는 빈 문자열(<code>''</code>), 또는 공백(<code>' '</code>)도 분명한 값이며, <code>NULL</code> 은 이러한 값조차 없는 것을 말한다.</blockquote>
 
         <p>값이 없는지 확인화기 위해서는 특별한 연산자인 <code>IS NULL</code>절을 사용하면 된다. 구문은 다음과 같다.</p>
@@ -223,7 +223,7 @@
           WHERE prod_price IS_NULL;          
         </code></pre>
 
-        <p>이 문을 실행하면 가격이 지정되어 있지 않은 모든 제품이 나열된다. 즉 prod_price 필드가 비어 있는 제품을 말한다. 다시 한 번 말하지만 가격이 0인것과는 다르며, 아예 가격이 정해지지 않은 열만 검색된다. NULL 값이 있는 Vendors 테이블을 사용하여 테스트 해보자. 제조업체의 주(state)가 지정되지 않은 경우 vend_state 열의 값은 NULL 이므로 이러한 열만 가져오도록 지정한다(제조업체가 미국 업체가 아닌 경우 주 정보가 없을 것이다).</p>
+        <p>이 문을 실행하면 가격이 지정되어 있지 않은 모든 제품이 나열된다. 즉 prod_price 필드가 비어 있는 제품을 말한다. 다시 한 번 말하지만 가격이 0인것과는 다르며, 아예 가격이 정해지지 않은 열만 검색된다. <code>NULL</code> 값이 있는 Vendors 테이블을 사용하여 테스트 해보자. 제조업체의 주(state)가 지정되지 않은 경우 vend_state 열의 값은 <code>NULL</code> 이므로 이러한 열만 가져오도록 지정한다(제조업체가 미국 업체가 아닌 경우 주 정보가 없을 것이다).</p>
 
         <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
         <pre><code>
@@ -262,7 +262,7 @@
     </h3>
     <section>
       <article>
-        <p>이 단원에서는 SELECT 문의 WHERE 절을 사용하여 반환된 데이터를 필터링 하는 방법을 배웠다. 값이 같은 경우, 같지 않은 경우, 보다 크거나 작은 경우, 특정 범위에 있는 경우, 그리고 NULL 값인 경우를 확인하는 방법도 살펴보았다.</p>
+        <p>이 단원에서는 <code>SELECT</code> 문의 <code>WHERE</code> 절을 사용하여 반환된 데이터를 필터링 하는 방법을 배웠다. 값이 같은 경우, 같지 않은 경우, 보다 크거나 작은 경우, 특정 범위에 있는 경우, 그리고 <code>NULL</code> 값인 경우를 확인하는 방법도 살펴보았다.</p>
       </article>
     </section>
   </div>

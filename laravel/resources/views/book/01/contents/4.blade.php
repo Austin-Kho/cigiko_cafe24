@@ -2,7 +2,7 @@
   <div class="chapter">
     <section>
       <article>
-        <p>이 단원에서는 SELECT 문의 ORDER BY 절을 사용하여 가져온 데이터를 필요에 따라 정렬하는 방법을 살펴보자.</p>
+        <p>이 단원에서는 <code>SELECT</code> 문의 <code>ORDER BY</code> 절을 사용하여 가져온 데이터를 필요에 따라 정렬하는 방법을 살펴보자.</p>
       </article>
     </section>
   </div>
@@ -24,7 +24,7 @@
           ORDER BY prod_name;
         </code></pre>
         <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-        <p>이 문은 ORDER BY 절을 지정하여 DBMS 소프트웨어에 데이터를 prod_name 열의 알파벳 순으로 정렬하라고 지시한 것 외에는 전에 살펴본 것과 동일하다.</p>
+        <p>이 문은 <code>ORDER BY</code> 절을 지정하여 DBMS 소프트웨어에 데이터를 prod_name 열의 알파벳 순으로 정렬하라고 지시한 것 외에는 전에 살펴본 것과 동일하다.</p>
         <h4><span class="badge badge-pill badge-success">출 력</span></h4>
         <pre><code>
           <table class="table-sm">
@@ -93,7 +93,7 @@
     </h3>
     <section>
       <article>
-        <p>ORDER BY 에 지정하는 열은 이름으로도 지정할 수 있지만 상대적인 열의 위치로도 지정할 수 있다.</p>
+        <p><code>ORDER BY</code> 에 지정하는 열은 이름으로도 지정할 수 있지만 상대적인 열의 위치로도 지정할 수 있다.</p>
 
         <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
         <pre><code>
@@ -120,7 +120,7 @@
 
         <h4><span class="badge badge-pill badge-info">분 석</span></h4>
         <p>결과는 전과 동일하다. 다른 것은 입력된 SQL 문뿐이다. 이번에는 열의 이름을 지정하는 대신 2, 3이라는 숫자가 사용되었는데 이는 두 번째 열로 정렬한 다음 두 번째 열의 값이 같은 항목에 대해서만 세 번째 열로 데이터를 정렬하라는 의미이다.</p>
-        <p>이 방법을 사용하면 열의 이름을 다시 입력해야 하는 수고를 덜 수 있지만, 잘못 된 열을 입력할 가능성도 높아진다. 또한 만약 데이터의 순서가 바꾸면 SELECT 문도 수정해야 하며, SELECT 문에 없는 열로 데이터를 정렬할 수는 없다는 점도 무시할 수 없는 단점이다.</p>
+        <p>이 방법을 사용하면 열의 이름을 다시 입력해야 하는 수고를 덜 수 있지만, 잘못 된 열을 입력할 가능성도 높아진다. 또한 만약 데이터의 순서가 바꾸면 <code>SELECT</code> 문도 수정해야 하며, <code>SELECT</code> 문에 없는 열로 데이터를 정렬할 수는 없다는 점도 무시할 수 없는 단점이다.</p>
       </article>
     </section>
   
@@ -185,7 +185,7 @@
         </code></pre>
 
         <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-        <p>DESC 키워드는 바로 앞에 있는 열 이름에만 영향을 미친다. 즉, 위 예제에서는 DESC를 prod_price 열에만 적용한 것이며 prod_name 에는 적용하지 않은 것이다.</p>
+        <p><code>DESC</code> 키워드는 바로 앞에 있는 열 이름에만 영향을 미친다. 즉, 위 예제에서는 <code>DESC</code>를 prod_price 열에만 적용한 것이며 prod_name 에는 적용하지 않은 것이다.</p>
         <div class="tip">
           <h4><span class="badge badge-secondary">TIP</span> 대소문자 구분과 정렬 순서</h4>
           <p>텍스트 데이터를 정렬할 때 A와 a가 같을까? 이는 데이터베이스 설정에 따라 달라진다. 사전적인 정렬 순서로는 A와 a가 동일하게 취급되며 이는 대부분의 데이터베이스 관리 시스템에서 기본 설정으로 사용하고 있다. 하지만 기능이 많은 DBMS 의 경우 관리자가 이 설정을 변경할 수 있는 기능이 분명히 있으며, 이는 주로 '데이터 정렬'이라는 설정 부분에서 조정 가능하다.</p>
@@ -200,7 +200,7 @@
     </h3>
     <section>
       <article>
-        <p>이 단원에서는 SELECT 문의 ORDER BY 절을 사용하여 가져온 데이터를 정렬하는 방법을 배웠다. 이 절은 SELECT 문의 가장 끝에 지정되며 필요에 따라 하나 이상의 열을 기준으로 데이터를 정렬하는 기능을 한다.</p>
+        <p>이 단원에서는 <code>SELECT</code> 문의 <code>ORDER BY</code> 절을 사용하여 가져온 데이터를 정렬하는 방법을 배웠다. 이 절은 <code>SELECT</code> 문의 가장 끝에 지정되며 필요에 따라 하나 이상의 열을 기준으로 데이터를 정렬하는 기능을 한다.</p>
       </article>
     </section>
   </div>

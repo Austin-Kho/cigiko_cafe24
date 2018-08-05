@@ -30,7 +30,7 @@
         WHERE vend_id = 'DLL01' AND prod_price <= 4;        
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 SQL 문을 실행하면 DLL01 이라는 제조업체에서 만들고, 가격이 4불 이하인 모든 제품 이름이 검색된다. 이 SELECT 문의 WHERE 절은 두 개의 조건으로 만들어졌으며, 두 조건은 AND 로 연결되어 있다. AND 는 앞뒤에 지정된 두 조건을 모두 만족하는 데이터만 반환하라는 의미이다. 출력결과는 다음과 같다.</p>
+      <p>이 SQL 문을 실행하면 DLL01 이라는 제조업체에서 만들고, 가격이 4불 이하인 모든 제품 이름이 검색된다. 이 <code>SELECT</code> 문의 <code>WHERE</code> 절은 두 개의 조건으로 만들어졌으며, 두 조건은 <code>AND</code> 로 연결되어 있다. <code>AND</code> 는 앞뒤에 지정된 두 조건을 모두 만족하는 데이터만 반환하라는 의미이다. 출력결과는 다음과 같다.</p>
       <h4><span class="badge badge-pill badge-success">출 력</span></h4>
       <pre><code>
         <table class="table-sm">
@@ -60,7 +60,7 @@
   <section>
     <article>
       <p><code>OR</code> 연산자는 <code>AND</code> 연산자와 정 반대의 쓰임을 가지고 있다. 즉, 두 조건 중 하나 이상의 조건에 부합되면 결과는 검색된다.</p>
-      <p>다음 SELECT 문을 살펴보자.</p>
+      <p>다음 <code>SELECT</code> 문을 살펴보자.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -96,8 +96,8 @@
   <h4 class="sub-header">평가 순서의 이해</h4>
   <section>
     <article>
-      <p>WHERE 절에는 AND 와 OR 연산자를 여러 개 사용할 수도 있다. 이렇게 여러 조건을 결합하면 보다 복잡한 필터링이 가능해진다.</p>
-      <p>하지만 AND 와 OR 연산자를 결합하면 흥미로운 문제가 생긴다. 설명을 위해 예제를 살펴보자. DLL01이나 BRS01 제조업체에서 만든 제품 중에 가격이 10불 이상인 제품을 검색하려고 하면 어떻게 해야 할까? 아마도 다음과 같이 쓸 수 있을 것이다.</p>
+      <p><code>WHERE</code> 절에는 <code>AND</code> 와 <code>OR</code> 연산자를 여러 개 사용할 수도 있다. 이렇게 여러 조건을 결합하면 보다 복잡한 필터링이 가능해진다.</p>
+      <p>하지만 <code>AND</code> 와 <code>OR</code> 연산자를 결합하면 흥미로운 문제가 생긴다. 설명을 위해 예제를 살펴보자. DLL01이나 BRS01 제조업체에서 만든 제품 중에 가격이 10불 이상인 제품을 검색하려고 하면 어떻게 해야 할까? 아마도 다음과 같이 쓸 수 있을 것이다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT prod_name, prod_price<br>
@@ -126,8 +126,8 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>결과를 보면 원하던 것과 다르다. 가격이 10불 미만인 행이 4개나 된다. 다른 언어와 마찬가지로 SQL 역시 OR 연산자보다 AND 연산자를 먼저 처리하기 때문에 필터링이 제대로 되지 않았기 때문이다. 즉 SQL 은 가격이 10불 이상이고 제조업체가 BRS01인 제품을 먼저 감색한 다음, OR 연산자에 따라 DLL01이 제조업체인 모든 제품을(가격에 관계없이) 결과행에 포함해 버리는 것이다. 즉, AND 의 처리 우선순위가 높기 때문에 필터링에 문제가 생겨버렸다.</p>
-      <p>이런 문제를 해결하기 위해서는 각 연산자를 적절히 괄호로 묶어주면 된다. 다음 SELECT 문과 출력 결과를 보자.</p>
+      <p>결과를 보면 원하던 것과 다르다. 가격이 10불 미만인 행이 4개나 된다. 다른 언어와 마찬가지로 SQL 역시 <code>OR</code> 연산자보다 <code>AND</code> 연산자를 먼저 처리하기 때문에 필터링이 제대로 되지 않았기 때문이다. 즉 SQL 은 가격이 10불 이상이고 제조업체가 BRS01인 제품을 먼저 감색한 다음, <code>OR</code> 연산자에 따라 DLL01이 제조업체인 모든 제품을(가격에 관계없이) 결과행에 포함해 버리는 것이다. 즉, <code>AND</code> 의 처리 우선순위가 높기 때문에 필터링에 문제가 생겨버렸다.</p>
+      <p>이런 문제를 해결하기 위해서는 각 연산자를 적절히 괄호로 묶어주면 된다. 다음 <code>SELECT</code> 문과 출력 결과를 보자.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -159,7 +159,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>앞서 살펴본 SELECT 문과의 차이점은 단 한 가지이다. 이번에는 첫 번째 두 WHERE 조건, 즉 OR 연산이 적용되어야 할 조건을 괄호로 묶어주었다. 괄호는 AND 나 OR 연산자보다 높은 우선순위를 가지므로, DBMS 는 먼저 괄호 내의 조건을 처리한 다음 괄호 밖에 있는 AND 연산자 뒤의 조건을 처리하게 된다. 즉 DLL01이나 BRS01이라는 제조업체가 만든 모든 제품을 선택하고, 그 중에서 가격이 10불 이상인 제품을 검색한다. 애초에 의도했던 조건과 정확히 일치한다.</p>
+      <p>앞서 살펴본 <code>SELECT</code> 문과의 차이점은 단 한 가지이다. 이번에는 첫 번째 두 <code>WHERE</code> 조건, 즉 <code>OR</code> 연산이 적용되어야 할 조건을 괄호로 묶어주었다. 괄호는 <code>AND</code> 나 <code>OR</code> 연산자보다 높은 우선순위를 가지므로, DBMS 는 먼저 괄호 내의 조건을 처리한 다음 괄호 밖에 있는 <code>AND</code> 연산자 뒤의 조건을 처리하게 된다. 즉 DLL01이나 BRS01이라는 제조업체가 만든 모든 제품을 선택하고, 그 중에서 가격이 10불 이상인 제품을 검색한다. 애초에 의도했던 조건과 정확히 일치한다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">TIP</span> WHERE 절의 괄호 사용</h4>
         <p>AND 와 OR 연산자를 같은 WHERE 절에 함께 사용할 경우에는 각 연산자를 모두 괄호로 묶어주는 것이 좋다. 기본 평가 순서에 따라 해석되리라고 안심하지 말고, 직접 순서를 정해 의도대로 묶어주기 바란다. 괄호 사용에 대한 단점은 전혀 없으며, 조건을 보다 명확하게 이해하는데 도움이 된다.</p>
@@ -204,8 +204,8 @@
       </code></pre>
 
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 SELECT 문은 제조업체가 DLL01과 BRS01인 모든 제품을 가져온다. IN 연산자 뒤에는 콤마로 구분한 값의 목록이 지정되며, 전체 목록은 괄호로 묶어주어야 한다.</p>
-      <p>눈치 챘겠지만, IN 연산자와 OR 연산자의 기능이 같다는 점을 알 수 있다. 다음과 같이 써주어도 같은 결과를 얻을 수 있다.</p>
+      <p>이 <code>SELECT</code> 문은 제조업체가 DLL01과 BRS01인 모든 제품을 가져온다. <code>IN</code> 연산자 뒤에는 콤마로 구분한 값의 목록이 지정되며, 전체 목록은 괄호로 묶어주어야 한다.</p>
+      <p>눈치 챘겠지만, <code>IN</code> 연산자와 <code>OR</code> 연산자의 기능이 같다는 점을 알 수 있다. 다음과 같이 써주어도 같은 결과를 얻을 수 있다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -234,12 +234,12 @@
           </tbody>
         </table>
       </code></pre>
-      <p>그렇다면 왜 IN 연산자를 쓸까? 장점은 다음과 같다.</p>
+      <p>그렇다면 왜 <code>IN</code> 연산자를 쓸까? 장점은 다음과 같다.</p>
       <ul>
-        <li>목록에 넣을 값이 여러 개일 때, IN 연산자가 쓰기도 쉽고 이해하기도 쉽다.</li>
-        <li>IN 을 사용하면 평가 순서를 보다 쉽게 관리할 수 있고 연산자 수도 줄어든다.</li>
-        <li>IN 연산자가 OR 연산자보다 실행속도가 빠르다.</li>
-        <li>IN 의 가장 큰 장점은 IN 연산자에 다른 SELECT 문을 넣을 수 있다는 것이다. 동적인 WHERE 절을 만들 때 이 장점이 크게 활용된다. 이 내용은 11장 '하위 쿼리 사용'에서 살펴볼 것이다.</li>
+        <li>목록에 넣을 값이 여러 개일 때, <code>IN</code> 연산자가 쓰기도 쉽고 이해하기도 쉽다.</li>
+        <li><code>IN</code> 을 사용하면 평가 순서를 보다 쉽게 관리할 수 있고 연산자 수도 줄어든다.</li>
+        <li><code>IN</code> 연산자가 <code>OR</code> 연산자보다 실행속도가 빠르다.</li>
+        <li><code>IN</code> 의 가장 큰 장점은 <code>IN</code> 연산자에 다른 <code>SELECT</code> 문을 넣을 수 있다는 것이다. 동적인 <code>WHERE</code> 절을 만들 때 이 장점이 크게 활용된다. 이 내용은 11장 '하위 쿼리 사용'에서 살펴볼 것이다.</li>
       </ul>
       <blockquote><strong>IN</strong>: 여러 값을 OR 관계로 묶어 나열하는 조건을 WHERE 절에 사용할 때 쓸 수 있는 키워드</blockquote>
     </article>
@@ -251,10 +251,10 @@
   </h3>
   <section>
     <article>
-      <p>WHERE 절의 NOT 연산자는 단 하나의 기능만을 가지고 있다. NOT 연산자는 바로 뒤에 오는 조건을 부정하는 역할을 하며, 때문에 혼자서는 사용되지 않는다. NOT 연산자는 다른 연산자와는 달리 필터링할 열의 뒤가 아닌 앞에 사용된다.</p>
+      <p><code>WHERE</code> 절의 <code>NOT</code> 연산자는 단 하나의 기능만을 가지고 있다. <code>NOT</code> 연산자는 바로 뒤에 오는 조건을 부정하는 역할을 하며, 때문에 혼자서는 사용되지 않는다. <code>NOT</code> 연산자는 다른 연산자와는 달리 필터링할 열의 뒤가 아닌 앞에 사용된다.</p>
       <blockquote><strong>NOT</strong>: 조건을  부정할 때 사용되는 WHERE 절의 키워드</blockquote>
 
-      <p>다음 예제를 통해 NOT 의 쓰임을 살펴보자. DLL01 제조업체 이외의 업체에서 만난 모든 제품을 나열하려면 다음 문을 실행하면 된다.</p>
+      <p>다음 예제를 통해 <code>NOT</code> 의 쓰임을 살펴보자. DLL01 제조업체 이외의 업체에서 만난 모든 제품을 나열하려면 다음 문을 실행하면 된다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -285,7 +285,7 @@
       </code></pre>
 
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>NOT 연산자는 바로 뒤에 나오는 조건을 부정하는 역할을 한다. 즉, <code>vend_id</code>가 <code>DLL01</code>이 아닌 모든 행을 가져오게 된다.</p>
+      <p><code>NOT</code> 연산자는 바로 뒤에 나오는 조건을 부정하는 역할을 한다. 즉, vend_id가 DLL01이 아닌 모든 행을 가져오게 된다.</p>
 
       <p><code>&lt;></code> 연산자를 사용해도 같은 결과를 얻을 수 있다.</p>
 
@@ -332,7 +332,7 @@
   </h3>
   <section>
     <article>
-      <p>이 단원에서는 AND 와 OR 연산자를 사용하여 WHERE 절 내의 조건을 결합하는 방법, 조건의 평가 순서를 제어하는 방법과 IN, NOT 연산자를 사용하는 방법을 배웠다.</p>
+      <p>이 단원에서는 <code>AND</code> 와 <code>OR</code> 연산자를 사용하여 <code>WHERE</code> 절 내의 조건을 결합하는 방법, 조건의 평가 순서를 제어하는 방법과 <code>IN</code>, <code>NOT</code> 연산자를 사용하는 방법을 배웠다.</p>
     </article>
   </section>
 </div>

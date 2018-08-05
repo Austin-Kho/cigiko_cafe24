@@ -2,7 +2,7 @@
   <div class="chapter">
     <section>
       <article>
-        <p>이 단원에서는 SELECT 문을 사용하여 테이블에서 하나 이상의 열 데이터를 가져오는 방법을 배울 것이다.</p>
+        <p>이 단원에서는 <code>SELECT</code> 문을 사용하여 테이블에서 하나 이상의 열 데이터를 가져오는 방법을 배울 것이다.</p>
       </article>
     </section>
   </div>
@@ -14,9 +14,9 @@
     </h3>
     <section>
       <article>
-        <p>SQL 문은 평범한 영어 단어로 이루어진다, 이러한 단어를 키워드라고 하며 SQL 의 모든 문은 하나 이상의 키워드가 결합되어 구성된다. 'SELECT'문의 목적은 하나 이상의 테이블에서 정보를 가져오는 것이다.</p>
-        <blockquote><strong>키워드</strong>: SQL 언어의 일부로 사용되도록 예약된 단어. 키워드를 테이블이나 열의 이름으로 사용해서는 안 된다. 자주 사용되는 예약 단어는 부록 <a href="/book/01/29">E. SQL 예약 단어</a>를 참고한다.</blockquote>
-        <p>SELECT 문을 사용해서 테이블 데이터를 가져오려면 최소한 두 가지 정보를 지정해야 한다. 무엇을 선택할 것이며, 어디서 선택할 것인직 바로 이 정보다.</p>
+        <p>SQL 문은 평범한 영어 단어로 이루어진다, 이러한 단어를 키워드라고 하며 SQL 의 모든 문은 하나 이상의 키워드가 결합되어 구성된다. <code>SELECT</code>문의 목적은 하나 이상의 테이블에서 정보를 가져오는 것이다.</p>
+        <blockquote><strong>키워드</strong>: SQL 언어의 일부로 사용되도록 예약된 단어. 키워드를 테이블이나 열의 이름으로 사용해서는 안 된다.</blockquote>
+        <p><code>SELECT</code> 문을 사용해서 테이블 데이터를 가져오려면 최소한 두 가지 정보를 지정해야 한다. 무엇을 선택할 것이며, 어디서 선택할 것인직 바로 이 정보다.</p>
         <div class="tip">
           <h4>예제 따라하기</h4>
           <p>이 책의 각 단원에서 설명하는 샘플 SQL문과 샘플 출력 내용은 부록 <a href="/book/01/25">A. 샘플 테이블 스크립트</a>에서 설명하는 데이터 파일을 사용한다. 이어지는 내용의 예제를 직접 입력하고 실행하기 위해 부록 <a href="/book/01/25">A. 샘플 테이블 스크립트</a>와 <a href="/book/01/26">B. 주요 응용 프로그램에서의 사용</a>을 먼저 읽어보기 바란다.</p>
@@ -30,12 +30,12 @@
     </h3>
     <section>
       <article>
-        <p>간단한 SQL SELECT 문부터 살펴보자.</p>
+        <p>간단한 SQL <code>SELECT</code> 문부터 살펴보자.</p>
         <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
         <pre><code>SELECT prod_name<br>FROM Products;</code></pre>
 
         <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-        <p>위 문은 SELECT 문을 사용하여 Products라는 테이블에서 prod_name이라는 열을 가져온다. 가져오고자 하는 열은 이와 같이 SELECT 키워드 바로 옆에 적어주면 되며, FROM 키워드는 데이터를 가져올 테이블의 이름을 지정하는 데 사용된다.</p>
+        <p>위 문은 <code>SELECT</code> 문을 사용하여 Products라는 테이블에서 prod_name이라는 열을 가져온다. 가져오고자 하는 열은 이와 같이 <code>SELECT</code> 키워드 바로 옆에 적어주면 되며, <code>FROM</code> 키워드는 데이터를 가져올 테이블의 이름을 지정하는 데 사용된다.</p>
         <h4><span class="badge badge-pill badge-success">출 력</span></h4>
         <pre><code><table class="table-sm">
             <thead>
@@ -67,11 +67,11 @@
 
     <h3 class="sub-header"><svg id="i-file" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
       <path d="M6 2 L6 30 26 30 26 10 18 2 Z M18 2 L18 10 26 10" />
-      </svg> 어려 열 가져오기
+      </svg> 여러 열 가져오기
     </h3>
     <section>
       <article>
-        <p>테이블에서 여러 열을 가져올 때도 마찬가지로 SELECT 문을 사용한다. 유일한 차이점은 SELECT 문 뒤에 여러 열의 이름을 콤마로 구분하여 적어준다는 것 뿐이다.</p>
+        <p>테이블에서 여러 열을 가져올 때도 마찬가지로 <code>SELECT</code> 문을 사용한다. 유일한 차이점은 <code>SELECT</code> 문 뒤에 여러 열의 이름을 콤마로 구분하여 적어준다는 것 뿐이다.</p>
         <div class="tip">
             <h4><span class="badge badge-secondary">TIP</span> 콤마 사용 시 주의점</h4>
             <p>여러 열을 선택할 때는 각 열 이름 사이에 콤마를 입력해야 하지만, 가장 마지막 열 뒤에는 콤마를 넣지 않는다.</p>
@@ -80,7 +80,7 @@
         <pre><code>SELECT prod_id, prod_name, prod_price<br>FROM Products;</code></pre>
 
         <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-        <p>위 문은 SELECT 문을 사용하여 Products라는 테이블에서 prod_name이라는 열을 가져온다. 가져오고자 하는 열은 이와 같이 SELECT 키워드 바로 옆에 적어주면 되며, FROM 키워드는 데이터를 가져올 테이블의 이름을 지정하는 데 사용된다.</p>
+        <p>위 문은 <code>SELECT</code> 문을 사용하여 Products라는 테이블에서 prod_name이라는 열을 가져온다. 가져오고자 하는 열은 이와 같이 <code>SELECT</code> 키워드 바로 옆에 적어주면 되며, <code>FROM</code> 키워드는 데이터를 가져올 테이블의 이름을 지정하는 데 사용된다.</p>
         <h4><span class="badge badge-pill badge-success">출 력</span></h4>
         <pre><code>          
         <table class="table-sm">
@@ -135,7 +135,7 @@
     </h3>
     <section>
       <article>
-        <p>이 단원에서는 SQL SELECT 문을 사용하여 테이블에서 하나의 열, 여러 열, 그리고 모든 열을 가져오는 방법을 배웠다. 다음은 가져온 데이터를 정렬하는 방법을 배울 차례이다.</p>
+        <p>이 단원에서는 SQL <code>SELECT</code> 문을 사용하여 테이블에서 하나의 열, 여러 열, 그리고 모든 열을 가져오는 방법을 배웠다. 다음은 가져온 데이터를 정렬하는 방법을 배울 차례이다.</p>
       </article>
     </section>
   </div>

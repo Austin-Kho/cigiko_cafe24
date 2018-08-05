@@ -19,7 +19,7 @@
       <blockquote><strong>와일드카드</strong>: 값의 일부가 일치하는 경우를 검색하는 데 사용되는 특별한 문자</blockquote>
       <blockquote><strong>검색 패턴</strong>: 리터럴 텍스트, 와일드카드 문자 또는 이들의 조합으로 만들어지는 검색 조건</blockquote>
 
-      <p>와일드카드는 그 자체로 SQL WHERE 절 내에서 특별한 의미를 가지는 문자이며, SQL 은 몇 가지 와일드카드 문자를 지원한다.</p>
+      <p>와일드카드는 그 자체로 SQL <code>WHERE</code> 절 내에서 특별한 의미를 가지는 문자이며, SQL 은 몇 가지 와일드카드 문자를 지원한다.</p>
       <p>검색 절에서 와일드카드를 사용하려면 <code>LIKE</code> 연산자를 사용해야 한다. <code>LIKE</code> 는 이어지는 검색 패턴에 따라 와일드카드 비교를 수행하여 일치하는 결과를 반환하도록 한다.</p>      
     </article>
   </section>
@@ -27,7 +27,7 @@
   <h4 class="sub-header">퍼센트 기호(%) 와일드카드</h4>
   <section>
     <article>
-      <p>가장 자주 사용되는 와일드카드로 퍼센트 기호(%)가 있다. 검색 문자열 내에서 %를 사용하면 개수에 관계 없이 모든 문자를 의미한다. 즉 Fish라는 단어로 시작되는 모든 제품을 검색하려면 다음과 같이 SELECT 문을 작성하면 된다.</p>
+      <p>가장 자주 사용되는 와일드카드로 퍼센트 기호(<code>%</code>)가 있다. 검색 문자열 내에서 %를 사용하면 개수에 관계 없이 모든 문자를 의미한다. 즉 Fish라는 단어로 시작되는 모든 제품을 검색하려면 다음과 같이 <code>SELECT</code> 문을 작성하면 된다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -56,7 +56,7 @@
       </code></pre>
 
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 예제에서는 'Fish%' 를 검색 패턴으로 사용하였다. 이 절이 처리되면 Fish로 시작하는 모든 값이 검색된다. %는 Fish라는 단어 뒤에 어떤 문자가 몇 개나 오던 관계 없이 모두 선택하도록 하는 효과를 가지고 있다.</p>
+      <p>이 예제에서는 '<code>Fish%</code>' 를 검색 패턴으로 사용하였다. 이 절이 처리되면 Fish로 시작하는 모든 값이 검색된다. %는 Fish라는 단어 뒤에 어떤 문자가 몇 개나 오던 관계 없이 모두 선택하도록 하는 효과를 가지고 있다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">참고</span> Micorsoft Access 와일드카드</h4>
         <p>Micorsoft Access를 사용한다면 % 대신 * 를 사용해야 한다.</p>
@@ -89,7 +89,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>'%bean bag%' 이라는 검색 패턴은 <i>bean bag</i> 앞뒤로 어떤 문제가 몇 개나 들어가던지 관계없이 <i>bean bag</i>이라는 단어만 포함되면 모두 검색되도록 지정한다.</p>
+      <p>'<code>%bean bag%</code>' 이라는 검색 패턴은 <i>bean bag</i> 앞뒤로 어떤 문제가 몇 개나 들어가던지 관계없이 <i>bean bag</i>이라는 단어만 포함되면 모두 검색되도록 지정한다.</p>
 
       <p>실제로는 드문 경우이며 유용하게 사용되는 경우는 거의 없긴 하지만 검색 패턴의 중간 부분에도 와일드카드를 사용할 수 있다. 예를 들어 F로 시작하고 y로 끝나는 모든 제품을 검색하려면 다음과 같은 SQL 문을 사용한다.</p>
 
@@ -111,7 +111,7 @@
   <h4 class="sub-header">언더스코어(_) 와일드카드</h4>
   <section>
     <article>
-      <p>또 하나의 유용한 와일드카드가 바로 언더스코어(_)이다. 이 문자는 %마찬가지로 모든 문자를 의미하지만 여러 문자가 아닌 단 하나의 문자만을 의미한다.</p>
+      <p>또 하나의 유용한 와일드카드가 바로 언더스코어(<code>_</code>)이다. 이 문자는 <code>%</code>마찬가지로 모든 문자를 의미하지만 여러 문자가 아닌 단 하나의 문자만을 의미한다.</p>
 
       <div class="tip">
         <h4><span class="badge badge-secondary">참고</span> Micorsoft Access 와일드카드</h4>
@@ -144,7 +144,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>WHERE 절에 사용된 검색 패턴을 보면 두 개의 언더스코어가 있고 나머지는 리터럴 텍스트이다. 언더스코어가 한 개의 모든 문자에 해당하므로 이 조건에 맞으려면 inch teddy bear 앞에 두 글자가 있는 문자열이어야 하며 12와 18이 검색되었다. 제품 중에 8 inch teddy bear 도 있지만 두 글자가 있어야 한다는 조건에 부합하지 못하여 제외되었다. 반대로 다음과 같이 언더스코어가 아닌 퍼센트 기호를 사용하면 세 제품이 모두 반환된다.</p>
+      <p><code>WHERE</code> 절에 사용된 검색 패턴을 보면 두 개의 언더스코어가 있고 나머지는 리터럴 텍스트이다. 언더스코어가 한 개의 모든 문자에 해당하므로 이 조건에 맞으려면 inch teddy bear 앞에 두 글자가 있는 문자열이어야 하며 12와 18이 검색되었다. 제품 중에 8 inch teddy bear 도 있지만 두 글자가 있어야 한다는 조건에 부합하지 못하여 제외되었다. 반대로 다음과 같이 언더스코어가 아닌 퍼센트 기호를 사용하면 세 제품이 모두 반환된다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>        
         SELECT prod_id, prod_name<br>
@@ -170,14 +170,14 @@
           </tbody>
         </table>
       </code></pre>
-      <p>문자가 없는 경우에도 조건이 성립하는 %와는 달리, _는 항상 한 개의 문자만 있어야만 조건이 성립한다.</p>
+      <p>문자가 없는 경우에도 조건이 성립하는 <code>%</code>와는 달리, <code>_</code>는 항상 한 개의 문자만 있어야만 조건이 성립한다.</p>
     </article>
   </section>
 
   <h4 class="sub-header">괄호([]) 와일드카드</h4>
   <section>
     <article>
-      <p>괄호([]) 와일드카드는 문자의 모음을 지정하는 데 사용되며, 이 와일드카드가 있는 위치에 이 목록의 문자 중 하나와 일치하는 문자가 있으면 일치하는 행으로 보고 검색된다.</p>
+      <p>괄호(<code>[]</code>) 와일드카드는 문자의 모음을 지정하는 데 사용되며, 이 와일드카드가 있는 위치에 이 목록의 문자 중 하나와 일치하는 문자가 있으면 일치하는 행으로 보고 검색된다.</p>
 
       <div class="tip">
         <h4><span class="badge badge-secondary">참고</span> 문자 모음이 항상 지원되는 것은 아니다</h4>
@@ -214,8 +214,8 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 문의 WHERE 절은 '[JM]%'이다. 두 개의 와일드카드가 쓰였는데, 일단 [JM]은 연락처 이름이 괄호 내에 있는 문자 중 하나로 시작해야 한다는 것을 의미하고, 한 문자와만 일치한다. 즉, 이름이 한 자를 넘을 경우 일치하지 않게 된다. 두 번째 와일드카드인 %는 [JM]뒤로 모든 길이의 모든 문자열이 있을 수 있다는 의미이므로, 결과적으로 J나 M으로 시작하는 모든 문자열이 선택된다.</p>
-      <p>이 와일드카드를 부정할 때는 캐럿 문자인 ^를 앞에 붙여주면 된다. 예를 J나 M으로 시작하지 않는 모든 문자를 선택하려면 다음과 같이 입력한다.</p>
+      <p>이 문의 <code>WHERE</code> 절은 '<code>[JM]%</code>'이다. 두 개의 와일드카드가 쓰였는데, 일단 [JM]은 연락처 이름이 괄호 내에 있는 문자 중 하나로 시작해야 한다는 것을 의미하고, 한 문자와만 일치한다. 즉, 이름이 한 자를 넘을 경우 일치하지 않게 된다. 두 번째 와일드카드인 <code>%</code>는 [JM]뒤로 모든 길이의 모든 문자열이 있을 수 있다는 의미이므로, 결과적으로 J나 M으로 시작하는 모든 문자열이 선택된다.</p>
+      <p>이 와일드카드를 부정할 때는 캐럿 문자인 <code>^</code>를 앞에 붙여주면 된다. 예를 J나 M으로 시작하지 않는 모든 문자를 선택하려면 다음과 같이 입력한다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -230,7 +230,7 @@
         <p>Micorsoft Access를 사용할 경우 목록을 부정하려면 ^ 대신 ! 를 사용해야 한다. 즉, [^JM]이 아니라 [!JM]이 된다.</p>
       </div>
 
-      <p>물론 NOT 연산자를 써도 동일한 결과를 얻을 수 있다. ^의 유일한 장점은 WHERE 저를 단순하게 해준다는 것 뿐이다.</p>
+      <p>물론 <code>NOT</code> 연산자를 써도 동일한 결과를 얻을 수 있다. <code>^</code>의 유일한 장점은 <code>WHERE</code> 절을 단순하게 해준다는 것 뿐이다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -264,7 +264,7 @@
   </h3>
   <section>
     <article>
-      <p>이 단원에서는 와일드카드가 무엇이며 WHERE 절에서 SQL 와일드카드를 어떻게 사용하는지 배웠다. 또한 와일드카드를 어떻게 사용하면 좋은지 몇 가지 팁도 살펴보았다.</p>
+      <p>이 단원에서는 와일드카드가 무엇이며 <code>WHERE</code> 절에서 SQL 와일드카드를 어떻게 사용하는지 배웠다. 또한 와일드카드를 어떻게 사용하면 좋은지 몇 가지 팁도 살펴보았다.</p>
     </article>
   </section>
 </div>

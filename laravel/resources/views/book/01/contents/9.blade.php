@@ -23,7 +23,7 @@
     <article>
       <p>이 단원에서 설명하는 예제를 살펴보기 전에 SQL 함수를 사용하면 발생할 수 있는 문제에 대해 알아둘 필요가 있다.</p>
 
-      <p>SELECT 와 같은 SQL 문은 대부분의 DBMS 에서 동일하게 지원하지만, 함수는 특정 DBMS 에서만 지원하는 경우가 많으며 지원되는 방식도 서로 다르다. 모든 DBMS 에서 지원한다 하더라도 그 사용 방식은 서로 다르다. 자주 사용 되는 함수와 각 DBMS 의 지원 방식을 정리한 표 8.1 을 보면 이러한 문제를 이해할 수 있을 것이다.</p>
+      <p><code>SELECT</code> 와 같은 SQL 문은 대부분의 DBMS 에서 동일하게 지원하지만, 함수는 특정 DBMS 에서만 지원하는 경우가 많으며 지원되는 방식도 서로 다르다. 모든 DBMS 에서 지원한다 하더라도 그 사용 방식은 서로 다르다. 자주 사용 되는 함수와 각 DBMS 의 지원 방식을 정리한 표 8.1 을 보면 이러한 문제를 이해할 수 있을 것이다.</p>
 
       <h5>표 8.1 DBMS 함수의 차이점</h5>
       <table class="table table-hover table-sm">
@@ -72,7 +72,7 @@
         <li>사용하는 DBMS 에 관련된 정보를 반환하는 시스템 함수. 예를 들어 로그인 정보를 반환한다.</li>
       </ul>
 
-      <p>지난 단원에서 텍스트 제어 함수 중 하나인 RTRIM() 함수를 사용했었다. 이는 열 값의 끝 부분에 있는 공백을 잘라내는 기능을 한다. 이번에는 <code>UPPER()</code> 함수를 예로 들어본다.</p>
+      <p>지난 단원에서 텍스트 제어 함수 중 하나인 <code>RTRIM()</code> 함수를 사용했었다. 이는 열 값의 끝 부분에 있는 공백을 잘라내는 기능을 한다. 이번에는 <code>UPPER()</code> 함수를 예로 들어본다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT vend_name, UPPER(vend_name) AS vend_name_upcase<br>
@@ -98,7 +98,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이와 같이 UPPER() 함수는 모든 텍스트를 대분자로 변환하는 기능을 한다. 결과를 보면 왼쪽은 Vendors 테이블에 저장된 그대로의 데이터이고, 오른쪽은 텍스트를 대문자로 변환하여 vend_name_upcase라는 열에 저장한 데이터이다.</p>
+      <p>이와 같이 <code>UPPER()</code> 함수는 모든 텍스트를 대분자로 변환하는 기능을 한다. 결과를 보면 왼쪽은 Vendors 테이블에 저장된 그대로의 데이터이고, 오른쪽은 텍스트를 대문자로 변환하여 vend_name_upcase라는 열에 저장한 데이터이다.</p>
       <p>자주 사용되는 텍스트 제어 함수</p>
       <table class="table table-hover table-sm">
         <thead>
@@ -142,7 +142,7 @@
           </tr>
         </tbody>
       </table>
-      <p>다른 함수의 쓰임은 쉽게 이해할 수 있을 것이고, SOUNDEX 에 대해서만 설명하자면, 문자열의 각 텍스트를 발음을 기준으로 하여 영숫자 패턴으로 변환하는 알고리즘으로, 문자열을 철자가 아니라 소리나는 음성으로 비교하는 데 사용된다. SOUNDEX는 SQL 개념이 아니므로 대부분의 DBMS 는 이를 지원하지 않는다.</p>
+      <p>다른 함수의 쓰임은 쉽게 이해할 수 있을 것이고, <code>SOUNDEX</code> 에 대해서만 설명하자면, 문자열의 각 텍스트를 발음을 기준으로 하여 영숫자 패턴으로 변환하는 알고리즘으로, 문자열을 철자가 아니라 소리나는 음성으로 비교하는 데 사용된다. <code>SOUNDEX</code>는 SQL 개념이 아니므로 대부분의 DBMS 는 이를 지원하지 않는다.</p>
     </article>
   </section>
 
@@ -185,22 +185,22 @@
         WHERE DATEPART('yyyy', order_date) = 2004;
       </code></pre>  
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>DATEPART() 함수는 두 개의 매개변수를 받는데, 하나는 반환할 부분이고 다른 하나는 반환 대상이 되는 날짜이다. 이 예에서는 order_date 열 연도 부분만 2004년에 해당하는 주문만 걸러내게 된다.</p>
-      <p>PostgreSQL 에서는 같은 기능을 하는 DATE_PART()라는 함수를 사용한다.</p>
+      <p><code>DATEPART()</code> 함수는 두 개의 매개변수를 받는데, 하나는 반환할 부분이고 다른 하나는 반환 대상이 되는 날짜이다. 이 예에서는 order_date 열 연도 부분만 2004년에 해당하는 주문만 걸러내게 된다.</p>
+      <p>PostgreSQL 에서는 같은 기능을 하는 <code>DATE_PART()</code>라는 함수를 사용한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT order_num<br>
         FROM Orders<br>
         WHERE DATE_PART('year', order_date) = 2004;
       </code></pre>
-      <p>MySQL 에는 대부분의 데이터 제어함수가 있지만 DATEPART()는 지원하지 않는다. 따라서 이와 같은 기능을 가진 YEAR()를 사용하여 날짜에서 연도 부분을 떼어내야 한다.</p>
+      <p>MySQL 에는 대부분의 데이터 제어함수가 있지만 <code>DATEPART()</code>는 지원하지 않는다. 따라서 이와 같은 기능을 가진 <code>YEAR()</code>를 사용하여 날짜에서 연도 부분을 떼어내야 한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT order_num<br>
         FROM Orders<br>
         WHERE YEAR(order_date) = 2004;
       </code></pre>
-      <p>Oracle 에는 DATEPART() 함수가 없으므로, 같은 결과를 얻으려면 다음과 같이 두 함수를 사용해야 한다.</p>
+      <p>Oracle 에는 <code>DATEPART()</code> 함수가 없으므로, 같은 결과를 얻으려면 다음과 같이 두 함수를 사용해야 한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT order_num<br>
@@ -208,8 +208,8 @@
         WHERE to_number(to_char(order_date, 'YY')) = 2004;
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 예에서는 to_char() 함수는 날짜의 일부분을 얻는 데 사용되었고 to_number() 는 이를 다시 숫자 값으로 바꾸어 2004와 비교하는 데 사용되었다.</p>
-      <p>같은 결과를 다음과 같이 BETWEEN 연산자를 사용해도 얻을 수 있다.</p>
+      <p>이 예에서는 <code>to_char()</code> 함수는 날짜의 일부분을 얻는 데 사용되었고 <code>to_number()</code> 는 이를 다시 숫자 값으로 바꾸어 2004와 비교하는 데 사용되었다.</p>
+      <p>같은 결과를 다음과 같이 <code>BETWEEN</code> 연산자를 사용해도 얻을 수 있다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT order_num<br>
@@ -217,8 +217,8 @@
         WHERE order_date BETWEEN to_date('01-JAN-2004') <br>AND to_date('31-DEC-2004');
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 예에서 Oracle의 to_date() 함수는 두 문자열을 날짜로 변환하였다. 하나는 2004년 1월 1일이고, 다른 하나는 2004년 12월 31일이다. 표준 연산자인 BETWEEN은 이 두 날짜 사이의 모든 주문을 찾는데 필요하다.</p>
-      <p>여기서는 연도 부분을 얻어 비교했지만, 만약 월로 비교하려면 AND 연산자를 사용하여 연도와 월을 모두 비교하면 된다.</p>
+      <p>이 예에서 Oracle의 <code>to_date()</code> 함수는 두 문자열을 날짜로 변환하였다. 하나는 2004년 1월 1일이고, 다른 하나는 2004년 12월 31일이다. 표준 연산자인 <code>BETWEEN</code>은 이 두 날짜 사이의 모든 주문을 찾는데 필요하다.</p>
+      <p>여기서는 연도 부분을 얻어 비교했지만, 만약 월로 비교하려면 <code>AND</code> 연산자를 사용하여 연도와 월을 모두 비교하면 된다.</p>
     </article>
   </section>
 
