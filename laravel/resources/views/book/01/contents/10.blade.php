@@ -84,7 +84,7 @@
         </table>
       </code></pre>      
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 SELECT 문은 하나의 값, 즉 Products 테이블에 있는 모든 제품의 평균 가격을 반환한다. 이 값은 avg_price라는 별칭에 저장되는데, 별칭에 대해서는 7장을 참조하기 바란다.</p>
+      <p>이 <code>SELECT</code> 문은 하나의 값, 즉 Products 테이블에 있는 모든 제품의 평균 가격을 반환한다. 이 값은 avg_price라는 별칭에 저장되는데, 별칭에 대해서는 7장을 참조하기 바란다.</p>
 
       <p><code>AVG()</code> 를 사용하여 특정한 열이나 행의 값에 대해서만 평균을 계산할 수도 있다. 예를 들어 특정한 공급업체의 제품에 대해서만 평균ㅇㄹ 내려면 다음과 같이 하면 된다.</p>
 
@@ -111,7 +111,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이전 예와 다른 점은 SELECT 문에 WHERE 절이 있다는 것뿐이다.</p>
+      <p>이전 예와 다른 점은 <code>SELECT</code> 문에 <code>WHERE</code> 절이 있다는 것뿐이다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">주의</span> 각 열에 대한 평균값</h4>
         <p>AVG()를 사용하여 특정한 숫자 열의 평균값만 구할 수도 있다. 이 때는 이 열의 이름을 함수의 매개변수로 입력하면 된다. 여러 열의 평균값을 얻으려면 AVG()함수를 여러번 사용해야 한다.</p>
@@ -124,10 +124,10 @@
   <h4 class="sub-header">COUNT() 함수</h4>
   <section>
     <article>
-      <p><code>COUNT()</code> 함수는 말 그대로 개수를 세는 기능을 한다. 테이블의 전체 행 개수를 세거나, 특정 조건에 맞는 행 개수만 세는 것 모두 가능하다. COUNT()는 다음과 같은 두 방식으로 사용할 수 있다.</p>
+      <p><code>COUNT()</code> 함수는 말 그대로 개수를 세는 기능을 한다. 테이블의 전체 행 개수를 세거나, 특정 조건에 맞는 행 개수만 세는 것 모두 가능하다. <code>COUNT()</code>는 다음과 같은 두 방식으로 사용할 수 있다.</p>
       <ul>
-        <li>값이 있건 NULL 값이건 간에 상관없이 테이블의 모든 행 개수를 세려면 COUNT(*)를 사용한다.</li>
-        <li>NULL 값은 제외하고 특정한 열에서 값이 있는 행의 개수만 세려면 COUNT(열)를 사용한다.</li>
+        <li>값이 있건 <code>NULL</code> 값이건 간에 상관없이 테이블의 모든 행 개수를 세려면 <code>COUNT(*)</code>를 사용한다.</li>
+        <li><code>NULL</code> 값은 제외하고 특정한 열에서 값이 있는 행의 개수만 세려면 <code>COUNT(열)</code>를 사용한다.</li>
       </ul>
       <p>다음 예에서는 Customers 테이블에 있는 모든 고객의 수를 계산한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
@@ -150,7 +150,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 예에서는 값에 상관없이 모든 행을 계산하기 위해 COUNT(*) 를 사용하였다. 반환된 값은 num_cust 에 저장된다.</p>
+      <p>이 예에서는 값에 상관없이 모든 행을 계산하기 위해 <code>COUNT(*)</code> 를 사용하였다. 반환된 값은 num_cust 에 저장된다.</p>
 
       <p>다음 예는 전자 메일 주소가 있는 고객의 수만 계산한다.</p>
 
@@ -174,7 +174,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이번에는 <code>cust_email</code> 열에 값이 있는 고객의 수만 계삲기 위해 <code>COUNT(cust_email)</code>을 사용하였다. 결과가 3이라는 것은 총 5명의 고갱 중 3명만이 전자 메일 주소가 기입되어 있다는 의미이다.</p>
+      <p>이번에는 cust_email 열에 값이 있는 고객의 수만 계산하기 위해 <code>COUNT(cust_email)</code>을 사용하였다. 결과가 3이라는 것은 총 5명의 고갱 중 3명만이 전자 메일 주소가 기입되어 있다는 의미이다.</p>
       <div class="tip">
         <h4>NULL 값</h4>
         <p>열 이름을 지정하지 않는 한 값이 NULL인 열은 COUNT() 함수에서 무시된다. 물론 <code>*</code> 기호를 사용할 경우는 계산에 포함된다.</p>
@@ -206,7 +206,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>MAX() 함수는 Products 테이블에서 가격이 가장 비싼 제품의 가격을 반환한다.</p>
+      <p><code>MAX()</code> 함수는 Products 테이블에서 가격이 가장 비싼 제품의 가격을 반환한다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">TIP</span> 숫자가 아닌 데이터에 MAX() 함수를 사용</h4>
         <p><code>MAX()</code> 함수는 가장 큰 숫자 또는 날짜 데이터를 찾는 데 사용되지만 대부분(전부는 아니다)의 DBMS 에서는 텍스트 열에 대해서도  이 함수를 사용할 수 있다. 텍스트 데이터에 <code>MAX()</code> 함수를 적용하면 그 열을 정렬했을 때 가장 마지막에 오는 데이터가 최대값으로 간주되어 반환된다.</p>
@@ -323,8 +323,8 @@
     <article>
       <p>다섯 개의 집계 함수는 다음과 같이 두 가지 방법으로 사용할 수 있다.</p>
       <ul>
-        <li>ALL 인수를 지정하여 모든 행을 계산. ALL 이 기본 인수이므로 인수를 지정하지 않으면 이 방식으로 계산된다.</li>
-        <li>고유값만 계산(<mark>중복되는 값들은 1회만 계산하고 나머지는 무시</mark>)하려면 DISTINCT 인수를 지정한다.</li>
+        <li><code>ALL</code> 인수를 지정하여 모든 행을 계산. <code>ALL</code> 이 기본 인수이므로 인수를 지정하지 않으면 이 방식으로 계산된다.</li>
+        <li>고유값만 계산(<mark>중복되는 값들은 1회만 계산하고 나머지는 무시</mark>)하려면 <code>DISTINCT</code> 인수를 지정한다.</li>
       </ul>
       <br>
       <div class="tip">
@@ -376,7 +376,7 @@
   </h3>
   <section>
     <article>
-      <p>지금까지 모든 집계 함수 예는 하나의 함수만 사용했지만, 실제로는 SELECT 문에서 여러 집계 함수를 넣어 활용하면 더욱 유용하다. 예를 보자.</p>
+      <p>지금까지 모든 집계 함수 예는 하나의 함수만 사용했지만, 실제로는 <code>SELECT</code> 문에서 여러 집계 함수를 넣어 활용하면 더욱 유용하다. 예를 보자.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT COUNT(*) AS num_items,<br>
@@ -403,7 +403,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>하나의 SELECT 문으로 한 번에 여러 값을 얻어냈다. 즉 Products 테이블에 있는 물품의 수, 가격이 가장 높은 물품과 낮은 물품, 그리고 가격의 평균을 구할 수 있다.</p>
+      <p>하나의 <code>SELECT</code> 문으로 한 번에 여러 값을 얻어냈다. 즉 Products 테이블에 있는 물품의 수, 가격이 가장 높은 물품과 낮은 물품, 그리고 가격의 평균을 구할 수 있다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">주의</span> 별칭 이름 짓기</h4>
         <p>집계 함수의 결과를 담을 별칭을 지정할 때는 테이블에 있는 실제 열을 포함하지 않는 이름으로 지정하자. 포함하는 것이 잘못된 것은 아니지만 많은 DBMS 에서 이러한 형식을 지원하지 않으므로 예기치 못한 오류가 발생할 수 있다.</p>

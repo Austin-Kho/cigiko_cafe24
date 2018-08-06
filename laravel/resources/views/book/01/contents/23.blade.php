@@ -16,7 +16,7 @@
     <article>
       <p>SQL 은 여러 버전을 거쳐 완전하고 강력한 언어로 발전하고 있다. SQL이 지원하는 강력한 기능 중에는 제약 조건과 같은 데이터 조작 기술을 제공하는 복잡한 도구도 포함된다.</p>
       <p>관계형 테이블과 참조 무결성은 지금까지 몇 번 언급 했는데, 이 내용을 설명하면서 관계형 데이터베이스는 데이터를 여러 테이블에 저장하며 각 테이블의 데이터는 서로 연관되어 있다고 설명했었다. 이렇게 테이블 사이의 참조를 만드는 데 사용되는 것이 바로 키이며, 이러한 관계를 올바르게 유지하는 것이 참조 무결성이다.</p>
-      <p>관계형 데이터베이스 디자인이 올바르게 작동하려면 올바른 데이터만 테이블에 넣어야 한다. 예를 들어 <code>Orders</code> 테이블에는 주문 정보가 저장되고 <code>OrderItems</code> 테이블에는 주문의 상세 정보가 저장되므로 OrderItems 에서 참조하는 주문의 ID는 반드시 <code>Orders</code> 테이블에 있어야 할 것이다. 마찬가지로 <code>Orders</code>에서 참조하는 고객의 정보 역시 <code>Customers</code> 테이블에 반드시 있어야 한다.</p>
+      <p>관계형 데이터베이스 디자인이 올바르게 작동하려면 올바른 데이터만 테이블에 넣어야 한다. 예를 들어 Orders 테이블에는 주문 정보가 저장되고 OrderItems 테이블에는 주문의 상세 정보가 저장되므로 OrderItems 에서 참조하는 주문의 ID는 반드시 Orders 테이블에 있어야 할 것이다. 마찬가지로 Orders에서 참조하는 고객의 정보 역시 Customers 테이블에 반드시 있어야 한다.</p>
       <p>물론 새 행을 추가하기 전에 <code>SELECT</code> 문으로 다른 테이블에 데이터를 넣고 올바른 값인지 확인해보는 방법도 있지만, 다음 이유로 인해 이는 절대 좋은 방법이 아니다.</p>
       <ul>
         <li>데이터베이스 무결성 규칙이 클라이언트 수준에서 수행되면 이를 따르는 클라이언트도 있고, 그렇지 않은 클라이언트도 있을 수 있다.</li>
@@ -58,7 +58,7 @@
         );
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 예의 경우 <code>vend_id</code> 뒤에 <code>PRIMARY KEY</code> 키워드가 붙었으므로 이 열이 기본 키가 된다.</p>
+      <p>이 예의 경우 vend_id 뒤에 <code>PRIMARY KEY</code> 키워드가 붙었으므로 이 열이 기본 키가 된다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -74,9 +74,9 @@
   <section>
     <article>
       <p>외래 키는 그 값이 다른 테이블의 기본 키에 나열된 값이어야 하는 열을 말한다. 외래 키는 참조 무결성을 유지하기 위한 필수 조건이다. 이해를 위해 예를 들어 보자.</p>
-      <p><code>Orders</code> 테이블에는 각 주문이 입력된 하나씩의 행이 포함되어 있고 고객 정보는 <code>Customers</code> 테블에 저자되어 있다. <code>Orders</code> 테이블의 주문은 <code>Customers</code> 테이블에 있는 고객의 ID와 연결되어 있는데, 이 고객 ID 가 바로 <code>Customers</code> 테이블의 기본 키이다. 즉 각 고객은 고유한 ID가 있고 각 주문은 주문 번호라는 고유한 ID가 <code>Orders</code> 테이블에 있다.</p>
-      <p><code>Orders</code> 테이블에 있는 고객 ID 열의 값은 고유할 필요는 없다. 고객이 여러 주문을 한 경우 같은 고객 ID가 여러 주문 정보에 나타날 것이기 때문이다. 하지만 각 주문에 나열된 고객의 ID는 반드시 <code>Customers</code> 테이블에 있는 값이어야 한다.</p>
-      <p>외래 키가 하는 역할이 바로 이것이다. <code>Orders</code> 테이블의 외래 키는 바로 고객의 ID이며, 이 열에서 <code>Customers</code> 테이블의 기본 키만 값으로 사용할 수 있다.</p>
+      <p>Orders 테이블에는 각 주문이 입력된 하나씩의 행이 포함되어 있고 고객 정보는 Customers 테블에 저자되어 있다. Orders 테이블의 주문은 Customers 테이블에 있는 고객의 ID와 연결되어 있는데, 이 고객 ID 가 바로 Customers 테이블의 기본 키이다. 즉 각 고객은 고유한 ID가 있고 각 주문은 주문 번호라는 고유한 ID가 Orders 테이블에 있다.</p>
+      <p>Orders 테이블에 있는 고객 ID 열의 값은 고유할 필요는 없다. 고객이 여러 주문을 한 경우 같은 고객 ID가 여러 주문 정보에 나타날 것이기 때문이다. 하지만 각 주문에 나열된 고객의 ID는 반드시 Customers 테이블에 있는 값이어야 한다.</p>
+      <p>외래 키가 하는 역할이 바로 이것이다. Orders 테이블의 외래 키는 바로 고객의 ID이며, 이 열에서 Customers 테이블의 기본 키만 값으로 사용할 수 있다.</p>
       <p>외래 키를 정의하는 방법을 알아보자.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -88,7 +88,7 @@
         );
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>테이블 정의에 <code>REFERENCES</code> 키워드가 사용되었으며 이는 <code>cust_id</code>의 값이 <code>Customers</code> 테이블에 있는 <code>cust_id</code> 값 중 하나여야 함을 지정하고 있다.</p>
+      <p>테이블 정의에 <code>REFERENCES</code> 키워드가 사용되었으며 이는 cust_id의 값이 Customers 테이블에 있는 cust_id 값 중 하나여야 함을 지정하고 있다.</p>
 
       <p><code>ALTER TABLE</code> 문에서 <code>CONSTRAINT</code> 구문을 사용해도 외래 키를 정의할 수 있다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
@@ -99,7 +99,7 @@
       </code></pre>
       <div class="tip">
         <h4><span class="badge badge-secondary">TIP</span> 외래 키는 실수로 삭제하는 것을 막아준다.</h4>
-        <p>참조 무결성을 유지하는 것 이외에도 외래 키는 중요한 다른 기능이 있다. 외래 키가 정의되고 나면 DBMS는 다른 테이블과 연결된 행의 삭제를 허용하지 않는다. 예를 들어 이미 주문을 한 고객은 Orders 테이블에 고객 ID가 있을 것이므로 <code>Customers</code> 테이블에서 이 고객을 삭제할 수 없다. 고객을 삭제할 수 있는 유일한 방법은 연관된 주문을 먼저 삭제한 다음 고객을 삭제한는 방법 뿐이다. 이 때문에 외래 키를 사용하면 실수로 연관된 데이터를 삭제하는 것을 방지할 수 있다.</p>
+        <p>참조 무결성을 유지하는 것 이외에도 외래 키는 중요한 다른 기능이 있다. 외래 키가 정의되고 나면 DBMS는 다른 테이블과 연결된 행의 삭제를 허용하지 않는다. 예를 들어 이미 주문을 한 고객은 Orders 테이블에 고객 ID가 있을 것이므로 Customers 테이블에서 이 고객을 삭제할 수 없다. 고객을 삭제할 수 있는 유일한 방법은 연관된 주문을 먼저 삭제한 다음 고객을 삭제한는 방법 뿐이다. 이 때문에 외래 키를 사용하면 실수로 연관된 데이터를 삭제하는 것을 방지할 수 있다.</p>
         <p>그러나 일부 DBMS에서는 <i>계단식 삭제</i>라는 기능을 지원하는데, 이 기능을 사용할 경우 특정한 행을 테이블에서 삭제하면 그에 관련된 모든 데이터가 자동으로 삭제된다. 예를 들어 고객을 삭제하면 그 고객이 주문한 내역도 모두 자동으로 삭제된다.</p>
       </div>
     </article>
@@ -132,7 +132,7 @@
         <li>특정한 값만 허용 - 예를 들어 성별 필드에는 M이나 F값만 허용된다.</li>
       </ul>
       <p>즉 데이터 형식은 열에 저장할 수 있는 데이터의 형식을 제한하지만 <code>CHECK</code> 제약 조건은 이러한 제한의 범위를 더 좁혀서 값의 범위를 제한하는 것이다.</p>
-      <p>다음 예는 <code>CHECK</code> 제약 조건을 <code>OrderItems</code> 테이블에 적용하여 모든 항목의 수량이 0보다 크도록 제한하고 있다.</p>
+      <p>다음 예는 <code>CHECK</code> 제약 조건을 OrderItems 테이블에 적용하여 모든 항목의 수량이 0보다 크도록 제한하고 있다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         CREATE TABLE OrderItems<br>
@@ -183,14 +183,14 @@
 
       <p>어떤 때 인덱스를 사용해야 한다고 단정하기는 어렵다. 많은 DBMS 에서 인덱스의 효율성을 확인할 수 있는 유틸리티를 제공하고 있으므로 이러한 기능을 통해 미리 확인해보거나, 정기적으로 그 유용성을 테스트해보는 방법 밖에는 없다.</p>
 
-      <p>인덱스는 CREATE INDEX 문을 통해 만들 수 있으며, 구체적인 구문은 DBMS 마다 다르다. 다음은 <code>Products</code> 테이블의 제품 이름 열에 간단한 인덱스를 만드는 예이다.</p>
+      <p>인덱스는 <code>CREATE INDEX</code> 문을 통해 만들 수 있으며, 구체적인 구문은 DBMS 마다 다르다. 다음은 Products 테이블의 제품 이름 열에 간단한 인덱스를 만드는 예이다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         CREATE INDEX prod_name_ind<br>
         ON Products (prod_name);
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>모든 인덱스의 이름은 고유하게 지정해야 한다. 이 예에서 인덱스 이름은 <code>CREATE INDEX</code> 키워드 뒤에 <code>prod_name_ind</code> 라는 이름으로 지정되었으며 인덱싱할 테이블의 이름은 <code>ON</code> 뒤에, 인덱스에 포함할 열 이름은 테이블 이름 뒤에 괄호로 묶어 지정되었다.</p>
+      <p>모든 인덱스의 이름은 고유하게 지정해야 한다. 이 예에서 인덱스 이름은 <code>CREATE INDEX</code> 키워드 뒤에 prod_name_ind 라는 이름으로 지정되었으며 인덱싱할 테이블의 이름은 <code>ON</code> 뒤에, 인덱스에 포함할 열 이름은 테이블 이름 뒤에 괄호로 묶어 지정되었다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">TIP</span> 인덱스의 재확인</h4>
         <p>인덱스의 효율은 테이블 데이터가 추가되거나 변경됨에 따라 변한다. 실제로 특정 상황에서 무척 유용하던 인덱스가 몇 개월 후에는 그렇지 않게 변해버리는 경우를 많은 데이터베이스 개발자들이 겪어보았을 것이다. 따라서 수시로 인덱스를 다시 살펴보고 현재 상황이 유용한지 확인하는 것이 중요하다.</p>
@@ -206,7 +206,7 @@
     <article>
       <p>트리거는 특정한 데이터베이스 작업이 발생하면 자동으로 실행되는 특별한 저장 프로시저이다. 트리거는 테이블에 대한 <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> 작업 및 이러한 작업의 조합과 연계되어 실행될 수 있다.</p>
 
-      <p>저장 프로시저는 단순히 저장된 SQL 문이지만 트리거는 특정한 테이블과 연계된 것으로, 예를 들어 <code>Orders</code> 테이블에 행이 삽입될 때만 실행된다. 또한 <code>Customers</code> 테이블의 <code>INSERT</code> 와 <code>UPDATE</code> 작업에 연계된 트리거가 있다면 이 테이블에 행이 삽입되거나 업데이트될 때만 실행된다.</p>
+      <p>저장 프로시저는 단순히 저장된 SQL 문이지만 트리거는 특정한 테이블과 연계된 것으로, 예를 들어 Orders 테이블에 행이 삽입될 때만 실행된다. 또한 Customers 테이블의 <code>INSERT</code> 와 <code>UPDATE</code> 작업에 연계된 트리거가 있다면 이 테이블에 행이 삽입되거나 업데이트될 때만 실행된다.</p>
 
       <p>트리거 내에서는 다음 데이터를 활용할 수 있다.</p>
       <ul>
@@ -222,7 +222,7 @@
         <li>필요에 따라 추가적인 데이터 확인과 롤백 수행 - 예를 들어 고객의 신용한도가 초과되지 않도록 하고 만약 초과된 경우 더 이상의 주문이 불가능하도록 한다.</li>
         <li>계산된 열 값을 계산하거나 날짜/시간을 업데이트</li>
       </ul>
-      <p>다음 예에서는 <code>Customers</code> 테이블의 <code>cust_state</code> 열을 <code>INSERT</code> 또는 <code>UPDATE</code> 할 때 실행되는 트리거를 만들어 추가 또는 업데이트되는 값이 대문자가 되도록 한다.</p>
+      <p>다음 예에서는 Customers 테이블의 cust_state 열을 <code>INSERT</code> 또는 <code>UPDATE</code> 할 때 실행되는 트리거를 만들어 추가 또는 업데이트되는 값이 대문자가 되도록 한다.</p>
       <p>SQL Server 에서는 다음과 같이 작성한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>

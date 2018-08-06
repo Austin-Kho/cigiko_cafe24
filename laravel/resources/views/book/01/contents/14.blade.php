@@ -25,9 +25,9 @@
       <p>열 이름과 계산 필드에만 별칭을 사용할 수 있는 것이 아니며, 테이블 이름에도 별칭을 사용할 수 있다. 이렇게 하는 이유는 다음과 같다.</p>
       <ul>
         <li>SQL 문을 짧게 만들기 위해</li>
-        <li>하나의 SELECT 문 내에 테이블을 여러 번 사용하기 위해</li>
+        <li>하나의 <code>SELECT</code> 문 내에 테이블을 여러 번 사용하기 위해</li>
       </ul>
-      <p>다음 SELECT 문을 살펴보자. 전 단원에서 살펴본 예와 동일한 것이지만 이번에는 별칭ㅇ루 사용하도록 수정하였다.</p>
+      <p>다음 <code>SELECT</code> 문을 살펴보자. 전 단원에서 살펴본 예와 동일한 것이지만 이번에는 별칭으로 사용하도록 수정하였다.</p>
       <h4><span class="badge badge-pill badge-success">입 력</span></h4>
       <pre><code>
         SELECT cust_name, cust_contact<br>
@@ -37,7 +37,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND prod_id = 'RGAN01';
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>FROM 절의 세 테이블 모두 별칭이 사용되었다. Customers AS C는 Customers 테이블의 별칭을 C로 지정하는 것이며 나머지도 같은 방식으로 O와 OI이라는 별칭이 지정되었다. 이렇게 하면 테이블 이름을 Customers 와 같이 모두 입력하지 않고 간단히 C로 입력할 수 있다. 이 예에서는 WHERE 절에서만 테이블 별칭이 사용되었으나 별칭은 이 밖에도 SELECT 목록, ORDER 절 등 다른 문에서도 사용할 수 있다.</p>
+      <p><code>FROM</code> 절의 세 테이블 모두 별칭이 사용되었다. <code>Customers AS C</code>는 Customers 테이블의 별칭을 C로 지정하는 것이며 나머지도 같은 방식으로 O와 OI이라는 별칭이 지정되었다. 이렇게 하면 테이블 이름을 Customers 와 같이 모두 입력하지 않고 간단히 C로 입력할 수 있다. 이 예에서는 <code>WHERE</code> 절에서만 테이블 별칭이 사용되었으나 별칭은 이 밖에도 <code>SELECT</code> 목록, <code>ORDER</code> 절 등 다른 문에서도 사용할 수 있다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">주의</span> Oracle 에서는 AS 를 사용할 수 없다.</h4>
         <p>Oracle 은 AS 키워드를 지원하지 않는다. Oracle에서 별칭을 사용하려면 AS 없이 Customers C와 같은 방식으로 지정하면 된다.</p>
@@ -59,7 +59,7 @@
   <h4 class="sub-header">자체 조인</h4>
   <section>
     <article>
-      <p>전에 설명했듯이 테이블 별칭을 사용하는 주된 목적은 SELECT 문 내에서 같은 테이블을 여러 번 참조하기 위해서이다. 예를 들어보자.</p>
+      <p>전에 설명했듯이 테이블 별칭을 사용하는 주된 목적은 <code>SELECT</code> 문 내에서 같은 테이블을 여러 번 참조하기 위해서이다. 예를 들어보자.</p>
 
       <p>Jim Jones라는 사람이 일하는 회사의 모든 고객 담당자에게 메일을 보내고 싶다고 가정해보자. 이렇게 하려면 먼저 Jim Jones가 어떤 회사에서 일하는지 알아낸 다음, 이 회사의 모든 고객 담당자를 찾아야 한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
@@ -91,7 +91,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 방식에서는 하위 쿼리를 사용했다. 안쪽의 SELECT 문에서는 Jim Jones가 일하는 회사의 cust_name을 반환하고, 이 이름이 바깥쪽 쿼리의 WHERE 절에 사용되어 이 회사의 모든 고객 담당자를 선택하였다.</p>
+      <p>이 방식에서는 하위 쿼리를 사용했다. 안쪽의 <code>SELECT</code> 문에서는 Jim Jones가 일하는 회사의 cust_name을 반환하고, 이 이름이 바깥쪽 쿼리의 <code>WHERE</code> 절에 사용되어 이 회사의 모든 고객 담당자를 선택하였다.</p>
       <p>이번에는 같은 쿼리를 조인을 사용하여 실행해보자.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
@@ -125,8 +125,8 @@
         <h4><span class="badge badge-secondary">TIP</span> Oracle에서는 AS를 사용할 수 없다.</h4><p>Oracle에서는 AS 키워드를 빼야 한다.</p>
       </div>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 쿼리에서 필요로 하는 두 테이블은 같은 것이므로 Customers 테이블이 FROM 절에서 두 번 사용되고 있다. 이렇게 해도 구문상 문제는 없지만 Customers 테이블을 참조할 때 혼동될 수 있다.</p>
-      <p>이 문제를 해결하기 위해 테이블 별칭이 사용되었다. 첫 번째 등장하는 Customers 에는 c1이라는 별칭을, 두 번째에는 c2라는 별칭을 붙인 것이다. 이제 이 별칭을 테이블 이름으로 사용할 수 있으므로 SELECT 문에서 각 열이 어떤 테이블에 속한 것인지 명확하게 지정하기 위해 c1을 접두어로 붙이는 것이 가능하다. 이렇게 하지 않으면 cust_id, cust_name, cust_contact라는 열이 각각 두 개이므로 어떤 것을 참조해야 하는지(실제로는 같은 열이긴 하지만) 알 수 없어 오류가 발생하게 된다. WHERE 절은 먼저 테이블을 조인한 다음 두 번째 테이블의 cust_contact로 데이터를 필터링하여 원하는 데이터를 반환하게 된다.</p>
+      <p>이 쿼리에서 필요로 하는 두 테이블은 같은 것이므로 Customers 테이블이 <code>FROM</code> 절에서 두 번 사용되고 있다. 이렇게 해도 구문상 문제는 없지만 Customers 테이블을 참조할 때 혼동될 수 있다.</p>
+      <p>이 문제를 해결하기 위해 테이블 별칭이 사용되었다. 첫 번째 등장하는 Customers 에는 c1이라는 별칭을, 두 번째에는 c2라는 별칭을 붙인 것이다. 이제 이 별칭을 테이블 이름으로 사용할 수 있으므로 <code>SELECT</code> 문에서 각 열이 어떤 테이블에 속한 것인지 명확하게 지정하기 위해 c1을 접두어로 붙이는 것이 가능하다. 이렇게 하지 않으면 cust_id, cust_name, cust_contact라는 열이 각각 두 개이므로 어떤 것을 참조해야 하는지(실제로는 같은 열이긴 하지만) 알 수 없어 오류가 발생하게 된다. <code>WHERE</code> 절은 먼저 테이블을 조인한 다음 두 번째 테이블의 cust_contact로 데이터를 필터링하여 원하는 데이터를 반환하게 된다.</p>
       <div class="tip">
         <h4><span class="badge badge-secondary">TIP</span> 하위 조인 대신 자체 조인</h4>
         <p>자체 조인은 같은 테이블을 외부 문으로 사용하여 데이터를 얻어내는 하위 쿼리 대신 사용되는 경우가 많다. 결과는 같지만 많은 DBMS 에서 이러한 조인을 하위 쿼리보다 빨리 처리하므로 여러분도 직접 실행해보기 바란다.</p>
@@ -139,7 +139,7 @@
     <article>
       <p>테이블을 조인하면 최소한 하나 이상의 열(조인되는 열)이 하나 이상의 테이블에서 나타나게 된다. 전 단원에서 설명한 내부 조인과 같은 표준 조인은 같은 열이 여러 번 등장하더라도 모든 데이터를 반환하지만, 자연 조인은 이러한 중복 항목을 제거하고 같은 열일 경우 한 번만 반환한다.</p>
 
-      <p>어떻게 이런 결과가 가능할까? 사실 조인이 하는 것이 아니라 여러분이 하는 것이다. 자연 조인은 고유한 열만 선택하는 조인이며 한 테이블에서만 와일드카드(SELECT *)를 사용하고 나머지 다른 테이블에 있는 모든 열은 각각 테이블을 명확하게 지정해 줌으로써 열을 중복되지 않게 한 번만 선택하는 원리이다.</p>
+      <p>어떻게 이런 결과가 가능할까? 사실 조인이 하는 것이 아니라 여러분이 하는 것이다. 자연 조인은 고유한 열만 선택하는 조인이며 한 테이블에서만 와일드카드(<code>SELECT *</code>)를 사용하고 나머지 다른 테이블에 있는 모든 열은 각각 테이블을 명확하게 지정해 줌으로써 열을 중복되지 않게 한 번만 선택하는 원리이다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT C.*, O.order_num, O.order_date, OI.prod_id, OI.quantity, OI.item_price<br>
@@ -173,7 +173,7 @@
         <p>외부 조인을 만드는 데 사용되는 구문은 SQL 구현에 따라 조금씩 다르다. 여기서 설명하는 구문을 대부분의 SQL 구현에서 사용할 수 있기는 하지만 확실히 해두려면 여러분이 사용하는 DBMS 설명서를 읽어보기 바란다.</p>
       </div>
 
-      <p>다음 SELECT 문은 간단한 내부 조인으로, 모든 고객과 이 고객의 주문 목록을 반환한다.</p>
+      <p>다음 <code>SELECT</code> 문은 간단한 내부 조인으로, 모든 고객과 이 고객의 주문 목록을 반환한다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT Customers.cust_id, Orders.order_num<br>
@@ -208,9 +208,9 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>지난 단원에서 설명한 내부 조인과 마찬가지로 이 SELECT 문은 WHERE 절의 조건을 지정하는 것이 아니라 OUTER JOIN이라는 키워드를 사용하여 조인의 종류를 지정하였으나 내부 조인과는 행이 연결되는 방식이 다르다. 외부 조인은 관련된 행이 없는 행도 포함하기 때문이다. OUTER JOIN 을 사용할 때는 RIGHT 또는 LEFT 를 사용하여 모든 행을 포함할 테이블이 어떤 것인지 지정해 주어야 하는데, RIGHT 로 지정하면 조인되는 두 테이블 중 오른쪽 테이블의 모든 행이, LEFT 로 지정하면 왼쪽 테이블의 몯ㄴ 행이 연결 여부에 관계없이 모두 반환된다. 즉, 주문 여부에 관계없이 모든 고객이 반환된다.</p>
+      <p>지난 단원에서 설명한 내부 조인과 마찬가지로 이 <code>SELECT</code> 문은 <code>WHERE</code> 절의 조건을 지정하는 것이 아니라 <code>OUTER JOIN</code>이라는 키워드를 사용하여 조인의 종류를 지정하였으나 내부 조인과는 행이 연결되는 방식이 다르다. 외부 조인은 관련된 행이 없는 행도 포함하기 때문이다. <code>OUTER JOIN</code> 을 사용할 때는 <code>RIGHT</code> 또는 <code>LEFT</code> 를 사용하여 모든 행을 포함할 테이블이 어떤 것인지 지정해 주어야 하는데, <code>RIGHT</code> 로 지정하면 조인되는 두 테이블 중 오른쪽 테이블의 모든 행이, <code>LEFT</code> 로 지정하면 왼쪽 테이블의 모든 행이 연결 여부에 관계없이 모두 반환된다. 즉, 주문 여부에 관계없이 모든 고객이 반환된다.</p>
 
-      <p>이 코드에서는 LEFT OUTER JOIN 을 사용하였으므로 FROM 절의 왼쪽에 있는 Customers 테이블의 모든 행이 결과에 반환된다. 오른쪽 테이블의 모든 행을 반환하려면 다음 예와 같이 RIGHT OUTER JOIN 을 사용하면 된다.</p>
+      <p>이 코드에서는 <code>LEFT OUTER JOIN</code> 을 사용하였으므로 <code>FROM</code> 절의 왼쪽에 있는 Customers 테이블의 모든 행이 결과에 반환된다. 오른쪽 테이블의 모든 행을 반환하려면 다음 예와 같이 <code>RIGHT OUTER JOIN</code> 을 사용하면 된다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -247,8 +247,8 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 경우 조인 조건은 WHERE 절에 지정되어 있다. 같음을 테스트하는 연산자인 <code>=</code> 대신 <code>*=</code> 연산자를 사용한 것이 바로 핵심이다. <code>*=</code>연산자는 왼쪽 테이블(Customers)의 모든 행이 포함되어야 함을 지정하는 LEFT OUTER JOIN 연산자이기 때문이다.</p>
-      <p>반대로 RIGHT OUTER JOIN 을 하려면 <code>=*</code> 연산자를 사용하면 된다. 이렇게 하면 연산자 우측에 있는 테이블의 모든 행이 결과로 반환된다.</p>
+      <p>이 경우 조인 조건은 <code>WHERE</code> 절에 지정되어 있다. 같음을 테스트하는 연산자인 <code>=</code> 대신 <code>*=</code> 연산자를 사용한 것이 바로 핵심이다. <code>*=</code>연산자는 왼쪽 테이블(Customers)의 모든 행이 포함되어야 함을 지정하는 <code>LEFT OUTER JOIN</code> 연산자이기 때문이다.</p>
+      <p>반대로 <code>RIGHT OUTER JOIN</code> 을 하려면 <code>=*</code> 연산자를 사용하면 된다. 이렇게 하면 연산자 우측에 있는 테이블의 모든 행이 결과로 반환된다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -256,7 +256,7 @@
         FROM Customers, Orders<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE Customers.cust_id =* Orders.cust_id;
       </code></pre>
-      <p>Oracle에서만 사용되는 OUTER JOIN 의 또한 가지 구문 형식도 있다. 다음과 같이 테이블 이름 뒤에 (+) 연산자를 써주는 것이다.</p>
+      <p>Oracle에서만 사용되는 <code>OUTER JOIN</code> 의 또한 가지 구문 형식도 있다. 다음과 같이 테이블 이름 뒤에 (<code>+</code>) 연산자를 써주는 것이다.</p>
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
         SELECT Customers.cust_id, Orders.order_num<br>
@@ -268,7 +268,7 @@
         <h4><span class="badge badge-secondary">TIP</span> 외부 조인의 종류</h4>
         <p>사용되는 구문의 종류에 관계 없이, 외부 조인은 항상 두 가지 기본 형식인 LEFT OUTER JOIN 과 RIGHT OUTER JOIN 으로 구분할 수 있다. 두 방식의 차이점은 두 테이블을 연결하는 순서에 있다. 즉 LEFT OUTER JOIN 의 테이블 연결 순서를 오른쪽으로 바꾸면 RIGHT OUTER JOIN 이 된다. 이렇게 두 외부 조인은 서로 바꾸어가며 사용할 수 있으며 어떤 쪽이 더 편리한가를 판단해서 사용하면 된다.</p>
       </div>
-      <p>외부 조인의 또 한가지 종류로 FULL OUTER JOIN 이 있다. 이는 두 테이블의 연결 관계에 관계 없이 양쪽 테이블의 모든 행을 반환하는 것으로, 한쪽 테이블에서만 모든 행을 반환하는 LEFT 나 RIGHT 외부 조인과는 달리 양쪽 테이블의 모든 행이 결과로 반환된다. 구문은 다음과 같다.</p>
+      <p>외부 조인의 또 한가지 종류로 <code>FULL OUTER JOIN</code> 이 있다. 이는 두 테이블의 연결 관계에 관계 없이 양쪽 테이블의 모든 행을 반환하는 것으로, 한쪽 테이블에서만 모든 행을 반환하는 <code>LEFT</code> 나 <code>RIGHT</code> 외부 조인과는 달리 양쪽 테이블의 모든 행이 결과로 반환된다. 구문은 다음과 같다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -290,7 +290,7 @@
   <section>
     <article>
       <p>9장에서 살펴본 집계 함수는 한 테이블의 데이터만 대상으로 했지만 조인과 함께 사용하면 여러 테이블의 데이터를 집계하는 것이 가능하다.</p>
-      <p>설명을 위해 예를 들어보자. 모든 고객의 목록과 각 고객이 주문한 수량을 얻고 싶다면 다음과 같이 COUNT() 함수를 사용하면 된다.</p>
+      <p>설명을 위해 예를 들어보자. 모든 고객의 목록과 각 고객이 주문한 수량을 얻고 싶다면 다음과 같이 <code>COUNT()</code> 함수를 사용하면 된다.</p>
 
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
       <pre><code>
@@ -319,7 +319,7 @@
         </table>
       </code></pre>
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 SELECT 문에서는 INNER JOIN을 사용하여 Customers와 Orders 테이블을 연결하고 있다. GROUP BY 절에서 데이터를 고객별로 묶기 때문에 COUNT(Orders.order_num) 함수는 각 고객이 주문량울 num_ord로 반환하게 된다.</p>
+      <p>이 <code>SELECT</code> 문에서는 <code>INNER JOIN</code>을 사용하여 Customers와 Orders 테이블을 연결하고 있다. <code>GROUP BY</code> 절에서 데이터를 고객별로 묶기 때문에 <code>COUNT(Orders.order_num)</code> 함수는 각 고객이 주문량을 num_ord로 반환하게 된다.</p>
       <p>다른 조인의 경우도 손쉽게 집계 함수를 사용할 수 있다. 다음 예를 보자.</p>
       
       <h4><span class="badge badge-pill badge-primary">입 력</span></h4>
@@ -353,7 +353,7 @@
       </code></pre>
 
       <h4><span class="badge badge-pill badge-info">분 석</span></h4>
-      <p>이 예에서는 LEFT OUTER JOIN을 사용하여 아직 주문을 하지 않ㄹ은 사람을 포함하는 모든 고객의 주문량을 계산하였다. 그 결과로 주문량이 0인 1000000002번 고객도 반환되었음을 알 수 있다.</p>
+      <p>이 예에서는 <code>LEFT OUTER JOIN</code>을 사용하여 아직 주문을 하지 않은 사람을 포함하는 모든 고객의 주문량을 계산하였다. 그 결과로 주문량이 0인 1000000002번 고객도 반환되었음을 알 수 있다.</p>
     </article>
   </section>
 
