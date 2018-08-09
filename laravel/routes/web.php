@@ -23,7 +23,9 @@ Route::get('book/{bookid}/{id?}', 'Book\BookController@index')->name('book');
 
 Route::get('write', 'WriteController@index')->name('write');
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 /*
@@ -65,3 +67,4 @@ Route::get('ghi', function(){
 
     return $view;
 });
+
