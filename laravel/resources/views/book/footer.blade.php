@@ -8,7 +8,7 @@
     <!-- Optional JavaScript -->
     <!-- 먼저 jQuery가 오고 그 다음 Popper.js 그 다음 Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -116,7 +116,7 @@
     <!-- Top button -->
     <div>
       <a id="MOVE_TOP_BTN" href="#">
-        <strong>TOP</strong>
+        <strong><img src="/img/to-top@2x.png" alt="Top" width="30px;"></strong>
         {{-- <svg id="i-chevron-top" viewBox="0 0 32 32" width="25" height="25" fill="none" stroke="currentcolor" stroke-linecap="butt" stroke-linejoin="round" stroke-width="5">
           <path d="M30 20 L16 8 2 20" /></svg> --}}
         </a>
