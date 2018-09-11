@@ -1,0 +1,15 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} !^public
+# RewriteRule ^(.*)$ public/$1 [L]
+RewriteRule . /index.php [L]
+ServerEncoding UTF-8
+</IfModule>
+
+# END WordPress

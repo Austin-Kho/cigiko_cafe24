@@ -1,0 +1,27 @@
+# a comment - this is ignored
+
+# sublime-text
+sftp-config.json
+
+# Atom
+.ftpconfig
+
+#db info
+auth.php
+config.php
+util.php
+config_set.php
+
+
+#CodeIgniter
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+*/application/config/database.php
+*/application/config/config.php
+
+#wp
+wp-config.php
+*/wp/wp-conent/uploads/2013/08/*.*
