@@ -71,4 +71,3 @@ Route::get('ghi', function(){
 
     return $view;
 });
-
